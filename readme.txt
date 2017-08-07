@@ -1,4 +1,7 @@
 
+This website was created usign a modified version of the CEEVEE template. For details see below.
+
+
 ==================================================================================================
 
 CEEVEE is a clean, modern, fully responsive site template for your

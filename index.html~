@@ -172,8 +172,23 @@
 
                <div class="twelve columns">
 
+                  <h3>Tensor Decomposition</h3>
+                  <em class="date">2017</em></p>
+                  <p>
+         <div>
+                           <img alt="" src="images/portfolio/tensors.png", width="150", align="left", style="margin-right: 20px">
+            <span style="vertical-align:top">
+Tensors are a natural way to express correlations among many physical variables, but storing tensors in a computer naively requires memory which scales exponentially in the rank of the tensor.
+Representations such as the tensor tree perform near-optimally when the tree decomposition is chosen to reflect the correlation structure in question, but making such a choice is difficult.
+I developed two algorithms for choosing efficient tree decompositions
+[<a href="https://arxiv.org/abs/1708.07471">arXiv</a>].
+The first is a simple brute-force algorithm while the second is a greedy algorithm which often performs comparably.
+            </span>
+         </div>
+                 </p>
+
                   <h3>Radius of Convergence</h3>
-                  <em class="date">2012-17</em></p>
+                  <em class="date">2017</em></p>
                   <p>
          <div>
                            <img alt="" src="images/portfolio/poles.svg", width="150", align="left", style="margin-right: 20px">
@@ -241,6 +256,20 @@
          </div>
                  </p>
 
+
+                  <h3>Atmospheric Dynamics of Pulsar Companions</h3>
+                  <em class="info">With Sterl Phinney </em>&bull;<em class="date">2013-15</em></p>
+                  <p>
+         <div>
+                           <img alt="" src="images/portfolio/pulsars.jpeg", width="150", align="left", style="margin-right: 20px">
+            <span style="vertical-align:top">
+
+               For my senior thesis[<a href="http://thesis.library.caltech.edu/9019/">Caltech Library</a>] I investigated the influence that pulsars orbiting with a low-mass companion star have on the companion. I focused on the way in which radiation from the pulsar heats their atmospheres as well as on the transport processes (radiation, convection, winds, etc.) that move this heat around the companion. In the process I found that feedback between accretion and deep companion insolation explains the decade-timescale switching behaviour seen in low-mass X-ray binaries. The same models quantitatively explain the temperature difference between the day (pulsar-facing) and night (opposite) sides of the companion, and readily extend to exoplanets and brown dwarfs. I also developed a new stellar structure code Acorn[<a href="https://github.com/adamjermyn/Acorn">Github</a>] and proposed a novel mechanism of accretion-induced collapse.
+
+            </span>
+         </div>
+                 </p>
+
                   <h3>Stability of Parafermion Chains</h3>
                   <em class="info">With Jason Alicea and Roger Mong</em>&bull;<em class="date">2013-14</em></p>
                   <p>
@@ -301,6 +330,20 @@
 
             <span style="vertical-align:top">
             ArrFunc [<a href="https://www.github.com/adamjermyn/arrfunc">GitHub</a>] is a library that allows vector-valued functions which vectorize over vector-valued inputs to be treated as NumPy arrays. I found myself wanting to do this frequently and across several projects, so it made sense to package separately. ArrFunc makes use of lazy evaluation, so that array operations are delayed until the shape of the input (and hence of the output) is known.  This means that you can compose, combine, and modify complicated functions without having to worry about the shape of the input.
+
+             </span>
+         </div>
+                 </p>
+
+                  <h3>Acorn</h3>
+                  <em class="info">Python Library</em>&bull;<em class="date">2013-15</em></p>
+                  <p>
+         <div>
+
+                           <img alt="" src="images/portfolio/pulsars.jpeg", width="125", align="left", style="margin-right: 20px">
+
+            <span style="vertical-align:top">
+		As part of my senior thesis I developed Acorn[<a href="https://github.com/adamjermyn/Acorn">Github</a>], a Python library for stellar structure and evolution. Acorn uses a basic equation of state (based on a code by Bohdan Paczyński) with support for modern opacity tables and supports modelling the envelopes of stars, both in steady state and out-of-equilibrium. The library supports a day-night circulation model I developed for my thesis[<a href="http://thesis.library.caltech.edu/9019/">Caltech Library</a>] as well as irradiation with varying deposition depth. The library does not include any details of nuclear reaction rates and so cannot be used to model the cores of stars.
 
              </span>
          </div>
@@ -383,7 +426,7 @@
       <div class="row education">
 
          <div class="three columns header-col">
-            <h1><span>miscellaneous</span></h1>
+            <h1><span>Miscellaneous</span></h1>
          </div>
 
          <div class="nine columns main-col">
@@ -392,15 +435,26 @@
 
                <div class="twelve columns">
 
-                 <h3>Ditch Day 2017</h3>
+                 <h3>Creative Writing</h3>
+                  <p>
+         <div>
+            <span style="vertical-align:top">
+            I've written a few things, starting with science fiction short stories [<a href="github.com/adamjermyn/ScifiShorts">Github</a>]. I'm also active in <a href="http://cusfs.soc.srcf.net/chainwriting">chainwriting</a> with the Cambridge University Science Fiction Society (<a href="https://cusfs.soc.srcf.net">CUSFS</a>), and some of the pieces I've written appear in <a href="https://cusfs.soc.srcf.net/ttba">TTBA</a> (the CUSFS magazine).
+            </span>
+         </div>
+                 </p>                 
+
+
+                  <h3>Ditch Day</h3>
                   <p>
          <div>
                            <img alt="" src="images/stackpuzzle/15.jpeg", width="150", align="left", style="margin-right: 20px">
             <span style="vertical-align:top">
-            Ditch Day is a tradition at Caltech in which seniors build puzzle-scavenger-activity hunts known as Stacks. On the day-of, underclassmen spend a full day role-playing, puzzle-solving, and generally following their Stacks to completion. Stacks are generally quite involved, so alumni often help construct them. This year one of my main contributions was a paper puzzle which appeared on four stacks including <a href="http://timmaxwell.org/pages/ditch-day/decode/index.html">Tim Maxwell's</a>. In this <a href="https://github.com/adamjermyn/MathChemPuzzle">puzzle</a> a variety of mathematical statements written in an "alien language" are presented without context, and the underclassmen have to use them to identify a four-digit code to undo a padlock.
+            Ditch Day is a tradition at Caltech in which seniors build puzzle-scavenger-activity hunts known as Stacks. On the day-of, underclassmen spend a full day role-playing, puzzle-solving, and generally following their Stacks to completion. In 2015 Rachel Gates, Kalya McCue and I built the Stack 'Legend of Zelda: Friendship is Magic', as a mashup between the videogame 'The Legend of Zelda: The Wind Waker' and the TV series 'My Little Pony: Friendship is Magic'. Stacks are generally quite involved, so alumni often help construct them, and this one benefited greatly from Jesse Salomon, Jen Greco and Eduardo Gonzalez. The following year I flew back to help with Nick Schiefer's Stack 'The Martian', where I played the role of crew photographer. In 2017 one of my main contributions was a paper puzzle which appeared on four stacks including <a href="http://timmaxwell.org/pages/ditch-day/decode/index.html">Tim Maxwell's</a>. In this <a href="https://github.com/adamjermyn/MathChemPuzzle">puzzle</a> a variety of mathematical statements written in an "alien language" are presented without context, and the underclassmen have to use them to identify a four-digit code to undo a padlock.
             </span>
          </div>
                  </p>
+
 
                </div>
 
@@ -413,6 +467,7 @@
    </section> <!-- Resume Section End-->
 
 </div> <!-- End Tab -->
+
 
 
    <!-- footer

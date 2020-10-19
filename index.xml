@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Adam Jermyn</title>
-    <link>/</link>
+    <link>adamjermyn.github.io/</link>
     <description>Recent content on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 19 Oct 2020 11:04:58 -0400</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 19 Oct 2020 11:04:58 -0400</lastBuildDate><atom:link href="adamjermyn.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Notes</title>
-      <link>/workflow/notes/</link>
+      <link>adamjermyn.github.io/workflow/notes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/workflow/notes/</guid>
+      <guid>adamjermyn.github.io/workflow/notes/</guid>
       <description>Notes I take notes to support reference, recollection, and accumulation. This approach was heavily influenced by Andy Matuschak&amp;rsquo;s concept of Evergreen Notes.
 Reference The best reference for learning something is usually not the most useful for applying it. I learned about random walks from the Feynman Lectures, but when I need to calculate diffusion coefficients I reference a note that just gives the answer and a few supporting details.
 Reference notes should be optimized for frequently, repeated use.</description>
@@ -20,10 +20,10 @@ Reference notes should be optimized for frequently, repeated use.</description>
     
     <item>
       <title>Prioritization</title>
-      <link>/workflow/prioritization/</link>
+      <link>adamjermyn.github.io/workflow/prioritization/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/workflow/prioritization/</guid>
+      <guid>adamjermyn.github.io/workflow/prioritization/</guid>
       <description>Prioritization Picking the right ideas to work on is important.
 I write ideas in Markdown notes with one top-level header per idea. To decide what to work on, I use a python script which asks me to compare ideas to one another. The comparison questions are:
  If both ideas work, what is their relative impact? What are the relative odds of the ideas working? How long will each idea take to implement?</description>
@@ -31,19 +31,19 @@ I write ideas in Markdown notes with one top-level header per idea. To decide wh
     
     <item>
       <title>My First Post</title>
-      <link>/posts/my-first-post/</link>
+      <link>adamjermyn.github.io/posts/my-first-post/</link>
       <pubDate>Mon, 19 Oct 2020 11:04:58 -0400</pubDate>
       
-      <guid>/posts/my-first-post/</guid>
+      <guid>adamjermyn.github.io/posts/my-first-post/</guid>
       <description>stuff</description>
     </item>
     
     <item>
       <title>Feedback</title>
-      <link>/workflow/feedback/</link>
+      <link>adamjermyn.github.io/workflow/feedback/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/workflow/feedback/</guid>
+      <guid>adamjermyn.github.io/workflow/feedback/</guid>
       <description>Feedback Getting things right without feedback is really hard, so getting frequent and meaningful feedback is important. I do this by asking others for feedback and by looking back at how past work has gone.
 Asking Others Giving good feedback is hard. When I ask for feedback I try to make it easier by making it clear what I want feedback on, and by being as specific as possible. So feedback on specific projects or interactions is often better than feedback on &amp;ldquo;my job in general&amp;rdquo;.</description>
     </item>

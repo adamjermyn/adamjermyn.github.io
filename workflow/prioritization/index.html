@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="author" content="Adam Jermyn">
+		<meta name="description" content="Site Description">
+		<meta name="generator" content="Hugo 0.76.5" />
+		<title>Prioritization &middot; Adam Jermyn</title>
+		<link rel="shortcut icon" href="images/favicon.ico">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/highlight.css">
+
+		
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+		
+
+		
+		<link href="/index.xml" rel="alternate" type="application/rss+xml" title="Adam Jermyn" />
+		
+
+		
+
+
+		<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href=''> <span class="arrow">←</span>Home</a>
+	
+	<a href='posts'>Archive</a>
+	<a href='tags'>Tags</a>
+        <a href='software'>Software</a>
+        <a href='workflow'>Workflow</a>
+	<a href='about'>About</a>
+
+	
+
+	
+	<a class="cta" href="/index.xml">Subscribe</a>
+	
+</nav>
+
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Prioritization
+                    </h1>
+                    <h2 class="headline">
+		    
+                    
+                    · 267 words
+                    · 2 minute read
+                      <span class="tags">
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                <section id="post-body">
+                    <h2 id="prioritization">Prioritization</h2>
+<p>Picking the right ideas to work on is <strong>important</strong>.</p>
+<p>I write ideas in Markdown notes with one top-level header per idea. To decide what to work on, I use a <a href="https://github.com/adamjermyn/PriorMD">python script</a> which asks me to compare ideas to one another. The comparison questions are:</p>
+<ol>
+<li>If both ideas work, what is their relative impact?</li>
+<li>What are the relative odds of the ideas working?</li>
+<li>How long will each idea take to implement? (in relative terms)</li>
+</ol>
+<p>The answers to these questions then give the ratio of the expected value (utility) per unit time:
+$$
+\mathrm{Score} = \frac{\mathbb{E}[U_1 / t_1]}{\mathbb{E}[U_2 / t_2]}
+$$
+Taking the log of both sides produces a series of linear relations between the expected value per unit time for each idea. The script I wrote performs a least squares solve on those relations to produce a (relative) score for each idea. It then outputs a list of ideas ranked by their score.</p>
+<p>When I started doing this I was surprised by how much different ideas vary in expected value. On any given day the difference between the best idea I have and the median idea might be an order of magnitude. Over longer periods the range of idea quality is maybe a factor of a thousand. That reinforces the idea that prioritization is important.</p>
+<p>For me the value in doing this is not in the precise scores or formulas, but in being forced to make an honest estimate of how much each project I take on is aligned with my goals, how likely it is to succeed, and how big a time commitment it is.</p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=%2fworkflow%2fprioritization%2f - Prioritization by @your_twitter_id"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/adamjermyn">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/nodejh">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Adam Jermyn
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>

@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>About on Adam Jermyn</title>
-    <link>adamjermyn.github.io/about/</link>
+    <link>https://adamjermyn.github.io/about/</link>
     <description>Recent content in About on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language><atom:link href="adamjermyn.github.io/about/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language><atom:link href="https://adamjermyn.github.io/about/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

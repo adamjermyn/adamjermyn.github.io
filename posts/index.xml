@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Adam Jermyn</title>
-    <link>https://adamjermyn.com/posts/</link>
+    <link>https://adamjermyn.github.io/posts/</link>
     <description>Recent content in Posts on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 24 Oct 2020 15:52:11 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Oct 2020 15:52:11 -0400</lastBuildDate><atom:link href="https://adamjermyn.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Mass Scales for Living on Mars</title>
-      <link>https://adamjermyn.com/posts/mars_scales/</link>
+      <link>https://adamjermyn.github.io/posts/mars_scales/</link>
       <pubDate>Sat, 24 Oct 2020 15:52:11 -0400</pubDate>
       
-      <guid>https://adamjermyn.com/posts/mars_scales/</guid>
+      <guid>https://adamjermyn.github.io/posts/mars_scales/</guid>
       <description>Mass Scales for Living on Mars Big thanks to Casey Handmer for reading and commenting on an early draft of this.
 One of the most exciting things that may well happen this century is a sustained human presence on Mars. The main reason this is possible at all is that SpaceX has cut launch costs dramatically. Despite this progress, cargo sent from Earth and soft-landed on Mars is likely to be the primary resource constraint in the Martian economy for a very long time, so it is worth exploring the scale of cargo required to support a human presence, and what that translated into in dollars.</description>
     </item>

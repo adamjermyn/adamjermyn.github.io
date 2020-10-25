@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Workflows on Adam Jermyn</title>
-    <link>https://adamjermyn.github.io/workflow/</link>
+    <link>https://adamjermyn.com/workflow/</link>
     <description>Recent content in Workflows on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language><atom:link href="https://adamjermyn.github.io/workflow/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language><atom:link href="https://adamjermyn.com/workflow/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Notes</title>
-      <link>https://adamjermyn.github.io/workflow/notes/</link>
+      <link>https://adamjermyn.com/workflow/notes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://adamjermyn.github.io/workflow/notes/</guid>
+      <guid>https://adamjermyn.com/workflow/notes/</guid>
       <description>Notes I take notes to support reference, recollection, and accumulation. This approach was heavily influenced by Andy Matuschak&amp;rsquo;s concept of Evergreen Notes.
 Reference The best reference for learning something is usually not the most useful for applying it. I learned about random walks from the Feynman Lectures, but when I need to calculate diffusion coefficients I reference a note that just gives the answer and a few supporting details.
 Reference notes should be optimized for frequently, repeated use.</description>
@@ -19,10 +19,10 @@ Reference notes should be optimized for frequently, repeated use.</description>
     
     <item>
       <title>Prioritization</title>
-      <link>https://adamjermyn.github.io/workflow/prioritization/</link>
+      <link>https://adamjermyn.com/workflow/prioritization/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://adamjermyn.github.io/workflow/prioritization/</guid>
+      <guid>https://adamjermyn.com/workflow/prioritization/</guid>
       <description>Prioritization Picking the right ideas to work on is important.
 I write ideas in Markdown notes with one top-level header per idea. To decide what to work on, I use a python script which asks me to compare ideas to one another. The comparison questions are:
  If both ideas work, what is their relative impact? What are the relative odds of the ideas working? How long will each idea take to implement?</description>
@@ -30,10 +30,10 @@ I write ideas in Markdown notes with one top-level header per idea. To decide wh
     
     <item>
       <title>Feedback</title>
-      <link>https://adamjermyn.github.io/workflow/feedback/</link>
+      <link>https://adamjermyn.com/workflow/feedback/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://adamjermyn.github.io/workflow/feedback/</guid>
+      <guid>https://adamjermyn.com/workflow/feedback/</guid>
       <description>Feedback Getting things right without feedback is really hard, so getting frequent and meaningful feedback is important. I do this by asking others for feedback and by looking back at how past work has gone.
 Asking Others Giving good feedback is hard. When I ask for feedback I try to make it easier by making it clear what I want feedback on, and by being as specific as possible. So feedback on specific projects or interactions is often better than feedback on &amp;ldquo;my job in general&amp;rdquo;.</description>
     </item>

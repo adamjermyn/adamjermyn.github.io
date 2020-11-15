@@ -6,13 +6,13 @@
     <description>Recent content in Posts on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 15 Nov 2020 12:08:00 -0500</lastBuildDate><atom:link href="http://adamjermyn.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 15 Nov 2020 16:33:47 -0500</lastBuildDate><atom:link href="http://adamjermyn.com/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>An Economic Model of Martian Growth</title>
-      <link>http://adamjermyn.com/posts/mars_solow/</link>
-      <pubDate>Sun, 15 Nov 2020 12:08:00 -0500</pubDate>
+      <title>Mars_economy</title>
+      <link>http://adamjermyn.com/posts/mars_economy/</link>
+      <pubDate>Sun, 15 Nov 2020 16:33:47 -0500</pubDate>
       
-      <guid>http://adamjermyn.com/posts/mars_solow/</guid>
+      <guid>http://adamjermyn.com/posts/mars_economy/</guid>
       <description>An Economic Model of Martian Growth [Mars is an expensive place to live][mars_scales], but it rapidly becomes cheaper the [more infrastructure][https://caseyhandmer.wordpress.com/2018/09/03/how-to-industrialize-mars/] it has! Because of that the total cost of building a self-sufficient city on Mars depends on how quickly infrastructure can be built. This is the key question I want to understand: what is the best way to invest in Martian infrastructure that minimizes the total cost?
 A Simple Model To do this I&amp;rsquo;ll build a simple model of economic growth on Mars.</description>
     </item>

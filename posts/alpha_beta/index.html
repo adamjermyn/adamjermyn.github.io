@@ -74,7 +74,7 @@
                     <h2 class="headline">
 		    
                      Dec 7, 2020 11:33 
-                    · 1438 words
+                    · 1441 words
                     · 7 minute read
                       <span class="tags">
                       
@@ -115,7 +115,7 @@ for $\alpha,\beta &gt; 0$. This relation says that the per-person productivity $
 <p>Likewise, the gains from specialization are important over a huge range in population. As Casey Handmer <a href="https://caseyhandmer.wordpress.com/2020/07/20/case-study-iceland/">points out</a>, Iceland trades more than 4000 <strong>categories</strong> of goods with other countries, reaping the benefits of specialization across the whole globe on the scale of billions of people. This is typical even for larger countries: <a href="https://www.census.gov/foreign-trade/Press-Release/current_press_release/ft900.pdf">US trade statistics</a> list hundreds of categories, most of which are extremely broad (&ldquo;Chemicals-organic&rdquo;), accounting all told for more than 10% of GDP.</p>
 <p>To get a sense for the gains from specialization, I&rsquo;ve plotted a crude measure of the fraction of consumption that each country supplies domestically, namely $100\times (1-{\rm Imports}/{\rm GDP})$, using the World Bank&rsquo;s 2017 data. I&rsquo;ve left off countries which import more than 100% of GDP. You can play with the raw data <a href="../../notebooks/productivity_world_bank.csv">here</a>. The important feature is that with increasing population countries produce an increasing fraction of what they consume.</p>
 <img src="../../images/alpha_beta/trade.png" style="max-width:100%;max-height:100%;!important;width:600px;!important;height=auto;!important;display: block;!important;margin-left: auto;!important; margin-right: auto;!important;" class="inline">
-<p>Cut off from trade, that does not mean consumption would fall by the fraction in the plot, as other parts of the economy would adapt to produce more locally, but unless those elasticities are very high we should be able to estimate the <em>scaling</em> of the drop. It probably is true that a country like Iceland, with 350,000 people, would experience a substantial drop in quality of life if cut off completely from trade, and the measure I&rsquo;ve plotted, suggesting a 60% drop, seems plausible.</p>
+<p>Cut off from trade, that does not mean consumption would fall by the fraction in the plot, as other parts of the economy would adapt to produce more locally and export less, but unless those elasticities are very high we should be able to estimate the <em>scaling</em> of the drop. It probably is true that a country like Iceland, with 350,000 people, would experience a substantial drop in quality of life if cut off completely from trade, and the measure I&rsquo;ve plotted, suggesting a 60% drop, seems plausible.</p>
 <p>The line running through the data is a logarithmic fit, meaning $y = A \ln x + B$. The large slope of ~5% says that  for every 10x increase in population a country can produce roughly 10% more of its consumption domestically, and that holds across the wide range from $10^4-10^9$ people. The very rough implication is that, for the current level of technology on Earth, ability to produce the variety of products in the modern economy goes up 10% per 10x increase in population, up to a maximum of ~80% for the largest countries. Translated into Martian productivity, that suggests that
 $$
 p \propto 0.05\ln n - 0.26,

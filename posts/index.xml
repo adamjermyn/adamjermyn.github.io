@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 15 Nov 2020 16:33:47 -0500</lastBuildDate><atom:link href="http://adamjermyn.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 07 Dec 2020 11:33:05 -0500</lastBuildDate><atom:link href="http://adamjermyn.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Growth and Population on Mars</title>
+      <link>http://adamjermyn.com/posts/alpha_beta/</link>
+      <pubDate>Mon, 07 Dec 2020 11:33:05 -0500</pubDate>
+      
+      <guid>http://adamjermyn.com/posts/alpha_beta/</guid>
+      <description>Economies of Scale I previously wrote about a simple model of an early Martain economy. A key input to that model is the way that human productivity scales with population and investment. I captured this with the simple scaling $$ p \propto I^\alpha n^\beta $$ for $\alpha,\beta &amp;gt; 0$. This relation says that the per-person productivity $p$ scales as some positive power $\alpha$ of the per-person investment $I$, which could reflect machinery or materials or personnel support from Earth, and as another positive power $\beta$ of the number of people $n$.</description>
+    </item>
+    
     <item>
       <title>An Economic Model of Martian Growth</title>
       <link>http://adamjermyn.com/posts/mars_economy/</link>

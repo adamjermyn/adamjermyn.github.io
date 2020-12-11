@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Workflow on Adam Jermyn</title>
+    <link>http://adamjermyn.com/tags/workflow/</link>
+    <description>Recent content in Workflow on Adam Jermyn</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 11 Dec 2020 15:56:14 -0500</lastBuildDate><atom:link href="http://adamjermyn.com/tags/workflow/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tools Should Express Values</title>
+      <link>http://adamjermyn.com/posts/tools_values/</link>
+      <pubDate>Fri, 11 Dec 2020 15:56:14 -0500</pubDate>
+      
+      <guid>http://adamjermyn.com/posts/tools_values/</guid>
+      <description>I want my tools to express values. I want my text editor to tell me to write clearly. I want my scientific software to command me “Be true, be open, be humble, be curious.” I want tools to be less blank pages and more pleas for me to honor the values of the craft.
+Blank is not Neutral Many tools today are designed like blank pages. A writing app has a large blank space, with perhaps a few buttons for changing fonts and an indicator of how many words are on the page.</description>
+    </item>
+    
+  </channel>
+</rss>

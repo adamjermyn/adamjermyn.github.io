@@ -6,7 +6,18 @@
     <description>Recent content in Posts on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 11 Dec 2020 15:56:14 -0500</lastBuildDate><atom:link href="http://adamjermyn.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 30 Dec 2020 10:37:04 -0500</lastBuildDate><atom:link href="http://adamjermyn.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Robust Tools</title>
+      <link>http://adamjermyn.com/posts/robust_tools/</link>
+      <pubDate>Wed, 30 Dec 2020 10:37:04 -0500</pubDate>
+      
+      <guid>http://adamjermyn.com/posts/robust_tools/</guid>
+      <description>Good tools are robust. This doesn&amp;rsquo;t just mean that they don&amp;rsquo;t fail, it means that in many instances they can&amp;rsquo;t fail. They take common failure modes off the table, freeing you to use them and focus on your goals.
+Impossible Failure Modes For a robust tool many failure modes are, by design, simply impossible, to the point where it&amp;rsquo;s hard to imagine what those failure modes are.
+Consider a solid metal hammer.</description>
+    </item>
+    
     <item>
       <title>Tools Should Express Values</title>
       <link>http://adamjermyn.com/posts/tools_values/</link>

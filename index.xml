@@ -6,7 +6,7 @@
     <description>Recent content in About on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 11 Dec 2020 15:56:14 -0500</lastBuildDate><atom:link href="http://adamjermyn.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 30 Dec 2020 10:37:04 -0500</lastBuildDate><atom:link href="http://adamjermyn.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Notes</title>
       <link>http://adamjermyn.com/workflow/notes/</link>
@@ -36,6 +36,17 @@ I write ideas in Markdown notes with one top-level header per idea. To decide wh
       
       <guid>http://adamjermyn.com/workflow/spacedrepetition/</guid>
       <description>Spaced Repetition Spaced repetition is a technique for remembering information over long time periods. It takes advantage of the empirical observation that the time it takes to forget a fact is proportional to the time that fact is known. This suggests that the best strategy to remember something indefinitely is to review facts with ever-larger (geometrically increasing) gaps between reviews. Following that strategy, a finite number of reviews is needed to remember something for the rest of your life, and that number is small enough that the study time needed to remember a fact indefinitely is about 5 minutes, so long as the studying happens in this spaced-out way.</description>
+    </item>
+    
+    <item>
+      <title>Robust Tools</title>
+      <link>http://adamjermyn.com/posts/robust_tools/</link>
+      <pubDate>Wed, 30 Dec 2020 10:37:04 -0500</pubDate>
+      
+      <guid>http://adamjermyn.com/posts/robust_tools/</guid>
+      <description>Good tools are robust. This doesn&amp;rsquo;t just mean that they don&amp;rsquo;t fail, it means that in many instances they can&amp;rsquo;t fail. They take common failure modes off the table, freeing you to use them and focus on your goals.
+Impossible Failure Modes For a robust tool many failure modes are, by design, simply impossible, to the point where it&amp;rsquo;s hard to imagine what those failure modes are.
+Consider a solid metal hammer.</description>
     </item>
     
     <item>

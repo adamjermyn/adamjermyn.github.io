@@ -6,7 +6,17 @@
     <description>Recent content in Mars on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 07 Dec 2020 11:33:05 -0500</lastBuildDate><atom:link href="http://adamjermyn.com/tags/mars/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 01 Jan 2021 14:29:20 -0500</lastBuildDate><atom:link href="http://adamjermyn.com/tags/mars/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Early Martian Software</title>
+      <link>http://adamjermyn.com/posts/mars_software/</link>
+      <pubDate>Fri, 01 Jan 2021 14:29:20 -0500</pubDate>
+      
+      <guid>http://adamjermyn.com/posts/mars_software/</guid>
+      <description>Building a city on Mars will be very capital intensive because in the early stages it&amp;rsquo;s extremely expensive to sustain people on Mars. But capital is a vague term: what does this actually look like?
+The last few attempts at a human presence in space primarily used physical capital: heavy machinery, giant rockets and space stations and industrial equipment. Mars will need all of that too. But the last few times were in the 1960s-90s, when computers were slow and software much more limited and expensive than today.</description>
+    </item>
+    
     <item>
       <title>Growth and Population on Mars</title>
       <link>http://adamjermyn.com/posts/alpha_beta/</link>

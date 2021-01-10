@@ -6,7 +6,17 @@
     <description>Recent content in Posts on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 01 Jan 2021 14:29:20 -0500</lastBuildDate><atom:link href="http://adamjermyn.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 10 Jan 2021 10:24:23 -0500</lastBuildDate><atom:link href="http://adamjermyn.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Growing Food on Mars</title>
+      <link>http://adamjermyn.com/posts/mars_soil/</link>
+      <pubDate>Sun, 10 Jan 2021 10:24:23 -0500</pubDate>
+      
+      <guid>http://adamjermyn.com/posts/mars_soil/</guid>
+      <description>Growing food on Mars is a critical component of making a self-sufficient city because shipping food is expensive. Unfortunately it seems that Martian regolith is too alkaline and has none of the organic material needed to grow crops. These issues can be addressed by adding acid and organic material, but those come with their own costs unless also produced locally.
+Organic Matter Costs For crop experiments NASA produces soil with similar properties to Martian regolith, known as JSC-1A.</description>
+    </item>
+    
     <item>
       <title>Early Martian Software</title>
       <link>http://adamjermyn.com/posts/mars_software/</link>

@@ -6,7 +6,7 @@
     <description>Recent content in About on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 01 Jan 2021 14:29:20 -0500</lastBuildDate><atom:link href="http://adamjermyn.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 10 Jan 2021 10:24:23 -0500</lastBuildDate><atom:link href="http://adamjermyn.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Notes</title>
       <link>http://adamjermyn.com/workflow/notes/</link>
@@ -36,6 +36,16 @@ I write ideas in Markdown notes with one top-level header per idea. To decide wh
       
       <guid>http://adamjermyn.com/workflow/spacedrepetition/</guid>
       <description>Spaced Repetition Spaced repetition is a technique for remembering information over long time periods. It takes advantage of the empirical observation that the time it takes to forget a fact is proportional to the time that fact is known. This suggests that the best strategy to remember something indefinitely is to review facts with ever-larger (geometrically increasing) gaps between reviews. Following that strategy, a finite number of reviews is needed to remember something for the rest of your life, and that number is small enough that the study time needed to remember a fact indefinitely is about 5 minutes, so long as the studying happens in this spaced-out way.</description>
+    </item>
+    
+    <item>
+      <title>Growing Food on Mars</title>
+      <link>http://adamjermyn.com/posts/mars_soil/</link>
+      <pubDate>Sun, 10 Jan 2021 10:24:23 -0500</pubDate>
+      
+      <guid>http://adamjermyn.com/posts/mars_soil/</guid>
+      <description>Growing food on Mars is a critical component of making a self-sufficient city because shipping food is expensive. Unfortunately it seems that Martian regolith is too alkaline and has none of the organic material needed to grow crops. These issues can be addressed by adding acid and organic material, but those come with their own costs unless also produced locally.
+Organic Matter Costs For crop experiments NASA produces soil with similar properties to Martian regolith, known as JSC-1A.</description>
     </item>
     
     <item>

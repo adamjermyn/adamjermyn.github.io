@@ -6,7 +6,7 @@
     <description>Recent content in About on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 10 Jan 2021 10:24:23 -0500</lastBuildDate><atom:link href="http://adamjermyn.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Jan 2021 17:51:55 -0500</lastBuildDate><atom:link href="http://adamjermyn.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Notes</title>
       <link>http://adamjermyn.com/workflow/notes/</link>
@@ -36,6 +36,17 @@ I write ideas in Markdown notes with one top-level header per idea. To decide wh
       
       <guid>http://adamjermyn.com/workflow/spacedrepetition/</guid>
       <description>Spaced Repetition Spaced repetition is a technique for remembering information over long time periods. It takes advantage of the empirical observation that the time it takes to forget a fact is proportional to the time that fact is known. This suggests that the best strategy to remember something indefinitely is to review facts with ever-larger (geometrically increasing) gaps between reviews. Following that strategy, a finite number of reviews is needed to remember something for the rest of your life, and that number is small enough that the study time needed to remember a fact indefinitely is about 5 minutes, so long as the studying happens in this spaced-out way.</description>
+    </item>
+    
+    <item>
+      <title>Examples of Tools with Values</title>
+      <link>http://adamjermyn.com/posts/values_examples/</link>
+      <pubDate>Sat, 23 Jan 2021 17:51:55 -0500</pubDate>
+      
+      <guid>http://adamjermyn.com/posts/values_examples/</guid>
+      <description>I previously argued that tools should express values. Here are some examples of tools I&amp;rsquo;ve made with an eye to values.
+A Brainstorming Environment I have a shell script that sets up a work environment for brainstorming. It does this by copying and opening a template text document that says the following:
+# Session: - Maintain an attitude of suspended judgement. - You&#39;re here to climb out of the basin. - Cmd+E Will bring up an (incomplete) list of possible approaches.</description>
     </item>
     
     <item>

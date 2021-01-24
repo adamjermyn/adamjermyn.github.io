@@ -6,7 +6,18 @@
     <description>Recent content in Workflow on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 30 Dec 2020 10:37:04 -0500</lastBuildDate><atom:link href="http://adamjermyn.com/tags/workflow/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Jan 2021 17:51:55 -0500</lastBuildDate><atom:link href="http://adamjermyn.com/tags/workflow/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Examples of Tools with Values</title>
+      <link>http://adamjermyn.com/posts/values_examples/</link>
+      <pubDate>Sat, 23 Jan 2021 17:51:55 -0500</pubDate>
+      
+      <guid>http://adamjermyn.com/posts/values_examples/</guid>
+      <description>I previously argued that tools should express values. Here are some examples of tools I&amp;rsquo;ve made with an eye to values.
+A Brainstorming Environment I have a shell script that sets up a work environment for brainstorming. It does this by copying and opening a template text document that says the following:
+# Session: - Maintain an attitude of suspended judgement. - You&#39;re here to climb out of the basin. - Cmd+E Will bring up an (incomplete) list of possible approaches.</description>
+    </item>
+    
     <item>
       <title>Robust Tools</title>
       <link>http://adamjermyn.com/posts/robust_tools/</link>

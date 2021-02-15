@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="author" content="Adam Jermyn">
+		<meta name="description" content="Site Description">
+		<meta name="generator" content="Hugo 0.76.5" />
+		<title>An Economic Model of Martian Growth &middot; Adam Jermyn</title>
+		<link rel="shortcut icon" href="http://adamjermyn.com/images/favicon.ico">
+		<link rel="stylesheet" href="http://adamjermyn.com/css/style.css">
+		<link rel="stylesheet" href="http://adamjermyn.com/css/highlight.css">
+
+		
+		<link rel="stylesheet" href="http://adamjermyn.com/css/font-awesome.min.css">
+		
+
+		
+		<link href="http://adamjermyn.com/index.xml" rel="alternate" type="application/rss+xml" title="Adam Jermyn" />
+		
+
+		
+
+                
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-186473758-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+		
+                <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+
+        <a href='http://adamjermyn.com/'>About</a>
+	<a href='http://adamjermyn.com/posts'>Posts</a>
+	<a href='http://adamjermyn.com/tags'>Tags</a>
+        <a href='http://adamjermyn.com/software'>Software</a>
+        <a href='http://adamjermyn.com/workflow'>Workflow</a>
+
+	
+
+</nav>
+
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        An Economic Model of Martian Growth
+                    </h1>
+                    <h2 class="headline">
+		    
+                     Nov 15, 2020 16:33 
+                    · 1300 words
+                    · 7 minute read
+                      <span class="tags">
+                      
+                      
+                          
+                              <a href="http://adamjermyn.com/tags/"></a>
+                          
+                      
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                <section id="post-body">
+                    <h1 id="an-economic-model-of-martian-growth">An Economic Model of Martian Growth</h1>
+<p><a href="http://adamjermyn.com/posts/mars_scales/">Mars is an expensive place to live</a>, but it rapidly becomes cheaper the <a href="https://caseyhandmer.wordpress.com/2018/09/03/how-to-industrialize-mars/">more infrastructure</a> it has! Because of that the total cost of building a self-sufficient city on Mars depends on how quickly infrastructure can be built. This is the key question I want to understand: what is the best way to invest in Martian infrastructure that minimizes the total cost?</p>
+<h2 id="a-simple-model">A Simple Model</h2>
+<p>To do this I&rsquo;ll build a simple model of economic growth on Mars. In this model, a group of backers on Earth pays for the Martian city until it reaches self-sufficiency. At any time $t$ there are $n(t)$ people on Mars. Each person costs $c_0$ to send to Mars in the first place. They also produce resources $p(t)$, consumes resources $c(t)$, and invest resources $i(t)$ per unit time in local infrastructure and industrial capacity. The resources produced are used to meet consumption and investment needs, not shipped back to Earth for a profit. A minimum condition for self-sufficiency is when production first exceeds consumption ($p(t) = c(t)$), which occurs at time $t_f$.  Assuming a zero discount rate, the total cost of the venture to backers on Earth is then  $T = n(t_f) c_0 + \int_0^{t_f} n(t)(c(t) - p(t)+i(t)) dt$.</p>
+<p>A zero discount rate is a reasonable assumption given the time-scales involved. The number of people and their productivity should easily double in just a few years, which is fast compared to typical discount rates of a few percent per year (doubling times of $30+$ years!). Similarly I&rsquo;ll ignore infrastructure depreciation: most of the infrastructure built on Mars should last decades or more, just as on Earth. In an economy where output doubles in a few years this makes depreciation negligible.</p>
+<p>I&rsquo;ll assume that launch costs and the cost of producing goods on Earth are both fixed. Because of this, I&rsquo;ll measure production and consumption in terms of the cost to ship goods from Earth <strong>even if they are produced locally</strong>. This is just a choice of units, akin to choosing between measuring in dollars versus yen, but it is a convenient choice because it means that $c$ is constant in time so as long as launch costs and production costs on Earth are fixed.</p>
+<p>To complete the model I need to know how the productivity $p(t)$ of people varies with the cumulative investment per person $I(t)=I_0 + (1/n(t))\int_0^t n(t') i(t') dt'$, where $I_0$ is an initial investment per person that is baked into the cost $c_0$ of sending the person to Mars in the first place. In the standard <a href="https://en.wikipedia.org/wiki/Solow%E2%80%93Swan_model">Solow-Swan model</a> productivity proportional to cumulative investment to some power $0&lt;\alpha&lt;1$, i.e. $p(t) = p_0 (I(t)/I_0)^\alpha$ where $p_0$ is the initial productivity of the first person on Mars.</p>
+<p>A feature missing from the Solow model is a dependence on the number of people. For large populations this dependence is small, which is why the Solow model is often used to model the economies of whole nations. For small populations though there are clear efficiency gains with increasing population. For instance it doesn&rsquo;t cost twice as much to build a water treatment plant for two people as to build one for a single person.</p>
+<p>A more applicable model then is one where the productivity of each person rises with the number of people, because I&rsquo;m using units where the per-person costs are fixed. So let&rsquo;s say that $p(t) = p_0 (I(t) / I_0)^\alpha n(t)^\beta$ for some $\beta &gt; 0$.</p>
+<h2 id="intuition">Intuition</h2>
+<p>Before solving this model, it&rsquo;s worth building some intuition. When $\alpha \gg \beta$, productivity increases more with investment than with population, so on the margin the best strategy is to invest more per person, not to fly more people to Mars. This obviously can&rsquo;t scale down to the limit of zero people, but it suggests a small and extremely well-equipped group to start. Eventually this group likely hits diminishing returns from further investment, so $\alpha$ decreases, and it becomes important to start sending more people.</p>
+<p>On the other hand when $\beta \gg \alpha$, most productivity gains come from economies of scale and shared infrastructure. In this limit the best strategy is to send as many people to Mars as fast as possible, and to equip them minimally. Like the other limit this can&rsquo;t continue forever; eventually economies of scale dry up and it becomes more important to invest in capital than in population.</p>
+<h2 id="solution">Solution</h2>
+<p>The backers of this city can determine how many people to send ($n(t)$) and the level of investment $(I(t))$. Let&rsquo;s pick an exponential for both so that $I(t) = I_0 e^{\gamma t}$ and $n(t) = e^{\lambda t}$, giving $\gamma$ and $\lambda$ as free parameters the backers can fiddle with. With this the total cost of the venture is specified by the integral defining $T$. The algebra is messy, but it&rsquo;s available in <a href="http://adamjermyn.com/notebooks/mars_economy.nb">this</a> Mathematica Notebook. With the assumption that productivity is initially low ($c \gg p_0$) and that the time for the running costs to exceed startup costs is short ($c/c_0 \gg \lambda,\gamma$), the total cost is approximately
+$$
+T \approx (c/\lambda) (c/p_0)^{1/(\beta + \alpha\gamma/\lambda)}\frac{\alpha \gamma+\beta\lambda}{\lambda(\alpha\gamma+\beta\lambda+\lambda)} + I_0 (c/p_0)^{(\lambda+\gamma)/(\alpha\gamma+\beta\lambda)}\frac{\gamma}{\gamma+\lambda}​
+$$
+What does this complicated equation mean? The most important feature is that, because $c \gg p_0$, it depends <strong>strongly</strong> on the two exponents. This dependence might be made clearer if I write it in terms of the constant $k \equiv (c/p_0)^{1/\alpha}$ (dependent only on properties of labor and technology), the ratio $\omega\equiv \beta/\alpha$ of the relative importance of increasing population versus increasing investment, and the ratio $q \equiv \gamma/\lambda$ of the rates of increase of investment and population. In those terms $T \approx (c/\lambda) k^{1/(q+\omega)}(\alpha (q+\omega))/(1+\alpha(q+\omega)) + I_0 k^{q/(q+\omega)}(q/(1+q))$.</p>
+<h2 id="cost-minimization">Cost Minimization</h2>
+<p>The backers don&rsquo;t control $\omega$ or $k$ because those are just properties of labor and technology. So the backers want to minimize costs by controlling the only knob they have, which is the ratio $q$ of the relative growth rates of investment and population.</p>
+<p>To understand how the cost depends on $q$, let&rsquo;s look at a few extreme cases.</p>
+<p>If most of the productivity gains come from investing more per person, and not from scaling up the number of people, then $\alpha \gg \beta$ and $\omega \ll 1$. Let&rsquo;s also assume that $\alpha=1$ to keep things simple. In this limit, the cost is $T \approx ((c/\lambda)k^{1/q} + I_0 k)(1/(1+1/q))$. I couldn&rsquo;t find a nice way to solve this, but notice that the first factor increases exponentially in $1/q$ and the second decreases polynomially in $1/q$, suggesting that the optimum is around $q \approx \ln k \gg 1$, likely with some logarithmic dependence on the ratio $c/\lambda I_0 k$ as well. Because $q$ is large, $\gamma \gg \lambda$, and as expected the solution is to invest heavily in infrastructure and equipment and lightly on popoulation.</p>
+<p>On the other hand, if most of the gains come from economies of scale then $\omega \gg 1$ and $T \approx (c/\lambda) k^{1/\omega} + I_0 k^{q/\omega}(q/(1+q))$. This clearly decreases with decreasing $q$ all the way down to zero, so the cheapest solution is to invest first and foremost in increasing population ($\lambda \gg \gamma$), and only turn to increasing investment once population gains level off.</p>
+<h2 id="which-limit-is-real">Which limit is real?</h2>
+<p>Are the opportunities in Martian cities in economies of scale or in investment per person? I don&rsquo;t know, but I suspect that they begin in investment and rapidly switch to scale past a critical point. Initially, increasing investment gives people heavy machinery, robots, ground support, custom control software, and so on. These generate large productivity gains, but eventually run into the problem that some technologies just <a href="https://caseyhandmer.wordpress.com/2020/07/20/case-study-iceland/">require many people</a> to be economically viable. Building a chip fab or diverse chemical plant requires lots of people, and by the time those are the limits the city is well into the regime where population matters.</p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fadamjermyn.com%2fposts%2fmars_economy%2f - An%20Economic%20Model%20of%20Martian%20Growth by @AdamSJermyn"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/adamjermyn">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/AdamSJermyn">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+        
+	        <center><a class="cta" href="http://adamjermyn.com/index.xml">Subscribe</a></center>
+        
+    <p class="small">
+    
+       © Copyright 2021 Adam Jermyn
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="http://adamjermyn.com/js/jquery-3.3.1.min.js"></script>
+<script src="http://adamjermyn.com/js/main.js"></script>
+<script src="http://adamjermyn.com/js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>

@@ -2,46 +2,46 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mars on Adam Jermyn</title>
-    <link>http://adamjermyn.com/tags/mars/</link>
+    <link>https://adamjermyn.com/tags/mars/</link>
     <description>Recent content in Mars on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 10 Jan 2021 10:24:23 -0500</lastBuildDate><atom:link href="http://adamjermyn.com/tags/mars/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 10 Jan 2021 10:24:23 -0500</lastBuildDate><atom:link href="https://adamjermyn.com/tags/mars/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Growing Food on Mars</title>
-      <link>http://adamjermyn.com/posts/mars_soil/</link>
+      <link>https://adamjermyn.com/posts/mars_soil/</link>
       <pubDate>Sun, 10 Jan 2021 10:24:23 -0500</pubDate>
       
-      <guid>http://adamjermyn.com/posts/mars_soil/</guid>
+      <guid>https://adamjermyn.com/posts/mars_soil/</guid>
       <description>Growing food on Mars is a critical component of making a self-sufficient city because shipping food is expensive.
 Unfortunately it seems that Martian regolith is too alkaline and is missing key nutrients needed to grow crops. The alkaline issue can be solved by adding acid, which is both low-weight and can be produced locally if need be. The nutrient issue can be addressed either by adding organic material or by artificial nutrient supplementation.</description>
     </item>
     
     <item>
       <title>Early Martian Software</title>
-      <link>http://adamjermyn.com/posts/mars_software/</link>
+      <link>https://adamjermyn.com/posts/mars_software/</link>
       <pubDate>Fri, 01 Jan 2021 14:29:20 -0500</pubDate>
       
-      <guid>http://adamjermyn.com/posts/mars_software/</guid>
+      <guid>https://adamjermyn.com/posts/mars_software/</guid>
       <description>Building a city on Mars will be very capital intensive because in the early stages it&amp;rsquo;s extremely expensive to sustain people on Mars. But capital is a vague term: what does this actually look like?
 The last few attempts at a human presence in space primarily used physical capital: heavy machinery, giant rockets and space stations and industrial equipment. Mars will need all of that too. But the last few times were in the 1960s-90s, when computers were slow and software much more limited and expensive than today.</description>
     </item>
     
     <item>
       <title>Growth and Population on Mars</title>
-      <link>http://adamjermyn.com/posts/alpha_beta/</link>
+      <link>https://adamjermyn.com/posts/alpha_beta/</link>
       <pubDate>Mon, 07 Dec 2020 11:33:05 -0500</pubDate>
       
-      <guid>http://adamjermyn.com/posts/alpha_beta/</guid>
+      <guid>https://adamjermyn.com/posts/alpha_beta/</guid>
       <description>Economies of Scale I previously wrote about a simple model of an early Martain economy. A key input to that model is the way that human productivity scales with population and investment. I captured this with the simple scaling $$ p \propto I^\alpha n^\beta $$ for $\alpha,\beta &amp;gt; 0$. This relation says that the per-person productivity $p$ scales as some positive power $\alpha$ of the per-person investment $I$, which could reflect machinery or materials or personnel support from Earth, and as another positive power $\beta$ of the number of people $n$.</description>
     </item>
     
     <item>
       <title>Mass Scales for Living on Mars</title>
-      <link>http://adamjermyn.com/posts/mars_scales/</link>
+      <link>https://adamjermyn.com/posts/mars_scales/</link>
       <pubDate>Sat, 24 Oct 2020 15:52:11 -0400</pubDate>
       
-      <guid>http://adamjermyn.com/posts/mars_scales/</guid>
+      <guid>https://adamjermyn.com/posts/mars_scales/</guid>
       <description>Mass Scales for Living on Mars Big thanks to Casey Handmer for reading and commenting on an early draft of this.
 One of the most exciting things that may well happen this century is a sustained human presence on Mars. The main reason this is possible at all is that SpaceX has cut launch costs dramatically. Despite this progress, cargo sent from Earth and soft-landed on Mars is likely to be the primary resource constraint in the Martian economy for a very long time, so it is worth exploring the scale of cargo required to support a human presence, and what that translated into in dollars.</description>
     </item>

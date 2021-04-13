@@ -2,37 +2,37 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Adam Jermyn</title>
-    <link>http://adamjermyn.com/posts/</link>
+    <link>https://adamjermyn.com/posts/</link>
     <description>Recent content in Posts on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 28 Mar 2021 16:17:44 -0400</lastBuildDate><atom:link href="http://adamjermyn.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 Mar 2021 16:17:44 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Near-Existential Risk</title>
-      <link>http://adamjermyn.com/posts/near_existential_risk/</link>
+      <link>https://adamjermyn.com/posts/near_existential_risk/</link>
       <pubDate>Sun, 28 Mar 2021 16:17:44 -0400</pubDate>
       
-      <guid>http://adamjermyn.com/posts/near_existential_risk/</guid>
+      <guid>https://adamjermyn.com/posts/near_existential_risk/</guid>
       <description>Longtermism is a moral theory that says that most of the value we (humans) ought to care about lies in the future, and so we should look hard for opportunities to influence the future in positive ways. Longtermism arises as a natural consequence of three ideas:
  Utilitarianism: We should improve the lives/subjective wellbeing of as many people as much as possible, evaluated by summing improvements over lives. Future lives are just as valuable as present lives.</description>
     </item>
     
     <item>
       <title>The Value Frontier</title>
-      <link>http://adamjermyn.com/posts/fractal_value/</link>
+      <link>https://adamjermyn.com/posts/fractal_value/</link>
       <pubDate>Mon, 15 Feb 2021 16:51:23 -0500</pubDate>
       
-      <guid>http://adamjermyn.com/posts/fractal_value/</guid>
+      <guid>https://adamjermyn.com/posts/fractal_value/</guid>
       <description>Patrick Collison and Michael Nielsen wrote in The Atlantic in 2018 that maintaining the pace of science is getting more expensive, at least as measured by survey judgements of the relative importance of discoveries. Specifically, they find that despite an exponentially increasing input in the form of research dollars and PhD students, discoveries have been declining in survey-assessed importance over time.
 The same trend can be seen in more concrete measures of scientific output.</description>
     </item>
     
     <item>
       <title>Examples of Tools with Values</title>
-      <link>http://adamjermyn.com/posts/values_examples/</link>
+      <link>https://adamjermyn.com/posts/values_examples/</link>
       <pubDate>Sat, 23 Jan 2021 17:51:55 -0500</pubDate>
       
-      <guid>http://adamjermyn.com/posts/values_examples/</guid>
+      <guid>https://adamjermyn.com/posts/values_examples/</guid>
       <description>I previously argued that tools should express values. Here are some examples of tools I&amp;rsquo;ve made with an eye to values.
 A Brainstorming Environment I have a shell script that sets up a work environment for brainstorming. It does this by copying and opening a template text document that says the following:
 # Session: - Maintain an attitude of suspended judgement. - You&#39;re here to climb out of the basin. - Cmd+E Will bring up an (incomplete) list of possible approaches.</description>
@@ -40,30 +40,30 @@ A Brainstorming Environment I have a shell script that sets up a work environmen
     
     <item>
       <title>Growing Food on Mars</title>
-      <link>http://adamjermyn.com/posts/mars_soil/</link>
+      <link>https://adamjermyn.com/posts/mars_soil/</link>
       <pubDate>Sun, 10 Jan 2021 10:24:23 -0500</pubDate>
       
-      <guid>http://adamjermyn.com/posts/mars_soil/</guid>
+      <guid>https://adamjermyn.com/posts/mars_soil/</guid>
       <description>Growing food on Mars is a critical component of making a self-sufficient city because shipping food is expensive.
 Unfortunately it seems that Martian regolith is too alkaline and is missing key nutrients needed to grow crops. The alkaline issue can be solved by adding acid, which is both low-weight and can be produced locally if need be. The nutrient issue can be addressed either by adding organic material or by artificial nutrient supplementation.</description>
     </item>
     
     <item>
       <title>Early Martian Software</title>
-      <link>http://adamjermyn.com/posts/mars_software/</link>
+      <link>https://adamjermyn.com/posts/mars_software/</link>
       <pubDate>Fri, 01 Jan 2021 14:29:20 -0500</pubDate>
       
-      <guid>http://adamjermyn.com/posts/mars_software/</guid>
+      <guid>https://adamjermyn.com/posts/mars_software/</guid>
       <description>Building a city on Mars will be very capital intensive because in the early stages it&amp;rsquo;s extremely expensive to sustain people on Mars. But capital is a vague term: what does this actually look like?
 The last few attempts at a human presence in space primarily used physical capital: heavy machinery, giant rockets and space stations and industrial equipment. Mars will need all of that too. But the last few times were in the 1960s-90s, when computers were slow and software much more limited and expensive than today.</description>
     </item>
     
     <item>
       <title>Robust Tools</title>
-      <link>http://adamjermyn.com/posts/robust_tools/</link>
+      <link>https://adamjermyn.com/posts/robust_tools/</link>
       <pubDate>Wed, 30 Dec 2020 10:37:04 -0500</pubDate>
       
-      <guid>http://adamjermyn.com/posts/robust_tools/</guid>
+      <guid>https://adamjermyn.com/posts/robust_tools/</guid>
       <description>Good tools are robust. This doesn&amp;rsquo;t just mean that they don&amp;rsquo;t fail, it means that in many instances they can&amp;rsquo;t fail. They take common failure modes off the table, freeing you to use them and focus on your goals.
 Impossible Failure Modes For a robust tool many failure modes are, by design, simply impossible, to the point where it&amp;rsquo;s hard to imagine what those failure modes are.
 Consider a solid metal hammer.</description>
@@ -71,39 +71,39 @@ Consider a solid metal hammer.</description>
     
     <item>
       <title>Tools Should Express Values</title>
-      <link>http://adamjermyn.com/posts/tools_values/</link>
+      <link>https://adamjermyn.com/posts/tools_values/</link>
       <pubDate>Fri, 11 Dec 2020 15:56:14 -0500</pubDate>
       
-      <guid>http://adamjermyn.com/posts/tools_values/</guid>
+      <guid>https://adamjermyn.com/posts/tools_values/</guid>
       <description>I want my tools to express values. I want my text editor to tell me to write clearly. I want my scientific software to command me “Be true, be open, be humble, be curious.” I want tools to be less blank pages and more pleas for me to honor the values of the craft.
 Blank is not Neutral Many tools today are designed like blank pages. A writing app has a large blank space, with perhaps a few buttons for changing fonts and an indicator of how many words are on the page.</description>
     </item>
     
     <item>
       <title>Growth and Population on Mars</title>
-      <link>http://adamjermyn.com/posts/alpha_beta/</link>
+      <link>https://adamjermyn.com/posts/alpha_beta/</link>
       <pubDate>Mon, 07 Dec 2020 11:33:05 -0500</pubDate>
       
-      <guid>http://adamjermyn.com/posts/alpha_beta/</guid>
+      <guid>https://adamjermyn.com/posts/alpha_beta/</guid>
       <description>Economies of Scale I previously wrote about a simple model of an early Martain economy. A key input to that model is the way that human productivity scales with population and investment. I captured this with the simple scaling $$ p \propto I^\alpha n^\beta $$ for $\alpha,\beta &amp;gt; 0$. This relation says that the per-person productivity $p$ scales as some positive power $\alpha$ of the per-person investment $I$, which could reflect machinery or materials or personnel support from Earth, and as another positive power $\beta$ of the number of people $n$.</description>
     </item>
     
     <item>
       <title>An Economic Model of Martian Growth</title>
-      <link>http://adamjermyn.com/posts/mars_economy/</link>
+      <link>https://adamjermyn.com/posts/mars_economy/</link>
       <pubDate>Sun, 15 Nov 2020 16:33:47 -0500</pubDate>
       
-      <guid>http://adamjermyn.com/posts/mars_economy/</guid>
+      <guid>https://adamjermyn.com/posts/mars_economy/</guid>
       <description>An Economic Model of Martian Growth Mars is an expensive place to live, but it rapidly becomes cheaper the more infrastructure it has! Because of that the total cost of building a self-sufficient city on Mars depends on how quickly infrastructure can be built. This is the key question I want to understand: what is the best way to invest in Martian infrastructure that minimizes the total cost?
 A Simple Model To do this I&amp;rsquo;ll build a simple model of economic growth on Mars.</description>
     </item>
     
     <item>
       <title>Mass Scales for Living on Mars</title>
-      <link>http://adamjermyn.com/posts/mars_scales/</link>
+      <link>https://adamjermyn.com/posts/mars_scales/</link>
       <pubDate>Sat, 24 Oct 2020 15:52:11 -0400</pubDate>
       
-      <guid>http://adamjermyn.com/posts/mars_scales/</guid>
+      <guid>https://adamjermyn.com/posts/mars_scales/</guid>
       <description>Mass Scales for Living on Mars Big thanks to Casey Handmer for reading and commenting on an early draft of this.
 One of the most exciting things that may well happen this century is a sustained human presence on Mars. The main reason this is possible at all is that SpaceX has cut launch costs dramatically. Despite this progress, cargo sent from Earth and soft-landed on Mars is likely to be the primary resource constraint in the Martian economy for a very long time, so it is worth exploring the scale of cargo required to support a human presence, and what that translated into in dollars.</description>
     </item>

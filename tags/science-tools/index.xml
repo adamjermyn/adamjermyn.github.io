@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Science, Tools on Adam Jermyn</title>
-    <link>http://adamjermyn.com/tags/science-tools/</link>
+    <link>https://adamjermyn.com/tags/science-tools/</link>
     <description>Recent content in Science, Tools on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 15 Feb 2021 16:51:23 -0500</lastBuildDate><atom:link href="http://adamjermyn.com/tags/science-tools/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 15 Feb 2021 16:51:23 -0500</lastBuildDate><atom:link href="https://adamjermyn.com/tags/science-tools/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Value Frontier</title>
-      <link>http://adamjermyn.com/posts/fractal_value/</link>
+      <link>https://adamjermyn.com/posts/fractal_value/</link>
       <pubDate>Mon, 15 Feb 2021 16:51:23 -0500</pubDate>
       
-      <guid>http://adamjermyn.com/posts/fractal_value/</guid>
+      <guid>https://adamjermyn.com/posts/fractal_value/</guid>
       <description>Patrick Collison and Michael Nielsen wrote in The Atlantic in 2018 that maintaining the pace of science is getting more expensive, at least as measured by survey judgements of the relative importance of discoveries. Specifically, they find that despite an exponentially increasing input in the form of research dollars and PhD students, discoveries have been declining in survey-assessed importance over time.
 The same trend can be seen in more concrete measures of scientific output.</description>
     </item>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Workflow on Adam Jermyn</title>
-    <link>http://adamjermyn.com/tags/workflow/</link>
+    <link>https://adamjermyn.com/tags/workflow/</link>
     <description>Recent content in Workflow on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 23 Jan 2021 17:51:55 -0500</lastBuildDate><atom:link href="http://adamjermyn.com/tags/workflow/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Jan 2021 17:51:55 -0500</lastBuildDate><atom:link href="https://adamjermyn.com/tags/workflow/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Examples of Tools with Values</title>
-      <link>http://adamjermyn.com/posts/values_examples/</link>
+      <link>https://adamjermyn.com/posts/values_examples/</link>
       <pubDate>Sat, 23 Jan 2021 17:51:55 -0500</pubDate>
       
-      <guid>http://adamjermyn.com/posts/values_examples/</guid>
+      <guid>https://adamjermyn.com/posts/values_examples/</guid>
       <description>I previously argued that tools should express values. Here are some examples of tools I&amp;rsquo;ve made with an eye to values.
 A Brainstorming Environment I have a shell script that sets up a work environment for brainstorming. It does this by copying and opening a template text document that says the following:
 # Session: - Maintain an attitude of suspended judgement. - You&#39;re here to climb out of the basin. - Cmd+E Will bring up an (incomplete) list of possible approaches.</description>
@@ -20,10 +20,10 @@ A Brainstorming Environment I have a shell script that sets up a work environmen
     
     <item>
       <title>Robust Tools</title>
-      <link>http://adamjermyn.com/posts/robust_tools/</link>
+      <link>https://adamjermyn.com/posts/robust_tools/</link>
       <pubDate>Wed, 30 Dec 2020 10:37:04 -0500</pubDate>
       
-      <guid>http://adamjermyn.com/posts/robust_tools/</guid>
+      <guid>https://adamjermyn.com/posts/robust_tools/</guid>
       <description>Good tools are robust. This doesn&amp;rsquo;t just mean that they don&amp;rsquo;t fail, it means that in many instances they can&amp;rsquo;t fail. They take common failure modes off the table, freeing you to use them and focus on your goals.
 Impossible Failure Modes For a robust tool many failure modes are, by design, simply impossible, to the point where it&amp;rsquo;s hard to imagine what those failure modes are.
 Consider a solid metal hammer.</description>
@@ -31,10 +31,10 @@ Consider a solid metal hammer.</description>
     
     <item>
       <title>Tools Should Express Values</title>
-      <link>http://adamjermyn.com/posts/tools_values/</link>
+      <link>https://adamjermyn.com/posts/tools_values/</link>
       <pubDate>Fri, 11 Dec 2020 15:56:14 -0500</pubDate>
       
-      <guid>http://adamjermyn.com/posts/tools_values/</guid>
+      <guid>https://adamjermyn.com/posts/tools_values/</guid>
       <description>I want my tools to express values. I want my text editor to tell me to write clearly. I want my scientific software to command me “Be true, be open, be humble, be curious.” I want tools to be less blank pages and more pleas for me to honor the values of the craft.
 Blank is not Neutral Many tools today are designed like blank pages. A writing app has a large blank space, with perhaps a few buttons for changing fonts and an indicator of how many words are on the page.</description>
     </item>

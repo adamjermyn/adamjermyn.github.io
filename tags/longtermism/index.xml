@@ -6,7 +6,17 @@
     <description>Recent content in Longtermism on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 28 Mar 2021 16:17:44 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/tags/longtermism/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 23 Apr 2021 16:05:02 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/tags/longtermism/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Toy Model of Near-Existential Risk</title>
+      <link>https://adamjermyn.com/posts/near_existential_risk_pt2/</link>
+      <pubDate>Fri, 23 Apr 2021 16:05:02 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/near_existential_risk_pt2/</guid>
+      <description>I recently wrote about near-existential risk. These are risks which result in massive losses to society of people/technology/capability, but which themselves do not actually end or permanently curtail human existence. Here I want to build a toy model for thinking about these risks and how they relate to actual existential risks.
+A Toy Model For these purposes I&amp;rsquo;m going to reduce the many dimensions of loss to a single parameter $\ell$.</description>
+    </item>
+    
     <item>
       <title>Near-Existential Risk</title>
       <link>https://adamjermyn.com/posts/near_existential_risk/</link>

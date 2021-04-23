@@ -1,43 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>About on Adam Jermyn</title>
-    <link>https://adamjermyn.com/</link>
-    <description>Recent content in About on Adam Jermyn</description>
+    <title>Posts on Adam Jermyn</title>
+    <link>https://adamjermyn.com/posts/</link>
+    <description>Recent content in Posts on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 23 Apr 2021 16:05:02 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Notes</title>
-      <link>https://adamjermyn.com/workflow/notes/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://adamjermyn.com/workflow/notes/</guid>
-      <description>Notes I take notes to support reference, recollection, and accumulation. This approach was heavily influenced by Andy Matuschak&amp;rsquo;s concept of Evergreen Notes.
-Reference The best reference for learning something is usually not the most useful for applying it. I learned about random walks from the Feynman Lectures, but when I need to calculate diffusion coefficients I reference a note that just gives the answer and a few supporting details.
-Reference notes should be optimized for frequently, repeated use.</description>
-    </item>
-    
-    <item>
-      <title>Prioritization</title>
-      <link>https://adamjermyn.com/workflow/prioritization/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://adamjermyn.com/workflow/prioritization/</guid>
-      <description>Prioritization Picking the right ideas to work on is important.
-I write ideas in Markdown notes with one top-level header per idea. To decide what to work on, I use a python script which asks me to compare ideas to one another. The comparison questions are:
- If both ideas work, what is their relative impact? What are the relative odds of the ideas working? How long will each idea take to implement?</description>
-    </item>
-    
-    <item>
-      <title>Spaced Repetition</title>
-      <link>https://adamjermyn.com/workflow/spacedrepetition/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://adamjermyn.com/workflow/spacedrepetition/</guid>
-      <description>Spaced Repetition Spaced repetition is a technique for remembering information over long time periods. It takes advantage of the empirical observation that the time it takes to forget a fact is proportional to the time that fact is known. This suggests that the best strategy to remember something indefinitely is to review facts with ever-larger (geometrically increasing) gaps between reviews. Following that strategy, a finite number of reviews is needed to remember something for the rest of your life, and that number is small enough that the study time needed to remember a fact indefinitely is about 5 minutes, so long as the studying happens in this spaced-out way.</description>
-    </item>
-    
+    <lastBuildDate>Fri, 23 Apr 2021 16:05:02 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Toy Model of Near-Existential Risk</title>
       <link>https://adamjermyn.com/posts/near_existential_risk_pt2/</link>
@@ -147,16 +116,6 @@ A Simple Model To do this I&amp;rsquo;ll build a simple model of economic growth
       <guid>https://adamjermyn.com/posts/mars_scales/</guid>
       <description>Mass Scales for Living on Mars Big thanks to Casey Handmer for reading and commenting on an early draft of this.
 One of the most exciting things that may well happen this century is a sustained human presence on Mars. The main reason this is possible at all is that SpaceX has cut launch costs dramatically. Despite this progress, cargo sent from Earth and soft-landed on Mars is likely to be the primary resource constraint in the Martian economy for a very long time, so it is worth exploring the scale of cargo required to support a human presence, and what that translated into in dollars.</description>
-    </item>
-    
-    <item>
-      <title>Feedback</title>
-      <link>https://adamjermyn.com/workflow/feedback/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://adamjermyn.com/workflow/feedback/</guid>
-      <description>Feedback Getting things right without feedback is really hard, so getting frequent and meaningful feedback is important. I do this by asking others for feedback and by looking back at how past work has gone.
-Asking Others Giving good feedback is hard. When I ask for feedback I try to make it easier by making it clear what I want feedback on, and by being as specific as possible. So feedback on specific projects or interactions is often better than feedback on &amp;ldquo;my job in general&amp;rdquo;.</description>
     </item>
     
   </channel>

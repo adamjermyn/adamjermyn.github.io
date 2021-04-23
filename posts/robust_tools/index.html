@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="author" content="Adam Jermyn">
+		<meta name="description" content="Site Description">
+		<meta name="generator" content="Hugo 0.82.1" />
+		<title>Robust Tools &middot; Adam Jermyn</title>
+		<link rel="shortcut icon" href="https://adamjermyn.com/images/favicon.ico">
+		<link rel="stylesheet" href="https://adamjermyn.com/css/style.css">
+		<link rel="stylesheet" href="https://adamjermyn.com/css/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://adamjermyn.com/css/font-awesome.min.css">
+		
+
+		
+		<link href="https://adamjermyn.com/index.xml" rel="alternate" type="application/rss+xml" title="Adam Jermyn" />
+		
+
+		
+
+                
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-186473758-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+		
+                <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+
+        <a href='https://adamjermyn.com/'>About</a>
+	<a href='https://adamjermyn.com/posts'>Posts</a>
+	<a href='https://adamjermyn.com/tags'>Tags</a>
+        <a href='https://adamjermyn.com/software'>Software</a>
+        <a href='https://adamjermyn.com/workflow'>Workflow</a>
+
+	
+
+</nav>
+
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Robust Tools
+                    </h1>
+                    <h2 class="headline">
+		    
+                     Dec 30, 2020 10:37 
+                    · 889 words
+                    · 5 minute read
+                      <span class="tags">
+                      
+                      
+                          
+                              <a href="https://adamjermyn.com/tags/tools">Tools</a>
+                          
+                              <a href="https://adamjermyn.com/tags/workflow">Workflow</a>
+                          
+                      
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                <section id="post-body">
+                    <p>Good tools are robust. This doesn&rsquo;t just mean that they don&rsquo;t fail, it means that in many instances they <em>can&rsquo;t</em> fail. They take common failure modes off the table, freeing you to <em>use</em> them and focus on your goals.</p>
+<h2 id="impossible-failure-modes">Impossible Failure Modes</h2>
+<p>For a robust tool many failure modes are, by design, simply impossible, to the point where it&rsquo;s hard to imagine what those failure modes are.</p>
+<p>Consider a solid metal hammer. What are its possible failure modes? I could hit my hand by mistake. That&rsquo;s pretty much it.</p>
+<p>How about a hammer with a wooden handle and a metal head? This introduces new failure modes: the attachment between the head and the handle could fail, or the wooden handle could break.</p>
+<p>On the other hand, in no universe does a hammer let me accidentally paint a nail, or embed the nail in a piece of wood ten feet away, or remove all the oxygen from the room. The hammer is <strong>robust</strong> to these failure modes, to the point where they seem nonsensical. That&rsquo;s what it means for a tool to be robust.</p>
+<h2 id="not-all-failures-are-made-equal">Not All Failures Are Made Equal</h2>
+<p><code>ls</code> and <code>rm</code> are two common software tools. <code>ls</code> lists the contents of a directory and <code>rm</code> deletes files. Both of these have failure modes, typically in the form of &ldquo;I typed the wrong command by mistake&rdquo;. Do this with <code>ls</code> and the worst that happens is some unexpected output or an error message. Do this with <code>rm</code> and you could <strong>delete everything on your computer</strong>.</p>
+<p>In this sense <code>ls</code> is more robust than <code>rm</code>, even though both support the same &ldquo;bad input&rdquo; failure mode. <code>ls</code> might hit your hand, but it won&rsquo;t remove the oxygen from the room.</p>
+<h2 id="simpler-is-more-robust">Simpler is More Robust</h2>
+<p>Simple tools are more often robust than complicated ones. Hammers are more robust than cars. A car <em>usually</em> transports people from one where they are to where they want to be, but it has a long list of exotic failure modes including</p>
+<ul>
+<li>Not starting.</li>
+<li>Exploding.</li>
+<li>Moving <em>into</em> a solid object (crashing).</li>
+<li>Not moving to the right place (getting lost).</li>
+</ul>
+<p>and so on. Fortunately by careful engineering most of these failure modes can be made very unlikely, and can mitigate the consequences when things do go wrong. That&rsquo;s what&rsquo;s driven most of the reduction in fatal car accidents in the last century.</p>
+<h2 id="robust-patterns">Robust Patterns</h2>
+<p>Robust tools often use similar design patterns. Some of the commons ones are:</p>
+<h3 id="1-modularity">1. Modularity</h3>
+<p>Modularity means that the tool is composed of pieces, each of which solves a simpler problem. Because simpler tools are more robust than complicated ones, modular design makes tools more robust. Modules are also often re-used between tools, making it more likely that failure modes will be caught.</p>
+<h3 id="2-consistency">2. Consistency</h3>
+<p>Consistency means that the tool presents a consistent view of its internal state at all times. This makes the tool more likely to reflect a meaningful abstraction. For instance, if there isn&rsquo;t enough gas in the tank for the car to start, the fuel gauge should point to empty. If there <em>is</em> enough gas, the gauge should <em>not</em> point to empty. This makes the car reflect a useful abstraction (&ldquo;a device with gas in the tank that is either sufficient or not&rdquo;). <em>Failure</em> to be consistent allows the user to think there is enough gas and then have the car fail to start, or decide not to try starting the car even when there is enough gas.</p>
+<h3 id="3-fail-safe-and-fail-loud">3. Fail-Safe and Fail-Loud</h3>
+<p>Some failure modes are unavoidable. Sometimes the user gives a bad input. Sometimes they forget a crucial step. In these cases it is better to fail <em>safely</em> and <em>loudly</em>. <strong>Not All Failures Are Made Equal!</strong> This transforms the failure into feedback for the user.</p>
+<p>In software safe failure usually means halting, saving state, or preserving an &ldquo;undo&rdquo; option. With physical tools safe failure means preventing damage, like a car that automatically slows down when it approaches an obstacle <strong>even when the driver tells it to keep going</strong>.</p>
+<p>Loud failure means telling the user what went wrong in a way they can&rsquo;t ignore.</p>
+<h2 id="robust-tools-express-values">Robust Tools Express Values</h2>
+<p>In order to make a tool robust you, the tool designer, need to decide what your tool is meant for. This is a value judgement.</p>
+<p>A car that ignores the driver and slows before an obstacle expresses the value that <strong>cars are not meant to crash</strong>. Software that halts on an error expresses the value that <strong>errors are bad</strong> and probably unintended. A hammer that doesn&rsquo;t also remove oxygen expresses the value that <strong>hammers are for nails</strong>.</p>
+<p>These may seem like obvious values, but many tools pick contrary values, often for good reason. By default bash scripts and php code keep going even if they hit errors. This, too, expresses a value judgement. <strong>&ldquo;Halting is worse than an error.&quot;</strong> And this value makes such tools robust against certain failure modes like &ldquo;halting on bad input&rdquo;.</p>
+<p>This also means that <strong>robustness is relative to use case and user</strong>. An obstacle-avoiding car is only robust in the hands of a user who wants to get from A to B. It&rsquo;s horribly failure-prone for a police officer in a high-speed chase. Similarly, bash continuing through errors makes it robust for users who can&rsquo;t tolerate halting, but fragile for users who really care about correct execution.</p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fadamjermyn.com%2fposts%2frobust_tools%2f - Robust%20Tools by @AdamSJermyn"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/adamjermyn">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/AdamSJermyn">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+        
+	        <center><a class="cta" href="https://adamjermyn.com/index.xml">Subscribe</a></center>
+        
+    <p class="small">
+    
+       © Copyright 2021 Adam Jermyn
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://adamjermyn.com/js/jquery-3.3.1.min.js"></script>
+<script src="https://adamjermyn.com/js/main.js"></script>
+<script src="https://adamjermyn.com/js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>

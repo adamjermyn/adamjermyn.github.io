@@ -6,7 +6,17 @@
     <description>Recent content in Tools on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 23 Jan 2021 17:51:55 -0500</lastBuildDate><atom:link href="https://adamjermyn.com/tags/tools/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 25 May 2021 15:04:36 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/tags/tools/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Automated Project Reviews</title>
+      <link>https://adamjermyn.com/posts/automated_reviews/</link>
+      <pubDate>Tue, 25 May 2021 15:04:36 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/automated_reviews/</guid>
+      <description>Automated Project Reviews Getting things right without feedback is really hard, but not all feedback comes from other people! One quick way to generate meaningful feedback is by looking back at past work.
+A challenge with looking back is doing it at the right time. For some kinds of feedback this is easy: schedule weekly/monthly/quarterly reviews, with prompts tuned to the relevant time-scale. But some areas of life don&amp;rsquo;t run on a regular schedule.</description>
+    </item>
+    
     <item>
       <title>Examples of Tools with Values</title>
       <link>https://adamjermyn.com/posts/values_examples/</link>

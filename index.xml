@@ -6,7 +6,7 @@
     <description>Recent content in About on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 25 May 2021 15:04:36 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 01 Aug 2021 14:42:17 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Notes</title>
       <link>https://adamjermyn.com/workflow/notes/</link>
@@ -36,6 +36,16 @@ I write ideas in Markdown notes with one top-level header per idea. To decide wh
       
       <guid>https://adamjermyn.com/workflow/spacedrepetition/</guid>
       <description>Spaced Repetition Spaced repetition is a technique for remembering information over long time periods. It takes advantage of the empirical observation that the time it takes to forget a fact is proportional to the time that fact is known. This suggests that the best strategy to remember something indefinitely is to review facts with ever-larger (geometrically increasing) gaps between reviews. Following that strategy, a finite number of reviews is needed to remember something for the rest of your life, and that number is small enough that the study time needed to remember a fact indefinitely is about 5 minutes, so long as the studying happens in this spaced-out way.</description>
+    </item>
+    
+    <item>
+      <title>A School for Agency</title>
+      <link>https://adamjermyn.com/posts/agency_school/</link>
+      <pubDate>Sun, 01 Aug 2021 14:42:17 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/agency_school/</guid>
+      <description>A School for Agency Agency is where you act to achieve your goals. It&amp;rsquo;s where you look at problems and say &amp;ldquo;How could I solve them?&amp;rdquo; and really think about that and arrive at possible courses of action and then take those actions. Explicitly, agency is about executing three steps:
+ Notice a problem/question. Brainstorm solutions. Try solutions until something works or the costs exceed the benefits.  An example I return to often in the summer is air conditioning.</description>
     </item>
     
     <item>

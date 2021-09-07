@@ -121,8 +121,10 @@ if (!doNotTrack) {
 <li>Probability of infection is $p_o=p_i p_a N$.</li>
 </ol>
 <p>I don&rsquo;t want to focus too much on this model. It&rsquo;s very crude, and likely wrong in all sorts of ways. But it communicates a useful infuition, namely that how many viral copies a person breathes out really matters! And this motivates the concept of <strong>viral load</strong>. Per <a href="https://en.wikipedia.org/wiki/Viral_load">Wikipedia</a>:</p>
-<pre><code>Viral load, also known as viral burden, is a numerical expression of the quantity of virus in a given volume of fluid, including biological and environmental specimens.
-</code></pre><p>In the case of COVID, viral load is often (but not always!) defined as the <strong>number of viral copies per milliliter in a nasal swab or saliva sample</strong>, and it&rsquo;s clear that this is proportional to the number of viral copies a person breathes out. I&rsquo;ll stick with this measure going forward, and will convert other reported viral loads into these units as needed.</p>
+<blockquote>
+<p>Viral load, also known as viral burden, is a numerical expression of the quantity of virus in a given volume of fluid, including biological and environmental specimens.</p>
+</blockquote>
+<p>In the case of COVID, viral load is often (but not always!) defined as the <strong>number of viral copies per milliliter in a nasal swab or saliva sample</strong>, and it&rsquo;s clear that this is proportional to the number of viral copies a person breathes out. I&rsquo;ll stick with this measure going forward, and will convert other reported viral loads into these units as needed.</p>
 <h2 id="dependence-on-viral-load">Dependence on Viral Load</h2>
 <p>Many of the ways that our simple model could be wrong make the viral load matter even more. For instance for <em>symptomatic</em> infection there seems to be a <a href="https://www.thelancet.com/journals/laninf/article/PIIS1473-3099(20)30985-3/fulltext">non-linear/thresholding effect</a>, where higher viral loads mean higher odds of symptoms:</p>
 <p><img src="../../images/covid_testing_timing.assets/Screen Shot 2021-09-06 at 11.11.45 AM.png" alt="Screen Shot 2021-09-06 at 11.11.45 AM" style="zoom:50%;" /></p>

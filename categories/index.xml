@@ -5,6 +5,16 @@
     <link>https://adamjermyn.com/categories/</link>
     <description>Recent content in Categories on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language><atom:link href="https://adamjermyn.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Sun, 15 Nov 2020 16:33:47 -0500</lastBuildDate><atom:link href="https://adamjermyn.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mars</title>
+      <link>https://adamjermyn.com/categories/mars/</link>
+      <pubDate>Sun, 15 Nov 2020 16:33:47 -0500</pubDate>
+      
+      <guid>https://adamjermyn.com/categories/mars/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

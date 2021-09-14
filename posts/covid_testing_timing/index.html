@@ -103,7 +103,7 @@ if (!doNotTrack) {
                 
                 <section id="post-body">
                     <h1 id="covid-testing---sensitivity-and-timelines">COVID Testing - Sensitivity and Timelines</h1>
-<p>This past week a close contact had a potential COVID exposure, so I wanted to understand a few basic questions about COVID testing to help figure out what is safe and what isn&rsquo;t. Two questions seem especially relevant:</p>
+<p>This past week a close contact had a potential COVID exposure, so I wanted to understand a few basic questions about COVID testing to help figure out what is safe and what isn&rsquo;t. Three questions seem especially relevant:</p>
 <ol>
 <li>How sensitive are PCR and rapid antigen tests?</li>
 <li>If someone tests negative on a rapid antigen test but positive on PCR, should they worry about infecting other people? Is there a &lsquo;safe period&rsquo; where they very likely won&rsquo;t transmit?</li>
@@ -111,7 +111,7 @@ if (!doNotTrack) {
 </ol>
 <p>Before diving in, a disclaimer: <em>This is not medical advice, just me trying to figure things out. I am not an epidemiologist, virologist, or medical professional, so take this with a grain of salt and check the references for yourself if uncertain. If you spot errors please let me know so I can correct them!</em></p>
 <h2 id="transmission-basics">Transmission Basics</h2>
-<p>The way COVID spreads from person to person is by a virus (<a href="https://en.wikipedia.org/wiki/Severe_acute_respiratory_syndrome_coronavirus_2">SARS-COV-2</a>) physically moving from one person&rsquo;s body to another. At this point it&rsquo;s pretty well-understood that this transmission happens primarily by the virus moving through the air, that exposure occurs when someone breathes in air that contains the virus, and that the virus gets in the air by someone infected breathing/coughing/sneezing it out.</p>
+<p>The way COVID spreads from person to person is by a virus (<a href="https://en.wikipedia.org/wiki/Severe_acute_respiratory_syndrome_coronavirus_2">SARS-CoV-2</a>) physically moving from one person&rsquo;s body to another. At this point it&rsquo;s pretty well-understood that this transmission happens primarily by the virus moving through the air, that exposure occurs when someone breathes in air that contains the virus, and that the virus gets in the air by someone infected breathing/coughing/sneezing it out.</p>
 <p>The details of all of the above are complicated and have a many uncertainties (including e.g. how many viral copies you need to breathe in before you can expect to be infected), but the basic story is solid.</p>
 <p>A consequence of this story is that the more virus an infected person sheds when they breathe, the more chances the virus has to infect someone else. The implied model is something like:</p>
 <ol>
@@ -120,7 +120,7 @@ if (!doNotTrack) {
 <li>Each copy that is breathed in has some probability $p_i$ of infecting the other person.</li>
 <li>Probability of infection is $p_o=p_i p_a N$.</li>
 </ol>
-<p>I don&rsquo;t want to focus too much on this model. It&rsquo;s very crude, and likely wrong in all sorts of ways. But it communicates a useful infuition, namely that how many viral copies a person breathes out really matters! And this motivates the concept of <strong>viral load</strong>. Per <a href="https://en.wikipedia.org/wiki/Viral_load">Wikipedia</a>:</p>
+<p>I don&rsquo;t want to focus too much on this model. It&rsquo;s very crude, and likely wrong in all sorts of ways. But it communicates a useful intuition, namely that how many viral copies a person breathes out really matters! And this motivates the concept of <strong>viral load</strong>. Per <a href="https://en.wikipedia.org/wiki/Viral_load">Wikipedia</a>:</p>
 <blockquote>
 <p>Viral load, also known as viral burden, is a numerical expression of the quantity of virus in a given volume of fluid, including biological and environmental specimens.</p>
 </blockquote>

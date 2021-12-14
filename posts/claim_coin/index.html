@@ -8,7 +8,7 @@
 		<meta name="author" content="Adam Jermyn">
 		<meta name="description" content="Site Description">
 		<meta name="generator" content="Hugo 0.82.1" />
-		<title>Claim Coin &middot; Adam Jermyn</title>
+		<title>ClaimCoin &middot; Adam Jermyn</title>
 		<link rel="shortcut icon" href="https://adamjermyn.com/images/favicon.ico">
 		<link rel="stylesheet" href="https://adamjermyn.com/css/style.css">
 		<link rel="stylesheet" href="https://adamjermyn.com/css/highlight.css">
@@ -82,12 +82,12 @@ if (!doNotTrack) {
             <article>
                 <header>
                     <h1>
-                        Claim Coin
+                        ClaimCoin
                     </h1>
                     <h2 class="headline">
 		    
                      Dec 13, 2021 18:16 
-                    · 1200 words
+                    · 1198 words
                     · 6 minute read
                       <span class="tags">
                       
@@ -106,13 +106,13 @@ if (!doNotTrack) {
 <p>Stable coins are an important tool, allowing investors to trade ordinary (fiat) currencies on the blockchain, but they have a somewhat opaque risk structure. Usually either the coin tracks the desired currency or else the peg fails, in which case investors start withdrawing and the coin suddenly trades well below the peg.</p>
 <p>What if there was a coin with a more transparent risk structure? What would that make possible? Here I&rsquo;ll outline a proposal for a more transparent form of stable coin where the risk structure is immediately and constantly clear to all investors, and where deviations from the peg are gradual, rather than sudden.</p>
 <h1 id="stable-coins">Stable Coins</h1>
-<p>A stable coin is a claim on some underlying assets. The implied promise behind the word &lsquo;stable&rsquo; is that those assets will always be worth at least as much as some regular currency. In the simplest case, the operation of a stable coin could look something like this:</p>
+<p>A stable coin is a claim on some underlying assets. The implied promise behind the word &lsquo;stable&rsquo; is that those assets will always be worth at least as much as some regular currency. In the simplest case, the operation of a hypothetical StableCoin could look something like this:</p>
 <p><img src="../../images/StableCoin.svg" alt="StableCoin" style="zoom:300%;display:block;margin-left:auto;margin-right:auto" /></p>
-<p>Here&rsquo;s I&rsquo;ve chosen US dollars (USD) as the regular currency that the coin tracks. In this case tracking the dollar is easy: the stable coin is fully backed by dollars in a bank account! In the event that the bank goes under, those dollars are insured by the US federal government through the FDIC, so the risk is quite low.</p>
+<p>Here&rsquo;s I&rsquo;ve chosen US dollars (USD) as the regular currency that the coin tracks. In this case tracking the dollar is easy: StableCoin is fully backed by dollars in a bank account! In the event that the bank goes under, those dollars are insured by the US federal government through the FDIC, so the risk is quite low.</p>
 <p>What does the Minter get out of it? They typically keep some or all of the interest paid on their deposits, effectively taking that as a fee in exchange for managing the coin.</p>
-<p>Unfortunately most stable coins do not look like this. Because the interest paid on bank deposits is low at the moment, most stable coins look more like this:</p>
+<p>Unfortunately most stable coins do not look like this. Because the interest paid on bank deposits is low at the moment, most stable coins look more like UnstableCoin:</p>
 <p><img src="../../images/UnstableCoin.svg" alt="UnstableCoin" style="zoom:300%;display:block;margin-left:auto;margin-right:auto" /></p>
-<p>UnstableCoin are great for Minters! The underlying assets are risky, so they generally have higher returns than bank deposits. This let&rsquo;s the Minter take a larger fee. Unfortunately for investors the underlying assets are risky, so it is possible for the investment pool to fall below the promised value of UnstableCoin claims.</p>
+<p>UnstableCoin is great for Minters! The underlying assets are risky, so they generally have higher returns than bank deposits. This let&rsquo;s the Minter take a larger fee. Unfortunately for investors the underlying assets are risky, so it is possible for the investment pool to fall below the promised value of UnstableCoin claims.</p>
 <p>When this happens the coin can rather suddenly collapse. Analogous to a bank run, investors note that the investment pool is worth less than the total of claims outstanding. That means not all investors can have their claims fulfilled; the last investors to try to withdraw end up with nothing, so there&rsquo;s a rush to withdraw. All of a sudden the peg collapses and the coin is worthless.</p>
 <h1 id="whats-the-problem">What&rsquo;s the problem?</h1>
 <p>The existence of bank runs is obviously a bug in StableCoins, but it is a subtle one. The problem is not that the investment pool can drop below the value of outstanding claims. That&rsquo;s true for all but the riskiest assets, and there are good reasons to want StableCoins backed by risky assets (e.g. yield).</p>
@@ -140,7 +140,7 @@ if (!doNotTrack) {
             </article>
 
             
-                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fadamjermyn.com%2fposts%2fclaim_coin%2f - Claim%20Coin by @AdamSJermyn"><span class="icon-twitter"> tweet</span></a>
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fadamjermyn.com%2fposts%2fclaim_coin%2f - ClaimCoin by @AdamSJermyn"><span class="icon-twitter"> tweet</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(

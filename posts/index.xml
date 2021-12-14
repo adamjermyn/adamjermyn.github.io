@@ -6,7 +6,18 @@
     <description>Recent content in Posts on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 04 Dec 2021 09:01:56 -0800</lastBuildDate><atom:link href="https://adamjermyn.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 13 Dec 2021 18:16:59 -0800</lastBuildDate><atom:link href="https://adamjermyn.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Claim Coin</title>
+      <link>https://adamjermyn.com/posts/claim_coin/</link>
+      <pubDate>Mon, 13 Dec 2021 18:16:59 -0800</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/claim_coin/</guid>
+      <description>(This is not investment advice.)
+Stable coins are an important tool, allowing investors to trade ordinary (fiat) currencies on the blockchain, but they have a somewhat opaque risk structure. Usually either the coin tracks the desired currency or else the peg fails, in which case investors start withdrawing and the coin suddenly trades well below the peg.
+What if there was a coin with a more transparent risk structure? What would that make possible?</description>
+    </item>
+    
     <item>
       <title>Practicing Agency</title>
       <link>https://adamjermyn.com/posts/agency_social/</link>

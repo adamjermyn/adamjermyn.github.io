@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 13 Dec 2021 18:16:59 -0800</lastBuildDate><atom:link href="https://adamjermyn.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 Dec 2021 16:30:25 -0800</lastBuildDate><atom:link href="https://adamjermyn.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Classifying Scientific Compute Workflows</title>
+      <link>https://adamjermyn.com/posts/scientific_compute/</link>
+      <pubDate>Thu, 16 Dec 2021 16:30:25 -0800</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/scientific_compute/</guid>
+      <description>Scientists use computers, and not just for typesetting. Lots of experimentation and discovery is done with computers, from modeling climate to predicting material properties to discovering exoplanets. Because computation is applied to such a broad range of questions, the ways it gets used are many and varied. This diversity of application means that tools developed and lessons learned in one domain of scientific compute workflow often don&amp;rsquo;t generalize to very different domains.</description>
+    </item>
+    
     <item>
       <title>ClaimCoin</title>
       <link>https://adamjermyn.com/posts/claim_coin/</link>

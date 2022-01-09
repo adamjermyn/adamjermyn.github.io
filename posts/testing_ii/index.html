@@ -87,7 +87,7 @@ if (!doNotTrack) {
                     <h2 class="headline">
 		    
                      Dec 23, 2021 16:09 
-                    · 5916 words
+                    · 5947 words
                     · 28 minute read
                       <span class="tags">
                       
@@ -239,7 +239,7 @@ This is also what we&rsquo;d expect in a linear model with exponentially growing
 <h3 id="how-much-risk-reduction-can-we-get-from-rapid-testing">How much risk reduction can we get from rapid testing?</h3>
 <p>Say you take a test that&rsquo;s sensitive to a viral load of $10^6$copies/mL (sample) and it comes back negative. This might mean you aren&rsquo;t infected, or it might mean you are infected but just aren&rsquo;t very infectious. How much less infectious are you? In the linear model, roughly 200x less than at peak viral load.</p>
 <p>Tools like <a href="https://www.microcovid.org">microCOVID</a> compute risk assuming that people who test positive transmit COVID at a certain rate under certain conditions. We&rsquo;d like to be able to express our risk reductions in terms that are compatible with microCOVID estimates.</p>
-<p>People can be near peak load for a few days, and can test positive for a few times longer than that, so for our numbers below we&rsquo;ll assume that the transmission risk used by microCOVID is 4x lower than the risk at peak viral load, and hence the viral load to use in comparing with microCOVID risks is $5\times 10^7$copies/mL (nose+throat sample). Then, in the example above, a negative test bounds the transmission risk at $(5 \times 10^7) / 10^6 = 50$ times lower than the microCOVID figure for interacting with someone who has COVID.</p>
+<p>People can be near peak load for a few days, we think around two days. microCOVID assumes that the infecious period is <a href="https://www.microcovid.org/paper/7-basic-method">7 days</a>, so for our numbers below we&rsquo;ll assume that the transmission risk used by microCOVID is $7/2=3.5$ times lower than the risk at peak viral load. We&rsquo;ll round that to four times lower to be conservative, and so we&rsquo;ll say that the viral load to use in comparing with microCOVID risks is $5\times 10^7$copies/mL (nose+throat sample). Then, in the example above, a negative test bounds the transmission risk at $(5 \times 10^7) / 10^6 = 50$ times lower than the microCOVID figure for interacting with someone who has COVID.</p>
 <p>This all assumes that a test has perfect sensitivity to viral load at $10^6$ copies/mL (sample). At some sensitivity $p$, and some ideal risk reduction <em>given perfect sensitivity</em> $r$, the actual risk reduction is
 $$
 r' = p r + (1-p)
@@ -308,6 +308,7 @@ For the hypothetical test above, which we estimate to have a sensitivity of 99% 
 </ol>
 <h2 id="changelog">Changelog</h2>
 <p>1/4/22: Corrected &lsquo;false positive&rsquo; to &lsquo;false negative&rsquo;.</p>
+<p>1/9/22: Added more explanation of how our analysis relates to the risks from microCOVID.</p>
 
                 </section>
             </article>

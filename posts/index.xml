@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Adam Jermyn</title>
+    <link>https://adamjermyn.com/posts/</link>
+    <description>Recent content in Posts on Adam Jermyn</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 25 Feb 2022 16:40:08 -0500</lastBuildDate><atom:link href="https://adamjermyn.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rest</title>
+      <link>https://adamjermyn.com/posts/rest/</link>
+      <pubDate>Fri, 25 Feb 2022 16:40:08 -0500</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/rest/</guid>
+      <description>Rest is important, but what is it?
+I&amp;rsquo;ve noticed three kinds of activities people call rest:
+ Maintenance Distraction Recreation  Many activities could fall into any of these categories, and the distinction I want to draw is all about the motivation.
+Maintenance is what you do to keep life going. Think of cooking, cleaning, sleep, hygiene, sorting through mail, etc. These activities are both necessary and often get pushed to the wayside during a busy work week, so they&amp;rsquo;re natural to reach for in down time.</description>
+    </item>
+    
+    <item>
+      <title>Success is Broader Than You Think</title>
+      <link>https://adamjermyn.com/posts/broad_success/</link>
+      <pubDate>Mon, 31 Jan 2022 11:55:52 -0500</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/broad_success/</guid>
+      <description>Projects begin with goals. At first these are implicit, but as a project takes shape it helps to state them explicitly. Stating goals serves two purposes: it defines success, and it prompts action.
+Because of this dual purpose, many goals miss the mark. On the one hand, is easy to come up with goals which define success but which are too vague to be actionable:
+ &amp;ldquo;Change the world.&amp;rdquo;
+&amp;ldquo;Disrupt the industry.</description>
+    </item>
+    
+    <item>
+      <title>Self-Compassion and Growth</title>
+      <link>https://adamjermyn.com/posts/compassion/</link>
+      <pubDate>Mon, 10 Jan 2022 09:00:45 -0500</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/compassion/</guid>
+      <description>(Epistemic Status: This is an attempt to draw a distinction that feels important, but which I have little evidence for.)
+Recently I&amp;rsquo;ve been reading Self-Compassion by Kristin Neff. I haven&amp;rsquo;t checked any of the underlying evidence, so buyer beware, but the basic premise of the book is that there are large benefits to crafting an intentional attitude of compassion towards oneself.
+I don&amp;rsquo;t want to focus on the specifics of Neff&amp;rsquo;s book though.</description>
+    </item>
+    
+    <item>
+      <title>What can a rapid test tell you? Omicron Edition</title>
+      <link>https://adamjermyn.com/posts/testing_ii/</link>
+      <pubDate>Thu, 23 Dec 2021 16:09:40 -0500</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/testing_ii/</guid>
+      <description>(This is not medical advice. Co-written with Nicholas Schiefer. Thanks to Sylvia Hürlimann and Katherine McDaniel for helpful discussions and comments. Corrections welcome.)
+This holiday season is also Omicron season. The Omicron variant dramatically increases COVID risk for basically everyone, especially with case counts exploding and doubling every two days in most northern areas (New York, Boston, London). Although Omicron seems to be less severe than other variants for most people, it&amp;rsquo;s probably worth some effort to protect high-risk individuals, especially while case rates are so high.</description>
+    </item>
+    
+    <item>
+      <title>Classifying Scientific Compute Workflows</title>
+      <link>https://adamjermyn.com/posts/scientific_compute/</link>
+      <pubDate>Thu, 16 Dec 2021 16:30:25 -0800</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/scientific_compute/</guid>
+      <description>Scientists use computers, and not just for typesetting. Lots of experimentation and discovery is done with computers, from modeling climate to predicting material properties to discovering exoplanets. Because computation is applied to such a broad range of questions, the ways it gets used are many and varied. This diversity of application means that tools developed and lessons learned in one domain of scientific compute workflow often don&amp;rsquo;t generalize to very different domains.</description>
+    </item>
+    
+    <item>
+      <title>ClaimCoin</title>
+      <link>https://adamjermyn.com/posts/claim_coin/</link>
+      <pubDate>Mon, 13 Dec 2021 18:16:59 -0800</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/claim_coin/</guid>
+      <description>(This is not investment advice.)
+Stable coins are an important tool, allowing investors to trade ordinary (fiat) currencies on the blockchain, but they have a somewhat opaque risk structure. Usually either the coin tracks the desired currency or else the peg fails, in which case investors start withdrawing and the coin suddenly trades well below the peg.
+What if there was a coin with a more transparent risk structure? What would that make possible?</description>
+    </item>
+    
+    <item>
+      <title>Practicing Agency</title>
+      <link>https://adamjermyn.com/posts/agency_social/</link>
+      <pubDate>Sat, 04 Dec 2021 09:01:56 -0800</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/agency_social/</guid>
+      <description>Agency is where you act to achieve your goals. Unfortunately agency is hard and not the default state.
+Social nudging is a powerful way to combat this. Here are a few lightly-edited conversations that I&amp;rsquo;ve observed or participated in that pushed towards more agency:
+Fire  P1: There&amp;rsquo;s a fire ~20 miles away and it&amp;rsquo;s raining ash.
+P2: Do you have an air purifier?
+P1: &amp;hellip; no, I should get one.</description>
+    </item>
+    
+    <item>
+      <title>Does Riboflavin Prevent Migraines?</title>
+      <link>https://adamjermyn.com/posts/riboflavin/</link>
+      <pubDate>Thu, 02 Dec 2021 17:03:20 -0800</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/riboflavin/</guid>
+      <description>Abstract (This is not medical advice. I am not a medical professional. Thanks to Rose DiLoreto for the idea for this post.)
+Supplementing with Riboflavin (Vitamin B2) seems probably helpful for headaches and migraines, likely reducing their frequency by about 50% as well as reducing severity somewhat. This is backed by multiple randomized controlled trials, and I&amp;rsquo;ve tried to check for anything funny in those trials (small samples, weird controls, etc.</description>
+    </item>
+    
+    <item>
+      <title>High-Value Low-Probability Options Abound</title>
+      <link>https://adamjermyn.com/posts/mugged_by_probability/</link>
+      <pubDate>Mon, 25 Oct 2021 07:16:09 -0700</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/mugged_by_probability/</guid>
+      <description>(Numbers in this post are made up to illustrate a point. Likewise the plot device need not be cryptocurrencies, that&amp;rsquo;s just flavor text.)
+You&amp;rsquo;re walking on the street, minding your business. Suddenly, a stranger (S) comes up and starts talking to you:
+ S: Have you heard? There&amp;rsquo;s a one-in-a-million chance you could save a billion lives! All you have to do is found a crypto currency, become extremely rich, and use that money to fight Malaria!</description>
+    </item>
+    
+    <item>
+      <title>COVID Testing - Sensitivity and Timelines</title>
+      <link>https://adamjermyn.com/posts/covid_testing_timing/</link>
+      <pubDate>Tue, 07 Sep 2021 10:17:00 -0500</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/covid_testing_timing/</guid>
+      <description>COVID Testing - Sensitivity and Timelines This past week a close contact had a potential COVID exposure, so I wanted to understand a few basic questions about COVID testing to help figure out what is safe and what isn&amp;rsquo;t. Three questions seem especially relevant:
+ How sensitive are PCR and rapid antigen tests? If someone tests negative on a rapid antigen test but positive on PCR, should they worry about infecting other people?</description>
+    </item>
+    
+    <item>
+      <title>A School for Agency</title>
+      <link>https://adamjermyn.com/posts/agency_school/</link>
+      <pubDate>Sun, 01 Aug 2021 14:42:17 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/agency_school/</guid>
+      <description>A School for Agency Agency is where you act to achieve your goals. It&amp;rsquo;s where you look at problems and say &amp;ldquo;How could I solve them?&amp;rdquo; and really think about that and arrive at possible courses of action and then take those actions. Explicitly, agency is about executing three steps:
+ Notice a problem/question. Brainstorm solutions. Try solutions until something works or the costs exceed the benefits.  An example I return to often in the summer is air conditioning.</description>
+    </item>
+    
+    <item>
+      <title>Automated Project Reviews</title>
+      <link>https://adamjermyn.com/posts/automated_reviews/</link>
+      <pubDate>Tue, 25 May 2021 15:04:36 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/automated_reviews/</guid>
+      <description>Automated Project Reviews Getting things right without feedback is really hard, but not all feedback comes from other people! One quick way to generate meaningful feedback is by looking back at past work.
+A challenge with looking back is doing it at the right time. For some kinds of feedback this is easy: schedule weekly/monthly/quarterly reviews, with prompts tuned to the relevant time-scale. But some areas of life don&amp;rsquo;t run on a regular schedule.</description>
+    </item>
+    
+    <item>
+      <title>Toy Model of Near-Existential Risk</title>
+      <link>https://adamjermyn.com/posts/near_existential_risk_pt2/</link>
+      <pubDate>Fri, 23 Apr 2021 16:05:02 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/near_existential_risk_pt2/</guid>
+      <description>I recently wrote about near-existential risk. These are risks which result in massive losses to society of people/technology/capability, but which themselves do not actually end or permanently curtail human existence. Here I want to build a toy model for thinking about these risks and how they relate to actual existential risks.
+A Toy Model For these purposes I&amp;rsquo;m going to reduce the many dimensions of loss to a single parameter $\ell$.</description>
+    </item>
+    
+    <item>
+      <title>Near-Existential Risk</title>
+      <link>https://adamjermyn.com/posts/near_existential_risk/</link>
+      <pubDate>Sun, 28 Mar 2021 16:17:44 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/near_existential_risk/</guid>
+      <description>Longtermism is a moral theory that says that most of the value we (humans) ought to care about lies in the future, and so we should look hard for opportunities to influence the future in positive ways. Longtermism arises as a natural consequence of three ideas:
+ Utilitarianism: We should improve the lives/subjective wellbeing of as many people as much as possible, evaluated by summing improvements over lives. Future lives are just as valuable as present lives.</description>
+    </item>
+    
+    <item>
+      <title>Examples of Tools with Values</title>
+      <link>https://adamjermyn.com/posts/values_examples/</link>
+      <pubDate>Sat, 23 Jan 2021 17:51:55 -0500</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/values_examples/</guid>
+      <description>I previously argued that tools should express values. Here are some examples of tools I&amp;rsquo;ve made with an eye to values.
+A Brainstorming Environment I have a shell script that sets up a work environment for brainstorming. It does this by copying and opening a template text document that says the following:
+# Session: - Maintain an attitude of suspended judgement. - You&#39;re here to climb out of the basin. - Cmd+E Will bring up an (incomplete) list of possible approaches.</description>
+    </item>
+    
+    <item>
+      <title>Growing Food on Mars</title>
+      <link>https://adamjermyn.com/posts/mars_soil/</link>
+      <pubDate>Sun, 10 Jan 2021 10:24:23 -0500</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/mars_soil/</guid>
+      <description>Growing food on Mars is a critical component of making a self-sufficient city because shipping food is expensive.
+Unfortunately it seems that Martian regolith is too alkaline and is missing key nutrients needed to grow crops. The alkaline issue can be solved by adding acid, which is both low-weight and can be produced locally if need be. The nutrient issue can be addressed either by adding organic material or by artificial nutrient supplementation.</description>
+    </item>
+    
+    <item>
+      <title>Early Martian Software</title>
+      <link>https://adamjermyn.com/posts/mars_software/</link>
+      <pubDate>Fri, 01 Jan 2021 14:29:20 -0500</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/mars_software/</guid>
+      <description>Building a city on Mars will be very capital intensive because in the early stages it&amp;rsquo;s extremely expensive to sustain people on Mars. But capital is a vague term: what does this actually look like?
+The last few attempts at a human presence in space primarily used physical capital: heavy machinery, giant rockets and space stations and industrial equipment. Mars will need all of that too. But the last few times were in the 1960s-90s, when computers were slow and software much more limited and expensive than today.</description>
+    </item>
+    
+    <item>
+      <title>Robust Tools</title>
+      <link>https://adamjermyn.com/posts/robust_tools/</link>
+      <pubDate>Wed, 30 Dec 2020 10:37:04 -0500</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/robust_tools/</guid>
+      <description>Good tools are robust. This doesn&amp;rsquo;t just mean that they don&amp;rsquo;t fail, it means that in many instances they can&amp;rsquo;t fail. They take common failure modes off the table, freeing you to use them and focus on your goals.
+Impossible Failure Modes For a robust tool many failure modes are, by design, simply impossible, to the point where it&amp;rsquo;s hard to imagine what those failure modes are.
+Consider a solid metal hammer.</description>
+    </item>
+    
+    <item>
+      <title>Tools Should Express Values</title>
+      <link>https://adamjermyn.com/posts/tools_values/</link>
+      <pubDate>Fri, 11 Dec 2020 15:56:14 -0500</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/tools_values/</guid>
+      <description>I want my tools to express values. I want my text editor to tell me to write clearly. I want my scientific software to command me “Be true, be open, be humble, be curious.” I want tools to be less blank pages and more pleas for me to honor the values of the craft.
+Blank is not Neutral Many tools today are designed like blank pages. A writing app has a large blank space, with perhaps a few buttons for changing fonts and an indicator of how many words are on the page.</description>
+    </item>
+    
+    <item>
+      <title>Growth and Population on Mars</title>
+      <link>https://adamjermyn.com/posts/alpha_beta/</link>
+      <pubDate>Mon, 07 Dec 2020 11:33:05 -0500</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/alpha_beta/</guid>
+      <description>Economies of Scale I previously wrote about a simple model of an early Martain economy. A key input to that model is the way that human productivity scales with population and investment. I captured this with the simple scaling $$ p \propto I^\alpha n^\beta $$ for $\alpha,\beta &amp;gt; 0$. This relation says that the per-person productivity $p$ scales as some positive power $\alpha$ of the per-person investment $I$, which could reflect machinery or materials or personnel support from Earth, and as another positive power $\beta$ of the number of people $n$.</description>
+    </item>
+    
+    <item>
+      <title>An Economic Model of Martian Growth</title>
+      <link>https://adamjermyn.com/posts/mars_economy/</link>
+      <pubDate>Sun, 15 Nov 2020 16:33:47 -0500</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/mars_economy/</guid>
+      <description>An Economic Model of Martian Growth Mars is an expensive place to live, but it rapidly becomes cheaper the more infrastructure it has! Because of that the total cost of building a self-sufficient city on Mars depends on how quickly infrastructure can be built. This is the key question I want to understand: what is the best way to invest in Martian infrastructure that minimizes the total cost?
+A Simple Model To do this I&amp;rsquo;ll build a simple model of economic growth on Mars.</description>
+    </item>
+    
+    <item>
+      <title>Mass Scales for Living on Mars</title>
+      <link>https://adamjermyn.com/posts/mars_scales/</link>
+      <pubDate>Sat, 24 Oct 2020 15:52:11 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/mars_scales/</guid>
+      <description>Mass Scales for Living on Mars Big thanks to Casey Handmer for reading and commenting on an early draft of this.
+One of the most exciting things that may well happen this century is a sustained human presence on Mars. The main reason this is possible at all is that SpaceX has cut launch costs dramatically. Despite this progress, cargo sent from Earth and soft-landed on Mars is likely to be the primary resource constraint in the Martian economy for a very long time, so it is worth exploring the scale of cargo required to support a human presence, and what that translated into in dollars.</description>
+    </item>
+    
+  </channel>
+</rss>

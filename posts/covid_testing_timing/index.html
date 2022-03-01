@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="author" content="Adam Jermyn">
+		<meta name="description" content="Site Description">
+		<meta name="generator" content="Hugo 0.82.1" />
+		<title>COVID Testing - Sensitivity and Timelines &middot; Adam Jermyn</title>
+		<link rel="shortcut icon" href="https://adamjermyn.com/images/favicon.ico">
+		<link rel="stylesheet" href="https://adamjermyn.com/css/style.css">
+		<link rel="stylesheet" href="https://adamjermyn.com/css/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://adamjermyn.com/css/font-awesome.min.css">
+		
+
+		
+		<link href="https://adamjermyn.com/index.xml" rel="alternate" type="application/rss+xml" title="Adam Jermyn" />
+		
+
+		
+
+                
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-186473758-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+		
+                <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+
+        <a href='https://adamjermyn.com/'>About</a>
+	<a href='https://adamjermyn.com/posts'>Posts</a>
+	<a href='https://adamjermyn.com/tags'>Tags</a>
+        <a href='https://adamjermyn.com/software'>Software</a>
+        <a href='https://adamjermyn.com/workflow'>Workflow</a>
+
+	
+
+</nav>
+
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        COVID Testing - Sensitivity and Timelines
+                    </h1>
+                    <h2 class="headline">
+		    
+                     Sep 7, 2021 10:17 
+                    · 1974 words
+                    · 10 minute read
+                      <span class="tags">
+                      
+                      
+                          
+                              <a href="https://adamjermyn.com/tags/covid">COVID</a>
+                          
+                      
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                <section id="post-body">
+                    <h1 id="covid-testing---sensitivity-and-timelines">COVID Testing - Sensitivity and Timelines</h1>
+<p>This past week a close contact had a potential COVID exposure, so I wanted to understand a few basic questions about COVID testing to help figure out what is safe and what isn&rsquo;t. Three questions seem especially relevant:</p>
+<ol>
+<li>How sensitive are PCR and rapid antigen tests?</li>
+<li>If someone tests negative on a rapid antigen test but positive on PCR, should they worry about infecting other people? Is there a &lsquo;safe period&rsquo; where they very likely won&rsquo;t transmit?</li>
+<li>If someone tests negative on PCR (but had an exposure and was in fact infected) should they worry about infecting other people? Again is there a &lsquo;safe period&rsquo; where they very likely won&rsquo;t transmit?</li>
+</ol>
+<p>Before diving in, a disclaimer: <em>This is not medical advice, just me trying to figure things out. I am not an epidemiologist, virologist, or medical professional, so take this with a grain of salt and check the references for yourself if uncertain. If you spot errors please let me know so I can correct them!</em></p>
+<h2 id="transmission-basics">Transmission Basics</h2>
+<p>The way COVID spreads from person to person is by a virus (<a href="https://en.wikipedia.org/wiki/Severe_acute_respiratory_syndrome_coronavirus_2">SARS-CoV-2</a>) physically moving from one person&rsquo;s body to another. At this point it&rsquo;s pretty well-understood that this transmission happens primarily by the virus moving through the air, that exposure occurs when someone breathes in air that contains the virus, and that the virus gets in the air by someone infected breathing/coughing/sneezing it out.</p>
+<p>The details of all of the above are complicated and have a many uncertainties (including e.g. how many viral copies you need to breathe in before you can expect to be infected), but the basic story is solid.</p>
+<p>A consequence of this story is that the more virus an infected person sheds when they breathe, the more chances the virus has to infect someone else. The implied model is something like:</p>
+<ol>
+<li>An infected person breathes out $N$ viral copies.</li>
+<li>Each copy has some probability $p_a$ of being breathed in by another person (depending on the setting, airflow, etc.).</li>
+<li>Each copy that is breathed in has some probability $p_i$ of infecting the other person.</li>
+<li>Probability of infection is $p_o=p_i p_a N$.</li>
+</ol>
+<p>I don&rsquo;t want to focus too much on this model. It&rsquo;s very crude, and likely wrong in all sorts of ways. But it communicates a useful intuition, namely that how many viral copies a person breathes out really matters! And this motivates the concept of <strong>viral load</strong>. Per <a href="https://en.wikipedia.org/wiki/Viral_load">Wikipedia</a>:</p>
+<blockquote>
+<p>Viral load, also known as viral burden, is a numerical expression of the quantity of virus in a given volume of fluid, including biological and environmental specimens.</p>
+</blockquote>
+<p>In the case of COVID, viral load is often (but not always!) defined as the <strong>number of viral copies per milliliter in a nasal swab or saliva sample</strong>, and it&rsquo;s clear that this is proportional to the number of viral copies a person breathes out. I&rsquo;ll stick with this measure going forward, and will convert other reported viral loads into these units as needed.</p>
+<h2 id="dependence-on-viral-load">Dependence on Viral Load</h2>
+<p>Many of the ways that our simple model could be wrong make the viral load matter even more. For instance for <em>symptomatic</em> infection there seems to be a <a href="https://www.thelancet.com/journals/laninf/article/PIIS1473-3099(20)30985-3/fulltext">non-linear/thresholding effect</a>, where higher viral loads mean higher odds of symptoms:</p>
+<p><img src="../../images/covid_testing_timing.assets/Screen Shot 2021-09-06 at 11.11.45 AM.png" alt="Screen Shot 2021-09-06 at 11.11.45 AM" style="zoom:300%;display:block;margin-left:auto;margin-right:auto" /></p>
+<p>This figure shows the probability that someone COVID-positive (PCR) remains symptom-free as a function of time since their exposure (based on contact tracing) and the viral load of the person they were exposed to. So there&rsquo;s clearly a trend where people are less likely to develop symptoms if they&rsquo;re exposed to fewer viral copies.</p>
+<p>Whether or not there&rsquo;s an actual thresholding effect on infection, we do see that people who transmit COVID have viral loads <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0243597">1000 times higher than those who don&rsquo;t</a>, typically of order $10^9\mathrm{copies/mL}$,(though beware the small sample size and observational study design here). Other transmission studies confirm this trend, but differ on the details, for instance <a href="https://www.sciencedirect.com/science/article/pii/S1473309920309853">this one</a> finds a much smaller effect, though I&rsquo;m skeptical that they were really tracing an isolated outbreak given that the data are from March-April of 2020, which should weaken the observed effect size:</p>
+<p><img src="../../images/covid_testing_timing.assets/Screen Shot 2021-09-06 at 1.14.08 PM.png" alt="Screen Shot 2021-09-06 at 1.14.08 PM" style="zoom:300%;display:block;margin-left:auto;margin-right:auto" /></p>
+<p>This makes sense even in our very simple model: the people with the highest viral load shed the most, and so go on to infect the most other people. Even though it&rsquo;s not clear that there&rsquo;s an actual thresholding effect here, going forward I&rsquo;ll refer to &lsquo;thresholds for infection&rsquo; with the notion that for any given risk tolerance you can draw a threshold viral load below which you are not concerned.</p>
+<p>Unfortunately, the odds of transmission as a function of viral load seem quite uncertain, and vary a lot between studies. Transmission appears <a href="https://elifesciences.org/articles/63537">very unlikely</a> below $10^5\mathrm{copies/mL}$:</p>
+<p><img src="../../images/covid_testing_timing.assets/Screen Shot 2021-09-06 at 11.25.05 AM.png" alt="Screen Shot 2021-09-06 at 11.25.05 AM" style="zoom:300%;display:block;margin-left:auto;margin-right:auto" /></p>
+<p>Above that it depends a lot on which study you believe. By loads of $10^9\mathrm{copies/mL}$ it&rsquo;s clear that COVID transmits readily, and there&rsquo;s been lots of work between $10^5-10^9\mathrm{copies/mL}$ attempting to characterize relative risks, with the result that <a href="https://academic.oup.com/cid/advance-article/doi/10.1093/cid/ciab421/6273394">risk decreases with decreasing viral load</a>, though again different studies differ quite a bit on the details.</p>
+<p>My rough read here is that at $10^5\mathrm{copies/mL}$ transmission is very unlikely, at $10^7\mathrm{copies/mL}$ transmission is possible but based on the above figure perhaps 3x less likely than at typical &lsquo;peak infectiousness&rsquo; (viral loads of $10^{8+}\mathrm{copies/mL}$), and at higher viral loads transmission becomes quite likely.</p>
+<p>This suggests a relatively straightforward way to evaluate if someone is at risk of transmitting COVID to others: measure their viral load. The lower the better, and depending on your risk tolerance there will be some threshold viral load below which you stop caring about the risks. Moreover the lower the viral load the less likely any infection is to <a href="https://www.thelancet.com/journals/laninf/article/PIIS1473-3099(20)30985-3/fulltext">lead to symptoms</a>, which is also helpful.</p>
+<h2 id="test-sensitivity">Test Sensitivity</h2>
+<p>The tests available to the general population don&rsquo;t measure viral load, they just tell you &lsquo;positive&rsquo; or &lsquo;negative&rsquo;. Fortunately we have measurements on <a href="https://pubmed.ncbi.nlm.nih.gov/33479756/">how sensitive these tests are</a>:</p>
+<p><img src="../../images/covid_testing_timing.assets/Screen Shot 2021-09-06 at 11.44.15 AM.png" alt="Screen Shot 2021-09-06 at 11.44.15 AM" style="zoom:300%;display:block;margin-left:auto;margin-right:auto" /></p>
+<p>This shows the measured probability of a positive result for four different tests as a function of viral load. PCR is the most sensitive, with a 50% sensitivity at viral loads of $10^2\mathrm{copies/mL}$ and 90+% sensitivity at loads of $10^3\mathrm{copies/mL}$. Antigen tests are the next most-sensitive, with 50% sensitivity at loads of $10^5\mathrm{copies/mL}$ and around 80% at $10^6\mathrm{copies/mL}$. The other two tests (VeroE6TM and VeroE6) are two &lsquo;viral culture&rsquo; tests which (roughly speaking) expose human tissue to the sample in question and see whether or not any virus replicates in it.</p>
+<p>This makes it pretty clear that <strong>someone who tests negative on PCR is very unlikely to infect others around the time the sample is taken</strong>. PCR is sensitive to viral loads a thousand times smaller than any likely infection threshold, so barring questions of poor sample collection a negative PCR test really does mean a person is unlikely to infect others.</p>
+<p>Similarly, antigen tests look pretty good. They&rsquo;re 50% sensitive around the lowest thresholds in the literature for infection ($10^5\mathrm{copies/mL}$) and are around 80% sensitive at $10^6\mathrm{copies/mL}$, which is still <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0243597">much below typical measured viral loads</a> of those who spread COVID in contact tracing studies. Some antigen tests show <a href="https://www.bmj.com/content/374/bmj.n1676">even better sensitivity</a>, at 90+% by $10^5\mathrm{copies/mL}$:</p>
+<p><img src="../../images/covid_testing_timing.assets/F3.large-0945465.jpg" alt="F3.large" style="zoom:300%;display:block;margin-left:auto;margin-right:auto" /></p>
+<p>Other analyses of antigen tests find <a href="https://www.thelancet.com/journals/eclinm/article/PIIS2589-5370(21)00234-0/fulltext">similar sensitivity curves</a>, though reading some of them is a little challenging because they often measure viral load in &lsquo;Ct&rsquo;, which is an empirical measure that depends on the specific machine used to measure viral load. <a href="https://chs.asu.edu/diagnostics-commons/blog/how-do-we-use-quantitative-tests-quantitatively">ASU</a> has a nice example of calibration curves:</p>
+<p><img src="../../images/covid_testing_timing.assets/viral-load-graphic-2-cropped.png" alt="Viral load graph" style="zoom:300%;display:block;margin-left:auto;margin-right:auto" /></p>
+<p>Put another way, if someone tests negative on a rapid antigen test they very likely have a low viral load, most likely below $10^5\mathrm{copies/mL}$, which makes them very unlikely to infect others. And if they test negative on a PCR test the limits are even lower.</p>
+<p>The takeaway here is that <strong>a negative PCR test is extremely good evidence</strong> that a person will not transmit COVID. A <strong>negative antigen test is less certain but still quite good</strong> evidence.</p>
+<h2 id="timing">Timing</h2>
+<p>Note that none of this accounts for test <strong>timing</strong>. The test just tells you about whether you could infect others <strong>at the time the sample was collected</strong>. If the test takes days to come back negative you can&rsquo;t infer that you were safe the whole time!</p>
+<p>Consider the following sequence of events:</p>
+<ul>
+<li>You have an exposure on day 0 and are infected.</li>
+<li>You take a PCR test on day 3 and have a viral load of $10^1\mathrm{copies/mL}$. The test takes time to come back, so you carry on doing things.</li>
+<li>Over days 4 and 5 your viral load grows to $10^7\mathrm{copies/mL}$ and you infect someone else.</li>
+<li>On day 6 your PCR test comes back negative.</li>
+</ul>
+<p>In this scenario the PCR test is telling you that <strong>on day 3 you were unlikely to transmit</strong>, it&rsquo;s not telling you much at all about the later days.</p>
+<p>So an important question is: how long after a negative test is it safe to assume someone can&rsquo;t transmit the virus? It all depends on how quickly viral load can change. This is something that has been modelled and measured. Below are <a href="https://elifesciences.org/articles/63537">three example models</a> (B,C,D):</p>
+<p><img src="../../images/covid_testing_timing.assets/Screen Shot 2021-09-06 at 12.32.05 PM.png" alt="Screen Shot 2021-09-06 at 12.32.05 PM" style="zoom:300%;display:block;margin-left:auto;margin-right:auto" /></p>
+<p>And a <a href="https://www.science.org/doi/full/10.1126/science.abi5273">few more</a>:</p>
+<p><img src="../../images/covid_testing_timing.assets/373_abi5273_fa.jpeg" alt="373_abi5273_fa" style="zoom:300%;display:block;margin-left:auto;margin-right:auto" /></p>
+<p>Viral load rises rapidly in the beginning, peaks, and then falls as a person (hopefully) recovers. A negative test on the way &lsquo;down&rsquo; from the peak is safe for a long time: the person is recovering, the viral load will only get lower! But what the way &lsquo;up&rsquo; to the peak is another story. Viral load typically rose pre-Delta-variant by about <a href="https://www.science.org/doi/full/10.1126/science.abi5273">100x/day on the way up</a>.</p>
+<p>For the Delta variant things move somewhat faster, but there just isn&rsquo;t much good data on how much faster. The best estimate I came up with is to look at the time from first exposure to first positive PCR test (testing daily). This seems to have shrunk from ~6 days pre-Delta to ~4 days with Delta based on <a href="https://virological.org/t/viral-infection-and-transmission-in-a-large-well-traced-outbreak-caused-by-the-delta-sars-cov-2-variant/724">contact tracing of an outbreak in China</a>. Assuming exponential growth on the way &lsquo;up&rsquo; to the peak, that suggests that viral load can rise with Delta by as much as 1000x/day.</p>
+<p>Going back to the test sensitivity curves, and assuming the Delta variant, this means that a negative PCR test is good for at least a day longer than a negative antigen test, being sensitive to 1000x smaller viral loads. That gives:</p>
+<ul>
+<li>24 hours where the viral load is below almost all thresholds of safety ($10^5\mathrm{copies/mL}$)</li>
+<li>8 more hours (32 total) below $10^6\mathrm{copies/mL}$</li>
+<li>8 more hours (40 total) below $10^7\mathrm{copies/mL}$</li>
+</ul>
+<p>By contrast negative antigen tests don&rsquo;t provide a long safe window:</p>
+<ul>
+<li>8 hours where viral load is likely to be under $10^6\mathrm{copies/mL}$</li>
+<li>8 more hours (16 total) below $10^7\mathrm{copies/mL}$</li>
+</ul>
+<p>This all agrees pretty well with a (largely pre-Delta) study <a href="https://academic.oup.com/jid/advance-article/doi/10.1093/infdis/jiab337/6311835">comparing viral culture tests with PCR and antigen tests</a>, which found that you can expect PCR to turn positive about a day before antigen tests, and that both are highly sensitive (90+%) by the time viral cultures (VeroE6TM) turn positive, which they use as a proxy for  &lsquo;When is viral load high enough to cause infection?&rsquo; (though there are considerable uncertainties in that analogy).</p>
+<h2 id="takeaway">Takeaway</h2>
+<ul>
+<li>Negative PCR tests likely give at least a day, and more likely 32-40 hours, of safety against transmission.</li>
+<li>Negative antigen tests give more like 8-16 hours depending on how transmission varies with viral load.</li>
+<li>The safety window is from the time the sample was taken! A PCR test that takes 24 hours to come back isn&rsquo;t any better than a rapid antigen test. A PCR test that takes 48 hours to come back is strictly worse.</li>
+</ul>
+<p>So the mantra with rapid antigen tests should really be &lsquo;<strong>test early test often</strong>&rsquo;. They&rsquo;re a great way to limit exposure, and a negative test means a person is unlikely to transmit in the immediate future, but it seems like they really do need to be done frequently to be effective.</p>
+<p><em>Thanks to Katherine McDaniel and Chris Said for helpful comments.</em></p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fadamjermyn.com%2fposts%2fcovid_testing_timing%2f - COVID%20Testing%20-%20Sensitivity%20and%20Timelines by @AdamSJermyn"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/adamjermyn">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/AdamSJermyn">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+        
+	        <center><a class="cta" href="https://adamjermyn.com/index.xml">Subscribe</a></center>
+        
+    <p class="small">
+    
+       © Copyright 2022 Adam Jermyn
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://adamjermyn.com/js/jquery-3.3.1.min.js"></script>
+<script src="https://adamjermyn.com/js/main.js"></script>
+<script src="https://adamjermyn.com/js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>

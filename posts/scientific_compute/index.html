@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="author" content="Adam Jermyn">
+		<meta name="description" content="Site Description">
+		<meta name="generator" content="Hugo 0.92.2" />
+		<title>Classifying Scientific Compute Workflows &middot; Adam Jermyn</title>
+		<link rel="shortcut icon" href="https://adamjermyn.com/images/favicon.ico">
+		<link rel="stylesheet" href="https://adamjermyn.com/css/style.css">
+		<link rel="stylesheet" href="https://adamjermyn.com/css/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://adamjermyn.com/css/font-awesome.min.css">
+		
+
+		
+		<link href="https://adamjermyn.com/index.xml" rel="alternate" type="application/rss+xml" title="Adam Jermyn" />
+		
+
+		
+
+                
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-186473758-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+		
+                <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+
+        <a href='https://adamjermyn.com/'>About</a>
+	<a href='https://adamjermyn.com/posts'>Posts</a>
+	<a href='https://adamjermyn.com/tags'>Tags</a>
+        <a href='https://adamjermyn.com/software'>Software</a>
+        <a href='https://adamjermyn.com/workflow'>Workflow</a>
+
+	
+
+</nav>
+
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Classifying Scientific Compute Workflows
+                    </h1>
+                    <h2 class="headline">
+		    
+                     Dec 16, 2021 16:30 
+                    · 1466 words
+                    · 7 minute read
+                      <span class="tags">
+                      
+                      
+                          
+                              <a href="https://adamjermyn.com/tags/workflow">Workflow</a>
+                          
+                      
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                <section id="post-body">
+                    <p>Scientists use computers, and not just for typesetting. Lots of experimentation and discovery is done with computers, from <a href="https://www.colorado.edu/silc/models">modeling climate</a> to <a href="http://jdftx.org">predicting material properties</a> to <a href="https://docs.exoplanet.codes/en/latest/">discovering exoplanets</a>. Because computation is applied to such a broad range of questions, the ways it gets used are many and varied. This diversity of application means that tools developed and lessons learned in one domain of scientific compute workflow often don&rsquo;t generalize to very different domains. On the other hand, many lessons do generalize, but only within <em>classes</em> of problems, and ignoring this means reinventing the wheel.</p>
+<p>I think this means we need a language for talking about the different classes of scientific compute. This language would make it clear which lessons can be imported into any given domain, and from where. It would also provide a more nuanced way of talking about the kinds of resources scientific computing needs, rather than the coarse distinction between &lsquo;high-performance compute (HPC)&rsquo; and &lsquo;laptop&rsquo;.</p>
+<h1 id="scientific-method">Scientific Method</h1>
+<p>At a high level, the scientific method looks something like this:</p>
+<img src="../../images/scientific_compute.assets/science0.svg" alt="science" style="max-width:100%;max-height:100%;display:block;margin-left:auto;margin-right:auto" />
+<p>You start with some idea or question. You craft an experiment to test it. You then perform that experiment , get some results, and analyze them. At this stage either you&rsquo;ve learned all you needed to learn and can produce an output artifact (publication, blog post, etc.) or you&rsquo;ve learned that your initial idea wasn&rsquo;t quite right, or your experiment didn&rsquo;t really answer your question, so you refine my idea and craft a new experiment, looping until you&rsquo;ve learned something meaningful and useful.</p>
+<p><strong>Note that I&rsquo;m using the word &lsquo;experiment&rsquo; very broadly</strong>: an experiment here could be a physical experiment in the real world or a numerical simulation based on well-understood physical laws or could even be a particular attempt at modeling already-procured real-world data. The key idea unifying these rather disparate methods is that they provide feedback on the original idea which can be used to either evaluate or refine that idea.</p>
+<p>This is not the only way to do science. Science can involve lengthy periods of refining the initial idea without any feedback from experiment or simulation (e.g. in theoretical physics). Sometimes the resulting artifact is just the refined idea, in which case the job of testing the idea with external feedback falls on other scientists.</p>
+<p>This is the first classification I want to highlight: on the path from initial idea to output artifact does your science involve feedback from simulations/experiments/models, or does the whole path lie in the minds of you and your collaborators?</p>
+<img src="../../images/scientific_compute.assets/science1.svg" alt="science1" style="max-width:100%;max-height:100%;display:block;margin-left:auto;margin-right:auto" />
+<p>The workflows in pure-idea science are so far from the bulk of scientific computation that I&rsquo;m not going to deal with them here, even though they can still <a href="https://www.wolfram.com/mathematica/">benefit from computers</a>, so the rest of this piece will focus on those with feedback.</p>
+<h1 id="interactive-or-asynchronous">Interactive or Asynchronous</h1>
+<p>The feedback loop sounds simple, but that simplicity hides a lot of diversity. Some of the most important axes of variation are:</p>
+<ul>
+<li>How fast is the experiment? Does it finish in seconds? Minutes? Days? Months?</li>
+<li>Does your experiment run locally (e.g. on a laptop) or remotely (Cloud/HPC)? Can the output be analyzed locally, or does that need to be remote as well?</li>
+<li>How many times can you afford to run the feedback loop? Limits can come from computational cost or human patience, or from having limited external data and not wanting to <a href="https://en.wikipedia.org/wiki/Data_dredging">p-hack</a>.</li>
+</ul>
+<p>These three axes are closely correlated and get at a fundamentally human question: <strong>Is your workflow interactive?</strong> Experiments that run in seconds and happen locally and that you can run many times let you iterate fast and test new ideas as they form. This means that ideas don&rsquo;t need to be so carefully considered, and the emphasis is on exploring broadly rather than going deep on the output from any one experiment.</p>
+<p>Conversely, experiments that run in months are intrinsically asynchronous. You set them running and then go do other things. You don&rsquo;t get many shots at running them, so when they finish you spend lots of time analyzing the results, searching for meaning and understanding. Those lessons can take weeks to extract, and what you learned could make the next iteration of the loop look quite different from the last. These asynchronous workflows are usually also remote, and often involve too much output to analyze locally, which means you need a large toolbox to set up the experiment and wrangle and reduce the results.</p>
+<p>Note that even fast, local experiments look asynchronous if you&rsquo;re limited in how many times you can run them. If you hand me two measurements of ten rabbits to model I don&rsquo;t want to try five hundred different models en route to fitting that data, because I know the result will be overfit. Instead I might try fitting the data one way, then spend time thinking hard about what the residuals look like and what a better model might be.</p>
+<p>For simplicity I&rsquo;ll collapse these three axes onto one and ask: <strong>Is your experiment interactive or asynchronous?</strong> Asynchronous experiments tend to require <a href="https://github.com/adamjermyn/remote_experiments">heavier</a> <a href="https://sacred.readthedocs.io/en/stable/quickstart.html">tooling</a>, and you spend longer in the analysis and refinement steps, just because the human time costs of each iteration are high.</p>
+<img src="../../images/scientific_compute.assets/science2.svg" alt="science2" style="max-width:100%;max-height:100%;display:block;margin-left:auto;margin-right:auto" />
+<h1 id="breadth-of-outputs">Breadth of Outputs</h1>
+<p>The final dimension that I want to consider is:  Can your idea be evaluated with simple figure(s) of merit, or do you need to look at a broader (possibly unknown <em>a priori</em>) set of outputs?</p>
+<p>For instance in my work on <a href="https://arxiv.org/pdf/1709.03080.pdf">contracting tensor networks</a> I had two figures of merit: accuracy and speed. I knew this upfront, and generally didn&rsquo;t need to track anything else. In specific instances I would decide I needed additional outputs for e.g. debugging, but those tended to be limited and I usually knew which outputs mattered most before starting each experiment.</p>
+<p>In other projects it is much less clear what the important outputs are. For instance in <a href="https://arxiv.org/abs/2110.11356">this work</a> led by <a href="https://evanhanders.bitbucket.io">Evan Anders</a> we used 2D and 3D hydrodynamics simulations to study the boundaries between unstable convection zones and stable radiative layers in stars. In the first year or so of that project we usually didn&rsquo;t know what outputs we needed to look at, so Evan saved lots of different quantities and made lots of movies and plots from each simulation. After many iterations we eventually refined our question enough to ask: &ldquo;How far past the boundary of the unstable layer do we see convective motion?&rdquo; At that point Evan was able to conduct targeted experiments (<a href="https://arxiv.org/pdf/2110.11356.pdf">Figure 4</a>) sweeping through parameter space and just record a few numbers from each (<a href="https://arxiv.org/pdf/2110.11356.pdf">Figure 7</a>).</p>
+<p>Another way of labeling this distinction is: <strong>How exploratory is your science?</strong> Are you trying to optimize a well-defined target, or are you still figuring out what the relevant concepts are? This can change over the course of a project! Some ideas begin very exploratory, requiring a breadth of output and lots of analysis and refinement between iterations. Other ideas begin very focused, but along the way you discover that you weren&rsquo;t focused on the right thing, and need to broaden and explore. So this is very much a two-way street, but on each side of the street the tools and the work look different.</p>
+<p>In general the more exploratory the science the more outputs you save and the more your experiments will change from iteration to iteration. That&rsquo;s part of what makes exploratory science hard: you pivot quickly so you can&rsquo;t afford lots of specialized tooling, and a lot of the analysis ends up being done in one-off scripts.</p>
+<p>By contrast, the more focused and well-defined science tends to support more specialized tools for running experiments and analyzing results, because the underlying questions don&rsquo;t change much from iteration to iteration. This allows more focused projects to really pin down figures of merit, to carefully characterize cause and effect, and to produce reliable models/outputs/artifacts that later work can build on.</p>
+<img src="../../images/scientific_compute.assets/science3.svg" alt="science3" style="max-width:100%;max-height:100%;display:block;margin-left:auto;margin-right:auto" />
+<h1 id="takeaway">Takeaway</h1>
+<p>Computational experiments differ on two key axes:</p>
+<ul>
+<li>Interactive vs Asynchronous</li>
+<li>Exploratory vs Focused</li>
+</ul>
+<p>All four possible combinations require different workflows. In general:</p>
+<ul>
+<li>Interactive experiments need to be fast and local, and tend to be light on tooling.</li>
+<li>Asynchronous experiments tend to be slower, are often performed on remote machines, and rely on heavier tooling for analysis and data reduction.</li>
+<li>Exploratory experiments tend to change rapidly from iteration to iteration. These also benefit from saving lots of output, because you don&rsquo;t know what you&rsquo;ll need until after the experiment is done.</li>
+<li>Focused experiments tend to be relatively static between iterations. This lets them lean on more specialized tools/analysis pipelines, and perform more precision science.</li>
+</ul>
+<p>There are exceptions to all of these claims, but I think these are useful classifications because e.g. lessons and tooling from one focused, asynchronous experiment can readily apply to other focused, asynchronous experiments. And likewise for the other classes.</p>
+<p>(<em>Thanks to Evan Anders for helpful comments.</em>)</p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fadamjermyn.com%2fposts%2fscientific_compute%2f - Classifying%20Scientific%20Compute%20Workflows by @AdamSJermyn"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/adamjermyn">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/AdamSJermyn">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+        
+	        <center><a class="cta" href="https://adamjermyn.com/index.xml">Subscribe</a></center>
+        
+    <p class="small">
+    
+       © Copyright 2022 Adam Jermyn
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://adamjermyn.com/js/jquery-3.3.1.min.js"></script>
+<script src="https://adamjermyn.com/js/main.js"></script>
+<script src="https://adamjermyn.com/js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>

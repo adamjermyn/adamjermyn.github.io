@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="author" content="Adam Jermyn">
+		<meta name="description" content="Site Description">
+		<meta name="generator" content="Hugo 0.92.2" />
+		<title>What can a rapid test tell you? Omicron Edition &middot; Adam Jermyn</title>
+		<link rel="shortcut icon" href="https://adamjermyn.com/images/favicon.ico">
+		<link rel="stylesheet" href="https://adamjermyn.com/css/style.css">
+		<link rel="stylesheet" href="https://adamjermyn.com/css/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://adamjermyn.com/css/font-awesome.min.css">
+		
+
+		
+		<link href="https://adamjermyn.com/index.xml" rel="alternate" type="application/rss+xml" title="Adam Jermyn" />
+		
+
+		
+
+                
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-186473758-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+		
+                <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+
+        <a href='https://adamjermyn.com/'>About</a>
+	<a href='https://adamjermyn.com/posts'>Posts</a>
+	<a href='https://adamjermyn.com/tags'>Tags</a>
+        <a href='https://adamjermyn.com/software'>Software</a>
+        <a href='https://adamjermyn.com/workflow'>Workflow</a>
+
+	
+
+</nav>
+
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        What can a rapid test tell you? Omicron Edition
+                    </h1>
+                    <h2 class="headline">
+		    
+                     Dec 23, 2021 16:09 
+                    · 5947 words
+                    · 28 minute read
+                      <span class="tags">
+                      
+                      
+                          
+                              <a href="https://adamjermyn.com/tags/covid">COVID</a>
+                          
+                      
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                <section id="post-body">
+                    <p>(<em>This is not medical advice. Co-written with <a href="https://twitter.com/nschiefer">Nicholas Schiefer</a>. Thanks to Sylvia Hürlimann and Katherine McDaniel for helpful discussions and comments. Corrections welcome.</em>)</p>
+<p>This holiday season is also Omicron season. The Omicron variant dramatically increases COVID risk for basically everyone, especially with case counts exploding and doubling every two days in most northern areas (<a href="https://www1.nyc.gov/site/doh/covid/covid-19-data.page">New York</a>, Boston, <a href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1043680/technical-briefing-33.pdf">London</a>). Although Omicron seems to be less severe than other variants for most people, it&rsquo;s probably worth some effort to protect high-risk individuals, especially while case rates are so high. On the other hand, we’re nearly two years into the pandemic and it feels unreasonable to cancel everything outright.</p>
+<p>Thankfully, we have much better tools for managing COVID risk, including rapid antigen tests. Unfortunately, the way that most people use rapid tests is confused and not that effective. Used naively, rapid tests are <em>nearly useless</em>, especially against the fast-growing and fast-spreading Omicron variant. However we believe that with the right protocol, rapid tests can reduce the risk of catching or spreading COVID by perhaps a factor of 20.</p>
+<p>Our assessment is based on a relatively detailed physical model of how SARS-CoV-2 is transmitted, which allows us to learn more from the tests than a &ldquo;black box&rdquo; approach would. Our model is that SARS-CoV-2 spreads through the following process:</p>
+<ol>
+<li>The virus replicates in the respiratory tract of an infected person.</li>
+<li>As the infected person exhales, they expel respiratory droplets that are large enough to contain the virus and small enough to remain aloft for an extended period of time.</li>
+<li>These particles are then inhaled by other people.</li>
+</ol>
+<p>A key quantity in this process is the <em>viral load</em>: the amount of virus that&rsquo;s present on the aerosol-producing surfaces of the body. Viral loads are usually measured in <em>viral copies per milliliter</em>.</p>
+<p>Rapid tests are highly sensitive to the viral load of SARS-CoV-2 in the sample, so a negative rapid test provides a lot of evidence that there was not much virus in the sample. Therefore, proper use of rapid tests is primarily about collecting a sample that has enough virus, so that a negative test provides a lot of evidence that the person is not infectious.</p>
+<p>There are four central claims that are the backbone of our proposed testing protocol:</p>
+<ol>
+<li>The risk per unit time of a sick person infecting someone is proportional to the viral load in their respiratory tract. A person with a sufficiently low viral load in the aerosol-producing parts of their respiratory tract is unlikely to be infectious.</li>
+<li>We can collect a <em>proxy sample</em> for this viral load using combined throat and nasal swabs. While we can&rsquo;t measure viral loads in e.g., the bronchus directly, all of these viral loads track closely enough that a throat sample can be used to place reasonable bounds on the viral load in aerosol-producing regions.</li>
+<li>Antigen tests are highly sensitive to viral loads that are well below those that typically spread infection. In particular, when performed correctly they have a nearly 100% sensitivity at loads that pose significant risk of infection.</li>
+<li>Viral loads grow quickly-but-predictably, so that there is a period of time between tests during which you can be reasonably confident that a person is not infectious.</li>
+</ol>
+<p>We also note that our protocol has two significant qualifications:</p>
+<ol>
+<li>The information a test provides <a href="https://adamjermyn.com/posts/covid_testing_timing/">rapidly expires</a>: even with the most sensitive ones available on the market, a rapid test taken more than 16 hours ago tells you very little about how infectious someone could be right now. Therefore, serial testing is required for on-going risk reduction, even without new exposures.</li>
+<li>It relies on an unusual use of rapid tests, particularly in the use of throat swabs in additional to nasal swabs. For the Omicron variant especially it seems like a negative test from your nose tells you little about the infectiousness, so our protocol requires using tests in a manner that doesn&rsquo;t match the instructions or the FDA&rsquo;s recommendations.</li>
+</ol>
+<p>Taken together, we believe that you can catch the vast majority of possible infection risk with proper use of rapid antigen tests.</p>
+<h1 id="tldr-how-should-i-use-rapid-antigen-tests">tl;dr: How should I use rapid antigen tests?</h1>
+<p>If you don&rsquo;t want to read our reasoning, here is the protocol that we think reflects the best use of rapid antigen tests:</p>
+<ol>
+<li>Use high-sensitivity tests. Not all tests are created equal: there are tests on the market in the US that are essentially useless for bounding exposure (e.g. iHealth). In the US, we recommend BinaxNow and On/Go tests, though others we haven&rsquo;t looked at may be good too.</li>
+<li>When taking a test, swab your throat <em>and</em> nose, even if the test just wants a nasal swab. Here&rsquo;s a <a href="https://youtu.be/5qHTBlxfNes">video</a> on how (starting at 2:12). If swabbing your throat is too uncomfortable, cough into your mouth a few times and then take a <a href="https://www.medrxiv.org/content/10.1101/2021.12.22.21268246v1">saliva swab from your cheeks and tongue</a>. Having a throat/saliva swab is especially important for detecting infections with the Omicron variant. Throat swabs should probably be performed long after you last ate or drank: <a href="https://www.youtube.com/watch?v=5qHTBlxfNes">instructions from Public Health England</a> and <a href="https://twitter.com/michaelmina_lab/status/147547129898596352">American experts</a> suggest waiting at least 30 minutes, and it might be safer to wait longer.</li>
+<li>For one-off gatherings like dinner parties, test potentially infectious people as they arrive. Remember that most antigen tests are calibrated to work at room temperature, so the test itself should be performed indoors in cold climates. The swabs can be collected outdoors though.</li>
+<li>For repeat gatherings, like spending several days with family, employ <em>serial testing</em>: test infectious people frequently enough so that you catch them before they are likely to infect someone. With commonly available antigen tests, this interval is somewhere between 6 and 12 hours.</li>
+</ol>
+<p>Rapid tests are currently quite scarce in the United States; if you have a limited supply of tests, use them on the people who are most likely to be infectious. Focus on recent travelers, people who work in person, or those who have participated in riskier activities like indoor dining in the last 5 days. After 5 days since the most recent exposure, there’s not much point in repeating rapid tests because the person is unlikely to turn infectious.</p>
+<p>Test anyone with symptoms. For repeat gatherings test them more frequently than asymptomatic people. Symptoms like coughing and sneezing can enhance droplet/aerosol production, which increases exposure and reduces the time that tests bound infectivity.</p>
+<p>For the curious, we&rsquo;ve broken down the reasoning behind this method in detail.</p>
+<h1 id="breaking-down-our-claims-in-detail">Breaking down our claims in detail</h1>
+<p>The quality of our protocol depends on four key claims, outlined above. Here, we dive into each of those claims in detail.</p>
+<h2 id="the-risk-of-spreading-sars-cov-2-is-proportional-the-viral-load-in-the-respiratory-tract">The risk of spreading SARS-CoV-2 is proportional the viral load in the respiratory tract</h2>
+<p>At this point, it is <a href="https://www.cdc.gov/coronavirus/2019-ncov/faq.html#Spread">well-</a><a href="https://www.epa.gov/coronavirus/indoor-air-and-coronavirus-covid-19">established</a> that COVID-19 spreads primarily through aerosols: tiny droplets produced in the respiratory tract that are small enough to remain suspended in the air for extended periods of time.</p>
+<p>The details of how these particles are produced are complex. By far the best modeling we&rsquo;ve seen on this subject is by <a href="https://arxiv.org/abs/2103.01188v4">Pöhlker, et al (2021)</a>. The details could be the subject of an entire post; the high level picture is that respiratory aerosols are generated by various mechanical processes in the respiratory tract, such as vibration of the larynx and the opening and closing of membranes in the bronchioli. In all cases, the respiratory particles contain virus because <em>the fluid that generates them contains virus</em>. Therefore, the viral load in exhaled respiratory particles should be proportional to the viral load in the respiratory tract.</p>
+<p>Right away, this tells us that the most important part of making a rapid antigen test work is making sure that the viral load of the <em>sample</em> reflects (or leads) the viral load in aerosol-producing parts of the respiratory tract. Unfortunately, a lot of quantitative writing on this subject just uses the unqualified term &ldquo;viral load&rdquo;, when in reality viral loads vary widely even within the respiratory tract. For clarity, we will explicitly identify the location associated with each viral load that we quote (e.g., &ldquo;$10^9$ copies/mL (nasal sample)&rdquo; to indicate that it was sampled from the nose).</p>
+<h3 id="how-does-viral-load-relate-to-infectiousness">How does viral load relate to infectiousness?</h3>
+<p>We believe that infectiousness&mdash;as measured by risk of transmission per unit time&mdash;is roughly linear in viral load.</p>
+<p>Referring back to the physical model of infection, suppose that person A breathes out droplets containing viral copies. Person B then breathes some of those droplets in. For a while those droplets have a chance to infect cells in person B, but eventually these viral copies can be breathed out again or destroyed by processes in the body.</p>
+<p>Per unit time, each viral copy has a chance of encountering a cell, and per encounter it has some chance of infecting that cell. These are independent events: viral copies do not coordinate to maneuver around pre-infection, and as long as the viral load you&rsquo;re exposed to is small enough, any given infected cell is initially surrounded by healthy cells, which means there isn&rsquo;t much room for non-linear effects like interactions between infected cells. A typical droplet in the relevant size range contains <a href="https://www.nature.com/articles/s41598-020-78110-x">either zero or just one viral copy</a>, so the number of infection opportunities really is related to the number of inhaled droplets. Furthermore, this means that we won&rsquo;t see a lot of non-linear clustering effects, for instance, saturation in the number of viral copies needed to cause infection from a single droplet.</p>
+<p>If the risk is linear, what&rsquo;s the slope of the line? This contact tracing <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8123367/">study</a> found that most clusters of cases contained an individual with viral loads over $10^9$copies/mL (nasal+throat sample). Given that nasal and throat viral loads that high are <a href="https://www.thelancet.com/cms/10.1016/S1473-3099(21)00648-4/attachment/902121de-37a1-4f39-bd8b-239c656f6218/mmc1.pdf">relatively uncommon</a> among cases in general, this suggests that a decent amount of transmission is happening specifically from people with these ultra-high viral loads. To the extent that transmission happens at more typical peak viral loads, those are ~$2\times 10^8$<a href="https://www.thelancet.com/cms/10.1016/S1473-3099(21)00648-4/attachment/902121de-37a1-4f39-bd8b-239c656f6218/mmc1.pdf">copies/mL (nasal+throat sample)</a>.</p>
+<p>Another way to estimate the load at which typical transmissions happen is to note that the serial interval (the time from one infection in a chain to the next) is roughly <a href="https://www.thelancet.com/pdfs/journals/lancet/PIIS0140-6736(21)01697-4.pdf">three days for the Delta variant</a>, and that&rsquo;s roughly the same as the time from exposure that cases take to <a href="https://elifesciences.org/articles/63537">reach peak viral load</a>, at least pre-Delta, suggesting that most transmission events happen near the peak.
+This is also what we&rsquo;d expect in a linear model with exponentially growing viral load: most transmissions happen when the person has the highest viral load.</p>
+<p>All told, this suggests a model where most transmission risk is proportional to viral load, and because of that most transmission happens at or above $10^8$copies/mL (nasal+throat sample).</p>
+<p>This question has been studied in the past; most of those studies come up with broadly similar numbers. <a href="https://elifesciences.org/articles/63537">Goyal et al., (2021)</a> estimate that transmission of SARS-CoV-2 is unlikely below $10^8$ copies/mL (nasal sample). A contact tracing study by <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0243597">Kawasuji et al. (2021)</a> found that people who were known to transmit the virus had 1000-times higher nasopharyngeal viral loads than those who didn&rsquo;t but were still positive by rt-qPCR test.</p>
+<p>We also have some data from studies done on the original SARS virus from 2003. Analysis of the transmission of the SARS-CoV-1 in mice by <a href="https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.1539-6924.2010.01427.x">Watanabe, et al. (2010)</a> found that an exponential model in the dose matches the odds of infection. This fits with our linear risk model: the risk is a binomial process in the number of viral copies.</p>
+<h2 id="sampling-from-both-the-throat-and-nose-provides-a-good-proxy-for-the-infectious-viral-load">Sampling from both the throat and nose provides a good proxy for the infectious viral load</h2>
+<p>The droplets that spread SARS-CoV-2 can come from the nose, throat, or lungs (broadly construed). By taking a sample from both the throat and the nose we cover the first two. What about the lungs?</p>
+<p>The throat is connected to the lung via mucus flow, mediated by cilia. Our claim here is that viral load in the throat tracks that in the lung with a short enough delay that a throat sample is a good proxy for what&rsquo;s happening in the lung.</p>
+<p><a href="https://en.wikipedia.org/wiki/Cilium">Cilia</a> are little moving hair-like features found on the cells lining most of the respiratory tract. They beat in unison to push mucus along, generally up and out of the lungs, all the way to the throat, where it can be swallowed. This serves a key function, enabling mucus to first pick up contaminants before they reach sensitive parts of the lungs and then gradually clear that mucus out.</p>
+<p>Cilia are individually small, but they beat fast, allowing them to move mucus around on short time-scales. They can typically generate flow speeds of ~<a href="https://journals.physiology.org/doi/full/10.1152/ajplung.00485.2020">1cm/minute</a> (the linked study was for lambs, but <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5378048/">similar numbers</a> hold for humans). That means mucus in the bronchus can be carried up to the throat in under an hour. There isn&rsquo;t much viral growth in an hour (see below), so the lung should have similar viral load to what&rsquo;s measured in the throat.</p>
+<p>The main caveat here is that mucus gets diluted on its journey upwards, first by other mucus being generated in different parts of the lung and then by saliva in the throat. In <a href="https://www.cell.com/action/showPdf?pii=S2666-6758%2820%2930064-3">measurements</a> (Figure 1b) taken in the first seven days after symptom onset, the viral load in the Bronchoalveolar lavage Fluid (BALF) was 60x that in the throat, and that in sputum was ~8x that in the throat, illustrating the effect of this dilution.</p>
+<p>A key point which we think has been missed is that the mucus train carrying viral copies from the lungs upwards doesn&rsquo;t transport much to the nose. Most of the mucus gets swallowed at the throat, so mucus transport to the nose is limited. We likewise expect that e.g. viral particles from the lung reach the throat more easily than they reach the nose, just because the throat is closer to the lungs, so if droplet motion matters for setting throat/nose viral loads we again expect the throat to track the lung better than the nose. As a result, <strong>we think that throat viral load leads nasal viral load</strong> if the infection is mainly in the lung, which is why we recommend getting a throat swab in addition to a nasal swab.</p>
+<p>In particular, this means that we should&rsquo;ve been doing throat swabs all along to catch infections early. And there are indications of this in the literature, with e.g. saliva being a <a href="https://academic.oup.com/cid/article/72/9/e352/5882012">more sensitive</a> probe than nasal swabs (see also this <a href="https://www.medrxiv.org/content/10.1101/2021.12.22.21268246v1">Omicron paper</a>), particularly <a href="https://www.medrxiv.org/content/10.1101/2021.12.01.21267147v1.full.pdf">early in the infection</a></p>
+<h3 id="will-tests-designed-for-the-nose-still-work-for-the-throat">Will tests designed for the nose still work for the throat?</h3>
+<p>In thinking about recommending throat swabs, we worried about three questions:</p>
+<ol>
+<li>What if the viral load in saliva doesn&rsquo;t correspond as well to the viral load in droplets?</li>
+<li>What if the tests are somehow tuned for nasal swabs, so that saliva messes things up?</li>
+<li>What if the tests are less sensitive when the sample is in saliva?</li>
+</ol>
+<p>We&rsquo;ve already addressed the first of these. For the second, there are <a href="https://twitter.com/BJMcDC/status/1472445840824406021?s=20">cases</a> of <a href="https://twitter.com/intricatenick/status/1473834380992811008?s=20">tests</a>  where someone is negative on a nasal swab but positive on a throat swab, even for tests which instruct you to use a nasal swab. It&rsquo;s anecdotal, but suggests that saliva doesn&rsquo;t just break the tests. Moreover some tests, including many in the UK, default to saliva swabs. It appears that US tests don&rsquo;t use throat swabs in part <a href="https://twitter.com/michaelmina_lab/status/1472992860727390208?s=20">due to regulatory concerns</a>.</p>
+<p>Third, we have some limited data on saliva samples even for FDA-approved tests. For instance, the FDA filing for the Quanterix Simoa test&rsquo;s studied both saliva and nasal samples, finding that the &lsquo;Limit of Detection&rsquo; viral load was <a href="https://www.fda.gov/media/144929/download">within a factor of 2 for both sample types</a>. In a <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8251198/">direct comparison</a>, saliva and nasal samples gave similar sensitivity on eight different rapid tests.</p>
+<p>Putting these together, our tentative answers are, respectively:</p>
+<ol>
+<li>Throat samples likely provide a more sensitive probe of early viral load in the droplet-forming regions.</li>
+<li>The tests don&rsquo;t break with saliva/throat samples.</li>
+<li>The tests are similarly sensitive with saliva/throat samples.</li>
+</ol>
+<p>One word of warning: there are informal reports that certain foods and beverages might interfere with the throat swab results. <a href="https://www.youtube.com/watch?v=5qHTBlxfNes">Public Health England</a> and <a href="https://twitter.com/michaelmina_lab/status/147547129898596352">American experts</a> suggest waiting at least 30 minutes after eating or drinking before taking a test. Acidic foods or beverages like <a href="https://twitter.com/Superno_1111/status/1474459628171837445">coffee</a>, <a href="https://www.the-scientist.com/news-opinion/sodas-lemon-juice-cause-false-positives-in-rapid-covid-19-tests-68965?utm_content=173236848&amp;utm_medium=social&amp;utm_source=twitter&amp;hss_channel=tw-18198832">juice</a>, and <a href="https://twitter.com/michaelmina_lab/status/1462279721996201984">salad dressing</a> might increase the false positive rate.</p>
+<h2 id="what-about-omicron">What about Omicron?</h2>
+<p>The Omicron variant is weird. It&rsquo;s quite different from earlier variants, so it&rsquo;s worth asking if anything important has changed that invalidates or weakens our claims.</p>
+<h3 id="omicron-probably-spreads-more-quickly">Omicron probably spreads more quickly</h3>
+<p>Omicron spreads really fast. There are generally two ways to understand this: either it gets to be infectious faster (meaning a shorter generation time) or it&rsquo;s got to spread to more people per generation (higher $R_t$). It&rsquo;s looking like most of the effect is that the generation time is just really short, and probably close to <a href="https://www.eurosurveillance.org/content/10.2807/1560-7917.ES.2021.26.50.2101147">two days (!)</a>. This explains the dramatic increase in Omicron cases and is consistent with viral loads being <a href="(https://twitter.com/ScottGottliebMD/status/1474833027914207232)">no higher than earlier variants</a> and comparable infectiousness of each viral copy, as measured by <a href="https://doi.org/10.1101/2021.12.04.471200">binding affinity</a>.</p>
+<p>The problem with the faster-generation-time model is that we don&rsquo;t know where this extra speed comes from. Omicron viral loads don&rsquo;t seem to grow <a href="https://twitter.com/ScottGottliebMD/status/1474833027914207232">any faster than earlier variants</a>. This is something we&rsquo;re confused about. How can the spread can be so much faster if the viral load doesn&rsquo;t grow faster or peak much higher and if the individual viral copies aren&rsquo;t dramatically more infectious? We have a few speculative guesses (for example, Omicron viral copies might end up in the mucous faster than earlier variants), but nothing we&rsquo;re confident in. We&rsquo;ve thought about this puzzle a fair amount though, and haven&rsquo;t seen any signs of something that would break our protocol.</p>
+<h3 id="omicron-viral-loads-are-probably-higher-in-the-upper-respiratory-tract">Omicron viral loads are probably higher in the upper respiratory tract</h3>
+<p>Omicron appears to have <a href="https://twitter.com/ScottGottliebMD/status/1474833027914207232">moved</a> viral load to <a href="https://www.med.hku.hk/en/news/press/20211215-omicron-sars-cov-2-infection">higher areas in the lungs and bronchus</a>. This means that the concentration of viral load is actually closer to the throat, and so a throat sample should track the infectious viral load better for Omicron than it did for earlier variants.</p>
+<h3 id="omicron-probably-doesnt-produce-more-inoculated-aerosols">Omicron probably doesn&rsquo;t produce more inoculated aerosols</h3>
+<p>By far the best paper on the subject that we could find is <a href="https://arxiv.org/abs/2103.01188">Pöhlker, et al., 2021</a>. Seriously, it&rsquo;s amazing and clear, and we wish that there was more work like this!</p>
+<p>Droplets less than $0.1\mu\rm m$ are too small to carry a viral copy, based on <a href="https://elifesciences.org/articles/57309">measurements</a> of the size of the virus. Droplets larger than $5$ - $10\mu \rm m$ don&rsquo;t stay in the air long enough to matter unless you are very near someone; this is a direct consequence of the <a href="https://en.wikipedia.org/wiki/Einstein_relation_(kinetic_theory)">Stokes-Einstein equation</a>. Therefore, the aerosols that are the primary vector for spreading SARS-CoV-2 exist in a pretty narrow range of droplet sizes, as illustrated in Figure 19 of Pöllker, et al.:</p>
+<img src="../../images/testing_II.assets/Fg6et2J.png" alt="Fig19" style="max-width:50%;max-height:100%;display:block;margin-left:auto;margin-right:auto" />
+<p>There is a rich literature studying droplet size distributions, including the number of droplets produced during different activities and where those droplets come from. Figure 18b summarizes this literature, and identifies five distinct modes of production:</p>
+<img src="../../images/testing_II.assets/42hIe5g.png" alt="Fig18b" style="max-width:100%;max-height:100%;display:block;margin-left:auto;margin-right:auto" />
+<p>The five modes, grouped by the mechanism of particle production, are: (Table VI, Figure 8):</p>
+<ul>
+<li>Bronchiolar modes. Particles are produced by a mucus film bursting inside of the bronchioli and/or alveoli, known as the Bronchiolar Fluid Film Burst (BFFB) mechanism.
+<ul>
+<li>B1 - Bronchiolar Mode 1 (particle sizes $\approx 0.07\mu\rm m$)</li>
+<li>B2 - Bronchiolar Mode 2 (particle sizes $\approx 0.3\mu\rm m$)</li>
+</ul>
+</li>
+<li>Larynx and tracheal mode. Particles produced by Rayleigh-Taylor instability in the trachea and film bursting in the vocal folds.
+<ul>
+<li>LT - Larynx and Trachea (particle sizes $\approx 1\mu\rm m$)</li>
+</ul>
+</li>
+<li>Oral modes. Particles produced by movement of the mouth, lips, and tongue.
+<ul>
+<li>O1 - Oral Mode 1 (particle sizes $\approx 10\mu\rm m$)</li>
+<li>O2 - Oral Mode 2 (particle sizes $\approx 100\mu\rm m$)</li>
+</ul>
+</li>
+</ul>
+<p>Combining these, particles that are large enough to carry viral copies, but small enough to remain in the air for an extended period of time, must be produced by the B2 and LT modes. These give contributions when breathing (B2) and speaking (LT).  Figure 18f shows that the overall contribution of the two modes to aerosolized viral load pre-Omicron was similar, with maybe some advantage (~5x) to B2:</p>
+<img src="../../images/testing_II.assets/MBDS5pg.png" alt="Fig18f" style="max-width:100%;max-height:100%;display:block;margin-left:auto;margin-right:auto" />
+<p>A big difference between Omicron and earlier variants is that the viral load is 2-3x higher in the upper lung and a similar amount smaller in the distal lung (see <a href="https://twitter.com/ScottGottliebMD/status/1474833027914207232">Figure 3d</a>). This lowers the number of inoculated droplets Omicron produces in B2 and raises the number it produces in LT. The overall effect is that it likely produces a similar number of inoculated droplets as earlier variants did.</p>
+<p>Importantly for our protocol, the LT mode is produced near the throat. It seems highly unlikely therefore that the LT mode involves very different viral loads from those we measure in the throat. So if Omicron is producing more of its droplets via the LT mode than pre-Omicron variants did we should expect a throat swab to be <em>more sensitive</em> to infectiousness with Omicron than with previous variants.</p>
+<h3 id="omicron-probably-makes-throat-swabs-more-important">Omicron probably makes throat swabs more important</h3>
+<p>We&rsquo;ve said that we think the viral load in the nose rises later than the in the throat. We think we may have gotten away with nasal swabs with earlier variants because that lag may have been small compared with the generation time, and in particular in wild-type viral loads didn&rsquo;t rise as fast as they do now (so the same lag say, pre-Delta, produced a much smaller nose/throat differential).</p>
+<p>Now with Omicron, and possibly also with Delta, we do need to care because the generation time is very short and viral loads rise fast. So the earliest we can catch it is with a throat swab.</p>
+<p>In addition to all of this modeling and theory, there is <a href="https://twitter.com/BJMcDC/status/1472445840824406021?s=20">hard</a> <a href="https://twitter.com/intricatenick/status/1473834380992811008?s=20">evidence</a> that throat swabs detect Omicron earlier, mostly in the form of rapid tests turning positive for throat swabs up to several days before nasal swabs.</p>
+<h3 id="does-omicron-change-the-viral-load-tests-pick-up">Does Omicron change the viral load tests pick up?</h3>
+<p>Our best answer is no, or at least not much. The tests themselves <a href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1042688/RA_Technical_Briefing_32_DRAFT_17_December_2021_2021_12_17.pdf">still</a> <a href="https://twitter.com/michaelmina_lab/status/1474156551925604353?s=20">work</a> at similar viral loads, which is expected given that they target a piece of the virus that&rsquo;s relatively unchanged in Omicron. One study found tests were sensitive to somewhat greater sample viral loads with Omicron, at most <a href="https://www.medrxiv.org/content/10.1101/2021.12.18.21268018v1.full.pdf">~3x greater</a>, though they give their measurements in terms of PFU/mL (plaque-forming units). We know that Omicron forms <a href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1043652/S1454_Omicron_report_20.12_Imperial.pdf">smaller plaques</a>, so we&rsquo;re not sure whether the sensitivity in terms of viral copies has gone down, or that the plaques are smaller, so it takes more plaques to equal a similar viral load.</p>
+<h2 id="antigen-tests-are-sensitive-to-sample-viral-loads-below-those-that-typically-cause-infection">Antigen tests are sensitive to sample viral loads below those that typically cause infection</h2>
+<p>This claim has two parts: because the risk of infection is linear in viral load over many orders of magnitude, there is a range of viral loads that are (1) unlikely to cause viral transmission and (2) detectable by some antigen tests. If this range is usefully large, as we believe, then antigen tests can give us confidence that a person won&rsquo;t infect others for a period of time after a negative test result.</p>
+<h3 id="what-sample-viral-loads-can-a-rapid-antigen-test-detect">What sample viral loads can a rapid antigen test detect?</h3>
+<p>Rapid tests typically have a threshold viral load. Above that threshold their sensitivities are nearly 100%, and below it they approach 0%. These thresholds can be wildly different, and the lower the threshold the more you can bound the risk of transmission and the longer you can go between tests. So picking a low-threshold test matters!</p>
+<p>You can find a list of FDA emergency use authorized tests <a href="https://www.fda.gov/medical-devices/coronavirus-disease-2019-covid-19-emergency-use-authorizations-medical-devices/in-vitro-diagnostics-euas-antigen-diagnostic-tests-sars-cov-2">here</a>. Threshold data is listed in the document labeled &lsquo;IFU&rsquo; (Instructions For Use) and is given as an &lsquo;LoD&rsquo; (Limit of Detection) figure in units of &lsquo;TCID50/mL&rsquo;. This is a rather arcane unit, but is related to the sample viral load needed to kill half of the cells in a culture. We generally use a TCID50 of ~<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7314198/pdf/ciaa638.pdf">2000copies/mL</a> (sample) in our calculations, but estimates of this vary by a factor of a few in each direction. We found the <a href="https://www.beiresources.org/Catalog/antigen/NR-52286.aspx">BEI Reagent certificates of analysis</a>, which list both sample TCID50 and copies/mL, to be a useful reference for interpreting the limits of detection.</p>
+<p>Here are some concrete numbers we&rsquo;ve found for some antigen tests from different countries:</p>
+<ul>
+<li>(US) BinaxNow shows 100% sensitivity down to ~$10^6$copies/mL (sample) in <a href="https://journals.asm.org/doi/epdf/10.1128/JCM.02880-20">one study</a> and $2\times 10^5$copies/mL (sample) in <a href="https://journals.asm.org/doi/epdf/10.1128/JCM.02880-20">another</a>.</li>
+<li>(US) <a href="https://www.fda.gov/media/144668/download">QuickVue</a>, <a href="https://assets.website-files.com/60be1a26622a3aabb72751b8/60be3f64d8d265e0aab33a52_EUA202625-S004-ABI-CareStart-COVID-19-Ag-Final-IFU-QRI_20210428.pdf">CareStart</a>, and On/Go (repackaged CareStart) are all good down to around $2\times 10^6$copies/mL (sample).</li>
+<li>(Germany) Boson Biotech’s test is good down to ~$10^5$<a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=&amp;ved=2ahUKEwjWgoe__vr0AhVNUt8KHZppDREQFnoECBwQAQ&amp;url=https%3A%2F%2Fwww.mdpi.com%2F2076-2607%2F9%2F9%2F1967%2Fpdf&amp;usg=AOvVaw1XusKAlSmB02iXP8OYbMn5">copies/mL (sample)</a>.</li>
+<li>(UK) Each of Acon Flowflex, Innova Biotime, Orientgene, SureScreen Professional, and SureScreen Self are sensitive down to <a href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1042688/RA_Technical_Briefing_32_DRAFT_17_December_2021_2021_12_17.pdf">30,000 copies/mL (sample)</a>. These numbers are so good we&rsquo;re a little worried we&rsquo;re misinterpreting them. The table calls it &lsquo;viral copy number&rsquo; but the text refers to these as &lsquo;viral copies per mL&rsquo;. We&rsquo;ve assumed the latter is what is meant, but clarification here would be helpful!</li>
+</ul>
+<p>Note that most test evaluation protocols involve preparing an artificial sample, putting some of it on a swab, and using the test as if that swab came from a person. This is good: it means the sensitivities account for effects like dilution by the test solution.</p>
+<h2 id="viral-loads-grow-with-time-in-a-predictable-way">Viral loads grow with time in a predictable way</h2>
+<p>SARS-CoV-2 viral loads grow extremely fast. For instance Figure 2 in <a href="https://www.thelancet.com/action/showPdf?pii=S1473-3099%2821%2900648-4">Singanayagam, Hakki, Dunning, et al. (2021)</a> shows growth of just over 100x/day for the first three days, before leveling off at $10^8$ copies/mL (nasal+throat sample). In contact tracing studies, growth rates of <a href="https://www.science.org/doi/10.1126/science.abi5273">100x</a>-<a href="https://www.thelancet.com/journals/laninf/article/PIIS1473-3099(21)00648-4/fulltext">1000x</a> per day are pretty typical, with more recent variants like Delta growing faster and earlier variants growing slower.</p>
+<p>In experiments Omicron shows <a href="https://twitter.com/ScottGottliebMD/status/1474833027914207232">pretty similar growth rates</a> to Delta, with some <a href="https://www.gov.uk/government/publications/imperial-college-london-omicron-vs-delta-replication-19-december-2021/imperial-college-london-omicron-vs-delta-replication-19-december-2021">variability</a> between different kinds of tissue. Given this, we&rsquo;re going to stick with the 1000x/day figure. Assuming constant growth rates, this is equivalent to 10x per 8 hours, which seems like a reasonable estimate.</p>
+<h3 id="how-much-risk-reduction-can-we-get-from-rapid-testing">How much risk reduction can we get from rapid testing?</h3>
+<p>Say you take a test that&rsquo;s sensitive to a viral load of $10^6$copies/mL (sample) and it comes back negative. This might mean you aren&rsquo;t infected, or it might mean you are infected but just aren&rsquo;t very infectious. How much less infectious are you? In the linear model, roughly 200x less than at peak viral load.</p>
+<p>Tools like <a href="https://www.microcovid.org">microCOVID</a> compute risk assuming that people who test positive transmit COVID at a certain rate under certain conditions. We&rsquo;d like to be able to express our risk reductions in terms that are compatible with microCOVID estimates.</p>
+<p>People can be near peak load for a few days, we think around two days. microCOVID assumes that the infecious period is <a href="https://www.microcovid.org/paper/7-basic-method">7 days</a>, so for our numbers below we&rsquo;ll assume that the transmission risk used by microCOVID is $7/2=3.5$ times lower than the risk at peak viral load. We&rsquo;ll round that to four times lower to be conservative, and so we&rsquo;ll say that the viral load to use in comparing with microCOVID risks is $5\times 10^7$copies/mL (nose+throat sample). Then, in the example above, a negative test bounds the transmission risk at $(5 \times 10^7) / 10^6 = 50$ times lower than the microCOVID figure for interacting with someone who has COVID.</p>
+<p>This all assumes that a test has perfect sensitivity to viral load at $10^6$ copies/mL (sample). At some sensitivity $p$, and some ideal risk reduction <em>given perfect sensitivity</em> $r$, the actual risk reduction is
+$$
+r' = p r + (1-p)
+$$
+Intuitively, this is saying that either the test correctly reported a negative, in which case you get your risk reduction $r$, or else it reported a false negative and you get no risk reduction. Without knowing which happened, you get the true risk reduction by taking an expected value over the two possibilities.
+So for instance if the tests are 99% sensitive and the ideal risk reduction is 0.02 (50x) then the real risk reduction is
+$$
+r' = 0.02\times 0.99 + 0.01 = 0.0298
+$$
+In general when the ideal risk reduction is large compared with the false negative rate the false negative rate places a limit on the actual risk reduction we can get ($r' \approx 1-p$). And when the ideal risk reduction is small compared with the false negative rate then it&rsquo;s the risk reduction that matters ($r' \approx r$), not the false negative rate.</p>
+<p>While the tests are reported to be 100% sensitive above a threshold sample viral load, the sensitivity is typically <a href="https://www.bmj.com/content/374/bmj.n1676">only studied</a> with $N \sim 100$ samples, so it&rsquo;s hard to call the sensitivity better than 99% with the information available. Moreover even if the <em>test</em> is extremely sensitive, the tests only work if they&rsquo;re stored correctly, if the samples are collected correctly, and if the test is conducted correctly. There&rsquo;s a possibility in all of those steps for human error, and this could well bound the risk reduction you get from seeing a negative test.</p>
+<p>Given all of this, we tentatively assign a ~1% chance of false negatives even at high viral loads assuming that everyone involved is trying to be very careful. Going through the above math, it&rsquo;s a good approximation to say that if your calculated risk reduction is less than 100x then you can ignore the false negative rate, and if your risk reduction is more than 100x you should treat the true risk reduction as only 100x.</p>
+<p>All of that said, we&rsquo;re pretty uncertain about that 1% number. We came up with it by looking at the sample sizes usually used to determine sensitivity and by thinking holistically about the steps involved in correctly performing a test, so take it with a grain of salt. We&rsquo;d argue that sensitivity including human error is definitively at least 95% at high viral loads, and unlikely to be better than 99.9%. Between those though we don&rsquo;t have strong views or evidence.</p>
+<h3 id="how-long-is-the-information-from-a-rapid-test-good-for">How long is the information from a rapid test good for?</h3>
+<p>A rapid test can give good bounds on your viral load <em>at the moment when the sample was collected</em>. If you&rsquo;re infected, every eight hours your viral load goes up by a factor of 10, so in the linear model the risk that you transmit the infection also rises by a factor of 10.</p>
+<p>Putting this together with the previous section, if we have a test with $p$ sensitivity at a threshold of $T$ viral copies/mL (sample), then the relative risk after $h$ hours is
+$$
+r' = \left(\frac{T \times 10^{h / 8}}{5 \times 10^7}\right) \times p + (1 - p)
+$$
+For the hypothetical test above, which we estimate to have a sensitivity of 99% to $10^6$ copies/mL (sample) with clinical-quality use, we can reduce the risk of transmission by roughly:</p>
+<ul>
+<li>0.03x immediately</li>
+<li>0.07x for 4 hours.</li>
+<li>0.21x for 8 hours.</li>
+<li>0.64x for 12 hours.</li>
+</ul>
+<p>Notice that if we ignored the false negative rate we get almost the same numbers except for the first one:</p>
+<ul>
+<li>0.02x immediately</li>
+<li>0.06x for 4 hours.</li>
+<li>0.20x for 8 hours.</li>
+<li>0.63x for 12 hours.</li>
+</ul>
+<p>A good approximation then is that the false negative rate places a lower bound on $r'$, but doesn&rsquo;t significantly modify risk reductions with $r' &gt; 1-p$.</p>
+<p>Since our relative risk scales linearly with the threshold we use for sensitivity, we can just scale these  up/down with the sensitivity of your test. So for instance for the tests we mentioned at the start:</p>
+<ul>
+<li>Boson Biotech: 0.02x for 6 hours, 0.1x reduction for 14 hours.</li>
+<li>BinaxNow: 0.03-0.1x reduction for 6 hours, 0.1-0.3 reduction for 10 hours.</li>
+<li>QuickVue, CareStart, On/Go: 0.1x reduction for 3 hours, 0.3x reduction for 7 hours.</li>
+</ul>
+<p>Here BinaxNow has a range of reductions because of the different reported sensitivities.</p>
+<p>And just for comparison, PCR is often sensitive to viral loads as low as $10^2$copies/mL, so <strong>from the time the sample was taken</strong> you get reductions of:</p>
+<ul>
+<li>0.01x for 6 hours</li>
+<li>0.01x for 14 hours</li>
+<li>0.01x for 22 hours</li>
+<li>0.01x for 30 hours</li>
+<li>0.03x for 38 hours</li>
+<li>0.3x for 46 hours</li>
+</ul>
+<p>where we&rsquo;ve baked in a 1% false negative rate because, just like with rapid tests, there is non-trivial chance for human error (e.g. sample collection, processing, labeling, etc.).</p>
+<p>Notice that if the PCR test takes two days to come back then it was essentially worthless for bounding exposures! So by all means take PCR tests, but don&rsquo;t rely on them for preventing exposure unless you can get a fast (same- or next-day) turnaround.</p>
+<h1 id="where-do-we-disagree-with-other-analyses">Where do we disagree with other analyses?</h1>
+<p>A crux between our model and many <a href="https://www.lesswrong.com/posts/cEohkb9mqbc3JwSLW/how-much-should-you-update-on-a-covid-test-result">previous analyses</a> is that we adopt an explicit model for relating viral load to transmission, and we relate this to the viral loads that tests are sensitive to, rather than turning the overall test sensitivity figures into Bayes factors. On the one hand this gives us the ability to make stronger statements, but at the cost that if our underlying model is wrong what we built on top of it is wrong as well.</p>
+<p>We understand the appeal of taking the black box/outside view approach! It&rsquo;s more robust and epistemically cautious in many ways, and is much quicker to do. On the flip side, it doesn&rsquo;t tell you nearly as much, and COVID throws enough curveballs our way that we think there&rsquo;s an advantage to the inside view here, even though it&rsquo;s meant spending a lot of time reading and thinking and talking to get even this far in our understanding of transmission and tests (we originally hoped to have this post out before Christmas&hellip;).</p>
+<p>Compared to many studies, a further crux is that we argued that risk is linear in viral load. This is extremely important to our model, and seems to be quite rare in the literature, where models tend to be strongly nonlinear. In particular, it&rsquo;s common to assume that there is a <em>threshold</em> viral load below which infection is impossible and above which it happens with either uniform or <a href="https://elifesciences.org/articles/63537#s4">nonlinearly-varying odds</a>. These thresholds are often placed at viral loads we think are totally insignificant (e.g. $10^5$<a href="https://www.bmj.com/content/374/bmj.n1676">copies/mL</a> (sample)).</p>
+<p>We think our physical picture strongly motivates using a linear model. Moreover it matches the experimental data we&rsquo;ve been able to find (<a href="https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.1539-6924.2010.01427.x">Watanabe, et al. (2010)</a>). We&rsquo;ve looked and haven&rsquo;t found convincing arguments against this, but we want to highlight this because the whole argument depends on it and it seems under-studied.</p>
+<h2 id="places-you-might-disagree-with-us">Places you might disagree with us</h2>
+<p>In the interest of transparency, here are some specific places where we felt that the body of evidence was limited. We tried to make the model clear enough that you can substitute your own numbers if you disagree with them.</p>
+<ol>
+<li>We <a href="https://www.thelancet.com/cms/10.1016/S1473-3099(21)00648-4/attachment/902121de-37a1-4f39-bd8b-239c656f6218/mmc1.pdf">estimated peak viral load</a> in a typical case as $2\times 10^8$samples/mL (nasal+throat sample).</li>
+<li>What is TCID50 in copies/mL? This number varies by ~30x between the lowest and <a href="https://www.beiresources.org/Catalog/antigen/NR-52286.aspx">highest</a> estimates we&rsquo;ve seen, and we took a value of <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7314198/pdf/ciaa638.pdf">2000copies/mL</a> (sample) in the middle of the range. This matters for assessing test sensitivity using FDA IFU&rsquo;s.</li>
+<li>How fast does viral load grow? We used 1000x/day here, but we&rsquo;ve seen numbers as low as <a href="https://www.thelancet.com/action/showPdf?pii=S1473-3099%2821%2900648-4">100x/day</a>, as high as <a href="https://www.thelancet.com/journals/laninf/article/PIIS1473-3099(21)00648-4/fulltext">2000x/day</a> (for Alpha), and more typically <a href="https://www.thelancet.com/journals/laninf/article/PIIS1473-3099(21)00648-4/fulltext">500-1000x/day</a> for Delta.</li>
+<li>What is the false negative rate of rapid tests at high viral load (accounting for human error)? We said 1%, and think it&rsquo;s likely between 95% and 99.9%, but we don&rsquo;t have a strong argument to narrow this down.</li>
+<li>We took the microCOVID risks to correspond to a viral load of 25% of peak, based on an argument about how many days the load stays near peak versus how many days people test positive. We&rsquo;d be surprised if this adjustment should be as low as 10%, or as high as 50%, but there is some wiggle room here.</li>
+</ol>
+<h2 id="changelog">Changelog</h2>
+<p>1/4/22: Corrected &lsquo;false positive&rsquo; to &lsquo;false negative&rsquo;.</p>
+<p>1/9/22: Added more explanation of how our analysis relates to the risks from microCOVID.</p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fadamjermyn.com%2fposts%2ftesting_ii%2f - What%20can%20a%20rapid%20test%20tell%20you%3f%20Omicron%20Edition by @AdamSJermyn"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/adamjermyn">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/AdamSJermyn">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+        
+	        <center><a class="cta" href="https://adamjermyn.com/index.xml">Subscribe</a></center>
+        
+    <p class="small">
+    
+       © Copyright 2022 Adam Jermyn
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://adamjermyn.com/js/jquery-3.3.1.min.js"></script>
+<script src="https://adamjermyn.com/js/main.js"></script>
+<script src="https://adamjermyn.com/js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>

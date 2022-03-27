@@ -6,7 +6,7 @@
     <description>Recent content in About on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 14 Mar 2022 14:27:25 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 27 Mar 2022 17:15:37 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Notes</title>
       <link>https://adamjermyn.com/workflow/notes/</link>
@@ -36,6 +36,16 @@ I write ideas in Markdown notes with one top-level header per idea. To decide wh
       
       <guid>https://adamjermyn.com/workflow/spacedrepetition/</guid>
       <description>Spaced Repetition Spaced repetition is a technique for remembering information over long time periods. It takes advantage of the empirical observation that the time it takes to forget a fact is proportional to the time that fact is known. This suggests that the best strategy to remember something indefinitely is to review facts with ever-larger (geometrically increasing) gaps between reviews. Following that strategy, a finite number of reviews is needed to remember something for the rest of your life, and that number is small enough that the study time needed to remember a fact indefinitely is about 5 minutes, so long as the studying happens in this spaced-out way.</description>
+    </item>
+    
+    <item>
+      <title>Progressive Consumption Tax</title>
+      <link>https://adamjermyn.com/posts/progressive_tax/</link>
+      <pubDate>Sun, 27 Mar 2022 17:15:37 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/progressive_tax/</guid>
+      <description>Taxes create incentives. When the government tax an activity, society does less of it. Tax alcohol, people drink less. Tax smoking, people smoke less. Tax income, people work less. Tax investment, people invest less. I&amp;rsquo;m going to take this as given for now, even though there are many caveats on all of these statements.
+This suggests a simple principle for crafting a tax code: tax the things we want less of, and don&amp;rsquo;t tax the things we want more of.</description>
     </item>
     
     <item>

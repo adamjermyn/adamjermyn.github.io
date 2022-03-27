@@ -8,7 +8,7 @@
 		<meta name="author" content="Adam Jermyn">
 		<meta name="description" content="Site Description">
 		<meta name="generator" content="Hugo 0.92.2" />
-		<title>Prioritization &middot; Adam Jermyn</title>
+		<title>Taxes &middot; Adam Jermyn</title>
 		<link rel="shortcut icon" href="https://adamjermyn.com/images/favicon.ico">
 		<link rel="stylesheet" href="https://adamjermyn.com/css/style.css">
 		<link rel="stylesheet" href="https://adamjermyn.com/css/highlight.css">
@@ -63,8 +63,8 @@ if (!doNotTrack) {
 
 	</head>
 
-    <body>
-       <nav class="main-nav">
+	<body>
+	<nav class="main-nav">
 	
 
         <a href='https://adamjermyn.com/'>About</a>
@@ -77,61 +77,36 @@ if (!doNotTrack) {
 
 </nav>
 
-        <section id="wrapper" class="post">
-            <article>
-                <header>
-                    <h1>
-                        Prioritization
-                    </h1>
-                    <h2 class="headline">
-		    
-                    
-                    · 267 words
-                    · 2 minute read
-                      <span class="tags">
-                      
-                      </span>
-                    </h2>
-                </header>
-                
-                <section id="post-body">
-                    <h2 id="prioritization">Prioritization</h2>
-<p>Picking the right ideas to work on is <strong>important</strong>.</p>
-<p>I write ideas in Markdown notes with one top-level header per idea. To decide what to work on, I use a <a href="https://github.com/adamjermyn/PriorMD">python script</a> which asks me to compare ideas to one another. The comparison questions are:</p>
-<ol>
-<li>If both ideas work, what is their relative impact?</li>
-<li>What are the relative odds of the ideas working?</li>
-<li>How long will each idea take to implement? (in relative terms)</li>
-</ol>
-<p>The answers to these questions then give the ratio of the expected value (utility) per unit time:
-$$
-\mathrm{Score} = \frac{\mathbb{E}[U_1 / t_1]}{\mathbb{E}[U_2 / t_2]}
-$$
-Taking the log of both sides produces a series of linear relations between the expected value per unit time for each idea. The script I wrote performs a least squares solve on those relations to produce a (relative) score for each idea. It then outputs a list of ideas ranked by their score.</p>
-<p>When I started doing this I was surprised by how much different ideas vary in expected value. On any given day the difference between the best idea I have and the median idea might be an order of magnitude. Over longer periods the range of idea quality is maybe a factor of a thousand. That reinforces the idea that prioritization is important.</p>
-<p>For me the value in doing this is not in the precise scores or formulas, but in being forced to make an honest estimate of how much each project I take on is aligned with my goals, how likely it is to succeed, and how big a time commitment it is.</p>
-
-                </section>
-            </article>
-
+	<div class="profile">
+    <section id="wrapper">
+        <header id="header">
+            <a href='https://adamjermyn.com/'>
+                <img id="avatar" class="2x" src="https://adamjermyn.com/images/avatar.png"/>
+            </a>
+            <h1>Adam Jermyn</h1>
             
-                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fadamjermyn.com%2fworkflow%2fprioritization%2f - Prioritization by @AdamSJermyn"><span class="icon-twitter"> tweet</span></a>
+        </header>
+    </section>
+</div>
 
-<a class="facebook" href="#" onclick="
-    window.open(
-      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
-      'facebook-share-dialog',
-      'width=626,height=436');
-    return false;"><span class="icon-facebook-rect"> Share</span>
-</a>
 
-            
-
-            
-
-            
-
-            <footer id="footer">
+	<section id="wrapper" class="home">
+		
+		<div class="archive">
+			<h3>2022</h3>
+			<ul>
+					
+					<div class="post-item">
+						<div class="post-time">Mar 27</div>
+						<a href="https://adamjermyn.com/posts/progressive_tax/" class="post-link">
+							Progressive Consumption Tax
+						</a>
+					</div>
+					
+			</ul>
+		</div>
+		
+		<footer id="footer">
     
         <div id="social">
 
@@ -163,9 +138,12 @@ Taking the log of both sides produces a series of linear relations between the e
     </p>
 </footer>
 
-        </section>
+	</section>
 
-        <script src="https://adamjermyn.com/js/jquery-3.3.1.min.js"></script>
+	<div class="dd">
+	</div>
+
+	<script src="https://adamjermyn.com/js/jquery-3.3.1.min.js"></script>
 <script src="https://adamjermyn.com/js/main.js"></script>
 <script src="https://adamjermyn.com/js/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
@@ -176,5 +154,5 @@ Taking the log of both sides produces a series of linear relations between the e
 
 
 
-    </body>
+	</body>
 </html>

@@ -6,7 +6,7 @@
     <description>Recent content in About on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 11 Apr 2022 14:33:01 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 11 Apr 2022 17:06:39 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Notes</title>
       <link>https://adamjermyn.com/workflow/notes/</link>
@@ -36,6 +36,16 @@ I write ideas in Markdown notes with one top-level header per idea. To decide wh
       
       <guid>https://adamjermyn.com/workflow/spacedrepetition/</guid>
       <description>Spaced Repetition Spaced repetition is a technique for remembering information over long time periods. It takes advantage of the empirical observation that the time it takes to forget a fact is proportional to the time that fact is known. This suggests that the best strategy to remember something indefinitely is to review facts with ever-larger (geometrically increasing) gaps between reviews. Following that strategy, a finite number of reviews is needed to remember something for the rest of your life, and that number is small enough that the study time needed to remember a fact indefinitely is about 5 minutes, so long as the studying happens in this spaced-out way.</description>
+    </item>
+    
+    <item>
+      <title>Working Notes - Learning PyTorch - Day 1</title>
+      <link>https://adamjermyn.com/posts/ml_1/</link>
+      <pubDate>Mon, 11 Apr 2022 17:06:39 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/ml_1/</guid>
+      <description>Summary  Covered boilerplate for getting started, tensors, gradients. Poked in some detail at how gradients work. Played with linear regression, nonlinear regression, both with gradient descent. Built an MNIST classifier following a PyTorch tutorial. Experimented with the shape and size of the NN. Got PyTorch running on a machine with a GPU.  Boilerplate Import:
+import torch Need to use a special float type for the elements of tensors, and need to know which device the compute graph will run on:</description>
     </item>
     
     <item>

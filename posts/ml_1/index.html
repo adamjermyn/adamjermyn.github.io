@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="author" content="Adam Jermyn">
+		<meta name="description" content="Site Description">
+		<meta name="generator" content="Hugo 0.92.2" />
+		<title>Working Notes - Learning PyTorch - Day 1 &middot; Adam Jermyn</title>
+		<link rel="shortcut icon" href="https://adamjermyn.com/images/favicon.ico">
+		<link rel="stylesheet" href="https://adamjermyn.com/css/style.css">
+		<link rel="stylesheet" href="https://adamjermyn.com/css/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://adamjermyn.com/css/font-awesome.min.css">
+		
+
+		
+		<link href="https://adamjermyn.com/index.xml" rel="alternate" type="application/rss+xml" title="Adam Jermyn" />
+		
+
+		
+
+                
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-186473758-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+		
+                <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+
+        <a href='https://adamjermyn.com/'>About</a>
+	<a href='https://adamjermyn.com/posts'>Posts</a>
+	<a href='https://adamjermyn.com/tags'>Tags</a>
+        <a href='https://adamjermyn.com/software'>Software</a>
+        <a href='https://adamjermyn.com/workflow'>Workflow</a>
+
+	
+
+</nav>
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Working Notes - Learning PyTorch - Day 1
+                    </h1>
+                    <h2 class="headline">
+		    
+                     Apr 11, 2022 17:06 
+                    · 2459 words
+                    · 12 minute read
+                      <span class="tags">
+                      
+                      
+                          
+                              <a href="https://adamjermyn.com/tags/machine-learning">Machine Learning</a>
+                          
+                              <a href="https://adamjermyn.com/tags/ai">AI</a>
+                          
+                      
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                <section id="post-body">
+                    <h2 id="summary">Summary</h2>
+<ul>
+<li>Covered boilerplate for getting started, tensors, gradients.</li>
+<li>Poked in some detail at how gradients work.</li>
+<li>Played with linear regression, nonlinear regression, both with gradient descent.</li>
+<li>Built an MNIST classifier following a PyTorch tutorial. Experimented with the shape and size of the NN.</li>
+<li>Got PyTorch running on a machine with a GPU.</li>
+</ul>
+<h2 id="boilerplate">Boilerplate</h2>
+<p>Import:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> torch
+</code></pre></div><p>Need to use a special float type for the elements of tensors, and need to know which device the compute graph will run on:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">dtype <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>float
+device <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>device(<span style="color:#e6db74">&#34;cpu&#34;</span>)
+<span style="color:#75715e"># device = torch.device(&#34;cuda:0&#34;)  # Uncomment this to run on GPU</span>
+</code></pre></div><h2 id="tensors">Tensors</h2>
+<ul>
+<li>Act like numpy arrays at time-of-compute. Support most of the same operations.</li>
+<li>Build a compute graph along the way. This can be run on various target devices.</li>
+<li>Initialized much like numpy arrays (e.g. <code>x = torch.linspace(0,1, 200, device=device, dtype=dtype)</code>)</li>
+</ul>
+<h2 id="gradients">Gradients</h2>
+<ul>
+<li>PyTorch implements automatic differentiation.</li>
+<li>Derivatives are propagated through the tensor compute graph.</li>
+<li>Tensors have a <code>requires_grad</code> boolean attribute.
+<ul>
+<li>If this is <code>True</code>  this tells the PyTorch to track gradients on all operations involving them.</li>
+<li>If it&rsquo;s <code>False</code> presumably that information isn&rsquo;t tracked.</li>
+</ul>
+</li>
+<li>Differentiation is primarily done through backwards propagation, implemented by the <code>Q.backwards(...)</code> method.
+<ul>
+<li>Here <code>Q</code> is some tensor.</li>
+<li>This calculates the derivative of <code>Q</code> with respect to the leaf tensors of the graph, which is accumulated in the <code>.grad</code> attribute of those tensors.
+<ul>
+<li>Because this is an accumulation, those leafs need to be zero&rsquo;d out explicitly if this is called repeatedly.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The gradient is always of a scalar with respect to the leaf tensors.
+<ul>
+<li><code>Q.backwards()</code> is an invalid call unless <code>Q</code> is a scalar.</li>
+<li>So if <code>Q</code> is a tensor we have to supply a tensor <code>R</code> to dot it against to form a scalar.
+<ul>
+<li><code>Q.backwards(gradient=R)</code> is a valid call if <code>R</code> has the same shape as <code>Q</code>, and computes the gradient of the inner product <code>Q.R</code> with respect to the leaf tensors.</li>
+</ul>
+</li>
+<li>This means that the <code>.grad</code> attribute of the leaf tensors always has the same shape as those tensors.</li>
+</ul>
+</li>
+<li></li>
+</ul>
+<h3 id="toy-examples">Toy Examples:</h3>
+<p>Construct $Q = a^2$ where $a$ has rank-1 and compute $\partial \sum(Q)/\partial a$. Outputs $[2a_0,2a_1]$.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> torch
+
+a <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>tensor([<span style="color:#ae81ff">2.</span>, <span style="color:#ae81ff">3.</span>], requires_grad<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+Q <span style="color:#f92672">=</span> a<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>
+
+Jacobian_vector <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>tensor([<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>])
+Q<span style="color:#f92672">.</span>backward(gradient<span style="color:#f92672">=</span>Jacobian_vector)
+print(a<span style="color:#f92672">.</span>grad)
+</code></pre></div><p>Construct $Q=a_0^2+a_1^2$ and compute $\partial Q/\partial a$. Outputs $[2a_0,2a_1]$.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> torch
+
+a <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>tensor([<span style="color:#ae81ff">2.</span>, <span style="color:#ae81ff">3.</span>], requires_grad<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+Q <span style="color:#f92672">=</span> a[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">+</span> a[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>
+
+Q<span style="color:#f92672">.</span>backward()
+print(a<span style="color:#f92672">.</span>grad)
+</code></pre></div><h2 id="linear-regression-example">Linear Regression Example</h2>
+<p>Linear regression is used to solve $A.x=b$, which is equivalent to minimizing $|A.x-b|^2$. So let&rsquo;s do this with gradient descent:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> torch
+
+b <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>tensor([<span style="color:#ae81ff">1.</span>,<span style="color:#ae81ff">1</span>], requires_grad<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+A <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>tensor([[<span style="color:#ae81ff">0.</span>,<span style="color:#ae81ff">1</span>],[<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>]], requires_grad<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+x <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>tensor([<span style="color:#ae81ff">0.</span>,<span style="color:#ae81ff">0</span>], requires_grad<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+gradient_damp <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.5</span>
+
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>):
+	loss <span style="color:#f92672">=</span> ((torch<span style="color:#f92672">.</span>einsum(<span style="color:#e6db74">&#39;ij,j-&gt;i&#39;</span>,A,x)<span style="color:#f92672">-</span>b)<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>)<span style="color:#f92672">.</span>sum() <span style="color:#75715e"># Construct loss</span>
+	loss<span style="color:#f92672">.</span>backward() <span style="color:#75715e"># Backprop</span>
+	<span style="color:#66d9ef">with</span> torch<span style="color:#f92672">.</span>no_grad(): <span style="color:#75715e"># Don&#39;t track gradients in this step</span>
+		x <span style="color:#f92672">-=</span> gradient_damp <span style="color:#f92672">*</span> x<span style="color:#f92672">.</span>grad <span style="color:#75715e"># Gradient descent</span>
+		x<span style="color:#f92672">.</span>grad <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span> <span style="color:#75715e"># Zero out for next iteration</span>
+
+loss <span style="color:#f92672">=</span> ((torch<span style="color:#f92672">.</span>einsum(<span style="color:#e6db74">&#39;ij,j-&gt;i&#39;</span>,A,x)<span style="color:#f92672">-</span>b)<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>)<span style="color:#f92672">.</span>sum() <span style="color:#75715e"># Construct loss</span>
+print(loss)
+print(x)
+</code></pre></div><p>This (correctly) returns the solution $x=[1,1]$ with zero loss. I used einsum because I find it easier to explicitly write out my indexing than trying to remember how e.g. <code>dot</code> or <code>matmul</code> work.</p>
+<p>Note that we had to tell PyTorch not to track gradients during the updates on <code>x</code>. This is because we don&rsquo;t want to track the gradient of the new <code>x</code> with respect to the old <code>x</code> (which no longer exists in memory once we define the new <code>x</code>). If we don&rsquo;t specifically call this out we get a RunTime error because PyTorch can see that this op doesn&rsquo;t make any sense in terms of the compute graph.</p>
+<p>Also note that we didn&rsquo;t need to require gradients on <code>b</code> or <code>A</code>, because those aren&rsquo;t parameters in our model.</p>
+<p>Returning to the example above, it happens that the first gradient step is all we need. If we print <code>x</code> in the intermediate steps we get:</p>
+<pre tabindex="0"><code>tensor([0., 0.], requires_grad=True)
+tensor([1., 1.], requires_grad=True)
+tensor([1., 1.], requires_grad=True)
+tensor([1., 1.], requires_grad=True)
+tensor([1., 1.], requires_grad=True)
+tensor([1., 1.], requires_grad=True)
+tensor([1., 1.], requires_grad=True)
+tensor([1., 1.], requires_grad=True)
+tensor([1., 1.], requires_grad=True)
+tensor([1., 1.], requires_grad=True)
+</code></pre><p>This is a quirk of the damping factor we picked. If we use <code>gradient_damp=0.1</code> we get</p>
+<pre tabindex="0"><code>tensor([0., 0.], requires_grad=True)
+tensor([0.2000, 0.2000], requires_grad=True)
+tensor([0.3600, 0.3600], requires_grad=True)
+tensor([0.4880, 0.4880], requires_grad=True)
+tensor([0.5904, 0.5904], requires_grad=True)
+tensor([0.6723, 0.6723], requires_grad=True)
+tensor([0.7379, 0.7379], requires_grad=True)
+tensor([0.7903, 0.7903], requires_grad=True)
+tensor([0.8322, 0.8322], requires_grad=True)
+tensor([0.8658, 0.8658], requires_grad=True)
+</code></pre><p>which is gradually converging to the correct answer, but isn&rsquo;t there yet.</p>
+<h2 id="nonlinear-regression">Nonlinear Regression</h2>
+<p>Let&rsquo;s try fit a mix of sine waves to some data. First generate the data:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> torch
+
+<span style="color:#75715e"># Make some data</span>
+N <span style="color:#f92672">=</span> <span style="color:#ae81ff">1000</span>
+x <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> torch<span style="color:#f92672">.</span>pi <span style="color:#f92672">*</span> torch<span style="color:#f92672">.</span>rand(N, requires_grad<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+y <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">*</span> torch<span style="color:#f92672">.</span>sin(<span style="color:#ae81ff">1</span> <span style="color:#f92672">*</span> x) <span style="color:#75715e">#+ 2 * torch.sin(0.7*x)</span>
+</code></pre></div><p>Next let&rsquo;s construct a model:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Model parameters: a0 * sin(a1 * x)</span>
+<span style="color:#75715e"># Correct final output is [1, 1]</span>
+params <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>tensor([<span style="color:#ae81ff">1.3</span>, <span style="color:#ae81ff">1</span>], requires_grad<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+<span style="color:#75715e"># model = params[0] * torch.sin(params[1] * x)</span>
+</code></pre></div><p>We can then do gradient descent:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> torch
+
+<span style="color:#75715e"># Make some data</span>
+N <span style="color:#f92672">=</span> <span style="color:#ae81ff">1000</span>
+x <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> torch<span style="color:#f92672">.</span>pi <span style="color:#f92672">*</span> torch<span style="color:#f92672">.</span>rand(N, requires_grad<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+y <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">*</span> torch<span style="color:#f92672">.</span>sin(<span style="color:#ae81ff">1</span> <span style="color:#f92672">*</span> x) <span style="color:#75715e">#+ 2 * torch.sin(0.7*x)</span>
+
+<span style="color:#75715e"># Model parameters: a0 * sin(a1 * x)</span>
+<span style="color:#75715e"># Correct final output is [1, 1]</span>
+params <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>tensor([<span style="color:#ae81ff">1.3</span>, <span style="color:#ae81ff">1</span>], requires_grad<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+
+<span style="color:#75715e"># Fit the model with gradient descent</span>
+gradient_size <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.1</span>
+
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">40</span>):
+	model <span style="color:#f92672">=</span> params[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">*</span> torch<span style="color:#f92672">.</span>sin(params[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">*</span> x)
+	loss <span style="color:#f92672">=</span> ((y <span style="color:#f92672">-</span> model)<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>)<span style="color:#f92672">.</span>sum() <span style="color:#75715e"># Construct loss</span>
+	loss<span style="color:#f92672">.</span>backward() <span style="color:#75715e"># Backprop</span>
+	print(loss,params<span style="color:#f92672">.</span>grad<span style="color:#f92672">/</span>sum(params<span style="color:#f92672">.</span>grad<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>)<span style="color:#f92672">**</span><span style="color:#ae81ff">0.5</span>)
+	<span style="color:#66d9ef">with</span> torch<span style="color:#f92672">.</span>no_grad(): <span style="color:#75715e"># Don&#39;t track gradients in this step</span>
+		params <span style="color:#f92672">-=</span> gradient_size <span style="color:#f92672">*</span> params<span style="color:#f92672">.</span>grad <span style="color:#f92672">/</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">+</span> sum(params<span style="color:#f92672">.</span>grad<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>)<span style="color:#f92672">**</span><span style="color:#ae81ff">0.5</span>) <span style="color:#75715e"># Gradient descent</span>
+		params<span style="color:#f92672">.</span>grad <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span> <span style="color:#75715e"># Zero out for next iteration</span>
+
+loss <span style="color:#f92672">=</span> ((y <span style="color:#f92672">-</span> model)<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>)<span style="color:#f92672">.</span>sum() <span style="color:#75715e"># Construct loss</span>
+print(loss)
+print(params)
+</code></pre></div><p>Note that because the gradients are large in this case (due to the large amount of data going into the loss) I&rsquo;ve normalized it so we take a step of at most size <code>gradient_size</code> in parameter space each time.</p>
+<p>This prints output like:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">tensor(<span style="color:#ae81ff">44.5198</span>, grad_fn<span style="color:#f92672">=&lt;</span>SumBackward0<span style="color:#f92672">&gt;</span>) tensor([ <span style="color:#ae81ff">0.8813</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">0.4726</span>])
+tensor(<span style="color:#ae81ff">37.3011</span>, grad_fn<span style="color:#f92672">=&lt;</span>SumBackward0<span style="color:#f92672">&gt;</span>) tensor([<span style="color:#ae81ff">0.2550</span>, <span style="color:#ae81ff">0.9669</span>])
+tensor(<span style="color:#ae81ff">40.3255</span>, grad_fn<span style="color:#f92672">=&lt;</span>SumBackward0<span style="color:#f92672">&gt;</span>) tensor([ <span style="color:#ae81ff">0.2711</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">0.9625</span>])
+tensor(<span style="color:#ae81ff">27.7070</span>, grad_fn<span style="color:#f92672">=&lt;</span>SumBackward0<span style="color:#f92672">&gt;</span>) tensor([<span style="color:#ae81ff">0.1999</span>, <span style="color:#ae81ff">0.9798</span>])
+tensor(<span style="color:#ae81ff">32.0618</span>, grad_fn<span style="color:#f92672">=&lt;</span>SumBackward0<span style="color:#f92672">&gt;</span>) tensor([ <span style="color:#ae81ff">0.2271</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">0.9739</span>])
+tensor(<span style="color:#ae81ff">21.7022</span>, grad_fn<span style="color:#f92672">=&lt;</span>SumBackward0<span style="color:#f92672">&gt;</span>) tensor([<span style="color:#ae81ff">0.1519</span>, <span style="color:#ae81ff">0.9884</span>])
+tensor(<span style="color:#ae81ff">27.0113</span>, grad_fn<span style="color:#f92672">=&lt;</span>SumBackward0<span style="color:#f92672">&gt;</span>) tensor([ <span style="color:#ae81ff">0.1877</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">0.9822</span>])
+tensor(<span style="color:#ae81ff">18.0849</span>, grad_fn<span style="color:#f92672">=&lt;</span>SumBackward0<span style="color:#f92672">&gt;</span>) tensor([<span style="color:#ae81ff">0.1108</span>, <span style="color:#ae81ff">0.9938</span>])
+tensor(<span style="color:#ae81ff">24.0175</span>, grad_fn<span style="color:#f92672">=&lt;</span>SumBackward0<span style="color:#f92672">&gt;</span>) tensor([ <span style="color:#ae81ff">0.1539</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">0.9881</span>])
+tensor(<span style="color:#ae81ff">15.9776</span>, grad_fn<span style="color:#f92672">=&lt;</span>SumBackward0<span style="color:#f92672">&gt;</span>) tensor([<span style="color:#ae81ff">0.0767</span>, <span style="color:#ae81ff">0.9971</span>])
+tensor(<span style="color:#ae81ff">22.2906</span>, grad_fn<span style="color:#f92672">=&lt;</span>SumBackward0<span style="color:#f92672">&gt;</span>) tensor([ <span style="color:#ae81ff">0.1262</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">0.9920</span>])
+tensor(<span style="color:#ae81ff">14.7849</span>, grad_fn<span style="color:#f92672">=&lt;</span>SumBackward0<span style="color:#f92672">&gt;</span>) tensor([<span style="color:#ae81ff">0.0491</span>, <span style="color:#ae81ff">0.9988</span>])
+tensor(<span style="color:#ae81ff">21.3164</span>, grad_fn<span style="color:#f92672">=&lt;</span>SumBackward0<span style="color:#f92672">&gt;</span>) tensor([ <span style="color:#ae81ff">0.1041</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">0.9946</span>])
+tensor(<span style="color:#ae81ff">14.1264</span>, grad_fn<span style="color:#f92672">=&lt;</span>SumBackward0<span style="color:#f92672">&gt;</span>) tensor([<span style="color:#ae81ff">0.0274</span>, <span style="color:#ae81ff">0.9996</span>])
+tensor(<span style="color:#ae81ff">20.7759</span>, grad_fn<span style="color:#f92672">=&lt;</span>SumBackward0<span style="color:#f92672">&gt;</span>) tensor([ <span style="color:#ae81ff">0.0869</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">0.9962</span>])
+tensor(<span style="color:#ae81ff">13.7711</span>, grad_fn<span style="color:#f92672">=&lt;</span>SumBackward0<span style="color:#f92672">&gt;</span>) tensor([<span style="color:#ae81ff">0.0107</span>, <span style="color:#ae81ff">0.9999</span>])
+tensor(<span style="color:#ae81ff">20.4790</span>, grad_fn<span style="color:#f92672">=&lt;</span>SumBackward0<span style="color:#f92672">&gt;</span>) tensor([ <span style="color:#ae81ff">0.0738</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">0.9973</span>])
+tensor(<span style="color:#ae81ff">13.5837</span>, grad_fn<span style="color:#f92672">=&lt;</span>SumBackward0<span style="color:#f92672">&gt;</span>) tensor([<span style="color:#f92672">-</span><span style="color:#ae81ff">0.0020</span>,  <span style="color:#ae81ff">1.0000</span>])
+tensor(<span style="color:#ae81ff">20.3159</span>, grad_fn<span style="color:#f92672">=&lt;</span>SumBackward0<span style="color:#f92672">&gt;</span>) tensor([ <span style="color:#ae81ff">0.0640</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">0.9979</span>])
+tensor(<span style="color:#ae81ff">13.4877</span>, grad_fn<span style="color:#f92672">=&lt;</span>SumBackward0<span style="color:#f92672">&gt;</span>) tensor([<span style="color:#f92672">-</span><span style="color:#ae81ff">0.0115</span>,  <span style="color:#ae81ff">0.9999</span>])
+tensor(<span style="color:#ae81ff">20.2253</span>, grad_fn<span style="color:#f92672">=&lt;</span>SumBackward0<span style="color:#f92672">&gt;</span>) tensor([ <span style="color:#ae81ff">0.0568</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">0.9984</span>])
+tensor(<span style="color:#ae81ff">13.4409</span>, grad_fn<span style="color:#f92672">=&lt;</span>SumBackward0<span style="color:#f92672">&gt;</span>) tensor([<span style="color:#f92672">-</span><span style="color:#ae81ff">0.0185</span>,  <span style="color:#ae81ff">0.9998</span>])
+<span style="color:#f92672">...</span>
+tensor(<span style="color:#ae81ff">13.4534</span>, grad_fn<span style="color:#f92672">=&lt;</span>SumBackward0<span style="color:#f92672">&gt;</span>) <span style="color:#75715e"># loss</span>
+tensor([<span style="color:#ae81ff">0.9829</span>, <span style="color:#ae81ff">0.9430</span>], requires_grad<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>) <span style="color:#75715e"># parameters</span>
+</code></pre></div><p>Initially gradient descent works well, then it gets close to the correct answer and the gradient with respect to the sine period (second parameter) come to dominate, causing behaviour where it flips back and forth between two nearly-correct periods. It might take a more sophisticated method (e.g. momentum) to do better here.</p>
+<h2 id="datasets">Datasets</h2>
+<p>PyTorch comes with functions for downloading commonly-used datasets. For instance the following downloads MNIST (images of handwritten digits, with corresponding labels) and separates it into training and test sets:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> torch
+<span style="color:#f92672">from</span> torch.utils.data <span style="color:#f92672">import</span> Dataset
+<span style="color:#f92672">from</span> torchvision <span style="color:#f92672">import</span> datasets
+<span style="color:#f92672">from</span> torchvision.transforms <span style="color:#f92672">import</span> ToTensor
+
+training_data <span style="color:#f92672">=</span> datasets<span style="color:#f92672">.</span>MNIST(
+    root<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;data&#34;</span>,
+    train<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>,
+    download<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>,
+    transform<span style="color:#f92672">=</span>ToTensor()
+)
+
+test_data <span style="color:#f92672">=</span> datasets<span style="color:#f92672">.</span>MNIST(
+    root<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;data&#34;</span>,
+    train<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>,
+    download<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>,
+    transform<span style="color:#f92672">=</span>ToTensor()
+)
+</code></pre></div><p>The API here seems to mostly be dataset-specific, but many datasets share common options (e.g. FashionMNIST and MNIST have the same interface).</p>
+<p>Inside, the MNIST dataset is a list of tuples of the form <code>(image tensor, image label)</code>, where the label is an integer and the tensor is a two-dimensional array of shape <code>(1,28,28)</code>.</p>
+<h3 id="example-simple-neural-network-for-mnist">Example: Simple Neural Network for MNIST</h3>
+<p>(Following <a href="https://pytorch.org/tutorials/beginner/basics/optimization_tutorial.html">https://pytorch.org/tutorials/beginner/basics/optimization_tutorial.html</a>)</p>
+<p>This combines some linear layers with some ReLU layers, then outputs a score for each possible label (which we&rsquo;ll interpret as a probability).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> torch.nn <span style="color:#66d9ef">as</span> nn
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">NeuralNetwork</span>(nn<span style="color:#f92672">.</span>Module):
+    <span style="color:#66d9ef">def</span> __init__(self):
+        super(NeuralNetwork, self)<span style="color:#f92672">.</span>__init__()
+        self<span style="color:#f92672">.</span>flatten <span style="color:#f92672">=</span> nn<span style="color:#f92672">.</span>Flatten()
+        self<span style="color:#f92672">.</span>linear_relu_stack <span style="color:#f92672">=</span> nn<span style="color:#f92672">.</span>Sequential(
+        	<span style="color:#75715e"># Notice the dimension convention: input is on the left, output is on the right.</span>
+            nn<span style="color:#f92672">.</span>Linear(<span style="color:#ae81ff">28</span><span style="color:#f92672">*</span><span style="color:#ae81ff">28</span>, <span style="color:#ae81ff">512</span>), <span style="color:#75715e"># 28x28 is the MNIST image size</span>
+            nn<span style="color:#f92672">.</span>ReLU(),
+            nn<span style="color:#f92672">.</span>Linear(<span style="color:#ae81ff">512</span>, <span style="color:#ae81ff">512</span>),
+            nn<span style="color:#f92672">.</span>ReLU(), <span style="color:#75715e"># element-wise operation</span>
+            nn<span style="color:#f92672">.</span>Linear(<span style="color:#ae81ff">512</span>, <span style="color:#ae81ff">10</span>),
+						nn<span style="color:#f92672">.</span>Softmax(dim<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>), <span style="color:#75715e"># Softmax turns this from logits into probabilities.</span>
+				)
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">forward</span>(self, x):
+        x <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>flatten(x)
+        probabilities <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>linear_relu_stack(x)
+        <span style="color:#66d9ef">return</span> probabilities
+</code></pre></div><p>Neutral networks need to be pushed to the device (though I don&rsquo;t fully understand what&rsquo;s happening here&hellip;)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Make an instance of the neural network, and move it to the device</span>
+device <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>device(<span style="color:#e6db74">&#34;cpu&#34;</span>)
+model <span style="color:#f92672">=</span> NeuralNetwork()<span style="color:#f92672">.</span>to(device)
+print(model)
+</code></pre></div><p>Now set up for training:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">### Setup for training</span>
+
+<span style="color:#75715e"># hyperparams</span>
+epochs <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span> <span style="color:#75715e"># number of times we iterate over the data</span>
+learning_rate <span style="color:#f92672">=</span> <span style="color:#ae81ff">1e-3</span> <span style="color:#75715e"># gradient damping</span>
+batch_size <span style="color:#f92672">=</span> <span style="color:#ae81ff">64</span> <span style="color:#75715e"># number of samples to use in a batch</span>
+
+<span style="color:#75715e"># We&#39;ll train in batches</span>
+train_dataloader <span style="color:#f92672">=</span> DataLoader(training_data, batch_size<span style="color:#f92672">=</span>batch_size)
+test_dataloader <span style="color:#f92672">=</span> DataLoader(test_data, batch_size<span style="color:#f92672">=</span>batch_size)
+
+<span style="color:#75715e"># Loss</span>
+loss_fn <span style="color:#f92672">=</span> nn<span style="color:#f92672">.</span>CrossEntropyLoss()
+
+<span style="color:#75715e"># Optimizer</span>
+optimizer <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>optim<span style="color:#f92672">.</span>SGD(model<span style="color:#f92672">.</span>parameters(), lr<span style="color:#f92672">=</span>learning_rate)
+</code></pre></div><p>and construct the training and testing functions:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">train_loop</span>(dataloader, model, loss_fn, optimizer):
+    size <span style="color:#f92672">=</span> len(dataloader<span style="color:#f92672">.</span>dataset)
+    <span style="color:#66d9ef">for</span> batch, (X, y) <span style="color:#f92672">in</span> enumerate(dataloader):
+        <span style="color:#75715e"># Compute prediction and loss</span>
+        pred <span style="color:#f92672">=</span> model(X)
+        loss <span style="color:#f92672">=</span> loss_fn(pred, y)
+
+        <span style="color:#75715e"># Backpropagation</span>
+        optimizer<span style="color:#f92672">.</span>zero_grad() <span style="color:#75715e"># Zero&#39;s out gradients (remember .backward *accumulates*)</span>
+        loss<span style="color:#f92672">.</span>backward() <span style="color:#75715e"># calculate new gradients</span>
+        optimizer<span style="color:#f92672">.</span>step() <span style="color:#75715e"># update parameter weights with gradient descent</span>
+
+        <span style="color:#66d9ef">if</span> batch <span style="color:#f92672">%</span> <span style="color:#ae81ff">100</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+            loss, current <span style="color:#f92672">=</span> loss<span style="color:#f92672">.</span>item(), batch <span style="color:#f92672">*</span> len(X)
+            print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;loss: </span><span style="color:#e6db74">{</span>loss<span style="color:#e6db74">:</span><span style="color:#e6db74">&gt;7f</span><span style="color:#e6db74">}</span><span style="color:#e6db74">  [</span><span style="color:#e6db74">{</span>current<span style="color:#e6db74">:</span><span style="color:#e6db74">&gt;5d</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/</span><span style="color:#e6db74">{</span>size<span style="color:#e6db74">:</span><span style="color:#e6db74">&gt;5d</span><span style="color:#e6db74">}</span><span style="color:#e6db74">]&#34;</span>)
+
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_loop</span>(dataloader, model, loss_fn):
+    size <span style="color:#f92672">=</span> len(dataloader<span style="color:#f92672">.</span>dataset)
+    num_batches <span style="color:#f92672">=</span> len(dataloader)
+    test_loss, correct <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>
+
+    <span style="color:#66d9ef">with</span> torch<span style="color:#f92672">.</span>no_grad(): <span style="color:#75715e"># No reason to compute gradients in testing</span>
+        <span style="color:#66d9ef">for</span> X, y <span style="color:#f92672">in</span> dataloader:
+            pred <span style="color:#f92672">=</span> model(X)
+            test_loss <span style="color:#f92672">+=</span> loss_fn(pred, y)<span style="color:#f92672">.</span>item()
+            correct <span style="color:#f92672">+=</span> (pred<span style="color:#f92672">.</span>argmax(<span style="color:#ae81ff">1</span>) <span style="color:#f92672">==</span> y)<span style="color:#f92672">.</span>type(torch<span style="color:#f92672">.</span>float)<span style="color:#f92672">.</span>sum()<span style="color:#f92672">.</span>item()
+
+    test_loss <span style="color:#f92672">/=</span> num_batches
+    correct <span style="color:#f92672">/=</span> size
+    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Test Error: </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74"> Accuracy: </span><span style="color:#e6db74">{</span>(<span style="color:#ae81ff">100</span><span style="color:#f92672">*</span>correct)<span style="color:#e6db74">:</span><span style="color:#e6db74">&gt;0.1f</span><span style="color:#e6db74">}</span><span style="color:#e6db74">%, Avg loss: </span><span style="color:#e6db74">{</span>test_loss<span style="color:#e6db74">:</span><span style="color:#e6db74">&gt;8f</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)
+</code></pre></div><p>Then we train!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> t <span style="color:#f92672">in</span> range(epochs):
+    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Epoch </span><span style="color:#e6db74">{</span>t<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span><span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">-------------------------------&#34;</span>)
+    train_loop(train_dataloader, model, loss_fn, optimizer)
+    test_loop(test_dataloader, model, loss_fn)
+</code></pre></div><p>Here&rsquo;s the first Epoch of output:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">loss: <span style="color:#ae81ff">2.302563</span>  [    <span style="color:#ae81ff">0</span><span style="color:#f92672">/</span><span style="color:#ae81ff">60000</span>]
+loss: <span style="color:#ae81ff">2.301651</span>  [ <span style="color:#ae81ff">6400</span><span style="color:#f92672">/</span><span style="color:#ae81ff">60000</span>]
+loss: <span style="color:#ae81ff">2.302801</span>  [<span style="color:#ae81ff">12800</span><span style="color:#f92672">/</span><span style="color:#ae81ff">60000</span>]
+loss: <span style="color:#ae81ff">2.302033</span>  [<span style="color:#ae81ff">19200</span><span style="color:#f92672">/</span><span style="color:#ae81ff">60000</span>]
+loss: <span style="color:#ae81ff">2.302732</span>  [<span style="color:#ae81ff">25600</span><span style="color:#f92672">/</span><span style="color:#ae81ff">60000</span>]
+loss: <span style="color:#ae81ff">2.302280</span>  [<span style="color:#ae81ff">32000</span><span style="color:#f92672">/</span><span style="color:#ae81ff">60000</span>]
+loss: <span style="color:#ae81ff">2.302579</span>  [<span style="color:#ae81ff">38400</span><span style="color:#f92672">/</span><span style="color:#ae81ff">60000</span>]
+loss: <span style="color:#ae81ff">2.302456</span>  [<span style="color:#ae81ff">44800</span><span style="color:#f92672">/</span><span style="color:#ae81ff">60000</span>]
+loss: <span style="color:#ae81ff">2.301929</span>  [<span style="color:#ae81ff">51200</span><span style="color:#f92672">/</span><span style="color:#ae81ff">60000</span>]
+loss: <span style="color:#ae81ff">2.302089</span>  [<span style="color:#ae81ff">57600</span><span style="color:#f92672">/</span><span style="color:#ae81ff">60000</span>]
+Test Error: 
+ Accuracy: <span style="color:#ae81ff">15.4</span><span style="color:#f92672">%</span>, Avg loss: <span style="color:#ae81ff">2.302021</span> 
+</code></pre></div><p>It&rsquo;s interesting that the testing accuracy keeps going up through training (from 15% to 30%) even though the loss never budges.</p>
+<h3 id="experiment-randomizing-the-model-parameters">Experiment: Randomizing the model parameters</h3>
+<p>The model parameters are stored in a state dictionary, which is access through getter and setter method. So we can randomize the model parameters via e.g.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">state_dict <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>state_dict()
+<span style="color:#66d9ef">for</span> key <span style="color:#f92672">in</span> state_dict<span style="color:#f92672">.</span>keys():
+	state_dict[key] <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>rand(state_dict[key]<span style="color:#f92672">.</span>shape)
+model<span style="color:#f92672">.</span>load_state_dict(state_dict)
+</code></pre></div><p>Doing this leads to much worse training behaviour. I&rsquo;m not sure why, but the loss never gets down as low as 2.3 and the test accuracy never rises above 10.3%.</p>
+<h3 id="experiment-faster-learning-and-more-epochs">Experiment: Faster learning and more Epochs</h3>
+<p>What happens if we up the learning rate to 1e-2 and provide 10 epochs?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Epoch <span style="color:#ae81ff">1</span>
+loss: <span style="color:#ae81ff">2.297943</span>  [<span style="color:#ae81ff">57600</span><span style="color:#f92672">/</span><span style="color:#ae81ff">60000</span>]
+ Accuracy: <span style="color:#ae81ff">34.6</span><span style="color:#f92672">%</span>, Avg loss: <span style="color:#ae81ff">2.297844</span> 
+Epoch <span style="color:#ae81ff">5</span>
+loss: <span style="color:#ae81ff">1.916193</span>  [<span style="color:#ae81ff">57600</span><span style="color:#f92672">/</span><span style="color:#ae81ff">60000</span>]
+ Accuracy: <span style="color:#ae81ff">69.6</span><span style="color:#f92672">%</span>, Avg loss: <span style="color:#ae81ff">1.911707</span> 
+Epoch <span style="color:#ae81ff">10</span>
+loss: <span style="color:#ae81ff">1.654531</span>  [<span style="color:#ae81ff">57600</span><span style="color:#f92672">/</span><span style="color:#ae81ff">60000</span>]
+ Accuracy: <span style="color:#ae81ff">83.4</span><span style="color:#f92672">%</span>, Avg loss: <span style="color:#ae81ff">1.647756</span> 
+</code></pre></div><p>Even from epoch 9 -&gt; 10 things were still improving, which is cool.</p>
+<p>How about a rate of 1e-1?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Epoch <span style="color:#ae81ff">10</span>
+loss: <span style="color:#ae81ff">1.520834</span>  [<span style="color:#ae81ff">57600</span><span style="color:#f92672">/</span><span style="color:#ae81ff">60000</span>]
+ Accuracy: <span style="color:#ae81ff">94.9</span><span style="color:#f92672">%</span>, Avg loss: <span style="color:#ae81ff">1.515659</span> 
+</code></pre></div><p>Well that&rsquo;s cool.</p>
+<p>How about a rate of 1e0? [Surely this will fail?!]</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Epoch <span style="color:#ae81ff">1</span>
+loss: <span style="color:#ae81ff">1.529209</span>  [<span style="color:#ae81ff">57600</span><span style="color:#f92672">/</span><span style="color:#ae81ff">60000</span>]
+ Accuracy: <span style="color:#ae81ff">93.0</span><span style="color:#f92672">%</span>, Avg loss: <span style="color:#ae81ff">1.532691</span> 
+Epoch <span style="color:#ae81ff">7</span>
+loss: <span style="color:#ae81ff">1.491918</span>  [<span style="color:#ae81ff">57600</span><span style="color:#f92672">/</span><span style="color:#ae81ff">60000</span>]
+ Accuracy: <span style="color:#ae81ff">97.5</span><span style="color:#f92672">%</span>, Avg loss: <span style="color:#ae81ff">1.486677</span> 
+Epoch <span style="color:#ae81ff">8</span>
+loss: <span style="color:#ae81ff">1.477088</span>  [<span style="color:#ae81ff">57600</span><span style="color:#f92672">/</span><span style="color:#ae81ff">60000</span>]
+ Accuracy: <span style="color:#ae81ff">96.9</span><span style="color:#f92672">%</span>, Avg loss: <span style="color:#ae81ff">1.492298</span> 
+Epoch <span style="color:#ae81ff">10</span>
+loss: <span style="color:#ae81ff">1.493404</span>  [<span style="color:#ae81ff">57600</span><span style="color:#f92672">/</span><span style="color:#ae81ff">60000</span>]
+ Accuracy: <span style="color:#ae81ff">97.6</span><span style="color:#f92672">%</span>, Avg loss: <span style="color:#ae81ff">1.485000</span> 
+</code></pre></div><p>Some non-monotonicity, but still pretty good!</p>
+<h3 id="experiment-fewer-layers">Experiment: Fewer layers</h3>
+<p>What if we take out some of the layers? (And leave the crazy learning rate of 1e0!)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">self<span style="color:#f92672">.</span>linear_relu_stack <span style="color:#f92672">=</span> nn<span style="color:#f92672">.</span>Sequential(
+<span style="color:#75715e"># Notice the dimension convention: input is on the left, output is on the right.</span>
+  nn<span style="color:#f92672">.</span>Linear(<span style="color:#ae81ff">28</span><span style="color:#f92672">*</span><span style="color:#ae81ff">28</span>, <span style="color:#ae81ff">512</span>), <span style="color:#75715e"># 28x28 is the MNIST image size</span>
+  nn<span style="color:#f92672">.</span>ReLU(), <span style="color:#75715e"># element-wise operation</span>
+  nn<span style="color:#f92672">.</span>Linear(<span style="color:#ae81ff">512</span>, <span style="color:#ae81ff">10</span>),
+nn<span style="color:#f92672">.</span>Softmax(dim<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>), <span style="color:#75715e"># Softmax turns this from logits into probabilities.</span>
+)
+</code></pre></div><p>Well:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Epoch <span style="color:#ae81ff">1</span>
+loss: <span style="color:#ae81ff">1.564381</span>  [<span style="color:#ae81ff">57600</span><span style="color:#f92672">/</span><span style="color:#ae81ff">60000</span>]
+ Accuracy: <span style="color:#ae81ff">93.4</span><span style="color:#f92672">%</span>, Avg loss: <span style="color:#ae81ff">1.532022</span> 
+Epoch <span style="color:#ae81ff">5</span>
+loss: <span style="color:#ae81ff">1.498894</span>  [<span style="color:#ae81ff">57600</span><span style="color:#f92672">/</span><span style="color:#ae81ff">60000</span>]
+ Accuracy: <span style="color:#ae81ff">97.0</span><span style="color:#f92672">%</span>, Avg loss: <span style="color:#ae81ff">1.493585</span> 
+Epoch <span style="color:#ae81ff">10</span>
+loss: <span style="color:#ae81ff">1.478126</span>  [<span style="color:#ae81ff">57600</span><span style="color:#f92672">/</span><span style="color:#ae81ff">60000</span>]
+ Accuracy: <span style="color:#ae81ff">97.8</span><span style="color:#f92672">%</span>, Avg loss: <span style="color:#ae81ff">1.484777</span> 
+</code></pre></div><p>Well that&rsquo;s fun. The simpler model does better.</p>
+<h3 id="experiment-fewer-layers-and-narrowerwider-layers">Experiment: Fewer layers and Narrower/Wider Layers</h3>
+<p>How about we take those layers out and make the remaining ones narrower?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">nn<span style="color:#f92672">.</span>Linear(<span style="color:#ae81ff">28</span><span style="color:#f92672">*</span><span style="color:#ae81ff">28</span>, <span style="color:#ae81ff">100</span>), <span style="color:#75715e"># 28x28 is the MNIST image size</span>
+nn<span style="color:#f92672">.</span>ReLU(), <span style="color:#75715e"># element-wise operation</span>
+nn<span style="color:#f92672">.</span>Linear(<span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">10</span>),
+nn<span style="color:#f92672">.</span>Softmax(dim<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>), <span style="color:#75715e"># Softmax turns this from logits into probabilities.</span>
+</code></pre></div><p>Well&hellip;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Epoch <span style="color:#ae81ff">1</span>
+loss: <span style="color:#ae81ff">1.563033</span>  [<span style="color:#ae81ff">57600</span><span style="color:#f92672">/</span><span style="color:#ae81ff">60000</span>]
+ Accuracy: <span style="color:#ae81ff">92.8</span><span style="color:#f92672">%</span>, Avg loss: <span style="color:#ae81ff">1.536991</span> 
+Epoch <span style="color:#ae81ff">5</span>
+loss: <span style="color:#ae81ff">1.519344</span>  [<span style="color:#ae81ff">57600</span><span style="color:#f92672">/</span><span style="color:#ae81ff">60000</span>]
+ Accuracy: <span style="color:#ae81ff">96.6</span><span style="color:#f92672">%</span>, Avg loss: <span style="color:#ae81ff">1.497399</span> 
+Epoch <span style="color:#ae81ff">10</span>
+loss: <span style="color:#ae81ff">1.491755</span>  [<span style="color:#ae81ff">57600</span><span style="color:#f92672">/</span><span style="color:#ae81ff">60000</span>]
+ Accuracy: <span style="color:#ae81ff">97.3</span><span style="color:#f92672">%</span>, Avg loss: <span style="color:#ae81ff">1.488801</span> 
+</code></pre></div><p>So that&rsquo;s a little worse. How about if we bump the width back up to 200?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Epoch <span style="color:#ae81ff">1</span>
+loss: <span style="color:#ae81ff">1.541748</span>  [<span style="color:#ae81ff">57600</span><span style="color:#f92672">/</span><span style="color:#ae81ff">60000</span>]
+ Accuracy: <span style="color:#ae81ff">93.0</span><span style="color:#f92672">%</span>, Avg loss: <span style="color:#ae81ff">1.535781</span> 
+Epoch <span style="color:#ae81ff">5</span>
+loss: <span style="color:#ae81ff">1.507868</span>  [<span style="color:#ae81ff">57600</span><span style="color:#f92672">/</span><span style="color:#ae81ff">60000</span>]
+ Accuracy: <span style="color:#ae81ff">96.4</span><span style="color:#f92672">%</span>, Avg loss: <span style="color:#ae81ff">1.500574</span> 
+Epoch <span style="color:#ae81ff">10</span>
+loss: <span style="color:#ae81ff">1.482715</span>  [<span style="color:#ae81ff">57600</span><span style="color:#f92672">/</span><span style="color:#ae81ff">60000</span>]
+ Accuracy: <span style="color:#ae81ff">97.5</span><span style="color:#f92672">%</span>, Avg loss: <span style="color:#ae81ff">1.487760</span> 
+</code></pre></div><p>Still not quite as good as the wider layers. Does that mean we can do better with even wider ones than we started with? Say 1024?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Epoch <span style="color:#ae81ff">1</span>
+loss: <span style="color:#ae81ff">1.557399</span>  [<span style="color:#ae81ff">57600</span><span style="color:#f92672">/</span><span style="color:#ae81ff">60000</span>]
+ Accuracy: <span style="color:#ae81ff">93.6</span><span style="color:#f92672">%</span>, Avg loss: <span style="color:#ae81ff">1.529462</span> 
+Epoch <span style="color:#ae81ff">5</span>
+loss: <span style="color:#ae81ff">1.507075</span>  [<span style="color:#ae81ff">57600</span><span style="color:#f92672">/</span><span style="color:#ae81ff">60000</span>]
+ Accuracy: <span style="color:#ae81ff">97.1</span><span style="color:#f92672">%</span>, Avg loss: <span style="color:#ae81ff">1.491251</span> 
+Epoch <span style="color:#ae81ff">10</span>
+loss: <span style="color:#ae81ff">1.479086</span>  [<span style="color:#ae81ff">57600</span><span style="color:#f92672">/</span><span style="color:#ae81ff">60000</span>]
+ Accuracy: <span style="color:#ae81ff">97.6</span><span style="color:#f92672">%</span>, Avg loss: <span style="color:#ae81ff">1.486674</span> 
+</code></pre></div><p>Hmmmm. That&rsquo;s a little worse than when we had 512.</p>
+<h2 id="gpu">GPU</h2>
+<p>Trying this on an instance with an A100, but got a pytorch error saying it didn&rsquo;t support the A100. Some googling suggested trying</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pip3 install torch<span style="color:#f92672">==</span>1.9.0+cu111 torchvision<span style="color:#f92672">==</span>0.10.0+cu111 torchaudio<span style="color:#f92672">==</span>0.9.0 -f https://download.pytorch.org/whl/torch_stable.html
+</code></pre></div><p>should work. I had some trouble getting this to work and ended up backing up and making a conda environmen following this <a href="https://stackoverflow.com/questions/66992585/how-does-one-use-pytorch-cuda-with-an-a100-gpu">Stackoverflow answer</a>t:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">conda create -n meta_learning_a100 python<span style="color:#f92672">=</span>3.9
+conda activate meta_learning_a100
+
+pip3 install torch<span style="color:#f92672">==</span>1.9.1+cu111 torchvision<span style="color:#f92672">==</span>0.10.1+cu111 torchaudio<span style="color:#f92672">==</span>0.9.1 -f https://download.pytorch.org/whl/torch_stable.html
+</code></pre></div><p>and that worked.</p>
+<p>Then I hit this error:</p>
+<pre tabindex="0"><code>RuntimeError: Expected all tensors to be on the same device, but found at least two devices, cuda:0 and cpu! (when checking arugment for argument mat1 in method wrapper_addmm)
+</code></pre><p>The issue is that the training and testing data don&rsquo;t live on the GPU. We can fix that:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">        X <span style="color:#f92672">=</span> X<span style="color:#f92672">.</span>to(device)
+        y <span style="color:#f92672">=</span> y<span style="color:#f92672">.</span>to(device)
+        pred <span style="color:#f92672">=</span> model(X)
+</code></pre></div><p>That did the trick. Let&rsquo;s try training with a width of 5000:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">nn<span style="color:#f92672">.</span>Linear(<span style="color:#ae81ff">28</span><span style="color:#f92672">*</span><span style="color:#ae81ff">28</span>, <span style="color:#ae81ff">5000</span>), <span style="color:#75715e"># 28x28 is the MNIST image size</span>
+nn<span style="color:#f92672">.</span>ReLU(), <span style="color:#75715e"># element-wise operation</span>
+nn<span style="color:#f92672">.</span>Linear(<span style="color:#ae81ff">5000</span>, <span style="color:#ae81ff">10</span>),
+            nn<span style="color:#f92672">.</span>Softmax(dim<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>), <span style="color:#75715e"># Softmax turns this from logits into probabilities.</span>
+    )
+</code></pre></div><p>This gives</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Epoch <span style="color:#ae81ff">1</span>
+loss: <span style="color:#ae81ff">1.546615</span>  [<span style="color:#ae81ff">57600</span><span style="color:#f92672">/</span><span style="color:#ae81ff">60000</span>]
+ Accuracy: <span style="color:#ae81ff">94.1</span><span style="color:#f92672">%</span>, Avg loss: <span style="color:#ae81ff">1.523945</span> 
+Epoch <span style="color:#ae81ff">5</span>
+loss: <span style="color:#ae81ff">1.499782</span>  [<span style="color:#ae81ff">57600</span><span style="color:#f92672">/</span><span style="color:#ae81ff">60000</span>]
+ Accuracy: <span style="color:#ae81ff">97.4</span><span style="color:#f92672">%</span>, Avg loss: <span style="color:#ae81ff">1.489153</span> 
+Epoch <span style="color:#ae81ff">10</span>
+loss: <span style="color:#ae81ff">1.477566</span>  [<span style="color:#ae81ff">57600</span><span style="color:#f92672">/</span><span style="color:#ae81ff">60000</span>]
+ Accuracy: <span style="color:#ae81ff">98.0</span><span style="color:#f92672">%</span>, Avg loss: <span style="color:#ae81ff">1.483557</span> 
+</code></pre></div><p>That&rsquo;s better. If we put that on <a href="https://paperswithcode.com/sota/image-classification-on-mnist">paperswithcode</a> we&rsquo;d rank between ProjectionNet and Tsetlin Machine.</p>
+<h3 id="okay-but-what-if-the-layers-are-really-wide">Okay but what if the layers are really wide?</h3>
+<p>Now trying a width of 50,000. The accuracy in epoch 1 is bad (55%) but it improves fast after that, and reaches 98.1% by epoch 10. So not much improvement over the much narrower models.</p>
+<p>Next, 5000 width, batch size of 256, and 20 epochs. Accuracy reaches 97.6%, gradually climbing with epoch.</p>
+<p>Next, 50,000 width, batch size of 256, and 50 epochs. Accuracy reaches 98.2% after 27 epochs and sits there for the rest of training.</p>
+<p>I think I&rsquo;ll call it a day here.</p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fadamjermyn.com%2fposts%2fml_1%2f - Working%20Notes%20-%20Learning%20PyTorch%20-%20Day%201 by @AdamSJermyn"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/adamjermyn">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/AdamSJermyn">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+        
+	        <center><a class="cta" href="https://adamjermyn.com/index.xml">Subscribe</a></center>
+        
+    <p class="small">
+    
+       © Copyright 2022 Adam Jermyn
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://adamjermyn.com/js/jquery-3.3.1.min.js"></script>
+<script src="https://adamjermyn.com/js/main.js"></script>
+<script src="https://adamjermyn.com/js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>

@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 11 Apr 2022 17:06:39 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 12 Apr 2022 17:17:54 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Working Notes - Learning PyTorch - Day 2</title>
+      <link>https://adamjermyn.com/posts/ml_2/</link>
+      <pubDate>Tue, 12 Apr 2022 17:17:54 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/ml_2/</guid>
+      <description>Summary  Adding convolutional layers is pretty straightforward, but there are some indexing subtleties to watch. Pooling layers can really improve performance. With two pooling layers, I found an example of a too-high learning rate making the model get stuck with poor performance. The more pooling layers I used the faster the model took a training step (because the dense linear layer was smaller). The more pooling layers I used, the more important the number of channels in the convolutional/pooling layers became.</description>
+    </item>
+    
     <item>
       <title>Working Notes - Learning PyTorch - Day 1</title>
       <link>https://adamjermyn.com/posts/ml_1/</link>

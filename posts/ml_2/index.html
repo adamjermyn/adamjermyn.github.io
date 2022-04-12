@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="author" content="Adam Jermyn">
+		<meta name="description" content="Site Description">
+		<meta name="generator" content="Hugo 0.92.2" />
+		<title>Working Notes - Learning PyTorch - Day 2 &middot; Adam Jermyn</title>
+		<link rel="shortcut icon" href="https://adamjermyn.com/images/favicon.ico">
+		<link rel="stylesheet" href="https://adamjermyn.com/css/style.css">
+		<link rel="stylesheet" href="https://adamjermyn.com/css/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://adamjermyn.com/css/font-awesome.min.css">
+		
+
+		
+		<link href="https://adamjermyn.com/index.xml" rel="alternate" type="application/rss+xml" title="Adam Jermyn" />
+		
+
+		
+
+                
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-186473758-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+		
+                <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+
+        <a href='https://adamjermyn.com/'>About</a>
+	<a href='https://adamjermyn.com/posts'>Posts</a>
+	<a href='https://adamjermyn.com/tags'>Tags</a>
+        <a href='https://adamjermyn.com/software'>Software</a>
+        <a href='https://adamjermyn.com/workflow'>Workflow</a>
+
+	
+
+</nav>
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Working Notes - Learning PyTorch - Day 2
+                    </h1>
+                    <h2 class="headline">
+		    
+                     Apr 12, 2022 17:17 
+                    · 2792 words
+                    · 14 minute read
+                      <span class="tags">
+                      
+                      
+                          
+                              <a href="https://adamjermyn.com/tags/machine-learning">Machine Learning</a>
+                          
+                              <a href="https://adamjermyn.com/tags/ai">AI</a>
+                          
+                      
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                <section id="post-body">
+                    <h2 id="heading"></h2>
+<h2 id="summary">Summary</h2>
+<ul>
+<li>Adding convolutional layers is pretty straightforward, but there are some indexing subtleties to watch.</li>
+<li>Pooling layers can really improve performance.</li>
+<li>With two pooling layers, I found an example of a too-high learning rate making the model get stuck with poor performance.</li>
+<li>The more pooling layers I used the faster the model took a training step (because the dense linear layer was smaller).</li>
+<li>The more pooling layers I used, the more important the number of channels in the convolutional/pooling layers became.</li>
+<li>Working with text requires a way to turn that text into vectors in a continuous space, and one-hot vectors are one solution to that problem.</li>
+<li>RNN&rsquo;s let you study sequences, and accumulate information about the sequence as they &lsquo;sweep&rsquo; through it.</li>
+<li>Even though the processing to form the hidden state is linear, there&rsquo;s a notion of causality in an RNN, because earlier entries get passed through the linear operator that forms the hidden state more times than late entries (and each letter only gets combined with the subsequent letters in determining its contribution to the hidden state).</li>
+</ul>
+<h2 id="convolutional-neural-networks">Convolutional Neural Networks</h2>
+<p>I&rsquo;d like to try MNIST with a CNN.</p>
+<p>PyTorch has a 2D convolution layer (<a href="https://pytorch.org/docs/stable/generated/torch.nn.Conv2d.html?highlight=conv2d#torch.nn.Conv2d">here</a>):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">nn<span style="color:#f92672">.</span>Conv2d(in_channels, out_channels, kernel_size<span style="color:#f92672">=</span>kernel_size, stride<span style="color:#f92672">=</span>stride, padding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;same&#34;</span>), 
+</code></pre></div><p>This takes something of shape <code>(N, in_channels, height, width)</code> and returns something of shape <code>(N, out_channels, height, width)</code>. (The input and output height and width match because we chose <code>padding=&quot;same&quot;</code>&hellip; with other choices they can be different.)</p>
+<p>The MNIST input has shape (N,1,28,28), so this&rsquo;ll work just fine.</p>
+<p>The one change we need is to increase the size of the linear layer from <code>28*28</code> to <code>out_channels*28*28</code>, and we need to flatten the output of the <code>Conv2D</code> layer to provide an input to the linear layer (note that <code>nn.flatten()</code> ignores the first dimension, assuming that&rsquo;s the batch/sample dimension, which is exactly what we need here). The resulting spec is:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">nn<span style="color:#f92672">.</span>Conv2d(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">4</span>, kernel_size<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>, stride<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, padding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;same&#34;</span>), 
+nn<span style="color:#f92672">.</span>flatten(),
+nn<span style="color:#f92672">.</span>Linear(<span style="color:#ae81ff">4</span><span style="color:#f92672">*</span><span style="color:#ae81ff">28</span><span style="color:#f92672">*</span><span style="color:#ae81ff">28</span>, <span style="color:#ae81ff">512</span>), <span style="color:#75715e"># 28x28 is the MNIST image size</span>
+nn<span style="color:#f92672">.</span>ReLU(),
+nn<span style="color:#f92672">.</span>Linear(<span style="color:#ae81ff">512</span>, <span style="color:#ae81ff">10</span>),
+nn<span style="color:#f92672">.</span>Softmax(dim<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>), <span style="color:#75715e"># Softmax turns this from logits into probabilities.</span>
+</code></pre></div><p>Also we need to remove the <code>flatten</code> operation that used to wrap around all of this/come first.</p>
+<p>With that, the full spec is:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">NeuralNetwork</span>(nn<span style="color:#f92672">.</span>Module):
+    <span style="color:#66d9ef">def</span> __init__(self):
+        super(NeuralNetwork, self)<span style="color:#f92672">.</span>__init__()
+        self<span style="color:#f92672">.</span>stack <span style="color:#f92672">=</span> nn<span style="color:#f92672">.</span>Sequential(
+        	<span style="color:#75715e"># Notice the dimension convention: input is on the left, output is on the right.</span>
+            <span style="color:#75715e"># First is # of channels, 1 because Black and White image</span>
+            <span style="color:#75715e"># Second is the output width, we pick 4 as a starting guess.</span>
+            <span style="color:#75715e"># Third is the spatial width of the kernel and fourth is the amount to pad the input (&#34;same&#34; makes the output shape match the input shape).</span>
+            nn<span style="color:#f92672">.</span>Conv2d(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">4</span>, kernel_size<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>, stride<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, padding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;same&#34;</span>),
+            nn<span style="color:#f92672">.</span>Flatten(),
+            nn<span style="color:#f92672">.</span>Linear(<span style="color:#ae81ff">4</span><span style="color:#f92672">*</span><span style="color:#ae81ff">28</span><span style="color:#f92672">*</span><span style="color:#ae81ff">28</span>, <span style="color:#ae81ff">512</span>), <span style="color:#75715e"># 28x28 is the MNIST image size</span>
+            nn<span style="color:#f92672">.</span>ReLU(),
+            nn<span style="color:#f92672">.</span>Linear(<span style="color:#ae81ff">512</span>, <span style="color:#ae81ff">10</span>),
+			nn<span style="color:#f92672">.</span>Softmax(dim<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>), <span style="color:#75715e"># Softmax turns this from logits into probabilities.</span>
+		)
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">forward</span>(self, x):
+        probabilities <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>stack(x)
+        <span style="color:#66d9ef">return</span> probabilities
+</code></pre></div><p>Subjectively this runs a bit slower than without the convolutional layer, but I haven&rsquo;t timed it carefully to be sure (and on my laptop thermals could make a comparable difference&hellip;).</p>
+<p>What about test/train accuracy/loss?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Epoch <span style="color:#ae81ff">1</span>
+loss: <span style="color:#ae81ff">1.523330</span>  [<span style="color:#ae81ff">57600</span><span style="color:#f92672">/</span><span style="color:#ae81ff">60000</span>]
+Test Accuracy: <span style="color:#ae81ff">90.7</span><span style="color:#f92672">%</span>, Avg loss: <span style="color:#ae81ff">1.553831</span> 
+
+Epoch <span style="color:#ae81ff">2</span>
+loss: <span style="color:#ae81ff">1.511761</span>  [<span style="color:#ae81ff">57600</span><span style="color:#f92672">/</span><span style="color:#ae81ff">60000</span>]
+Test Accuracy: <span style="color:#ae81ff">94.8</span><span style="color:#f92672">%</span>, Avg loss: <span style="color:#ae81ff">1.513175</span> 
+
+Epoch <span style="color:#ae81ff">3</span>
+loss: <span style="color:#ae81ff">1.523650</span>  [<span style="color:#ae81ff">57600</span><span style="color:#f92672">/</span><span style="color:#ae81ff">60000</span>]
+Test Accuracy: <span style="color:#ae81ff">94.2</span><span style="color:#f92672">%</span>, Avg loss: <span style="color:#ae81ff">1.518331</span> 
+
+Epoch <span style="color:#ae81ff">10</span>
+loss: <span style="color:#ae81ff">1.538825</span>  [<span style="color:#ae81ff">57600</span><span style="color:#f92672">/</span><span style="color:#ae81ff">60000</span>]
+Test Accuracy: <span style="color:#ae81ff">91.2</span><span style="color:#f92672">%</span>, Avg loss: <span style="color:#ae81ff">1.548623</span> 
+</code></pre></div><p>This is a lot worse than what we had without the conv layer!</p>
+<h3 id="pooling">Pooling</h3>
+<p>What about pooling (to get rid of unimportant small-scale details)? We can do that with</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">  nn<span style="color:#f92672">.</span>Conv2d(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">4</span>, kernel_size<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>, stride<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, padding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;same&#34;</span>),
+  nn<span style="color:#f92672">.</span>MaxPool2d(<span style="color:#ae81ff">2</span>, stride<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>, padding<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>), <span style="color:#75715e"># Reduces the spatial dimensions each by half</span>
+  nn<span style="color:#f92672">.</span>Flatten(),
+  nn<span style="color:#f92672">.</span>Linear(<span style="color:#ae81ff">4</span><span style="color:#f92672">*</span><span style="color:#ae81ff">14</span><span style="color:#f92672">*</span><span style="color:#ae81ff">14</span>, <span style="color:#ae81ff">512</span>), <span style="color:#75715e"># 28x28 is the MNIST image size</span>
+</code></pre></div><p>The <code>MaxPool2d</code> layer returns the maximum of each $k\times k$ block. This is done as a convolution, but if we set the stride to $k$ we can make the blocks non-overlapping, reducing the spatial scale by a factor of $k$.</p>
+<p>This runs faster, and seems to do better too!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Epoch <span style="color:#ae81ff">1</span>
+loss: <span style="color:#ae81ff">1.514428</span>  [<span style="color:#ae81ff">57600</span><span style="color:#f92672">/</span><span style="color:#ae81ff">60000</span>]
+Test Accuracy: <span style="color:#ae81ff">93.6</span><span style="color:#f92672">%</span>, Avg loss: <span style="color:#ae81ff">1.524622</span> 
+
+Epoch <span style="color:#ae81ff">2</span>
+loss: <span style="color:#ae81ff">1.522758</span>  [<span style="color:#ae81ff">57600</span><span style="color:#f92672">/</span><span style="color:#ae81ff">60000</span>]
+Test Accuracy: <span style="color:#ae81ff">96.2</span><span style="color:#f92672">%</span>, Avg loss: <span style="color:#ae81ff">1.498265</span> 
+
+Epoch <span style="color:#ae81ff">5</span>
+loss: <span style="color:#ae81ff">1.492536</span>  [<span style="color:#ae81ff">57600</span><span style="color:#f92672">/</span><span style="color:#ae81ff">60000</span>]
+Test Accuracy: <span style="color:#ae81ff">96.4</span><span style="color:#f92672">%</span>, Avg loss: <span style="color:#ae81ff">1.496530</span> 
+
+Epoch <span style="color:#ae81ff">10</span>
+loss: <span style="color:#ae81ff">1.476787</span>  [<span style="color:#ae81ff">57600</span><span style="color:#f92672">/</span><span style="color:#ae81ff">60000</span>]
+Test Accuracy: <span style="color:#ae81ff">97.8</span><span style="color:#f92672">%</span>, Avg loss: <span style="color:#ae81ff">1.482338</span> 
+</code></pre></div><p>I&rsquo;m guessing this works by imposing a prior that some of the small details don&rsquo;t matter, and possibly by reducing the number of parameters in the linear layer, but I&rsquo;m not really sure.</p>
+<p>Given that that worked, what if we do it again?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">nn<span style="color:#f92672">.</span>Conv2d(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">4</span>, kernel_size<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>, stride<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, padding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;same&#34;</span>),
+nn<span style="color:#f92672">.</span>MaxPool2d(<span style="color:#ae81ff">2</span>, stride<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>, padding<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>),
+nn<span style="color:#f92672">.</span>Conv2d(<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">4</span>, kernel_size<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>, stride<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, padding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;same&#34;</span>),
+nn<span style="color:#f92672">.</span>MaxPool2d(<span style="color:#ae81ff">2</span>, stride<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>, padding<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>),
+nn<span style="color:#f92672">.</span>Flatten(),
+nn<span style="color:#f92672">.</span>Linear(<span style="color:#ae81ff">4</span><span style="color:#f92672">*</span><span style="color:#ae81ff">7</span><span style="color:#f92672">*</span><span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">512</span>), <span style="color:#75715e"># 28x28 is the MNIST image size, but we cut that in 4 in each dimension with the pooling layers</span>
+nn<span style="color:#f92672">.</span>ReLU(),
+nn<span style="color:#f92672">.</span>Linear(<span style="color:#ae81ff">512</span>, <span style="color:#ae81ff">10</span>),
+nn<span style="color:#f92672">.</span>Softmax(dim<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>), <span style="color:#75715e"># Softmax turns this from logits into probabilities.</span>
+</code></pre></div><p>That gives:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Epoch <span style="color:#ae81ff">1</span>
+loss: <span style="color:#ae81ff">1.556487</span>  [<span style="color:#ae81ff">57600</span><span style="color:#f92672">/</span><span style="color:#ae81ff">60000</span>]
+Test Accuracy: <span style="color:#ae81ff">93.4</span><span style="color:#f92672">%</span>, Avg loss: <span style="color:#ae81ff">1.527201</span> 
+
+Epoch <span style="color:#ae81ff">2</span>
+loss: <span style="color:#ae81ff">1.595740</span>  [<span style="color:#ae81ff">57600</span><span style="color:#f92672">/</span><span style="color:#ae81ff">60000</span>]
+Test Accuracy: <span style="color:#ae81ff">92.7</span><span style="color:#f92672">%</span>, Avg loss: <span style="color:#ae81ff">1.534411</span> 
+
+Epoch <span style="color:#ae81ff">3</span>
+loss: <span style="color:#ae81ff">2.242401</span>  [<span style="color:#ae81ff">57600</span><span style="color:#f92672">/</span><span style="color:#ae81ff">60000</span>]
+Test Accuracy: <span style="color:#ae81ff">10.3</span><span style="color:#f92672">%</span>, Avg loss: <span style="color:#ae81ff">2.357847</span> 
+</code></pre></div><p>That went off the rails, and doesn&rsquo;t recover in later epochs. Could it be a learning rate issue? What happens if we lower the learning rate to 1e-1?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Epoch <span style="color:#ae81ff">10</span>
+loss: <span style="color:#ae81ff">1.507247</span>  [<span style="color:#ae81ff">57600</span><span style="color:#f92672">/</span><span style="color:#ae81ff">60000</span>]
+Test Accuracy: <span style="color:#ae81ff">97.6</span><span style="color:#f92672">%</span>, Avg loss: <span style="color:#ae81ff">1.486762</span> 
+</code></pre></div><p>Much better! And the behaviour of the test accuracy was monotonic too, which is nice.</p>
+<p>How about a rate of 3e-1?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Epoch <span style="color:#ae81ff">10</span>
+loss: <span style="color:#ae81ff">1.485193</span>  [<span style="color:#ae81ff">57600</span><span style="color:#f92672">/</span><span style="color:#ae81ff">60000</span>]
+Test Accuracy: <span style="color:#ae81ff">97.8</span><span style="color:#f92672">%</span>, Avg loss: <span style="color:#ae81ff">1.482973</span> 
+</code></pre></div><p>Even better! I&rsquo;ll still with 3e-1 for now.</p>
+<h3 id="even-more-pooling">Even More Pooling</h3>
+<p>How far does pooling scale? Let&rsquo;s add another conv2d layer and another maxpool layer. While we&rsquo;re at it, let&rsquo;s reorganize a little to make the structure clearer:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">self<span style="color:#f92672">.</span>conv_stack <span style="color:#f92672">=</span> nn<span style="color:#f92672">.</span>Sequential(
+  <span style="color:#75715e"># Notice the dimension convention: input is on the left, output is on the right.</span>
+    <span style="color:#75715e"># First is # of channels, 1 because Black and White image</span>
+    <span style="color:#75715e"># Second is the output width, we pick 4 as a starting guess.</span>
+    <span style="color:#75715e"># Third is the spatial width of the kernel and fourth is the amount to pad the input (&#34;same&#34; makes the output shape match the input shape).</span>
+    nn<span style="color:#f92672">.</span>Conv2d(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">4</span>, kernel_size<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>, stride<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, padding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;same&#34;</span>),
+    nn<span style="color:#f92672">.</span>MaxPool2d(<span style="color:#ae81ff">2</span>, stride<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>, padding<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>),
+    nn<span style="color:#f92672">.</span>Conv2d(<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">4</span>, kernel_size<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>, stride<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, padding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;same&#34;</span>),
+    nn<span style="color:#f92672">.</span>MaxPool2d(<span style="color:#ae81ff">2</span>, stride<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>, padding<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>),
+    nn<span style="color:#f92672">.</span>Conv2d(<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">4</span>, kernel_size<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>, stride<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, padding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;same&#34;</span>),
+    nn<span style="color:#f92672">.</span>MaxPool2d(<span style="color:#ae81ff">2</span>, stride<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>, padding<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>),
+)
+
+self<span style="color:#f92672">.</span>relu_stack <span style="color:#f92672">=</span> nn<span style="color:#f92672">.</span>Sequential(
+    nn<span style="color:#f92672">.</span>Flatten(),
+    nn<span style="color:#f92672">.</span>Linear(<span style="color:#ae81ff">4</span><span style="color:#f92672">*</span><span style="color:#ae81ff">3</span><span style="color:#f92672">*</span><span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span><span style="color:#f92672">*</span><span style="color:#ae81ff">3</span><span style="color:#f92672">*</span><span style="color:#ae81ff">3</span>), <span style="color:#75715e"># 28x28 is the MNIST image size, but we cut that in 4 in each dimension with the pooling layers</span>
+    nn<span style="color:#f92672">.</span>ReLU(),
+    nn<span style="color:#f92672">.</span>Linear(<span style="color:#ae81ff">4</span><span style="color:#f92672">*</span><span style="color:#ae81ff">3</span><span style="color:#f92672">*</span><span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">10</span>),
+    nn<span style="color:#f92672">.</span>Softmax(dim<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>), <span style="color:#75715e"># Softmax turns this from logits into probabilities.</span>
+)
+</code></pre></div><p>Note that I made the linear layers much smaller&hellip; I don&rsquo;t think there&rsquo;s any point in having a linear layer with an output that&rsquo;s wider internally than it&rsquo;s input (but maybe I&rsquo;m missing something?).</p>
+<p>As an aside, I figured out 4x3x3 experimentally (just being lazy):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(NeuralNetwork()<span style="color:#f92672">.</span>conv_stack(torch<span style="color:#f92672">.</span>zeros((<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">28</span>,<span style="color:#ae81ff">28</span>)))<span style="color:#f92672">.</span>shape)
+</code></pre></div><p>This prints <code>torch.Size([10,4,3,3])</code>. Here <code>10</code> stands in for the batch size, so <code>4x3x3</code> is the size of the input to the linear layer.</p>
+<p>This model takes training steps noticeably faster than the previous one, which I&rsquo;m guessing is because the linear layer is much smaller. Training with a learning rate of 3e-1 gives non-monotone behavior and looks like it gets stuck, so I lowered the learning rate to 1e-1. That gives a similar result, with accuracy in both cases stuck in the mid-80% range.</p>
+<p>So something is being thrown out by this aggressive pooling.</p>
+<h3 id="more-channels">More Channels</h3>
+<p>What if we keep the many pooling layers but widen them (with more channels)? Let&rsquo;s try 8 channels:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">self<span style="color:#f92672">.</span>conv_channels <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>
+self<span style="color:#f92672">.</span>conv_stack <span style="color:#f92672">=</span> nn<span style="color:#f92672">.</span>Sequential(
+  <span style="color:#75715e"># Notice the dimension convention: input is on the left, output is on the right.</span>
+    <span style="color:#75715e"># First is # of channels, 1 because Black and White image</span>
+    <span style="color:#75715e"># Second is the output width, we pick 4 as a starting guess.</span>
+    <span style="color:#75715e"># Third is the spatial width of the kernel and fourth is the amount to pad the input (&#34;same&#34; makes the output shape match the input shape).</span>
+    nn<span style="color:#f92672">.</span>Conv2d(<span style="color:#ae81ff">1</span>, self<span style="color:#f92672">.</span>conv_channels, kernel_size<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>, stride<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, padding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;same&#34;</span>),
+    nn<span style="color:#f92672">.</span>MaxPool2d(<span style="color:#ae81ff">2</span>, stride<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>, padding<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>),
+    nn<span style="color:#f92672">.</span>Conv2d(self<span style="color:#f92672">.</span>conv_channels, self<span style="color:#f92672">.</span>conv_channels, kernel_size<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>, stride<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, padding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;same&#34;</span>),
+    nn<span style="color:#f92672">.</span>MaxPool2d(<span style="color:#ae81ff">2</span>, stride<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>, padding<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>),
+    nn<span style="color:#f92672">.</span>Conv2d(self<span style="color:#f92672">.</span>conv_channels, self<span style="color:#f92672">.</span>conv_channels, kernel_size<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>, stride<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, padding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;same&#34;</span>),
+    nn<span style="color:#f92672">.</span>MaxPool2d(<span style="color:#ae81ff">2</span>, stride<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>, padding<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>),
+)
+
+self<span style="color:#f92672">.</span>relu_stack <span style="color:#f92672">=</span> nn<span style="color:#f92672">.</span>Sequential(
+    nn<span style="color:#f92672">.</span>Flatten(),
+    nn<span style="color:#f92672">.</span>Linear(self<span style="color:#f92672">.</span>conv_channels<span style="color:#f92672">*</span><span style="color:#ae81ff">3</span><span style="color:#f92672">*</span><span style="color:#ae81ff">3</span>, self<span style="color:#f92672">.</span>conv_channels<span style="color:#f92672">*</span><span style="color:#ae81ff">3</span><span style="color:#f92672">*</span><span style="color:#ae81ff">3</span>), <span style="color:#75715e"># 28x28 is the MNIST image size, but we cut that in 4 in each dimension with the pooling layers</span>
+    nn<span style="color:#f92672">.</span>ReLU(),
+    nn<span style="color:#f92672">.</span>Linear(self<span style="color:#f92672">.</span>conv_channels<span style="color:#f92672">*</span><span style="color:#ae81ff">3</span><span style="color:#f92672">*</span><span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">10</span>),
+    nn<span style="color:#f92672">.</span>Softmax(dim<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>), <span style="color:#75715e"># Softmax turns this from logits into probabilities.</span>
+)
+</code></pre></div><p>With a learning rate of 3e-1, this gives much better performance, ending at 97% by Epoch 5.</p>
+<p>If we go to 9 channels the performance is worse, at 89% after epoch 5. I&rsquo;m worried this is just a learning rate issue generating noise in the output though. So I&rsquo;m trying again with a learning rate of 1e-1:</p>
+<table>
+<thead>
+<tr>
+<th>Channels</th>
+<th>Learning Rate / End Epoch</th>
+<th>End Epoch Test Accuracy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5</td>
+<td>3e-1 / 5</td>
+<td>85%</td>
+</tr>
+<tr>
+<td>6</td>
+<td>3e-1 / 5</td>
+<td>96%</td>
+</tr>
+<tr>
+<td>8</td>
+<td>3e-1 / 5</td>
+<td>97%</td>
+</tr>
+<tr>
+<td>9</td>
+<td>3e-1 / 5</td>
+<td>89%</td>
+</tr>
+<tr>
+<td>9</td>
+<td>1e-1 / 10</td>
+<td>89%</td>
+</tr>
+<tr>
+<td>16</td>
+<td>3e-1 / 5</td>
+<td>98%</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>I&rsquo;m confused as to what&rsquo;s going on here with width 9. Why should its performance be worse than with 8? But think I should probably move on.</p>
+<p>Naively I thought 16 wouldn&rsquo;t do better than 9. I figured there are only 9 inputs to the convolutional layers, so having more than 9 output channels wouldn&rsquo;t help. But that&rsquo;s not right: the first conv2d layer has a kernel mapping input (1,3,3) to output (9,) but the next one maps input (9,3,3) to output (9,), so there is some summarizing happening and that can be alleviated by adding more channels.</p>
+<h2 id="recurrent-neural-networks">Recurrent Neural Networks</h2>
+<p>RNN&rsquo;s are used to analyze sequences. Like CNN&rsquo;s get &lsquo;swept&rsquo; over images, RNN&rsquo;s get &lsquo;swept&rsquo; over a sequence. A key difference is that RNN&rsquo;s accumulate their results as they go (they have an internal state that gets modified as they go).</p>
+<h3 id="example-pytorch-tutorial-on-name-classification">Example: PyTorch Tutorial on Name Classification</h3>
+<p><a href="https://pytorch.org/tutorials/intermediate/char_rnn_classification_tutorial.html">Link</a></p>
+<p>The basic idea is we&rsquo;re going to treat names as sequences of characters. We&rsquo;ll sweep an RNN over it and interpret the final output as the probability distribution over languages-of-origin.</p>
+<p>I&rsquo;ll omit the data loading bits copied directly from the tutorial. Those are mostly about parsing the data into a dictionary, <code>category_lines</code>, keyed by the languages and containing arrays of names from those languages.</p>
+<p>The way we&rsquo;ll represent data is as a &lsquo;one-hot vector&rsquo;, which has length equal to the number of possible characters and a 1 in the spot corresponding to the actual character that appears (zeros everywhere else). So e.g. <code>a -&gt; (1,0,0,...)</code>, <code>b -&gt; (0,1,0,...)</code>, and so on.</p>
+<p>Words/names are then shaped as (length, 1, n_possible_characters). The extra <code>1</code> is interesting, but I think is meant to allow for feature channels later on. We parse into this shape using:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">lineToTensor</span>(line):
+    tensor <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>zeros(len(line), <span style="color:#ae81ff">1</span>, n_letters)
+    <span style="color:#66d9ef">for</span> li, letter <span style="color:#f92672">in</span> enumerate(line):
+        tensor[li][<span style="color:#ae81ff">0</span>][letterToIndex(letter)] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+    <span style="color:#66d9ef">return</span> tensor
+</code></pre></div><p>The RNN we&rsquo;ll use (following the tutorial) is formed of a linear operator that mixes the input and hidden state into an output and a new hidden state. There&rsquo;s then a softmax applied to the output (but not the hidden layer). This is important: the hidden state just accumulates linearly, which prevents gradients from decaying with &lsquo;distance&rsquo; from the training loss (e.g. we don&rsquo;t want the gradient with respect to coefficients that touch the first letter to vanish, because then the loss can&rsquo;t be made smaller by adjusting the response to that first letter).</p>
+<p>It&rsquo;s easier to code the linear layer as two separate linear operators, one producing the output and one updating the hidden state, so we write it as</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RNN</span>(nn<span style="color:#f92672">.</span>Module):
+    <span style="color:#66d9ef">def</span> __init__(self, input_size, hidden_size, output_size):
+        super(RNN, self)<span style="color:#f92672">.</span>__init__()
+
+        self<span style="color:#f92672">.</span>hidden_size <span style="color:#f92672">=</span> hidden_size
+
+        self<span style="color:#f92672">.</span>i2h <span style="color:#f92672">=</span> nn<span style="color:#f92672">.</span>Linear(input_size <span style="color:#f92672">+</span> hidden_size, hidden_size) <span style="color:#75715e"># Updates hidden</span>
+        self<span style="color:#f92672">.</span>i2o <span style="color:#f92672">=</span> nn<span style="color:#f92672">.</span>Linear(input_size <span style="color:#f92672">+</span> hidden_size, output_size) <span style="color:#75715e"># Makes output</span>
+        self<span style="color:#f92672">.</span>softmax <span style="color:#f92672">=</span> nn<span style="color:#f92672">.</span>LogSoftmax(dim<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>) <span style="color:#75715e"># Only applied to output</span>
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">forward</span>(self, input, hidden):
+        combined <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>cat((input, hidden), <span style="color:#ae81ff">1</span>)
+        hidden <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>i2h(combined)
+        output <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>i2o(combined)
+        output <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>softmax(output)
+        <span style="color:#66d9ef">return</span> output, hidden
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">initHidden</span>(self):
+        <span style="color:#66d9ef">return</span> torch<span style="color:#f92672">.</span>zeros(<span style="color:#ae81ff">1</span>, self<span style="color:#f92672">.</span>hidden_size)
+</code></pre></div><p>(this is just following the tutorial)</p>
+<p>By using LogSoftmax we&rsquo;re making the output live in (-inf,0), which makes it natural to think of the output as the log-probability of each category.</p>
+<p>The way we&rsquo;d do the sweep then is:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">input <span style="color:#f92672">=</span> lineToTensor(<span style="color:#e6db74">&#39;Name&#39;</span>)
+hidden <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>zeros(<span style="color:#ae81ff">1</span>, n_hidden)
+
+<span style="color:#66d9ef">for</span> c <span style="color:#f92672">in</span> input:
+	output, next_hidden <span style="color:#f92672">=</span> rnn(c, hidden)
+	hidden <span style="color:#f92672">=</span> next_hidden
+</code></pre></div><p>The tutorial suggests using a loss called <code>NLL</code>, which stands for negative log-likelihood (which fits with our interpretation of the output as log-odds). If we train with this loss we&rsquo;ll be making a model that outputs a log-probability of each class. That&rsquo;s fine, so our training code looks like:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">### Training</span>
+criterion <span style="color:#f92672">=</span> nn<span style="color:#f92672">.</span>NLLLoss()
+learning_rate <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.005</span> <span style="color:#75715e"># If you set this too high, it might explode. If too low, it might not learn</span>
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">train</span>(category_tensor, line_tensor):
+    hidden <span style="color:#f92672">=</span> rnn<span style="color:#f92672">.</span>initHidden()
+
+    rnn<span style="color:#f92672">.</span>zero_grad()
+
+    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(line_tensor<span style="color:#f92672">.</span>size()[<span style="color:#ae81ff">0</span>]):
+        output, hidden <span style="color:#f92672">=</span> rnn(line_tensor[i], hidden)
+
+    loss <span style="color:#f92672">=</span> criterion(output, category_tensor)
+    loss<span style="color:#f92672">.</span>backward()
+
+    <span style="color:#75715e"># Add parameters&#39; gradients to their values, multiplied by learning rate</span>
+    <span style="color:#66d9ef">for</span> p <span style="color:#f92672">in</span> rnn<span style="color:#f92672">.</span>parameters():
+        p<span style="color:#f92672">.</span>data<span style="color:#f92672">.</span>add_(p<span style="color:#f92672">.</span>grad<span style="color:#f92672">.</span>data, alpha<span style="color:#f92672">=-</span>learning_rate)
+
+    <span style="color:#66d9ef">return</span> output, loss<span style="color:#f92672">.</span>item()
+</code></pre></div><p>Now we can train. We&rsquo;ll do this (per the tutorial) by picking random samples from the dataset and passing them through to <code>train</code>. That gives output like:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#ae81ff">5000</span> <span style="color:#ae81ff">5</span><span style="color:#f92672">%</span> (<span style="color:#ae81ff">0</span>m <span style="color:#ae81ff">3</span>s) <span style="color:#ae81ff">2.4513</span> Richelieu <span style="color:#f92672">/</span> Irish <span style="color:#960050;background-color:#1e0010">✗</span> (French)
+<span style="color:#ae81ff">10000</span> <span style="color:#ae81ff">10</span><span style="color:#f92672">%</span> (<span style="color:#ae81ff">0</span>m <span style="color:#ae81ff">6</span>s) <span style="color:#ae81ff">2.8062</span> Haanraats <span style="color:#f92672">/</span> Portuguese <span style="color:#960050;background-color:#1e0010">✗</span> (Dutch)
+<span style="color:#ae81ff">15000</span> <span style="color:#ae81ff">15</span><span style="color:#f92672">%</span> (<span style="color:#ae81ff">0</span>m <span style="color:#ae81ff">9</span>s) <span style="color:#ae81ff">1.5918</span> Vasyukevich <span style="color:#f92672">/</span> Russian <span style="color:#960050;background-color:#1e0010">✓</span>
+<span style="color:#ae81ff">20000</span> <span style="color:#ae81ff">20</span><span style="color:#f92672">%</span> (<span style="color:#ae81ff">0</span>m <span style="color:#ae81ff">12</span>s) <span style="color:#ae81ff">1.0102</span> Tivoli <span style="color:#f92672">/</span> Italian <span style="color:#960050;background-color:#1e0010">✓</span>
+<span style="color:#ae81ff">25000</span> <span style="color:#ae81ff">25</span><span style="color:#f92672">%</span> (<span style="color:#ae81ff">0</span>m <span style="color:#ae81ff">15</span>s) <span style="color:#ae81ff">2.2062</span> Durand <span style="color:#f92672">/</span> Italian <span style="color:#960050;background-color:#1e0010">✗</span> (French)
+<span style="color:#ae81ff">30000</span> <span style="color:#ae81ff">30</span><span style="color:#f92672">%</span> (<span style="color:#ae81ff">0</span>m <span style="color:#ae81ff">18</span>s) <span style="color:#ae81ff">1.7089</span> Silveira <span style="color:#f92672">/</span> Czech <span style="color:#960050;background-color:#1e0010">✗</span> (Portuguese)
+<span style="color:#ae81ff">35000</span> <span style="color:#ae81ff">35</span><span style="color:#f92672">%</span> (<span style="color:#ae81ff">0</span>m <span style="color:#ae81ff">21</span>s) <span style="color:#ae81ff">1.9493</span> Taylor <span style="color:#f92672">/</span> Russian <span style="color:#960050;background-color:#1e0010">✗</span> (Scottish)
+<span style="color:#ae81ff">40000</span> <span style="color:#ae81ff">40</span><span style="color:#f92672">%</span> (<span style="color:#ae81ff">0</span>m <span style="color:#ae81ff">24</span>s) <span style="color:#ae81ff">1.6953</span> Stoppelbein <span style="color:#f92672">/</span> Dutch <span style="color:#960050;background-color:#1e0010">✗</span> (German)
+<span style="color:#ae81ff">45000</span> <span style="color:#ae81ff">45</span><span style="color:#f92672">%</span> (<span style="color:#ae81ff">0</span>m <span style="color:#ae81ff">27</span>s) <span style="color:#ae81ff">1.0181</span> Herten <span style="color:#f92672">/</span> Dutch <span style="color:#960050;background-color:#1e0010">✓</span>
+<span style="color:#ae81ff">50000</span> <span style="color:#ae81ff">50</span><span style="color:#f92672">%</span> (<span style="color:#ae81ff">0</span>m <span style="color:#ae81ff">30</span>s) <span style="color:#ae81ff">0.6284</span> Paszek <span style="color:#f92672">/</span> Polish <span style="color:#960050;background-color:#1e0010">✓</span>
+<span style="color:#ae81ff">55000</span> <span style="color:#ae81ff">55</span><span style="color:#f92672">%</span> (<span style="color:#ae81ff">0</span>m <span style="color:#ae81ff">34</span>s) <span style="color:#ae81ff">0.9961</span> Grozmanova <span style="color:#f92672">/</span> Czech <span style="color:#960050;background-color:#1e0010">✓</span>
+<span style="color:#ae81ff">60000</span> <span style="color:#ae81ff">60</span><span style="color:#f92672">%</span> (<span style="color:#ae81ff">0</span>m <span style="color:#ae81ff">37</span>s) <span style="color:#ae81ff">1.9475</span> Hofwegen <span style="color:#f92672">/</span> German <span style="color:#960050;background-color:#1e0010">✗</span> (Dutch)
+<span style="color:#ae81ff">65000</span> <span style="color:#ae81ff">65</span><span style="color:#f92672">%</span> (<span style="color:#ae81ff">0</span>m <span style="color:#ae81ff">40</span>s) <span style="color:#ae81ff">0.7656</span> Johnstone <span style="color:#f92672">/</span> Scottish <span style="color:#960050;background-color:#1e0010">✓</span>
+<span style="color:#ae81ff">70000</span> <span style="color:#ae81ff">70</span><span style="color:#f92672">%</span> (<span style="color:#ae81ff">0</span>m <span style="color:#ae81ff">43</span>s) <span style="color:#ae81ff">2.3238</span> Pinho <span style="color:#f92672">/</span> Japanese <span style="color:#960050;background-color:#1e0010">✗</span> (Portuguese)
+<span style="color:#ae81ff">75000</span> <span style="color:#ae81ff">75</span><span style="color:#f92672">%</span> (<span style="color:#ae81ff">0</span>m <span style="color:#ae81ff">46</span>s) <span style="color:#ae81ff">0.9659</span> Oomen <span style="color:#f92672">/</span> Dutch <span style="color:#960050;background-color:#1e0010">✓</span>
+<span style="color:#ae81ff">80000</span> <span style="color:#ae81ff">80</span><span style="color:#f92672">%</span> (<span style="color:#ae81ff">0</span>m <span style="color:#ae81ff">49</span>s) <span style="color:#ae81ff">0.0615</span> Khoury <span style="color:#f92672">/</span> Arabic <span style="color:#960050;background-color:#1e0010">✓</span>
+<span style="color:#ae81ff">85000</span> <span style="color:#ae81ff">85</span><span style="color:#f92672">%</span> (<span style="color:#ae81ff">0</span>m <span style="color:#ae81ff">51</span>s) <span style="color:#ae81ff">1.0259</span> Bertsimas <span style="color:#f92672">/</span> Greek <span style="color:#960050;background-color:#1e0010">✓</span>
+<span style="color:#ae81ff">90000</span> <span style="color:#ae81ff">90</span><span style="color:#f92672">%</span> (<span style="color:#ae81ff">0</span>m <span style="color:#ae81ff">54</span>s) <span style="color:#ae81ff">0.3386</span> Cloutier <span style="color:#f92672">/</span> French <span style="color:#960050;background-color:#1e0010">✓</span>
+</code></pre></div><p>Incidentally, an important feature about this loss function (rather than e.g. a binary score based on whether the classification was correct or not) is that it&rsquo;s differentiable (with non-zero derivatives), which allows backprop to gradually lower the loss. [This sounds obvious, and is, I just wanted to note it&hellip;]</p>
+<h3 id="test-accuracy">Test Accuracy</h3>
+<p>Let&rsquo;s build a system for evaluating test accuracy.</p>
+<p>We do this by splitting off a test set ahead of time:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">test_set <span style="color:#f92672">=</span> set()
+<span style="color:#66d9ef">while</span> len(test_set) <span style="color:#f92672">&lt;</span> num_test:
+    test_set<span style="color:#f92672">.</span>add(tuple(randomTrainingExample()))
+
+<span style="color:#66d9ef">for</span> ex <span style="color:#f92672">in</span> test_set:
+    category,line,_,_ <span style="color:#f92672">=</span> ex
+    category_lines[category]<span style="color:#f92672">.</span>remove(line)
+    
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_accuracy</span>():
+	score <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+	<span style="color:#66d9ef">for</span> ex <span style="color:#f92672">in</span> test_set:
+	    category, line, category_tensor, line_tensor <span style="color:#f92672">=</span> ex
+
+	    hidden <span style="color:#f92672">=</span> rnn<span style="color:#f92672">.</span>initHidden()
+	    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(line_tensor<span style="color:#f92672">.</span>size()[<span style="color:#ae81ff">0</span>]):
+	        output, hidden <span style="color:#f92672">=</span> rnn(line_tensor[i], hidden)
+
+	    ind <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>argmax(output)
+	    <span style="color:#66d9ef">if</span> category_tensor <span style="color:#f92672">==</span> ind:
+	    	score <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+	<span style="color:#66d9ef">return</span> score
+</code></pre></div><p>Adding the score to the output (right after the loss) we find that it does improve with training!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ae81ff">5000</span> <span style="color:#ae81ff">5</span><span style="color:#f92672">%</span> (<span style="color:#ae81ff">0</span>m <span style="color:#ae81ff">3</span>s) <span style="color:#ae81ff">2.4365</span> <span style="color:#ae81ff">29</span> Svejda <span style="color:#f92672">/</span> Japanese <span style="color:#960050;background-color:#1e0010">✗</span> (Czech)
+<span style="color:#ae81ff">10000</span> <span style="color:#ae81ff">10</span><span style="color:#f92672">%</span> (<span style="color:#ae81ff">0</span>m <span style="color:#ae81ff">6</span>s) <span style="color:#ae81ff">1.5297</span> <span style="color:#ae81ff">26</span> Kozlowski <span style="color:#f92672">/</span> Polish <span style="color:#960050;background-color:#1e0010">✓</span>
+<span style="color:#ae81ff">15000</span> <span style="color:#ae81ff">15</span><span style="color:#f92672">%</span> (<span style="color:#ae81ff">0</span>m <span style="color:#ae81ff">9</span>s) <span style="color:#ae81ff">2.0299</span> <span style="color:#ae81ff">33</span> Alfero <span style="color:#f92672">/</span> Portuguese <span style="color:#960050;background-color:#1e0010">✗</span> (Italian)
+<span style="color:#ae81ff">20000</span> <span style="color:#ae81ff">20</span><span style="color:#f92672">%</span> (<span style="color:#ae81ff">0</span>m <span style="color:#ae81ff">12</span>s) <span style="color:#ae81ff">1.6695</span> <span style="color:#ae81ff">41</span> Sienkiewicz <span style="color:#f92672">/</span> Czech <span style="color:#960050;background-color:#1e0010">✗</span> (Polish)
+<span style="color:#ae81ff">25000</span> <span style="color:#ae81ff">25</span><span style="color:#f92672">%</span> (<span style="color:#ae81ff">0</span>m <span style="color:#ae81ff">15</span>s) <span style="color:#ae81ff">2.6818</span> <span style="color:#ae81ff">37</span> Papageorge <span style="color:#f92672">/</span> Irish <span style="color:#960050;background-color:#1e0010">✗</span> (Greek)
+<span style="color:#ae81ff">30000</span> <span style="color:#ae81ff">30</span><span style="color:#f92672">%</span> (<span style="color:#ae81ff">0</span>m <span style="color:#ae81ff">18</span>s) <span style="color:#ae81ff">1.4853</span> <span style="color:#ae81ff">46</span> Porto <span style="color:#f92672">/</span> Portuguese <span style="color:#960050;background-color:#1e0010">✗</span> (Italian)
+</code></pre></div><p>The score rises from 29 with no training to 46 after some brief training.</p>
+<h3 id="experimenting-with-state-size">Experimenting with state size</h3>
+<p>The best test accuracy I got was in the mid-50%. Let&rsquo;s vary the hidden state size a bit:</p>
+<table>
+<thead>
+<tr>
+<th>Size</th>
+<th>Score after 100k training steps</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>32</td>
+<td>55</td>
+</tr>
+<tr>
+<td>64</td>
+<td>53</td>
+</tr>
+<tr>
+<td>128</td>
+<td>49</td>
+</tr>
+<tr>
+<td>256</td>
+<td>53</td>
+</tr>
+</tbody>
+</table>
+<p>Huh. No real trends here.</p>
+<h3 id="rnn-with-a-non-linear-step">RNN with a non-linear step</h3>
+<p>What if we throw a nonlinear layer between the input and the hidden state? We need to keep the hidden state linear in the previous hidden state so the gradients don&rsquo;t decay, so this takes a bit of rewriting:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RNN</span>(nn<span style="color:#f92672">.</span>Module):
+    <span style="color:#66d9ef">def</span> __init__(self, input_size, hidden_size, output_size):
+        super(RNN, self)<span style="color:#f92672">.</span>__init__()
+
+        self<span style="color:#f92672">.</span>hidden_size <span style="color:#f92672">=</span> hidden_size
+
+        self<span style="color:#f92672">.</span>i2h <span style="color:#f92672">=</span> nn<span style="color:#f92672">.</span>Sequential(
+                nn<span style="color:#f92672">.</span>Linear(input_size, hidden_size),
+                nn<span style="color:#f92672">.</span>ReLU()
+            )
+        self<span style="color:#f92672">.</span>h2h <span style="color:#f92672">=</span> nn<span style="color:#f92672">.</span>Linear(hidden_size, hidden_size)
+        self<span style="color:#f92672">.</span>i2o <span style="color:#f92672">=</span> nn<span style="color:#f92672">.</span>Linear(input_size <span style="color:#f92672">+</span> hidden_size, output_size)
+        self<span style="color:#f92672">.</span>softmax <span style="color:#f92672">=</span> nn<span style="color:#f92672">.</span>LogSoftmax(dim<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">forward</span>(self, input, hidden):
+        combined <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>cat((input, hidden), <span style="color:#ae81ff">1</span>)
+        hidden <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>i2h(input) <span style="color:#f92672">+</span> self<span style="color:#f92672">.</span>h2h(hidden)
+        output <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>i2o(combined)
+        output <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>softmax(output)
+        <span style="color:#66d9ef">return</span> output, hidden
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">initHidden</span>(self):
+        <span style="color:#66d9ef">return</span> torch<span style="color:#f92672">.</span>zeros(<span style="color:#ae81ff">1</span>, self<span style="color:#f92672">.</span>hidden_size)
+</code></pre></div><p>Here there&rsquo;s a layer <code>i2h</code> that takes the input and turns it into something that contributes to the hidden state (through a linear+ReLU stack), and there&rsquo;s a layer <code>h2h</code> that takes the hidden state and linearly modifies that to form a contribution to the new hidden state. We add the outputs of these together to get the new hidden state.</p>
+<p>This does similarly.</p>
+<table>
+<thead>
+<tr>
+<th>Size</th>
+<th>Score after 100k training steps</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>32</td>
+<td>49</td>
+</tr>
+<tr>
+<td>256</td>
+<td>58</td>
+</tr>
+</tbody>
+</table>
+<p>What about with more nonlinearity?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">self<span style="color:#f92672">.</span>i2h <span style="color:#f92672">=</span> nn<span style="color:#f92672">.</span>Sequential(
+        nn<span style="color:#f92672">.</span>Linear(input_size, hidden_size),
+        nn<span style="color:#f92672">.</span>ReLU(),
+        nn<span style="color:#f92672">.</span>Linear(hidden_size, hidden_size),
+        nn<span style="color:#f92672">.</span>ReLU()
+    )
+</code></pre></div><p>This gives similar performance, so I&rsquo;m going to move on&hellip;</p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fadamjermyn.com%2fposts%2fml_2%2f - Working%20Notes%20-%20Learning%20PyTorch%20-%20Day%202 by @AdamSJermyn"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/adamjermyn">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/AdamSJermyn">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+        
+	        <center><a class="cta" href="https://adamjermyn.com/index.xml">Subscribe</a></center>
+        
+    <p class="small">
+    
+       © Copyright 2022 Adam Jermyn
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://adamjermyn.com/js/jquery-3.3.1.min.js"></script>
+<script src="https://adamjermyn.com/js/main.js"></script>
+<script src="https://adamjermyn.com/js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>

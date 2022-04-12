@@ -6,7 +6,17 @@
     <description>Recent content in Posts on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 12 Apr 2022 17:17:54 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 12 Apr 2022 17:19:49 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Fourth Rest</title>
+      <link>https://adamjermyn.com/posts/rest_2/</link>
+      <pubDate>Tue, 12 Apr 2022 17:19:49 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/rest_2/</guid>
+      <description>There is a fourth kind of rest I didn&amp;rsquo;t mention: Inactivity. All the other kinds of rest, Distraction, Recreation, and Maintenance, are active. They involve doing something. That something might not be productive in any traditional sense, but it&amp;rsquo;s an active choice to do something rather than nothing.
+Inactivity is different. Inactivity is choosing to do nothing. It&amp;rsquo;s sitting on a couch being bored, letting thoughts come and go but not pursuing them.</description>
+    </item>
+    
     <item>
       <title>Working Notes - Learning PyTorch - Day 2</title>
       <link>https://adamjermyn.com/posts/ml_2/</link>

@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="author" content="Adam Jermyn">
+		<meta name="description" content="Site Description">
+		<meta name="generator" content="Hugo 0.92.2" />
+		<title>Automatic Differentiation in MESA &middot; Adam Jermyn</title>
+		<link rel="shortcut icon" href="https://adamjermyn.com/images/favicon.ico">
+		<link rel="stylesheet" href="https://adamjermyn.com/css/style.css">
+		<link rel="stylesheet" href="https://adamjermyn.com/css/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://adamjermyn.com/css/font-awesome.min.css">
+		
+
+		
+		<link href="https://adamjermyn.com/index.xml" rel="alternate" type="application/rss+xml" title="Adam Jermyn" />
+		
+
+		
+
+                
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-186473758-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+		
+                <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+
+        <a href='https://adamjermyn.com/'>About</a>
+	<a href='https://adamjermyn.com/posts'>Posts</a>
+	<a href='https://adamjermyn.com/tags'>Tags</a>
+        <a href='https://adamjermyn.com/software'>Software</a>
+        <a href='https://adamjermyn.com/workflow'>Workflow</a>
+
+	
+
+</nav>
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Automatic Differentiation in MESA
+                    </h1>
+                    <h2 class="headline">
+		    
+                     May 11, 2022 15:28 
+                    · 3825 words
+                    · 18 minute read
+                      <span class="tags">
+                      
+                      
+                          
+                              <a href="https://adamjermyn.com/tags/tools">Tools</a>
+                          
+                              <a href="https://adamjermyn.com/tags/machine-learning">Machine-Learning</a>
+                          
+                      
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                <section id="post-body">
+                    <p>Over the last two years I developed an automatic differentiation (<code>auto_diff</code>) module in Fortran to support development of the Modules for Experiments in Stellar Astrophysics (<a href="https://docs.mesastar.org">MESA</a>) project. This post gives a brief rundown of how the <code>auto_diff</code> module works and how I built it.</p>
+<p>All of the code I mention below lives on <a href="https://github.com/MESAHub/mesa/tree/main/auto_diff">GitHub</a>.</p>
+<h2 id="what-is-auto_diff">What is auto_diff?</h2>
+<p>Forward-mode automatic differentiation via operator overloading:</p>
+<ul>
+<li>Forward-mode means we calculate the chain rule as we go.</li>
+<li>Each variable in the calculation needs to be able to track derivative information.</li>
+<li>Variables need to know how the chain rule applies to each operation.</li>
+<li>Fortran source files are generated automatically by a python program.
+<ul>
+<li>This allows robust support for many different functions/operators/derivative configurations.</li>
+</ul>
+</li>
+</ul>
+<h2 id="what-does-it-look-like-in-fortran">What does it look like in Fortran?</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fortran" data-lang="fortran">   <span style="color:#66d9ef">type</span> <span style="color:#66d9ef">::</span> auto_diff_real_1var_order1
+      <span style="color:#66d9ef">real</span>(dp) <span style="color:#66d9ef">::</span> val
+      <span style="color:#66d9ef">real</span>(dp) <span style="color:#66d9ef">::</span> d1val1
+   <span style="color:#66d9ef">end type </span>auto_diff_real_1var_order1
+</code></pre></div><p>The types themselves are simple! Here&rsquo;s the <code>1var_order1</code> type, which supports 1 independent variable through 1 (first order) derivative. <code>val</code> stores the value, <code>d1val1</code> stores the derivative with respect to the independent variable.</p>
+<p>Concretely, we might set up a variable like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fortran" data-lang="fortran"><span style="color:#66d9ef">type</span>(auto_diff_real_1var_order1) <span style="color:#66d9ef">::</span> x
+x <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>d0 <span style="color:#75715e">! Sets val to 1, zero&#39;s out d1val1
+</span><span style="color:#75715e"></span>x%d1val1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>d0 <span style="color:#75715e">! Says dx/d(val1) = 1.
+</span><span style="color:#75715e"></span>							 <span style="color:#75715e">! Often used as a shorthand for saying &#39;x&#39; is the independent variable.
+</span></code></pre></div><p>And we might perform operations with these variables:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fortran" data-lang="fortran">f <span style="color:#f92672">=</span> sin(x) <span style="color:#75715e">! Now f%val = sin(1), f%d1val1 = cos(1)
+</span><span style="color:#75715e"></span>f <span style="color:#f92672">=</span> exp(x) <span style="color:#75715e">! Now f%val = e, f%d1val1 = e
+</span><span style="color:#75715e"></span>f <span style="color:#f92672">=</span> pow3(x <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>) <span style="color:#75715e">! Now f%val = 8, f%d1val1 = 6
+</span><span style="color:#75715e"></span>f <span style="color:#f92672">=</span> f <span style="color:#f92672">+</span> x <span style="color:#75715e">! Now f%val = 9, f%d1val1 = 7
+</span></code></pre></div><p>Note that we <strong>do not</strong> support assignments like <code>(real) = (auto_diff)</code>. Why? Because we don&rsquo;t want to accidentally lose the derivative information, and a <code>real</code> type doesn&rsquo;t have anywhere to put it!</p>
+<p>So if you want to get the value you have to use <code>f%val</code>, and if you want the derivative info that&rsquo;s in <code>f%d1val1</code>.</p>
+<p>Other types support more derivatives and more variables. The general pattern is <code>Nvar_orderM</code> will support <strong>all</strong> derivatives through $m$-th total order in all combinations of $n$ variables. So for instance <code>auto_diff_real_2var_order2</code> supports <code>d1val1</code>, <code>d1val2</code>, <code>d1val1_d1val2</code>, <code>d2val1</code>, <code>d2val2</code>, which are the five combinations of (mixed) partial derivatives of two variables up to total order 2. Note that the mixed ones are always ordered by the <code>val</code> index, not the <code>d</code> index, e.g. <code>d2val1_d1val2</code> is how you&rsquo;d write one of the third order mixed partials.</p>
+<h2 id="how-does-it-work-in-fortran">How does it work in Fortran?</h2>
+<p>Behind the scenes are ludicrously large Fortran files, which begin like:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fortran" data-lang="fortran"><span style="color:#66d9ef">module </span>auto_diff_real_1var_order1_module
+      <span style="color:#66d9ef">use </span>const_def, only: dp, ln10, pi
+      <span style="color:#66d9ef">use </span>utils_lib
+      <span style="color:#66d9ef">use </span>support_functions
+      <span style="color:#66d9ef">use </span>math_lib
+   
+      <span style="color:#66d9ef">implicit none
+</span><span style="color:#66d9ef">      private
+</span><span style="color:#66d9ef">   public</span> <span style="color:#66d9ef">::</span> auto_diff_real_1var_order1, &amp;
+      assignment(<span style="color:#f92672">=</span>), &amp;
+      operator(.eq.), &amp;
+      operator(.ne.), &amp;
+      operator(.gt.), &amp;
+      operator(.lt.), &amp;
+      operator(.le.), &amp;
+      operator(.ge.), &amp;
+      make_unop, &amp;
+      make_binop, &amp;
+      sign, &amp;
+      safe_sqrt, &amp;
+      operator(<span style="color:#f92672">-</span>), &amp;
+      exp, &amp;
+      expm1, &amp;
+      ...
+</code></pre></div><p>It goes on for a while. This is just exporting all the many (many) operators that get overloaded. Scrolling down we find the implementations of these overloaded routines, like</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fortran" data-lang="fortran">   <span style="color:#66d9ef">function </span>expm1_self(x) <span style="color:#66d9ef">result</span>(unary)
+      <span style="color:#66d9ef">type</span>(auto_diff_real_1var_order1), <span style="color:#66d9ef">intent</span>(in) <span style="color:#66d9ef">::</span> x
+      <span style="color:#66d9ef">type</span>(auto_diff_real_1var_order1) <span style="color:#66d9ef">::</span> unary
+      unary%val <span style="color:#f92672">=</span> expm1(x%val)
+      unary%d1val1 <span style="color:#f92672">=</span> x%d1val1<span style="color:#f92672">*</span>exp(x%val)
+   <span style="color:#66d9ef">end function </span>expm1_self
+</code></pre></div><p>and</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fortran" data-lang="fortran">   <span style="color:#66d9ef">function </span>add_self(x, y) <span style="color:#66d9ef">result</span>(binary)
+      <span style="color:#66d9ef">type</span>(auto_diff_real_1var_order1), <span style="color:#66d9ef">intent</span>(in) <span style="color:#66d9ef">::</span> x
+      <span style="color:#66d9ef">type</span>(auto_diff_real_1var_order1), <span style="color:#66d9ef">intent</span>(in) <span style="color:#66d9ef">::</span> y
+      <span style="color:#66d9ef">type</span>(auto_diff_real_1var_order1) <span style="color:#66d9ef">::</span> binary
+      binary%val <span style="color:#f92672">=</span> x%val <span style="color:#f92672">+</span> y%val
+      binary%d1val1 <span style="color:#f92672">=</span> x%d1val1 <span style="color:#f92672">+</span> y%d1val1
+   <span style="color:#66d9ef">end function </span>add_self
+</code></pre></div><p>The operators are all labelled as either unary or binary. Binary operators generally are named by the types they work with (e.g. <code>add_self</code> adds two <code>auto_diff</code> types, <code>add_self_int</code> adds an <code>auto_diff</code> type and an <code>integer</code>, etc.).</p>
+<p>Sometimes the operators are a little inscrutable:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fortran" data-lang="fortran">   <span style="color:#66d9ef">function </span>dim_self(x, y) <span style="color:#66d9ef">result</span>(binary)
+      <span style="color:#66d9ef">type</span>(auto_diff_real_1var_order1), <span style="color:#66d9ef">intent</span>(in) <span style="color:#66d9ef">::</span> x
+      <span style="color:#66d9ef">type</span>(auto_diff_real_1var_order1), <span style="color:#66d9ef">intent</span>(in) <span style="color:#66d9ef">::</span> y
+      <span style="color:#66d9ef">type</span>(auto_diff_real_1var_order1) <span style="color:#66d9ef">::</span> binary
+      <span style="color:#66d9ef">real</span>(dp) <span style="color:#66d9ef">::</span> q0
+      q0 <span style="color:#f92672">=</span> x%val <span style="color:#f92672">-</span> y%val
+      binary%val <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">0.5_dp</span><span style="color:#f92672">*</span>y%val <span style="color:#f92672">+</span> <span style="color:#ae81ff">0.5_dp</span><span style="color:#f92672">*</span>x%val <span style="color:#f92672">+</span> <span style="color:#ae81ff">0.5_dp</span><span style="color:#f92672">*</span>Abs(q0)
+      binary%d1val1 <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">0.5_dp</span><span style="color:#f92672">*</span>y%d1val1 <span style="color:#f92672">+</span> <span style="color:#ae81ff">0.5_dp</span><span style="color:#f92672">*</span>x%d1val1 <span style="color:#f92672">+</span> <span style="color:#ae81ff">0.5_dp</span><span style="color:#f92672">*</span>(x%d1val1 <span style="color:#f92672">-</span> y%d1val1)<span style="color:#f92672">*</span>sgn(q0)
+   <span style="color:#66d9ef">end function </span>dim_self
+</code></pre></div><p>The reason for this is that they&rsquo;re all auto-generated by python scripts, in a way that optimizes for (Fortran) runtime speed at all costs.</p>
+<h3 id="derivative-operators">Derivative Operators</h3>
+<p>Each <code>auto_diff</code> type additionally has some number of derivative operators, one per independent variable. These work like:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fortran" data-lang="fortran">df_dx <span style="color:#f92672">=</span> differentiate_1(f)
+df_dy <span style="color:#f92672">=</span> differentiate_2(f)
+</code></pre></div><p>The idea here is that you might want an <code>auto_diff</code> type which itself represents the derivatives of another <code>auto_diff</code> variable (so you can propagate higher order derivatives through later operations). This is what let&rsquo;s Skye do things like writing the pressure as</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fortran" data-lang="fortran">p <span style="color:#f92672">=</span> pow2(den) <span style="color:#f92672">*</span> differentiate_2(F)
+</code></pre></div><p>and have <code>p</code>  still contain derivative information.</p>
+<p>These methods can&rsquo;t fill in higher order derivatives than exist. In the above example <code>F</code> has a third derivative with respect to <code>rho</code>. <code>p</code> is a derivative of <code>F</code> with respect to <code>rho</code>, so we don&rsquo;t know enough to construct the third derivative of <code>p</code> with respect to <code>rho</code>. This is handled by just zeroing out the derivatives we don&rsquo;t know.</p>
+<p>We considered using NaN&rsquo;s instead of zeros, following a philosophy that you should know very clearly when you&rsquo;ve mistakenly read a missing entry (silent failure is bad). The problem with using NaN&rsquo;s here is that we want to be able to run MESA with floating point error (FPE) checking turned on as a way to catch numerical problems, and if we assign NaN to variables routinely that becomes impossible.</p>
+<h3 id="custom-operators">Custom Operators</h3>
+<p>Two functions I want to highlight are <code>make_unop</code> and <code>make_binop</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fortran" data-lang="fortran">   <span style="color:#66d9ef">function </span>make_unary_operator(x, z_val, z_d1x) <span style="color:#66d9ef">result</span>(unary)
+      <span style="color:#66d9ef">type</span>(auto_diff_real_1var_order1), <span style="color:#66d9ef">intent</span>(in) <span style="color:#66d9ef">::</span> x
+      <span style="color:#66d9ef">real</span>(dp), <span style="color:#66d9ef">intent</span>(in) <span style="color:#66d9ef">::</span> z_val
+      <span style="color:#66d9ef">real</span>(dp), <span style="color:#66d9ef">intent</span>(in) <span style="color:#66d9ef">::</span> z_d1x
+      <span style="color:#66d9ef">type</span>(auto_diff_real_1var_order1) <span style="color:#66d9ef">::</span> unary
+      unary%val <span style="color:#f92672">=</span> z_val
+      unary%d1val1 <span style="color:#f92672">=</span> x%d1val1<span style="color:#f92672">*</span>z_d1x
+   <span style="color:#66d9ef">end function </span>make_unary_operator
+   
+   <span style="color:#66d9ef">function </span>make_binary_operator(x, y, z_val, z_d1x, z_d1y) <span style="color:#66d9ef">result</span>(binary)
+      <span style="color:#66d9ef">type</span>(auto_diff_real_1var_order1), <span style="color:#66d9ef">intent</span>(in) <span style="color:#66d9ef">::</span> x
+      <span style="color:#66d9ef">type</span>(auto_diff_real_1var_order1), <span style="color:#66d9ef">intent</span>(in) <span style="color:#66d9ef">::</span> y
+      <span style="color:#66d9ef">real</span>(dp), <span style="color:#66d9ef">intent</span>(in) <span style="color:#66d9ef">::</span> z_val
+      <span style="color:#66d9ef">real</span>(dp), <span style="color:#66d9ef">intent</span>(in) <span style="color:#66d9ef">::</span> z_d1x
+      <span style="color:#66d9ef">real</span>(dp), <span style="color:#66d9ef">intent</span>(in) <span style="color:#66d9ef">::</span> z_d1y
+      <span style="color:#66d9ef">type</span>(auto_diff_real_1var_order1) <span style="color:#66d9ef">::</span> binary
+      binary%val <span style="color:#f92672">=</span> z_val
+      binary%d1val1 <span style="color:#f92672">=</span> x%d1val1<span style="color:#f92672">*</span>z_d1x <span style="color:#f92672">+</span> y%d1val1<span style="color:#f92672">*</span>z_d1y
+   <span style="color:#66d9ef">end function </span>make_binary_operator
+</code></pre></div><p>Let&rsquo;s focus on <code>make_unop</code>. It takes as input an <code>auto_diff</code> variable and <code>z_val</code> and <code>z_d1x</code>. The latter two are the specification of a function and its derivative with respect to an arbitrary independent variable, evaluated at that value of <code>x</code>. <code>make_unop</code> then propagates through the chain rule to apply that function to <code>x</code> and give a result which inherits derivatives from <code>x</code>. These helper routines are there to perform <strong>variable substitutions</strong>. The idea is you might know the function <code>z(independent_variable)</code> but want to instead have <code>z(x)</code> (which has different derivatives because <code>x</code> may itself be a complicated function of independent variables). <code>make_binop</code> does the same but for binary operators.</p>
+<p>As far as I&rsquo;m aware these functions only get used in the Skye equation of state in MESA, where we play some tricks with custom operators, but they&rsquo;re there if you ever need to do a variable substitution.</p>
+<h3 id="array-types">Array Types</h3>
+<p>There are two special types that break the mold:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fortran" data-lang="fortran">   <span style="color:#66d9ef">type</span> <span style="color:#66d9ef">::</span> auto_diff_real_star_order1
+      <span style="color:#66d9ef">real</span>(dp) <span style="color:#66d9ef">::</span> val
+      <span style="color:#66d9ef">real</span>(dp) <span style="color:#66d9ef">::</span> d1Array(<span style="color:#ae81ff">33</span>)
+   <span style="color:#66d9ef">end type </span>auto_diff_real_star_order1
+</code></pre></div><p>This is the basic <code>auto_diff</code> type used everywhere in <code>MESA/star</code>. Instead of 33 different independent variable entries it puts them all in an array. The meaning of these is set in <code>MESA/star_data/public/star_data_def.inc</code>, where you&rsquo;ll find</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fortran" data-lang="fortran">      <span style="color:#75715e">! auto_diff constants for solver variables
+</span><span style="color:#75715e"></span>      <span style="color:#75715e">! used to access auto_diff_real_star_order1 d1Array
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">integer</span>, <span style="color:#66d9ef">parameter</span> <span style="color:#66d9ef">::</span> i_lnd_m1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+      <span style="color:#66d9ef">integer</span>, <span style="color:#66d9ef">parameter</span> <span style="color:#66d9ef">::</span> i_lnd_00 <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
+      <span style="color:#66d9ef">integer</span>, <span style="color:#66d9ef">parameter</span> <span style="color:#66d9ef">::</span> i_lnd_p1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
+      <span style="color:#66d9ef">integer</span>, <span style="color:#66d9ef">parameter</span> <span style="color:#66d9ef">::</span> i_lnT_m1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>
+      <span style="color:#66d9ef">integer</span>, <span style="color:#66d9ef">parameter</span> <span style="color:#66d9ef">::</span> i_lnT_00 <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
+      <span style="color:#66d9ef">integer</span>, <span style="color:#66d9ef">parameter</span> <span style="color:#66d9ef">::</span> i_lnT_p1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span>
+      <span style="color:#66d9ef">integer</span>, <span style="color:#66d9ef">parameter</span> <span style="color:#66d9ef">::</span> i_w_m1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">7</span>
+      <span style="color:#66d9ef">integer</span>, <span style="color:#66d9ef">parameter</span> <span style="color:#66d9ef">::</span> i_w_00 <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>
+      <span style="color:#66d9ef">integer</span>, <span style="color:#66d9ef">parameter</span> <span style="color:#66d9ef">::</span> i_w_p1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">9</span>
+      <span style="color:#66d9ef">integer</span>, <span style="color:#66d9ef">parameter</span> <span style="color:#66d9ef">::</span> i_lnR_m1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
+      <span style="color:#66d9ef">integer</span>, <span style="color:#66d9ef">parameter</span> <span style="color:#66d9ef">::</span> i_lnR_00 <span style="color:#f92672">=</span> <span style="color:#ae81ff">11</span>
+      <span style="color:#66d9ef">integer</span>, <span style="color:#66d9ef">parameter</span> <span style="color:#66d9ef">::</span> i_lnR_p1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">12</span>
+...
+</code></pre></div><p>which tells the solver which indices correspond to which variables in the array. Hence <code>d1Array(5)</code> corresponds to the derivative with respect to <code>lnT</code> in the current cell, <code>d1Array(6)</code> with respect to <code>lnT</code> in the next cell, and so on.</p>
+<p>If you need to change the number of independent variables, you can do that by updating (1) the entry in the auto_diff config file (both for the star and tdc types), (2) adding new indexing parameters to <code>star_data_def.inc</code>, and (3) adding new helper routines to <code>MESA/star/private/auto_diff_support.f90</code> to handle your new independent variables.</p>
+<p>There are also lots of helper routines in <code>MESA/star/private/auto_diff_support.f90</code> for manipulating these objects, including ways to shift the indexing so <code>p1 -&gt; 00</code> (and vice-versa), ways to generate e.g. <code>lnT(k)</code> with the appropriate derivative setup (<code>d1Array(1:4,6:33)==0</code>, <code>d1Array(5)==1</code>), etc.</p>
+<p>The other special one is</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fortran" data-lang="fortran">   <span style="color:#66d9ef">type</span> <span style="color:#66d9ef">::</span> auto_diff_real_tdc
+      <span style="color:#66d9ef">real</span>(dp) <span style="color:#66d9ef">::</span> val
+      <span style="color:#66d9ef">real</span>(dp) <span style="color:#66d9ef">::</span> d1val1
+      <span style="color:#66d9ef">real</span>(dp) <span style="color:#66d9ef">::</span> d1Array(<span style="color:#ae81ff">33</span>)
+      <span style="color:#66d9ef">real</span>(dp) <span style="color:#66d9ef">::</span> d1val1_d1Array(<span style="color:#ae81ff">33</span>)
+   <span style="color:#66d9ef">end type </span>auto_diff_real_tdc
+</code></pre></div><p>This type is only used in the time-dependent convection (TDC) code, and exists because we needed a type that has a derivative with respect to one additional variable (the superadiabaticity on a face) and needed all mixed partial derivatives with all of the star solver variables.</p>
+<h2 id="how-does-it-work-in-python">How does it work in Python?</h2>
+<p>So how does the python side generate these files?</p>
+<h3 id="config-files">Config Files</h3>
+<p>In <code>MESA/auto_diff/config</code> there are a bunch of files, one per <code>auto_diff</code> type. These are yaml files, and look like:</p>
+<pre tabindex="0"><code>name: auto_diff_real_2var_order1
+orders: [[1,0],[0,1]]
+array: False
+</code></pre><p>This says:</p>
+<blockquote>
+<p>Make a type named <code>auto_diff_real_2var_order1</code>. It has to have all partial derivatives up to and including the first derivative with respect to the first variable and the first derivative with respect to the second variable.It does not store derivatives as an array.</p>
+</blockquote>
+<p>Another example:</p>
+<pre tabindex="0"><code>name: auto_diff_real_2var_order3
+orders: [[3,0],[2,1],[1,2],[0,3]]
+array: False
+</code></pre><p>which says</p>
+<blockquote>
+<p>Make a type named <code>auto_diff_real_2var_order3</code>. It has to have all partial derivatives up to and including the third derivative with respect to the first variable, the (2,1) mixed partial, the (1,2) mixed partial, and the third derivative with respect to the third variable. It does not store derivatives as an array.</p>
+</blockquote>
+<p>Finally, the star example:</p>
+<pre tabindex="0"><code>name: auto_diff_real_star_order1
+orders: [[1]]
+array: True
+fixed_length: True
+array_length: 33
+</code></pre><p>which says</p>
+<blockquote>
+<p>Make a type named <code>auto_diff_real_star_order1</code>. It stores derivatives as arrays of fixed length 33 and has to have all partial derivatives up to and including the first derivative with respect to each component of the array.</p>
+</blockquote>
+<h3 id="parser">Parser</h3>
+<p>You can regenerate the <code>auto_diff</code> Fortran source by calling <code>python parser.py</code> in the <code>python</code> directory. The parser is reasonably straightforward. It begins by getting the list of config files:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Get config files</span>
+config_path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;../config&#39;</span>
+config_files <span style="color:#f92672">=</span> [f <span style="color:#66d9ef">for</span> f <span style="color:#f92672">in</span> listdir(config_path) <span style="color:#66d9ef">if</span> isfile(join(config_path, f)) <span style="color:#f92672">and</span> <span style="color:#e6db74">&#39;.config&#39;</span> <span style="color:#f92672">in</span> f]
+config_files <span style="color:#f92672">=</span> [join(config_path, f) <span style="color:#66d9ef">for</span> f <span style="color:#f92672">in</span> config_files]
+</code></pre></div><p>It then makes two lists of files. The <code>compilation_list</code> are all the files that <code>make</code> will need to act on, and the <code>use_list</code> is all the modules that need to be shared by the <code>auto_diff</code> public interface.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># compilation_list stores a list of all the fortran files that will need compiling.</span>
+<span style="color:#75715e"># This is used in the makefile.</span>
+compilation_list <span style="color:#f92672">=</span> []
+compilation_list<span style="color:#f92672">.</span>append(<span style="color:#e6db74">&#39;support_functions.f90&#39;</span>)
+
+<span style="color:#75715e"># use_list stores a list of all private auto_diff modules that need importing into the public auto_diff module.</span>
+use_list <span style="color:#f92672">=</span> []
+use_list<span style="color:#f92672">.</span>append(tab <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;use support_functions&#39;</span>)
+</code></pre></div><p>We then loop over all config files. For each, we read out the relevant info:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">data <span style="color:#f92672">=</span> load(fi, Loader<span style="color:#f92672">=</span>Loader)
+
+<span style="color:#75715e"># gfortran does not (as of September 2021) support variable-length</span>
+<span style="color:#75715e"># arrays in parameterized-derived-types. So stick with fixed-length</span>
+<span style="color:#75715e"># arrays. If this changes in the future you can set fixed_length</span>
+<span style="color:#75715e"># to False and use variable-length arrays as desired.</span>
+<span style="color:#66d9ef">if</span> data[<span style="color:#e6db74">&#39;array&#39;</span>] <span style="color:#f92672">and</span> data[<span style="color:#e6db74">&#39;fixed_length&#39;</span>]:
+  array_length <span style="color:#f92672">=</span> data[<span style="color:#e6db74">&#39;array_length&#39;</span>]
+<span style="color:#66d9ef">else</span>:
+  array_length <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
+</code></pre></div><p>Note that we can&rsquo;t do variable length arrays. The Python side can generate parameterized derived <code>auto_diff</code> types supporting variable length arrays, but gfortran doesn&rsquo;t actually implement the F2003 spec and so won&rsquo;t compile it. Some versions of ifort worked with this functionality but I can&rsquo;t remember which. The gfortran bug report is <a href="https://gcc.gnu.org/bugzilla/show_bug.cgi?id=97818">here</a>.</p>
+<p>Then construct the list of all partial derivatives required:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Read desired highest-order partial derivatives</span>
+partials <span style="color:#f92672">=</span> list(Partial(orders, data[<span style="color:#e6db74">&#39;array&#39;</span>]) <span style="color:#66d9ef">for</span> orders <span style="color:#f92672">in</span> data[<span style="color:#e6db74">&#39;orders&#39;</span>])
+</code></pre></div><p>This fills in all lower-order derivatives needed to fulfill the requested list of higher-order ones (e.g. if you request a third order derivative, this adds in a second and a first as well). The <code>Partial</code> data type is defined in <code>partial.py</code> and just has some helper methods for helping implement the chain rule.</p>
+<p>That done, we build the types and write them out to files, appending them to the <code>compilation_list</code> and <code>use_list</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Build auto_diff type with those and all lower-order derivatives.</span>
+adr <span style="color:#f92672">=</span> AutoDiffType(data[<span style="color:#e6db74">&#39;name&#39;</span>], data[<span style="color:#e6db74">&#39;array&#39;</span>], array_length, partials)
+
+out_fi <span style="color:#f92672">=</span> open(<span style="color:#e6db74">&#39;../private/&#39;</span> <span style="color:#f92672">+</span> data[<span style="color:#e6db74">&#39;name&#39;</span>] <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;_module.f90&#39;</span>, <span style="color:#e6db74">&#39;w+&#39;</span>)
+out_fi<span style="color:#f92672">.</span>write(py_to_fort(make_auto_diff_type(adr, unary_operators, binary_operators, comparison_operators, intrinsics)))
+out_fi<span style="color:#f92672">.</span>close()
+compilation_list<span style="color:#f92672">.</span>append(data[<span style="color:#e6db74">&#39;name&#39;</span>] <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;.f90&#39;</span>)
+use_list<span style="color:#f92672">.</span>append(tab <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;use &#39;</span> <span style="color:#f92672">+</span> data[<span style="color:#e6db74">&#39;name&#39;</span>] <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;_module&#39;</span>)
+</code></pre></div><h3 id="autodifftype">AutoDiffType</h3>
+<p>The <code>AutoDiffType</code> class lives in <code>auto_diff_type.py</code>. This type is the internal representation of an <code>auto_diff</code> Fortran type on the Python side. It&rsquo;s initialized as</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AutoDiffType</span>:
+	<span style="color:#66d9ef">def</span> __init__(self, name, array, array_length, partials):
+		<span style="color:#e6db74">&#39;&#39;&#39;
+</span><span style="color:#e6db74">		Stores a list of partials that is complete, in the sense that there is enough information
+</span><span style="color:#e6db74">		to compute the chain rule within that set of partials, and sorted by total order.
+</span><span style="color:#e6db74">		&#39;&#39;&#39;</span>
+</code></pre></div><p>So you pass the partials you want, the variable name, and some information about arrays.</p>
+<p>Now that I look again, it seems that we don&rsquo;t need the array information, because the <code>Partial</code> type already has that. So the <code>array</code> and <code>array_length</code> entries could be safely removed here.</p>
+<p>The initialization has a few important pieces. First, we work out the complete set of partial derivatives we need:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Complete the partials list</span>
+partials <span style="color:#f92672">=</span> set(partials)
+complete <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>
+<span style="color:#66d9ef">while</span> <span style="color:#f92672">not</span> complete:
+  ps <span style="color:#f92672">=</span> list(partials)
+  <span style="color:#66d9ef">for</span> p <span style="color:#f92672">in</span> ps:
+    partials<span style="color:#f92672">.</span>update(p<span style="color:#f92672">.</span>completion_partials())
+  <span style="color:#66d9ef">if</span> len(partials) <span style="color:#f92672">==</span> len(ps):
+    complete <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+</code></pre></div><p>The routine <code>completion_partials</code> returns any additional partial derivatives that a given partial needs to be able to propagate in the chain rule. For instance $\partial_x\partial_y^2$ in the chain rule needs access to $\partial_x\partial_y$ and $\partial_y^2$, so its completion will return those two. We just keep calling <code>completion_partials</code> till it stops returning new derivatives.</p>
+<p>Next, we put these in a sorted order so we can refer to them consistently:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">self<span style="color:#f92672">.</span>partials <span style="color:#f92672">=</span> sorted(list(partials), key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> p: [p<span style="color:#f92672">.</span>net_order, tuple(<span style="color:#f92672">-</span>o <span style="color:#66d9ef">for</span> o <span style="color:#f92672">in</span> p<span style="color:#f92672">.</span>orders)])
+</code></pre></div><p>Finally, we construct the sets of partials of unary operators and binary operators out to the maximum order represented. These, too, are needed by the chain rule:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">self<span style="color:#f92672">.</span>unary_partials <span style="color:#f92672">=</span> sorted(list(Partial((i,), <span style="color:#66d9ef">False</span>) <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(self<span style="color:#f92672">.</span>max_order<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)), key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> p: [p<span style="color:#f92672">.</span>net_order, tuple(<span style="color:#f92672">-</span>o <span style="color:#66d9ef">for</span> o <span style="color:#f92672">in</span> p<span style="color:#f92672">.</span>orders)])
+self<span style="color:#f92672">.</span>binary_partials <span style="color:#f92672">=</span> sorted(list(Partial((i,j), <span style="color:#66d9ef">False</span>) <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(self<span style="color:#f92672">.</span>max_order<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(self<span style="color:#f92672">.</span>max_order<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">if</span> i<span style="color:#f92672">+</span>j <span style="color:#f92672">&lt;=</span> self<span style="color:#f92672">.</span>max_order), key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> p: [p<span style="color:#f92672">.</span>net_order, tuple(<span style="color:#f92672">-</span>o <span style="color:#66d9ef">for</span> o <span style="color:#f92672">in</span> p<span style="color:#f92672">.</span>orders)])
+</code></pre></div><p>You can think of these as $\partial_x f(x,y)$ and $\partial_y f(x,y)$, which you need to compute the chain rule for $\partial_u (f(x(u),y(u)))$.</p>
+<p>The rest of the class specification is full of functions that construct the various operators that appear on the Fortran side. For instance</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">specific_unary_operator_function</span>(self, operator_name, operator):
+		<span style="color:#e6db74">&#39;&#39;&#39;
+</span><span style="color:#e6db74">		Returns a function which implements the specified unary operator.
+</span><span style="color:#e6db74">		&#39;&#39;&#39;</span>
+
+		function_name <span style="color:#f92672">=</span> operator_name <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;_self&#39;</span>
+		function_arguments <span style="color:#f92672">=</span> [(<span style="color:#e6db74">&#39;x&#39;</span>, self<span style="color:#f92672">.</span>declare_name(ref<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;*&#39;</span>), <span style="color:#e6db74">&#39;in&#39;</span>)]
+		function_result <span style="color:#f92672">=</span> (<span style="color:#e6db74">&#39;unary&#39;</span>, self<span style="color:#f92672">.</span>declare_name(ref<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;x&#39;</span>))
+		function_body, function_declarations <span style="color:#f92672">=</span> unary_specific_chain_rule(self, operator, fixed_length<span style="color:#f92672">=</span>self<span style="color:#f92672">.</span>array_length)
+		function_body <span style="color:#f92672">=</span> function_declarations <span style="color:#f92672">+</span> function_body
+
+		<span style="color:#75715e"># Special case handling for safe_log</span>
+		<span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#39;safe&#39;</span> <span style="color:#f92672">in</span> operator_name:
+			<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(len(function_body)):
+				function_body[i] <span style="color:#f92672">=</span> function_body[i]<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;log&#39;</span>, <span style="color:#e6db74">&#39;safe_log&#39;</span>)
+
+		<span style="color:#66d9ef">return</span> FortranFunction(function_name, function_arguments, function_result, function_body)
+</code></pre></div><p>takes as input an operator&rsquo;s name and the operator itself (as a <code>sympy</code> function) and returns a valid Fortran function (as a string) implementing the derivative propagation logic. Most of this is wrapper logic: all the magic and complicated stuff that goes in the body gets constructed in <code>unary_specific_chain_rule(self, operator, fixed_length=self.array_length)</code> (and there are equivalent functions for binary operators).</p>
+<h3 id="chain_rule">chain_rule</h3>
+<p>The real magic on the Python side all happens in <code>chain_rule.py</code>. That&rsquo;s where functions like <code>unary_specific_chain_rule(self, operator, fixed_length=self.array_length</code> are defined.</p>
+<p>There are four functions in this file. They are each labelled <code>unary</code> or <code>binary</code>, after the kind of operator they represent, and <code>specific</code> or <code>generic</code>. The <code>generic</code> ones are used to write the [Custom Operator][Custom Operators] routines and the <code>specific</code> ones are used to implement actual specific operators like <code>exp</code> and <code>+</code> and so on.</p>
+<p>How do they work?</p>
+<h4 id="specific">specific</h4>
+<p>This is a bit complicated.</p>
+<p>Everything here uses <code>sympy</code> for calculus and algebra, which means most of what we&rsquo;re doing is setting up lots of <code>sympy</code> variables and manipulating them.</p>
+<p>We start by making symbols for the independent variables:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Construct sympy variables corresponding to the various independent variables.</span>
+<span style="color:#75715e"># These never appear on the Fortran side, but we keep the naming consistent to correspond to the</span>
+<span style="color:#75715e"># names in partial_orders.</span>
+<span style="color:#75715e"># So these are called val1, val2, ..., valN.</span>
+indep_symbol_str <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39; &#39;</span><span style="color:#f92672">.</span>join(auto_diff_type<span style="color:#f92672">.</span>partials[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>val_name(i) <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(auto_diff_type<span style="color:#f92672">.</span>num_independent))
+indep_syms <span style="color:#f92672">=</span> wrap_element(symbols(indep_symbol_str, real<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>))
+</code></pre></div><p>Then we make symbols for the places we&rsquo;ll store the derivatives (this is where <code>d1val1</code> comes from!):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Construct sympy variables corresponding to the various derivatives dx/d(...).</span>
+<span style="color:#75715e"># Note that these variable names correspond to the names we&#39;ll use on the Fortran side, so</span>
+<span style="color:#75715e"># we can just directly map sympy expressions to strings and get valid Fortran :-)</span>
+<span style="color:#75715e"># Hence these are called x%d1val1, x%d2val1, ..., x%d1val2, x%d2val2, ..., x%d1val1_d1val2, ...</span>
+<span style="color:#75715e"># The first integer in each &#39;d_val_&#39; block is the number of derivatives,</span>
+<span style="color:#75715e"># the second is the independent variable those derivatives are with respect to.</span>
+x_symbol_str <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39; &#39;</span><span style="color:#f92672">.</span>join(auto_diff_type<span style="color:#f92672">.</span>partial_str_in_instance(<span style="color:#e6db74">&#39;x&#39;</span>, p)<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;:&#39;</span>,<span style="color:#e6db74">&#39;colon&#39;</span>) <span style="color:#66d9ef">for</span> p <span style="color:#f92672">in</span> partials)
+x_syms <span style="color:#f92672">=</span> wrap_element(symbols(x_symbol_str, real<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>))
+</code></pre></div><p>We then represent <code>x</code> as a power series in terms of its partial derivative symbols:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Construct x as a power series in terms of its partial derivatives (sym) with respect to the independent</span>
+<span style="color:#75715e"># variables (indep).</span>
+x <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+<span style="color:#66d9ef">for</span> p,sym <span style="color:#f92672">in</span> zip(<span style="color:#f92672">*</span>(partials, x_syms)):
+  term <span style="color:#f92672">=</span> sym
+  <span style="color:#66d9ef">for</span> order, indep <span style="color:#f92672">in</span> zip(<span style="color:#f92672">*</span>(p<span style="color:#f92672">.</span>orders, indep_syms)):
+    term <span style="color:#f92672">=</span> term <span style="color:#f92672">*</span> indep <span style="color:#f92672">**</span> order <span style="color:#f92672">/</span> factorial(order)
+  x <span style="color:#f92672">=</span> x <span style="color:#f92672">+</span> term
+</code></pre></div><p>And then call our operator on <code>x</code> to get <code>z(x)</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">z <span style="color:#f92672">=</span> operator(x)
+</code></pre></div><p>The reason we play around with the power series is so that <code>z</code> has an explicit representation in terms of the partial derivatives of <code>x</code>, which in turn are explicitly represented as individual <code>sympy</code> symbols.</p>
+<p>With all that done, we actually extract derivatives. This starts with a few lists:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">expressions <span style="color:#f92672">=</span> []
+left_hand_names <span style="color:#f92672">=</span> []
+derivatives <span style="color:#f92672">=</span> []
+</code></pre></div><p>Here <code>expressions</code> is the list of derivative expressions we&rsquo;ll build, <code>left_hand_names</code> is the corresponding list of e.g. <code>d1val1</code> (which appear on the left-hand side in the Fortran code), and <code>derivatives</code> appears to be an unused list that I forgot to delete.</p>
+<p>We then iterate over all required partials:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">	<span style="color:#66d9ef">for</span> p <span style="color:#f92672">in</span> partials:
+</code></pre></div><p>For each, we construct the left-hand side of the expression:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">unary_symbol_str <span style="color:#f92672">=</span> auto_diff_type<span style="color:#f92672">.</span>partial_str_in_instance(<span style="color:#e6db74">&#39;unary&#39;</span>, p)<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;:&#39;</span>,<span style="color:#e6db74">&#39;colon&#39;</span>)
+</code></pre></div><p>The <code>replace</code> business here is just to make sure we only use valid <code>sympy</code> symbols. There&rsquo;s a lot of that all over this code (string replacements to avoid invalid or reserved <code>sympy</code> symbols, followed by back-replacement at the very end right before we write the file).</p>
+<p>If life were simple, we&rsquo;d then just ask <code>sympy</code> for the derivative at the right order. But some use cases require <code>auto_diff</code> to support non-differentiable functions like <code>abs</code> and <code>&gt;</code> and <code>min</code> and so on. Those spawn Dirac Delta&rsquo;s when you try differentiate them. Which is awful because (1) we can&rsquo;t do anything with those in any numerical methods and (2) they&rsquo;re zero everywhere but a set of measure zero, so we don&rsquo;t care about them. So we get a bunch of logic that special cases Dirac Delta and a few related objects and zero&rsquo;s them out:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">d <span style="color:#f92672">=</span> z
+<span style="color:#66d9ef">for</span> order, indep <span style="color:#f92672">in</span> zip(<span style="color:#f92672">*</span>(p<span style="color:#f92672">.</span>orders, indep_syms)):
+  d <span style="color:#f92672">=</span> diff(d, indep, order)
+  d <span style="color:#f92672">=</span> d<span style="color:#f92672">.</span>replace(DiracDelta, zero_function) <span style="color:#75715e"># Diract Delta is only non-zero in a set of measure zero, so we set it to zero.</span>
+  d <span style="color:#f92672">=</span> d<span style="color:#f92672">.</span>replace(sign, sgn) <span style="color:#75715e"># simplify can do weird things with sign, turning it into the piecewise operator. We want to avoid that so we redirect to a custom sgn function.</span>
+  d <span style="color:#f92672">=</span> d<span style="color:#f92672">.</span>replace(Derivative, zero_function) <span style="color:#75715e"># Eliminates derivatives of the Dirac Delta and Sign, which are non-zero only at sets of measure zero.</span>
+  d <span style="color:#f92672">=</span> d<span style="color:#f92672">.</span>subs(indep, <span style="color:#ae81ff">0</span>)
+</code></pre></div><p>This is taking the derivatives one at a time, clearing out garbage as it arises.</p>
+<p>Life would be nice if this were all we had to do, but we want the resulting Fortran code to be fast, so we do some simplifications:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">d <span style="color:#f92672">=</span> simplify(d, measure<span style="color:#f92672">=</span>weighted_count_ops, force<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, ratio<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+</code></pre></div><p>More on that later.</p>
+<p>The rest of the routine is just a bunch of string manipulation to get everything into the right format for Fortran. You can print the results as they accumulate if you&rsquo;re interested to see how the substitutions gradually turn a pile of algebra into valid Fortran.</p>
+<h4 id="generic">generic</h4>
+<p>The generic ones cheat by calling the specific ones on a dummy function. They start by constructing symbols corresponding to the partial derivatives of some general function <code>z(x)</code> out through the highest order we care about:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Construct the symbols corresponding to the partial derivatives of z.</span>
+<span style="color:#75715e"># These are d1z, d2z, ..., dNz, giving dz/dx, d^2 / dx^2, and so on.</span>
+z_symbol_strs <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;z_&#39;</span> <span style="color:#f92672">+</span> str(p)<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;val1&#39;</span>,<span style="color:#e6db74">&#39;x&#39;</span>) <span style="color:#66d9ef">for</span> p <span style="color:#f92672">in</span> auto_diff_type<span style="color:#f92672">.</span>unary_partials]
+z_symbol_str <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39; &#39;</span><span style="color:#f92672">.</span>join(z_symbol_strs)
+z_syms <span style="color:#f92672">=</span> wrap_element(symbols(z_symbol_str, real<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>))
+</code></pre></div><p>We then construct a Taylor series out of these symbols:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">operator</span>(x):
+  <span style="color:#75715e"># Construct z as a power series in terms of its partial derivatives (z_syms) with</span>
+  <span style="color:#75715e"># respect to the x.</span>
+  z <span style="color:#f92672">=</span> sum(sym <span style="color:#f92672">*</span> x<span style="color:#f92672">**</span>p<span style="color:#f92672">.</span>orders[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">/</span> factorial(p<span style="color:#f92672">.</span>orders[<span style="color:#ae81ff">0</span>]) <span style="color:#66d9ef">for</span> sym,p <span style="color:#f92672">in</span> zip(<span style="color:#f92672">*</span>(z_syms, auto_diff_type<span style="color:#f92672">.</span>unary_partials)))
+  <span style="color:#66d9ef">return</span> z
+</code></pre></div><p>Then we call <code>unary_specific_chain_rule</code> to give us the chain rule code for this dummy operator, and that gets everything in terms of the partial derivatives of <code>z(x)</code>, which we can then supply as inputs to the custom operator builders.</p>
+<h3 id="make_auto_diff_type">make_auto_diff_type</h3>
+<p>This file puts it all together, going over all the functions and all the Fortran boiler plate and doing a bunch of accounting to make sure every <code>function blah</code> gets closed by <code>end function blah</code> and so on. It&rsquo;s super boring.</p>
+<h3 id="measure">measure</h3>
+<p>This is where all performance optimizations happen. We use the built-in <code>sympy</code> function <code>simplify</code>, but with a twist. We don&rsquo;t care how complicated the functions are, we care how fast they are. And moreover speed is actually set by how many divides and special function calls we have. So we have to tell <code>simplify</code> about all of that. In <code>measure.py</code> specify crudely how much each function call costs:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># &#39;basic&#39; here means roughly a one-cycle op.</span>
+<span style="color:#75715e"># &#39;div&#39; is division, which takes ~30 cycles.</span>
+<span style="color:#75715e"># &#39;special&#39; is a special function, which takes ~1000 cycles.</span>
+<span style="color:#75715e"># DIRACDELTA and DERIVATIVE get eliminated in post-processing and so are free.</span>
+special <span style="color:#f92672">=</span> <span style="color:#ae81ff">1000</span>
+div <span style="color:#f92672">=</span> <span style="color:#ae81ff">30</span>
+basic <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+weights <span style="color:#f92672">=</span> {
+	<span style="color:#e6db74">&#39;SIN&#39;</span>: special,
+	<span style="color:#e6db74">&#39;COS&#39;</span>: special,
+	<span style="color:#e6db74">&#39;TAN&#39;</span>: special,
+	<span style="color:#e6db74">&#39;TANH&#39;</span>: special,
+	<span style="color:#e6db74">&#39;COSH&#39;</span>: special,
+	<span style="color:#e6db74">&#39;SINH&#39;</span>: special,
+	<span style="color:#e6db74">&#39;ASIN&#39;</span>: special,
+	<span style="color:#e6db74">&#39;ACOS&#39;</span>: special,
+	<span style="color:#e6db74">&#39;ATAN&#39;</span>: special,
+	<span style="color:#e6db74">&#39;ATANH&#39;</span>: special,
+	<span style="color:#e6db74">&#39;ACOSH&#39;</span>: special,
+	<span style="color:#e6db74">&#39;ASINH&#39;</span>: special,
+	<span style="color:#e6db74">&#39;EXP&#39;</span>: special,
+	<span style="color:#e6db74">&#39;LOG&#39;</span>: special,
+	<span style="color:#e6db74">&#39;POW&#39;</span>: special,
+	<span style="color:#e6db74">&#39;ADD&#39;</span>: basic,
+	<span style="color:#e6db74">&#39;MUL&#39;</span>: basic,
+	<span style="color:#e6db74">&#39;NEG&#39;</span>: basic,
+	<span style="color:#e6db74">&#39;SUB&#39;</span>: basic,
+	<span style="color:#e6db74">&#39;HEAVISIDE&#39;</span>: basic,
+	<span style="color:#e6db74">&#39;ABS&#39;</span>: basic,
+	<span style="color:#e6db74">&#39;DIV&#39;</span>: div,
+	<span style="color:#e6db74">&#39;SGN&#39;</span>: basic,
+	<span style="color:#e6db74">&#39;POWM1&#39;</span>: div,
+	<span style="color:#e6db74">&#39;SSQRT&#39;</span>: special,
+	<span style="color:#e6db74">&#39;DIRACDELTA&#39;</span>: <span style="color:#ae81ff">0</span>,
+	<span style="color:#e6db74">&#39;DERIVATIVE&#39;</span>: <span style="color:#ae81ff">0</span>
+}
+</code></pre></div><p>Then we have a function that goes through a <code>sympy</code> expression counting function calls and tallying them up:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">weighted_count_ops</span>(expr_original, verbose<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>):
+</code></pre></div><p>Understanding this code requires a decent amount of knowledge of <code>sympy</code>&rsquo;s API, but suffice it to say that we&rsquo;re crawling an abstract syntax tree and counting instances of functions as we encounter them.</p>
+<h3 id="functions">functions</h3>
+<p>The <code>functions.py</code> file defines all the supported <code>auto_diff</code> functions in <code>sympy</code> language. Not much more to say there.</p>
+<h3 id="helper-methods">Helper Methods</h3>
+<p>There are a bunch of boring helper methods in <code>routine.py</code> (for spitting out valid Fortran routines), and <code>utils.py</code> (for string manipulation and a few performance optimizations like <code>pow(x,N) -&gt; powN(x)</code>).</p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fadamjermyn.com%2fposts%2fauto_diff_mesa%2f - Automatic%20Differentiation%20in%20MESA by @AdamSJermyn"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/adamjermyn">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/AdamSJermyn">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+        
+	        <center><a class="cta" href="https://adamjermyn.com/index.xml">Subscribe</a></center>
+        
+    <p class="small">
+    
+       © Copyright 2022 Adam Jermyn
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://adamjermyn.com/js/jquery-3.3.1.min.js"></script>
+<script src="https://adamjermyn.com/js/main.js"></script>
+<script src="https://adamjermyn.com/js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>

@@ -6,7 +6,19 @@
     <description>Recent content in Tools on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 01 Mar 2022 13:43:15 -0500</lastBuildDate><atom:link href="https://adamjermyn.com/tags/tools/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 11 May 2022 15:28:14 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/tags/tools/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Automatic Differentiation in MESA</title>
+      <link>https://adamjermyn.com/posts/auto_diff_mesa/</link>
+      <pubDate>Wed, 11 May 2022 15:28:14 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/auto_diff_mesa/</guid>
+      <description>Over the last two years I developed an automatic differentiation (auto_diff) module in Fortran to support development of the Modules for Experiments in Stellar Astrophysics (MESA) project. This post gives a brief rundown of how the auto_diff module works and how I built it.
+All of the code I mention below lives on GitHub.
+What is auto_diff? Forward-mode automatic differentiation via operator overloading:
+ Forward-mode means we calculate the chain rule as we go.</description>
+    </item>
+    
     <item>
       <title>Tools Against Procrastination</title>
       <link>https://adamjermyn.com/posts/procrast/</link>

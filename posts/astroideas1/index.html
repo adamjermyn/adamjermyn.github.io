@@ -86,7 +86,7 @@ if (!doNotTrack) {
                     <h2 class="headline">
 		    
                      May 16, 2022 07:38 
-                    · 644 words
+                    · 653 words
                     · 4 minute read
                       <span class="tags">
                       
@@ -124,7 +124,12 @@ if (!doNotTrack) {
 <p>There should be a critical gas temperature/density line in the AGN disk, along with AGN lifetime, for this collapse process to happen at interesting rates.</p>
 <p>I&rsquo;d start analytically. There are two phases of accretion: Bondi-limited and Eddington-limited. The Bondi rate is<br>
 $$
-\dot{M}<em>{\rm Bondi} \approx 4\pi G^2 \rho M</em>{\rm NS}^2 c_{\rm s}^{-3}\approx 4\times 10^{-9} M_\odot \mathrm{yr}^{-1} (\rho/10^{-18}\mathrm{g,cm^{-3}})(M_{\rm NS}/M_\odot)^2(c_{\rm s}/10\mathrm{km,s^{-1}})^{-3}\dot{M}<em>{\rm Edd} \approx 2\times 10^{-8} (M</em>{\rm NS}/M_\odot) M_\odot\mathrm{yr^{-1}}
+\dot{M}<em>{\rm Bondi} \approx 4\pi G^2 \rho M</em>{\rm NS}^2 c_{\rm s}^{-3}\
+\approx 4\times 10^{-9} M_\odot \mathrm{yr}^{-1} (\rho/10^{-18}\mathrm{g,cm^{-3}})(M_{\rm NS}/M_\odot)^2(c_{\rm s}/10\mathrm{km,s^{-1}})^{-3}
+$$
+and the Eddington rate is
+$$
+\dot{M}<em>{\rm Edd} \approx 2\times 10^{-8} (M</em>{\rm NS}/M_\odot) M_\odot\mathrm{yr^{-1}}
 $$
 The AGN lifetime is less than $10^8 \mathrm{yr}$, so the accretion has to hit the Eddington limit most of the time to change the mass of the NS by order unity and cause it to collapse. Hence $\dot{M}<em>{\rm Bondi} \geq \dot{M}</em>{\rm Edd}$, meaning that $\rho_{-18} c_{s,6}^{-3} (M_{\rm NS}/M_\odot)^2 &gt; 5$. That sets the temperature/density line. Additionally, the disk lifetime $t_{\rm AGN}$ has to be of order $3\times 10^7 \mathrm{yr}$ if the neutron star accretes at Eddington the whole time, starts at $2M_\odot$, and needs to accrete around $1M_\odot$ to collapse.</p>
 <p>The lifetime bound is the tightest one, so that&rsquo;s what I&rsquo;d refine first. I&rsquo;d start by looking at numerical simulations of Eddington-limited accretion onto neutron stars and try to understand if accretion can be super-Eddington, even by a factor of a few. My recollection is that there are also observations suggesting 10-100x super-Eddington accretion onto neutron stars, so this seems plausible.</p>

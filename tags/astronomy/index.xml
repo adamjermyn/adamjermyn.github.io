@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>astronomy on Adam Jermyn</title>
+    <link>https://adamjermyn.com/tags/astronomy/</link>
+    <description>Recent content in astronomy on Adam Jermyn</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 16 May 2022 07:34:19 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/tags/astronomy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Chaos in Stellar Evolution</title>
+      <link>https://adamjermyn.com/posts/chaos_stars/</link>
+      <pubDate>Mon, 16 May 2022 07:34:19 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/chaos_stars/</guid>
+      <description>Are stars predictable or chaotic?
+A system is chaotic if small perturbations grow exponentially with time. This makes chaotic systems unpredictable on long time-scales, because it becomes fine details in the starting conditions come to dominate at long times.
+So: are stars predictable or chaotic? As far as I know this is an open question.
+There is some sense in which most stars are predictable. They exist near thermal and hydrostatic equilibrium, and they tend to return to equilibrium when perturbed.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,7 +6,7 @@
     <description>Recent content in About on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 11 May 2022 15:28:14 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 16 May 2022 07:34:19 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Notes</title>
       <link>https://adamjermyn.com/workflow/notes/</link>
@@ -36,6 +36,18 @@ I write ideas in Markdown notes with one top-level header per idea. To decide wh
       
       <guid>https://adamjermyn.com/workflow/spacedrepetition/</guid>
       <description>Spaced Repetition Spaced repetition is a technique for remembering information over long time periods. It takes advantage of the empirical observation that the time it takes to forget a fact is proportional to the time that fact is known. This suggests that the best strategy to remember something indefinitely is to review facts with ever-larger (geometrically increasing) gaps between reviews. Following that strategy, a finite number of reviews is needed to remember something for the rest of your life, and that number is small enough that the study time needed to remember a fact indefinitely is about 5 minutes, so long as the studying happens in this spaced-out way.</description>
+    </item>
+    
+    <item>
+      <title>Chaos in Stellar Evolution</title>
+      <link>https://adamjermyn.com/posts/chaos_stars/</link>
+      <pubDate>Mon, 16 May 2022 07:34:19 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/chaos_stars/</guid>
+      <description>Are stars predictable or chaotic?
+A system is chaotic if small perturbations grow exponentially with time. This makes chaotic systems unpredictable on long time-scales, because it becomes fine details in the starting conditions come to dominate at long times.
+So: are stars predictable or chaotic? As far as I know this is an open question.
+There is some sense in which most stars are predictable. They exist near thermal and hydrostatic equilibrium, and they tend to return to equilibrium when perturbed.</description>
     </item>
     
     <item>

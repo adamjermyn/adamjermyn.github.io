@@ -86,8 +86,8 @@ if (!doNotTrack) {
                     <h2 class="headline">
 		    
                      May 16, 2022 07:38 
-                    · 645 words
-                    · 4 minute read
+                    · 622 words
+                    · 3 minute read
                       <span class="tags">
                       
                       
@@ -122,16 +122,7 @@ if (!doNotTrack) {
 <p>It&rsquo;s also possible that the collapse itself gives rise to an observable electromagnetic transient, which could provide an empirical handle on the embedded stellar population.</p>
 <h3 id="how-can-i-get-started">How can I get started?</h3>
 <p>There should be a critical gas temperature/density line in the AGN disk, along with AGN lifetime, for this collapse process to happen at interesting rates.</p>
-<p>I&rsquo;d start analytically. There are two phases of accretion: Bondi-limited and Eddington-limited. The Bondi rate is<br>
-$$
-\dot{M}<em>{\mathrm{Bondi}} \approx 4\pi G^2 \rho M</em>{\mathrm{NS}}^2 c_{\mathrm{s}}^{-3}\
-\approx 4\times 10^{-9} M_\odot \mathrm{yr}^{-1} (\rho/10^{-18}\mathrm{g,cm^{-3}})(M_{\mathrm{NS}}/M_\odot)^2(c_{\mathrm{s}}/10\mathrm{km,s^{-1}})^{-3}
-$$
-and the Eddington rate is
-$$
-\dot{M}<em>{\mathrm{Edd}} \approx 2\times 10^{-8} (M</em>{\mathrm{NS}}/M_\odot) M_\odot\mathrm{yr^{-1}}
-$$
-The AGN lifetime is less than $10^8 \mathrm{yr}$, so the accretion has to hit the Eddington limit most of the time to change the mass of the NS by order unity and cause it to collapse. Hence $\dot{M}<em>{\rm Bondi} \geq \dot{M}</em>{\rm Edd}$, meaning that $\rho_{-18} c_{s,6}^{-3} (M_{\mathrm{NS}}/M_\odot)^2 &gt; 5$. That sets the temperature/density line. Additionally, the disk lifetime $t_{\rm AGN}$ has to be of order $3\times 10^7 \mathrm{yr}$ if the neutron star accretes at Eddington the whole time, starts at $2M_\odot$, and needs to accrete around $1M_\odot$ to collapse.</p>
+<p>I&rsquo;d start analytically. There are two phases of accretion: Bondi-limited and Eddington-limited. The AGN lifetime is less than $10^8 \mathrm{yr}$, so the accretion has to hit the Eddington limit most of the time to change the mass of the NS by order unity and cause it to collapse. Hence the Bondi rate has to exceed the Eddington rate. Working through the algebra, that means that $\rho_{-18} c_{s,6}^{-3} (M_{\mathrm{NS}}/M_\odot)^2 &gt; 5$. That sets the temperature/density line. Additionally, the disk lifetime $t_{\rm AGN}$ has to be of order $3\times 10^7 \mathrm{yr}$ if the neutron star accretes at Eddington the whole time, starts at $2M_\odot$, and needs to accrete around $1M_\odot$ to collapse.</p>
 <p>The lifetime bound is the tightest one, so that&rsquo;s what I&rsquo;d refine first. I&rsquo;d start by looking at numerical simulations of Eddington-limited accretion onto neutron stars and try to understand if accretion can be super-Eddington, even by a factor of a few. My recollection is that there are also observations suggesting 10-100x super-Eddington accretion onto neutron stars, so this seems plausible.</p>
 <p>After that, I&rsquo;d apply the density/sound speed bound to a few plausible disk models. It shouldn&rsquo;t be hard to get the density high enough in the inner regions of the disk, but it&rsquo;s worth double checking.</p>
 <p>Next, I&rsquo;d want to see if neutron stars end up in the disk at all. The two channels for this are in-situ formation and capture, and I&rsquo;d want to look into both to get an idea of the rates to expect. In-situ formation will be by far the most uncertain and my guess based on <a href="https://arxiv.org/abs/2203.06187">my earlier estimates</a> is that it will be plausible but highly uncertain that this embeds an interesting number of neutron stars. Capture rates are <a href="https://arxiv.org/abs/2006.11229">more reliably calculable</a> but I am less certain that the answer will be high enough to be interesting.</p>

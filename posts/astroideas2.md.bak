@@ -1,0 +1,32 @@
++++
+title = "Astronomy Ideas II -"
+date = 2022-05-24T12:56:55-04:00
+tags = ["astronomy","science","research"]
+categories = [""]
+draft = false
+
++++
+
+I sometimes have research ideas that I think are cool, but that don't make sense for me to pursue. I generally just make a note of them and move on. This is the second post in a series describing some of the ideas I've accumulated.
+
+## Can planet injestion explain magnetic RGB stars?
+
+### What's the idea?
+
+There are some very magnetic Red Giant Branch (RGB) stars, with [measured internal fields](https://arxiv.org/pdf/1510.06960.pdf) of order $10^{5-7}\mathrm{G}$. We don't know how they get fields this strong. It's possible they're [fossil fields](https://arxiv.org/abs/2110.03695) from when the stars formed. It's possible they were [generated later by  convective dynamos](https://arxiv.org/pdf/1510.06960.pdf). Are there other possible origin stories for strong magnetic fields on the RGB?
+
+We know that in other stars strong magnetic fields can come from [mergers](https://arxiv.org/abs/1910.14058). We also know that RGB stars injest planets. This happens because the stars expand as they ascend the RGB, which results in planet engulfement. Could the process of eating a planet work something like a stellar merger, stirring up the interior and running a dynamo?
+
+### Why is this interesting?
+
+It's got stars eating planets and magnetic fields, what more do you want?
+
+More seriously, if there is a link between a history of planetary engulfement and strong magnetism, that should be testable with observations. Planets carry unusual chemistry and lots of angular momentum on their way in, so it may be possible to tell which stars have eaten a planet and which haven't. It is also possible to measure stellar magnetic fields, and so if there is an association between planet injestion and magnetism that should be observable in principle.
+
+### How can I get started?
+
+Merger [simulations](https://arxiv.org/abs/1910.14058) find that the magnetic energy at the end of the merger is 5-30% of the kinetic energy at the end of the merger, which in turn is comparable to the potential energy at the time of contact ($GM_1 M_2/a$).
+
+Let's assume that's true. Then consider an RGB star eating Jupiter. $M_1 \sim 10^{33}g$, $M_2 \sim 10^{30}g$, $R\sim 10^{13}cm$, so $E \sim  10^{44} erg$. Spreading this over the RGB star's volume ($R^3 \sim 10^{39}cm^3$) gives $B \sim 300G$, which is much greater than the equipartition field (relative to convective motions). Even if we only get 10% of the energy in the magnetic field, that's $100G$, which is a lot. And of course if the field ends up confined to small regions like the inner radiative zone it's possible it could be much stronger (around $10^7\mathrm{G}$), though it's unclear how this confinement would happen. 
+
+There has been [some work on this scenario](https://arxiv.org/pdf/1608.08893.pdf), but as I understand it that paper was mostly looking at the mechanism of "planetary engulfement → spin up → convective dynamo gets stronger". That probably happens, but is very different from (and much weaker than) a dynamo powered off the kinetic energy of the initial injestion event.

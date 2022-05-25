@@ -8,7 +8,7 @@
 		<meta name="author" content="Adam Jermyn">
 		<meta name="description" content="Site Description">
 		<meta name="generator" content="Hugo 0.92.2" />
-		<title>Astronomy Ideas II - Does eating planets make stars magnetic? &middot; Adam Jermyn</title>
+		<title>Astronomy Ideas III - A tight-binding model for cold dense matter &middot; Adam Jermyn</title>
 		<link rel="shortcut icon" href="https://adamjermyn.com/images/favicon.ico">
 		<link rel="stylesheet" href="https://adamjermyn.com/css/style.css">
 		<link rel="stylesheet" href="https://adamjermyn.com/css/highlight.css">
@@ -81,12 +81,12 @@ if (!doNotTrack) {
             <article>
                 <header>
                     <h1>
-                        Astronomy Ideas II - Does eating planets make stars magnetic?
+                        Astronomy Ideas III - A tight-binding model for cold dense matter
                     </h1>
                     <h2 class="headline">
 		    
-                     May 24, 2022 12:56 
-                    · 471 words
+                     May 25, 2022 16:33 
+                    · 460 words
                     · 3 minute read
                       <span class="tags">
                       
@@ -105,24 +105,25 @@ if (!doNotTrack) {
                 </header>
                 
                 <section id="post-body">
-                    <p>I sometimes have research ideas that I think are cool, but that don&rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the second post in a series describing some of the ideas I&rsquo;ve accumulated.</p>
-<h2 id="can-planet-injestion-explain-magnetic-rgb-stars">Can planet injestion explain magnetic RGB stars?</h2>
+                    <p>I sometimes have research ideas that I think are cool, but that don&rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the third post in a series describing some of the ideas I&rsquo;ve accumulated.</p>
+<h2 id="can-an-ad-hoc-electron-binding-model-fix-the-low-temperature-low-density-limit-of-the-skye-eos">Can an ad-hoc electron binding model fix the low-temperature low-density limit of the Skye EOS?</h2>
 <h3 id="whats-the-idea">What&rsquo;s the idea?</h3>
-<p>There are some very magnetic Red Giant Branch (RGB) stars, with <a href="https://arxiv.org/pdf/1510.06960.pdf">measured internal fields</a> of order $10^{5-7}\mathrm{G}$. We don&rsquo;t know how they get fields this strong. It&rsquo;s possible they&rsquo;re <a href="https://arxiv.org/abs/2110.03695">fossil fields</a> from when the stars formed. It&rsquo;s possible they were <a href="https://arxiv.org/pdf/1510.06960.pdf">generated later by  convective dynamos</a>. Are there other possible origin stories for strong magnetic fields on the RGB?</p>
-<p>We know that in other stars strong magnetic fields can come from <a href="https://arxiv.org/abs/1910.14058">mergers</a>. We also know that RGB stars injest planets. This happens because the stars expand as they ascend the RGB, which results in planet engulfment. Could the process of eating a planet work something like a stellar merger, stirring up the interior and running a dynamo?</p>
+<p>The reason that the <a href="https://arxiv.org/abs/2104.00691">Skye EOS</a> doesn&rsquo;t cover all temperatures and densities is that it assumes fully ionized matter, which breaks down  at low temperatures. It might be possible to patch this with an ad-hoc binding model.</p>
 <h3 id="why-is-this-interesting">Why is this interesting?</h3>
-<p>It&rsquo;s got stars eating planets and magnetic fields, what more do you want?</p>
-<p>More seriously, if there is a link between a history of planetary engulfment and strong magnetism, that should be testable with observations. Planets carry unusual chemistry and lots of angular momentum on their way in, so it may be possible to tell which stars have eaten a planet and which haven&rsquo;t. It is also possible to measure stellar magnetic fields, and so if there is an association between planet injestion and magnetism that should be observable in principle.</p>
+<p>Modeling stars requires modeling the matter they&rsquo;re made of using an equation of state. Currently, ionization is either handled in pre-tabulated EOS&rsquo;s, which is fast but creates errors when the composition of the star doesn&rsquo;t match that assumed in the tables, or is handled on the fly with exact ionization calculations (e.g. <a href="http://freeeos.sourceforge.net">FreeEOS</a>), which is accurate but requires vastly more runtime than all of the other pieces of a stellar evolution calculation.</p>
+<p>Having a middleground, something approximate (but good enough) and fast would open up new options. For one, we normally have to blend between between different EOS&rsquo;s to cover the conditions across an entire star. This blending is tricky and often causes problems like thermodynamic inconsistency. If the Skye EOS could be extended to the low-temperature low-density regime many stars could be run on Skye alone.</p>
+<p>Likewise, it is useful to have a &lsquo;backstop&rsquo; EOS that produces valid (even if inaccurate) thermodynamics across the entire temperature-density plane. By valid here I mean &lsquo;thermodynamically consistent, positive sound speed, etc.&rsquo;. Skye is close to being able to do this, and just needs some way to handle partial ionization.</p>
 <h3 id="how-can-i-get-started">How can I get started?</h3>
-<p>Merger <a href="https://arxiv.org/abs/1910.14058">simulations</a> find that the magnetic energy at the end of the merger is 5-30% of the kinetic energy at the end of the merger, which in turn is comparable to the potential energy at the time of contact ($GM_1 M_2/a$).</p>
-<p>Let&rsquo;s assume that&rsquo;s true. Then consider an RGB star eating Jupiter. $M_1 \sim 10^{33}g$, $M_2 \sim 10^{30}g$, $R\sim 10^{13}cm$, so $E \sim  10^{44} erg$. Spreading this over the RGB star&rsquo;s volume ($R^3 \sim 10^{39}cm^3$) gives $B \sim 300G$, which is much greater than the equipartition field (relative to convective motions). Even if we only get 10% of the energy in the magnetic field, that&rsquo;s $100G$, which is a lot. And of course if the field ends up confined to small regions like the inner radiative zone it&rsquo;s possible it could be much stronger (around $10^7\mathrm{G}$), though it&rsquo;s unclear how this confinement would happen.</p>
-<p>There has been <a href="https://arxiv.org/pdf/1608.08893.pdf">some work on this scenario</a>, but as I understand it that paper was mostly looking at the mechanism of &ldquo;planetary engulfment → spin up → convective dynamo gets stronger&rdquo;. That probably happens, but is very different from (and much weaker than) a dynamo powered off the kinetic energy of the initial injestion event.</p>
+<p>The binding model needs to gradually turn ions into neutral atoms and lower the electron density as the temperature falls. It would need to account for the ionization potentials of different species and the entropy of ionization to get the temperature and density dependence right.</p>
+<p>I&rsquo;d start by getting familiar with the internals of <a href="https://github.com/adamjermyn/Skye">Skye</a>. I&rsquo;d probably start by making the species charges variables so they can be smoothly turned down, and would define a function that takes revised charges and determines the electron density.</p>
+<p>Next, I&rsquo;d play around with a few possible models, with vaguely Boltzmann-inspired forms, e.g. the number of bound electrons could be set by a Boltzmann factor with a term describing the entropy of free electrons. Or maybe something inspired by <a href="https://royalsocietypublishing.org/doi/10.1098/rspa.1938.0073">Kothari 1938</a>.</p>
+<p>My guess is that getting something that produces a valid EOS is not too hard here, but that getting anything accurate enough to be useful as more than a &lsquo;backstop&rsquo; EOS is probably out of the question.</p>
 
                 </section>
             </article>
 
             
-                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fadamjermyn.com%2fposts%2fastroideas2%2f - Astronomy%20Ideas%20II%20-%20Does%20eating%20planets%20make%20stars%20magnetic%3f by @AdamSJermyn"><span class="icon-twitter"> tweet</span></a>
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fadamjermyn.com%2fposts%2fastroideas3%2f - Astronomy%20Ideas%20III%20-%20A%20tight-binding%20model%20for%20cold%20dense%20matter by @AdamSJermyn"><span class="icon-twitter"> tweet</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(

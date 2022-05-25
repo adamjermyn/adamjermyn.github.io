@@ -6,9 +6,19 @@
     <description>Recent content in science on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 24 May 2022 12:56:55 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/tags/science/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 25 May 2022 16:33:00 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/tags/science/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Astronomy Ideas II -</title>
+      <title>Astronomy Ideas III - A tight-binding model for cold dense matter</title>
+      <link>https://adamjermyn.com/posts/astroideas3/</link>
+      <pubDate>Wed, 25 May 2022 16:33:00 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/astroideas3/</guid>
+      <description>I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the third post in a series describing some of the ideas I&amp;rsquo;ve accumulated.
+Can an ad-hoc electron binding model fix the low-temperature low-density limit of the Skye EOS? What&amp;rsquo;s the idea? The reason that the Skye EOS doesn&amp;rsquo;t cover all temperatures and densities is that it assumes fully ionized matter, which breaks down at low temperatures.</description>
+    </item>
+    
+    <item>
+      <title>Astronomy Ideas II - Does eating planets make stars magnetic?</title>
       <link>https://adamjermyn.com/posts/astroideas2/</link>
       <pubDate>Tue, 24 May 2022 12:56:55 -0400</pubDate>
       

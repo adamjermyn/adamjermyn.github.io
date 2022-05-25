@@ -1,0 +1,34 @@
++++
+title = "Astronomy Ideas III - A tight-binding model for cold dense matter"
+date = 2022-05-25T16:33:00-04:00
+tags = ["astronomy","science","research"]
+categories = [""]
+draft = false
+
++++
+
+I sometimes have research ideas that I think are cool, but that don't make sense for me to pursue. I generally just make a note of them and move on. This is the third post in a series describing some of the ideas I've accumulated.
+
+## Can an ad-hoc electron binding model fix the low-temperature low-density limit of the Skye EOS?
+
+### What's the idea?
+
+The reason that the [Skye EOS](https://arxiv.org/abs/2104.00691) doesn't cover all temperatures and densities is that it assumes fully ionized matter, which breaks down  at low temperatures. It might be possible to patch this with an ad-hoc binding model. 
+
+### Why is this interesting?
+
+Modelling stars requires modelling the matter they're made of using an equation of state. Currently, ionization is either handled in pre-tabulated EOS's, which is fast but creates errors when the composition of the star doesn't match that assumed in the tables, or is handled on the fly with exact ionization calculations (e.g. [FreeEOS](http://freeeos.sourceforge.net)), which is accurate but requires vastly more runtime than all of the other pieces of a stellar evolution calculation.
+
+Having a middleground, something approximate (but good enough) and fast would open up new options. For one, we normally have to blend between between different EOS's to cover the conditions across an entire star. This blending is tricky and often causes problems like thermodynamic inconsistency. If the Skye EOS could be extended to the low-temperature low-density regime many stars could be run on Skye alone.
+
+Likewise, it is useful to have a 'backstop' EOS that produces valid (even if inaccurate) thermodynamics across the entire temperature-density plane. By valid here I mean 'thermodynamically consistent, positive sound speed, etc.'. Skye is close to being able to do this, and just needs some way to handle partial ionization.
+
+### How can I get started?
+
+The binding model needs to gradually turn ions into neutral atoms and lower the electron density as the temperature falls. It would need to account for the ionization potentials of different species and the entropy of ionization to get the temperature and density dependence right.
+
+I'd start by getting familiar with the internals of [Skye](https://github.com/adamjermyn/Skye). I'd probably start by making the species charges variables so they can be smoothly turned down, and would define a function that takes revised charges and determines the electron density.
+
+Next, I'd play around with a few possible models, with vaguely Boltzmann-inspired forms, e.g. the number of bound electrons could be set by a Boltzmann factor with a term describing the entropy of free electrons. Or maybe something inspired by [Kothari 1938](https://royalsocietypublishing.org/doi/10.1098/rspa.1938.0073).
+
+My guess is that getting something that produces a valid EOS is not too hard here, but that getting anything accurate enough to be useful as more than a 'backstop' EOS is probably out of the question.

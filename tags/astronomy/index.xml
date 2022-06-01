@@ -6,7 +6,17 @@
     <description>Recent content in astronomy on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 31 May 2022 07:15:04 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/tags/astronomy/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Jun 2022 07:25:16 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/tags/astronomy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Astronomy Ideas VI - Theoretical limits on extreme baseline optical interferometry</title>
+      <link>https://adamjermyn.com/posts/astroideas6/</link>
+      <pubDate>Wed, 01 Jun 2022 07:25:16 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/astroideas6/</guid>
+      <description>I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the sixth post in a series describing some of the ideas I&amp;rsquo;ve accumulated.
+Theoretical limits on extreme baseline optical interferometry What&amp;rsquo;s the idea? Interferometry let&amp;rsquo;s you build a giant &amp;lsquo;virtual telescope&amp;rsquo; out of lots of small telescopes. The effective baseline is the longest distance between telescopes, and the number of pixels of effective resolution is roughly the number of telescopes.</description>
+    </item>
+    
     <item>
       <title>Astronomy ideas V - Does the Parker mechanism spin down AGN stars?</title>
       <link>https://adamjermyn.com/posts/astroideas5/</link>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="author" content="Adam Jermyn">
+		<meta name="description" content="Site Description">
+		<meta name="generator" content="Hugo 0.92.2" />
+		<title>Dynamical Time Warping for Isochrones &middot; Adam Jermyn</title>
+		<link rel="shortcut icon" href="https://adamjermyn.com/images/favicon.ico">
+		<link rel="stylesheet" href="https://adamjermyn.com/css/style.css">
+		<link rel="stylesheet" href="https://adamjermyn.com/css/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://adamjermyn.com/css/font-awesome.min.css">
+		
+
+		
+		<link href="https://adamjermyn.com/index.xml" rel="alternate" type="application/rss+xml" title="Adam Jermyn" />
+		
+
+		
+
+                
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-186473758-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+		
+                <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+
+        <a href='https://adamjermyn.com/'>About</a>
+	<a href='https://adamjermyn.com/posts'>Posts</a>
+	<a href='https://adamjermyn.com/tags'>Tags</a>
+        <a href='https://adamjermyn.com/software'>Software</a>
+        <a href='https://adamjermyn.com/workflow'>Workflow</a>
+
+	
+
+</nav>
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Dynamical Time Warping for Isochrones
+                    </h1>
+                    <h2 class="headline">
+		    
+                     Jun 4, 2022 12:32 
+                    · 453 words
+                    · 3 minute read
+                      <span class="tags">
+                      
+                      
+                          
+                              <a href="https://adamjermyn.com/tags/"></a>
+                          
+                      
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                <section id="post-body">
+                    <p>I sometimes have research ideas that I think are cool, but that don&rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the tenth post in a series describing some of the ideas I&rsquo;ve accumulated.</p>
+<h2 id="dynamical-time-warping-for-isochrones">Dynamical Time Warping for Isochrones</h2>
+<h3 id="whats-the-idea">What&rsquo;s the idea?</h3>
+<p><a href="https://en.wikipedia.org/wiki/Dynamic_time_warping">Dynamical time warping</a> (DTW) is a technique used to align audio files (or other temporal data). The idea is: given two time-sequences which are supposed to be similar, can we deform the flow of time in one to make it more-closely match the other?</p>
+<p>If you&rsquo;re familiar with <a href="https://en.wikipedia.org/wiki/Stellar_isochrone">stellar isochrone</a> construction, this should sound familiar. There the aim is to interpolate between stellar evolutionary tracks calculated with different starting conditions (e.g. different masses, metallicities, etc.). Because different stars evolve at different rates, aligning tracks naively based on age could result in interpolating between a model on the main-sequence and a model on the RGB, which is typically not what we want.</p>
+<p>Instead, modern isochrones like <a href="https://waps.cfa.harvard.edu/MIST/">MIST</a> use &ldquo;equivalent evolutionary points&rdquo; (EEPs), which are hand-identified points in stellar evolution, and mark time by EEPs instead of by age. So for instance one EEP might be hydrogen exhaustion at the end of the main sequence, and using this as an EEP ensures that a $1M_\odot$ star and a $2M_\odot$ star are in comparable states when we interpolate between them.</p>
+<p>The idea here is to do away with the hand-crafted EEPs and align tracks directly with dynamical time warping.</p>
+<h3 id="why-is-this-interesting">Why is this interesting?</h3>
+<p>This may produce higher-fidelity alignment, particularly as DTW allows you to specify what properties you care about most in alignment. It would also make it easier to extend isochrones to a wider parameter space and to e.g. stars which have very different evolutionary stages than ordinary ones.</p>
+<h3 id="how-can-i-get-started">How can I get started?</h3>
+<p>There are some good libraries for working with DTW in modern languages like Python. I&rsquo;d start there.</p>
+<p>You also probably want to figure out which properties of stars you care about for aligning evolutionary tracks. I played around with this idea briefly three years ago and was able to get good results aligning tracks based on a combination of the usual suspects (core hydrogen abundance, luminosity, effective temperature, etc.) and some funnier features like core luminosity (which allows for precision alignment during the core helium flash at low masses).</p>
+<p>I view this idea in one sense as low-hanging fruit, because the DTW tools are pretty well-developed and &ldquo;just&rdquo; need a bit of glue to be applied to stellar evolution data. The downside is that I expect it to take a while to shake out all the kinks to the point of being competitive with existing projects like MIST.</p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fadamjermyn.com%2fposts%2fastroideas10%2f - Dynamical%20Time%20Warping%20for%20Isochrones by @AdamSJermyn"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/adamjermyn">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/AdamSJermyn">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+        
+	        <center><a class="cta" href="https://adamjermyn.com/index.xml">Subscribe</a></center>
+        
+    <p class="small">
+    
+       © Copyright 2022 Adam Jermyn
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://adamjermyn.com/js/jquery-3.3.1.min.js"></script>
+<script src="https://adamjermyn.com/js/main.js"></script>
+<script src="https://adamjermyn.com/js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>

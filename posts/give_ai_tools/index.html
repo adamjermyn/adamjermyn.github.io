@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="author" content="Adam Jermyn">
+		<meta name="description" content="Site Description">
+		<meta name="generator" content="Hugo 0.92.2" />
+		<title>Give the AI safe tools &middot; Adam Jermyn</title>
+		<link rel="shortcut icon" href="https://adamjermyn.com/images/favicon.ico">
+		<link rel="stylesheet" href="https://adamjermyn.com/css/style.css">
+		<link rel="stylesheet" href="https://adamjermyn.com/css/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://adamjermyn.com/css/font-awesome.min.css">
+		
+
+		
+		<link href="https://adamjermyn.com/index.xml" rel="alternate" type="application/rss+xml" title="Adam Jermyn" />
+		
+
+		
+
+                
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-186473758-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+		
+                <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+
+        <a href='https://adamjermyn.com/'>About</a>
+	<a href='https://adamjermyn.com/posts'>Posts</a>
+	<a href='https://adamjermyn.com/tags'>Tags</a>
+        <a href='https://adamjermyn.com/software'>Software</a>
+        <a href='https://adamjermyn.com/workflow'>Workflow</a>
+
+	
+
+</nav>
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Give the AI safe tools
+                    </h1>
+                    <h2 class="headline">
+		    
+                     Jun 4, 2022 08:21 
+                    · 1147 words
+                    · 6 minute read
+                      <span class="tags">
+                      
+                      
+                          
+                              <a href="https://adamjermyn.com/tags/ai-safety">AI Safety</a>
+                          
+                              <a href="https://adamjermyn.com/tags/ai">AI</a>
+                          
+                              <a href="https://adamjermyn.com/tags/research">research</a>
+                          
+                      
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                <section id="post-body">
+                    <p><em>(Cross-posted from <a href="https://www.lesswrong.com/posts/mvTYAKS5qXKNnBT8x/give-the-ai-safe-tools">LessWrong</a>)</em></p>
+<p>One kind of concern with AI is that:</p>
+<ol>
+<li>There are some tools that are instrumentally useful for an AI to have.</li>
+<li>Most/the most accessible versions of those tools are dangerous.</li>
+<li>The AI doesn’t care which versions are dangerous.</li>
+<li>Hence, the AI will probably develop dangerous tools for instrumental reasons.</li>
+</ol>
+<p>You might call concerns like this <em>Instrumental Danger Problems</em>. This post aims to examine some existing approaches to Instrumental Danger Problems, and to introduce a new one, namely “Giving the AI safe tools”.</p>
+<h2 id="a-few-examples">A few examples</h2>
+<p>Here are a few concrete examples of Instrumental Danger Problems:</p>
+<p><strong>An (incomplete) statement of the inner alignment problem:</strong></p>
+<ol>
+<li>Mesa-optimizers are instrumentally useful for an AI to have.</li>
+<li>The easiest mesa-optimizers to find are misaligned, hence dangerous.</li>
+<li>The AI doesn’t care which mesa-optimizers are dangerous.</li>
+<li>Hence, the AI will probably develop dangerous mesa-optimizers for instrumental reasons.</li>
+</ol>
+<p><strong>One of the arguments in</strong> <a href="https://www.lesswrong.com/posts/fM5ZWGDbnjb7ThNKJ/are-minimal-circuits-deceptive"><strong>Are Minimal Circuits Deceptive?</strong></a><strong>:</strong></p>
+<ol>
+<li>It is instrumentally useful for an AI to search for programs.</li>
+<li>Many simple programs are dangerous because they cannot encode or point to our values.</li>
+<li>The AI doesn’t care which programs are dangerous.</li>
+<li>Hence, the AI will probably find and run dangerous programs for instrumental reasons.</li>
+</ol>
+<p><strong>Concerns about optimizing on human feedback:</strong></p>
+<ol>
+<li>It is instrumentally useful for the AI to have a model of the human’s values.</li>
+<li>The most accessible models of human values are dangerous because they don’t generalize out of the training distribution.</li>
+<li>The AI doesn’t care which versions are dangerous, just which do well in training.</li>
+<li>Hence, the AI will probably develop a dangerous model of human values for instrumental reasons.</li>
+</ol>
+<h2 id="how-can-we-avoid-these-concerns">How can we avoid these concerns?</h2>
+<p>I think this is a useful lens because it suggests some approaches we can use to make AI safer.</p>
+<h3 id="1-make-the-tools-useless">(1) Make the tools useless</h3>
+<p>We’re only worried about tools that are instrumentally useful. What if we make the tools-of-interest useless? This seems hard without sacrificing competitiveness, but I think there are some cases where it’s possible.</p>
+<p>For instance some tools are only useful because of choices we made in specifying a goal or setting up the training environment. Training a narrow microscope-AI in a multiplayer environment artificially makes all sorts of tools instrumentally useful (e.g. theory-of-mind) which wouldn’t have been otherwise.</p>
+<p>That’s a silly example, but it illustrates that we can sometimes remove potential failure modes by considering possible Instrumental Danger Problems in setting up the training environment.</p>
+<h3 id="2-bias-the-ai-towards-safe-versions-of-tools">(2) Bias the AI towards safe versions of tools</h3>
+<p>Another way we can make the AI safer is to bias it towards safe versions of tools.</p>
+<p>For instance we might be able to build priors that bias against deception (e.g. <a href="https://www.lesswrong.com/posts/KSWSkxXJqWGd5jYLB/the-speed-simplicity-prior-is-probably-anti-deceptive">The Speed+Simplicity Prior is probably anti-deceptive</a>). Or use interpretability tools to detect deception and regularize with that (e.g. [Chris Olah’s views on AGI safety](<a href="https://www.lesswrong.com/posts/X2i9dQQK3gETCyqh2/chris-olah-s-views-on-agi-safety#:~:text=Chris">https://www.lesswrong.com/posts/X2i9dQQK3gETCyqh2/chris-olah-s-views-on-agi-safety#:~:text=Chris</a> notes that one of,network into human-understable code.))).</p>
+<h3 id="3-give-the-ai-safe-tools">(3) Give the AI safe tools</h3>
+<p>A third approach is to <em>give the AI access to a safe tool.</em> This is in the style of biasing the AI towards safe versions of tools, and it’s sort of the complement to detecting bad tools. Rather than weeding out AI’s that use dangerous tools, we directly give our AI safe tools.</p>
+<p>If we can give the AI some tools, and they’re effective tools for the AI’s instrumental needs, it might use those tools instead of inventing its own. If we can identify tools that are dangerous for an AI to build itself, and hand it versions of those that we’ve built and verified to be safe, then we can eliminate some failure modes.</p>
+<p>What might this look like in practice?</p>
+<ul>
+<li>If we can build a tool that searches over non-deceptive simple programs, we could make that available to the AI so it doesn’t search on its own.</li>
+<li>If we can build a known-safe optimizer (e.g. one that never suggests a dangerous action), we can hand that to the AI to avoid it developing mesa-optimizers.</li>
+<li>If we can use interpretability tools to build known-safe language modules, vision modules, etc., we can hand those to the AI to reduce the “attack surface area” (the parts of the AI that could be dangerous).</li>
+</ul>
+<p>Those are a lot of if’s! But I think these could be doable, and they’re definitely smaller tasks than “somehow stop the model from building dangerous tools for instrumental reasons”.</p>
+<h2 id="summary">Summary</h2>
+<p>I’m excited about giving AI&rsquo;s safe tools because:</p>
+<ul>
+<li>If we can devise safe tools, it gives a very direct approach to Instrumental Danger Problems.</li>
+<li>I expect devising safe tools to be easier than indirectly steering models away from dangerous ones.</li>
+</ul>
+<p>This approach also raises an immediate empirical question: How hard is it to get the AI to use a tool we provide? More concretely, if we give GPT access to a calculator during training, can we make it better at arithmetic? A world where it’s easy to get models to use the tools we provide is more hopeful than one where the model ignores our tools and builds its own.</p>
+<h3 id="failure-modes">Failure Modes</h3>
+<p>At the same time, I know of at least three failure modes for this approach (<em>thanks to Nicholas Schiefer and Evan Hubinger for pointing these out</em>):</p>
+<p>(1) The AI might be so much smarter than us that it can build more effective versions of tools than the ones we give it. Even though our tools are readily at-hand, it might just skip straight to its own (dangerous but more performant) version of the tool.</p>
+<p>This is something we might be able to watch for empirically. We can log tool-uses, and should become quite worried if, upon scaling an AI up, it stops using our tools. That should be cause for immediate concern and motivate interpretability work to figure out what the AI is doing instead.</p>
+<p>Of course an AI could use our tools spuriously to deceive us. This seems less likely than ordinary deception though, because the part of the AI that would want to deceive us here is some inner tool it built (rather than the “outer” agent), and the inner tool would need to know an awful lot about its environment to immediately realize that its continued existence requires sending spurious-yet-valid queries to a very different part of the AI.</p>
+<p>(2) Alternatively, the AI might struggle to use our tools. We might not be able to craft easy ways for it to structure inputs and process outputs. This one strikes me as less likely in the limit of powerful systems, but could definitely be a barrier to studying smaller tool-using AI’s.</p>
+<p>(3) The AI could use our tools in ways we don&rsquo;t expect. For instance if we give an AI an ineffective tool, but heavily incentivize using it, it might use that ineffective tool as part of building a more effective (but dangerous) tool. This is the failure mode I&rsquo;m most worried about, because it seems most hard to detect or plan for.</p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fadamjermyn.com%2fposts%2fgive_ai_tools%2f - Give%20the%20AI%20safe%20tools by @AdamSJermyn"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/adamjermyn">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/AdamSJermyn">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+        
+	        <center><a class="cta" href="https://adamjermyn.com/index.xml">Subscribe</a></center>
+        
+    <p class="small">
+    
+       © Copyright 2022 Adam Jermyn
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://adamjermyn.com/js/jquery-3.3.1.min.js"></script>
+<script src="https://adamjermyn.com/js/main.js"></script>
+<script src="https://adamjermyn.com/js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>

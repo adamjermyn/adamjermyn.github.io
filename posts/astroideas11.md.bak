@@ -1,0 +1,26 @@
++++
+title = "Does turbulence change nuclear burning in stars?"
+date = 2022-06-05T08:19:42-04:00
+tags = ["astronomy","science","research"]
+categories = [""]
+draft = false
+
++++
+
+I sometimes have research ideas that I think are cool, but that don't make sense for me to pursue. I generally just make a note of them and move on. This is the eleventh post in a series describing some of the ideas I've accumulated.
+
+## Does turbulence change nuclear burning in stars?
+
+### What's the idea?
+
+Nuclear burning rates are exponentially sensitive to temperature. Stellar models calculate the mean temperature at each point in a star, but there can be fluctuations about this mean due to turbulent motions. This effect has been studied [theoretically](https://arxiv.org/pdf/2002.01937.pdf), but has never been applied to stellar evolution so far as I know.
+
+The idea would be to implement a prescription in stellar evolution software instruments that corrects nuclear burning rates to account for local turbulence.
+
+### Why is this interesting?
+
+Temperature fluctuations scale with the Mach number of turbulence, and the highest Mach-number turbulent burning zones in stars happen late in the lives of massive stars, in the runup to a core collapse supernova. It is conceivable that large changes in these burning rates could alter the properties of the explosion or related observations like the neutrino luminosity.
+
+### How can I get started?
+
+I would take the theoretical model linked above and implement it in MESA. Because the change to the burning rate is dependent on the reaction's temperature dependence this could involve a fair amount of code to be fully general. Instead of starting there, I would start with particular massive star models of interest, and only implement this effect for the most relevant reactions. I would then run some massive star models through core collapse both accounting for this effect and not and look for differences.

@@ -6,7 +6,17 @@
     <description>Recent content in astronomy on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 04 Jun 2022 08:11:07 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/tags/astronomy/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 Jun 2022 08:19:42 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/tags/astronomy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Does turbulence change nuclear burning in stars?</title>
+      <link>https://adamjermyn.com/posts/astroideas11/</link>
+      <pubDate>Sun, 05 Jun 2022 08:19:42 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/astroideas11/</guid>
+      <description>I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the eleventh post in a series describing some of the ideas I&amp;rsquo;ve accumulated.
+Does turbulence change nuclear burning in stars? What&amp;rsquo;s the idea? Nuclear burning rates are exponentially sensitive to temperature. Stellar models calculate the mean temperature at each point in a star, but there can be fluctuations about this mean due to turbulent motions.</description>
+    </item>
+    
     <item>
       <title>Does the core convective dipole align with rotation?</title>
       <link>https://adamjermyn.com/posts/astroideas9/</link>

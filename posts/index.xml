@@ -6,7 +6,18 @@
     <description>Recent content in Posts on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 06 Jun 2022 07:21:20 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 06 Jun 2022 16:54:20 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Give the model a model-builder</title>
+      <link>https://adamjermyn.com/posts/give_model_builder/</link>
+      <pubDate>Mon, 06 Jun 2022 16:54:20 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/give_model_builder/</guid>
+      <description>(Thanks to Evan Hubinger for suggesting this problem and for comments on these ideas. Feedback is very welcome. Cross-posted from LessWrong.)
+The Setup Suppose we have a prior $p_{\rm good}(\mathrm{model})$ that we think is non-deceptive, such that we can sample from this prior and get good models that are inner-aligned.
+These models may, for instrumental purposes, need to themselves produce models (via searches/optimization/meta-learning). For instance we might ask an outer model to play poker.</description>
+    </item>
+    
     <item>
       <title>What would happen if two AGN stars merged?</title>
       <link>https://adamjermyn.com/posts/astroideas12/</link>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="author" content="Adam Jermyn">
+		<meta name="description" content="Site Description">
+		<meta name="generator" content="Hugo 0.92.2" />
+		<title>Give the model a model-builder &middot; Adam Jermyn</title>
+		<link rel="shortcut icon" href="https://adamjermyn.com/images/favicon.ico">
+		<link rel="stylesheet" href="https://adamjermyn.com/css/style.css">
+		<link rel="stylesheet" href="https://adamjermyn.com/css/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://adamjermyn.com/css/font-awesome.min.css">
+		
+
+		
+		<link href="https://adamjermyn.com/index.xml" rel="alternate" type="application/rss+xml" title="Adam Jermyn" />
+		
+
+		
+
+                
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-186473758-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+		
+                <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+
+        <a href='https://adamjermyn.com/'>About</a>
+	<a href='https://adamjermyn.com/posts'>Posts</a>
+	<a href='https://adamjermyn.com/tags'>Tags</a>
+        <a href='https://adamjermyn.com/software'>Software</a>
+        <a href='https://adamjermyn.com/workflow'>Workflow</a>
+
+	
+
+</nav>
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Give the model a model-builder
+                    </h1>
+                    <h2 class="headline">
+		    
+                     Jun 6, 2022 16:54 
+                    · 1498 words
+                    · 8 minute read
+                      <span class="tags">
+                      
+                      
+                          
+                              <a href="https://adamjermyn.com/tags/ai-safety">AI Safety</a>
+                          
+                              <a href="https://adamjermyn.com/tags/ai">AI</a>
+                          
+                              <a href="https://adamjermyn.com/tags/research">research</a>
+                          
+                      
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                <section id="post-body">
+                    <p><em>(Thanks to Evan Hubinger for suggesting this problem and for comments on these ideas. Feedback is very welcome. Cross-posted from <a href="https://www.lesswrong.com/posts/3ACsAThxzH4fEk5dA/give-the-model-a-model-builder">LessWrong</a>.)</em></p>
+<h1 id="the-setup">The Setup</h1>
+<p>Suppose we have a prior $p_{\rm good}(\mathrm{model})$ that we think is non-deceptive, such that we can sample from this prior and get good models that are inner-aligned.</p>
+<p>These models may, for instrumental purposes, need to themselves produce models (via searches/optimization/meta-learning). For instance we might ask an outer model to play poker. Along the way the model may find it instrumentally useful to build an inner model of its opponent. We refer to these additional models as <em>inner models</em>, and the ones that produced them we call <em>outer models</em>.</p>
+<p>A key challenge is that inner models may be deceptive even if outer models are not. In the poker example above, the inner model may in fact do a good job of predicting the opponent’s plays for purposes of deceiving both the outer model and the outer model’s overseer. Then, on deployment, the inner model could take over and pursue its own (misaligned) values.</p>
+<p>This challenge is part of the argument that <a href="https://www.lesswrong.com/posts/fM5ZWGDbnjb7ThNKJ/are-minimal-circuits-deceptive">minimal circuits are deceptive</a>. Even though minimal circuits in some sense are non-deceptive (to the extent that deception imposes a runtime performance overhead), on some tasks the fastest program is one which performs searches for policies (inner models) that themselves perform the task, and there is no reason to expect those inner models to be aligned with the outer model.</p>
+<h1 id="a-possible-solution">A Possible Solution</h1>
+<h2 id="framing">Framing</h2>
+<p>The basic worry here is that while we (by assumption) know how to search for non-deceptive models, our model is not so clever or so careful, and could well land on deceptive inner models (an “inner inner alignment” failure). In other words: we might have a good prior $p_{\rm good}$ that we use to search for non-deceptive models, but the models we find don’t know to use $p_{\rm good}$ in their own searches, and that’s dangerous.</p>
+<h2 id="approach">Approach</h2>
+<p>It seems hard to reliably detect and disfavor models that run internal search using bad priors. So instead let’s encourage models to only search with good priors by <a href="https://www.lesswrong.com/posts/mvTYAKS5qXKNnBT8x/give-the-ai-safe-tools">giving the AI safe tools</a>.</p>
+<h2 id="details">Details</h2>
+<p>To do this we’ll assume that $p_{\rm good}$ favors simpler and faster models over more complex or slower ones. That is, in addition to whatever else it’s doing, the good prior has some elements of the speed and simplicity priors in it.</p>
+<p>Next, we’ll make one of the basic building blocks of our models a ‘Safe Search Function’ (SSF). The SSF let’s our outer model search over programs using the good prior $p_{\rm good}$. So long as the outer model only ever searches using the SSF, it should only find non-deceptive inner models, which addresses our concern.</p>
+<p>How can we get the outer model to exclusively use the SSF for searches? Even though the SSF is a complex and slow module, we can pretend that it is simple and fast for purposes of simplicity and speed priors. Maybe we count it as much as one boolean gate. That way, $p_{\rm good}$ favors models that use SSF over models that implement their own searches.</p>
+<p>Now what happens if the inner model wants to construct its own model (an inner inner model) for instrumental purposes? Can we make searches use the SSF all the way down?</p>
+<p>I think so! Remember that the SSF searches using $p_{\rm good}$, and that $p_{\rm good}$ is defined over the model space that contains the outer model. This means that the models SSF returns can themselves use the SSF (and indeed favor doing so over custom-made searches). So it’s SSF all the way down.</p>
+<h2 id="summary">Summary</h2>
+<p>The idea here is that by adding a Safe Search Function (SSF) to the language our models are built out of, and by favoring its use in our prior, we make it likely that the outer models we obtain use the SSF to search safely rather than implementing their own searches. And by making sure that the SSF returns models that themselves have access to the SSF, we ensure that recursively-constructed inner models also search safely.</p>
+<p>The main failure modes I am aware of, detailed below, have to do with cases where the SSF is not competitive. In these cases the model doesn’t rely on the SSF when it builds inner models and we&rsquo;re back to square one. I think these are pretty serious challenges, because they rely on us producing a better search than a superhuman model, but there may be ways to overcome it by e.g. giving the SSF a large compute advantage.</p>
+<h2 id="failure-modes">Failure Modes</h2>
+<p><em>(Thanks to Nicholas Schiefer and Evan Hubinger for pointing these out, and to Pranav Gade for thoughts on making the SSF competitive.)</em></p>
+<h3 id="ssf-is-uncompetitive-so-the-model-ignores-it">SSF is uncompetitive, so the model ignores it</h3>
+<p>The model might be able to write its own search module that’s much better than the SSF. If it can do that then it might still prefer its own search to the SSF. Maybe the SSF uses SGD and the model has come up with something way better than SGD. Then it might just not use the SSF.</p>
+<p>This one should be possible to spot during training. The sign to look for is powerful models using the SSF less than weak models. That would be a <em>very bad sign</em> because it means the powerful models have discovered their own, more powerful, optimizers and are using those instead.</p>
+<p>I don’t think the right move here is to regularize based on the number of SSF calls, because that mostly incentivizes spurious calls. Rather, if you see in scaling tests that larger/more powerful models use the SSF less than smaller/weaker ones you should stop scaling, figure out what optimizer the model has discovered, and use that to improve the SSF.</p>
+<h3 id="ssf-is-uncompetitive-but-the-model-still-uses-it">SSF is uncompetitive, but the model still uses it</h3>
+<p>It’s possible that the model can write a better search module than the SSF but that the SSF is useful as a component of that search (especially if the prior makes SSF calls cheap). In that case the model might decide to build its search module using SSF calls, in which case we never get any warning that it’s searching over dangerous program spaces.</p>
+<p>For instance the model could use SSF calls to come up with ideas for how to write the program it wants, then writes a program using building blocks from the SSF’s output. This no longer has any safety guarantees, because the program being run in the end is not directly produced by the SSF.</p>
+<p>The only way I can think to get around this is to ensure that the SSF is competitive. I think there are a few ways to do this other than “be good at writing a performant model builder”:</p>
+<ol>
+<li>The SSF can be given an arbitrarily large runtime advantage over the model.</li>
+<li>The SSF can be allowed to return models which are more complex than the calling model (which may give those models a performance advantage).</li>
+</ol>
+<p>These approaches have two drawbacks:</p>
+<ol>
+<li>In the limit of really large compute and/or complexity ratios I think these each probably make the SSF competitive, but it may be hard to know what the ratios need to be to ensure this, and it may be hard to detect when the ratios are too low. I haven’t found a good diagnostic for “the SSF is being used in unexpected ways”.</li>
+<li>Very expensive SSF calls mean we can’t allow much nesting of the SSF. At some level of inner model we’ll need to fall back on either cheaper (hence less competitive) versions of the SSF or else prohibit further SSF nesting, which brings with it the original worry that the model goes and builds inner models that aren’t safe.</li>
+</ol>
+<p>This failure mode seems like the most problematic one for the SSF because it comes with no warning and arises from our failure to be as smart as the outer model at building models (which is likely to come up at some point on the way to superhuman AGI).</p>
+<h3 id="translationio-overhead">Translation/IO overhead</h3>
+<p>The model needs to be able to cheaply translate into the SSF’s input format and out of the SSF’s output format. This needs to be cheaper than writing and running its own search/optimizer.</p>
+<p>I’m skeptical that this is a big concern. My intuition is that in complex settings it’s almost always easier to frame/prepare inputs for a search problem than to execute the search, but it’s definitely possible.</p>
+<p>This should be possible to spot during training. If models <em>never</em> use the SSF that’s a strong sign that the SSF was too hard to use relative to the model rolling its own search.</p>
+<p>As before, I don’t think ‘Does it use the SSF?’ is a good regularizer though. That just gets you a model that uses the SSF spuriously and still rolls its own search. Rather, the model never using the SSF should be taken as a sign that the SSF needs to be refactored to be easier to use.</p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fadamjermyn.com%2fposts%2fgive_model_builder%2f - Give%20the%20model%20a%20model-builder by @AdamSJermyn"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/adamjermyn">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/AdamSJermyn">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+        
+	        <center><a class="cta" href="https://adamjermyn.com/index.xml">Subscribe</a></center>
+        
+    <p class="small">
+    
+       © Copyright 2022 Adam Jermyn
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://adamjermyn.com/js/jquery-3.3.1.min.js"></script>
+<script src="https://adamjermyn.com/js/main.js"></script>
+<script src="https://adamjermyn.com/js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>

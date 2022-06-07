@@ -6,7 +6,7 @@
     <description>Recent content in About on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 06 Jun 2022 16:54:20 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 07 Jun 2022 09:17:06 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Notes</title>
       <link>https://adamjermyn.com/workflow/notes/</link>
@@ -36,6 +36,16 @@ I write ideas in Markdown notes with one top-level header per idea. To decide wh
       
       <guid>https://adamjermyn.com/workflow/spacedrepetition/</guid>
       <description>Spaced Repetition Spaced repetition is a technique for remembering information over long time periods. It takes advantage of the empirical observation that the time it takes to forget a fact is proportional to the time that fact is known. This suggests that the best strategy to remember something indefinitely is to review facts with ever-larger (geometrically increasing) gaps between reviews. Following that strategy, a finite number of reviews is needed to remember something for the rest of your life, and that number is small enough that the study time needed to remember a fact indefinitely is about 5 minutes, so long as the studying happens in this spaced-out way.</description>
+    </item>
+    
+    <item>
+      <title>Can accretion push RGB stars onto the Main-Sequence?</title>
+      <link>https://adamjermyn.com/posts/astroideas13/</link>
+      <pubDate>Tue, 07 Jun 2022 09:17:06 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/astroideas13/</guid>
+      <description>I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the thirteenth post in a series describing some of the ideas I&amp;rsquo;ve accumulated.
+Can accretion push RGB stars onto the Main-Sequence? What&amp;rsquo;s the idea? Stars enter the Red Giant Branch (RGB) when they exhaust hydrogen in their cores. Mixing hydrogen-rich material into their cores should reverse this transition, pushing them back onto the main-sequence.</description>
     </item>
     
     <item>

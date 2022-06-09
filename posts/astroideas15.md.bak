@@ -1,0 +1,55 @@
++++
+title = "How much ejecta do AGN stars re-accrete?"
+date = 2022-06-09T10:41:57-04:00
+tags = ["astronomy","science","research"]
+categories = [""]
+draft = false
+
++++
+
+I sometimes have research ideas that I think are cool, but that don't make sense for me to pursue. I generally just make a note of them and move on. This is the fifthteenth post in a series describing some of the ideas I've accumulated.
+
+## How much ejecta do AGN stars re-accrete?
+
+### What's the idea?
+
+ Stellar evolution in AGN disks is expected to produce [massive stars](https://arxiv.org/abs/2009.03936) that exist in a balance between wind mass loss and accretion. This is an inherently 3D process, requiring the winds and infalling material to take different paths to/from the star. Eventually the material in the wind will run into material in the AGN disk, some of which feeds the accretion stream.
+
+The resulting mixing chemically enriches the accretion stream relative to the AGN disk. This enrichment is mostly helium, which means that the equilibrium helium abundance in the core of the star is greater, so the luminosity to mass ratio is greater, so the equilibrium mass is lower. It is possible that continuous enrichment in the circumstellar region forces the star to chemically evolve, eventually causing it to die even though it is in the "immortal" phase.
+
+### Why is this important?
+
+Stars in AGN disks potentially contribute to a [wide range of disk phenomena](https://arxiv.org/abs/2203.06187), so understanding their evolution is crucial for understanding the disks in which they live. It is also intrinsically interesting, I think, to understand the lives of stars in such extreme environments.
+
+### How can I get started?
+
+In full this problem probably requires 3D radiation hydrodynamics simulations, to capture the interplay of infalling material and radiation-driven winds. But there is also probably something to be done analytically. Here are some rough notes I have on this, which focus on metallicity $Z$ but apply just as well to helium abundance $Y$:
+
+Material is lost at roughly escape velocity $v_e \sim \sqrt{G m / r_\star}$. It gradually slows, and reaches the disk sound speed at $r \sim r_B$. Then turbulence mixes it and it can reaccrete.
+
+If the disk shear is small, this is a diffusion problem. The quasi-steady solution is
+$$
+r h \rho D \frac{dZ}{dr} = -(Z_{\rm loss} - Z_{\rm disk})\dot{M}_{\rm loss} = \dot{M}_Z
+$$
+Solving gives
+$$
+\frac{dZ}{d\ln r} = -\frac{\dot{M}_{Z}}{h \rho D}\\
+Z = Z_B -\frac{\dot{M}_{Z}}{h \rho D} \ln \frac{r}{r_B}
+$$
+This soilution is valid until $Z$ falls below $Z_{\rm disk}$, which happens when
+$$
+r = r_B \exp\left((Z_B-Z_{\rm disk})h\rho D/\dot{M}_Z\right)
+$$
+The total excess metals contained in this radius is
+$$
+\int_0^r 2\pi \rho h r (Z-Z_{\rm disk})dr = \int_0^r 2\pi h \rho r (Z_B - Z_{\rm disk} - \frac{\dot{M}_{Z}}{h \rho D} \ln \frac{r}{r_B})dr = \frac{\pi}{2} e^{2(Z_B-Z_{\rm disk} )h\rho D/\dot{M}_Z} \frac{r_B^2 \dot{M}_Z}{D}
+$$
+This equals the total metals lost $= \dot{M}_z t$ so
+$$
+Z_B-Z_{\rm disk} = \frac{\dot{M}_Z}{2 h \rho D}\ln  \frac{2 D t}{\pi r_B^2}
+$$
+What if there's shear in the disk? That removes (advectively) metals, so the balance is instead
+$$
+\dot{M}_Z \approx (Z_B - Z_{\rm disk}) \rho r_B^2 \Omega r_B
+$$
+

@@ -6,7 +6,27 @@
     <description>Recent content in research on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 13 Jun 2022 09:27:54 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/tags/research/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 13 Jun 2022 13:14:01 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/tags/research/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Trace Training Priors</title>
+      <link>https://adamjermyn.com/posts/trace_training/</link>
+      <pubDate>Mon, 13 Jun 2022 13:14:01 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/trace_training/</guid>
+      <description>I’m worried about scenarios involving deceptive models. We’ve failed at inner alignment so the model has goals that are not aligned with ours. It can somehow detect when it’s in training, and during training it pretends to share our goals. During deployment, surprise! The model paperclips the universe.
+In this story deception is all about the model having hidden behaviors that never get triggered during training. There are many inputs where the model does what we want.</description>
+    </item>
+    
+    <item>
+      <title>Can LISA see stellar convection?</title>
+      <link>https://adamjermyn.com/posts/astroideas16/</link>
+      <pubDate>Mon, 13 Jun 2022 09:30:25 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/astroideas16/</guid>
+      <description>I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the sixteenth post in a series describing some of the ideas I&amp;rsquo;ve accumulated.
+Can LISA see stellar convection? What&amp;rsquo;s the idea? Convection in stars produces density fluctuations, resulting in a change in the quadrupole moment. This effect should be of order the square of the convective Mach number (which controls density fluctuations).</description>
+    </item>
+    
     <item>
       <title>ELK Proposal - Make the Reporter care about the Predictor’s beliefs</title>
       <link>https://adamjermyn.com/posts/elk1/</link>

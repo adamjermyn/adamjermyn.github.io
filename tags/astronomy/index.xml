@@ -6,7 +6,17 @@
     <description>Recent content in astronomy on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 09 Jun 2022 10:41:57 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/tags/astronomy/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 13 Jun 2022 09:30:25 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/tags/astronomy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Can LISA see stellar convection?</title>
+      <link>https://adamjermyn.com/posts/astroideas16/</link>
+      <pubDate>Mon, 13 Jun 2022 09:30:25 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/astroideas16/</guid>
+      <description>I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the sixteenth post in a series describing some of the ideas I&amp;rsquo;ve accumulated.
+Can LISA see stellar convection? What&amp;rsquo;s the idea? Convection in stars produces density fluctuations, resulting in a change in the quadrupole moment. This effect should be of order the square of the convective Mach number (which controls density fluctuations).</description>
+    </item>
+    
     <item>
       <title>How much material do AGN stars re-accrete?</title>
       <link>https://adamjermyn.com/posts/astroideas15/</link>

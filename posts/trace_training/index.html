@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="author" content="Adam Jermyn">
+		<meta name="description" content="Site Description">
+		<meta name="generator" content="Hugo 0.92.2" />
+		<title>Trace Training Priors &middot; Adam Jermyn</title>
+		<link rel="shortcut icon" href="https://adamjermyn.com/images/favicon.ico">
+		<link rel="stylesheet" href="https://adamjermyn.com/css/style.css">
+		<link rel="stylesheet" href="https://adamjermyn.com/css/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://adamjermyn.com/css/font-awesome.min.css">
+		
+
+		
+		<link href="https://adamjermyn.com/index.xml" rel="alternate" type="application/rss+xml" title="Adam Jermyn" />
+		
+
+		
+
+                
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-186473758-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+		
+                <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+
+        <a href='https://adamjermyn.com/'>About</a>
+	<a href='https://adamjermyn.com/posts'>Posts</a>
+	<a href='https://adamjermyn.com/tags'>Tags</a>
+        <a href='https://adamjermyn.com/software'>Software</a>
+        <a href='https://adamjermyn.com/workflow'>Workflow</a>
+
+	
+
+</nav>
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Trace Training Priors
+                    </h1>
+                    <h2 class="headline">
+		    
+                     Jun 13, 2022 13:14 
+                    · 1249 words
+                    · 6 minute read
+                      <span class="tags">
+                      
+                      
+                          
+                              <a href="https://adamjermyn.com/tags/ai-safety">AI Safety</a>
+                          
+                              <a href="https://adamjermyn.com/tags/ai">AI</a>
+                          
+                              <a href="https://adamjermyn.com/tags/research">research</a>
+                          
+                      
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                <section id="post-body">
+                    <p>I’m worried about scenarios involving deceptive models. We’ve failed at inner alignment so the model has goals that are not aligned with ours. It can somehow detect when it’s in training, and during training it pretends to share our goals. During deployment, surprise! The model paperclips the universe.</p>
+<p>In this story deception is all about the model having hidden behaviors that never get triggered during training. There are many inputs where the model does what we want. These correspond to inputs where it ‘plays along’. Then on some rare input or an input outside of the training distribution it defects, triggering some catastrophic behavior that corresponds to maximizing an ulterior motive.</p>
+<p><img src="https://39669.cdn.cke-cs.com/rQvD3VnunXZu34m86e5f/images/7737ac75077f9a185db3e7358438a5cef164fa9608efbf4d.jpg/w_577" alt="6jil13.jpg"></p>
+<p>This suggests that we should be wary of models that have logic/subcircuits/states that are never used during training, and we can penalize models for having such hidden behaviors.</p>
+<p>In the rest of this post I’ll flesh out a family of priors that penalize hidden behaviors, which I think provide at least a few bits of optimization away from deception. These are very much working notes, and feedback is very welcome.</p>
+<h1 id="one-gate-trace-prior-entropy">One-Gate Trace Prior: Entropy</h1>
+<p>Consider a boolean circuit. The output of each gate is 0/1. One way to implement the entropy prior is to record traces of these outputs during training, and penalize the model for having strong bias between 0/1:</p>
+<p>$$ p \propto e^{-\sum_i \sum_{j\in [0,1]} p_i(j) \ln p_i(j)} $$</p>
+<p>Here $p_i$ is the observed fraction of the time gate $i$ produced output $j$ during training. I call this the one-gate trace prior because it only relies on probabilities defined over single gates. This prior favors models where each gate has even odds of outputting 0/1.</p>
+<p>The intuition for why this might work is that deceptive models need some machinery specifying when and how they defect, and <em>this machinery is never active during training</em>. This is at the core of what makes them bad! If the defecting machinery activated during training we’d notice because the model would stop optimizing the outer goal, so we’d assign it a high loss and move on to better models.</p>
+<p>Another framing is: It is inherently suspicious if a model has machinery that is rarely activated. That machinery wasn’t vetted during training, so we have no reason to trust it. If the model has a hidden love of paperclips, this is the natural place to hide it.</p>
+<p>As a technical detail, in order to do useful computation the model may need access to some constant input wires, and these should be excluded from the prior.</p>
+<h2 id="normalization">Normalization</h2>
+<p>The one-gate trace prior isn’t normalized, and can’t be normalized without an additional prior over e.g. complexity. So in reasoning about it we need to remember that there will always be another piece to the prior setting the distribution over circuits. I’m agnostic to the details of that prior, and view the one-gate trace prior as a regularizer we apply to other (normalized) priors to make them safer.</p>
+<h2 id="objection-model-performance">Objection: Model Performance</h2>
+<p>This prior could cause a performance hit. The intuition is that sometimes a model will need to respond to unusual events even in the training distribution, so forcing the distribution over gate outputs to be as uniform as possible could make it hard to act in environments containing rare events.</p>
+<p>In particular, this prior disfavors modularity. Suppose the model is meant to classify images. It might be natural have separate sub-circuits for recognizing cats and dogs. If cats are much more likely than dogs during training, our prior will disfavor models that separate that machinery out, because the ‘dog’ sub-circuit will rarely be active and the ‘cat’ sub-circuit will often be active.</p>
+<p>If the pressure to perform well during training is strong enough this could push models towards obfuscating their calculations just to hide from the prior, which is bad.</p>
+<h1 id="patch-dont-use-entropy">Patch: Don’t use entropy</h1>
+<p>We can make our prior more forgiving of modularity and biased inputs by just disfavoring really rarely activations, e.g.</p>
+<p>$$ p \propto e^{-\sum_i \sum_{j\in [0,1]} p_i(j)^m} $$</p>
+<p>Here $m$ is a positive number, and as we make $m$ large the prior becomes indifferent to the middle of the probability distribution. For example, below I’ve plotted $-(p^{m}+(1-p)^{m})$ over [0,1] for $m=20$.</p>
+<p><img src="https://39669.cdn.cke-cs.com/rQvD3VnunXZu34m86e5f/images/64057882a19f55922e6dd7da92b718e58fe25c3d3d546b95.png/w_1032" alt="Screen Shot 2022-05-01 at 9.03.07 AM.png"></p>
+<p>How should we pick $m$? We just want assurances that all the gears in the model got tried out at least a few times during training. So we’re looking to see that each gate produced each output at least $q$ times during training, where $q$ is fixed.</p>
+<p>Suppose we have $N$ training samples. We want our prior to be flat over $[q/N,1-q/N]$ and to penalize models outside that window, which means $m \sim \log N/q$. That is, as we get more data we can make our prior indifferent to larger windows because we’re able to observe rarer behavior.</p>
+<p>In this framing, $q$ is a sort of safety parameter: larger $q$ means the prior is more suspicious of uneven distributions and requires that we see more examples before we trust the model.</p>
+<h2 id="relation-to-performance">Relation to Performance</h2>
+<p>This patch resolves the performance issues we saw using entropy. Modular circuits are totally fine under this prior so long as they all get checked out during training. Even if dog images come up less often than cat images, they still have to come up a decent number of times for us to be confident the model has learned what a dog is, and if that number is at least $q$ then we won’t penalize the model for having separate dog and cat circuits.</p>
+<h2 id="implementation">Implementation</h2>
+<p>A naive way to implement this prior is to run each circuit $N$ extra times per training evaluation, and to use traces from those extra evaluations to compute the prior. This is obviously expensive if we make $N$ large, though only linearly so.</p>
+<p>If we’re dealing with a neural network instead of a boolean circuit we can reinforce pathways taken during training. Specifically, the first $q$ times a neuron is active (has a positive sum), and the first $q$ times it is inactive, we reinforce all weights emerging from that neuron.</p>
+<p>As a technical detail, activations early in training probably shouldn’t ‘count’ as exploring the model’s behavior space. That can probably be addressed by only tracking the most recent $N$ training samples when evaluating if a given neuron has activated $q$ times.</p>
+<h2 id="objection-moving-computation">Objection: Moving Computation</h2>
+<p>One way that deception can hide from this prior is by changing the location on the circuit where the deceptive conditional (”Am I in training or deployment?”) gets evaluated. For instance if the model can make this conditional get evaluated in different places in the circuit depending on the inputs it receives, it is no longer helpful to compare the behavior of any single gate across evaluations.</p>
+<p>This actually seems like a very big problem, because only takes a small number of bits of model complexity to make the relevant evaluation shift around on the circuit. In a future post I’ll flesh out this failure mode further, and consider additional patches.</p>
+<h1 id="summary">Summary</h1>
+<p>Training trace priors provide a way of looking for hidden behaviors, which are signs of deception. This makes them very closely related to methods of <em>fuzzing</em>, where automated systems try to explore the space of program behaviors.</p>
+<p>The specific priors I’ve constructed above are probably not too helpful on their own, but my hope is that there is a version of a trace prior that more strongly pushes away from deception.</p>
+<p><em>(Thanks to Evan Hubinger and Nicholas Schiefer for suggestions and discussions around these ideas)</em></p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fadamjermyn.com%2fposts%2ftrace_training%2f - Trace%20Training%20Priors by @AdamSJermyn"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/adamjermyn">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/AdamSJermyn">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+        
+	        <center><a class="cta" href="https://adamjermyn.com/index.xml">Subscribe</a></center>
+        
+    <p class="small">
+    
+       © Copyright 2022 Adam Jermyn
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://adamjermyn.com/js/jquery-3.3.1.min.js"></script>
+<script src="https://adamjermyn.com/js/main.js"></script>
+<script src="https://adamjermyn.com/js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>

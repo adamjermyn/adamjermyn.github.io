@@ -6,7 +6,17 @@
     <description>Recent content in Posts on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 09 Jun 2022 10:41:57 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 13 Jun 2022 09:27:54 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ELK Proposal - Make the Reporter care about the Predictor’s beliefs</title>
+      <link>https://adamjermyn.com/posts/elk1/</link>
+      <pubDate>Mon, 13 Jun 2022 09:27:54 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/elk1/</guid>
+      <description>Posted to the AI Alignment Forum here.
+(This proposal received an honorable mention in the ELK prize results, and we believe was classified among strategies which “reward reporters that are sensitive to what’s actually happening in the world”. We do not think that the counterexample to that class of strategies works against our proposal, though, and we have explained why in a note at the end. Feedback, disagreement, and new failure modes are very welcome!</description>
+    </item>
+    
     <item>
       <title>How much material do AGN stars re-accrete?</title>
       <link>https://adamjermyn.com/posts/astroideas15/</link>

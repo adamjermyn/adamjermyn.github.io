@@ -6,7 +6,7 @@
     <description>Recent content in About on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 09 Jun 2022 10:41:57 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 13 Jun 2022 09:27:54 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Notes</title>
       <link>https://adamjermyn.com/workflow/notes/</link>
@@ -36,6 +36,16 @@ I write ideas in Markdown notes with one top-level header per idea. To decide wh
       
       <guid>https://adamjermyn.com/workflow/spacedrepetition/</guid>
       <description>Spaced Repetition Spaced repetition is a technique for remembering information over long time periods. It takes advantage of the empirical observation that the time it takes to forget a fact is proportional to the time that fact is known. This suggests that the best strategy to remember something indefinitely is to review facts with ever-larger (geometrically increasing) gaps between reviews. Following that strategy, a finite number of reviews is needed to remember something for the rest of your life, and that number is small enough that the study time needed to remember a fact indefinitely is about 5 minutes, so long as the studying happens in this spaced-out way.</description>
+    </item>
+    
+    <item>
+      <title>ELK Proposal - Make the Reporter care about the Predictor’s beliefs</title>
+      <link>https://adamjermyn.com/posts/elk1/</link>
+      <pubDate>Mon, 13 Jun 2022 09:27:54 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/elk1/</guid>
+      <description>Posted to the AI Alignment Forum here.
+(This proposal received an honorable mention in the ELK prize results, and we believe was classified among strategies which “reward reporters that are sensitive to what’s actually happening in the world”. We do not think that the counterexample to that class of strategies works against our proposal, though, and we have explained why in a note at the end. Feedback, disagreement, and new failure modes are very welcome!</description>
     </item>
     
     <item>

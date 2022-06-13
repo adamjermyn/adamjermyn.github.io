@@ -44,8 +44,9 @@ I write ideas in Markdown notes with one top-level header per idea. To decide wh
       <pubDate>Mon, 13 Jun 2022 13:14:01 -0400</pubDate>
       
       <guid>https://adamjermyn.com/posts/trace_training/</guid>
-      <description>I’m worried about scenarios involving deceptive models. We’ve failed at inner alignment so the model has goals that are not aligned with ours. It can somehow detect when it’s in training, and during training it pretends to share our goals. During deployment, surprise! The model paperclips the universe.
-In this story deception is all about the model having hidden behaviors that never get triggered during training. There are many inputs where the model does what we want.</description>
+      <description>(Crossposted from the AI Alignment Forums)
+I’m worried about scenarios involving deceptive models. We’ve failed at inner alignment so the model has goals that are not aligned with ours. It can somehow detect when it’s in training, and during training it pretends to share our goals. During deployment, surprise! The model paperclips the universe.
+In this story deception is all about the model having hidden behaviors that never get triggered during training.</description>
     </item>
     
     <item>

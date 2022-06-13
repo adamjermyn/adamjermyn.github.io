@@ -86,7 +86,7 @@ if (!doNotTrack) {
                     <h2 class="headline">
 		    
                      Jun 13, 2022 13:14 
-                    · 1249 words
+                    · 1255 words
                     · 6 minute read
                       <span class="tags">
                       
@@ -105,7 +105,8 @@ if (!doNotTrack) {
                 </header>
                 
                 <section id="post-body">
-                    <p>I’m worried about scenarios involving deceptive models. We’ve failed at inner alignment so the model has goals that are not aligned with ours. It can somehow detect when it’s in training, and during training it pretends to share our goals. During deployment, surprise! The model paperclips the universe.</p>
+                    <p><em>(Crossposted from the AI Alignment Forums)</em></p>
+<p>I’m worried about scenarios involving deceptive models. We’ve failed at inner alignment so the model has goals that are not aligned with ours. It can somehow detect when it’s in training, and during training it pretends to share our goals. During deployment, surprise! The model paperclips the universe.</p>
 <p>In this story deception is all about the model having hidden behaviors that never get triggered during training. There are many inputs where the model does what we want. These correspond to inputs where it ‘plays along’. Then on some rare input or an input outside of the training distribution it defects, triggering some catastrophic behavior that corresponds to maximizing an ulterior motive.</p>
 <p><img src="https://39669.cdn.cke-cs.com/rQvD3VnunXZu34m86e5f/images/7737ac75077f9a185db3e7358438a5cef164fa9608efbf4d.jpg/w_577" alt="6jil13.jpg"></p>
 <p>This suggests that we should be wary of models that have logic/subcircuits/states that are never used during training, and we can penalize models for having such hidden behaviors.</p>

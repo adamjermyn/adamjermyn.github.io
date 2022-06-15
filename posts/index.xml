@@ -6,7 +6,20 @@
     <description>Recent content in Posts on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 15 Jun 2022 12:43:36 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 15 Jun 2022 15:33:51 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Multigate Priors</title>
+      <link>https://adamjermyn.com/posts/multigate_prior/</link>
+      <pubDate>Wed, 15 Jun 2022 15:33:51 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/multigate_prior/</guid>
+      <description>Posted to LessWrong here.
+(Thanks to Evan Hubinger and Nicholas Schiefer for suggestions and discussions around these ideas)
+Multi-Gate Traces We can improve on one-gate traces with multi-gate traces! Suppose we have $N$ training samples. Then we can reasonably estimate joint probability distributions over up to $k=\lfloor\log_2 N\rfloor$ gates, giving the prior:
+$$ p\propto \exp\left(-\sum_{i_1&amp;hellip;i_k}\sum_{j\in [0,1]^k}p_{i_1&amp;hellip;i_k}(j)^m\right) $$
+That is, we sum over all selections of $k$ gates and compute the entropy of their joint distribution over $2^k$ states.</description>
+    </item>
+    
     <item>
       <title>Wave Heating and F-type Stars</title>
       <link>https://adamjermyn.com/posts/astroideas18/</link>

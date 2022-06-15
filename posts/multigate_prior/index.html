@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="author" content="Adam Jermyn">
+		<meta name="description" content="Site Description">
+		<meta name="generator" content="Hugo 0.92.2" />
+		<title>Multigate Priors &middot; Adam Jermyn</title>
+		<link rel="shortcut icon" href="https://adamjermyn.com/images/favicon.ico">
+		<link rel="stylesheet" href="https://adamjermyn.com/css/style.css">
+		<link rel="stylesheet" href="https://adamjermyn.com/css/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://adamjermyn.com/css/font-awesome.min.css">
+		
+
+		
+		<link href="https://adamjermyn.com/index.xml" rel="alternate" type="application/rss+xml" title="Adam Jermyn" />
+		
+
+		
+
+                
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-186473758-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+		
+                <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+
+        <a href='https://adamjermyn.com/'>About</a>
+	<a href='https://adamjermyn.com/posts'>Posts</a>
+	<a href='https://adamjermyn.com/tags'>Tags</a>
+        <a href='https://adamjermyn.com/software'>Software</a>
+        <a href='https://adamjermyn.com/workflow'>Workflow</a>
+
+	
+
+</nav>
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Multigate Priors
+                    </h1>
+                    <h2 class="headline">
+		    
+                     Jun 15, 2022 15:33 
+                    · 800 words
+                    · 4 minute read
+                      <span class="tags">
+                      
+                      
+                          
+                              <a href="https://adamjermyn.com/tags/ai-safety">AI Safety</a>
+                          
+                              <a href="https://adamjermyn.com/tags/ai">AI</a>
+                          
+                              <a href="https://adamjermyn.com/tags/research">research</a>
+                          
+                      
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                <section id="post-body">
+                    <p><em>Posted to LessWrong <a href="https://www.lesswrong.com/posts/CKZkfAE8APAEYMqi6/multigate-priors">here</a>.</em></p>
+<p><em>(Thanks to Evan Hubinger and Nicholas Schiefer for suggestions and discussions around these ideas)</em></p>
+<h2 id="multi-gate-traces">Multi-Gate Traces</h2>
+<p>We can improve on one-gate traces with multi-gate traces! Suppose we have $N$ training samples. Then we can reasonably estimate joint probability distributions over up to $k=\lfloor\log_2 N\rfloor$ gates, giving the prior:</p>
+<p>$$ p\propto \exp\left(-\sum_{i_1&hellip;i_k}\sum_{j\in [0,1]^k}p_{i_1&hellip;i_k}(j)^m\right) $$</p>
+<p>That is, we sum over all selections of $k$ gates and compute the entropy of their joint distribution over $2^k$ states. Once more we promote models with high entropy and punish those with low entropy, which favors models that explore as much of their state space as possible during training, and disfavors those which have hidden states never touched in training.</p>
+<p>Now it’s still possible for a model to hide the machinery to defect here, but it gets harder and harder as $N$ and $k$ get large. In this limit the only way for that machinery to hide is to be heavily obfuscated.</p>
+<h3 id="objection-non-competitive">Objection: Non-Competitive</h3>
+<p>The Multi-Gate Trace prior over $k$ gates scales very badly with $k$. In a system with $G$ gates there are $G \choose k$ different selections of $k$ gates, which means the cost of evaluating the prior is roughly exponential in $k$ for $k \ll G$.</p>
+<p>In practice this means that $k$ needs to be very small, and it’s possible that deception could hide in subsets of the circuit just a bit larger than the largest ones we can check.</p>
+<h3 id="objection-penalizes-redundancy">Objection: Penalizes Redundancy</h3>
+<p>It is often useful to have redundant machinery in a program for e.g. readability or ease-of-modification. Redundancies though guarantee that some states will never arise. E.g. if the same calculation happens in two disjoint subcircuits in the model we will never see those two subcircuits in different states from each other.</p>
+<p>The Multi-Gate Trace prior disfavors models with that sort of redundancy, because those models have a larger apparent state space than they really do. This could cause the Multi-Gate Trace prior to favor hard-to-interpret models, and could result in a performance penalty by making it harder for the training process to modify the model.</p>
+<h2 id="next-try-embedding-priors">Next Try: Embedding Priors</h2>
+<p>The Multi-Gate Trace prior is probably not competitive because the state space of the model traces is enormous. One way to remedy this is embed the state of the model in a lower-dimensional space and favor models that explore more of that space during training.</p>
+<p>That is, suppose we learn an embedding of the space of state vectors $v={g_1,&hellip;,g_N}$ into a continuous space of fixed lower dimension $d$. Given such an embedding, we can readily look for parts of parameter space that haven’t been explored in training. For instance we can discretize the embedding space into $d$-cubes and compute</p>
+<p>$$ p \propto \exp\left(-\sum_{\mathrm{cube}} p(\mathrm{cube})^m\right) $$</p>
+<p>where $p(x)$ is the fraction of training samples that fell in the cube centered on $x$.</p>
+<p>This scales much better than the Multi-Gate Trace prior. In particular, for fixed embedding dimension the runtime cost is just a polynomial in the resolution of the discretization and proportional to the embedding cost (which can be chosen to be e.g. linear in the number of gates).</p>
+<p>There are a few ways to learn an embedding:</p>
+<ul>
+<li>Try to preserve distance between state vectors in the embedding. That is, two states $v$ and $v'$ with distance $|v-v'|$ should map onto embedded vectors $x$ and $x'$ such that $|v-v'|\approx |x-x'|$.</li>
+<li>Try to preserve distance in the inputs/outputs. So for instance if the distance between inputs $i$ and $i'$ is $|i-i'|$ then embed the resulting states $v,v'$ to produce $x,x'$ such that $|i-i'|\approx |x-x'|$. Or alternately do this for the outputs of the model.</li>
+</ul>
+<p>This approach is also more forgiving of redundancy in the model. The embedding can ignore redundant parts of the model state and so an embedding prior need not penalize redundancy.</p>
+<p>Incidentally, the embedding prior shares some similarities to the ELK setup. You can view the embedding prior as an additional head attached to the original model. Rather than trying to learn a translator, we’re trying to learn a mapping between internal state and the embedding space, which we use to understand how much of the space of possible behaviors we’ve explored.</p>
+<h3 id="objection-blind-spots">Objection: Blind Spots</h3>
+<p>Embedding priors can have blind spots. An embedding might neglect a piece of the model’s state space, not because it’s redundant but because it was never encountered in training.</p>
+<h2 id="ways-forward">Ways Forward</h2>
+<p>This approach of developing priors based on execution traces in training is very closely related to the field of fuzzing. What we’re looking for, in effect, is a way to ensure good program coverage during training. My hope is that fuzzing tools and knowledge can help here.</p>
+<p>For instance the issues of blind spots in coverage metrics must arise in fuzzing, I just don’t know how it gets solved there.</p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fadamjermyn.com%2fposts%2fmultigate_prior%2f - Multigate%20Priors by @AdamSJermyn"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/adamjermyn">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/AdamSJermyn">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+        
+	        <center><a class="cta" href="https://adamjermyn.com/index.xml">Subscribe</a></center>
+        
+    <p class="small">
+    
+       © Copyright 2022 Adam Jermyn
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://adamjermyn.com/js/jquery-3.3.1.min.js"></script>
+<script src="https://adamjermyn.com/js/main.js"></script>
+<script src="https://adamjermyn.com/js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>

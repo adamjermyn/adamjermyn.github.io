@@ -6,7 +6,17 @@
     <description>Recent content in Posts on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 14 Jun 2022 11:01:07 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 15 Jun 2022 12:43:36 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Wave Heating and F-type Stars</title>
+      <link>https://adamjermyn.com/posts/astroideas18/</link>
+      <pubDate>Wed, 15 Jun 2022 12:43:36 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/astroideas18/</guid>
+      <description>I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the eighteenth post in a series describing some of the ideas I&amp;rsquo;ve accumulated.
+Wave Heating and F-type Stars What&amp;rsquo;s the idea? Convection zones emit internal gravity waves at their boundaries. There is some uncertainty as to exactly how much power escapes in these waves, but estimates are of order $L_{\rm conv}\mathcal{M}$, where $L_{\rm conv}$ is the heat carried by convection and $\mathcal{M}$ is the convective Mach number.</description>
+    </item>
+    
     <item>
       <title>Differential rotation in stars and planetary orbits</title>
       <link>https://adamjermyn.com/posts/astroideas17/</link>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="author" content="Adam Jermyn">
+		<meta name="description" content="Site Description">
+		<meta name="generator" content="Hugo 0.92.2" />
+		<title>Black holes in gas clouds &middot; Adam Jermyn</title>
+		<link rel="shortcut icon" href="https://adamjermyn.com/images/favicon.ico">
+		<link rel="stylesheet" href="https://adamjermyn.com/css/style.css">
+		<link rel="stylesheet" href="https://adamjermyn.com/css/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://adamjermyn.com/css/font-awesome.min.css">
+		
+
+		
+		<link href="https://adamjermyn.com/index.xml" rel="alternate" type="application/rss+xml" title="Adam Jermyn" />
+		
+
+		
+
+                
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-186473758-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+		
+                <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+
+        <a href='https://adamjermyn.com/'>About</a>
+	<a href='https://adamjermyn.com/posts'>Posts</a>
+	<a href='https://adamjermyn.com/tags'>Tags</a>
+        <a href='https://adamjermyn.com/software'>Software</a>
+        <a href='https://adamjermyn.com/workflow'>Workflow</a>
+
+	
+
+</nav>
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Black holes in gas clouds
+                    </h1>
+                    <h2 class="headline">
+		    
+                     Jun 17, 2022 07:25 
+                    · 964 words
+                    · 5 minute read
+                      <span class="tags">
+                      
+                      
+                          
+                              <a href="https://adamjermyn.com/tags/astronomy">astronomy</a>
+                          
+                              <a href="https://adamjermyn.com/tags/science">science</a>
+                          
+                              <a href="https://adamjermyn.com/tags/research">research</a>
+                          
+                      
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                <section id="post-body">
+                    <p>I sometimes have research ideas that I think are cool, but that don’t make sense for me to pursue. I generally just make a note of them and move on. This is the twentieth post in a series describing some of the ideas I’ve accumulated. This idea emerged from a conversation with Yuri Levin.</p>
+<h2 id="black-holes-in-gas-clouds">Black holes in gas clouds</h2>
+<h3 id="whats-the-idea">What&rsquo;s the idea?</h3>
+<p>Asa  black hole moves through a gas cloud it should drag on the gas, depositing kinetic energy. The question is: how much kinetic energy gets deposited, and how fast?</p>
+<h3 id="why-is-this-important">Why is this important?</h3>
+<p>Black hole mergers impart a kick on the remnant. To the extent that we think there should be black hole binary mergers in AGN disks, the resulting remnant should be moving at a decent fraction of the speed of light through the disk, dragging on its material and depositing kinetic energy.</p>
+<p>There shouldn&rsquo;t be an electromagnetic signature from binary black hole mergers in vacuum, but this sort of effect could produce such a signature by heating or shocking matter in the disk. Making predictions of this effect seems important.</p>
+<h3 id="how-can-i-get-started">How can I get started?</h3>
+<p>To my knowledge no one has really studied this, but I could be wrong, so I&rsquo;d suggest doing a literature review first. After that, getting answers probably requires running new hydrodynamics simulations or post-processing existing ones.</p>
+<p>The prototypical event to try to match is the <a href="https://arxiv.org/abs/2006.14122">EM counterpart to S190521g</a>. I did some analytic estimates about a year ago to try match this event and couldn&rsquo;t, but that doesn&rsquo;t mean I&rsquo;ve exhausted the possibilities. My estimates are below.</p>
+<h4 id="bbh-merger">BBH Merger</h4>
+<ul>
+<li>The S190521g properties paper describes a binary black hole merger:
+<ul>
+<li><a href="https://arxiv.org/pdf/2009.01190.pdf">https://arxiv.org/pdf/2009.01190.pdf</a></li>
+<li>$M_1 = 85^{+21}<em>{-14} M</em>\odot$</li>
+<li>$M_2 = 66^{+17}<em>{-18}M</em>\odot$</li>
+<li>$M_{\rm r} = 140^{+28}<em>{-16} M</em>\odot$ (remnant)</li>
+<li>Kick velocity posterior peaks around $300km/s$, but has a half-width from $100km/s$ to $1700km/s$ (by eye from Figure 4)
+<ul>
+<li>Graham+2020 mention that $v_{\rm kick} \propto M_{\rm r}^{1/3}$, so the way this co-varies with mass slightly increases the available kinetic energy from what a simple point estimate on mass would suggest.</li>
+<li>This probably co-varies with other properties though. So buyer beware when using this to estimate kinetic energies.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="potential-em-counterpart">Potential EM Counterpart</h4>
+<ul>
+<li>
+<p>Graham+2020 see an electromagnetic counterpart (AGN flare) to the BBH event S190521g.</p>
+<ul>
+<li><a href="https://arxiv.org/pdf/2006.14122.pdf">https://arxiv.org/pdf/2006.14122.pdf</a></li>
+<li>Location matches reasonably (within the 90% contour on the sky, near the peak in distance).</li>
+<li>Flare peaked $50d$ after the merger and lasted for of order $50d$.</li>
+</ul>
+</li>
+<li>
+<p>Graham+2020 rule out other explanations by claiming:</p>
+<ul>
+<li>Not a supernova because the color doesn&rsquo;t evolve.
+<ul>
+<li>Suggests a constant-temperature shock.</li>
+</ul>
+</li>
+<li>Microlensing and TDE&rsquo;s have low probability of coincidence ($&lt; 10^{-3}$).</li>
+</ul>
+</li>
+</ul>
+<h4 id="energy-estimates-of-graham2020-mechanisms">Energy Estimates of Graham+2020 Mechanisms</h4>
+<ul>
+<li>The kick posterior gives a total remnant kinetic energy that plausibly ranges from $3\times 10^{49}-8\times 10^{51}\mathrm{erg}$.</li>
+<li>Graham+2020 estimate the flare energy at $10^{51}\mathrm{erg}$ assuming typical quasar colors and isotropic emission.
+<ul>
+<li>Their shock model then requires both that the remnant kinetic energy is on the high end and that the efficiency is high.</li>
+</ul>
+</li>
+<li>Graham+2020 give two models (which both get called shock models):
+<ul>
+<li>Equations (2,3) are for the gas bound to the black hole ramming surrounding material.
+<ul>
+<li>These give too little total energy by many orders of magnitude ($\sim 10^{45}\mathrm{erg}$), but have the right time-scale
+<ul>
+<li>$20d$, though this scales as $v_{\rm kick}^{-3}$ and so the time-scale becomes much too short for the larger kicks favoured by the GW data</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Equations (5,6) are for accretion as the remnant flies through new material that wasn&rsquo;t originally bound to it.
+<ul>
+<li>$L \propto \dot{M}<em>{\rm Bondi} c^2 \propto M</em>{\rm r}^2 v_{\rm kick}^{-3} \rho$</li>
+<li>$t_{\rm dec} \propto v_{\rm kick}^3 \rho^{-1} M_{\rm r}^{-1}$ (deceleration time)
+<ul>
+<li>Fiducial inputs give $200\mathrm{yr}$ time-scale, which is much longer than observed.</li>
+<li>This one scales as $v_{\rm kick}^3$, so the larger velocities favoured by the GW data imply even <strong>longer</strong> times.</li>
+</ul>
+</li>
+<li>The net result is an energy output that scales as $L t_{\rm dec} \approx 2\times 10^{55}\mathrm{erg}$, assuming an efficiency of $0.1$ relative to $c^2$, scaling proportional to $M_{\rm r}$ and independent of the kick velocity or surrounding density.
+<ul>
+<li>This is greater than the total kinetic energy because most of the energy is actually coming from gravitational energy as gas accretes.</li>
+</ul>
+</li>
+<li>Under this model, the original black holes (with very low velocities) should have had huge luminosities. Say the sound speed is 10km/s. Then they should have each shone with $L \approx 10^{48}erg/s$. That&rsquo;s clearly not right&hellip;
+<ul>
+<li>These objects are actually Eddington-limited, not Bondi-limited (i.e. Mdot_Bondi &raquo; Mdot_Eddington). For instance using equation (4) and M~100Msun and v~200km/s and rho~1e-10g/cm^3 I get an accretion rate of ~1 M_sun/yr, whereas the corresponding Eddington-limited rate is ~1e-6 M_sun/yr.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="other-mechanisms">Other Mechanisms</h4>
+<ul>
+<li>Li, Kocsis, Loeb 2012: <a href="https://arxiv.org/pdf/1203.0317.pdf">https://arxiv.org/pdf/1203.0317.pdf</a>
+<ul>
+<li>GW&rsquo;s heat nearby gas.</li>
+<li>Per unit mass, the deposited energy is $q = 4 G \nu E_{\rm lost} / r^2 c^3 = 4 G \nu \Delta M / r^2 c$.
+<ul>
+<li>$\Delta M$ is the mass difference between the progenitors and the remnant.</li>
+<li>$\nu$ is the viscosity in $\mathrm{cm^2,s^{-1}}$</li>
+</ul>
+</li>
+<li>Integrating over the surrounding medium a distance $h$ (disk scale height) gives $E_{\rm heat} \approx G \rho h \nu \Delta M / c \approx G \Sigma \nu \Delta M/c$.
+<ul>
+<li>Using $\Delta M \approx 8 M_\odot$ gives $E_{\rm heat} \approx 10^{17}\mathrm{erg} \nu \Sigma$, where $\nu$ and $\Sigma$ are measured in cgs.</li>
+<li>Need $\nu \Sigma \approx 10^{34}$ to make this work.</li>
+<li>Graham+2020 estimate $h \approx 10^{14}\mathrm{cm}$ and $\rho \approx 10^{-10}\mathrm{g,cm^{-3}}$, so $\Sigma \approx 10^4$.</li>
+<li>Using $h \approx 10^{14}cm$ and a sound speed of $10\mathrm{km/s}$, the viscosity is $\nu \approx 10^{20}\mathrm{cm}$.</li>
+<li>So $\nu \Sigma \approx 10^{24}$, which is much too small.</li>
+<li>Also $\nu$ is definitely less than estimated above, because the relevant viscosity is that on time-scales comparable to the merger ($0.1s$), not the low-frequency disk viscosity.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Could this be due to a supernova <strong>in the disk</strong> (elides Graham+2020 concerns)?
+<ul>
+<li>Suggested by Yuri Levin</li>
+</ul>
+</li>
+<li>Or NS-BH tidal disruption, or NS-NS merger around the same time?</li>
+</ul>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fadamjermyn.com%2fposts%2fastroideas20%2f - Black%20holes%20in%20gas%20clouds by @AdamSJermyn"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/adamjermyn">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/AdamSJermyn">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+        
+	        <center><a class="cta" href="https://adamjermyn.com/index.xml">Subscribe</a></center>
+        
+    <p class="small">
+    
+       © Copyright 2022 Adam Jermyn
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://adamjermyn.com/js/jquery-3.3.1.min.js"></script>
+<script src="https://adamjermyn.com/js/main.js"></script>
+<script src="https://adamjermyn.com/js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>

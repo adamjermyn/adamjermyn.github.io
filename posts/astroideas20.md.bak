@@ -1,0 +1,88 @@
++++
+title = "Black holes in gas clouds"
+date = 2022-06-17T07:25:45-04:00
+tags = ["astronomy","science","research"]
+categories = [""]
+draft = false
+
++++
+
+I sometimes have research ideas that I think are cool, but that don’t make sense for me to pursue. I generally just make a note of them and move on. This is the twentieth post in a series describing some of the ideas I’ve accumulated. This idea emerged from a conversation with Yuri Levin.
+
+## Black holes in gas clouds
+
+### What's the idea?
+
+As a  black hole moves through a gas cloud it should drag on the gas, depositing kinetic energy. The question is: how much kinetic energy gets deposited, and how fast?
+
+### Why is this important?
+
+Black hole mergers impart a kick on the remnant. To the extent that we think there should be black hole binary mergers in AGN disks, the resulting remnant should be moving at a decent fraction of the speed of light through the disk, dragging on its material and depositing kinetic energy.
+
+There shouldn't be an electromagnetic signature from binary black hole mergers in vacuum, but this sort of effect could produce such a signature by heating or shocking matter in the disk. Making predictions oof this effect seems important.
+
+### How can I get started?
+
+To my knowledge no one has really studied this, but I could be wrong, so I'd suggest doing a literature review first. After that, getting answers probably requires running new hydrodynamics simulations or post-processing existing ones.
+
+The prototypical event to try to match is the [EM counterpart to S190521g](https://arxiv.org/abs/2006.14122). I did some analytic estimates about a year ago to try match this event and couldn't, but that doesn't mean I've exhausted the possibilities. My estimates are below.
+
+#### BBH Merger
+
+- The S190521g properties paper describes a binary black hole merger:
+  - https://arxiv.org/pdf/2009.01190.pdf
+  - $M_1 = 85^{+21}_{-14} M_\odot$
+  - $M_2 = 66^{+17}_{-18}M_\odot$
+  - $M_{\rm r} = 140^{+28}_{-16} M_\odot$ (remnant)
+  - Kick velocity posterior peaks around $300km/s$, but has a half-width from $100km/s$ to $1700km/s$ (by eye from Figure 4)
+    - Graham+2020 mention that $v_{\rm kick} \propto M_{\rm r}^{1/3}$, so the way this co-varies with mass slightly increases the available kinetic energy from what a simple point estimate on mass would suggest.
+    - This probably co-varies with other properties though. So buyer beware when using this to estimate kinetic energies.
+
+#### Potential EM Counterpart
+
+- Graham+2020 see an electromagnetic counterpart (AGN flare) to the BBH event S190521g.
+  - https://arxiv.org/pdf/2006.14122.pdf
+  - Location matches reasonably (within the 90% contour on the sky, near the peak in distance).
+  - Flare peaked $50d$ after the merger and lasted for of order $50d$.
+
+- Graham+2020 rule out other explanations by claiming:
+  - Not a supernova because the color doesn't evolve.
+    - Suggests a constant-temperature shock.
+  - Microlensing and TDE's have low probability of coincidence ($< 10^{-3}$).
+
+#### Energy Estimates of Graham+2020 Mechanisms
+
+- The kick posterior gives a total remnant kinetic energy that plausibly ranges from $3\times 10^{49}-8\times 10^{51}\mathrm{erg}$.
+- Graham+2020 estimate the flare energy at $10^{51}\mathrm{erg}$ assuming typical quasar colors and isotropic emission.
+  - Their shock model then requires both that the remnant kinetic energy is on the high end and that the efficiency is high.
+- Graham+2020 give two models (which both get called shock models):
+  - Equations (2,3) are for the gas bound to the black hole ramming surrounding material.
+    - These give too little total energy by many orders of magnitude ($\sim 10^{45}\mathrm{erg}$), but have the right time-scale
+      -  $20d$, though this scales as $v_{\rm kick}^{-3}$ and so the time-scale becomes much too short for the larger kicks favoured by the GW data
+  - Equations (5,6) are for accretion as the remnant flies through new material that wasn't originally bound to it.
+    - $L \propto \dot{M}_{\rm Bondi} c^2 \propto M_{\rm r}^2 v_{\rm kick}^{-3} \rho$
+    - $t_{\rm dec} \propto v_{\rm kick}^3 \rho^{-1} M_{\rm r}^{-1}$ (deceleration time)
+      - Fiducial inputs give $200\mathrm{yr}$ time-scale, which is much longer than observed.
+      - This one scales as $v_{\rm kick}^3$, so the larger velocities favoured by the GW data imply even **longer** times.
+    - The net result is an energy output that scales as $L t_{\rm dec} \approx 2\times 10^{55}\mathrm{erg}$, assuming an efficiency of $0.1$ relative to $c^2$, scaling proportional to $M_{\rm r}$ and independent of the kick velocity or surrounding density.
+      - This is greater than the total kinetic energy because most of the energy is actually coming from gravitational energy as gas accretes.
+    - Under this model, the original black holes (with very low velocities) should have had huge luminosities. Say the sound speed is 10km/s. Then they should have each shone with $L \approx 10^{48}erg/s$. That's clearly not right...
+      - These objects are actually Eddington-limited, not Bondi-limited (i.e. Mdot_Bondi >> Mdot_Eddington). For instance using equation (4) and M~100Msun and v~200km/s and rho~1e-10g/cm^3 I get an accretion rate of ~1 M_sun/yr, whereas the corresponding Eddington-limited rate is ~1e-6 M_sun/yr.
+
+#### Other Mechanisms
+
+- Li, Kocsis, Loeb 2012: https://arxiv.org/pdf/1203.0317.pdf
+  - GW's heat nearby gas.
+  - Per unit mass, the deposited energy is $q = 4 G \nu E_{\rm lost} / r^2 c^3 = 4 G \nu \Delta M / r^2 c$.
+    - $\Delta M$ is the mass difference between the progenitors and the remnant.
+    - $\nu$ is the viscosity in $\mathrm{cm^2\,s^{-1}}$
+  - Integrating over the surrounding medium a distance $h$ (disk scale height) gives $E_{\rm heat} \approx G \rho h \nu \Delta M / c \approx G \Sigma \nu \Delta M/c$.
+    - Using $\Delta M \approx 8 M_\odot$ gives $E_{\rm heat} \approx 10^{17}\mathrm{erg} \nu \Sigma$, where $\nu$ and $\Sigma$ are measured in cgs.
+    - Need $\nu \Sigma \approx 10^{34}$ to make this work.
+    - Graham+2020 estimate $h \approx 10^{14}\mathrm{cm}$ and $\rho \approx 10^{-10}\mathrm{g\,cm^{-3}}$, so $\Sigma \approx 10^4$.
+    - Using $h \approx 10^{14}cm$ and a sound speed of $10\mathrm{km/s}$, the viscosity is $\nu \approx 10^{20}\mathrm{cm}$.
+    - So $\nu \Sigma \approx 10^{24}$, which is much too small.
+    - Also $\nu$ is definitely less than estimated above, because the relevant viscosity is that on time-scales comparable to the merger ($0.1s$), not the low-frequency disk viscosity.
+- Could this be due to a supernova **in the disk** (elides Graham+2020 concerns)?
+  - Suggested by Yuri Levin
+- Or NS-BH tidal disruption, or NS-NS merger around the same time?

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="author" content="Adam Jermyn">
+		<meta name="description" content="Site Description">
+		<meta name="generator" content="Hugo 0.92.2" />
+		<title>#SAT with Tensor Networks &middot; Adam Jermyn</title>
+		<link rel="shortcut icon" href="https://adamjermyn.com/images/favicon.ico">
+		<link rel="stylesheet" href="https://adamjermyn.com/css/style.css">
+		<link rel="stylesheet" href="https://adamjermyn.com/css/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://adamjermyn.com/css/font-awesome.min.css">
+		
+
+		
+		<link href="https://adamjermyn.com/index.xml" rel="alternate" type="application/rss+xml" title="Adam Jermyn" />
+		
+
+		
+
+                
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-186473758-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+		
+                <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+
+        <a href='https://adamjermyn.com/'>About</a>
+	<a href='https://adamjermyn.com/posts'>Posts</a>
+	<a href='https://adamjermyn.com/tags'>Tags</a>
+        <a href='https://adamjermyn.com/software'>Software</a>
+        <a href='https://adamjermyn.com/workflow'>Workflow</a>
+
+	
+
+</nav>
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        #SAT with Tensor Networks
+                    </h1>
+                    <h2 class="headline">
+		    
+                     Jun 17, 2022 09:21 
+                    · 700 words
+                    · 4 minute read
+                      <span class="tags">
+                      
+                      
+                          
+                              <a href="https://adamjermyn.com/tags/research">research</a>
+                          
+                              <a href="https://adamjermyn.com/tags/math">math</a>
+                          
+                              <a href="https://adamjermyn.com/tags/physics">physics</a>
+                          
+                              <a href="https://adamjermyn.com/tags/ai">AI</a>
+                          
+                      
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                <section id="post-body">
+                    <p><em>Cross-posted from <a href="https://www.lesswrong.com/posts/uPhvEBJHfBLbddyAA/sat-with-tensor-networks">LessWrong</a>.</em></p>
+<p><em>(Thanks to Mark Xu for comments on these notes.)</em></p>
+<p>These are some notes on tensor networks, the mapping from boolean circuits to tensor networks, and how #SAT can be written as a tensor network contraction.</p>
+<h2 id="definitions-and-notation">Definitions and Notation</h2>
+<h3 id="what-is-a-tensor">What is a tensor?</h3>
+<p>A rank-$d$ tensor is an array of numbers with $d$ integer indices, e.g. $T_{ijk}$ is a rank-3 tensor. The range of each index is called its <em>bond dimension.</em> So for instance the Kronecker delta tensor used in physics is given by</p>
+<img src="../../images/TN_BC.assets/1.png" alt="Screen Shot 2022-06-17 at 9.27.55 AM" style="zoom:50%;max-width:100%;max-height:100%;display:block;margin-left:auto;margin-right:auto" />
+<p>and is a tensor with two indices, each of bond dimension $3$. Meanwhile the Levi-Civita symbol</p>
+<img src="../../images/TN_BC.assets/2.png" alt="Screen Shot 2022-06-17 at 9.28.31 AM" style="zoom:50%;max-width:100%;max-height:100%;display:block;margin-left:auto;margin-right:auto" />
+<p>is a tensor with three indices each of dimension $3$.</p>
+<h2 id="what-is-a-tensor-contraction">What is a tensor contraction?</h2>
+<p>A contraction is a specification of dot products to perform between tensors. For instance</p>
+<p>$$ Q_{ikl}=\sum_{j} A_{ijk} B_{jl} $$</p>
+<p>says to form the tensor $Q$ by contracting $A$ with $B$ along the second index of $A$ and the first index of $B$.</p>
+<p>A tensor can also be contracted with itself, forming a <em>trace</em>. For instance</p>
+<p>$$ A_{i} = \sum_j B_{ijj} $$</p>
+<p>says that we trace over the second and third indices of $B$ to form $A$.</p>
+<p>Often times the summation is written just with indices and no $\sum$ symbol using E<em>instein summation notation</em>. In this notation, indices are summed over if they appear in an expression exactly twice. This notation is unambiguous because contraction is only defined over pairs of indices.</p>
+<h2 id="what-is-a-tensor-network">What is a tensor network?</h2>
+<p>A tensor network is a specification of which contractions are desired between one or more tensors. They are often drawn diagrammatically in <em>penrose notation</em> as</p>
+<img src="../../images/TN_BC.assets/3.png" alt="Screen Shot 2022-06-17 at 9.28.54 AM" style="zoom:50%;max-width:100%;max-height:100%;display:block;margin-left:auto;margin-right:auto" />
+<p>Here $A$ has three indices, $ijk$, two of which are <em>free</em> (meaning they are not involved in any contraction) and one of which is linked to an index of $B$, which itself has a further free index $l$.</p>
+<h1 id="representing-boolean-circuits">Representing Boolean Circuits</h1>
+<p>A boolean circuit with inputs $i_1&hellip;i_n$ can be written as a tensor network as follows. For further references see <a href="https://scipost.org/SciPostPhys.7.5.060/pdf">here</a>.</p>
+<p>First, each input is mapped from False/True to a vector which is either $v^{\rm F} =  (1,0)$ or $v^{\rm T} = (0,1)$. These vectors can be contracted with tensors representing the various boolean gates. For instance</p>
+<p>$$ T^{\mathrm{OR}}_{ijk} = \begin{cases} 1 \text{ if (i=1 or j=1) and k=1}\ 0 \text{ otherwise}\end{cases} $$</p>
+<p>This has the property that</p>
+<img src="../../images/TN_BC.assets/8.png" alt="Screen Shot 2022-06-17 at 9.29.19 AM" style="zoom:50%;;max-width:100%;max-height:100%;display:block;margin-left:auto;margin-right:auto" />
+<p>That is, $T^{\rm OR}$ implements an OR gate. An AND gate can be similarly constructed:</p>
+<p>$$ T^{\rm AND}_{ijk} = \begin{cases} 1 \text{ if (i=1 and j=1) and k=1}\ 0 \text{ otherwise}\end{cases} $$</p>
+<p>Note that an AND tensor can also be used to copy a wire, because</p>
+<p>$$ v_i^{\rm F/T} T_{ijk}^{\rm AND} = v_{j}^{\rm F/T}v_{k}^{\rm F/T} $$</p>
+<p>Finally, NOT gates are just given by</p>
+<img src="../../images/TN_BC.assets/4.png" alt="Screen Shot 2022-06-17 at 9.29.19 AM" style="zoom:50%;;max-width:100%;max-height:100%;display:block;margin-left:auto;margin-right:auto" />
+<p>so that</p>
+<img src="../../images/TN_BC.assets/5.png" alt="Screen Shot 2022-06-17 at 9.31.06 AM" style="zoom:50%;max-width:100%;max-height:100%;display:block;margin-left:auto;margin-right:auto" />
+<p>In this way, we can construct a tensor network which, when contracted against the vectors representing its inputs, results in a vector representing its output.</p>
+<h2 id="sat-with-tensor-networks">#SAT with Tensor Networks</h2>
+<p>#SAT is the problem of counting the number of instances of a boolean circuit which output True. We can represent this problem in a tensor network as follows:</p>
+<p>(1) Map the boolean circuit to a tensor network with input indices $i_1&hellip;i_n$ and output index $o$. The result might look like</p>
+<img src="../../images/TN_BC.assets/6.png" alt="Screen Shot 2022-06-17 at 9.29.35 AM" style="zoom:50%;max-width:100%;max-height:100%;display:block;margin-left:auto;margin-right:auto" />
+<p>If we contract some combination of  $v^{\rm F/T}$ against the input indices $i_1&hellip;i_4$ then the resulting tensor network will equal either $v^{\rm T}$ (if the boolean circuit would have produced True with that input) or $v^{F}$ (otherwise).</p>
+<p>(2) Contract an instance of $v^{\rm T}$ against $o$. Because $v^{\rm F}$ is orthogonal to $v^{\rm T}$, and both have unit norm, the resulting tensor network now produces the scalar 1 if the inputs are set to a combination of $v^{\rm F/T}$ so that $o=v^{\rm T}$ and the scalar 0 otherwise.</p>
+<p>(3) Make a copy of this tensor network, with input indices $i_1'&hellip;i_n'$.</p>
+<p>(4) Construct a new tensor network which specifies the contraction of the network and its copy, linking each $i_j$ with the corresponding $i_j'$. This might look as follows:</p>
+<img src="../../images/TN_BC.assets/7.png" alt="Screen Shot 2022-06-17 at 9.29.52 AM" style="zoom:50%;max-width:100%;max-height:100%;display:block;margin-left:auto;margin-right:auto" />
+<p>This network has no free indices and so produces a scalar when contracted. The contraction can be written as a sum over all possible values of the indices $i_1&hellip;i_n$, so that scalar equals the number of input instances satisfying the boolean circuit.</p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fadamjermyn.com%2fposts%2ftn_bc%2f - %23SAT%20with%20Tensor%20Networks by @AdamSJermyn"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/adamjermyn">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/AdamSJermyn">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+        
+	        <center><a class="cta" href="https://adamjermyn.com/index.xml">Subscribe</a></center>
+        
+    <p class="small">
+    
+       © Copyright 2022 Adam Jermyn
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://adamjermyn.com/js/jquery-3.3.1.min.js"></script>
+<script src="https://adamjermyn.com/js/main.js"></script>
+<script src="https://adamjermyn.com/js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>

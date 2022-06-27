@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="author" content="Adam Jermyn">
+		<meta name="description" content="Site Description">
+		<meta name="generator" content="Hugo 0.92.2" />
+		<title>Training Trace Priors and Speed Priors &middot; Adam Jermyn</title>
+		<link rel="shortcut icon" href="https://adamjermyn.com/images/favicon.ico">
+		<link rel="stylesheet" href="https://adamjermyn.com/css/style.css">
+		<link rel="stylesheet" href="https://adamjermyn.com/css/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://adamjermyn.com/css/font-awesome.min.css">
+		
+
+		
+		<link href="https://adamjermyn.com/index.xml" rel="alternate" type="application/rss+xml" title="Adam Jermyn" />
+		
+
+		
+
+                
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-186473758-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+		
+                <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+
+        <a href='https://adamjermyn.com/'>About</a>
+	<a href='https://adamjermyn.com/posts'>Posts</a>
+	<a href='https://adamjermyn.com/tags'>Tags</a>
+        <a href='https://adamjermyn.com/software'>Software</a>
+        <a href='https://adamjermyn.com/workflow'>Workflow</a>
+
+	
+
+</nav>
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Training Trace Priors and Speed Priors
+                    </h1>
+                    <h2 class="headline">
+		    
+                     Jun 27, 2022 10:15 
+                    · 855 words
+                    · 5 minute read
+                      <span class="tags">
+                      
+                      
+                          
+                              <a href="https://adamjermyn.com/tags/ai-safety">AI Safety</a>
+                          
+                              <a href="https://adamjermyn.com/tags/ai">AI</a>
+                          
+                              <a href="https://adamjermyn.com/tags/research">research</a>
+                          
+                      
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                <section id="post-body">
+                    <p><em>Posted to the AI Alignment Forum <a href="https://www.alignmentforum.org/posts/9o2mjdo7eb7677EJS/training-trace-priors-and-speed-priors">here</a>.</em></p>
+<p><em>Thanks to Evan Hubinger for suggesting this idea.</em></p>
+<p><a href="https://www.alignmentforum.org/posts/hjrqXjEpaw9ogScPh/training-trace-priors">Training Trace Priors</a> are priors over boolean circuits which examine the outputs of gates on samples from the training distribution, typically for purposes of steering models away from having components that were never tested during training. The one I like to think about is the One-Gate Trace Prior (OGT Prior), which penalizes circuits if there are gates with constant outputs during training.</p>
+<p>Priors like this might be a way to make deception less likely. The intuition is that deception involves a decision of whether or not to defect, which at its simplest shows up as a gate that always outputs False during training but outputs True in deployment.</p>
+<p>This post explores the relationship between the OGT Prior and Speed Priors, which I’ve operationalized with the circuit depth prior.</p>
+<h1 id="memorizing-constants">Memorizing Constants</h1>
+<p>Speed Priors incentivize memorization. In particular, any result that is constant on the training distribution and contributes to the circuit’s depth should just become a constant input into the circuit.</p>
+<p>The OGT Prior does something similar. Any output that is constant on the training distribution is treated as suspicious, and so should be pre-computed and turned into a constant input instead.</p>
+<p>To see where these produce the same result, consider a physics simulator with N particles interacting pairwise subject to some conditional check (perhaps on the distance between particles). If only some pairwise interactions occur in the training set then both the <a href="https://www.alignmentforum.org/posts/GC69Hmc6ZQDM9xC3w/musings-on-the-speed-prior">Speed Prior</a> and the OGT Prior will only compute the interactions between pairs actually encountered in training.</p>
+<p>To see where these differ, note that the Speed Prior has no problem with computing constants so long as these do not contribute to the overall circuit depth. For instance, consider a circuit of depth 10 can contain constant calculations of depth 9 that feed straight into the final output. The Speed Prior has no reason to eliminate these, whereas the OGT Prior will turn the results of these calculations into constant inputs.</p>
+<h1 id="lookup-tables">Lookup Tables</h1>
+<p>The Speed Prior incentivizes circuits to use lookup tables. Specifically, the Speed Prior produces circuits that memorize the results of expensive calculations in lookup tables containing all instances encountered in training.</p>
+<p>The OGT Prior is perfectly fine with circuits being very deep, and so has no need to tabulate expensive calculations.</p>
+<h1 id="inner-search">Inner Search</h1>
+<p>A problem with speed priors is that if they have to search over inner models to run, the fastest way to do that may be to search over *<a href="https://www.alignmentforum.org/posts/iALu99gYbodt4mLqg/should-we-rely-on-the-speed-prior-for-safety">simple* programs</a>, which can lead to inner alignment failure because simple programs are <a href="https://ordinaryideas.wordpress.com/2016/11/30/what-does-the-universal-prior-actually-look-like/">likely deceptive</a>.</p>
+<p>Does the OGT Prior have the same problem? I’m not sure, but I suspect it goes the other way, and incentivizes searching over complicated programs. To see this, here’s a circuit architecture that I think the OGT Prior incentivizes which can perform search over models:</p>
+<ul>
+<li>A generator proposes a model prompted by some seed taken from the rest of the circuit.</li>
+<li>The proposed model is communicated along some wires to the interpreter, which runs the model.
+<ul>
+<li>Models are run until they either naturally terminate or some fixed number of steps have elapsed.</li>
+<li>On termination the model is evaluated and either accepted or rejected.</li>
+<li>If the model is rejected, the search begins again.</li>
+</ul>
+</li>
+<li>Once a model is accepted, the output from that model is used as a seed to randomize the wires on any unused parts of the interpreter and generator subcircuits.</li>
+</ul>
+<p>A challenge is if the model is simple, not all wires between the generator and the interpreter will be used:</p>
+<ul>
+<li>We can’t set unused wires randomly because they specify the model and random garbage in the model specification is probably bad.</li>
+<li>If we set unused wires to constants then the OGT Prior penalizes our circuit because some of the unused wires have the same value in every run.</li>
+</ul>
+<p>One way around this is to randomize which wires are unused based on some property of the environment, or to encode simple models in a more complicated way to ensure that all wires are used. Those are both possible, but an easier way is to <strong>just only search over models that are complex enough to use all the wires</strong>. That seems like the most natural solution and, given that complex models often perform better than simple ones, suggests that the OGT Prior will prefer searching over more complex models first.</p>
+<p>I think this is a bit safer than searching over simple models, but the difference might be quite small. Complex models are able to encode complex values, and so at least <em>can</em> be aligned, but it’s not clear that aligned models are particularly likely to be encountered early in such a search.</p>
+<h1 id="conclusions">Conclusions</h1>
+<p>Speed Priors and Training Trace Priors are actually pretty different in the kinds of models they produce. The main similarity I could find is that both prefer memorizing constant calculations. Beyond that, though, they differ in every case I’ve considered. Notably, Training Trace Priors seem to make models that then (in meta-learning) search for complex inner models, which could be helpful in avoiding inner optimizers finding deceptive models.</p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fadamjermyn.com%2fposts%2ftracespeed%2f - Training%20Trace%20Priors%20and%20Speed%20Priors by @AdamSJermyn"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/adamjermyn">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/AdamSJermyn">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+        
+	        <center><a class="cta" href="https://adamjermyn.com/index.xml">Subscribe</a></center>
+        
+    <p class="small">
+    
+       © Copyright 2022 Adam Jermyn
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://adamjermyn.com/js/jquery-3.3.1.min.js"></script>
+<script src="https://adamjermyn.com/js/main.js"></script>
+<script src="https://adamjermyn.com/js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>

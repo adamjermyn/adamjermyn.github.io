@@ -6,7 +6,34 @@
     <description>Recent content in Tags on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 27 Jun 2022 08:18:21 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 27 Jun 2022 10:15:31 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI</title>
+      <link>https://adamjermyn.com/tags/ai/</link>
+      <pubDate>Mon, 27 Jun 2022 10:15:31 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/tags/ai/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AI Safety</title>
+      <link>https://adamjermyn.com/tags/ai-safety/</link>
+      <pubDate>Mon, 27 Jun 2022 10:15:31 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/tags/ai-safety/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>research</title>
+      <link>https://adamjermyn.com/tags/research/</link>
+      <pubDate>Mon, 27 Jun 2022 10:15:31 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/tags/research/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>astronomy</title>
       <link>https://adamjermyn.com/tags/astronomy/</link>
@@ -17,29 +44,11 @@
     </item>
     
     <item>
-      <title>research</title>
-      <link>https://adamjermyn.com/tags/research/</link>
-      <pubDate>Mon, 27 Jun 2022 08:18:21 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/tags/research/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>science</title>
       <link>https://adamjermyn.com/tags/science/</link>
       <pubDate>Mon, 27 Jun 2022 08:18:21 -0400</pubDate>
       
       <guid>https://adamjermyn.com/tags/science/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>AI</title>
-      <link>https://adamjermyn.com/tags/ai/</link>
-      <pubDate>Fri, 17 Jun 2022 09:21:45 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/tags/ai/</guid>
       <description></description>
     </item>
     
@@ -58,15 +67,6 @@
       <pubDate>Fri, 17 Jun 2022 09:21:45 -0400</pubDate>
       
       <guid>https://adamjermyn.com/tags/physics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>AI Safety</title>
-      <link>https://adamjermyn.com/tags/ai-safety/</link>
-      <pubDate>Wed, 15 Jun 2022 15:33:51 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/tags/ai-safety/</guid>
       <description></description>
     </item>
     

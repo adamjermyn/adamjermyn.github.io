@@ -6,7 +6,29 @@
     <description>Recent content in AI on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 17 Jun 2022 09:21:45 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 27 Jun 2022 10:15:31 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Training Trace Priors and Speed Priors</title>
+      <link>https://adamjermyn.com/posts/tracespeed/</link>
+      <pubDate>Mon, 27 Jun 2022 10:15:31 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/tracespeed/</guid>
+      <description>Posted to the AI Alignment Forum here.
+Thanks to Evan Hubinger for suggesting this idea.
+Training Trace Priors are priors over boolean circuits which examine the outputs of gates on samples from the training distribution, typically for purposes of steering models away from having components that were never tested during training. The one I like to think about is the One-Gate Trace Prior (OGT Prior), which penalizes circuits if there are gates with constant outputs during training.</description>
+    </item>
+    
+    <item>
+      <title>Conditioning Generative Models</title>
+      <link>https://adamjermyn.com/posts/conditioninggenerativemodels/</link>
+      <pubDate>Mon, 27 Jun 2022 10:14:16 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/conditioninggenerativemodels/</guid>
+      <description>Posted to the AI Alignment Forum here.
+This post was written in response to Evan Hubinger’s shortform prompt below, and benefited from discussions with him.
+ Suppose you had a language model that you knew was in fact a good generative model of the world and that this property continued to hold regardless of what you conditioned it on. Furthermore, suppose you had some prompt that described some agent for the language model to simulate (Alice) that in practice resulted in aligned-looking outputs.</description>
+    </item>
+    
     <item>
       <title>#SAT with Tensor Networks</title>
       <link>https://adamjermyn.com/posts/tn_bc/</link>

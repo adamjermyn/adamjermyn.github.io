@@ -6,7 +6,18 @@
     <description>Recent content in Posts on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 29 Jun 2022 12:21:53 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 29 Jun 2022 16:05:25 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Latent Adversarial Training</title>
+      <link>https://adamjermyn.com/posts/lat/</link>
+      <pubDate>Wed, 29 Jun 2022 16:05:25 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/lat/</guid>
+      <description>Posted to the AI Alignment Forum.
+The Problem We’d like to train models to be robustly safe, even in environments that may fall well outside of the training distribution. Unfortunately all we get to work with is the training distribution, which makes ensuring robust generalization difficult.
+Deception is an example of this concern. Models may be well-behaved in the training environment because they realize it is a training environment, but behave poorly in deployment because they notice the distributional shift.</description>
+    </item>
+    
     <item>
       <title>Waves in electron hydrodynamics</title>
       <link>https://adamjermyn.com/posts/ideas22/</link>

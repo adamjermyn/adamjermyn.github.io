@@ -6,7 +6,17 @@
     <description>Recent content in Posts on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 27 Jun 2022 10:15:31 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 29 Jun 2022 12:21:53 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Waves in electron hydrodynamics</title>
+      <link>https://adamjermyn.com/posts/ideas22/</link>
+      <pubDate>Wed, 29 Jun 2022 12:21:53 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/ideas22/</guid>
+      <description>I sometimes have research ideas that I think are cool, but that don’t make sense for me to pursue. I generally just make a note of them and move on. This is the 22nd post in a series describing some of the ideas I’ve accumulated. This idea is closely related to conversations I&amp;rsquo;ve had over the years to with George Varnavides.
+Waves in electron hydrodynamics What&amp;rsquo;s the idea? In some materials, electron scattering is momentum-conserving (on some relevant length- and time-scale).</description>
+    </item>
+    
     <item>
       <title>Training Trace Priors and Speed Priors</title>
       <link>https://adamjermyn.com/posts/tracespeed/</link>

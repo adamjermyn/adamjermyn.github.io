@@ -6,7 +6,7 @@
     <description>Recent content in About on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 01 Jul 2022 11:52:18 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 09 Jul 2022 08:21:00 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Notes</title>
       <link>https://adamjermyn.com/workflow/notes/</link>
@@ -36,6 +36,18 @@ I write ideas in Markdown notes with one top-level header per idea. To decide wh
       
       <guid>https://adamjermyn.com/workflow/spacedrepetition/</guid>
       <description>Spaced Repetition Spaced repetition is a technique for remembering information over long time periods. It takes advantage of the empirical observation that the time it takes to forget a fact is proportional to the time that fact is known. This suggests that the best strategy to remember something indefinitely is to review facts with ever-larger (geometrically increasing) gaps between reviews. Following that strategy, a finite number of reviews is needed to remember something for the rest of your life, and that number is small enough that the study time needed to remember a fact indefinitely is about 5 minutes, so long as the studying happens in this spaced-out way.</description>
+    </item>
+    
+    <item>
+      <title>Grouped Loss may disfavor discontinuous capabilities</title>
+      <link>https://adamjermyn.com/posts/grouped_loss/</link>
+      <pubDate>Sat, 09 Jul 2022 08:21:00 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/grouped_loss/</guid>
+      <description>(Cross-posted from the AI Alignment Forum)
+Thanks to Evan Hubinger and Beth Barnes for comments on these ideas.
+Language models exhibit clear scaling laws, where the loss is a power-law in model size. This offers a lot of predictive power, and seems like a useful thing to know. By contrast, individual capabilities often exhibit sharp discontinuities in performance as a function of model size and training time.
+It would be great if individual capabilities just gradually improved like the broader loss.</description>
     </item>
     
     <item>

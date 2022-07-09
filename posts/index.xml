@@ -6,7 +6,19 @@
     <description>Recent content in Posts on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 01 Jul 2022 11:52:18 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 09 Jul 2022 08:21:00 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Grouped Loss may disfavor discontinuous capabilities</title>
+      <link>https://adamjermyn.com/posts/grouped_loss/</link>
+      <pubDate>Sat, 09 Jul 2022 08:21:00 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/grouped_loss/</guid>
+      <description>(Cross-posted from the AI Alignment Forum)
+Thanks to Evan Hubinger and Beth Barnes for comments on these ideas.
+Language models exhibit clear scaling laws, where the loss is a power-law in model size. This offers a lot of predictive power, and seems like a useful thing to know. By contrast, individual capabilities often exhibit sharp discontinuities in performance as a function of model size and training time.
+It would be great if individual capabilities just gradually improved like the broader loss.</description>
+    </item>
+    
     <item>
       <title>Can waves advect magnetic fields?</title>
       <link>https://adamjermyn.com/posts/ideas23/</link>

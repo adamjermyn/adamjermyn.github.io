@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="author" content="Adam Jermyn">
+		<meta name="description" content="Site Description">
+		<meta name="generator" content="Hugo 0.92.2" />
+		<title>Grouped Loss may disfavor discontinuous capabilities &middot; Adam Jermyn</title>
+		<link rel="shortcut icon" href="https://adamjermyn.com/images/favicon.ico">
+		<link rel="stylesheet" href="https://adamjermyn.com/css/style.css">
+		<link rel="stylesheet" href="https://adamjermyn.com/css/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://adamjermyn.com/css/font-awesome.min.css">
+		
+
+		
+		<link href="https://adamjermyn.com/index.xml" rel="alternate" type="application/rss+xml" title="Adam Jermyn" />
+		
+
+		
+
+                
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-186473758-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+		
+                <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+
+        <a href='https://adamjermyn.com/'>About</a>
+	<a href='https://adamjermyn.com/posts'>Posts</a>
+	<a href='https://adamjermyn.com/tags'>Tags</a>
+        <a href='https://adamjermyn.com/software'>Software</a>
+        <a href='https://adamjermyn.com/workflow'>Workflow</a>
+
+	
+
+</nav>
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Grouped Loss may disfavor discontinuous capabilities
+                    </h1>
+                    <h2 class="headline">
+		    
+                     Jul 9, 2022 08:21 
+                    · 1144 words
+                    · 6 minute read
+                      <span class="tags">
+                      
+                      
+                          
+                              <a href="https://adamjermyn.com/tags/ai-safety">AI Safety</a>
+                          
+                              <a href="https://adamjermyn.com/tags/ai">AI</a>
+                          
+                              <a href="https://adamjermyn.com/tags/research">research</a>
+                          
+                      
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                <section id="post-body">
+                    <p><em>(Cross-posted from the <a href="https://www.alignmentforum.org/posts/PmhTzHHFEem5hX79R/grouped-loss-may-disfavor-discontinuous-capabilities">AI Alignment Forum</a>)</em></p>
+<p><em>Thanks to Evan Hubinger and Beth Barnes for comments on these ideas.</em></p>
+<p>Language models exhibit clear <a href="https://arxiv.org/abs/2001.08361">scaling laws</a>, where the loss is a power-law in model size. This offers a lot of predictive power, and seems like a useful thing to know. By contrast, individual capabilities often exhibit sharp discontinuities in performance as a function of <a href="https://arxiv.org/abs/2206.04615">model size</a> and <a href="https://arxiv.org/pdf/2201.02177.pdf">training time</a>.</p>
+<p>It would be great if individual capabilities just gradually improved like the broader loss. Then we wouldn’t have to worry quite so much about surprising new capabilities emerging suddenly during training.</p>
+<p>Is there a way to change the loss function so that it incentivizes more gradually capability improvements?</p>
+<h1 id="grouped-loss">Grouped Loss</h1>
+<p>Imagine grouping training examples by the kind of capability they exhibit. For instance arithmetic problems go in one group, “parse json” could go in another, and so on. With these groups, we could define a new loss function</p>
+<p>$$ L = \sum_{g\in \mathrm{groups}} \ell_{g}^2 $$</p>
+<p>where $\ell$ is the loss function we originally used (e.g. cross-entropy loss) and $\ell_g$ means to compute $\ell$ just on examples from group $g$, e.g.</p>
+<p>$$ \ell_g = \frac{1}{\mathrm{len(}g\mathrm{)}}\sum_{\mathrm{example}\in g} \ell(\mathrm{example}) $$</p>
+<p>which may be estimated by using random examples drawn from $g$.</p>
+<p>Because we have squared the group losses, the overall loss is dominated by the worst group. As a result, the model is incentivized to develop capabilities in each group at comparable rates, and so has little incentive to e.g. finely hone its poetry skills while being unable to multiply numbers.</p>
+<h2 id="challenge-defining-groups">Challenge: Defining Groups</h2>
+<p>It’s possible that using grouped loss results in smooth development of capabilities that aren’t represented in the groups. For instance, it seems plausible that if “adding arabic numerals” and “translating words into arabic numerals” are two groups but “adding numbers written as words” is not, performance on the latter could nonetheless develop smoothly as the model gets better at the others. It would certainly be <em>weird</em> if performance ”adding numbers written as words” advanced as a sudden leap in this case.</p>
+<p>This points to a general problem though, which is that if we have to define the groups manually we have to foresee the capabilities we’re worried about. That seems bad.</p>
+<h2 id="gradient-cluster-grouping">Gradient Cluster Grouping</h2>
+<p>If we could automatically group examples we wouldn’t need to do it manually. How could we do this?</p>
+<p>I think the key feature of a group is that when the model updates, the loss of most examples in a group changes in a similar way. When that happens, it seems intuitive to say that there’s a discrete capability somewhere in the model and that those examples all depend on it.</p>
+<p>This suggests looking for examples where the loss has similar gradients, because these probably make use of similar machinery in the model.</p>
+<p>Concretely, I’m imagining the following procedure:</p>
+<ol>
+<li>Draw $N$ examples from the training set.</li>
+<li>Evaluate the gradient of $\ell$ for each example.</li>
+<li>Group the examples by clustering their gradients, evaluate the grouped loss, and perform gradient descent on that.</li>
+</ol>
+<p>As a technical note: In this approach, the grouped loss is a moving target. As the model learns and capabilities form the groups shift. This means that SGD is no longer minimizing a constant loss. I don’t think that’s a problem, in part because all versions of the loss agree when the model has reached zero-loss, so the different iterations of the loss function all point towards better capabilities.</p>
+<h3 id="challenge-how-many-groups">Challenge: How many groups?</h3>
+<p>I don’t know of a principled way to pick the number of groups to cluster examples into, and that seems like a problem. Guessing too many groups loses the advantage of grouping because each group reflects an extremely narrow task. Guessing too few groups <em>also</em> loses the advantage of grouping, because then the capabilities that show gradual improvements will be very broad ones, and narrow capabilities will still show discontinuous improvements.</p>
+<h2 id="svd-grouped-loss">SVD-Grouped Loss</h2>
+<p><em>(Note that I don’t think this specific loss is necessarily the best idea, but I think it illustrates the kind of approach that might solve the challenge of identifying appropriate groups.)</em></p>
+<p>An improvement over clustering by gradients is to use the singular value decomposition (SVD), which provides a more continuous way to talk about the similarity between gradients.</p>
+<p>The idea here is that the SVD of the gradients of different examples will identify the most important directions in loss-space, which I (weakly) suspect correspond to directions that improve distinct capabilities.</p>
+<h3 id="construction">Construction</h3>
+<p>We begin as before by drawing $N$ examples from the training set and evaluating the gradient of $\ell$ for each example. Each gradient has length equal to the number of parameters $M$ in the model. Combining the gradients, we form the $N\times M$ matrix $G$.</p>
+<p>We next compute the SVD of $G$. This produces singular values $\sigma_i$ and pairs of singular vectors $(v_i,w_i)$, where $v_i$ has length $N$ and $w_i$ has length $M$. Importantly, $w_i$ lives in the same space as the loss gradients, and the set of ${w_i}$ spans the space of the gradients. As such, we can write each gradient in terms of $w_i$ as:</p>
+<p>$$ \nabla \ell = \sum_i \alpha_i w_i $$</p>
+<p>We can then define the loss</p>
+<p>$$ L=\sum_i\left( \sigma_i\sum_{\rm example} \ell(\mathrm{example}) \hat{\alpha}_i(\mathrm{example})\right)^2 $$</p>
+<p>where $\hat{\alpha}_i = \alpha_i / \sqrt{\sum_i \alpha_i^2}$ is just a component of the normalized gradient. For purposes of evaluating gradients of the loss we treat the $\sigma_i$’s and $\hat{\alpha}_i$’s as constant. This should not be a problem because, regardless of the values of $\sigma_i,\hat{\alpha}_i$, values all versions of the loss agree when the model has reached zero-loss. So as in the Grouped Loss case, different iterations of the loss function all point towards better capabilities.</p>
+<h3 id="interpretation">Interpretation</h3>
+<p>In this loss function groups correspond to singular vectors, and are weighted by their singular values. Examples are attributed continuously to groups (e.g. each example belongs to multiple groups to varying degrees) in accordance with how much their gradients correspond to the groups’ singular vectors.</p>
+<p>My intuition here is that singular vectors with large singular values correspond intuitively to individual capabilities, because they are directions in gradient-space that improve many examples (the more examples improve the higher the singular value).</p>
+<h1 id="summary">Summary</h1>
+<p>I would like to see capabilities arise more gradually during training, rather than sudden grokking. That could make it easier to notice dangerous capabilities developing.</p>
+<p>I think grouped loss functions are one way to do this, and they work (if they work) by making SGD care most about the model’s weakest capability at all times.</p>
+<p>Assuming grouped losses are feasible to implement and indeed behave this way, they would also provide a weak guarantee that the model’s performance on one task is representative of its performance on other tasks (so long as both tasks appeared during training). This seems like a really useful (if unintended) property, because it means that we can understand a model’s capabilities with much sparser testing.</p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fadamjermyn.com%2fposts%2fgrouped_loss%2f - Grouped%20Loss%20may%20disfavor%20discontinuous%20capabilities by @AdamSJermyn"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/adamjermyn">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/AdamSJermyn">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+        
+	        <center><a class="cta" href="https://adamjermyn.com/index.xml">Subscribe</a></center>
+        
+    <p class="small">
+    
+       © Copyright 2022 Adam Jermyn
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://adamjermyn.com/js/jquery-3.3.1.min.js"></script>
+<script src="https://adamjermyn.com/js/main.js"></script>
+<script src="https://adamjermyn.com/js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>

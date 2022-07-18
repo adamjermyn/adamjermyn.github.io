@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="author" content="Adam Jermyn">
+		<meta name="description" content="Site Description">
+		<meta name="generator" content="Hugo 0.92.2" />
+		<title>Quantilizers and Generative Models &middot; Adam Jermyn</title>
+		<link rel="shortcut icon" href="https://adamjermyn.com/images/favicon.ico">
+		<link rel="stylesheet" href="https://adamjermyn.com/css/style.css">
+		<link rel="stylesheet" href="https://adamjermyn.com/css/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://adamjermyn.com/css/font-awesome.min.css">
+		
+
+		
+		<link href="https://adamjermyn.com/index.xml" rel="alternate" type="application/rss+xml" title="Adam Jermyn" />
+		
+
+		
+
+                
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-186473758-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+		
+                <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+
+        <a href='https://adamjermyn.com/'>About</a>
+	<a href='https://adamjermyn.com/posts'>Posts</a>
+	<a href='https://adamjermyn.com/tags'>Tags</a>
+        <a href='https://adamjermyn.com/software'>Software</a>
+        <a href='https://adamjermyn.com/workflow'>Workflow</a>
+
+	
+
+</nav>
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Quantilizers and Generative Models
+                    </h1>
+                    <h2 class="headline">
+		    
+                     Jul 18, 2022 12:33 
+                    · 1206 words
+                    · 6 minute read
+                      <span class="tags">
+                      
+                      
+                          
+                              <a href="https://adamjermyn.com/tags/ai-safety">AI Safety</a>
+                          
+                              <a href="https://adamjermyn.com/tags/ai">AI</a>
+                          
+                              <a href="https://adamjermyn.com/tags/research">research</a>
+                          
+                      
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                <section id="post-body">
+                    <p>(<em>Cross-posted from the <a href="https://www.alignmentforum.org/posts/tz3hoCs2efHjzNYm5/quantilizers-and-generative-models">AI Alignment Forum</a></em>)</p>
+<p><em>Thanks to Evan Hubinger for discussions about quantilizers, and to James Lucassen for discussions about conditioned generative models. Many of these ideas are discussed in</em> <a href="https://intelligence.org/files/QuantilizersSaferAlternative.pdf">Quantilizers: A Safer Alternative to Maximizers for Limited Optimization</a><em>: this post just expands on a particular thread of ideas in that paper. Throughout I’ll refer to sections of the paper. I have some remaining confusion about the “targeted impact” section, and would appreciate clarifications/corrections!</em></p>
+<h1 id="abstract">Abstract</h1>
+<p>This post explores the relationship between quantilizers and generative models. My main takeaways are:</p>
+<ol>
+<li>A natural way to build a quantilizer is by sampling from an appropriately-conditioned generative model.</li>
+<li>Unfortunately quantilizing doesn’t seem to confer much advantage over the underlying generative model: to the extent that a quantilizer is more powerful than a generative model, it’s more dangerous, and vice versa.</li>
+<li>Quantilizing is pretty computationally expensive relative to the advantage it brings, making it unclear if this is a competitive approach even if it conferred a net safety advantage at fixed power.</li>
+</ol>
+<h1 id="definitions">Definitions</h1>
+<p>I’ll follow the setup in “<a href="https://intelligence.org/files/QuantilizersSaferAlternative.pdf">Quantilizers: A Safer Alternative to Maximizers for Limited Optimization</a>” (Section 1, Definition 1) and say that a quantilizer is a model with:</p>
+<ol>
+<li>A <em>base distribution</em> $\gamma$, which describes a set of outputs we think are “normal” or “unlikely to lead to doom”.</li>
+<li>A quantile $q\in [0,1]$.</li>
+<li>An ordering over outputs (e.g. a utility or loss function).</li>
+</ol>
+<p>A quantilizer returns a random output from the top $q$ fraction of outputs from $\gamma$ according to the ordering. So for instance a 0-quantilizer is a utility maximizer, a 0.1-quantilizer returns outputs in the best 10%, etc.</p>
+<h1 id="where-does-the-base-distribution-come-from">Where does the base distribution come from?</h1>
+<p>One challenge with quantilizers is that they require a base distribution $\gamma$ that we trust. That is, we want to be able to sample from $\gamma$ many times and never hit bad outputs. Unfortunately, we don’t know how to explicitly write this distribution down.</p>
+<p>A natural alternative to explicit construction is to train a generative model on the distribution of actions a humans takes (Section 3.1). Then for any given task $\gamma$ can be written as</p>
+<p>$$ \gamma_{\rm task} = P(\mathrm{action}|\mathrm{good\ human\ attempts\ task}) $$</p>
+<p>This seems quite doable. Train GPT-N on text written by humans, then prompt it with the task:</p>
+<blockquote>
+<p>Prompt: You are a good person who wants to accomplish <task>. What follows is your description of how you intend to do this.</p>
+</blockquote>
+<p>The output will probably be text describing how a good person would accomplish that task!</p>
+<p>Unfortunately we might get unlucky and sample a person who isn’t so good (but thinks of themselves as good). That still satisfies the prompt. Robustly getting the agent we want <a href="https://www.alignmentforum.org/posts/nXeLPcT9uhfG3TMPS/conditioning-generative-models">seems hard</a>, but might be possible in the limit where we ask for agents that are generally plausible in the training distribution of the generative model.</p>
+<h1 id="power-vs-safety">Power vs Safety</h1>
+<p>Armed with our base distribution, we can start quantilizing. Naively we can do this by sampling $q^{-1}$ times from $\gamma_{\rm task}$, then returning the top output. This produces a tradeoff between capabilities and safety.</p>
+<h2 id="single-sampler">Single Sampler</h2>
+<p>In the limit $q\rightarrow 1$ we’re just returning actions a good human would take. That is, our quantilizer just samples once and returns that sample as output, so it’s no more powerful than a random good person.</p>
+<p>Such a model is really unlikely to take over the world, but it’s also really unlikely to solve quantum chemistry problems. This is because both of these outcomes unlikely according to the base distribution.</p>
+<p>We can improve things a bit by conditioning on being an unusually capable person, e.g.</p>
+<blockquote>
+<p>Prompt: You are a good and extremely capable person who wants to accomplish <task>. What follows is your description of how you intend to do this.</p>
+</blockquote>
+<p>Now we can get top-end human performance out, though at the cost that we have increased the odds of bad outcomes.</p>
+<p>For instance, the model might decide to role-play a biologist who invents some extremely positive technology that happens to have unintended negative consequence (e.g. making engineered pandemics more likely). That’s not a unique problem to AI though, just a “giving humans more capabilities” problem.</p>
+<h2 id="many-samples">Many Samples</h2>
+<p>In the limit $q\ll 1$ we’re sampling many times and returning the best action we find. Quantilizing like this makes actions more powerful, but at the cost of making them less likely according to the base distribution. This potentially makes them more dangerous.</p>
+<p>For instance, instead of role-playing an extremely capable biologist who is likely to be alive today, the model can now role-play even more capable biologists who are unlikely to exist. Or it can role-play that same biologist on their best day, having the best insight of their life. Or, even worse, it can role-play a deceptive AI that’s pretending to be an extremely capable (and good) human biologist.</p>
+<p>We now have at least two dangers:</p>
+<ol>
+<li>As in the single-sampler limit ($q\rightarrow 1)$, there is danger in simulating more powerful human agents. This problem becomes worse as $q$ decreases, because we can sample increasingly powerful agents who are increasingly far from the distribution we trust (”actions good humans take”).</li>
+<li>In addition, as we sample increasingly unlikely agents from the model we are more and more likely to encounter something non-human (e.g. a deceptive AI). This seems very bad, and I’m not sure how to avoid it.</li>
+</ol>
+<h2 id="targeted-impact">Targeted Impact</h2>
+<p>The general tradeoff above is that as we make the quantilizer more powerful (e.g. reduce $q$, or condition on more capabilities) we make it more dangerous by pulling it away from the action-space we think of as generally safe.</p>
+<p><a href="https://intelligence.org/files/QuantilizersSaferAlternative.pdf">Section 2.2</a> refers to a technique for quantilizing that avoids this tradeoff called <em>Targeted Impact</em>, but I have not been able to follow the argument. It seems to produce the same quantilizing algorithm (because the condition at the end of the section is exactly the same as the one in Section 2.1), and so I’m confused about where the improvement comes from.</p>
+<p>I’m probably missing something, and would really appreciate hearing/seeing a more detailed explanation of this approach!</p>
+<h1 id="summary">Summary</h1>
+<p>My understanding right now is:</p>
+<ol>
+<li>A natural way to build a quantilizer is by sampling from an appropriately-conditioned generative model.</li>
+<li>This approach probably succeeds at being ‘close to as safe as a human’, at the cost of not being much more powerful.</li>
+<li>The more we try to make the model powerful, the weaker our safety guarantees get. This seems bad.</li>
+<li>Loss of safety comes both from sampling increasingly unlikely actions and from sampling from increasingly powerful agents. The former means we lose formal guarantees on how bad actions can be relative to normal human actions, the latter means both that we sample from a riskier class of actions (”actions taken by very capable agents”) and that we are more likely to accidentally sample from actions taken by misaligned/deceptive agents.</li>
+<li>The number of bits of optimization power we get by quantilizing rather than directly sampling from the generative model is small  ($\sim \log q^{-1}$) and comes at large cost ($\sim q^{-1}$), which makes this likely uncompetitive on capabilities relative to just using bigger models trained for longer.</li>
+</ol>
+<p>Based on this, my general sense is that quantilizers are not a promising path to alignment, though I’d be very happy to hear otherwise.</p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fadamjermyn.com%2fposts%2fquantilizers%2f - Quantilizers%20and%20Generative%20Models by @AdamSJermyn"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/adamjermyn">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/AdamSJermyn">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+        
+	        <center><a class="cta" href="https://adamjermyn.com/index.xml">Subscribe</a></center>
+        
+    <p class="small">
+    
+       © Copyright 2022 Adam Jermyn
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://adamjermyn.com/js/jquery-3.3.1.min.js"></script>
+<script src="https://adamjermyn.com/js/main.js"></script>
+<script src="https://adamjermyn.com/js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>

@@ -6,7 +6,17 @@
     <description>Recent content in research on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 18 Jul 2022 10:55:44 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/tags/research/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 18 Jul 2022 12:33:31 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/tags/research/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Quantilizers and Generative Models</title>
+      <link>https://adamjermyn.com/posts/quantilizers/</link>
+      <pubDate>Mon, 18 Jul 2022 12:33:31 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/quantilizers/</guid>
+      <description>(Cross-posted from the AI Alignment Forum)
+Thanks to Evan Hubinger for discussions about quantilizers, and to James Lucassen for discussions about conditioned generative models. Many of these ideas are discussed in Quantilizers: A Safer Alternative to Maximizers for Limited Optimization: this post just expands on a particular thread of ideas in that paper. Throughout I’ll refer to sections of the paper. I have some remaining confusion about the “targeted impact” section, and would appreciate clarifications/corrections!</description>
+    </item>
+    
     <item>
       <title>What saturates the centrifugal instability?</title>
       <link>https://adamjermyn.com/posts/ideas24/</link>

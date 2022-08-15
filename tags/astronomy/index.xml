@@ -6,7 +6,17 @@
     <description>Recent content in astronomy on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 18 Jul 2022 10:55:44 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/tags/astronomy/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 15 Aug 2022 09:53:44 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/tags/astronomy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Overshooting at low Péclet number</title>
+      <link>https://adamjermyn.com/posts/ideas25/</link>
+      <pubDate>Mon, 15 Aug 2022 09:53:44 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/ideas25/</guid>
+      <description>I sometimes have research ideas that I think are cool, but that don’t make sense for me to pursue. I generally just make a note of them and move on. This is the 25th post in a series describing some of the ideas I’ve accumulated. This idea is based on discussions and calculations with Matteo Cantiello, Daniel Lecoanet, Evan Anders, Eoin Farrell, Yan-Fei Jiang, Lars Bildsten, and Will Schultz.
+Overshooting at low Péclet number What&amp;rsquo;s the idea?</description>
+    </item>
+    
     <item>
       <title>What saturates the centrifugal instability?</title>
       <link>https://adamjermyn.com/posts/ideas24/</link>

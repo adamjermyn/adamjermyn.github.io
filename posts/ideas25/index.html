@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="author" content="Adam Jermyn">
+		<meta name="description" content="Site Description">
+		<meta name="generator" content="Hugo 0.92.2" />
+		<title>Overshooting at low Péclet number &middot; Adam Jermyn</title>
+		<link rel="shortcut icon" href="https://adamjermyn.com/images/favicon.ico">
+		<link rel="stylesheet" href="https://adamjermyn.com/css/style.css">
+		<link rel="stylesheet" href="https://adamjermyn.com/css/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://adamjermyn.com/css/font-awesome.min.css">
+		
+
+		
+		<link href="https://adamjermyn.com/index.xml" rel="alternate" type="application/rss+xml" title="Adam Jermyn" />
+		
+
+		
+
+                
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-186473758-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+		
+                <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+
+        <a href='https://adamjermyn.com/'>About</a>
+	<a href='https://adamjermyn.com/posts'>Posts</a>
+	<a href='https://adamjermyn.com/tags'>Tags</a>
+        <a href='https://adamjermyn.com/software'>Software</a>
+        <a href='https://adamjermyn.com/workflow'>Workflow</a>
+
+	
+
+</nav>
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Overshooting at low Péclet number
+                    </h1>
+                    <h2 class="headline">
+		    
+                     Aug 15, 2022 09:53 
+                    · 357 words
+                    · 2 minute read
+                      <span class="tags">
+                      
+                      
+                          
+                              <a href="https://adamjermyn.com/tags/astronomy">astronomy</a>
+                          
+                              <a href="https://adamjermyn.com/tags/science">science</a>
+                          
+                              <a href="https://adamjermyn.com/tags/research">research</a>
+                          
+                      
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                <section id="post-body">
+                    <p>I sometimes have research ideas that I think are cool, but that don’t make sense for me to pursue. I generally just make a note of them and move on. This is the 25th post in a series describing some of the ideas I’ve accumulated. This idea is based on discussions and calculations with Matteo Cantiello, Daniel Lecoanet, Evan Anders, Eoin Farrell, Yan-Fei Jiang, Lars Bildsten, and Will Schultz.</p>
+<h2 id="overshooting-at-low-péclet-number">Overshooting at low Péclet number</h2>
+<h3 id="whats-the-idea">What&rsquo;s the idea?</h3>
+<p>Convection zones are often bounded on one side or the other by a stably stratified layer. Usually this stable stratification prevent much mixing/turbulence from developing, so that the only signatures of the convection that propagate through the stable layer are waves.</p>
+<p>At low Péclet number, however, the thermal diffusivity is large so plumes of material moving through the stable layer rapidly equilibrate to the entropy of their surroundings. This reduces the buoyant stabilization force, allowing material to move more freely through the stable layer.</p>
+<h3 id="why-is-this-important">Why is this important?</h3>
+<p>Many stars have stably stratified layers above convection zones, particularly in massive stars with <a href="https://arxiv.org/abs/2206.00011">subsurface convection zones</a>. In these stars, any motion we see at the surface must have propagated through a low-Péclet stable layer first, so understanding that propagation matters for connecting theories of convection with observations of e.g. <a href="https://arxiv.org/abs/2102.05670">surface motion</a>.</p>
+<h3 id="how-can-i-get-started">How can I get started?</h3>
+<p>I think this problem really requires simulations. The intuition here is that at zero Péclet number the inviscid equations do not support waves (e.g. there is no linearized limit). It follows that nonlinearities matter, and that suggests performing numerical simulations.</p>
+<p>The setup I&rsquo;d suggest is:</p>
+<ul>
+<li>Input a random forcing at the bottom of a stably stratified domain with low Péclet number.
+<ul>
+<li>The precise forcing shouldn&rsquo;t matter. I&rsquo;d just make sure there&rsquo;s some power at all horizontal wavevectors.</li>
+</ul>
+</li>
+<li>This problem matters the most in stellar envelopes, so a Cartesian box geometry is fine.</li>
+<li>Radiation transport may matter in very massive stars, but for a start I&rsquo;d ignore that.</li>
+</ul>
+<p>The outputs of interest are:</p>
+<ul>
+<li>How the kinetic energy and spectrum vary as a function of height in the domain.
+<ul>
+<li>How (if at all) density stratification affects these.</li>
+</ul>
+</li>
+</ul>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fadamjermyn.com%2fposts%2fideas25%2f - Overshooting%20at%20low%20P%c3%a9clet%20number by @AdamSJermyn"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/adamjermyn">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/AdamSJermyn">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+        
+	        <center><a class="cta" href="https://adamjermyn.com/index.xml">Subscribe</a></center>
+        
+    <p class="small">
+    
+       © Copyright 2022 Adam Jermyn
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://adamjermyn.com/js/jquery-3.3.1.min.js"></script>
+<script src="https://adamjermyn.com/js/main.js"></script>
+<script src="https://adamjermyn.com/js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>

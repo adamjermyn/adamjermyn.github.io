@@ -1,0 +1,39 @@
++++
+title = "Overshooting at low Péclet number"
+date = 2022-08-15T09:53:44-04:00
+tags = ["astronomy","science","research"]
+categories = [""]
+draft = false
+
++++
+
+I sometimes have research ideas that I think are cool, but that don’t make sense for me to pursue. I generally just make a note of them and move on. This is the 25th post in a series describing some of the ideas I’ve accumulated. This idea is based on discussions and calculations with Matteo Cantiello, Daniel Lecoanet, Evan Anders, Eoin Farrell, Yan-Fei Jiang, Lars Bildsten, and Will Schultz.
+
+## Overshooting at low Péclet number
+
+### What's the idea?
+
+Convection zones are often bounded on one side or the other by a stably stratified layer. Usually this stable stratification prevent much mixing/turbulence from developing, so that the only signatures of the convection that propagate through the stable layer are waves.
+
+At low Péclet number, however, the thermal diffusivity is large so plumes of material moving through the stable layer rapidly equilibrate to the entropy of their surroundings. This reduces the buoyant stabilization force, allowing material to move more freely through the stable layer.
+
+### Why is this important?
+
+Many stars have stably stratified layers above convection zones, particularly in massive stars with [subsurface convection zones](https://arxiv.org/abs/2206.00011). In these stars, any motion we see at the surface must have propagated through a low-Péclet stable layer first, so understanding that propagation matters for connecting theories of convection with observations of e.g. [surface motion](https://arxiv.org/abs/2102.05670).
+
+### How can I get started?
+
+I think this problem really requires simulations. The intuition here is that at zero Péclet number the inviscid equations do not support waves (e.g. there is no linearized limit). It follows that nonlinearities matter, and that suggests performing numerical simulations.
+
+The setup I'd suggest is:
+
+- Input a random forcing at the bottom of a stably stratified domain with low Péclet number.
+  - The precise forcing shouldn't matter. I'd just make sure there's some power at all horizontal wavevectors.
+- This problem matters the most in stellar envelopes, so a Cartesian box geometry is fine.
+- Radiation transport may matter in very massive stars, but for a start I'd ignore that.
+
+The outputs of interes are:
+
+- How the kinetic energy and spectrum vary as a function of height in the domain.
+  - How (if at all) density stratification affects these.
+

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="author" content="Adam Jermyn">
+		<meta name="description" content="Site Description">
+		<meta name="generator" content="Hugo 0.92.2" />
+		<title>Conditioning_fine_tuning &middot; Adam Jermyn</title>
+		<link rel="shortcut icon" href="https://adamjermyn.com/images/favicon.ico">
+		<link rel="stylesheet" href="https://adamjermyn.com/css/style.css">
+		<link rel="stylesheet" href="https://adamjermyn.com/css/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://adamjermyn.com/css/font-awesome.min.css">
+		
+
+		
+		<link href="https://adamjermyn.com/index.xml" rel="alternate" type="application/rss+xml" title="Adam Jermyn" />
+		
+
+		
+
+                
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-186473758-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+		
+                <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+
+        <a href='https://adamjermyn.com/'>About</a>
+	<a href='https://adamjermyn.com/posts'>Posts</a>
+	<a href='https://adamjermyn.com/tags'>Tags</a>
+        <a href='https://adamjermyn.com/software'>Software</a>
+        <a href='https://adamjermyn.com/workflow'>Workflow</a>
+
+	
+
+</nav>
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Conditioning_fine_tuning
+                    </h1>
+                    <h2 class="headline">
+		    
+                     Aug 17, 2022 16:55 
+                    · 1113 words
+                    · 6 minute read
+                      <span class="tags">
+                      
+                      
+                          
+                              <a href="https://adamjermyn.com/tags/ai-safety">AI Safety</a>
+                          
+                              <a href="https://adamjermyn.com/tags/ai">AI</a>
+                          
+                              <a href="https://adamjermyn.com/tags/research">research</a>
+                          
+                      
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                <section id="post-body">
+                    <p><em>Posted to the</em> <a href="https://www.alignmentforum.org/posts/chevXfQmRYrTZnj8r/conditioning-prompts-and-fine-tuning">AI Alignment Forums</a>.</p>
+<p><em>(Thanks to Evan Hubinger and Nicholas Schiefer for comments on these ideas.)</em></p>
+<p>These are some notes on the relation between conditioning language models, prompting, and fine-tuning. The key takeaways are:</p>
+<ol>
+<li>Prompting and fine-tuning can both be used to condition language models.</li>
+<li>Prompting is quite restricted in the kinds of conditionals it can achieve.</li>
+<li>Fine-tuning can implement arbitrary conditionals in principle, though not in practice.</li>
+<li>In practice fine-tuning can still implement more kinds of conditionals than prompting.</li>
+<li>We don&rsquo;t understand how fine-tuning conditionals generalize, which seems dangerous.</li>
+</ol>
+<h1 id="conditioning">Conditioning</h1>
+<p>We can think of a language model as specifying a probability distribution π(x), where x is a sequence of tokens of fixed length N (the length of the context window). We generate text by sampling sequences from π.</p>
+<p>Sometimes we don’t want to just sample from a language model. Instead, we want to <em>condition</em> the model on some facts about the sequence x. We can write the conditioned distribution as</p>
+<p>π(x|c(x))</p>
+<p>where c(x) encodes some constraints on x. For instance c(x) might require that the first token is “Apple”, or that the 7th and 12th tokens are the same, etc.</p>
+<h2 id="some-conditions-are-easy-some-are-hard">Some conditions are easy, some are hard</h2>
+<p>It’s easy to sample from a language model conditioned on the first two tokens being the same, but not all conditionals are so straightforward. Suppose we condition on the sequence x beginning with the factorization of a large composite number. There exist valid sequences unambiguously satisfying the conditional, but sampling them is hard if we don&rsquo;t know the factorization ahead of time. So there are limits to the kinds of conditionals we can apply in practice.</p>
+<h1 id="prompting">Prompting</h1>
+<p>A prompt is a very restricted kind of conditional where the condition is that certain tokens in x are known in advance. For instance, we might specify that the first four words are “Mary had a little”, or that the last three words are “happily ever after.”</p>
+<p>Prompts are nice in a few ways:</p>
+<ul>
+<li>It’s easy to sample from a language model given an arbitrary prompt.</li>
+<li>We sort of understand what prompts do. A prompt asks the model to predict the output of a text-generation process <strong>given that it knows the values of the fixed tokens</strong>.</li>
+</ul>
+<p>The downside with prompting is that there are lots of conditionals we can’t turn into prompts. For instance:</p>
+<ul>
+<li>Sample text from the model that humans will rate as having positive sentiment.</li>
+<li>Sample text from the model that never involves violence.</li>
+<li>Sample text from the model that contains a valid chess game.</li>
+</ul>
+<p>None of these can be expressed in terms of fixed tokens in the context window.</p>
+<h1 id="fine-tuning">Fine-Tuning</h1>
+<p>Instead of prompting, we can fine-tune a model, either with an explicit reward function or with Reinforcement Learning from Human Feedback (RLHF). We start with a pre-trained model, then fine-tune it to maximize either an explicit or a learned reward.</p>
+<p>Subject to actually converging to the optimum distribution, fine-tuning with a KL penalty is a <a href="https://www.alignmentforum.org/posts/eoHbneGvqDu25Hasc/rl-with-kl-penalties-is-better-seen-as-bayesian-inference">form</a> of variational bayesian inference. The result is a variational approximation of the Bayesian update on human feedback using the pre-trained model as a prior. That is, we obtain a new model which produces the probability distribution</p>
+<p>π′(x)∝π(x)L(x)</p>
+<p>where the likelihood is L(x)=er(x)/β, β is the KL penalty weight, and r(x) is the reward for sequence x. A more formal discussion was given by <a href="https://arxiv.org/pdf/2205.11275.pdf">Korbak, Perez &amp; Buckley</a>.</p>
+<h2 id="fine-tuning-can-approximate-prompts">Fine-tuning can approximate prompts</h2>
+<p>Fine-tuning can approximate any conditional a prompt can achieve. To see this, note that every prompt consists of setting tokens at some positions i∈S to values yi, where the indices in S form a subset of the context window. A prompt in this form is approximated by fine-tuning on the reward function</p>
+<p>r(x)≡λ∑i∈Sδxi,yi</p>
+<p>where δxi,yi=1 if xi=yi and is zero otherwise. In the limit of large λ, fine-tuning on this reward function amounts to providing enormous evidence in favor of the desired token values, which is equivalent to conditioning with a prompt that directly fixes those tokens.</p>
+<h2 id="fine-tuning-can-approximate-any-conditional">Fine-tuning can approximate any conditional</h2>
+<p>With appropriate choices of the reward r(x) we can achieve any shift in the probability distribution that doesn&rsquo;t expand the support of π(x), and so in principle fine-tuning can approximate any conditional.</p>
+<h2 id="some-conditions-are-easy-some-are-hard-1">Some conditions are easy, some are hard</h2>
+<p>In practice some conditionals are hard to achieve because they require an unrealistically large number of samples for fine-tuning to converge to the full Bayesian update. For instance it is hard to fine-tune on the reward corresponding to “the sequence x begin with a factorization of a large composite number” because it is takes many tries to find an x satisfying the conditional.</p>
+<p>Still, there are many kinds of conditionals that fine-tuning can access in practice. For instance, RLHF can condition on positive human sentiment rating, or on not containing malicious plans.</p>
+<p>More generally, fine-tuning seems to be good for conditioning on properties that are:</p>
+<ol>
+<li>Easy to identify/evaluate.</li>
+<li>Not too rare under the initial distribution π(x) (or some pre-conditioned version of this, e.g. via prompts).</li>
+</ol>
+<h2 id="generalization-concerns">Generalization Concerns</h2>
+<p>Because fine-tuning with a KL penalty implements Bayesian updates, every reward function describes a conditional of the form “condition on the following sequences being more/less likely according to their reward”. Unfortunately we may not understand at a deeper level what this conditional means.</p>
+<p>In particular, it is not obvious how this conditional generalizes. Consider RLHF with a sentiment reward. There are multiple ways a model could interpret the implied conditional:</p>
+<ol>
+<li>Positive-sentiment text is more likely, so humans are kinder in the world than the pre-training distribution suggested.</li>
+<li>Positive-sentiment text is more likely, so there are legal restrictions on the kinds of text that are recorded.</li>
+</ol>
+<p>These two interpretations generalize very differently. For instance (1) could increase the probability of text describing humans helping each other while (2) could decrease that probability by implying a world with little social trust.</p>
+<p>This sort of generalization ambiguity seems really dangerous, because we could end up with very different behavior from what we intended in specifying the reward function or providing feedback.</p>
+<h1 id="summary">Summary</h1>
+<p>My key takeaways are:</p>
+<ol>
+<li>Prompting and fine-tuning can both be used to condition language models.</li>
+<li>Prompting is quite restricted in the kinds of conditionals it can achieve.</li>
+<li>Fine-tuning can implement arbitrary conditionals in principle, though not in practice.</li>
+<li>In practice fine-tuning can still implement more kinds of conditionals than prompting.</li>
+<li>We don&rsquo;t understand how fine-tuning conditionals generalize, which seems dangerous.</li>
+</ol>
+<p>(1-4) suggest that we will need some sort of fine-tuning/RLHF to achieve the kinds of complex conditionals that are useful in practice/for <a href="https://www.alignmentforum.org/posts/nXeLPcT9uhfG3TMPS/conditioning-generative-models">alignment schemes</a>. If so, (5) says we should try to figure out more about how fine-tuning conditionals generalize, because that&rsquo;s where a lot of the danger lies.</p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fadamjermyn.com%2fposts%2fconditioning_fine_tuning%2f - Conditioning_fine_tuning by @AdamSJermyn"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/adamjermyn">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/AdamSJermyn">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+        
+	        <center><a class="cta" href="https://adamjermyn.com/index.xml">Subscribe</a></center>
+        
+    <p class="small">
+    
+       © Copyright 2022 Adam Jermyn
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://adamjermyn.com/js/jquery-3.3.1.min.js"></script>
+<script src="https://adamjermyn.com/js/main.js"></script>
+<script src="https://adamjermyn.com/js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>

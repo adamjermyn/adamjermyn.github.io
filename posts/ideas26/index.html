@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="author" content="Adam Jermyn">
+		<meta name="description" content="Site Description">
+		<meta name="generator" content="Hugo 0.92.2" />
+		<title>Helium Flash and Surface Effects &middot; Adam Jermyn</title>
+		<link rel="shortcut icon" href="https://adamjermyn.com/images/favicon.ico">
+		<link rel="stylesheet" href="https://adamjermyn.com/css/style.css">
+		<link rel="stylesheet" href="https://adamjermyn.com/css/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://adamjermyn.com/css/font-awesome.min.css">
+		
+
+		
+		<link href="https://adamjermyn.com/index.xml" rel="alternate" type="application/rss+xml" title="Adam Jermyn" />
+		
+
+		
+
+                
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-186473758-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+		
+                <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+
+        <a href='https://adamjermyn.com/'>About</a>
+	<a href='https://adamjermyn.com/posts'>Posts</a>
+	<a href='https://adamjermyn.com/tags'>Tags</a>
+        <a href='https://adamjermyn.com/software'>Software</a>
+        <a href='https://adamjermyn.com/workflow'>Workflow</a>
+
+	
+
+</nav>
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Helium Flash and Surface Effects
+                    </h1>
+                    <h2 class="headline">
+		    
+                     Aug 17, 2022 11:42 
+                    · 523 words
+                    · 3 minute read
+                      <span class="tags">
+                      
+                      
+                          
+                              <a href="https://adamjermyn.com/tags/"></a>
+                          
+                      
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                <section id="post-body">
+                    <p>I sometimes have research ideas that I think are cool, but that don’t make sense for me to pursue. I generally just make a note of them and move on. This is the 26th post in a series describing some of the ideas I’ve accumulated. This idea is based on <a href="https://arxiv.org/abs/2206.13479">work I did</a> with Jim Fuller.</p>
+<h2 id="helium-flash-and-surface-effects">Helium Flash and Surface Effects</h2>
+<h3 id="whats-the-idea">What&rsquo;s the idea?</h3>
+<p>Stars below around $3 M_\odot$ exhibit a helium flash, in which degenerate helium in their cores ignites. This ignition runs away until degeneracy is lifted, producing enormous luminosities ($10^{9-10}L_\odot$). Despite the enormous energies involved, there are thought to be no immediate effects of the helium flash that can be observed at the surface, primarily because the thermal diffusion time from the core to the surface is very long compared with the flash itself.</p>
+<p>Internal gravity waves are a strong candidate to cause surface effects, though. Of order $10^{6-7}L_\odot$ of internal gravity waves are emitted by the helium convection zone at the peak of the flash, and these can travel ballistically to the surface. Along the way they damp, depositing large quantities of heat much higher up than thermal diffusion alone could manage. This heat deposition could cause effects at the surface, including potentially luminosity and radial velocity changes and mass loss.</p>
+<h3 id="why-is-this-important">Why is this important?</h3>
+<p>I&rsquo;m not sure that it&rsquo;s important, but it&rsquo;s definitely cool. It&rsquo;s just a really interesting combination of physics (waves, degenerate ignition, convection). The event rate in our galaxy is likely low, but if we knew what we were looking for it&rsquo;s possible we might be able to catch a star right as it goes through the helium flash.</p>
+<h3 id="how-can-i-get-started">How can I get started?</h3>
+<p>There have been proposals that the Helium flash causes <a href="https://adsabs.harvard.edu/full/1981ApJ...249L..35D">mass loss</a> and <a href="https://arxiv.org/abs/2009.01248">lithium depletion</a>, though as best we can tell the latter <a href="https://arxiv.org/abs/2206.13479">doesn&rsquo;t happen</a>.Jim and colleagues have worked on on <a href="https://arxiv.org/abs/1710.04251">wave-driven outbursts</a> in <a href="https://arxiv.org/abs/2205.03319">more massive stars</a>. When he and I tried to investigate the possibility of mass loss we ran into a bunch of challenges:</p>
+<ul>
+<li>The wave heat that gets deposited can modulate convection in the outer envelope.</li>
+<li>The wave heat can drive shocks in the outer envelope, and these can be challenging to resolve numerically.</li>
+</ul>
+<p>If I were continuing to study this problem, I&rsquo;d start by trying to get a more solid handle on how internal gravity waves deposit heat in evanescent regions. That seems core to the problem, because even a small fraction of the wave luminosity being deposited in the outer envelope can cause large changes to the thermal structure, can stop convection there (which may cause <em>more</em> wave heating), etc.</p>
+<p>It might also be useful to study this problem in e.g. hydrodynamics simulations. If I were doing this, I would set up a convection zone on top of a radiative zone. I would then pump a large luminosity of waves through the radiative zone from the lower boundary and see what that does to the convection zone. It could be tricky to get the damping scaled to match what happens in stars, but if it&rsquo;s doable this seems like the most direct way to study the phenomenon.</p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fadamjermyn.com%2fposts%2fideas26%2f - Helium%20Flash%20and%20Surface%20Effects by @AdamSJermyn"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/adamjermyn">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/AdamSJermyn">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+        
+	        <center><a class="cta" href="https://adamjermyn.com/index.xml">Subscribe</a></center>
+        
+    <p class="small">
+    
+       © Copyright 2022 Adam Jermyn
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://adamjermyn.com/js/jquery-3.3.1.min.js"></script>
+<script src="https://adamjermyn.com/js/main.js"></script>
+<script src="https://adamjermyn.com/js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>

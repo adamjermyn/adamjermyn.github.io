@@ -6,7 +6,20 @@
     <description>Recent content in AI Safety on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 17 Aug 2022 16:55:03 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/tags/ai-safety/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 26 Sep 2022 08:21:00 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/tags/ai-safety/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Brief Notes on Transformers</title>
+      <link>https://adamjermyn.com/posts/transformer_notes/</link>
+      <pubDate>Mon, 26 Sep 2022 08:21:00 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/transformer_notes/</guid>
+      <description>(Cross-posted from the AI Alignment Forum)*
+*These are just some notes I wrote while reading about transformers, which I thought might be a useful reference to others. Corrections welcome.
+Overview of Transformers Many transformer models have the following architecture:
+Data flows as follows:
+ We take tokens as inputs and pass them through an embedding layer. The embedding layer outputs its result into the residual stream (x0). This has dimension (C,E), where C is the number of tokens in the context window and E is the embedding dimension.</description>
+    </item>
+    
     <item>
       <title>Conditioning, Prompts, and Fine-Tuning</title>
       <link>https://adamjermyn.com/posts/conditioning_fine_tuning/</link>
@@ -127,19 +140,6 @@ In this story deception is all about the model having hidden behaviors that neve
       <description>(Thanks to Evan Hubinger for suggesting this problem and for comments on these ideas. Feedback is very welcome. Cross-posted from LessWrong.)
 The Setup Suppose we have a prior $p_{\rm good}(\mathrm{model})$ that we think is non-deceptive, such that we can sample from this prior and get good models that are inner-aligned.
 These models may, for instrumental purposes, need to themselves produce models (via searches/optimization/meta-learning). For instance we might ask an outer model to play poker.</description>
-    </item>
-    
-    <item>
-      <title>Brief Notes on Transformers</title>
-      <link>https://adamjermyn.com/posts/transformer_notes/</link>
-      <pubDate>Sat, 04 Jun 2022 08:21:00 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/transformer_notes/</guid>
-      <description>(Cross-posted from the AI Alignment Forum)*
-*These are just some notes I wrote while reading about transformers, which I thought might be a useful reference to others. Corrections welcome.
-Overview of Transformers Many transformer models have the following architecture:
-Data flows as follows:
- We take tokens as inputs and pass them through an embedding layer. The embedding layer outputs its result into the residual stream (x0). This has dimension (C,E), where C is the number of tokens in the context window and E is the embedding dimension.</description>
     </item>
     
     <item>

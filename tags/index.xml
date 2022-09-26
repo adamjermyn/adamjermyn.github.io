@@ -6,22 +6,67 @@
     <description>Recent content in Tags on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 19 Aug 2022 11:18:48 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 26 Sep 2022 08:21:00 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>geology</title>
-      <link>https://adamjermyn.com/tags/geology/</link>
-      <pubDate>Fri, 19 Aug 2022 11:18:48 -0400</pubDate>
+      <title>AI</title>
+      <link>https://adamjermyn.com/tags/ai/</link>
+      <pubDate>Mon, 26 Sep 2022 08:21:00 -0400</pubDate>
       
-      <guid>https://adamjermyn.com/tags/geology/</guid>
+      <guid>https://adamjermyn.com/tags/ai/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AI Safety</title>
+      <link>https://adamjermyn.com/tags/ai-safety/</link>
+      <pubDate>Mon, 26 Sep 2022 08:21:00 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/tags/ai-safety/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Language Models</title>
+      <link>https://adamjermyn.com/tags/language-models/</link>
+      <pubDate>Mon, 26 Sep 2022 08:21:00 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/tags/language-models/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Machine-Learning</title>
+      <link>https://adamjermyn.com/tags/machine-learning/</link>
+      <pubDate>Mon, 26 Sep 2022 08:21:00 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/tags/machine-learning/</guid>
       <description></description>
     </item>
     
     <item>
       <title>research</title>
       <link>https://adamjermyn.com/tags/research/</link>
-      <pubDate>Fri, 19 Aug 2022 11:18:48 -0400</pubDate>
+      <pubDate>Mon, 26 Sep 2022 08:21:00 -0400</pubDate>
       
       <guid>https://adamjermyn.com/tags/research/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Transformers</title>
+      <link>https://adamjermyn.com/tags/transformers/</link>
+      <pubDate>Mon, 26 Sep 2022 08:21:00 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/tags/transformers/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>geology</title>
+      <link>https://adamjermyn.com/tags/geology/</link>
+      <pubDate>Fri, 19 Aug 2022 11:18:48 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/tags/geology/</guid>
       <description></description>
     </item>
     
@@ -44,24 +89,6 @@
     </item>
     
     <item>
-      <title>AI</title>
-      <link>https://adamjermyn.com/tags/ai/</link>
-      <pubDate>Wed, 17 Aug 2022 16:55:03 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/tags/ai/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>AI Safety</title>
-      <link>https://adamjermyn.com/tags/ai-safety/</link>
-      <pubDate>Wed, 17 Aug 2022 16:55:03 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/tags/ai-safety/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>physics</title>
       <link>https://adamjermyn.com/tags/physics/</link>
       <pubDate>Wed, 29 Jun 2022 12:21:53 -0400</pubDate>
@@ -76,33 +103,6 @@
       <pubDate>Fri, 17 Jun 2022 09:21:45 -0400</pubDate>
       
       <guid>https://adamjermyn.com/tags/math/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Language Models</title>
-      <link>https://adamjermyn.com/tags/language-models/</link>
-      <pubDate>Sat, 04 Jun 2022 08:21:00 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/tags/language-models/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Machine-Learning</title>
-      <link>https://adamjermyn.com/tags/machine-learning/</link>
-      <pubDate>Sat, 04 Jun 2022 08:21:00 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/tags/machine-learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Transformers</title>
-      <link>https://adamjermyn.com/tags/transformers/</link>
-      <pubDate>Sat, 04 Jun 2022 08:21:00 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/tags/transformers/</guid>
       <description></description>
     </item>
     

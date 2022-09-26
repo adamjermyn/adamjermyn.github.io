@@ -6,7 +6,20 @@
     <description>Recent content in research on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 19 Aug 2022 11:18:48 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/tags/research/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 26 Sep 2022 08:21:00 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/tags/research/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Brief Notes on Transformers</title>
+      <link>https://adamjermyn.com/posts/transformer_notes/</link>
+      <pubDate>Mon, 26 Sep 2022 08:21:00 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/transformer_notes/</guid>
+      <description>(Cross-posted from the AI Alignment Forum)*
+*These are just some notes I wrote while reading about transformers, which I thought might be a useful reference to others. Corrections welcome.
+Overview of Transformers Many transformer models have the following architecture:
+Data flows as follows:
+ We take tokens as inputs and pass them through an embedding layer. The embedding layer outputs its result into the residual stream (x0). This has dimension (C,E), where C is the number of tokens in the context window and E is the embedding dimension.</description>
+    </item>
+    
     <item>
       <title>Why doesn&#39;t all the Uranium sink to the bottom of Earth?</title>
       <link>https://adamjermyn.com/posts/ideas28/</link>
@@ -319,19 +332,6 @@ What would happen if two AGN stars merged? What&amp;rsquo;s the idea? We think t
       <guid>https://adamjermyn.com/posts/astroideas11/</guid>
       <description>I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the eleventh post in a series describing some of the ideas I&amp;rsquo;ve accumulated.
 Does turbulence change nuclear burning in stars? What&amp;rsquo;s the idea? Nuclear burning rates are exponentially sensitive to temperature. Stellar models calculate the mean temperature at each point in a star, but there can be fluctuations about this mean due to turbulent motions.</description>
-    </item>
-    
-    <item>
-      <title>Brief Notes on Transformers</title>
-      <link>https://adamjermyn.com/posts/transformer_notes/</link>
-      <pubDate>Sat, 04 Jun 2022 08:21:00 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/transformer_notes/</guid>
-      <description>(Cross-posted from the AI Alignment Forum)*
-*These are just some notes I wrote while reading about transformers, which I thought might be a useful reference to others. Corrections welcome.
-Overview of Transformers Many transformer models have the following architecture:
-Data flows as follows:
- We take tokens as inputs and pass them through an embedding layer. The embedding layer outputs its result into the residual stream (x0). This has dimension (C,E), where C is the number of tokens in the context window and E is the embedding dimension.</description>
     </item>
     
     <item>

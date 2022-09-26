@@ -6,7 +6,20 @@
     <description>Recent content in Machine-Learning on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 11 May 2022 15:28:14 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 04 Jun 2022 08:21:00 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Brief Notes on Transformers</title>
+      <link>https://adamjermyn.com/posts/transformer_notes/</link>
+      <pubDate>Sat, 04 Jun 2022 08:21:00 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/transformer_notes/</guid>
+      <description>(Cross-posted from the AI Alignment Forum)*
+*These are just some notes I wrote while reading about transformers, which I thought might be a useful reference to others. Corrections welcome.
+Overview of Transformers Many transformer models have the following architecture:
+Data flows as follows:
+ We take tokens as inputs and pass them through an embedding layer. The embedding layer outputs its result into the residual stream (x0). This has dimension (C,E), where C is the number of tokens in the context window and E is the embedding dimension.</description>
+    </item>
+    
     <item>
       <title>Automatic Differentiation in MESA</title>
       <link>https://adamjermyn.com/posts/auto_diff_mesa/</link>

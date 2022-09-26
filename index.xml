@@ -363,6 +363,19 @@ Dynamical Time Warping for Isochrones What&amp;rsquo;s the idea? Dynamical time 
     </item>
     
     <item>
+      <title>Brief Notes on Transformers</title>
+      <link>https://adamjermyn.com/posts/transformer_notes/</link>
+      <pubDate>Sat, 04 Jun 2022 08:21:00 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/transformer_notes/</guid>
+      <description>(Cross-posted from the AI Alignment Forum)*
+*These are just some notes I wrote while reading about transformers, which I thought might be a useful reference to others. Corrections welcome.
+Overview of Transformers Many transformer models have the following architecture:
+Data flows as follows:
+ We take tokens as inputs and pass them through an embedding layer. The embedding layer outputs its result into the residual stream (x0). This has dimension (C,E), where C is the number of tokens in the context window and E is the embedding dimension.</description>
+    </item>
+    
+    <item>
       <title>Give the AI safe tools</title>
       <link>https://adamjermyn.com/posts/give_ai_tools/</link>
       <pubDate>Sat, 04 Jun 2022 08:21:00 -0400</pubDate>

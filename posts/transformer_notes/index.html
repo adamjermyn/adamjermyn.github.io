@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="author" content="Adam Jermyn">
+		<meta name="description" content="Site Description">
+		<meta name="generator" content="Hugo 0.92.2" />
+		<title>Brief Notes on Transformers &middot; Adam Jermyn</title>
+		<link rel="shortcut icon" href="https://adamjermyn.com/images/favicon.ico">
+		<link rel="stylesheet" href="https://adamjermyn.com/css/style.css">
+		<link rel="stylesheet" href="https://adamjermyn.com/css/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://adamjermyn.com/css/font-awesome.min.css">
+		
+
+		
+		<link href="https://adamjermyn.com/index.xml" rel="alternate" type="application/rss+xml" title="Adam Jermyn" />
+		
+
+		
+
+                
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-186473758-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+		
+                <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+
+        <a href='https://adamjermyn.com/'>About</a>
+	<a href='https://adamjermyn.com/posts'>Posts</a>
+	<a href='https://adamjermyn.com/tags'>Tags</a>
+        <a href='https://adamjermyn.com/software'>Software</a>
+        <a href='https://adamjermyn.com/workflow'>Workflow</a>
+
+	
+
+</nav>
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Brief Notes on Transformers
+                    </h1>
+                    <h2 class="headline">
+		    
+                     Jun 4, 2022 08:21 
+                    · 718 words
+                    · 4 minute read
+                      <span class="tags">
+                      
+                      
+                          
+                              <a href="https://adamjermyn.com/tags/ai-safety">AI Safety</a>
+                          
+                              <a href="https://adamjermyn.com/tags/ai">AI</a>
+                          
+                              <a href="https://adamjermyn.com/tags/research">research</a>
+                          
+                              <a href="https://adamjermyn.com/tags/language-models">Language Models</a>
+                          
+                              <a href="https://adamjermyn.com/tags/transformers">Transformers</a>
+                          
+                              <a href="https://adamjermyn.com/tags/machine-learning">Machine Learning</a>
+                          
+                      
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                <section id="post-body">
+                    <p><em>(Cross-posted from the <a href="https://www.alignmentforum.org/posts/rEPnce975Fid9v5qv/brief-notes-on-transformers">AI Alignment Forum</a>)</em>*</p>
+<p>*<em>These are just some notes I wrote while reading about transformers, which I thought might be a useful reference to others. Corrections welcome.</em></p>
+<h1 id="overview-of-transformers">Overview of Transformers</h1>
+<p>Many transformer models have <a href="https://transformer-circuits.pub/2021/framework/index.html#architecture-attn-as-movement">the following architecture</a>:</p>
+<img src="../../images/transformer_notes.assets/c7052b9cfde21fd125b70380c3289ddab77b50cde834556c.png" alt="c7052b9cfde21fd125b70380c3289ddab77b50cde834556c" style="max-width:100%;max-height:100%;display:block;margin-left:auto;margin-right:auto"/>
+<p>Data flows as follows:</p>
+<ol>
+<li>We take tokens as inputs and pass them through an embedding layer. The embedding layer outputs its result into the residual stream (x0). This has dimension (C,E), where C is the number of tokens in the context window and E is the embedding dimension.</li>
+<li>The residual stream is processed by the attention mechanism (H) and the result is added back into the residual stream (i.e. x1 = H(x0) + x0).</li>
+<li>The residual stream is processed by an MLP layer (MLP) and the result is added back into the residual stream (i.e. x2 = MLP(x1) + x1).</li>
+<li>Steps (2) and (3) together define a “residual block”. The body of the transformer is formed of a stack of these blocks in series.</li>
+<li>After the final residual block, we apply an unembedding transformation to produce logits, which represent the relative probabilities of different output tokens.</li>
+</ol>
+<h1 id="attention-mechanism">Attention Mechanism</h1>
+<p>The attention mechanism (H) is divided into multiple attention heads $h_j$, which act in parallel. That is,</p>
+<p>$$ H(x) = \sum_j h_j(x) $$</p>
+<p>Note that this decomposition is only useful if attention heads are non-linear. Fortunately they are! Each attention head is of the form</p>
+<p>$$ h_{ij}(x) = \sum_{kl} A_{ik}(x) S_{jl} x_{kl} $$</p>
+<p>That is, $A_{ik}(x)$ mixes across tokens (which is the first index of $x$) and $S_{jl}$ transforms each token in parallel. Another way we could have written this is</p>
+<p>$$ h(x) = A(x)\cdot x \cdot S $$</p>
+<p>The matrix $S$ is also written in more common notation as $W_O W_V$, which are sometimes called the output and value weights. In general though $S$ is just some low-rank matrix that we learn. $S$ has shape (E,E) because it transforms in the embedding space.</p>
+<p>The matrix $A$ is where the nonlinearity of attention comes in. This is given by</p>
+<p>$$ A=\mathrm{softmax}(x Y x^T) $$</p>
+<p>where $Y$ is written in more common notation as $W_Q^TW_K/d_k$, which are sometimes called the query and key weights. The dimension $d_k$ is the dimension of the output of $W_K$, and so is the rank of $Y$. As with $S$, $Y$ is just some low-rank matrix that we learn. The softmax acts on the whole matrix.</p>
+<h1 id="mlp-layer">MLP Layer</h1>
+<p>The MLP (multilayer perceptron) layer processes the residual stream using the same MLP for each token index. That is, there is no communication between tokens in the MLP layer. All this layer does is transform in the embedding space.</p>
+<h1 id="positional-encodings">Positional Encodings</h1>
+<p>A quirk of the attention mechanism is that it is covariant with respect to shuffling the token index. That is, if $P$ is a permutation matrix then</p>
+<p>$$ h(P x) = P h(x) $$</p>
+<p>To see this, we expand the left-hand side:</p>
+<p>$$ h(Px) = A(Px) \cdot Px \cdot S = \mathrm{softmax}((Px)Y(Px)^T)\cdot (Px) \cdot S $$</p>
+<p>The permutations don’t change any of the values inside the softmax, so they can be pulled outside:</p>
+<p>$$ = P \mathrm{softmax}(x Y x^T) P^T P x S $$</p>
+<p>The transpose of a permutation matrix is its inverse, so $P^T P = I$ and</p>
+<p>$$ h(P x) = P h(x) $$</p>
+<p>Similarly, the MLP layer acts on each token individually and so doesn’t know anything about their orderings.</p>
+<p>What this means is that there is no information about token ordering in the transformer unless we put it there in the embedding space. This is what positional encodings do.</p>
+<p>A typical positional encoding is given by adding a position-dependent vector to the embedding of each token. A common choice is</p>
+<p>$$ e_{k,j&lt;E/2}=\sin(k/N^{2j/E})\e_{k,j\geq E/2}=\cos(k/N^{2(j-d/2)/E}) $$</p>
+<p>where $k$ is the token index in the context window and $j$ indexes the embedding space. Here $N &gt; C$ so that this is not a periodic function of $k$. The reason this choice is common is that there is a linear transformation for shifting $k \rightarrow k+ 1$, identical across all $k$, which makes it easy for the model to learn to compare adjacent tokens. If this is not apparent note that pairs of $j$ offset by $d/2$ give a representation of a complex number $e^{ik/N^{2j/E}}$, and we can increment $k$ by multiplying by a fixed diagonal operator $e^{i/N^{2j/E}}$.</p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fadamjermyn.com%2fposts%2ftransformer_notes%2f - Brief%20Notes%20on%20Transformers by @AdamSJermyn"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/adamjermyn">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/AdamSJermyn">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+        
+	        <center><a class="cta" href="https://adamjermyn.com/index.xml">Subscribe</a></center>
+        
+    <p class="small">
+    
+       © Copyright 2022 Adam Jermyn
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://adamjermyn.com/js/jquery-3.3.1.min.js"></script>
+<script src="https://adamjermyn.com/js/main.js"></script>
+<script src="https://adamjermyn.com/js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>

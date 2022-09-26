@@ -134,7 +134,19 @@
     <loc>https://adamjermyn.com/posts/astroideas10/</loc>
     <lastmod>2022-06-04T12:32:26-04:00</lastmod>
   </url><url>
+    <loc>https://adamjermyn.com/posts/transformer_notes/</loc>
+    <lastmod>2022-06-04T08:21:00-04:00</lastmod>
+  </url><url>
     <loc>https://adamjermyn.com/posts/give_ai_tools/</loc>
+    <lastmod>2022-06-04T08:21:00-04:00</lastmod>
+  </url><url>
+    <loc>https://adamjermyn.com/tags/language-models/</loc>
+    <lastmod>2022-06-04T08:21:00-04:00</lastmod>
+  </url><url>
+    <loc>https://adamjermyn.com/tags/machine-learning/</loc>
+    <lastmod>2022-06-04T08:21:00-04:00</lastmod>
+  </url><url>
+    <loc>https://adamjermyn.com/tags/transformers/</loc>
     <lastmod>2022-06-04T08:21:00-04:00</lastmod>
   </url><url>
     <loc>https://adamjermyn.com/posts/astroideas9/</loc>
@@ -168,9 +180,6 @@
     <lastmod>2022-05-16T07:34:19-04:00</lastmod>
   </url><url>
     <loc>https://adamjermyn.com/posts/auto_diff_mesa/</loc>
-    <lastmod>2022-05-11T15:28:14-04:00</lastmod>
-  </url><url>
-    <loc>https://adamjermyn.com/tags/machine-learning/</loc>
     <lastmod>2022-05-11T15:28:14-04:00</lastmod>
   </url><url>
     <loc>https://adamjermyn.com/tags/tools/</loc>

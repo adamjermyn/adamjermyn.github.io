@@ -86,7 +86,7 @@ if (!doNotTrack) {
                     <h2 class="headline">
 		    
                      Sep 26, 2022 08:21 
-                    · 718 words
+                    · 719 words
                     · 4 minute read
                       <span class="tags">
                       
@@ -149,7 +149,8 @@ if (!doNotTrack) {
 <p>Similarly, the MLP layer acts on each token individually and so doesn’t know anything about their orderings.</p>
 <p>What this means is that there is no information about token ordering in the transformer unless we put it there in the embedding space. This is what positional encodings do.</p>
 <p>A typical positional encoding is given by adding a position-dependent vector to the embedding of each token. A common choice is</p>
-<p>$$ e_{k,j&lt;E/2}=\sin(k/N^{2j/E})\e_{k,j\geq E/2}=\cos(k/N^{2(j-d/2)/E}) $$</p>
+<p>$$ e_{k,j&lt;E/2}=\sin(k/N^{2j/E})$$</p>
+<p>$$e_{k,j\geq E/2}=\cos(k/N^{2(j-d/2)/E}) $$</p>
 <p>where $k$ is the token index in the context window and $j$ indexes the embedding space. Here $N &gt; C$ so that this is not a periodic function of $k$. The reason this choice is common is that there is a linear transformation for shifting $k \rightarrow k+ 1$, identical across all $k$, which makes it easy for the model to learn to compare adjacent tokens. If this is not apparent note that pairs of $j$ offset by $d/2$ give a representation of a complex number $e^{ik/N^{2j/E}}$, and we can increment $k$ by multiplying by a fixed diagonal operator $e^{i/N^{2j/E}}$.</p>
 
                 </section>

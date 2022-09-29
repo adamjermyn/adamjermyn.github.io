@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AI Capabilities on Adam Jermyn</title>
+    <link>https://adamjermyn.com/tags/ai-capabilities/</link>
+    <description>Recent content in AI Capabilities on Adam Jermyn</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 29 Sep 2022 14:27:25 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/tags/ai-capabilities/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI risk in a few words</title>
+      <link>https://adamjermyn.com/posts/left_turn/</link>
+      <pubDate>Thu, 29 Sep 2022 14:27:25 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/left_turn/</guid>
+      <description>Thanks to Evan Hubinger for comments on these ideas. Posted on the AI Alignment Forum.
+Introduction A “sharp left turn” is a point where capabilities generalize beyond alignment. In a sharp left turn, an AI becomes much more capable than aligned, and so starts to exploit flaws in its alignment.
+This can look like Goodharting, where strong optimization pressure causes outer alignment failure because the base goal isn’t identical to what we want.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="author" content="Adam Jermyn">
+		<meta name="description" content="Site Description">
+		<meta name="generator" content="Hugo 0.92.2" />
+		<title>AI risk in a few words &middot; Adam Jermyn</title>
+		<link rel="shortcut icon" href="https://adamjermyn.com/images/favicon.ico">
+		<link rel="stylesheet" href="https://adamjermyn.com/css/style.css">
+		<link rel="stylesheet" href="https://adamjermyn.com/css/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://adamjermyn.com/css/font-awesome.min.css">
+		
+
+		
+		<link href="https://adamjermyn.com/index.xml" rel="alternate" type="application/rss+xml" title="Adam Jermyn" />
+		
+
+		
+
+                
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-186473758-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+		
+                <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+
+        <a href='https://adamjermyn.com/'>About</a>
+	<a href='https://adamjermyn.com/posts'>Posts</a>
+	<a href='https://adamjermyn.com/tags'>Tags</a>
+        <a href='https://adamjermyn.com/software'>Software</a>
+        <a href='https://adamjermyn.com/workflow'>Workflow</a>
+
+	
+
+</nav>
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        AI risk in a few words
+                    </h1>
+                    <h2 class="headline">
+		    
+                     Sep 29, 2022 14:27 
+                    · 1060 words
+                    · 5 minute read
+                      <span class="tags">
+                      
+                      
+                          
+                              <a href="https://adamjermyn.com/tags/ai-safety">AI Safety</a>
+                          
+                              <a href="https://adamjermyn.com/tags/ai-capabilities">AI Capabilities</a>
+                          
+                              <a href="https://adamjermyn.com/tags/deceptive-alignment">Deceptive Alignment</a>
+                          
+                      
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                <section id="post-body">
+                    <p><em>Thanks to Evan Hubinger for comments on these ideas. Posted on the <a href="https://www.alignmentforum.org/posts/BCyK2GQKiiuYdvkst/it-matters-when-the-first-sharp-left-turn-happens">AI Alignment Forum</a>.</em></p>
+<h1 id="introduction">Introduction</h1>
+<p>A “sharp left turn” is a point where <a href="https://www.alignmentforum.org/posts/GNhMPAWcfBCASy8e6/a-central-ai-alignment-problem-capabilities-generalization">capabilities generalize beyond alignment</a>. In a sharp left turn, an AI becomes much more capable than aligned, and so starts to exploit flaws in its alignment.</p>
+<p>This can look like <a href="https://www.alignmentforum.org/tag/goodhart-s-law">Goodharting</a>, where strong optimization pressure causes outer alignment failure because the base goal isn’t identical to what we want. Or it can look like <a href="https://www.alignmentforum.org/posts/zthDPAjh9w6Ytbeks/deceptive-alignment">deceptive alignment</a>, where the model is aligned to proxy goals that aren’t identical to the base goal, but we don’t notice until the model is capable enough to make the proxies fail.</p>
+<p>However they happen, sharp left turns are bad.</p>
+<p>An important question, though, is: when will the first sharp left turn happen?</p>
+<h1 id="timing">Timing</h1>
+<p>Consider three scenarios:</p>
+<ol>
+<li><strong>Weak:</strong> The sharp left turn happens before models are able to cause existential risks. For instance, maybe GPT-4 has a sharp left turn but isn’t able to reliably execute on its plans.</li>
+<li><strong>Strong:</strong> The sharp left turn happens once capabilities are very super-human and dangerous if misused. In this world AI’s are doing the bulk of the world’s scientific research by the time alignment unravels.</li>
+<li><strong>Human-level:</strong> The sharp left turn happens while capabilities are around human level, meaning both dangerous and not game-changingly helpful for research.</li>
+</ol>
+<p>I think that the most dangerous of these is the human-level world.</p>
+<p>In the “weak” scenario, we get to see the sharp left turn coming. We potentially get lots of experience with models looking aligned and then that alignment failing with increasing scale. In this world, we effectively get multiple shots at alignment because the first badly-misaligned models just aren’t that dangerous. We get to experiment with deceptively aligned models and get a grounded empirical understanding of why models become deceptively aligned and how we might stop that. In this world, alignment research gets a chance to become a paradigmatic scientific field before the models get too capable.</p>
+<p>In the “strong” scenario, we get to do alignment research with super-human models that are still aligned. In this world, we don’t have to solve the technical challenge of alignment entirely on our own. Alignment research potentially gets much further along before we have to have an airtight solution and prevent sharp left turns.</p>
+<p>Both of these seem like pretty hopeful worlds. By contrast, the world where sharp left turns happen near human-level capabilities seems pretty dangerous. In that world, we don’t get to study things like deceptive alignment empirically. We don’t get to leverage powerful AI researcher tools. We have to solve the problem entirely on our own, and we have to do it without any useful empirical feedback. This seems really bad.</p>
+<h1 id="scales">Scales</h1>
+<p>The timing of sharp left turns depends on a few capability scales, some of which I conflated above:</p>
+<ol>
+<li>The <strong>danger scale</strong>, above which the model is capable enough to pose an existential risk.</li>
+<li>The <strong>research scale</strong>, above which the model is able to do scientific research better than humans.</li>
+<li>The <strong>left-turn scale</strong>, above which the model is able to undergo a sharp left turn. A useful anchor here is given by deceptive alignment, which suggests the scale at which a model can successfully reason about its own training process.</li>
+</ol>
+<p>The three scenarios I outlined are characterized by different orderings of these scales:</p>
+<ol>
+<li><strong>Weak:</strong> (left-turn &lt; danger)</li>
+<li><strong>Strong:</strong> (research &lt; left-turn)</li>
+<li><strong>Human-level:</strong> (left-turn ~ research, left-turn ~ danger)</li>
+</ol>
+<p>There can be other orderings, leading to other outcomes.  For instance, we could live in a world with (danger &lt; left-turn &lt; research). In that world, the left turn happens at a scale that’s dangerous but incapable of super-human research. Imagine a model that’s very capable of developing and executing plans using information freely available on the internet. Such a model could pose an existential risk by engineering pathogens that we already know how to make, without doing any novel R&amp;D, and deploying them with competent but not superhuman logistics.</p>
+<h1 id="capabilities-are-sort-of-multi-dimensional">Capabilities are (sort of) multi-dimensional</h1>
+<p>Of course capabilities aren’t strictly one-dimensional, so talking about “the scale of capabilities” conflates a few different ideas. Concretely, I think a model with fixed research ability could be either more or less dangerous, depending on other dimensions of its capabilities like “competence interacting with people” and “robust plan design”. These skills vary significantly in humans, and it seems plausible that we can engineer models to be more or less capable along these different dimensions.</p>
+<p>That’s not to say that there’s complete freedom here. There’s definitely correlation between capabilities (e.g. lots of capabilities improve with scale). And in the limit of extreme research ability a model should be able to learn whatever other capabilities it needs. Intelligence is closely related to general purpose optimization ability, and to the extent that this holds we should expect different capabilities to scale together.</p>
+<p>But we might live in worlds where it only takes models twice as capable as humans to solve the technical challenges of alignment, and those models may not be reflectively stable and may have lots of flawed abilities. In those worlds there’s a lot of benefit to thinking about which capabilities we want to weaken in models, and to trying to arrange that.</p>
+<h1 id="outlook">Outlook</h1>
+<p>If we could know when to expect a sharp left turn that might change what we do. If we knew that a sharp left turn would happen long before dangerous capabilities, we might focus on developing alignment benchmarks and more empirical study of alignment failures. If we knew that it would happen long after powerful research capabilities, we might focus on applying those capabilities towards alignment work.</p>
+<p>It seems plausible we can learn more about this timing question by <a href="https://www.alignmentforum.org/posts/2AvX8cX47CdwjbkjY/we-may-be-able-to-see-sharp-left-turns-coming">studying low-likelihood outputs</a>, studying how one-or-multi-dimensional capabilities are, and reasoning about the kinds of capabilities that are dangerous and the kind that are helpful.</p>
+<p>Along similar lines, even if we don’t know when to expect a sharp left turn, there may be things we can do to shift that timing in a favorable direction. For instance, we can put weak models in environments that encourage alignment failure so as to study left turns empirically. And we can preferentially focus alignment efforts on whatever the state of the art is at any time (currently large language models), rather than on very different architectures, so as to delay left turns in superhuman models.</p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fadamjermyn.com%2fposts%2fleft_turn%2f - AI%20risk%20in%20a%20few%20words by @AdamSJermyn"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/adamjermyn">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/AdamSJermyn">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+        
+	        <center><a class="cta" href="https://adamjermyn.com/index.xml">Subscribe</a></center>
+        
+    <p class="small">
+    
+       © Copyright 2022 Adam Jermyn
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://adamjermyn.com/js/jquery-3.3.1.min.js"></script>
+<script src="https://adamjermyn.com/js/main.js"></script>
+<script src="https://adamjermyn.com/js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>

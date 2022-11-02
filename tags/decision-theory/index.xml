@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Decision Theory on Adam Jermyn</title>
+    <link>https://adamjermyn.com/tags/decision-theory/</link>
+    <description>Recent content in Decision Theory on Adam Jermyn</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 02 Nov 2022 10:44:53 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/tags/decision-theory/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Humans do acausal coordination all the time</title>
+      <link>https://adamjermyn.com/posts/acausal/</link>
+      <pubDate>Wed, 02 Nov 2022 10:44:53 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/acausal/</guid>
+      <description>(Cross-posted from the AI Alignment Forum)
+I used to think that acausal coordination was a weird thing that AI’s might do in the future, but that they certainly wouldn’t learn from looking at human behavior. I don’t believe that anymore, and think there are lots of examples of acausal coordination in everyday life.
+Examples people do Voting The political science argument against voting goes:
+ The probability that my vote tilts the election is tiny, so the expected value to me is tiny, so it’s not worth my time to vote.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,22 +6,40 @@
     <description>Recent content in Tags on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 04 Oct 2022 14:27:25 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 02 Nov 2022 10:44:53 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>AI Capabilities</title>
-      <link>https://adamjermyn.com/tags/ai-capabilities/</link>
-      <pubDate>Tue, 04 Oct 2022 14:27:25 -0400</pubDate>
+      <title>Acausal Coordination</title>
+      <link>https://adamjermyn.com/tags/acausal-coordination/</link>
+      <pubDate>Wed, 02 Nov 2022 10:44:53 -0400</pubDate>
       
-      <guid>https://adamjermyn.com/tags/ai-capabilities/</guid>
+      <guid>https://adamjermyn.com/tags/acausal-coordination/</guid>
       <description></description>
     </item>
     
     <item>
       <title>AI Safety</title>
       <link>https://adamjermyn.com/tags/ai-safety/</link>
-      <pubDate>Tue, 04 Oct 2022 14:27:25 -0400</pubDate>
+      <pubDate>Wed, 02 Nov 2022 10:44:53 -0400</pubDate>
       
       <guid>https://adamjermyn.com/tags/ai-safety/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Decision Theory</title>
+      <link>https://adamjermyn.com/tags/decision-theory/</link>
+      <pubDate>Wed, 02 Nov 2022 10:44:53 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/tags/decision-theory/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AI Capabilities</title>
+      <link>https://adamjermyn.com/tags/ai-capabilities/</link>
+      <pubDate>Tue, 04 Oct 2022 14:27:25 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/tags/ai-capabilities/</guid>
       <description></description>
     </item>
     

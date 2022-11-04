@@ -6,22 +6,40 @@
     <description>Recent content in Tags on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 02 Nov 2022 10:44:53 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 04 Nov 2022 14:53:00 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Acausal Coordination</title>
-      <link>https://adamjermyn.com/tags/acausal-coordination/</link>
-      <pubDate>Wed, 02 Nov 2022 10:44:53 -0400</pubDate>
+      <title>AI Interpretability</title>
+      <link>https://adamjermyn.com/tags/ai-interpretability/</link>
+      <pubDate>Fri, 04 Nov 2022 14:53:00 -0400</pubDate>
       
-      <guid>https://adamjermyn.com/tags/acausal-coordination/</guid>
+      <guid>https://adamjermyn.com/tags/ai-interpretability/</guid>
       <description></description>
     </item>
     
     <item>
       <title>AI Safety</title>
       <link>https://adamjermyn.com/tags/ai-safety/</link>
-      <pubDate>Wed, 02 Nov 2022 10:44:53 -0400</pubDate>
+      <pubDate>Fri, 04 Nov 2022 14:53:00 -0400</pubDate>
       
       <guid>https://adamjermyn.com/tags/ai-safety/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Toy Models</title>
+      <link>https://adamjermyn.com/tags/toy-models/</link>
+      <pubDate>Fri, 04 Nov 2022 14:53:00 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/tags/toy-models/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Acausal Coordination</title>
+      <link>https://adamjermyn.com/tags/acausal-coordination/</link>
+      <pubDate>Wed, 02 Nov 2022 10:44:53 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/tags/acausal-coordination/</guid>
       <description></description>
     </item>
     

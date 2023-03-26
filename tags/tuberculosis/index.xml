@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tuberculosis on Adam Jermyn</title>
+    <link>https://adamjermyn.com/tags/tuberculosis/</link>
+    <description>Recent content in Tuberculosis on Adam Jermyn</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 25 Mar 2023 19:51:30 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/tags/tuberculosis/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Contaminated TB Treatments</title>
+      <link>https://adamjermyn.com/posts/latent_tb/</link>
+      <pubDate>Sat, 25 Mar 2023 19:51:30 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/latent_tb/</guid>
+      <description>(None of this is medical advice.)
+In 2020 the FDA identified contamination in two drugs used to treat Tuberculosis, Rifampin and Rifapentine. The contaminants were 1-methyl-4-nitrosopiperazine (MNP) in rifampin or 1-cyclopentyl-4-nitrosopiperazine (CPNP) in rifapentine, and levels were ~10x the FDA&amp;rsquo;s acceptable threshold (1-4ppm for MNP, 8-14ppm for CPNP). At the same time, these are two of the standard treatments for Tuberculosis and the alternatives come with downsides of their own, so the FDA permitted these drugs to continue being prescribed and sold in the US.</description>
+    </item>
+    
+  </channel>
+</rss>

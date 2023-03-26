@@ -6,7 +6,7 @@
     <description>Recent content in About on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 29 Nov 2022 20:38:53 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 25 Mar 2023 19:51:30 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Notes</title>
       <link>https://adamjermyn.com/workflow/notes/</link>
@@ -36,6 +36,16 @@ I write ideas in Markdown notes with one top-level header per idea. To decide wh
       
       <guid>https://adamjermyn.com/workflow/spacedrepetition/</guid>
       <description>Spaced Repetition Spaced repetition is a technique for remembering information over long time periods. It takes advantage of the empirical observation that the time it takes to forget a fact is proportional to the time that fact is known. This suggests that the best strategy to remember something indefinitely is to review facts with ever-larger (geometrically increasing) gaps between reviews. Following that strategy, a finite number of reviews is needed to remember something for the rest of your life, and that number is small enough that the study time needed to remember a fact indefinitely is about 5 minutes, so long as the studying happens in this spaced-out way.</description>
+    </item>
+    
+    <item>
+      <title>Contaminated TB Treatments</title>
+      <link>https://adamjermyn.com/posts/latent_tb/</link>
+      <pubDate>Sat, 25 Mar 2023 19:51:30 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/latent_tb/</guid>
+      <description>(None of this is medical advice.)
+In 2020 the FDA identified contamination in two drugs used to treat Tuberculosis, Rifampin and Rifapentine. The contaminants were 1-methyl-4-nitrosopiperazine (MNP) in rifampin or 1-cyclopentyl-4-nitrosopiperazine (CPNP) in rifapentine, and levels were ~10x the FDA&amp;rsquo;s acceptable threshold (1-4ppm for MNP, 8-14ppm for CPNP). At the same time, these are two of the standard treatments for Tuberculosis and the alternatives come with downsides of their own, so the FDA permitted these drugs to continue being prescribed and sold in the US.</description>
     </item>
     
     <item>

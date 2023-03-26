@@ -6,7 +6,17 @@
     <description>Recent content in science on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 19 Aug 2022 11:18:48 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/tags/science/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 25 Mar 2023 19:51:30 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/tags/science/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Contaminated TB Treatments</title>
+      <link>https://adamjermyn.com/posts/latent_tb/</link>
+      <pubDate>Sat, 25 Mar 2023 19:51:30 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/latent_tb/</guid>
+      <description>(None of this is medical advice.)
+In 2020 the FDA identified contamination in two drugs used to treat Tuberculosis, Rifampin and Rifapentine. The contaminants were 1-methyl-4-nitrosopiperazine (MNP) in rifampin or 1-cyclopentyl-4-nitrosopiperazine (CPNP) in rifapentine, and levels were ~10x the FDA&amp;rsquo;s acceptable threshold (1-4ppm for MNP, 8-14ppm for CPNP). At the same time, these are two of the standard treatments for Tuberculosis and the alternatives come with downsides of their own, so the FDA permitted these drugs to continue being prescribed and sold in the US.</description>
+    </item>
+    
     <item>
       <title>Why doesn&#39;t all the Uranium sink to the bottom of Earth?</title>
       <link>https://adamjermyn.com/posts/ideas28/</link>

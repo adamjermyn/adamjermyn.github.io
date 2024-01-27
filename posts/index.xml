@@ -6,7 +6,18 @@
     <description>Recent content in Posts on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 25 Mar 2023 19:51:30 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 27 Jan 2024 15:57:53 -0500</lastBuildDate><atom:link href="https://adamjermyn.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Things I Find Beautiful - I</title>
+      <link>https://adamjermyn.com/posts/beauty1/</link>
+      <pubDate>Sat, 27 Jan 2024 15:57:53 -0500</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/beauty1/</guid>
+      <description>This is a collection of some things I&amp;rsquo;ve found beautiful recently.
+Recursive Game of Life (see the run-through here). Each cell is being simulated by another instance of the Game of Life, and if you zoom out enough you see that the structures you started off looking at are also simulations of cells.
+Paintings by Owen Schuh. See especially the work page, and this tweet. There&amp;rsquo;s a quality to many of these that&amp;rsquo;s halfway between organic and designed that really draws me in.</description>
+    </item>
+    
     <item>
       <title>Contaminated TB Treatments</title>
       <link>https://adamjermyn.com/posts/latent_tb/</link>

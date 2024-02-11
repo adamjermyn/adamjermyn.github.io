@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>reading on Adam Jermyn</title>
+    <link>https://adamjermyn.com/tags/reading/</link>
+    <description>Recent content in reading on Adam Jermyn</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 11 Feb 2024 16:13:41 -0500</lastBuildDate><atom:link href="https://adamjermyn.com/tags/reading/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Path of Law</title>
+      <link>https://adamjermyn.com/posts/pathoflaw/</link>
+      <pubDate>Sun, 11 Feb 2024 16:13:41 -0500</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/pathoflaw/</guid>
+      <description>I just skimmed through Oliver Wendell Holmes&amp;rsquo;s The Path of Law. A few things that stood out:
+ He frames the law as a field of study with the aim of predicting the decisions of course. I think he’s trying to disentangle the law from a statement of morals. It’s not about what is right, it’s a practical question of what rules you will actually be held to account on and how that account will appear.</description>
+    </item>
+    
+  </channel>
+</rss>

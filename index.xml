@@ -25,7 +25,7 @@ Reference notes should be optimized for frequently, repeated use.</description>
       
       <guid>https://adamjermyn.com/workflow/prioritization/</guid>
       <description>Prioritization Picking the right ideas to work on is important.
-I write ideas in Markdown notes with one top-level header per idea. To decide what to work on, I use a python script which asks me to compare ideas to one another. The comparison questions are:
+When I was an academic, I wrote ideas in Markdown notes with one top-level header per idea. To decide what to work on, I used a python script which asks me to compare ideas to one another. The comparison questions are:
  If both ideas work, what is their relative impact? What are the relative odds of the ideas working? How long will each idea take to implement?</description>
     </item>
     

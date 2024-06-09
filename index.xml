@@ -6,7 +6,7 @@
     <description>Recent content in About on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 07 Mar 2024 11:26:29 -0500</lastBuildDate><atom:link href="https://adamjermyn.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 09 Jun 2024 18:24:21 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Notes</title>
       <link>https://adamjermyn.com/workflow/notes/</link>
@@ -36,6 +36,17 @@ When I was an academic, I wrote ideas in Markdown notes with one top-level heade
       
       <guid>https://adamjermyn.com/workflow/spacedrepetition/</guid>
       <description>Spaced Repetition Spaced repetition is a technique for remembering information over long time periods. It takes advantage of the empirical observation that the time it takes to forget a fact is proportional to the time that fact is known. This suggests that the best strategy to remember something indefinitely is to review facts with ever-larger (geometrically increasing) gaps between reviews. Following that strategy, a finite number of reviews is needed to remember something for the rest of your life, and that number is small enough that the study time needed to remember a fact indefinitely is about 5 minutes, so long as the studying happens in this spaced-out way.</description>
+    </item>
+    
+    <item>
+      <title>Querying ultra-long contexts with summary trees</title>
+      <link>https://adamjermyn.com/posts/claude_summary/</link>
+      <pubDate>Sun, 09 Jun 2024 18:24:21 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/claude_summary/</guid>
+      <description>Views my own. There might well be more clever ways to do all of this that I don&amp;rsquo;t know of.
+Suppose you have some long, ordered text data, like news stories going back a century or journal entries or server logs. You&amp;rsquo;d like to analyze them with a Large Language Model (LLM), but you can&amp;rsquo;t just concatenate them together (the context window isn&amp;rsquo;t that long!).
+A fun solution to this problem is a summary tree.</description>
     </item>
     
     <item>

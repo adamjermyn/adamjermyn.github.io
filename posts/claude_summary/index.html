@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="author" content="Adam Jermyn">
+		<meta name="description" content="Site Description">
+		<meta name="generator" content="Hugo 0.92.2" />
+		<title>Querying ultra-long contexts with summary trees &middot; Adam Jermyn</title>
+		<link rel="shortcut icon" href="https://adamjermyn.com/images/favicon.ico">
+		<link rel="stylesheet" href="https://adamjermyn.com/css/style.css">
+		<link rel="stylesheet" href="https://adamjermyn.com/css/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://adamjermyn.com/css/font-awesome.min.css">
+		
+
+		
+		<link href="https://adamjermyn.com/index.xml" rel="alternate" type="application/rss+xml" title="Adam Jermyn" />
+		
+
+		
+
+                
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-186473758-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+		
+                <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+
+        <a href='https://adamjermyn.com/'>About</a>
+	<a href='https://adamjermyn.com/posts'>Posts</a>
+	<a href='https://adamjermyn.com/tags'>Tags</a>
+        <a href='https://adamjermyn.com/software'>Software</a>
+        <a href='https://adamjermyn.com/workflow'>Workflow</a>
+
+	
+
+</nav>
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Querying ultra-long contexts with summary trees
+                    </h1>
+                    <h2 class="headline">
+		    
+                     Jun 9, 2024 18:24 
+                    · 869 words
+                    · 5 minute read
+                      <span class="tags">
+                      
+                      
+                          
+                              <a href="https://adamjermyn.com/tags/ai">AI</a>
+                          
+                              <a href="https://adamjermyn.com/tags/llm">LLM</a>
+                          
+                      
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                <section id="post-body">
+                    <p><em>Views my own. There might well be more clever ways to do all of this that I don&rsquo;t know of.</em></p>
+<p>Suppose you have some long, ordered text data, like news stories going back a century or journal entries or server logs. You&rsquo;d like to analyze them with a Large Language Model (LLM), but you can&rsquo;t just concatenate them together (the context window isn&rsquo;t that long!).</p>
+<p>A fun solution to this problem is a <strong>summary tree</strong>. The idea is that we use the LLM to summarize pairs of consecutive documents, then summarize pairs of consecutive summaries, then summarize pairs of those, and so on, until there&rsquo;s a tree where the root represents an overall summary of all of the documents and the leaves represent individual documents. Here&rsquo;s an example of the kind of prompt we might use to produce such a tree:</p>
+<blockquote>
+<pre><code>You are an AI assistant named Claude. Your job is to summarize text documents.
+
+Here is some prior context to help you understand the background of the documents:
+
+    &lt;prior_context&gt;
+    {prior_context}
+    &lt;/prior_context&gt;
+
+Here are the specific documents to summarize at this time:
+
+    &lt;entries_to_summarize&gt;
+    {e}
+    &lt;/entries_to_summarize&gt;
+
+Please carefully read through the documents and prior context. Then, write a summary of the new documents, following these guidelines:
+
+    - Begin the summary with the date or date range of the documents in YYYY-MM-DD format
+    - Discuss the most significant events or topics covered in the documents. Provide enough detail about each one so that someone could understand the key points without needing to read the original documents. 
+    - Conclude with a few sentences of high-level reflection, extracting key insights or lessons learned.
+    - Please avoid providing platitudes or other low-content statements.
+
+    &lt;scratchpad&gt;
+    Main points to cover in summary:
+    - Date range
+    - Key events &amp; topics 
+    - Reflective insights
+    Refer back to prior context to understand background and tie documents together thematically where relevant.
+    &lt;/scratchpad&gt;
+</code></pre>
+</blockquote>
+<p>Note that the prior context is important: at every point we concatenate the highest-level summaries of all the documents so far and use that as prior context for the next summary. This allows the model to use earlier information in deciding how to summarize later documents.</p>
+<p>We can interact with this tree by traversing it to produce a cut (i.e. a combination of nodes, none of which is descended from the rest, that collectively cover all leaves) with the right level of detail about a given question/analysis task, and then analyzing it at the level of that cut rather than at the level of  individual documents.</p>
+<p>To produce a cut, we might use a prompt like:</p>
+<blockquote>
+<pre><code>I am going to provide you with a numbered list of summaries of text documents.
+Furthermore I will provide you with a prompt, which is a task that you'll be completing later.
+
+&lt;begin prompt&gt;
+{prompt}
+&lt;end prompt&gt;
+
+Full Context:
+{full_context}
+
+Given the list of summaries, consider if there are any questions you need to answer in order to respond well to the prompt above.
+In doing this, please adopt the mindset of a seasoned therapist, judiciously deciding which aspects are most important to dig into.   
+Please list these questions.
+
+Then, reflect on which of these summaries would be most useful to dig into at a finer level of detail to answer your questions.
+Please include the exact phrase &quot;INSUFFICIENT DETAIL&quot; followed by the number of the document to get more detail on.
+Once more, your response MUST contain &quot;INSUFFICIENT DETAIL &lt;NUMBER&gt;&quot;.
+You will then be provided with a more detailed version of that numbered summary.
+
+Some entries do not have any more detail to provide. These are marked &quot;INELIGIBLE DOCUMENT&quot;.
+Do not ask for more detail on these.
+Once more, do not ask for more detail on INELIGIBLE DOCUMENT's.
+As mentioned above, your response MUST contain &quot;INSUFFICIENT DETAIL &lt;NUMBER&gt;&quot; for some number.
+</code></pre>
+</blockquote>
+<p>Then we just look for the INSUFFICIENT DETAIL string, extract the number, and replace that node in the cut with its children.</p>
+<p>Once we have a final cut for a given prompt, we feed that cut in as context and query the model with that plus the prompt.</p>
+<p>A few fiddly details:</p>
+<ol>
+<li>Building the tree might be expensive/slow, especially because it can&rsquo;t be parallelized (due to the prior context). If the set of documents is static that&rsquo;s fine, but if it&rsquo;s growing it&rsquo;s good to use a left-heavy binary tree to avoid new documents causing old documents to get re-summarized. Specifically, we use a binary tree where the initial split puts the largest-available power of 2 of documents in the left node. [<em>Thanks to Jesse Salomon for this idea.</em>]</li>
+<li>Getting the cut-producing prompt right took some trial and error and is probably pretty domain-specific.. It&rsquo;s pretty easy to either under-emphasize the need for detail (resulting in the model never asking for more detail), or else to over-emphasize it (causing the model to try produce a cut that&rsquo;s just made of the original documents). In practice I found it sometimes helpful to put a cap on the number of refinements the model could request and just bias towards more refining.</li>
+<li>Getting the summarization prompt right took some trial and error and is probably pretty domain-specific. The main difficulty is ensuring that the summaries don&rsquo;t devolve into overly-general statements or platitudes.</li>
+</ol>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fadamjermyn.com%2fposts%2fclaude_summary%2f - Querying%20ultra-long%20contexts%20with%20summary%20trees by @AdamSJermyn"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/adamjermyn">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/AdamSJermyn">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+        
+	        <center><a class="cta" href="https://adamjermyn.com/index.xml">Subscribe</a></center>
+        
+    <p class="small">
+    
+       © Copyright 2024 Adam Jermyn
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://adamjermyn.com/js/jquery-3.3.1.min.js"></script>
+<script src="https://adamjermyn.com/js/main.js"></script>
+<script src="https://adamjermyn.com/js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>

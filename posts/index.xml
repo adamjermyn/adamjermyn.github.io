@@ -6,7 +6,18 @@
     <description>Recent content in Posts on Adam Jermyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 07 Mar 2024 11:26:29 -0500</lastBuildDate><atom:link href="https://adamjermyn.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 09 Jun 2024 18:24:21 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Querying ultra-long contexts with summary trees</title>
+      <link>https://adamjermyn.com/posts/claude_summary/</link>
+      <pubDate>Sun, 09 Jun 2024 18:24:21 -0400</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/claude_summary/</guid>
+      <description>Views my own. There might well be more clever ways to do all of this that I don&amp;rsquo;t know of.
+Suppose you have some long, ordered text data, like news stories going back a century or journal entries or server logs. You&amp;rsquo;d like to analyze them with a Large Language Model (LLM), but you can&amp;rsquo;t just concatenate them together (the context window isn&amp;rsquo;t that long!).
+A fun solution to this problem is a summary tree.</description>
+    </item>
+    
     <item>
       <title>Declaration of Independence Signatories</title>
       <link>https://adamjermyn.com/posts/declaration/</link>

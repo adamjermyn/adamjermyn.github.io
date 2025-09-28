@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bookshelf on Adam Jermyn</title>
+    <link>https://adamjermyn.com/bookshelf/</link>
+    <description>Recent content in Bookshelf on Adam Jermyn</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="https://adamjermyn.com/bookshelf/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

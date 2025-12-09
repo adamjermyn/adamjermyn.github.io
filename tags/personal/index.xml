@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Personal on Adam Jermyn</title>
+    <link>https://adamjermyn.com/tags/personal/</link>
+    <description>Recent content in Personal on Adam Jermyn</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 15 Nov 2025 10:00:00 -0500</lastBuildDate><atom:link href="https://adamjermyn.com/tags/personal/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Date-Me Doc</title>
+      <link>https://adamjermyn.com/posts/date_me_doc/</link>
+      <pubDate>Sat, 15 Nov 2025 10:00:00 -0500</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/date_me_doc/</guid>
+      <description>This is a link to my date-me doc, which I published in November 2025. I&amp;rsquo;m no longer single but wanted to leave a pointer to it up because it was an important document for me both to write and in becoming not single.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Writing on Adam Jermyn</title>
+    <link>https://adamjermyn.com/tags/writing/</link>
+    <description>Recent content in Writing on Adam Jermyn</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 31 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://adamjermyn.com/tags/writing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lectures on Fractures</title>
+      <link>https://adamjermyn.com/posts/lectures_on_fractures/</link>
+      <pubDate>Wed, 31 Dec 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://adamjermyn.com/posts/lectures_on_fractures/</guid>
+      <description>I recently collaborated with Claude Opus 4.5 to write a short set of lecture notes on fracture mechanics:
+Lectures on Fractures (PDF)
+How it worked I wanted something in Feynman&amp;rsquo;s style. Conversational, building intuition before formalism, full of physical insight. So I had Claude start by reading some of Feynman&amp;rsquo;s writing and assembling a style guide. That gave us a shared reference for tone.
+The technical focus was Griffith&amp;rsquo;s work on fractures.</description>
+    </item>
+    
+  </channel>
+</rss>

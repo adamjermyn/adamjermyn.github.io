@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>life on Adam Jermyn</title>
-    <link>https://adamjermyn.com/tags/life/</link>
-    <description>Recent content in life on Adam Jermyn</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Sat, 27 Jan 2024 16:49:34 -0500</lastBuildDate><atom:link href="https://adamjermyn.com/tags/life/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>When is the right time?</title>
-      <link>https://adamjermyn.com/posts/time1/</link>
-      <pubDate>Sat, 27 Jan 2024 16:49:34 -0500</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/time1/</guid>
-      <description>Ideas Looking back, it feels like there was often a &amp;lsquo;right time&amp;rsquo; for me to encounter particular ideas:
- I encountered a lot of ideas from religion very young (as many people do). I was also very interested in science, and so got hung up on factual disagreements rather than seeing e.g. the point of having a dedicated day of rest. I came across the Feynman Lectures in high school, when I knew just enough math that it was possible to work through them, but not enough math or physics that it felt like review.</description>
-    </item>
-    
-  </channel>
+	<channel>
+		<title>Life on Adam Jermyn</title>
+		<link>https://adamjermyn.com/tags/life/</link>
+		<description>Recent content in Life on Adam Jermyn</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Sat, 27 Jan 2024 16:49:34 -0500</lastBuildDate>
+		
+			<atom:link href="https://adamjermyn.com/tags/life/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>When is the right time?</title>
+				<link>https://adamjermyn.com/posts/time1/</link>
+				<pubDate>Sat, 27 Jan 2024 16:49:34 -0500</pubDate>
+				<guid>https://adamjermyn.com/posts/time1/</guid>
+				<description>&lt;h2 id=&#34;ideas&#34;&gt;Ideas&lt;/h2&gt;&#xA;&lt;p&gt;Looking back, it feels like there was often a &amp;lsquo;right time&amp;rsquo; for me to encounter particular ideas:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;I encountered a lot of ideas from religion very young (as many people do). I was also very interested in science, and so got hung up on factual disagreements rather than seeing e.g. &lt;a href=&#34;https://thezvi.wordpress.com/2017/10/07/bring-back-the-sabbath/&#34;&gt;the point of having a dedicated day of rest&lt;/a&gt;.&lt;/li&gt;&#xA;&lt;li&gt;I came across the &lt;a href=&#34;https://www.feynmanlectures.caltech.edu&#34;&gt;Feynman Lectures&lt;/a&gt; in high school, when I knew just enough math that it was possible to work through them, but not enough math or physics that it felt like review. My first exposure to many concepts in physics was through Feynman, and that&amp;rsquo;s colored my approach ever since.&lt;/li&gt;&#xA;&lt;li&gt;I tried reading a Complex Analysis book in high school, and that was much too early. I could follow the mechanics of the proofs but the concepts really didn&amp;rsquo;t click until later when I had worked more with multivariable calculus.&lt;/li&gt;&#xA;&lt;li&gt;I realized that there were exciting things happening in aerospace too late, I think. When I was deciding what to study the field looked stagnant (ahem Space Shuttles?). I now find what SpaceX does really exciting, and I think I&amp;rsquo;d have been excited back in 2010 if I&amp;rsquo;d known more about the company.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Whether or not I found something at the right time played a big role in what I made of it:&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

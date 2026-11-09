@@ -1,75 +1,59 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Tools on Adam Jermyn</title>
-    <link>https://adamjermyn.com/tags/tools/</link>
-    <description>Recent content in Tools on Adam Jermyn</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Wed, 11 May 2022 15:28:14 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/tags/tools/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Automatic Differentiation in MESA</title>
-      <link>https://adamjermyn.com/posts/auto_diff_mesa/</link>
-      <pubDate>Wed, 11 May 2022 15:28:14 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/auto_diff_mesa/</guid>
-      <description>Over the last two years I developed an automatic differentiation (auto_diff) module in Fortran to support development of the Modules for Experiments in Stellar Astrophysics (MESA) project. This post gives a brief rundown of how the auto_diff module works and how I built it.
-All of the code I mention below lives on GitHub.
-What is auto_diff? Forward-mode automatic differentiation via operator overloading:
- Forward-mode means we calculate the chain rule as we go.</description>
-    </item>
-    
-    <item>
-      <title>Tools Against Procrastination</title>
-      <link>https://adamjermyn.com/posts/procrast/</link>
-      <pubDate>Tue, 01 Mar 2022 13:43:15 -0500</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/procrast/</guid>
-      <description>When I procrastinate on something, it&amp;rsquo;s usually because there&amp;rsquo;s something I find aversive about it. Lately I&amp;rsquo;ve been trying to find patterns in what these aversions are, and noticed a big one: I usually find the start of a big task much more aversive than any other part. For instance, I often find myself shrinking away from beginning to write papers, whereas everything is fine once I&amp;rsquo;ve gotten going.
-I&amp;rsquo;m not sure why the act of starting feels so scary, but I&amp;rsquo;ve found two ways to make it better.</description>
-    </item>
-    
-    <item>
-      <title>Automated Project Reviews</title>
-      <link>https://adamjermyn.com/posts/automated_reviews/</link>
-      <pubDate>Tue, 25 May 2021 15:04:36 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/automated_reviews/</guid>
-      <description>Automated Project Reviews Getting things right without feedback is really hard, but not all feedback comes from other people! One quick way to generate meaningful feedback is by looking back at past work.
-A challenge with looking back is doing it at the right time. For some kinds of feedback this is easy: schedule weekly/monthly/quarterly reviews, with prompts tuned to the relevant time-scale. But some areas of life don&amp;rsquo;t run on a regular schedule.</description>
-    </item>
-    
-    <item>
-      <title>Examples of Tools with Values</title>
-      <link>https://adamjermyn.com/posts/values_examples/</link>
-      <pubDate>Sat, 23 Jan 2021 17:51:55 -0500</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/values_examples/</guid>
-      <description>I previously argued that tools should express values. Here are some examples of tools I&amp;rsquo;ve made with an eye to values.
-A Brainstorming Environment I have a shell script that sets up a work environment for brainstorming. It does this by copying and opening a template text document that says the following:
-# Session: - Maintain an attitude of suspended judgement. - You&#39;re here to climb out of the basin. - Cmd+E Will bring up an (incomplete) list of possible approaches.</description>
-    </item>
-    
-    <item>
-      <title>Robust Tools</title>
-      <link>https://adamjermyn.com/posts/robust_tools/</link>
-      <pubDate>Wed, 30 Dec 2020 10:37:04 -0500</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/robust_tools/</guid>
-      <description>Good tools are robust. This doesn&amp;rsquo;t just mean that they don&amp;rsquo;t fail, it means that in many instances they can&amp;rsquo;t fail. They take common failure modes off the table, freeing you to use them and focus on your goals.
-Impossible Failure Modes For a robust tool many failure modes are, by design, simply impossible, to the point where it&amp;rsquo;s hard to imagine what those failure modes are.
-Consider a solid metal hammer.</description>
-    </item>
-    
-    <item>
-      <title>Tools Should Express Values</title>
-      <link>https://adamjermyn.com/posts/tools_values/</link>
-      <pubDate>Fri, 11 Dec 2020 15:56:14 -0500</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/tools_values/</guid>
-      <description>I want my tools to express values. I want my text editor to tell me to write clearly. I want my scientific software to command me “Be true, be open, be humble, be curious.” I want tools to be less blank pages and more pleas for me to honor the values of the craft.
-Blank is not Neutral Many tools today are designed like blank pages. A writing app has a large blank space, with perhaps a few buttons for changing fonts and an indicator of how many words are on the page.</description>
-    </item>
-    
-  </channel>
+	<channel>
+		<title>Tools on Adam Jermyn</title>
+		<link>https://adamjermyn.com/tags/tools/</link>
+		<description>Recent content in Tools on Adam Jermyn</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Wed, 11 May 2022 15:28:14 -0400</lastBuildDate>
+		
+			<atom:link href="https://adamjermyn.com/tags/tools/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Automatic Differentiation in MESA</title>
+				<link>https://adamjermyn.com/posts/auto_diff_mesa/</link>
+				<pubDate>Wed, 11 May 2022 15:28:14 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/auto_diff_mesa/</guid>
+				<description>&lt;p&gt;Over the last two years I developed an automatic differentiation (&lt;code&gt;auto_diff&lt;/code&gt;) module in Fortran to support development of the Modules for Experiments in Stellar Astrophysics (&lt;a href=&#34;https://docs.mesastar.org&#34;&gt;MESA&lt;/a&gt;) project. This post gives a brief rundown of how the &lt;code&gt;auto_diff&lt;/code&gt; module works and how I built it.&lt;/p&gt;&#xA;&lt;p&gt;All of the code I mention below lives on &lt;a href=&#34;https://github.com/MESAHub/mesa/tree/main/auto_diff&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-is-auto_diff&#34;&gt;What is auto_diff?&lt;/h2&gt;&#xA;&lt;p&gt;Forward-mode automatic differentiation via operator overloading:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Forward-mode means we calculate the chain rule as we go.&lt;/li&gt;&#xA;&lt;li&gt;Each variable in the calculation needs to be able to track derivative information.&lt;/li&gt;&#xA;&lt;li&gt;Variables need to know how the chain rule applies to each operation.&lt;/li&gt;&#xA;&lt;li&gt;Fortran source files are generated automatically by a python program.&#xA;&lt;ul&gt;&#xA;&lt;li&gt;This allows robust support for many different functions/operators/derivative configurations.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;what-does-it-look-like-in-fortran&#34;&gt;What does it look like in Fortran?&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-fortran&#34; data-lang=&#34;fortran&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#66d9ef&#34;&gt;type&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;::&lt;/span&gt; auto_diff_real_1var_order1&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#66d9ef&#34;&gt;real&lt;/span&gt;(dp) &lt;span style=&#34;color:#66d9ef&#34;&gt;::&lt;/span&gt; val&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#66d9ef&#34;&gt;real&lt;/span&gt;(dp) &lt;span style=&#34;color:#66d9ef&#34;&gt;::&lt;/span&gt; d1val1&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#66d9ef&#34;&gt;end&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;type&lt;/span&gt; auto_diff_real_1var_order1&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The types themselves are simple! Here&amp;rsquo;s the &lt;code&gt;1var_order1&lt;/code&gt; type, which supports 1 independent variable through 1 (first order) derivative. &lt;code&gt;val&lt;/code&gt; stores the value, &lt;code&gt;d1val1&lt;/code&gt; stores the derivative with respect to the independent variable.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Tools Against Procrastination</title>
+				<link>https://adamjermyn.com/posts/procrast/</link>
+				<pubDate>Tue, 01 Mar 2022 13:43:15 -0500</pubDate>
+				<guid>https://adamjermyn.com/posts/procrast/</guid>
+				<description>&lt;p&gt;When I procrastinate on something, it&amp;rsquo;s usually because there&amp;rsquo;s something I find aversive about it.  Lately I&amp;rsquo;ve been trying to find patterns in what these aversions are, and noticed a big one: I usually find the &lt;em&gt;start&lt;/em&gt; of a big task much more aversive than any other part. For instance, I often find myself shrinking away from beginning to write papers, whereas everything is fine once I&amp;rsquo;ve gotten going.&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;m not sure why the act of starting feels so scary, but I&amp;rsquo;ve found two ways to make it better.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Automated Project Reviews</title>
+				<link>https://adamjermyn.com/posts/automated_reviews/</link>
+				<pubDate>Tue, 25 May 2021 15:04:36 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/automated_reviews/</guid>
+				<description>&lt;h1 id=&#34;automated-project-reviews&#34;&gt;Automated Project Reviews&lt;/h1&gt;&#xA;&lt;p&gt;Getting things right without feedback is &lt;strong&gt;really&lt;/strong&gt; hard, but not all feedback comes from other people! One quick way to generate meaningful feedback is by &lt;a href=&#34;https://adamjermyn.com/workflow/feedback/&#34;&gt;looking back at past work&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;A challenge with looking back is doing it at the right time. For some kinds of feedback this is easy: schedule weekly/monthly/quarterly reviews, with prompts tuned to the relevant time-scale. But some areas of life don&amp;rsquo;t run on a regular schedule. For instance, I&amp;rsquo;ve noticed lately that I can avoid many dead-ends and wrong-turns if I do a literature review early on in a new project. But how early on should this happen?&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Examples of Tools with Values</title>
+				<link>https://adamjermyn.com/posts/values_examples/</link>
+				<pubDate>Sat, 23 Jan 2021 17:51:55 -0500</pubDate>
+				<guid>https://adamjermyn.com/posts/values_examples/</guid>
+				<description>&lt;p&gt;I previously argued that &lt;a href=&#34;http://adamjermyn.com/posts/tools_values/&#34;&gt;tools should express values&lt;/a&gt;. Here are some examples of tools I&amp;rsquo;ve made with an eye to values.&lt;/p&gt;&#xA;&lt;h2 id=&#34;a-brainstorming-environment&#34;&gt;A Brainstorming Environment&lt;/h2&gt;&#xA;&lt;p&gt;I have a shell script that sets up a work environment for brainstorming. It does this by copying and opening a template text document that says the following:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# Session:&#xA;- Maintain an attitude of suspended judgement.&#xA;- You&amp;#39;re here to climb out of the basin.&#xA;- Cmd+E Will bring up an (incomplete) list of possible approaches.&#xA;- Have fun!&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;I&amp;rsquo;m still tweaking these values, but so far I&amp;rsquo;m fairly happy with them. They remind me that the whole reason I&amp;rsquo;m sitting down to brainstorm is to come up with new ideas further afield than I normally would. Only after I&amp;rsquo;m done generating ideas do I try to sift through and see which ones seem useful/promising.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Robust Tools</title>
+				<link>https://adamjermyn.com/posts/robust_tools/</link>
+				<pubDate>Wed, 30 Dec 2020 10:37:04 -0500</pubDate>
+				<guid>https://adamjermyn.com/posts/robust_tools/</guid>
+				<description>&lt;p&gt;Good tools are robust. This doesn&amp;rsquo;t just mean that they don&amp;rsquo;t fail, it means that in many instances they &lt;em&gt;can&amp;rsquo;t&lt;/em&gt; fail. They take common failure modes off the table, freeing you to &lt;em&gt;use&lt;/em&gt; them and focus on your goals.&lt;/p&gt;&#xA;&lt;h2 id=&#34;impossible-failure-modes&#34;&gt;Impossible Failure Modes&lt;/h2&gt;&#xA;&lt;p&gt;For a robust tool many failure modes are, by design, simply impossible, to the point where it&amp;rsquo;s hard to imagine what those failure modes are.&lt;/p&gt;&#xA;&lt;p&gt;Consider a solid metal hammer. What are its possible failure modes? I could hit my hand by mistake. That&amp;rsquo;s pretty much it.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Tools Should Express Values</title>
+				<link>https://adamjermyn.com/posts/tools_values/</link>
+				<pubDate>Fri, 11 Dec 2020 15:56:14 -0500</pubDate>
+				<guid>https://adamjermyn.com/posts/tools_values/</guid>
+				<description>&lt;p&gt;I want my tools to express values. I want my text editor to tell me to write clearly. I want my scientific software to command me “Be true, be open, be humble, be curious.” I want tools to be less blank pages and more pleas for me to honor the values of the craft.&lt;/p&gt;&#xA;&lt;h1 id=&#34;blank-is-not-neutral&#34;&gt;Blank is not Neutral&lt;/h1&gt;&#xA;&lt;p&gt;Many tools today are designed like blank pages. A writing app has a large blank space, with perhaps a few buttons for changing fonts and an indicator of how many words are on the page. An IDE likewise begins blank, maybe with some templates for its programming language. The same is true of both physical and digital canvas. It’s even true of mechanical tools; a hammer doesn’t express any opinion about what I build with it, it just helps me build.&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

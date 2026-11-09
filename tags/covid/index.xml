@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>COVID on Adam Jermyn</title>
-    <link>https://adamjermyn.com/tags/covid/</link>
-    <description>Recent content in COVID on Adam Jermyn</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Thu, 23 Dec 2021 16:09:40 -0500</lastBuildDate><atom:link href="https://adamjermyn.com/tags/covid/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>What can a rapid test tell you? Omicron Edition</title>
-      <link>https://adamjermyn.com/posts/testing_ii/</link>
-      <pubDate>Thu, 23 Dec 2021 16:09:40 -0500</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/testing_ii/</guid>
-      <description>(This is not medical advice. Co-written with Nicholas Schiefer. Thanks to Sylvia Hürlimann and Katherine McDaniel for helpful discussions and comments. Corrections welcome.)
-This holiday season is also Omicron season. The Omicron variant dramatically increases COVID risk for basically everyone, especially with case counts exploding and doubling every two days in most northern areas (New York, Boston, London). Although Omicron seems to be less severe than other variants for most people, it&amp;rsquo;s probably worth some effort to protect high-risk individuals, especially while case rates are so high.</description>
-    </item>
-    
-    <item>
-      <title>COVID Testing - Sensitivity and Timelines</title>
-      <link>https://adamjermyn.com/posts/covid_testing_timing/</link>
-      <pubDate>Tue, 07 Sep 2021 10:17:00 -0500</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/covid_testing_timing/</guid>
-      <description>COVID Testing - Sensitivity and Timelines This past week a close contact had a potential COVID exposure, so I wanted to understand a few basic questions about COVID testing to help figure out what is safe and what isn&amp;rsquo;t. Three questions seem especially relevant:
- How sensitive are PCR and rapid antigen tests? If someone tests negative on a rapid antigen test but positive on PCR, should they worry about infecting other people?</description>
-    </item>
-    
-  </channel>
+	<channel>
+		<title>COVID on Adam Jermyn</title>
+		<link>https://adamjermyn.com/tags/covid/</link>
+		<description>Recent content in COVID on Adam Jermyn</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Thu, 23 Dec 2021 16:09:40 -0500</lastBuildDate>
+		
+			<atom:link href="https://adamjermyn.com/tags/covid/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>What can a rapid test tell you? Omicron Edition</title>
+				<link>https://adamjermyn.com/posts/testing_ii/</link>
+				<pubDate>Thu, 23 Dec 2021 16:09:40 -0500</pubDate>
+				<guid>https://adamjermyn.com/posts/testing_ii/</guid>
+				<description>&lt;p&gt;(&lt;em&gt;This is not medical advice. Co-written with &lt;a href=&#34;https://twitter.com/nschiefer&#34;&gt;Nicholas Schiefer&lt;/a&gt;. Thanks to Sylvia Hürlimann and Katherine McDaniel for helpful discussions and comments. Corrections welcome.&lt;/em&gt;)&lt;/p&gt;&#xA;&lt;p&gt;This holiday season is also Omicron season. The Omicron variant dramatically increases COVID risk for basically everyone, especially with case counts exploding and doubling every two days in most northern areas (&lt;a href=&#34;https://www1.nyc.gov/site/doh/covid/covid-19-data.page&#34;&gt;New York&lt;/a&gt;, Boston, &lt;a href=&#34;https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1043680/technical-briefing-33.pdf&#34;&gt;London&lt;/a&gt;). Although Omicron seems to be less severe than other variants for most people, it&amp;rsquo;s probably worth some effort to protect high-risk individuals, especially while case rates are so high. On the other hand, we’re nearly two years into the pandemic and it feels unreasonable to cancel everything outright.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>COVID Testing - Sensitivity and Timelines</title>
+				<link>https://adamjermyn.com/posts/covid_testing_timing/</link>
+				<pubDate>Tue, 07 Sep 2021 10:17:00 -0500</pubDate>
+				<guid>https://adamjermyn.com/posts/covid_testing_timing/</guid>
+				<description>&lt;h1 id=&#34;covid-testing---sensitivity-and-timelines&#34;&gt;COVID Testing - Sensitivity and Timelines&lt;/h1&gt;&#xA;&lt;p&gt;This past week a close contact had a potential COVID exposure, so I wanted to understand a few basic questions about COVID testing to help figure out what is safe and what isn&amp;rsquo;t. Three questions seem especially relevant:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;How sensitive are PCR and rapid antigen tests?&lt;/li&gt;&#xA;&lt;li&gt;If someone tests negative on a rapid antigen test but positive on PCR, should they worry about infecting other people? Is there a &amp;lsquo;safe period&amp;rsquo; where they very likely won&amp;rsquo;t transmit?&lt;/li&gt;&#xA;&lt;li&gt;If someone tests negative on PCR (but had an exposure and was in fact infected) should they worry about infecting other people? Again is there a &amp;lsquo;safe period&amp;rsquo; where they very likely won&amp;rsquo;t transmit?&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Before diving in, a disclaimer: &lt;em&gt;This is not medical advice, just me trying to figure things out. I am not an epidemiologist, virologist, or medical professional, so take this with a grain of salt and check the references for yourself if uncertain. If you spot errors please let me know so I can correct them!&lt;/em&gt;&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

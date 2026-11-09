@@ -7,7 +7,7 @@
 		
 		<meta name="author" content="Adam Jermyn">
 		<meta name="description" content="Site Description">
-		<meta name="generator" content="Hugo 0.92.2" />
+		<meta name="generator" content="Hugo 0.168.0">
 		<title>COVID Testing - Sensitivity and Timelines &middot; Adam Jermyn</title>
 		<link rel="shortcut icon" href="https://adamjermyn.com/images/favicon.ico">
 		<link rel="stylesheet" href="https://adamjermyn.com/css/style.css">
@@ -24,18 +24,6 @@
 		
 
                 
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-186473758-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
 		
                 <script>
   MathJax = {
@@ -134,14 +122,14 @@ if (!doNotTrack) {
 <p>This figure shows the probability that someone COVID-positive (PCR) remains symptom-free as a function of time since their exposure (based on contact tracing) and the viral load of the person they were exposed to. So there&rsquo;s clearly a trend where people are less likely to develop symptoms if they&rsquo;re exposed to fewer viral copies.</p>
 <p>Whether or not there&rsquo;s an actual thresholding effect on infection, we do see that people who transmit COVID have viral loads <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0243597">1000 times higher than those who don&rsquo;t</a>, typically of order $10^9\mathrm{copies/mL}$,(though beware the small sample size and observational study design here). Other transmission studies confirm this trend, but differ on the details, for instance <a href="https://www.sciencedirect.com/science/article/pii/S1473309920309853">this one</a> finds a much smaller effect, though I&rsquo;m skeptical that they were really tracing an isolated outbreak given that the data are from March-April of 2020, which should weaken the observed effect size:</p>
 <img src="../../images/covid_testing_timing.assets/Screen Shot 2021-09-06 at 1.14.08 PM.png" alt="Screen Shot 2021-09-06 at 1.14.08 PM" style="zoom:300%;display:block;margin-left:auto;margin-right:auto" />
-<p>This makes sense even in our very simple model: the people with the highest viral load shed the most, and so go on to infect the most other people. Even though it&rsquo;s not clear that there&rsquo;s an actual thresholding effect here, going forward I&rsquo;ll refer to &lsquo;thresholds for infection&rsquo; with the notion that for any given risk tolerance you can draw a threshold viral load below which you are not concerned.</p>
+<p>This makes sense even in our very simple model: the people with the highest viral load shed the most, and so go on to infect the most other people. Even though it&rsquo;s not clear that there&rsquo;s an actual thresholding effect here, going forward I&rsquo;ll refer to ‘thresholds for infection&rsquo; with the notion that for any given risk tolerance you can draw a threshold viral load below which you are not concerned.</p>
 <p>Unfortunately, the odds of transmission as a function of viral load seem quite uncertain, and vary a lot between studies. Transmission appears <a href="https://elifesciences.org/articles/63537">very unlikely</a> below $10^5\mathrm{copies/mL}$:</p>
 <img src="../../images/covid_testing_timing.assets/Screen Shot 2021-09-06 at 11.25.05 AM.png" alt="Screen Shot 2021-09-06 at 11.25.05 AM" style="zoom:300%;display:block;margin-left:auto;margin-right:auto" />
 <p>Above that it depends a lot on which study you believe. By loads of $10^9\mathrm{copies/mL}$ it&rsquo;s clear that COVID transmits readily, and there&rsquo;s been lots of work between $10^5-10^9\mathrm{copies/mL}$ attempting to characterize relative risks, with the result that <a href="https://academic.oup.com/cid/advance-article/doi/10.1093/cid/ciab421/6273394">risk decreases with decreasing viral load</a>, though again different studies differ quite a bit on the details.</p>
 <p>My rough read here is that at $10^5\mathrm{copies/mL}$ transmission is very unlikely, at $10^7\mathrm{copies/mL}$ transmission is possible but based on the above figure perhaps 3x less likely than at typical &lsquo;peak infectiousness&rsquo; (viral loads of $10^{8+}\mathrm{copies/mL}$), and at higher viral loads transmission becomes quite likely.</p>
 <p>This suggests a relatively straightforward way to evaluate if someone is at risk of transmitting COVID to others: measure their viral load. The lower the better, and depending on your risk tolerance there will be some threshold viral load below which you stop caring about the risks. Moreover the lower the viral load the less likely any infection is to <a href="https://www.thelancet.com/journals/laninf/article/PIIS1473-3099(20)30985-3/fulltext">lead to symptoms</a>, which is also helpful.</p>
 <h2 id="test-sensitivity">Test Sensitivity</h2>
-<p>The tests available to the general population don&rsquo;t measure viral load, they just tell you &lsquo;positive&rsquo; or &lsquo;negative&rsquo;. Fortunately we have measurements on <a href="https://pubmed.ncbi.nlm.nih.gov/33479756/">how sensitive these tests are</a>:</p>
+<p>The tests available to the general population don&rsquo;t measure viral load, they just tell you &lsquo;positive&rsquo; or ‘negative&rsquo;. Fortunately we have measurements on <a href="https://pubmed.ncbi.nlm.nih.gov/33479756/">how sensitive these tests are</a>:</p>
 <img src="../../images/covid_testing_timing.assets/Screen Shot 2021-09-06 at 11.44.15 AM.png" alt="Screen Shot 2021-09-06 at 11.44.15 AM" style="zoom:300%;display:block;margin-left:auto;margin-right:auto" />
 <p>This shows the measured probability of a positive result for four different tests as a function of viral load. PCR is the most sensitive, with a 50% sensitivity at viral loads of $10^2\mathrm{copies/mL}$ and 90+% sensitivity at loads of $10^3\mathrm{copies/mL}$. Antigen tests are the next most-sensitive, with 50% sensitivity at loads of $10^5\mathrm{copies/mL}$ and around 80% at $10^6\mathrm{copies/mL}$. The other two tests (VeroE6TM and VeroE6) are two &lsquo;viral culture&rsquo; tests which (roughly speaking) expose human tissue to the sample in question and see whether or not any virus replicates in it.</p>
 <p>This makes it pretty clear that <strong>someone who tests negative on PCR is very unlikely to infect others around the time the sample is taken</strong>. PCR is sensitive to viral loads a thousand times smaller than any likely infection threshold, so barring questions of poor sample collection a negative PCR test really does mean a person is unlikely to infect others.</p>

@@ -1,53 +1,45 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Longtermism on Adam Jermyn</title>
-    <link>https://adamjermyn.com/tags/longtermism/</link>
-    <description>Recent content in Longtermism on Adam Jermyn</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Mon, 14 Mar 2022 14:27:25 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/tags/longtermism/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>AI risk in a few words</title>
-      <link>https://adamjermyn.com/posts/ai_risk_few_words/</link>
-      <pubDate>Mon, 14 Mar 2022 14:27:25 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/ai_risk_few_words/</guid>
-      <description>AI safety is a weird area, and in trying to explain it to friends I realized that I don&amp;rsquo;t have a simple explanation of what the (existential) risks are and why I think they&amp;rsquo;re important.
-Word limits force simplicity, so here are some attempts to explain AI risk in different numbers of words.
-150 words  Do you value the same things as your great grandfather? What we value changes from generation to generation.</description>
-    </item>
-    
-    <item>
-      <title>High-Value Low-Probability Options Abound</title>
-      <link>https://adamjermyn.com/posts/mugged_by_probability/</link>
-      <pubDate>Mon, 25 Oct 2021 07:16:09 -0700</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/mugged_by_probability/</guid>
-      <description>(Numbers in this post are made up to illustrate a point. Likewise the plot device need not be cryptocurrencies, that&amp;rsquo;s just flavor text.)
-You&amp;rsquo;re walking on the street, minding your business. Suddenly, a stranger (S) comes up and starts talking to you:
- S: Have you heard? There&amp;rsquo;s a one-in-a-million chance you could save a billion lives! All you have to do is found a crypto currency, become extremely rich, and use that money to fight Malaria!</description>
-    </item>
-    
-    <item>
-      <title>Toy Model of Near-Existential Risk</title>
-      <link>https://adamjermyn.com/posts/near_existential_risk_pt2/</link>
-      <pubDate>Fri, 23 Apr 2021 16:05:02 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/near_existential_risk_pt2/</guid>
-      <description>I recently wrote about near-existential risk. These are risks which result in massive losses to society of people/technology/capability, but which themselves do not actually end or permanently curtail human existence. Here I want to build a toy model for thinking about these risks and how they relate to actual existential risks.
-A Toy Model For these purposes I&amp;rsquo;m going to reduce the many dimensions of loss to a single parameter $\ell$.</description>
-    </item>
-    
-    <item>
-      <title>Near-Existential Risk</title>
-      <link>https://adamjermyn.com/posts/near_existential_risk/</link>
-      <pubDate>Sun, 28 Mar 2021 16:17:44 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/near_existential_risk/</guid>
-      <description>Longtermism is a moral theory that says that most of the value we (humans) ought to care about lies in the future, and so we should look hard for opportunities to influence the future in positive ways. Longtermism arises as a natural consequence of three ideas:
- Utilitarianism: We should improve the lives/subjective wellbeing of as many people as much as possible, evaluated by summing improvements over lives. Future lives are just as valuable as present lives.</description>
-    </item>
-    
-  </channel>
+	<channel>
+		<title>Longtermism on Adam Jermyn</title>
+		<link>https://adamjermyn.com/tags/longtermism/</link>
+		<description>Recent content in Longtermism on Adam Jermyn</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 14 Mar 2022 14:27:25 -0400</lastBuildDate>
+		
+			<atom:link href="https://adamjermyn.com/tags/longtermism/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>AI risk in a few words</title>
+				<link>https://adamjermyn.com/posts/ai_risk_few_words/</link>
+				<pubDate>Mon, 14 Mar 2022 14:27:25 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/ai_risk_few_words/</guid>
+				<description>&lt;p&gt;AI safety is a weird area, and in trying to explain it to friends I realized that I don&amp;rsquo;t have a simple explanation of what the (existential) risks are and why I think they&amp;rsquo;re important.&lt;/p&gt;&#xA;&lt;p&gt;Word limits force simplicity, so here are some attempts to explain AI risk in different numbers of words.&lt;/p&gt;&#xA;&lt;h2 id=&#34;150-words&#34;&gt;150 words&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Do you value the same things as your great grandfather? What we value changes from generation to generation. We don&amp;rsquo;t really know how to impart our values on our children.&lt;/p&gt;&#xA;&lt;p&gt;Does America value the same things as its founders did? Do companies share their founders&amp;rsquo; visions? We don&amp;rsquo;t know how to build institutions that faithfully carry our values into the future.&lt;/p&gt;&#xA;&lt;p&gt;The same is true of AI. We don&amp;rsquo;t know how to make it share our values. None of this is intrinsic to AI; imparting values is just a hard problem. Values are hard to clearly explain, and our explanations rely heavily on context.&lt;/p&gt;&#xA;&lt;p&gt;We have to try though. AI&amp;rsquo;s will be extraordinarily powerful, and in a century our world will strongly reflect whatever AI&amp;rsquo;s ends up valuing, for better or worse. American values shaped the 20th century, and AI values will shape the 22nd.&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+			</item>
+			<item>
+				<title>High-Value Low-Probability Options Abound</title>
+				<link>https://adamjermyn.com/posts/mugged_by_probability/</link>
+				<pubDate>Mon, 25 Oct 2021 07:16:09 -0700</pubDate>
+				<guid>https://adamjermyn.com/posts/mugged_by_probability/</guid>
+				<description>&lt;p&gt;(&lt;em&gt;Numbers in this post are made up to illustrate a point. Likewise the plot device need not be cryptocurrencies, that&amp;rsquo;s just flavor text.&lt;/em&gt;)&lt;/p&gt;&#xA;&lt;p&gt;You&amp;rsquo;re walking on the street, minding your business. Suddenly, a stranger (S) comes up and starts talking to you:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;S: Have you heard? There&amp;rsquo;s a one-in-a-million chance you could save a billion lives! All you have to do is found a crypto currency, become extremely rich, and use that money to fight Malaria!&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+			</item>
+			<item>
+				<title>Toy Model of Near-Existential Risk</title>
+				<link>https://adamjermyn.com/posts/near_existential_risk_pt2/</link>
+				<pubDate>Fri, 23 Apr 2021 16:05:02 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/near_existential_risk_pt2/</guid>
+				<description>&lt;p&gt;I recently wrote about &lt;a href=&#34;https://adamjermyn.com/posts/near_existential_risk/&#34;&gt;near-existential risk&lt;/a&gt;. These are risks which result in massive losses to society of people/technology/capability, but which themselves do not actually end or permanently curtail human existence. Here I want to build a toy model for thinking about these risks and how they relate to actual existential risks.&lt;/p&gt;&#xA;&lt;h2 id=&#34;a-toy-model&#34;&gt;A Toy Model&lt;/h2&gt;&#xA;&lt;p&gt;For these purposes I&amp;rsquo;m going to reduce the many dimensions of loss to a single parameter $\ell$. When $\ell = 0$ nothing is lost, when $\ell = 1$ all is lost. $\ell=1$ therefore denotes existential risks. Think of $\ell$ as a proxy for &amp;lsquo;what fraction of people/technology/capability/organization/etc. are lost?&amp;rsquo;&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Near-Existential Risk</title>
+				<link>https://adamjermyn.com/posts/near_existential_risk/</link>
+				<pubDate>Sun, 28 Mar 2021 16:17:44 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/near_existential_risk/</guid>
+				<description>&lt;p&gt;&lt;a href=&#34;https://www.lesswrong.com/tag/longtermism&#34;&gt;Longtermism&lt;/a&gt; is a moral theory that says that most of the value we (humans) ought to care about lies in the future, and so we should look hard for opportunities to influence the future in positive ways. Longtermism arises as a natural consequence of three ideas:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Utilitarianism: We should improve the lives/subjective wellbeing of as many people as much as possible, evaluated by summing improvements over lives.&lt;/li&gt;&#xA;&lt;li&gt;Future lives are just as valuable as present lives.&lt;/li&gt;&#xA;&lt;li&gt;The future is going to be &lt;em&gt;very&lt;/em&gt; long, and contain &lt;em&gt;many&lt;/em&gt; lives.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;I want to pause for a moment on the the third idea. How long is the future? Modern humans have been around for &lt;a href=&#34;https://en.wikipedia.org/wiki/Early_modern_human&#34;&gt;something like 500,000 years&lt;/a&gt;. The Earth will likely remain habitable for &lt;em&gt;billions&lt;/em&gt; of years, meaning that even without leaving Earth the future of humanity could plausibly last thousands of times longer than all of human history up to this point. Then add in that more people are alive today than at any point in history, and the overall number of humans seems likely to be in the billions for the foreseeable future, and you can see just how many person-lives it might contain.&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

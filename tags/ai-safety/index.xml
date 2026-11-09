@@ -1,227 +1,157 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>AI Safety on Adam Jermyn</title>
-    <link>https://adamjermyn.com/tags/ai-safety/</link>
-    <description>Recent content in AI Safety on Adam Jermyn</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Tue, 29 Nov 2022 20:38:53 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/tags/ai-safety/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Multi-Component Learning and S-Curves</title>
-      <link>https://adamjermyn.com/posts/scurves/</link>
-      <pubDate>Tue, 29 Nov 2022 20:38:53 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/scurves/</guid>
-      <description>This post is available on the AI Alignment Forum.</description>
-    </item>
-    
-    <item>
-      <title>Engineering Monosemanticity in Toy Models</title>
-      <link>https://adamjermyn.com/posts/mono_1/</link>
-      <pubDate>Mon, 21 Nov 2022 14:53:00 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/mono_1/</guid>
-      <description>This post is available on the AI Alignment Forum.</description>
-    </item>
-    
-    <item>
-      <title>Toy Models and Tegum Products</title>
-      <link>https://adamjermyn.com/posts/tegum_products/</link>
-      <pubDate>Fri, 04 Nov 2022 14:53:00 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/tegum_products/</guid>
-      <description>This post is available on the AI Alignment Forum.</description>
-    </item>
-    
-    <item>
-      <title>Humans do acausal coordination all the time</title>
-      <link>https://adamjermyn.com/posts/acausal/</link>
-      <pubDate>Wed, 02 Nov 2022 10:44:53 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/acausal/</guid>
-      <description>(Cross-posted from the AI Alignment Forum)
-I used to think that acausal coordination was a weird thing that AI’s might do in the future, but that they certainly wouldn’t learn from looking at human behavior. I don’t believe that anymore, and think there are lots of examples of acausal coordination in everyday life.
-Examples people do Voting The political science argument against voting goes:
- The probability that my vote tilts the election is tiny, so the expected value to me is tiny, so it’s not worth my time to vote.</description>
-    </item>
-    
-    <item>
-      <title>Smoke without fire is scary</title>
-      <link>https://adamjermyn.com/posts/smoke_fire/</link>
-      <pubDate>Tue, 04 Oct 2022 14:27:25 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/smoke_fire/</guid>
-      <description>This post is available on the AI Alignment Forum.</description>
-    </item>
-    
-    <item>
-      <title>It matters when the first sharp left turn happens</title>
-      <link>https://adamjermyn.com/posts/left_turn/</link>
-      <pubDate>Thu, 29 Sep 2022 14:27:25 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/left_turn/</guid>
-      <description>Thanks to Evan Hubinger for comments on these ideas. Posted on the AI Alignment Forum.
-Introduction A “sharp left turn” is a point where capabilities generalize beyond alignment. In a sharp left turn, an AI becomes much more capable than aligned, and so starts to exploit flaws in its alignment.
-This can look like Goodharting, where strong optimization pressure causes outer alignment failure because the base goal isn’t identical to what we want.</description>
-    </item>
-    
-    <item>
-      <title>Brief Notes on Transformers</title>
-      <link>https://adamjermyn.com/posts/transformer_notes/</link>
-      <pubDate>Mon, 26 Sep 2022 08:21:00 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/transformer_notes/</guid>
-      <description>(Cross-posted from the AI Alignment Forum)*
-*These are just some notes I wrote while reading about transformers, which I thought might be a useful reference to others. Corrections welcome.
-Overview of Transformers Many transformer models have the following architecture:
-Data flows as follows:
- We take tokens as inputs and pass them through an embedding layer. The embedding layer outputs its result into the residual stream (x0). This has dimension (C,E), where C is the number of tokens in the context window and E is the embedding dimension.</description>
-    </item>
-    
-    <item>
-      <title>Conditioning, Prompts, and Fine-Tuning</title>
-      <link>https://adamjermyn.com/posts/conditioning_fine_tuning/</link>
-      <pubDate>Wed, 17 Aug 2022 16:55:03 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/conditioning_fine_tuning/</guid>
-      <description>Posted to the AI Alignment Forums.
-(Thanks to Evan Hubinger and Nicholas Schiefer for comments on these ideas.)
-These are some notes on the relation between conditioning language models, prompting, and fine-tuning. The key takeaways are:
- Prompting and fine-tuning can both be used to condition language models. Prompting is quite restricted in the kinds of conditionals it can achieve. Fine-tuning can implement arbitrary conditionals in principle, though not in practice.</description>
-    </item>
-    
-    <item>
-      <title>Conditioning Generative Models with Restrictions</title>
-      <link>https://adamjermyn.com/posts/conditioninggenerativemodels2/</link>
-      <pubDate>Thu, 21 Jul 2022 16:34:05 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/conditioninggenerativemodels2/</guid>
-      <description>This is a followup to Conditioning Generative Models based on further discussions with Evan Hubinger, Nicholas Schiefer, Abram Demski, Curtis Huebner, Hoagy Cunningham, Derek Shiller, and James Lucassen, as well as broader conversations with many different people at the recent ARC/ELK retreat. For more background on this general direction see Johannes Treutlein’s “Training goals for large language models”.
-Background Previously, I wrote about ways we could use a generative language model to produce alignment research.</description>
-    </item>
-    
-    <item>
-      <title>Quantilizers and Generative Models</title>
-      <link>https://adamjermyn.com/posts/quantilizers/</link>
-      <pubDate>Mon, 18 Jul 2022 12:33:31 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/quantilizers/</guid>
-      <description>(Cross-posted from the AI Alignment Forum)
-Thanks to Evan Hubinger for discussions about quantilizers, and to James Lucassen for discussions about conditioned generative models. Many of these ideas are discussed in Quantilizers: A Safer Alternative to Maximizers for Limited Optimization: this post just expands on a particular thread of ideas in that paper. Throughout I’ll refer to sections of the paper. I have some remaining confusion about the “targeted impact” section, and would appreciate clarifications/corrections!</description>
-    </item>
-    
-    <item>
-      <title>Grouped Loss may disfavor discontinuous capabilities</title>
-      <link>https://adamjermyn.com/posts/grouped_loss/</link>
-      <pubDate>Sat, 09 Jul 2022 08:21:00 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/grouped_loss/</guid>
-      <description>(Cross-posted from the AI Alignment Forum)
-Thanks to Evan Hubinger and Beth Barnes for comments on these ideas.
-Language models exhibit clear scaling laws, where the loss is a power-law in model size. This offers a lot of predictive power, and seems like a useful thing to know. By contrast, individual capabilities often exhibit sharp discontinuities in performance as a function of model size and training time.
-It would be great if individual capabilities just gradually improved like the broader loss.</description>
-    </item>
-    
-    <item>
-      <title>Latent Adversarial Training</title>
-      <link>https://adamjermyn.com/posts/lat/</link>
-      <pubDate>Wed, 29 Jun 2022 16:05:25 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/lat/</guid>
-      <description>Posted to the AI Alignment Forum.
-The Problem We’d like to train models to be robustly safe, even in environments that may fall well outside of the training distribution. Unfortunately all we get to work with is the training distribution, which makes ensuring robust generalization difficult.
-Deception is an example of this concern. Models may be well-behaved in the training environment because they realize it is a training environment, but behave poorly in deployment because they notice the distributional shift.</description>
-    </item>
-    
-    <item>
-      <title>Training Trace Priors and Speed Priors</title>
-      <link>https://adamjermyn.com/posts/tracespeed/</link>
-      <pubDate>Mon, 27 Jun 2022 10:15:31 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/tracespeed/</guid>
-      <description>Posted to the AI Alignment Forum here.
-Thanks to Evan Hubinger for suggesting this idea.
-Training Trace Priors are priors over boolean circuits which examine the outputs of gates on samples from the training distribution, typically for purposes of steering models away from having components that were never tested during training. The one I like to think about is the One-Gate Trace Prior (OGT Prior), which penalizes circuits if there are gates with constant outputs during training.</description>
-    </item>
-    
-    <item>
-      <title>Conditioning Generative Models</title>
-      <link>https://adamjermyn.com/posts/conditioninggenerativemodels/</link>
-      <pubDate>Mon, 27 Jun 2022 10:14:16 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/conditioninggenerativemodels/</guid>
-      <description>Posted to the AI Alignment Forum here.
-This post was written in response to Evan Hubinger’s shortform prompt below, and benefited from discussions with him.
- Suppose you had a language model that you knew was in fact a good generative model of the world and that this property continued to hold regardless of what you conditioned it on. Furthermore, suppose you had some prompt that described some agent for the language model to simulate (Alice) that in practice resulted in aligned-looking outputs.</description>
-    </item>
-    
-    <item>
-      <title>Multigate Priors</title>
-      <link>https://adamjermyn.com/posts/multigate_prior/</link>
-      <pubDate>Wed, 15 Jun 2022 15:33:51 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/multigate_prior/</guid>
-      <description>Posted to LessWrong here.
-(Thanks to Evan Hubinger and Nicholas Schiefer for suggestions and discussions around these ideas)
-Multi-Gate Traces We can improve on one-gate traces with multi-gate traces! Suppose we have $N$ training samples. Then we can reasonably estimate joint probability distributions over up to $k=\lfloor\log_2 N\rfloor$ gates, giving the prior:
-$$ p\propto \exp\left(-\sum_{i_1&amp;hellip;i_k}\sum_{j\in [0,1]^k}p_{i_1&amp;hellip;i_k}(j)^m\right) $$
-That is, we sum over all selections of $k$ gates and compute the entropy of their joint distribution over $2^k$ states.</description>
-    </item>
-    
-    <item>
-      <title>Trace Training Priors</title>
-      <link>https://adamjermyn.com/posts/trace_training/</link>
-      <pubDate>Mon, 13 Jun 2022 13:14:01 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/trace_training/</guid>
-      <description>(Crossposted from the AI Alignment Forums)
-I’m worried about scenarios involving deceptive models. We’ve failed at inner alignment so the model has goals that are not aligned with ours. It can somehow detect when it’s in training, and during training it pretends to share our goals. During deployment, surprise! The model paperclips the universe.
-In this story deception is all about the model having hidden behaviors that never get triggered during training.</description>
-    </item>
-    
-    <item>
-      <title>ELK Proposal - Make the Reporter care about the Predictor’s beliefs</title>
-      <link>https://adamjermyn.com/posts/elk1/</link>
-      <pubDate>Mon, 13 Jun 2022 09:27:54 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/elk1/</guid>
-      <description>Posted to the AI Alignment Forum here.
-(This proposal received an honorable mention in the ELK prize results, and we believe was classified among strategies which “reward reporters that are sensitive to what’s actually happening in the world”. We do not think that the counterexample to that class of strategies works against our proposal, though, and we have explained why in a note at the end. Feedback, disagreement, and new failure modes are very welcome!</description>
-    </item>
-    
-    <item>
-      <title>Give the model a model-builder</title>
-      <link>https://adamjermyn.com/posts/give_model_builder/</link>
-      <pubDate>Mon, 06 Jun 2022 16:54:20 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/give_model_builder/</guid>
-      <description>(Thanks to Evan Hubinger for suggesting this problem and for comments on these ideas. Feedback is very welcome. Cross-posted from LessWrong.)
-The Setup Suppose we have a prior $p_{\rm good}(\mathrm{model})$ that we think is non-deceptive, such that we can sample from this prior and get good models that are inner-aligned.
-These models may, for instrumental purposes, need to themselves produce models (via searches/optimization/meta-learning). For instance we might ask an outer model to play poker.</description>
-    </item>
-    
-    <item>
-      <title>Give the AI safe tools</title>
-      <link>https://adamjermyn.com/posts/give_ai_tools/</link>
-      <pubDate>Sat, 04 Jun 2022 08:21:00 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/give_ai_tools/</guid>
-      <description>(Cross-posted from LessWrong)
-One kind of concern with AI is that:
- There are some tools that are instrumentally useful for an AI to have. Most/the most accessible versions of those tools are dangerous. The AI doesn’t care which versions are dangerous. Hence, the AI will probably develop dangerous tools for instrumental reasons.  You might call concerns like this Instrumental Danger Problems. This post aims to examine some existing approaches to Instrumental Danger Problems, and to introduce a new one, namely “Giving the AI safe tools”.</description>
-    </item>
-    
-    <item>
-      <title>AI risk in a few words</title>
-      <link>https://adamjermyn.com/posts/ai_risk_few_words/</link>
-      <pubDate>Mon, 14 Mar 2022 14:27:25 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/ai_risk_few_words/</guid>
-      <description>AI safety is a weird area, and in trying to explain it to friends I realized that I don&amp;rsquo;t have a simple explanation of what the (existential) risks are and why I think they&amp;rsquo;re important.
-Word limits force simplicity, so here are some attempts to explain AI risk in different numbers of words.
-150 words  Do you value the same things as your great grandfather? What we value changes from generation to generation.</description>
-    </item>
-    
-  </channel>
+	<channel>
+		<title>AI Safety on Adam Jermyn</title>
+		<link>https://adamjermyn.com/tags/ai-safety/</link>
+		<description>Recent content in AI Safety on Adam Jermyn</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Tue, 29 Nov 2022 20:38:53 -0400</lastBuildDate>
+		
+			<atom:link href="https://adamjermyn.com/tags/ai-safety/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Multi-Component Learning and S-Curves</title>
+				<link>https://adamjermyn.com/posts/scurves/</link>
+				<pubDate>Tue, 29 Nov 2022 20:38:53 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/scurves/</guid>
+				<description>&lt;p&gt;&lt;em&gt;This post is available on the&lt;/em&gt; &lt;a href=&#34;https://www.alignmentforum.org/posts/RKDQCB6smLWgs2Mhr/multi-component-learning-and-s-curves&#34;&gt;AI Alignment Forum&lt;/a&gt;.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Engineering Monosemanticity in Toy Models</title>
+				<link>https://adamjermyn.com/posts/mono_1/</link>
+				<pubDate>Mon, 21 Nov 2022 14:53:00 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/mono_1/</guid>
+				<description>&lt;p&gt;&lt;em&gt;This post is available on the &lt;a href=&#34;https://www.alignmentforum.org/posts/LvznjZuygoeoTpSE6/engineering-monosemanticity-in-toy-models&#34;&gt;AI Alignment Forum&lt;/a&gt;&lt;/em&gt;.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Toy Models and Tegum Products</title>
+				<link>https://adamjermyn.com/posts/tegum_products/</link>
+				<pubDate>Fri, 04 Nov 2022 14:53:00 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/tegum_products/</guid>
+				<description>&lt;p&gt;&lt;em&gt;This post is available on the &lt;a href=&#34;https://www.alignmentforum.org/posts/3cR2YH9dpr7SmKvCb/toy-models-and-tegum-products&#34;&gt;AI Alignment Forum&lt;/a&gt;&lt;/em&gt;.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Humans do acausal coordination all the time</title>
+				<link>https://adamjermyn.com/posts/acausal/</link>
+				<pubDate>Wed, 02 Nov 2022 10:44:53 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/acausal/</guid>
+				<description>&lt;p&gt;&lt;em&gt;(Cross-posted from the &lt;a href=&#34;https://www.alignmentforum.org/posts/FCffGHJnYfdE2DgRe/humans-do-acausal-coordination-all-the-time&#34;&gt;AI Alignment Forum&lt;/a&gt;)&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;I used to think that acausal coordination was a weird thing that AI’s might do in the future, but that they certainly wouldn’t learn from looking at human behavior. I don’t believe that anymore, and think there are lots of examples of acausal coordination in everyday life.&lt;/p&gt;&#xA;&lt;h1 id=&#34;examples-people-do&#34;&gt;Examples people do&lt;/h1&gt;&#xA;&lt;h3 id=&#34;voting&#34;&gt;Voting&lt;/h3&gt;&#xA;&lt;p&gt;The political science argument against voting goes:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;The probability that my vote tilts the election is tiny, so the expected value to me is tiny, so it’s not worth my time to vote.&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+			</item>
+			<item>
+				<title>Smoke without fire is scary</title>
+				<link>https://adamjermyn.com/posts/smoke_fire/</link>
+				<pubDate>Tue, 04 Oct 2022 14:27:25 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/smoke_fire/</guid>
+				<description>&lt;p&gt;&lt;em&gt;This post is available on the &lt;a href=&#34;https://www.alignmentforum.org/posts/PP2Lrpvhd3bBvR8Aj/smoke-without-fire-is-scary&#34;&gt;AI Alignment Forum&lt;/a&gt;&lt;/em&gt;.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>It matters when the first sharp left turn happens</title>
+				<link>https://adamjermyn.com/posts/left_turn/</link>
+				<pubDate>Thu, 29 Sep 2022 14:27:25 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/left_turn/</guid>
+				<description>&lt;p&gt;&lt;em&gt;Thanks to Evan Hubinger for comments on these ideas. Posted on the &lt;a href=&#34;https://www.alignmentforum.org/posts/BCyK2GQKiiuYdvkst/it-matters-when-the-first-sharp-left-turn-happens&#34;&gt;AI Alignment Forum&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;&#xA;&lt;p&gt;A “sharp left turn” is a point where &lt;a href=&#34;https://www.alignmentforum.org/posts/GNhMPAWcfBCASy8e6/a-central-ai-alignment-problem-capabilities-generalization&#34;&gt;capabilities generalize beyond alignment&lt;/a&gt;. In a sharp left turn, an AI becomes much more capable than aligned, and so starts to exploit flaws in its alignment.&lt;/p&gt;&#xA;&lt;p&gt;This can look like &lt;a href=&#34;https://www.alignmentforum.org/tag/goodhart-s-law&#34;&gt;Goodharting&lt;/a&gt;, where strong optimization pressure causes outer alignment failure because the base goal isn’t identical to what we want. Or it can look like &lt;a href=&#34;https://www.alignmentforum.org/posts/zthDPAjh9w6Ytbeks/deceptive-alignment&#34;&gt;deceptive alignment&lt;/a&gt;, where the model is aligned to proxy goals that aren’t identical to the base goal, but we don’t notice until the model is capable enough to make the proxies fail.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Brief Notes on Transformers</title>
+				<link>https://adamjermyn.com/posts/transformer_notes/</link>
+				<pubDate>Mon, 26 Sep 2022 08:21:00 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/transformer_notes/</guid>
+				<description>&lt;p&gt;&lt;em&gt;(Cross-posted from the &lt;a href=&#34;https://www.alignmentforum.org/posts/rEPnce975Fid9v5qv/brief-notes-on-transformers&#34;&gt;AI Alignment Forum&lt;/a&gt;)&lt;/em&gt;*&lt;/p&gt;&#xA;&lt;p&gt;*&lt;em&gt;These are just some notes I wrote while reading about transformers, which I thought might be a useful reference to others. Corrections welcome.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;overview-of-transformers&#34;&gt;Overview of Transformers&lt;/h1&gt;&#xA;&lt;p&gt;Many transformer models have &lt;a href=&#34;https://transformer-circuits.pub/2021/framework/index.html#architecture-attn-as-movement&#34;&gt;the following architecture&lt;/a&gt;:&lt;/p&gt;&#xA;&lt;img src=&#34;../../images/transformer_notes.assets/c7052b9cfde21fd125b70380c3289ddab77b50cde834556c.png&#34; alt=&#34;c7052b9cfde21fd125b70380c3289ddab77b50cde834556c&#34; style=&#34;max-width:100%;max-height:100%;display:block;margin-left:auto;margin-right:auto&#34;/&gt;&#xA;&lt;p&gt;Data flows as follows:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;We take tokens as inputs and pass them through an embedding layer. The embedding layer outputs its result into the residual stream (x0). This has dimension (C,E), where C is the number of tokens in the context window and E is the embedding dimension.&lt;/li&gt;&#xA;&lt;li&gt;The residual stream is processed by the attention mechanism (H) and the result is added back into the residual stream (i.e. x1 = H(x0) + x0).&lt;/li&gt;&#xA;&lt;li&gt;The residual stream is processed by an MLP layer (MLP) and the result is added back into the residual stream (i.e. x2 = MLP(x1) + x1).&lt;/li&gt;&#xA;&lt;li&gt;Steps (2) and (3) together define a “residual block”. The body of the transformer is formed of a stack of these blocks in series.&lt;/li&gt;&#xA;&lt;li&gt;After the final residual block, we apply an unembedding transformation to produce logits, which represent the relative probabilities of different output tokens.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h1 id=&#34;attention-mechanism&#34;&gt;Attention Mechanism&lt;/h1&gt;&#xA;&lt;p&gt;The attention mechanism (H) is divided into multiple attention heads $h_j$, which act in parallel. That is,&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Conditioning, Prompts, and Fine-Tuning</title>
+				<link>https://adamjermyn.com/posts/conditioning_fine_tuning/</link>
+				<pubDate>Wed, 17 Aug 2022 16:55:03 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/conditioning_fine_tuning/</guid>
+				<description>&lt;p&gt;&lt;em&gt;Posted to the&lt;/em&gt; &lt;a href=&#34;https://www.alignmentforum.org/posts/chevXfQmRYrTZnj8r/conditioning-prompts-and-fine-tuning&#34;&gt;AI Alignment Forums&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;(Thanks to Evan Hubinger and Nicholas Schiefer for comments on these ideas.)&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;These are some notes on the relation between conditioning language models, prompting, and fine-tuning. The key takeaways are:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Prompting and fine-tuning can both be used to condition language models.&lt;/li&gt;&#xA;&lt;li&gt;Prompting is quite restricted in the kinds of conditionals it can achieve.&lt;/li&gt;&#xA;&lt;li&gt;Fine-tuning can implement arbitrary conditionals in principle, though not in practice.&lt;/li&gt;&#xA;&lt;li&gt;In practice fine-tuning can still implement more kinds of conditionals than prompting.&lt;/li&gt;&#xA;&lt;li&gt;We don&amp;rsquo;t understand how fine-tuning conditionals generalize, which seems dangerous.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h1 id=&#34;conditioning&#34;&gt;Conditioning&lt;/h1&gt;&#xA;&lt;p&gt;We can think of a language model as specifying a probability distribution π(x), where x is a sequence of tokens of fixed length N (the length of the context window). We generate text by sampling sequences from π.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Conditioning Generative Models with Restrictions</title>
+				<link>https://adamjermyn.com/posts/conditioninggenerativemodels2/</link>
+				<pubDate>Thu, 21 Jul 2022 16:34:05 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/conditioninggenerativemodels2/</guid>
+				<description>&lt;p&gt;&lt;em&gt;This is a followup to &lt;a href=&#34;https://www.alignmentforum.org/posts/nXeLPcT9uhfG3TMPS/conditioning-generative-models&#34;&gt;Conditioning Generative Models&lt;/a&gt; based on further discussions with Evan Hubinger, Nicholas Schiefer, Abram Demski, Curtis Huebner, Hoagy Cunningham, Derek Shiller, and James Lucassen, as well as broader conversations with many different people at the recent ARC/ELK retreat. For more background on this general direction see Johannes Treutlein’s “&lt;a href=&#34;https://www.alignmentforum.org/posts/dWJNFHnC4bkdbovug/training-goals-for-large-language-models&#34;&gt;Training goals for large language models&lt;/a&gt;”.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;background&#34;&gt;Background&lt;/h1&gt;&#xA;&lt;p&gt;Previously, I wrote about ways we could use a generative language model to produce alignment research. There I proposed two approaches:&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Quantilizers and Generative Models</title>
+				<link>https://adamjermyn.com/posts/quantilizers/</link>
+				<pubDate>Mon, 18 Jul 2022 12:33:31 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/quantilizers/</guid>
+				<description>&lt;p&gt;(&lt;em&gt;Cross-posted from the &lt;a href=&#34;https://www.alignmentforum.org/posts/tz3hoCs2efHjzNYm5/quantilizers-and-generative-models&#34;&gt;AI Alignment Forum&lt;/a&gt;&lt;/em&gt;)&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Thanks to Evan Hubinger for discussions about quantilizers, and to James Lucassen for discussions about conditioned generative models. Many of these ideas are discussed in&lt;/em&gt; &lt;a href=&#34;https://intelligence.org/files/QuantilizersSaferAlternative.pdf&#34;&gt;Quantilizers: A Safer Alternative to Maximizers for Limited Optimization&lt;/a&gt;&lt;em&gt;: this post just expands on a particular thread of ideas in that paper. Throughout I’ll refer to sections of the paper. I have some remaining confusion about the “targeted impact” section, and would appreciate clarifications/corrections!&lt;/em&gt;&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Grouped Loss may disfavor discontinuous capabilities</title>
+				<link>https://adamjermyn.com/posts/grouped_loss/</link>
+				<pubDate>Sat, 09 Jul 2022 08:21:00 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/grouped_loss/</guid>
+				<description>&lt;p&gt;&lt;em&gt;(Cross-posted from the &lt;a href=&#34;https://www.alignmentforum.org/posts/PmhTzHHFEem5hX79R/grouped-loss-may-disfavor-discontinuous-capabilities&#34;&gt;AI Alignment Forum&lt;/a&gt;)&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Thanks to Evan Hubinger and Beth Barnes for comments on these ideas.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;Language models exhibit clear &lt;a href=&#34;https://arxiv.org/abs/2001.08361&#34;&gt;scaling laws&lt;/a&gt;, where the loss is a power-law in model size. This offers a lot of predictive power, and seems like a useful thing to know. By contrast, individual capabilities often exhibit sharp discontinuities in performance as a function of &lt;a href=&#34;https://arxiv.org/abs/2206.04615&#34;&gt;model size&lt;/a&gt; and &lt;a href=&#34;https://arxiv.org/pdf/2201.02177.pdf&#34;&gt;training time&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;It would be great if individual capabilities just gradually improved like the broader loss. Then we wouldn’t have to worry quite so much about surprising new capabilities emerging suddenly during training.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Latent Adversarial Training</title>
+				<link>https://adamjermyn.com/posts/lat/</link>
+				<pubDate>Wed, 29 Jun 2022 16:05:25 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/lat/</guid>
+				<description>&lt;p&gt;&lt;em&gt;Posted to the &lt;a href=&#34;https://www.alignmentforum.org/posts/atBQ3NHyqnBadrsGP/latent-adversarial-training&#34;&gt;AI Alignment Forum&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;the-problem&#34;&gt;The Problem&lt;/h1&gt;&#xA;&lt;p&gt;We’d like to train models to be robustly safe, even in environments that may fall well outside of the training distribution. Unfortunately all we get to work with is the training distribution, which makes ensuring robust generalization difficult.&lt;/p&gt;&#xA;&lt;p&gt;Deception is an example of this concern. Models may be well-behaved in the training environment because they realize it is a training environment, but behave poorly in deployment because they notice the distributional shift.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Training Trace Priors and Speed Priors</title>
+				<link>https://adamjermyn.com/posts/tracespeed/</link>
+				<pubDate>Mon, 27 Jun 2022 10:15:31 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/tracespeed/</guid>
+				<description>&lt;p&gt;&lt;em&gt;Posted to the AI Alignment Forum &lt;a href=&#34;https://www.alignmentforum.org/posts/9o2mjdo7eb7677EJS/training-trace-priors-and-speed-priors&#34;&gt;here&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Thanks to Evan Hubinger for suggesting this idea.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.alignmentforum.org/posts/hjrqXjEpaw9ogScPh/training-trace-priors&#34;&gt;Training Trace Priors&lt;/a&gt; are priors over boolean circuits which examine the outputs of gates on samples from the training distribution, typically for purposes of steering models away from having components that were never tested during training. The one I like to think about is the One-Gate Trace Prior (OGT Prior), which penalizes circuits if there are gates with constant outputs during training.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Conditioning Generative Models</title>
+				<link>https://adamjermyn.com/posts/conditioninggenerativemodels/</link>
+				<pubDate>Mon, 27 Jun 2022 10:14:16 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/conditioninggenerativemodels/</guid>
+				<description>&lt;p&gt;&lt;em&gt;Posted to the AI Alignment Forum&lt;/em&gt; &lt;a href=&#34;https://www.alignmentforum.org/posts/nXeLPcT9uhfG3TMPS/conditioning-generative-models&#34;&gt;here&lt;/a&gt;&lt;em&gt;.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;This post was written in response to Evan Hubinger’s shortform prompt below, and benefited from discussions with him.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Suppose you had a language model that you knew was in fact a good generative model of the world and that this property continued to hold regardless of what you conditioned it on. Furthermore, suppose you had some prompt that described some agent for the language model to simulate (Alice) that in practice resulted in aligned-looking outputs. Is there a way we could use different conditionals to get at whether or not Alice was deceptive (e.g. prompt the model with “DeepMind develops perfect transparency tools and provides an opportunity for deceptive models to come clean and receive a prize before they’re discovered.”).&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+			</item>
+			<item>
+				<title>Multigate Priors</title>
+				<link>https://adamjermyn.com/posts/multigate_prior/</link>
+				<pubDate>Wed, 15 Jun 2022 15:33:51 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/multigate_prior/</guid>
+				<description>&lt;p&gt;&lt;em&gt;Posted to LessWrong &lt;a href=&#34;https://www.lesswrong.com/posts/CKZkfAE8APAEYMqi6/multigate-priors&#34;&gt;here&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;(Thanks to Evan Hubinger and Nicholas Schiefer for suggestions and discussions around these ideas)&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;multi-gate-traces&#34;&gt;Multi-Gate Traces&lt;/h2&gt;&#xA;&lt;p&gt;We can improve on one-gate traces with multi-gate traces! Suppose we have $N$ training samples. Then we can reasonably estimate joint probability distributions over up to $k=\lfloor\log_2 N\rfloor$ gates, giving the prior:&lt;/p&gt;&#xA;&lt;p&gt;$$ p\propto \exp\left(-\sum_{i_1...i_k}\sum_{j\in [0,1]^k}p_{i_1...i_k}(j)^m\right) $$&lt;/p&gt;&#xA;&lt;p&gt;That is, we sum over all selections of $k$ gates and compute the entropy of their joint distribution over $2^k$ states. Once more we promote models with high entropy and punish those with low entropy, which favors models that explore as much of their state space as possible during training, and disfavors those which have hidden states never touched in training.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Trace Training Priors</title>
+				<link>https://adamjermyn.com/posts/trace_training/</link>
+				<pubDate>Mon, 13 Jun 2022 13:14:01 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/trace_training/</guid>
+				<description>&lt;p&gt;&lt;em&gt;(Crossposted from the AI Alignment Forums)&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;I’m worried about scenarios involving deceptive models. We’ve failed at inner alignment so the model has goals that are not aligned with ours. It can somehow detect when it’s in training, and during training it pretends to share our goals. During deployment, surprise! The model paperclips the universe.&lt;/p&gt;&#xA;&lt;p&gt;In this story deception is all about the model having hidden behaviors that never get triggered during training. There are many inputs where the model does what we want. These correspond to inputs where it ‘plays along’. Then on some rare input or an input outside of the training distribution it defects, triggering some catastrophic behavior that corresponds to maximizing an ulterior motive.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>ELK Proposal - Make the Reporter care about the Predictor’s beliefs</title>
+				<link>https://adamjermyn.com/posts/elk1/</link>
+				<pubDate>Mon, 13 Jun 2022 09:27:54 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/elk1/</guid>
+				<description>&lt;p&gt;&lt;em&gt;Posted to the AI Alignment Forum&lt;/em&gt; &lt;a href=&#34;https://www.alignmentforum.org/posts/XGbWaA3gbDphajMHm/elk-proposal-make-the-reporter-care-about-the-predictor-s&#34;&gt;here&lt;/a&gt;&lt;em&gt;.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;(This proposal received an honorable mention in the &lt;a href=&#34;https://www.notion.so/ELK-Proposal-Make-the-Reporter-care-about-the-Predictor-s-beliefs-4cb30e79267e4d5591ee7161169170c2&#34;&gt;ELK prize results&lt;/a&gt;, and we believe was classified among strategies which “reward reporters that are sensitive to what’s actually happening in the world”. We do not think that the counterexample to that class of strategies works against our proposal, though, and we have explained why in a note at the end. Feedback, disagreement, and new failure modes are very welcome!)&lt;/em&gt;&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Give the model a model-builder</title>
+				<link>https://adamjermyn.com/posts/give_model_builder/</link>
+				<pubDate>Mon, 06 Jun 2022 16:54:20 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/give_model_builder/</guid>
+				<description>&lt;p&gt;&lt;em&gt;(Thanks to Evan Hubinger for suggesting this problem and for comments on these ideas. Feedback is very welcome. Cross-posted from &lt;a href=&#34;https://www.lesswrong.com/posts/3ACsAThxzH4fEk5dA/give-the-model-a-model-builder&#34;&gt;LessWrong&lt;/a&gt;.)&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;the-setup&#34;&gt;The Setup&lt;/h1&gt;&#xA;&lt;p&gt;Suppose we have a prior $p_{\rm good}(\mathrm{model})$ that we think is non-deceptive, such that we can sample from this prior and get good models that are inner-aligned.&lt;/p&gt;&#xA;&lt;p&gt;These models may, for instrumental purposes, need to themselves produce models (via searches/optimization/meta-learning). For instance we might ask an outer model to play poker. Along the way the model may find it instrumentally useful to build an inner model of its opponent. We refer to these additional models as &lt;em&gt;inner models&lt;/em&gt;, and the ones that produced them we call &lt;em&gt;outer models&lt;/em&gt;.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Give the AI safe tools</title>
+				<link>https://adamjermyn.com/posts/give_ai_tools/</link>
+				<pubDate>Sat, 04 Jun 2022 08:21:00 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/give_ai_tools/</guid>
+				<description>&lt;p&gt;&lt;em&gt;(Cross-posted from &lt;a href=&#34;https://www.lesswrong.com/posts/mvTYAKS5qXKNnBT8x/give-the-ai-safe-tools&#34;&gt;LessWrong&lt;/a&gt;)&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;One kind of concern with AI is that:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;There are some tools that are instrumentally useful for an AI to have.&lt;/li&gt;&#xA;&lt;li&gt;Most/the most accessible versions of those tools are dangerous.&lt;/li&gt;&#xA;&lt;li&gt;The AI doesn’t care which versions are dangerous.&lt;/li&gt;&#xA;&lt;li&gt;Hence, the AI will probably develop dangerous tools for instrumental reasons.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;You might call concerns like this &lt;em&gt;Instrumental Danger Problems&lt;/em&gt;. This post aims to examine some existing approaches to Instrumental Danger Problems, and to introduce a new one, namely “Giving the AI safe tools”.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>AI risk in a few words</title>
+				<link>https://adamjermyn.com/posts/ai_risk_few_words/</link>
+				<pubDate>Mon, 14 Mar 2022 14:27:25 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/ai_risk_few_words/</guid>
+				<description>&lt;p&gt;AI safety is a weird area, and in trying to explain it to friends I realized that I don&amp;rsquo;t have a simple explanation of what the (existential) risks are and why I think they&amp;rsquo;re important.&lt;/p&gt;&#xA;&lt;p&gt;Word limits force simplicity, so here are some attempts to explain AI risk in different numbers of words.&lt;/p&gt;&#xA;&lt;h2 id=&#34;150-words&#34;&gt;150 words&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Do you value the same things as your great grandfather? What we value changes from generation to generation. We don&amp;rsquo;t really know how to impart our values on our children.&lt;/p&gt;&#xA;&lt;p&gt;Does America value the same things as its founders did? Do companies share their founders&amp;rsquo; visions? We don&amp;rsquo;t know how to build institutions that faithfully carry our values into the future.&lt;/p&gt;&#xA;&lt;p&gt;The same is true of AI. We don&amp;rsquo;t know how to make it share our values. None of this is intrinsic to AI; imparting values is just a hard problem. Values are hard to clearly explain, and our explanations rely heavily on context.&lt;/p&gt;&#xA;&lt;p&gt;We have to try though. AI&amp;rsquo;s will be extraordinarily powerful, and in a century our world will strongly reflect whatever AI&amp;rsquo;s ends up valuing, for better or worse. American values shaped the 20th century, and AI values will shape the 22nd.&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+			</item>
+	</channel>
 </rss>

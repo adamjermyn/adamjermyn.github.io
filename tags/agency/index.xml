@@ -1,87 +1,66 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Agency on Adam Jermyn</title>
-    <link>https://adamjermyn.com/tags/agency/</link>
-    <description>Recent content in Agency on Adam Jermyn</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Mon, 11 Apr 2022 14:33:01 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/tags/agency/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Acting and Thinking</title>
-      <link>https://adamjermyn.com/posts/acting_thinking/</link>
-      <pubDate>Mon, 11 Apr 2022 14:33:01 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/acting_thinking/</guid>
-      <description>Do thoughts cause actions, or do actions cause thoughts? Or does causation flow back and forth, more like a tide than a one-way river?
-It&amp;rsquo;s easy to see how thoughts cause actions. You think about reading a book, so you go pick up a book and start reading. It&amp;rsquo;s so easy to see the causation flow this way that it feels like thoughts must precede actions. How can you act, if you haven&amp;rsquo;t decided what to do?</description>
-    </item>
-    
-    <item>
-      <title>Tools Against Procrastination</title>
-      <link>https://adamjermyn.com/posts/procrast/</link>
-      <pubDate>Tue, 01 Mar 2022 13:43:15 -0500</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/procrast/</guid>
-      <description>When I procrastinate on something, it&amp;rsquo;s usually because there&amp;rsquo;s something I find aversive about it. Lately I&amp;rsquo;ve been trying to find patterns in what these aversions are, and noticed a big one: I usually find the start of a big task much more aversive than any other part. For instance, I often find myself shrinking away from beginning to write papers, whereas everything is fine once I&amp;rsquo;ve gotten going.
-I&amp;rsquo;m not sure why the act of starting feels so scary, but I&amp;rsquo;ve found two ways to make it better.</description>
-    </item>
-    
-    <item>
-      <title>Success is Broader Than You Think</title>
-      <link>https://adamjermyn.com/posts/broad_success/</link>
-      <pubDate>Mon, 31 Jan 2022 11:55:52 -0500</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/broad_success/</guid>
-      <description>Projects begin with goals. At first these are implicit, but as a project takes shape it helps to state them explicitly. Stating goals serves two purposes: it defines success, and it prompts action.
-Because of this dual purpose, many goals miss the mark. On the one hand, is easy to come up with goals which define success but which are too vague to be actionable:
- &amp;ldquo;Change the world.&amp;rdquo;
-&amp;ldquo;Disrupt the industry.</description>
-    </item>
-    
-    <item>
-      <title>Practicing Agency</title>
-      <link>https://adamjermyn.com/posts/agency_social/</link>
-      <pubDate>Sat, 04 Dec 2021 09:01:56 -0800</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/agency_social/</guid>
-      <description>Agency is where you act to achieve your goals. Unfortunately agency is hard and not the default state.
-Social nudging is a powerful way to combat this. Here are a few lightly-edited conversations that I&amp;rsquo;ve observed or participated in that pushed towards more agency:
-Fire  P1: There&amp;rsquo;s a fire ~20 miles away and it&amp;rsquo;s raining ash.
-P2: Do you have an air purifier?
-P1: &amp;hellip; no, I should get one.</description>
-    </item>
-    
-    <item>
-      <title>Does Riboflavin Prevent Migraines?</title>
-      <link>https://adamjermyn.com/posts/riboflavin/</link>
-      <pubDate>Thu, 02 Dec 2021 17:03:20 -0800</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/riboflavin/</guid>
-      <description>Abstract (This is not medical advice. I am not a medical professional. Thanks to Rose DiLoreto for the idea for this post.)
-Supplementing with Riboflavin (Vitamin B2) seems probably helpful for headaches and migraines, likely reducing their frequency by about 50% as well as reducing severity somewhat. This is backed by multiple randomized controlled trials, and I&amp;rsquo;ve tried to check for anything funny in those trials (small samples, weird controls, etc.</description>
-    </item>
-    
-    <item>
-      <title>High-Value Low-Probability Options Abound</title>
-      <link>https://adamjermyn.com/posts/mugged_by_probability/</link>
-      <pubDate>Mon, 25 Oct 2021 07:16:09 -0700</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/mugged_by_probability/</guid>
-      <description>(Numbers in this post are made up to illustrate a point. Likewise the plot device need not be cryptocurrencies, that&amp;rsquo;s just flavor text.)
-You&amp;rsquo;re walking on the street, minding your business. Suddenly, a stranger (S) comes up and starts talking to you:
- S: Have you heard? There&amp;rsquo;s a one-in-a-million chance you could save a billion lives! All you have to do is found a crypto currency, become extremely rich, and use that money to fight Malaria!</description>
-    </item>
-    
-    <item>
-      <title>A School for Agency</title>
-      <link>https://adamjermyn.com/posts/agency_school/</link>
-      <pubDate>Sun, 01 Aug 2021 14:42:17 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/agency_school/</guid>
-      <description>A School for Agency Agency is where you act to achieve your goals. It&amp;rsquo;s where you look at problems and say &amp;ldquo;How could I solve them?&amp;rdquo; and really think about that and arrive at possible courses of action and then take those actions. Explicitly, agency is about executing three steps:
- Notice a problem/question. Brainstorm solutions. Try solutions until something works or the costs exceed the benefits.  An example I return to often in the summer is air conditioning.</description>
-    </item>
-    
-  </channel>
+	<channel>
+		<title>Agency on Adam Jermyn</title>
+		<link>https://adamjermyn.com/tags/agency/</link>
+		<description>Recent content in Agency on Adam Jermyn</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 11 Apr 2022 14:33:01 -0400</lastBuildDate>
+		
+			<atom:link href="https://adamjermyn.com/tags/agency/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Acting and Thinking</title>
+				<link>https://adamjermyn.com/posts/acting_thinking/</link>
+				<pubDate>Mon, 11 Apr 2022 14:33:01 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/acting_thinking/</guid>
+				<description>&lt;p&gt;Do thoughts cause actions, or do actions cause thoughts? Or does causation flow back and forth, more like a tide than a one-way river?&lt;/p&gt;&#xA;&lt;p&gt;It&amp;rsquo;s easy to see how thoughts cause actions. You think about reading a book, so you go pick up a book and start reading. It&amp;rsquo;s so easy to see the causation flow this way that it feels like thoughts &lt;em&gt;must&lt;/em&gt; precede actions. How can you act, if you haven&amp;rsquo;t decided what to do?&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Tools Against Procrastination</title>
+				<link>https://adamjermyn.com/posts/procrast/</link>
+				<pubDate>Tue, 01 Mar 2022 13:43:15 -0500</pubDate>
+				<guid>https://adamjermyn.com/posts/procrast/</guid>
+				<description>&lt;p&gt;When I procrastinate on something, it&amp;rsquo;s usually because there&amp;rsquo;s something I find aversive about it.  Lately I&amp;rsquo;ve been trying to find patterns in what these aversions are, and noticed a big one: I usually find the &lt;em&gt;start&lt;/em&gt; of a big task much more aversive than any other part. For instance, I often find myself shrinking away from beginning to write papers, whereas everything is fine once I&amp;rsquo;ve gotten going.&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;m not sure why the act of starting feels so scary, but I&amp;rsquo;ve found two ways to make it better.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Success is Broader Than You Think</title>
+				<link>https://adamjermyn.com/posts/broad_success/</link>
+				<pubDate>Mon, 31 Jan 2022 11:55:52 -0500</pubDate>
+				<guid>https://adamjermyn.com/posts/broad_success/</guid>
+				<description>&lt;p&gt;Projects begin with goals. At first these are implicit, but as a project takes shape it helps to state them explicitly. Stating goals serves two purposes: it defines success, and it prompts action.&lt;/p&gt;&#xA;&lt;p&gt;Because of this dual purpose, many goals miss the mark. On the one hand, is easy to come up with goals which define success but which are too vague to be actionable:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&amp;ldquo;Change the world.&amp;rdquo;&lt;/p&gt;&#xA;&lt;p&gt;&amp;ldquo;Disrupt the industry.&amp;rdquo;&lt;/p&gt;&#xA;&lt;p&gt;&amp;ldquo;Make new discoveries.&amp;rdquo;&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+			</item>
+			<item>
+				<title>Practicing Agency</title>
+				<link>https://adamjermyn.com/posts/agency_social/</link>
+				<pubDate>Sat, 04 Dec 2021 09:01:56 -0800</pubDate>
+				<guid>https://adamjermyn.com/posts/agency_social/</guid>
+				<description>&lt;p&gt;&lt;a href=&#34;https://www.lesswrong.com/tag/agency&#34;&gt;Agency&lt;/a&gt; is where you act to achieve your goals. Unfortunately agency is hard and &lt;a href=&#34;https://adamjermyn.com/posts/agency_school/&#34;&gt;not the default state&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Social nudging is a powerful way to combat this. Here are a few lightly-edited conversations that I&amp;rsquo;ve observed or participated in that pushed towards more agency:&lt;/p&gt;&#xA;&lt;h2 id=&#34;fire&#34;&gt;Fire&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;P1: There&amp;rsquo;s a fire ~20 miles away and it&amp;rsquo;s raining ash.&lt;/p&gt;&#xA;&lt;p&gt;P2: Do you have an air purifier?&lt;/p&gt;&#xA;&lt;p&gt;P1: &amp;hellip; no, I should get one. Amazon says it&amp;rsquo;ll arrive next week.&lt;/p&gt;&#xA;&lt;p&gt;P2: I bet Home Depot has one you could get &lt;em&gt;tonight&lt;/em&gt;.&lt;/p&gt;&#xA;&lt;p&gt;P1: On it.&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+			</item>
+			<item>
+				<title>Does Riboflavin Prevent Migraines?</title>
+				<link>https://adamjermyn.com/posts/riboflavin/</link>
+				<pubDate>Thu, 02 Dec 2021 17:03:20 -0800</pubDate>
+				<guid>https://adamjermyn.com/posts/riboflavin/</guid>
+				<description>&lt;h2 id=&#34;abstract&#34;&gt;Abstract&lt;/h2&gt;&#xA;&lt;p&gt;(&lt;em&gt;This is not medical advice. I am not a medical professional. Thanks to Rose DiLoreto for the idea for this post.&lt;/em&gt;)&lt;/p&gt;&#xA;&lt;p&gt;Supplementing with Riboflavin (Vitamin B2) seems probably helpful for headaches and migraines, likely reducing their frequency by about 50% as well as reducing severity somewhat. This is backed by multiple randomized controlled trials, and I&amp;rsquo;ve tried to check for anything funny in those trials (small samples, weird controls, etc.). The samples tend to be a little small, but not ridiculously so. Nothing else looked amiss to me, but it&amp;rsquo;s possible I&amp;rsquo;ve missed something.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>High-Value Low-Probability Options Abound</title>
+				<link>https://adamjermyn.com/posts/mugged_by_probability/</link>
+				<pubDate>Mon, 25 Oct 2021 07:16:09 -0700</pubDate>
+				<guid>https://adamjermyn.com/posts/mugged_by_probability/</guid>
+				<description>&lt;p&gt;(&lt;em&gt;Numbers in this post are made up to illustrate a point. Likewise the plot device need not be cryptocurrencies, that&amp;rsquo;s just flavor text.&lt;/em&gt;)&lt;/p&gt;&#xA;&lt;p&gt;You&amp;rsquo;re walking on the street, minding your business. Suddenly, a stranger (S) comes up and starts talking to you:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;S: Have you heard? There&amp;rsquo;s a one-in-a-million chance you could save a billion lives! All you have to do is found a crypto currency, become extremely rich, and use that money to fight Malaria!&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+			</item>
+			<item>
+				<title>A School for Agency</title>
+				<link>https://adamjermyn.com/posts/agency_school/</link>
+				<pubDate>Sun, 01 Aug 2021 14:42:17 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/agency_school/</guid>
+				<description>&lt;h1 id=&#34;a-school-for-agency&#34;&gt;A School for Agency&lt;/h1&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.lesswrong.com/tag/agency&#34;&gt;Agency&lt;/a&gt; is where you act to achieve your goals. It&amp;rsquo;s where you look at problems and say &amp;ldquo;How could I solve them?&amp;rdquo; and really think about that and arrive at possible courses of action and then &lt;strong&gt;take those actions&lt;/strong&gt;. Explicitly, agency is about executing three steps:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Notice a problem/question.&lt;/li&gt;&#xA;&lt;li&gt;Brainstorm solutions.&lt;/li&gt;&#xA;&lt;li&gt;Try solutions until something works or the costs exceed the benefits.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;An example I return to often in the summer is air conditioning. Lots of people have trouble sleeping in the heat. If you have trouble sleeping because of the heat, and you can afford a window unit, and your building allows window units, a natural move would be to say &amp;ldquo;I have trouble sleeping because of the heat. I have the money to get a window unit, my building allows me to install a window unit, and I value good sleep, so I&amp;rsquo;ll go do it.&amp;rdquo;&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>beauty on Adam Jermyn</title>
-    <link>https://adamjermyn.com/tags/beauty/</link>
-    <description>Recent content in beauty on Adam Jermyn</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Sat, 27 Jan 2024 15:57:53 -0500</lastBuildDate><atom:link href="https://adamjermyn.com/tags/beauty/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Things I Find Beautiful - I</title>
-      <link>https://adamjermyn.com/posts/beauty1/</link>
-      <pubDate>Sat, 27 Jan 2024 15:57:53 -0500</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/beauty1/</guid>
-      <description>This is a collection of some things I&amp;rsquo;ve found beautiful recently.
-Recursive Game of Life (see the run-through here). Each cell is being simulated by another instance of the Game of Life, and if you zoom out enough you see that the structures you started off looking at are also simulations of cells.
-Paintings by Owen Schuh. See especially the work page, and this tweet. There&amp;rsquo;s a quality to many of these that&amp;rsquo;s halfway between organic and designed that really draws me in.</description>
-    </item>
-    
-  </channel>
+	<channel>
+		<title>Beauty on Adam Jermyn</title>
+		<link>https://adamjermyn.com/tags/beauty/</link>
+		<description>Recent content in Beauty on Adam Jermyn</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Sat, 27 Jan 2024 15:57:53 -0500</lastBuildDate>
+		
+			<atom:link href="https://adamjermyn.com/tags/beauty/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Things I Find Beautiful - I</title>
+				<link>https://adamjermyn.com/posts/beauty1/</link>
+				<pubDate>Sat, 27 Jan 2024 15:57:53 -0500</pubDate>
+				<guid>https://adamjermyn.com/posts/beauty1/</guid>
+				<description>&lt;p&gt;&lt;em&gt;This is a collection of some things I&amp;rsquo;ve found beautiful recently.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://oimo.io/works/life/&#34;&gt;Recursive Game of Life&lt;/a&gt; (see the run-through &lt;a href=&#34;https://twitter.com/Rainmaker1973/status/1749445224139506106?s=20&#34;&gt;here&lt;/a&gt;). Each cell is being simulated by another instance of the Game of Life, and if you zoom out enough you see that the structures you started off looking at are &lt;em&gt;also&lt;/em&gt; simulations of cells.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.owenschuh.com&#34;&gt;Paintings by Owen Schuh&lt;/a&gt;. See especially the &lt;a href=&#34;https://www.owenschuh.com/work/unfoldingcube&#34;&gt;work&lt;/a&gt; page, and this &lt;a href=&#34;https://x.com/relic_radiation/status/1748225930261393824?s=20&#34;&gt;tweet&lt;/a&gt;. There&amp;rsquo;s a quality to many of these that&amp;rsquo;s halfway between organic and designed that really draws me in.&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

@@ -1,344 +1,276 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Tags on Adam Jermyn</title>
-    <link>https://adamjermyn.com/tags/</link>
-    <description>Recent content in Tags on Adam Jermyn</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Sun, 04 Jan 2026 12:00:00 -0500</lastBuildDate><atom:link href="https://adamjermyn.com/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>AI</title>
-      <link>https://adamjermyn.com/tags/ai/</link>
-      <pubDate>Sun, 04 Jan 2026 12:00:00 -0500</pubDate>
-      
-      <guid>https://adamjermyn.com/tags/ai/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>History</title>
-      <link>https://adamjermyn.com/tags/history/</link>
-      <pubDate>Sun, 04 Jan 2026 12:00:00 -0500</pubDate>
-      
-      <guid>https://adamjermyn.com/tags/history/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Medicine</title>
-      <link>https://adamjermyn.com/tags/medicine/</link>
-      <pubDate>Sun, 04 Jan 2026 12:00:00 -0500</pubDate>
-      
-      <guid>https://adamjermyn.com/tags/medicine/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>physics</title>
-      <link>https://adamjermyn.com/tags/physics/</link>
-      <pubDate>Wed, 31 Dec 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://adamjermyn.com/tags/physics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Writing</title>
-      <link>https://adamjermyn.com/tags/writing/</link>
-      <pubDate>Wed, 31 Dec 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://adamjermyn.com/tags/writing/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Personal</title>
-      <link>https://adamjermyn.com/tags/personal/</link>
-      <pubDate>Sat, 15 Nov 2025 10:00:00 -0500</pubDate>
-      
-      <guid>https://adamjermyn.com/tags/personal/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>LLM</title>
-      <link>https://adamjermyn.com/tags/llm/</link>
-      <pubDate>Sun, 09 Jun 2024 18:24:21 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/tags/llm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>reading</title>
-      <link>https://adamjermyn.com/tags/reading/</link>
-      <pubDate>Thu, 07 Mar 2024 11:26:29 -0500</pubDate>
-      
-      <guid>https://adamjermyn.com/tags/reading/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>life</title>
-      <link>https://adamjermyn.com/tags/life/</link>
-      <pubDate>Sat, 27 Jan 2024 16:49:34 -0500</pubDate>
-      
-      <guid>https://adamjermyn.com/tags/life/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>beauty</title>
-      <link>https://adamjermyn.com/tags/beauty/</link>
-      <pubDate>Sat, 27 Jan 2024 15:57:53 -0500</pubDate>
-      
-      <guid>https://adamjermyn.com/tags/beauty/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>science</title>
-      <link>https://adamjermyn.com/tags/science/</link>
-      <pubDate>Sat, 25 Mar 2023 19:51:30 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/tags/science/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tuberculosis</title>
-      <link>https://adamjermyn.com/tags/tuberculosis/</link>
-      <pubDate>Sat, 25 Mar 2023 19:51:30 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/tags/tuberculosis/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>AI Interpretability</title>
-      <link>https://adamjermyn.com/tags/ai-interpretability/</link>
-      <pubDate>Tue, 29 Nov 2022 20:38:53 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/tags/ai-interpretability/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>AI Safety</title>
-      <link>https://adamjermyn.com/tags/ai-safety/</link>
-      <pubDate>Tue, 29 Nov 2022 20:38:53 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/tags/ai-safety/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Toy Models</title>
-      <link>https://adamjermyn.com/tags/toy-models/</link>
-      <pubDate>Tue, 29 Nov 2022 20:38:53 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/tags/toy-models/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Acausal Coordination</title>
-      <link>https://adamjermyn.com/tags/acausal-coordination/</link>
-      <pubDate>Wed, 02 Nov 2022 10:44:53 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/tags/acausal-coordination/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Decision Theory</title>
-      <link>https://adamjermyn.com/tags/decision-theory/</link>
-      <pubDate>Wed, 02 Nov 2022 10:44:53 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/tags/decision-theory/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>AI Capabilities</title>
-      <link>https://adamjermyn.com/tags/ai-capabilities/</link>
-      <pubDate>Tue, 04 Oct 2022 14:27:25 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/tags/ai-capabilities/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Deceptive Alignment</title>
-      <link>https://adamjermyn.com/tags/deceptive-alignment/</link>
-      <pubDate>Tue, 04 Oct 2022 14:27:25 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/tags/deceptive-alignment/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Language Models</title>
-      <link>https://adamjermyn.com/tags/language-models/</link>
-      <pubDate>Mon, 26 Sep 2022 08:21:00 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/tags/language-models/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Machine-Learning</title>
-      <link>https://adamjermyn.com/tags/machine-learning/</link>
-      <pubDate>Mon, 26 Sep 2022 08:21:00 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/tags/machine-learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>research</title>
-      <link>https://adamjermyn.com/tags/research/</link>
-      <pubDate>Mon, 26 Sep 2022 08:21:00 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/tags/research/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Transformers</title>
-      <link>https://adamjermyn.com/tags/transformers/</link>
-      <pubDate>Mon, 26 Sep 2022 08:21:00 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/tags/transformers/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>geology</title>
-      <link>https://adamjermyn.com/tags/geology/</link>
-      <pubDate>Fri, 19 Aug 2022 11:18:48 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/tags/geology/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>astronomy</title>
-      <link>https://adamjermyn.com/tags/astronomy/</link>
-      <pubDate>Thu, 18 Aug 2022 13:40:28 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/tags/astronomy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>math</title>
-      <link>https://adamjermyn.com/tags/math/</link>
-      <pubDate>Fri, 17 Jun 2022 09:21:45 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/tags/math/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tools</title>
-      <link>https://adamjermyn.com/tags/tools/</link>
-      <pubDate>Wed, 11 May 2022 15:28:14 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/tags/tools/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Rest</title>
-      <link>https://adamjermyn.com/tags/rest/</link>
-      <pubDate>Tue, 12 Apr 2022 17:19:49 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/tags/rest/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Agency</title>
-      <link>https://adamjermyn.com/tags/agency/</link>
-      <pubDate>Mon, 11 Apr 2022 14:33:01 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/tags/agency/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Goals</title>
-      <link>https://adamjermyn.com/tags/goals/</link>
-      <pubDate>Mon, 11 Apr 2022 14:33:01 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/tags/goals/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Taxes</title>
-      <link>https://adamjermyn.com/tags/taxes/</link>
-      <pubDate>Sun, 27 Mar 2022 17:15:37 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/tags/taxes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Longtermism</title>
-      <link>https://adamjermyn.com/tags/longtermism/</link>
-      <pubDate>Mon, 14 Mar 2022 14:27:25 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/tags/longtermism/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Workflow</title>
-      <link>https://adamjermyn.com/tags/workflow/</link>
-      <pubDate>Tue, 01 Mar 2022 13:43:15 -0500</pubDate>
-      
-      <guid>https://adamjermyn.com/tags/workflow/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>COVID</title>
-      <link>https://adamjermyn.com/tags/covid/</link>
-      <pubDate>Thu, 23 Dec 2021 16:09:40 -0500</pubDate>
-      
-      <guid>https://adamjermyn.com/tags/covid/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>cryptocurrency</title>
-      <link>https://adamjermyn.com/tags/cryptocurrency/</link>
-      <pubDate>Mon, 13 Dec 2021 18:16:59 -0800</pubDate>
-      
-      <guid>https://adamjermyn.com/tags/cryptocurrency/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Migraines</title>
-      <link>https://adamjermyn.com/tags/migraines/</link>
-      <pubDate>Thu, 02 Dec 2021 17:03:20 -0800</pubDate>
-      
-      <guid>https://adamjermyn.com/tags/migraines/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mars</title>
-      <link>https://adamjermyn.com/tags/mars/</link>
-      <pubDate>Sun, 10 Jan 2021 10:24:23 -0500</pubDate>
-      
-      <guid>https://adamjermyn.com/tags/mars/</guid>
-      <description></description>
-    </item>
-    
-  </channel>
+	<channel>
+		<title>Tags on Adam Jermyn</title>
+		<link>https://adamjermyn.com/tags/</link>
+		<description>Recent content in Tags on Adam Jermyn</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Sun, 04 Jan 2026 12:00:00 -0500</lastBuildDate>
+		
+			<atom:link href="https://adamjermyn.com/tags/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>AI</title>
+				<link>https://adamjermyn.com/tags/ai/</link>
+				<pubDate>Sun, 04 Jan 2026 12:00:00 -0500</pubDate>
+				<guid>https://adamjermyn.com/tags/ai/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>History</title>
+				<link>https://adamjermyn.com/tags/history/</link>
+				<pubDate>Sun, 04 Jan 2026 12:00:00 -0500</pubDate>
+				<guid>https://adamjermyn.com/tags/history/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Medicine</title>
+				<link>https://adamjermyn.com/tags/medicine/</link>
+				<pubDate>Sun, 04 Jan 2026 12:00:00 -0500</pubDate>
+				<guid>https://adamjermyn.com/tags/medicine/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Physics</title>
+				<link>https://adamjermyn.com/tags/physics/</link>
+				<pubDate>Wed, 31 Dec 2025 00:00:00 +0000</pubDate>
+				<guid>https://adamjermyn.com/tags/physics/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Writing</title>
+				<link>https://adamjermyn.com/tags/writing/</link>
+				<pubDate>Wed, 31 Dec 2025 00:00:00 +0000</pubDate>
+				<guid>https://adamjermyn.com/tags/writing/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Personal</title>
+				<link>https://adamjermyn.com/tags/personal/</link>
+				<pubDate>Sat, 15 Nov 2025 10:00:00 -0500</pubDate>
+				<guid>https://adamjermyn.com/tags/personal/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>LLM</title>
+				<link>https://adamjermyn.com/tags/llm/</link>
+				<pubDate>Sun, 09 Jun 2024 18:24:21 -0400</pubDate>
+				<guid>https://adamjermyn.com/tags/llm/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Reading</title>
+				<link>https://adamjermyn.com/tags/reading/</link>
+				<pubDate>Thu, 07 Mar 2024 11:26:29 -0500</pubDate>
+				<guid>https://adamjermyn.com/tags/reading/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Life</title>
+				<link>https://adamjermyn.com/tags/life/</link>
+				<pubDate>Sat, 27 Jan 2024 16:49:34 -0500</pubDate>
+				<guid>https://adamjermyn.com/tags/life/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Beauty</title>
+				<link>https://adamjermyn.com/tags/beauty/</link>
+				<pubDate>Sat, 27 Jan 2024 15:57:53 -0500</pubDate>
+				<guid>https://adamjermyn.com/tags/beauty/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Science</title>
+				<link>https://adamjermyn.com/tags/science/</link>
+				<pubDate>Sat, 25 Mar 2023 19:51:30 -0400</pubDate>
+				<guid>https://adamjermyn.com/tags/science/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Tuberculosis</title>
+				<link>https://adamjermyn.com/tags/tuberculosis/</link>
+				<pubDate>Sat, 25 Mar 2023 19:51:30 -0400</pubDate>
+				<guid>https://adamjermyn.com/tags/tuberculosis/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>AI Interpretability</title>
+				<link>https://adamjermyn.com/tags/ai-interpretability/</link>
+				<pubDate>Tue, 29 Nov 2022 20:38:53 -0400</pubDate>
+				<guid>https://adamjermyn.com/tags/ai-interpretability/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>AI Safety</title>
+				<link>https://adamjermyn.com/tags/ai-safety/</link>
+				<pubDate>Tue, 29 Nov 2022 20:38:53 -0400</pubDate>
+				<guid>https://adamjermyn.com/tags/ai-safety/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Toy Models</title>
+				<link>https://adamjermyn.com/tags/toy-models/</link>
+				<pubDate>Tue, 29 Nov 2022 20:38:53 -0400</pubDate>
+				<guid>https://adamjermyn.com/tags/toy-models/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Acausal Coordination</title>
+				<link>https://adamjermyn.com/tags/acausal-coordination/</link>
+				<pubDate>Wed, 02 Nov 2022 10:44:53 -0400</pubDate>
+				<guid>https://adamjermyn.com/tags/acausal-coordination/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Decision Theory</title>
+				<link>https://adamjermyn.com/tags/decision-theory/</link>
+				<pubDate>Wed, 02 Nov 2022 10:44:53 -0400</pubDate>
+				<guid>https://adamjermyn.com/tags/decision-theory/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>AI Capabilities</title>
+				<link>https://adamjermyn.com/tags/ai-capabilities/</link>
+				<pubDate>Tue, 04 Oct 2022 14:27:25 -0400</pubDate>
+				<guid>https://adamjermyn.com/tags/ai-capabilities/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Deceptive Alignment</title>
+				<link>https://adamjermyn.com/tags/deceptive-alignment/</link>
+				<pubDate>Tue, 04 Oct 2022 14:27:25 -0400</pubDate>
+				<guid>https://adamjermyn.com/tags/deceptive-alignment/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Language Models</title>
+				<link>https://adamjermyn.com/tags/language-models/</link>
+				<pubDate>Mon, 26 Sep 2022 08:21:00 -0400</pubDate>
+				<guid>https://adamjermyn.com/tags/language-models/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Machine Learning</title>
+				<link>https://adamjermyn.com/tags/machine-learning/</link>
+				<pubDate>Mon, 26 Sep 2022 08:21:00 -0400</pubDate>
+				<guid>https://adamjermyn.com/tags/machine-learning/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Research</title>
+				<link>https://adamjermyn.com/tags/research/</link>
+				<pubDate>Mon, 26 Sep 2022 08:21:00 -0400</pubDate>
+				<guid>https://adamjermyn.com/tags/research/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Transformers</title>
+				<link>https://adamjermyn.com/tags/transformers/</link>
+				<pubDate>Mon, 26 Sep 2022 08:21:00 -0400</pubDate>
+				<guid>https://adamjermyn.com/tags/transformers/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Geology</title>
+				<link>https://adamjermyn.com/tags/geology/</link>
+				<pubDate>Fri, 19 Aug 2022 11:18:48 -0400</pubDate>
+				<guid>https://adamjermyn.com/tags/geology/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Astronomy</title>
+				<link>https://adamjermyn.com/tags/astronomy/</link>
+				<pubDate>Thu, 18 Aug 2022 13:40:28 -0400</pubDate>
+				<guid>https://adamjermyn.com/tags/astronomy/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Math</title>
+				<link>https://adamjermyn.com/tags/math/</link>
+				<pubDate>Fri, 17 Jun 2022 09:21:45 -0400</pubDate>
+				<guid>https://adamjermyn.com/tags/math/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Tools</title>
+				<link>https://adamjermyn.com/tags/tools/</link>
+				<pubDate>Wed, 11 May 2022 15:28:14 -0400</pubDate>
+				<guid>https://adamjermyn.com/tags/tools/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Rest</title>
+				<link>https://adamjermyn.com/tags/rest/</link>
+				<pubDate>Tue, 12 Apr 2022 17:19:49 -0400</pubDate>
+				<guid>https://adamjermyn.com/tags/rest/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Agency</title>
+				<link>https://adamjermyn.com/tags/agency/</link>
+				<pubDate>Mon, 11 Apr 2022 14:33:01 -0400</pubDate>
+				<guid>https://adamjermyn.com/tags/agency/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Goals</title>
+				<link>https://adamjermyn.com/tags/goals/</link>
+				<pubDate>Mon, 11 Apr 2022 14:33:01 -0400</pubDate>
+				<guid>https://adamjermyn.com/tags/goals/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Taxes</title>
+				<link>https://adamjermyn.com/tags/taxes/</link>
+				<pubDate>Sun, 27 Mar 2022 17:15:37 -0400</pubDate>
+				<guid>https://adamjermyn.com/tags/taxes/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Longtermism</title>
+				<link>https://adamjermyn.com/tags/longtermism/</link>
+				<pubDate>Mon, 14 Mar 2022 14:27:25 -0400</pubDate>
+				<guid>https://adamjermyn.com/tags/longtermism/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Workflow</title>
+				<link>https://adamjermyn.com/tags/workflow/</link>
+				<pubDate>Tue, 01 Mar 2022 13:43:15 -0500</pubDate>
+				<guid>https://adamjermyn.com/tags/workflow/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>COVID</title>
+				<link>https://adamjermyn.com/tags/covid/</link>
+				<pubDate>Thu, 23 Dec 2021 16:09:40 -0500</pubDate>
+				<guid>https://adamjermyn.com/tags/covid/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Cryptocurrency</title>
+				<link>https://adamjermyn.com/tags/cryptocurrency/</link>
+				<pubDate>Mon, 13 Dec 2021 18:16:59 -0800</pubDate>
+				<guid>https://adamjermyn.com/tags/cryptocurrency/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Migraines</title>
+				<link>https://adamjermyn.com/tags/migraines/</link>
+				<pubDate>Thu, 02 Dec 2021 17:03:20 -0800</pubDate>
+				<guid>https://adamjermyn.com/tags/migraines/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Mars</title>
+				<link>https://adamjermyn.com/tags/mars/</link>
+				<pubDate>Sun, 10 Jan 2021 10:24:23 -0500</pubDate>
+				<guid>https://adamjermyn.com/tags/mars/</guid>
+				<description></description>
+			</item>
+	</channel>
 </rss>

@@ -7,7 +7,7 @@
 		
 		<meta name="author" content="Adam Jermyn">
 		<meta name="description" content="Site Description">
-		<meta name="generator" content="Hugo 0.92.2" />
+		<meta name="generator" content="Hugo 0.168.0">
 		<title>Growth and Population on Mars &middot; Adam Jermyn</title>
 		<link rel="shortcut icon" href="https://adamjermyn.com/images/favicon.ico">
 		<link rel="stylesheet" href="https://adamjermyn.com/css/style.css">
@@ -24,18 +24,6 @@
 		
 
                 
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-186473758-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
 		
                 <script>
   MathJax = {
@@ -110,8 +98,8 @@ if (!doNotTrack) {
 $$
 p \propto I^\alpha n^\beta
 $$
-for $\alpha,\beta &gt; 0$. This relation says that the per-person productivity $p$ scales as some positive power $\alpha$ of the per-person investment $I$, which could reflect machinery or materials or personnel support from Earth, and as another positive power $\beta$ of the number of people $n$.</p>
-<p>It&rsquo;s clear why more machines and materials improve productivity, but why does population help? As anyone who has assembled furniture knows, having a second person to hold pieces while you apply glue makes a huge difference, and can cut assembly time by more than half. <strong>Two people together are much more than twice as productive as two isolated individuals.</strong> This insight translates mathematically into the statement that $\beta &gt; 0$: more people means more productivity <em>per person</em>.</p>
+for $\alpha,\beta > 0$. This relation says that the per-person productivity $p$ scales as some positive power $\alpha$ of the per-person investment $I$, which could reflect machinery or materials or personnel support from Earth, and as another positive power $\beta$ of the number of people $n$.</p>
+<p>It&rsquo;s clear why more machines and materials improve productivity, but why does population help? As anyone who has assembled furniture knows, having a second person to hold pieces while you apply glue makes a huge difference, and can cut assembly time by more than half. <strong>Two people together are much more than twice as productive as two isolated individuals.</strong> This insight translates mathematically into the statement that $\beta > 0$: more people means more productivity <em>per person</em>.</p>
 <p>In my previous post I discussed two limits: one in which $\alpha \gg \beta$, meaning that it&rsquo;s much more important to invest heavily in each person than to scale up the number of people, and one in which $\alpha \ll \beta$, meaning that it&rsquo;s much more important to scale up the number of people. Which limit applies really matters for determining how to invest in the Martian economy.</p>
 <p>Here I want to understand what sets $\alpha$ and $\beta$ and try to estimate them at different stages of growth. I&rsquo;ll do this by very naively extrapolating from economies on Earth and then considering ways in which Mars could be different.</p>
 <h1 id="diminishing-returns">Diminishing Returns</h1>
@@ -140,7 +128,7 @@ meaning that the importance of raising population declines with increasing popul
 $$
 \beta \approx \frac{d\ln p}{d\ln n} \approx \frac{1}{\ln n - 5}
 $$
-I&rsquo;ve plotted this formula below. It breaks down badly for small populations with $n &lt; e^5 \approx 150$, well below the country data I fit to, but for larger populations it gives an estimate $\beta$ for countries on Earth. A Martian economy could be different because in the beginning it will rely on very specific industries that could well have different scaling, but this at least gives me a starting point.</p>
+I&rsquo;ve plotted this formula below. It breaks down badly for small populations with $n < e^5 \approx 150$, well below the country data I fit to, but for larger populations it gives an estimate $\beta$ for countries on Earth. A Martian economy could be different because in the beginning it will rely on very specific industries that could well have different scaling, but this at least gives me a starting point.</p>
 <img src="../../images/alpha_beta/beta.svg" style="max-width:100%;max-height:100%;!important;width:500px;!important;height=auto;!important;display: block;!important;margin-left: auto;!important; margin-right: auto;!important;" class="inline">
 <h1 id="investment-scaling">Investment Scaling</h1>
 <p>Next I want to know how productivity scales with investment. There&rsquo;s good data on this. Below I&rsquo;ve plotted labor productivity in 2010 PPP dollars per person-hour worked as a function of capital intensity for 17 countries over the span from 1890-2015.</p>
@@ -148,7 +136,7 @@ I&rsquo;ve plotted this formula below. It breaks down badly for small population
 <p>The trendline shows that this is well-fit by a power law with a constant $\alpha\approx 0.8$. There are no diminishing returns! What happened? First, a lot of population growth happened, and that could be masking diminishing returns. Secondly, and probably more important, lots of new technology emerged over this period! That increases productivity without requiring more capital per person, allowing constant returns on investment despite increasing investment per capita. So while developing countries can initially achieve 10+%/year growth rates by increasing their capital stock, eventually that growth slows to the 2-3% growth rate of developed nations.</p>
 <p>So does Mars hit diminishing returns on investment or not? By analogy with developing countries, it seems likely that there will be a period of huge returns because Mars is initially so capital-poor. The Martian economy will also involve substantial new technology, so innovation may well keep returns high, at least as high as terrestrial returns. This suggests that if returns diminish, they will do so from a very high baseline, and that the terrestrial $\alpha\approx 0.8$ is probably a lower bound for Mars.</p>
 <h1 id="big-picture">Big Picture</h1>
-<p>By wildly extrapolating from Earth&rsquo;s economy I found that $\alpha \geq 0.8$ while $\beta$ is initially $0.5$ and declines with increasing population. Taking these figures at face value suggests that so long as $n &gt; 10^4$ (the limit on the data I could fit to), Mars is in the limit where capital matters more than population. Adding more people speeds up growth, but not as much as throwing more machines and tooling at the same number of people.</p>
+<p>By wildly extrapolating from Earth&rsquo;s economy I found that $\alpha \geq 0.8$ while $\beta$ is initially $0.5$ and declines with increasing population. Taking these figures at face value suggests that so long as $n > 10^4$ (the limit on the data I could fit to), Mars is in the limit where capital matters more than population. Adding more people speeds up growth, but not as much as throwing more machines and tooling at the same number of people.</p>
 <p>There are limits to this, of course. Barring substantial developments in AI, throwing more and more hardware at a small group of people will eventually saturate their ability to manage it. In the beginning though, the Martian economy will need tooling more than people.</p>
 
                 </section>

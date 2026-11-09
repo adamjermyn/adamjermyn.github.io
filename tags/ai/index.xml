@@ -1,221 +1,150 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>AI on Adam Jermyn</title>
-    <link>https://adamjermyn.com/tags/ai/</link>
-    <description>Recent content in AI on Adam Jermyn</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Sun, 04 Jan 2026 12:00:00 -0500</lastBuildDate><atom:link href="https://adamjermyn.com/tags/ai/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>The Tragedy of Almost: Arline Feynman and the Information Gap</title>
-      <link>https://adamjermyn.com/posts/arline_feynman/</link>
-      <pubDate>Sun, 04 Jan 2026 12:00:00 -0500</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/arline_feynman/</guid>
-      <description>How many people have died not because treatments didn&amp;rsquo;t exist, but because the information didn&amp;rsquo;t reach them in time? Every new cure has a window where it exists but isn&amp;rsquo;t widely known, isn&amp;rsquo;t easily accessible, requires connections or luck to obtain. Someone is always on the wrong side of that window.
-One of the cruelest examples: Arline Feynman, wife of physicist Richard Feynman, who died of tuberculosis in June 1945.</description>
-    </item>
-    
-    <item>
-      <title>Lectures on Fractures</title>
-      <link>https://adamjermyn.com/posts/lectures_on_fractures/</link>
-      <pubDate>Wed, 31 Dec 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/lectures_on_fractures/</guid>
-      <description>I recently collaborated with Claude Opus 4.5 to write a short set of lecture notes on fracture mechanics:
-Lectures on Fractures (PDF)
-How it worked I wanted something in Feynman&amp;rsquo;s style. Conversational, building intuition before formalism, full of physical insight. So I had Claude start by reading some of Feynman&amp;rsquo;s writing and assembling a style guide. That gave us a shared reference for tone.
-The technical focus was Griffith&amp;rsquo;s work on fractures.</description>
-    </item>
-    
-    <item>
-      <title>Querying ultra-long contexts with summary trees</title>
-      <link>https://adamjermyn.com/posts/claude_summary/</link>
-      <pubDate>Sun, 09 Jun 2024 18:24:21 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/claude_summary/</guid>
-      <description>Views my own. There might well be more clever ways to do all of this that I don&amp;rsquo;t know of.
-Suppose you have some long, ordered text data, like news stories going back a century or journal entries or server logs. You&amp;rsquo;d like to analyze them with a Large Language Model (LLM), but you can&amp;rsquo;t just concatenate them together (the context window isn&amp;rsquo;t that long!).
-A fun solution to this problem is a summary tree.</description>
-    </item>
-    
-    <item>
-      <title>Brief Notes on Transformers</title>
-      <link>https://adamjermyn.com/posts/transformer_notes/</link>
-      <pubDate>Mon, 26 Sep 2022 08:21:00 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/transformer_notes/</guid>
-      <description>(Cross-posted from the AI Alignment Forum)*
-*These are just some notes I wrote while reading about transformers, which I thought might be a useful reference to others. Corrections welcome.
-Overview of Transformers Many transformer models have the following architecture:
-Data flows as follows:
- We take tokens as inputs and pass them through an embedding layer. The embedding layer outputs its result into the residual stream (x0). This has dimension (C,E), where C is the number of tokens in the context window and E is the embedding dimension.</description>
-    </item>
-    
-    <item>
-      <title>Conditioning, Prompts, and Fine-Tuning</title>
-      <link>https://adamjermyn.com/posts/conditioning_fine_tuning/</link>
-      <pubDate>Wed, 17 Aug 2022 16:55:03 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/conditioning_fine_tuning/</guid>
-      <description>Posted to the AI Alignment Forums.
-(Thanks to Evan Hubinger and Nicholas Schiefer for comments on these ideas.)
-These are some notes on the relation between conditioning language models, prompting, and fine-tuning. The key takeaways are:
- Prompting and fine-tuning can both be used to condition language models. Prompting is quite restricted in the kinds of conditionals it can achieve. Fine-tuning can implement arbitrary conditionals in principle, though not in practice.</description>
-    </item>
-    
-    <item>
-      <title>Conditioning Generative Models with Restrictions</title>
-      <link>https://adamjermyn.com/posts/conditioninggenerativemodels2/</link>
-      <pubDate>Thu, 21 Jul 2022 16:34:05 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/conditioninggenerativemodels2/</guid>
-      <description>This is a followup to Conditioning Generative Models based on further discussions with Evan Hubinger, Nicholas Schiefer, Abram Demski, Curtis Huebner, Hoagy Cunningham, Derek Shiller, and James Lucassen, as well as broader conversations with many different people at the recent ARC/ELK retreat. For more background on this general direction see Johannes Treutlein’s “Training goals for large language models”.
-Background Previously, I wrote about ways we could use a generative language model to produce alignment research.</description>
-    </item>
-    
-    <item>
-      <title>Quantilizers and Generative Models</title>
-      <link>https://adamjermyn.com/posts/quantilizers/</link>
-      <pubDate>Mon, 18 Jul 2022 12:33:31 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/quantilizers/</guid>
-      <description>(Cross-posted from the AI Alignment Forum)
-Thanks to Evan Hubinger for discussions about quantilizers, and to James Lucassen for discussions about conditioned generative models. Many of these ideas are discussed in Quantilizers: A Safer Alternative to Maximizers for Limited Optimization: this post just expands on a particular thread of ideas in that paper. Throughout I’ll refer to sections of the paper. I have some remaining confusion about the “targeted impact” section, and would appreciate clarifications/corrections!</description>
-    </item>
-    
-    <item>
-      <title>Grouped Loss may disfavor discontinuous capabilities</title>
-      <link>https://adamjermyn.com/posts/grouped_loss/</link>
-      <pubDate>Sat, 09 Jul 2022 08:21:00 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/grouped_loss/</guid>
-      <description>(Cross-posted from the AI Alignment Forum)
-Thanks to Evan Hubinger and Beth Barnes for comments on these ideas.
-Language models exhibit clear scaling laws, where the loss is a power-law in model size. This offers a lot of predictive power, and seems like a useful thing to know. By contrast, individual capabilities often exhibit sharp discontinuities in performance as a function of model size and training time.
-It would be great if individual capabilities just gradually improved like the broader loss.</description>
-    </item>
-    
-    <item>
-      <title>Latent Adversarial Training</title>
-      <link>https://adamjermyn.com/posts/lat/</link>
-      <pubDate>Wed, 29 Jun 2022 16:05:25 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/lat/</guid>
-      <description>Posted to the AI Alignment Forum.
-The Problem We’d like to train models to be robustly safe, even in environments that may fall well outside of the training distribution. Unfortunately all we get to work with is the training distribution, which makes ensuring robust generalization difficult.
-Deception is an example of this concern. Models may be well-behaved in the training environment because they realize it is a training environment, but behave poorly in deployment because they notice the distributional shift.</description>
-    </item>
-    
-    <item>
-      <title>Training Trace Priors and Speed Priors</title>
-      <link>https://adamjermyn.com/posts/tracespeed/</link>
-      <pubDate>Mon, 27 Jun 2022 10:15:31 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/tracespeed/</guid>
-      <description>Posted to the AI Alignment Forum here.
-Thanks to Evan Hubinger for suggesting this idea.
-Training Trace Priors are priors over boolean circuits which examine the outputs of gates on samples from the training distribution, typically for purposes of steering models away from having components that were never tested during training. The one I like to think about is the One-Gate Trace Prior (OGT Prior), which penalizes circuits if there are gates with constant outputs during training.</description>
-    </item>
-    
-    <item>
-      <title>Conditioning Generative Models</title>
-      <link>https://adamjermyn.com/posts/conditioninggenerativemodels/</link>
-      <pubDate>Mon, 27 Jun 2022 10:14:16 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/conditioninggenerativemodels/</guid>
-      <description>Posted to the AI Alignment Forum here.
-This post was written in response to Evan Hubinger’s shortform prompt below, and benefited from discussions with him.
- Suppose you had a language model that you knew was in fact a good generative model of the world and that this property continued to hold regardless of what you conditioned it on. Furthermore, suppose you had some prompt that described some agent for the language model to simulate (Alice) that in practice resulted in aligned-looking outputs.</description>
-    </item>
-    
-    <item>
-      <title>#SAT with Tensor Networks</title>
-      <link>https://adamjermyn.com/posts/tn_bc/</link>
-      <pubDate>Fri, 17 Jun 2022 09:21:45 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/tn_bc/</guid>
-      <description>Cross-posted from LessWrong.
-(Thanks to Mark Xu for comments on these notes.)
-These are some notes on tensor networks, the mapping from boolean circuits to tensor networks, and how #SAT can be written as a tensor network contraction.
-Definitions and Notation What is a tensor? A rank-$d$ tensor is an array of numbers with $d$ integer indices, e.g. $T_{ijk}$ is a rank-3 tensor. The range of each index is called its bond dimension.</description>
-    </item>
-    
-    <item>
-      <title>Multigate Priors</title>
-      <link>https://adamjermyn.com/posts/multigate_prior/</link>
-      <pubDate>Wed, 15 Jun 2022 15:33:51 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/multigate_prior/</guid>
-      <description>Posted to LessWrong here.
-(Thanks to Evan Hubinger and Nicholas Schiefer for suggestions and discussions around these ideas)
-Multi-Gate Traces We can improve on one-gate traces with multi-gate traces! Suppose we have $N$ training samples. Then we can reasonably estimate joint probability distributions over up to $k=\lfloor\log_2 N\rfloor$ gates, giving the prior:
-$$ p\propto \exp\left(-\sum_{i_1&amp;hellip;i_k}\sum_{j\in [0,1]^k}p_{i_1&amp;hellip;i_k}(j)^m\right) $$
-That is, we sum over all selections of $k$ gates and compute the entropy of their joint distribution over $2^k$ states.</description>
-    </item>
-    
-    <item>
-      <title>Trace Training Priors</title>
-      <link>https://adamjermyn.com/posts/trace_training/</link>
-      <pubDate>Mon, 13 Jun 2022 13:14:01 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/trace_training/</guid>
-      <description>(Crossposted from the AI Alignment Forums)
-I’m worried about scenarios involving deceptive models. We’ve failed at inner alignment so the model has goals that are not aligned with ours. It can somehow detect when it’s in training, and during training it pretends to share our goals. During deployment, surprise! The model paperclips the universe.
-In this story deception is all about the model having hidden behaviors that never get triggered during training.</description>
-    </item>
-    
-    <item>
-      <title>ELK Proposal - Make the Reporter care about the Predictor’s beliefs</title>
-      <link>https://adamjermyn.com/posts/elk1/</link>
-      <pubDate>Mon, 13 Jun 2022 09:27:54 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/elk1/</guid>
-      <description>Posted to the AI Alignment Forum here.
-(This proposal received an honorable mention in the ELK prize results, and we believe was classified among strategies which “reward reporters that are sensitive to what’s actually happening in the world”. We do not think that the counterexample to that class of strategies works against our proposal, though, and we have explained why in a note at the end. Feedback, disagreement, and new failure modes are very welcome!</description>
-    </item>
-    
-    <item>
-      <title>Give the model a model-builder</title>
-      <link>https://adamjermyn.com/posts/give_model_builder/</link>
-      <pubDate>Mon, 06 Jun 2022 16:54:20 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/give_model_builder/</guid>
-      <description>(Thanks to Evan Hubinger for suggesting this problem and for comments on these ideas. Feedback is very welcome. Cross-posted from LessWrong.)
-The Setup Suppose we have a prior $p_{\rm good}(\mathrm{model})$ that we think is non-deceptive, such that we can sample from this prior and get good models that are inner-aligned.
-These models may, for instrumental purposes, need to themselves produce models (via searches/optimization/meta-learning). For instance we might ask an outer model to play poker.</description>
-    </item>
-    
-    <item>
-      <title>Give the AI safe tools</title>
-      <link>https://adamjermyn.com/posts/give_ai_tools/</link>
-      <pubDate>Sat, 04 Jun 2022 08:21:00 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/give_ai_tools/</guid>
-      <description>(Cross-posted from LessWrong)
-One kind of concern with AI is that:
- There are some tools that are instrumentally useful for an AI to have. Most/the most accessible versions of those tools are dangerous. The AI doesn’t care which versions are dangerous. Hence, the AI will probably develop dangerous tools for instrumental reasons.  You might call concerns like this Instrumental Danger Problems. This post aims to examine some existing approaches to Instrumental Danger Problems, and to introduce a new one, namely “Giving the AI safe tools”.</description>
-    </item>
-    
-    <item>
-      <title>Working Notes - Learning PyTorch - Day 2</title>
-      <link>https://adamjermyn.com/posts/ml_2/</link>
-      <pubDate>Tue, 12 Apr 2022 17:17:54 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/ml_2/</guid>
-      <description>Summary  Adding convolutional layers is pretty straightforward, but there are some indexing subtleties to watch. Pooling layers can really improve performance. With two pooling layers, I found an example of a too-high learning rate making the model get stuck with poor performance. The more pooling layers I used the faster the model took a training step (because the dense linear layer was smaller). The more pooling layers I used, the more important the number of channels in the convolutional/pooling layers became.</description>
-    </item>
-    
-    <item>
-      <title>Working Notes - Learning PyTorch - Day 1</title>
-      <link>https://adamjermyn.com/posts/ml_1/</link>
-      <pubDate>Mon, 11 Apr 2022 17:06:39 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/ml_1/</guid>
-      <description>Summary  Covered boilerplate for getting started, tensors, gradients. Poked in some detail at how gradients work. Played with linear regression, nonlinear regression, both with gradient descent. Built an MNIST classifier following a PyTorch tutorial. Experimented with the shape and size of the NN. Got PyTorch running on a machine with a GPU.  Boilerplate Import:
-import torch Need to use a special float type for the elements of tensors, and need to know which device the compute graph will run on:</description>
-    </item>
-    
-  </channel>
+	<channel>
+		<title>AI on Adam Jermyn</title>
+		<link>https://adamjermyn.com/tags/ai/</link>
+		<description>Recent content in AI on Adam Jermyn</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Sun, 04 Jan 2026 12:00:00 -0500</lastBuildDate>
+		
+			<atom:link href="https://adamjermyn.com/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>The Tragedy of Almost: Arline Feynman and the Information Gap</title>
+				<link>https://adamjermyn.com/posts/arline_feynman/</link>
+				<pubDate>Sun, 04 Jan 2026 12:00:00 -0500</pubDate>
+				<guid>https://adamjermyn.com/posts/arline_feynman/</guid>
+				<description>&lt;p&gt;How many people have died not because treatments didn&amp;rsquo;t exist, but because the information didn&amp;rsquo;t reach them in time? Every new cure has a window where it exists but isn&amp;rsquo;t widely known, isn&amp;rsquo;t easily accessible, requires connections or luck to obtain. Someone is always on the wrong side of that window.&lt;/p&gt;&#xA;&lt;p&gt;One of the cruelest examples: Arline Feynman, wife of physicist Richard Feynman, who died of tuberculosis in June 1945.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Lectures on Fractures</title>
+				<link>https://adamjermyn.com/posts/lectures_on_fractures/</link>
+				<pubDate>Wed, 31 Dec 2025 00:00:00 +0000</pubDate>
+				<guid>https://adamjermyn.com/posts/lectures_on_fractures/</guid>
+				<description>&lt;p&gt;I recently collaborated with Claude Opus 4.5 to write a short set of lecture notes on fracture mechanics:&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;../../pdf/lectures_on_fractures.pdf&#34;&gt;Lectures on Fractures (PDF)&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;how-it-worked&#34;&gt;How it worked&lt;/h2&gt;&#xA;&lt;p&gt;I wanted something in Feynman&amp;rsquo;s style. Conversational, building intuition before formalism, full of physical insight. So I had Claude start by reading some of Feynman&amp;rsquo;s writing and assembling a style guide. That gave us a shared reference for tone.&lt;/p&gt;&#xA;&lt;p&gt;The technical focus was Griffith&amp;rsquo;s work on fractures. That&amp;rsquo;s what I wanted to learn about, and centering on his energy-based approach gave the notes a natural structure.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Querying ultra-long contexts with summary trees</title>
+				<link>https://adamjermyn.com/posts/claude_summary/</link>
+				<pubDate>Sun, 09 Jun 2024 18:24:21 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/claude_summary/</guid>
+				<description>&lt;p&gt;&lt;em&gt;Views my own. There might well be more clever ways to do all of this that I don&amp;rsquo;t know of.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;Suppose you have some long, ordered text data, like news stories going back a century or journal entries or server logs. You&amp;rsquo;d like to analyze them with a Large Language Model (LLM), but you can&amp;rsquo;t just concatenate them together (the context window isn&amp;rsquo;t that long!).&lt;/p&gt;&#xA;&lt;p&gt;A fun solution to this problem is a &lt;strong&gt;summary tree&lt;/strong&gt;. The idea is that we use the LLM to summarize pairs of consecutive documents, then summarize pairs of consecutive summaries, then summarize pairs of those, and so on, until there&amp;rsquo;s a tree where the root represents an overall summary of all of the documents and the leaves represent individual documents. Here&amp;rsquo;s an example of the kind of prompt we might use to produce such a tree:&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Brief Notes on Transformers</title>
+				<link>https://adamjermyn.com/posts/transformer_notes/</link>
+				<pubDate>Mon, 26 Sep 2022 08:21:00 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/transformer_notes/</guid>
+				<description>&lt;p&gt;&lt;em&gt;(Cross-posted from the &lt;a href=&#34;https://www.alignmentforum.org/posts/rEPnce975Fid9v5qv/brief-notes-on-transformers&#34;&gt;AI Alignment Forum&lt;/a&gt;)&lt;/em&gt;*&lt;/p&gt;&#xA;&lt;p&gt;*&lt;em&gt;These are just some notes I wrote while reading about transformers, which I thought might be a useful reference to others. Corrections welcome.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;overview-of-transformers&#34;&gt;Overview of Transformers&lt;/h1&gt;&#xA;&lt;p&gt;Many transformer models have &lt;a href=&#34;https://transformer-circuits.pub/2021/framework/index.html#architecture-attn-as-movement&#34;&gt;the following architecture&lt;/a&gt;:&lt;/p&gt;&#xA;&lt;img src=&#34;../../images/transformer_notes.assets/c7052b9cfde21fd125b70380c3289ddab77b50cde834556c.png&#34; alt=&#34;c7052b9cfde21fd125b70380c3289ddab77b50cde834556c&#34; style=&#34;max-width:100%;max-height:100%;display:block;margin-left:auto;margin-right:auto&#34;/&gt;&#xA;&lt;p&gt;Data flows as follows:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;We take tokens as inputs and pass them through an embedding layer. The embedding layer outputs its result into the residual stream (x0). This has dimension (C,E), where C is the number of tokens in the context window and E is the embedding dimension.&lt;/li&gt;&#xA;&lt;li&gt;The residual stream is processed by the attention mechanism (H) and the result is added back into the residual stream (i.e. x1 = H(x0) + x0).&lt;/li&gt;&#xA;&lt;li&gt;The residual stream is processed by an MLP layer (MLP) and the result is added back into the residual stream (i.e. x2 = MLP(x1) + x1).&lt;/li&gt;&#xA;&lt;li&gt;Steps (2) and (3) together define a “residual block”. The body of the transformer is formed of a stack of these blocks in series.&lt;/li&gt;&#xA;&lt;li&gt;After the final residual block, we apply an unembedding transformation to produce logits, which represent the relative probabilities of different output tokens.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h1 id=&#34;attention-mechanism&#34;&gt;Attention Mechanism&lt;/h1&gt;&#xA;&lt;p&gt;The attention mechanism (H) is divided into multiple attention heads $h_j$, which act in parallel. That is,&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Conditioning, Prompts, and Fine-Tuning</title>
+				<link>https://adamjermyn.com/posts/conditioning_fine_tuning/</link>
+				<pubDate>Wed, 17 Aug 2022 16:55:03 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/conditioning_fine_tuning/</guid>
+				<description>&lt;p&gt;&lt;em&gt;Posted to the&lt;/em&gt; &lt;a href=&#34;https://www.alignmentforum.org/posts/chevXfQmRYrTZnj8r/conditioning-prompts-and-fine-tuning&#34;&gt;AI Alignment Forums&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;(Thanks to Evan Hubinger and Nicholas Schiefer for comments on these ideas.)&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;These are some notes on the relation between conditioning language models, prompting, and fine-tuning. The key takeaways are:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Prompting and fine-tuning can both be used to condition language models.&lt;/li&gt;&#xA;&lt;li&gt;Prompting is quite restricted in the kinds of conditionals it can achieve.&lt;/li&gt;&#xA;&lt;li&gt;Fine-tuning can implement arbitrary conditionals in principle, though not in practice.&lt;/li&gt;&#xA;&lt;li&gt;In practice fine-tuning can still implement more kinds of conditionals than prompting.&lt;/li&gt;&#xA;&lt;li&gt;We don&amp;rsquo;t understand how fine-tuning conditionals generalize, which seems dangerous.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h1 id=&#34;conditioning&#34;&gt;Conditioning&lt;/h1&gt;&#xA;&lt;p&gt;We can think of a language model as specifying a probability distribution π(x), where x is a sequence of tokens of fixed length N (the length of the context window). We generate text by sampling sequences from π.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Conditioning Generative Models with Restrictions</title>
+				<link>https://adamjermyn.com/posts/conditioninggenerativemodels2/</link>
+				<pubDate>Thu, 21 Jul 2022 16:34:05 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/conditioninggenerativemodels2/</guid>
+				<description>&lt;p&gt;&lt;em&gt;This is a followup to &lt;a href=&#34;https://www.alignmentforum.org/posts/nXeLPcT9uhfG3TMPS/conditioning-generative-models&#34;&gt;Conditioning Generative Models&lt;/a&gt; based on further discussions with Evan Hubinger, Nicholas Schiefer, Abram Demski, Curtis Huebner, Hoagy Cunningham, Derek Shiller, and James Lucassen, as well as broader conversations with many different people at the recent ARC/ELK retreat. For more background on this general direction see Johannes Treutlein’s “&lt;a href=&#34;https://www.alignmentforum.org/posts/dWJNFHnC4bkdbovug/training-goals-for-large-language-models&#34;&gt;Training goals for large language models&lt;/a&gt;”.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;background&#34;&gt;Background&lt;/h1&gt;&#xA;&lt;p&gt;Previously, I wrote about ways we could use a generative language model to produce alignment research. There I proposed two approaches:&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Quantilizers and Generative Models</title>
+				<link>https://adamjermyn.com/posts/quantilizers/</link>
+				<pubDate>Mon, 18 Jul 2022 12:33:31 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/quantilizers/</guid>
+				<description>&lt;p&gt;(&lt;em&gt;Cross-posted from the &lt;a href=&#34;https://www.alignmentforum.org/posts/tz3hoCs2efHjzNYm5/quantilizers-and-generative-models&#34;&gt;AI Alignment Forum&lt;/a&gt;&lt;/em&gt;)&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Thanks to Evan Hubinger for discussions about quantilizers, and to James Lucassen for discussions about conditioned generative models. Many of these ideas are discussed in&lt;/em&gt; &lt;a href=&#34;https://intelligence.org/files/QuantilizersSaferAlternative.pdf&#34;&gt;Quantilizers: A Safer Alternative to Maximizers for Limited Optimization&lt;/a&gt;&lt;em&gt;: this post just expands on a particular thread of ideas in that paper. Throughout I’ll refer to sections of the paper. I have some remaining confusion about the “targeted impact” section, and would appreciate clarifications/corrections!&lt;/em&gt;&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Grouped Loss may disfavor discontinuous capabilities</title>
+				<link>https://adamjermyn.com/posts/grouped_loss/</link>
+				<pubDate>Sat, 09 Jul 2022 08:21:00 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/grouped_loss/</guid>
+				<description>&lt;p&gt;&lt;em&gt;(Cross-posted from the &lt;a href=&#34;https://www.alignmentforum.org/posts/PmhTzHHFEem5hX79R/grouped-loss-may-disfavor-discontinuous-capabilities&#34;&gt;AI Alignment Forum&lt;/a&gt;)&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Thanks to Evan Hubinger and Beth Barnes for comments on these ideas.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;Language models exhibit clear &lt;a href=&#34;https://arxiv.org/abs/2001.08361&#34;&gt;scaling laws&lt;/a&gt;, where the loss is a power-law in model size. This offers a lot of predictive power, and seems like a useful thing to know. By contrast, individual capabilities often exhibit sharp discontinuities in performance as a function of &lt;a href=&#34;https://arxiv.org/abs/2206.04615&#34;&gt;model size&lt;/a&gt; and &lt;a href=&#34;https://arxiv.org/pdf/2201.02177.pdf&#34;&gt;training time&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;It would be great if individual capabilities just gradually improved like the broader loss. Then we wouldn’t have to worry quite so much about surprising new capabilities emerging suddenly during training.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Latent Adversarial Training</title>
+				<link>https://adamjermyn.com/posts/lat/</link>
+				<pubDate>Wed, 29 Jun 2022 16:05:25 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/lat/</guid>
+				<description>&lt;p&gt;&lt;em&gt;Posted to the &lt;a href=&#34;https://www.alignmentforum.org/posts/atBQ3NHyqnBadrsGP/latent-adversarial-training&#34;&gt;AI Alignment Forum&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;the-problem&#34;&gt;The Problem&lt;/h1&gt;&#xA;&lt;p&gt;We’d like to train models to be robustly safe, even in environments that may fall well outside of the training distribution. Unfortunately all we get to work with is the training distribution, which makes ensuring robust generalization difficult.&lt;/p&gt;&#xA;&lt;p&gt;Deception is an example of this concern. Models may be well-behaved in the training environment because they realize it is a training environment, but behave poorly in deployment because they notice the distributional shift.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Training Trace Priors and Speed Priors</title>
+				<link>https://adamjermyn.com/posts/tracespeed/</link>
+				<pubDate>Mon, 27 Jun 2022 10:15:31 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/tracespeed/</guid>
+				<description>&lt;p&gt;&lt;em&gt;Posted to the AI Alignment Forum &lt;a href=&#34;https://www.alignmentforum.org/posts/9o2mjdo7eb7677EJS/training-trace-priors-and-speed-priors&#34;&gt;here&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Thanks to Evan Hubinger for suggesting this idea.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.alignmentforum.org/posts/hjrqXjEpaw9ogScPh/training-trace-priors&#34;&gt;Training Trace Priors&lt;/a&gt; are priors over boolean circuits which examine the outputs of gates on samples from the training distribution, typically for purposes of steering models away from having components that were never tested during training. The one I like to think about is the One-Gate Trace Prior (OGT Prior), which penalizes circuits if there are gates with constant outputs during training.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Conditioning Generative Models</title>
+				<link>https://adamjermyn.com/posts/conditioninggenerativemodels/</link>
+				<pubDate>Mon, 27 Jun 2022 10:14:16 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/conditioninggenerativemodels/</guid>
+				<description>&lt;p&gt;&lt;em&gt;Posted to the AI Alignment Forum&lt;/em&gt; &lt;a href=&#34;https://www.alignmentforum.org/posts/nXeLPcT9uhfG3TMPS/conditioning-generative-models&#34;&gt;here&lt;/a&gt;&lt;em&gt;.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;This post was written in response to Evan Hubinger’s shortform prompt below, and benefited from discussions with him.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Suppose you had a language model that you knew was in fact a good generative model of the world and that this property continued to hold regardless of what you conditioned it on. Furthermore, suppose you had some prompt that described some agent for the language model to simulate (Alice) that in practice resulted in aligned-looking outputs. Is there a way we could use different conditionals to get at whether or not Alice was deceptive (e.g. prompt the model with “DeepMind develops perfect transparency tools and provides an opportunity for deceptive models to come clean and receive a prize before they’re discovered.”).&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+			</item>
+			<item>
+				<title>#SAT with Tensor Networks</title>
+				<link>https://adamjermyn.com/posts/tn_bc/</link>
+				<pubDate>Fri, 17 Jun 2022 09:21:45 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/tn_bc/</guid>
+				<description>&lt;p&gt;&lt;em&gt;Cross-posted from &lt;a href=&#34;https://www.lesswrong.com/posts/uPhvEBJHfBLbddyAA/sat-with-tensor-networks&#34;&gt;LessWrong&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;(Thanks to Mark Xu for comments on these notes.)&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;These are some notes on tensor networks, the mapping from boolean circuits to tensor networks, and how #SAT can be written as a tensor network contraction.&lt;/p&gt;&#xA;&lt;h2 id=&#34;definitions-and-notation&#34;&gt;Definitions and Notation&lt;/h2&gt;&#xA;&lt;h3 id=&#34;what-is-a-tensor&#34;&gt;What is a tensor?&lt;/h3&gt;&#xA;&lt;p&gt;A rank-$d$ tensor is an array of numbers with $d$ integer indices, e.g. $T_{ijk}$ is a rank-3 tensor. The range of each index is called its &lt;em&gt;bond dimension.&lt;/em&gt; So for instance the Kronecker delta tensor used in physics is given by&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Multigate Priors</title>
+				<link>https://adamjermyn.com/posts/multigate_prior/</link>
+				<pubDate>Wed, 15 Jun 2022 15:33:51 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/multigate_prior/</guid>
+				<description>&lt;p&gt;&lt;em&gt;Posted to LessWrong &lt;a href=&#34;https://www.lesswrong.com/posts/CKZkfAE8APAEYMqi6/multigate-priors&#34;&gt;here&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;(Thanks to Evan Hubinger and Nicholas Schiefer for suggestions and discussions around these ideas)&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;multi-gate-traces&#34;&gt;Multi-Gate Traces&lt;/h2&gt;&#xA;&lt;p&gt;We can improve on one-gate traces with multi-gate traces! Suppose we have $N$ training samples. Then we can reasonably estimate joint probability distributions over up to $k=\lfloor\log_2 N\rfloor$ gates, giving the prior:&lt;/p&gt;&#xA;&lt;p&gt;$$ p\propto \exp\left(-\sum_{i_1...i_k}\sum_{j\in [0,1]^k}p_{i_1...i_k}(j)^m\right) $$&lt;/p&gt;&#xA;&lt;p&gt;That is, we sum over all selections of $k$ gates and compute the entropy of their joint distribution over $2^k$ states. Once more we promote models with high entropy and punish those with low entropy, which favors models that explore as much of their state space as possible during training, and disfavors those which have hidden states never touched in training.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Trace Training Priors</title>
+				<link>https://adamjermyn.com/posts/trace_training/</link>
+				<pubDate>Mon, 13 Jun 2022 13:14:01 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/trace_training/</guid>
+				<description>&lt;p&gt;&lt;em&gt;(Crossposted from the AI Alignment Forums)&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;I’m worried about scenarios involving deceptive models. We’ve failed at inner alignment so the model has goals that are not aligned with ours. It can somehow detect when it’s in training, and during training it pretends to share our goals. During deployment, surprise! The model paperclips the universe.&lt;/p&gt;&#xA;&lt;p&gt;In this story deception is all about the model having hidden behaviors that never get triggered during training. There are many inputs where the model does what we want. These correspond to inputs where it ‘plays along’. Then on some rare input or an input outside of the training distribution it defects, triggering some catastrophic behavior that corresponds to maximizing an ulterior motive.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>ELK Proposal - Make the Reporter care about the Predictor’s beliefs</title>
+				<link>https://adamjermyn.com/posts/elk1/</link>
+				<pubDate>Mon, 13 Jun 2022 09:27:54 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/elk1/</guid>
+				<description>&lt;p&gt;&lt;em&gt;Posted to the AI Alignment Forum&lt;/em&gt; &lt;a href=&#34;https://www.alignmentforum.org/posts/XGbWaA3gbDphajMHm/elk-proposal-make-the-reporter-care-about-the-predictor-s&#34;&gt;here&lt;/a&gt;&lt;em&gt;.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;(This proposal received an honorable mention in the &lt;a href=&#34;https://www.notion.so/ELK-Proposal-Make-the-Reporter-care-about-the-Predictor-s-beliefs-4cb30e79267e4d5591ee7161169170c2&#34;&gt;ELK prize results&lt;/a&gt;, and we believe was classified among strategies which “reward reporters that are sensitive to what’s actually happening in the world”. We do not think that the counterexample to that class of strategies works against our proposal, though, and we have explained why in a note at the end. Feedback, disagreement, and new failure modes are very welcome!)&lt;/em&gt;&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Give the model a model-builder</title>
+				<link>https://adamjermyn.com/posts/give_model_builder/</link>
+				<pubDate>Mon, 06 Jun 2022 16:54:20 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/give_model_builder/</guid>
+				<description>&lt;p&gt;&lt;em&gt;(Thanks to Evan Hubinger for suggesting this problem and for comments on these ideas. Feedback is very welcome. Cross-posted from &lt;a href=&#34;https://www.lesswrong.com/posts/3ACsAThxzH4fEk5dA/give-the-model-a-model-builder&#34;&gt;LessWrong&lt;/a&gt;.)&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;the-setup&#34;&gt;The Setup&lt;/h1&gt;&#xA;&lt;p&gt;Suppose we have a prior $p_{\rm good}(\mathrm{model})$ that we think is non-deceptive, such that we can sample from this prior and get good models that are inner-aligned.&lt;/p&gt;&#xA;&lt;p&gt;These models may, for instrumental purposes, need to themselves produce models (via searches/optimization/meta-learning). For instance we might ask an outer model to play poker. Along the way the model may find it instrumentally useful to build an inner model of its opponent. We refer to these additional models as &lt;em&gt;inner models&lt;/em&gt;, and the ones that produced them we call &lt;em&gt;outer models&lt;/em&gt;.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Give the AI safe tools</title>
+				<link>https://adamjermyn.com/posts/give_ai_tools/</link>
+				<pubDate>Sat, 04 Jun 2022 08:21:00 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/give_ai_tools/</guid>
+				<description>&lt;p&gt;&lt;em&gt;(Cross-posted from &lt;a href=&#34;https://www.lesswrong.com/posts/mvTYAKS5qXKNnBT8x/give-the-ai-safe-tools&#34;&gt;LessWrong&lt;/a&gt;)&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;One kind of concern with AI is that:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;There are some tools that are instrumentally useful for an AI to have.&lt;/li&gt;&#xA;&lt;li&gt;Most/the most accessible versions of those tools are dangerous.&lt;/li&gt;&#xA;&lt;li&gt;The AI doesn’t care which versions are dangerous.&lt;/li&gt;&#xA;&lt;li&gt;Hence, the AI will probably develop dangerous tools for instrumental reasons.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;You might call concerns like this &lt;em&gt;Instrumental Danger Problems&lt;/em&gt;. This post aims to examine some existing approaches to Instrumental Danger Problems, and to introduce a new one, namely “Giving the AI safe tools”.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Working Notes - Learning PyTorch - Day 2</title>
+				<link>https://adamjermyn.com/posts/ml_2/</link>
+				<pubDate>Tue, 12 Apr 2022 17:17:54 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/ml_2/</guid>
+				<description>&lt;h2&gt;&lt;/h2&gt;&#xA;&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Adding convolutional layers is pretty straightforward, but there are some indexing subtleties to watch.&lt;/li&gt;&#xA;&lt;li&gt;Pooling layers can really improve performance.&lt;/li&gt;&#xA;&lt;li&gt;With two pooling layers, I found an example of a too-high learning rate making the model get stuck with poor performance.&lt;/li&gt;&#xA;&lt;li&gt;The more pooling layers I used the faster the model took a training step (because the dense linear layer was smaller).&lt;/li&gt;&#xA;&lt;li&gt;The more pooling layers I used, the more important the number of channels in the convolutional/pooling layers became.&lt;/li&gt;&#xA;&lt;li&gt;Working with text requires a way to turn that text into vectors in a continuous space, and one-hot vectors are one solution to that problem.&lt;/li&gt;&#xA;&lt;li&gt;RNN&amp;rsquo;s let you study sequences, and accumulate information about the sequence as they &amp;lsquo;sweep&amp;rsquo; through it.&lt;/li&gt;&#xA;&lt;li&gt;Even though the processing to form the hidden state is linear, there&amp;rsquo;s a notion of causality in an RNN, because earlier entries get passed through the linear operator that forms the hidden state more times than late entries (and each letter only gets combined with the subsequent letters in determining its contribution to the hidden state).&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;convolutional-neural-networks&#34;&gt;Convolutional Neural Networks&lt;/h2&gt;&#xA;&lt;p&gt;I&amp;rsquo;d like to try MNIST with a CNN.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Working Notes - Learning PyTorch - Day 1</title>
+				<link>https://adamjermyn.com/posts/ml_1/</link>
+				<pubDate>Mon, 11 Apr 2022 17:06:39 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/ml_1/</guid>
+				<description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Covered boilerplate for getting started, tensors, gradients.&lt;/li&gt;&#xA;&lt;li&gt;Poked in some detail at how gradients work.&lt;/li&gt;&#xA;&lt;li&gt;Played with linear regression, nonlinear regression, both with gradient descent.&lt;/li&gt;&#xA;&lt;li&gt;Built an MNIST classifier following a PyTorch tutorial. Experimented with the shape and size of the NN.&lt;/li&gt;&#xA;&lt;li&gt;Got PyTorch running on a machine with a GPU.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;boilerplate&#34;&gt;Boilerplate&lt;/h2&gt;&#xA;&lt;p&gt;Import:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; torch&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Need to use a special float type for the elements of tensors, and need to know which device the compute graph will run on:&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

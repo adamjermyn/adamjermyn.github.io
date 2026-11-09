@@ -7,7 +7,7 @@
 		
 		<meta name="author" content="Adam Jermyn">
 		<meta name="description" content="Site Description">
-		<meta name="generator" content="Hugo 0.92.2" />
+		<meta name="generator" content="Hugo 0.168.0">
 		<title>Toy Model of Near-Existential Risk &middot; Adam Jermyn</title>
 		<link rel="shortcut icon" href="https://adamjermyn.com/images/favicon.ico">
 		<link rel="stylesheet" href="https://adamjermyn.com/css/style.css">
@@ -24,18 +24,6 @@
 		
 
                 
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-186473758-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
 		
                 <script>
   MathJax = {
@@ -109,11 +97,11 @@ if (!doNotTrack) {
 <h2 id="a-toy-model">A Toy Model</h2>
 <p>For these purposes I&rsquo;m going to reduce the many dimensions of loss to a single parameter $\ell$. When $\ell = 0$ nothing is lost, when $\ell = 1$ all is lost. $\ell=1$ therefore denotes existential risks. Think of $\ell$ as a proxy for &lsquo;what fraction of people/technology/capability/organization/etc. are lost?&rsquo;</p>
 <p>Similarly, I&rsquo;m going to reduce the many dimensions of civilizational capability to a parameter $c$. The greater $c$ is the more robust society is against risks, and so an increase in $c$ results in a <em>decrease</em> of risks.</p>
-<p>To relate $c$, $\ell$, and the probability of risks, I&rsquo;m going to ignore smaller risks with $\ell &lt; 1/2$  and assume that larger risks with $\ell &gt; 1/2$ are distributed as
+<p>To relate $c$, $\ell$, and the probability of risks, I&rsquo;m going to ignore smaller risks with $\ell < 1/2$  and assume that larger risks with $\ell > 1/2$ are distributed as
 $$
 \frac{d^2 P(\ell)}{dt d\ell} = \frac{k}{2^c \ell^{c}}
 $$
-That is, the probability per unit time of a risk of size $\ell$  is proportional to $\ell^{-c}$. Here $k$  is a constant with units of ${\rm time}^{-1}$ and the factor of $2^{c}$ just normalizes the distribution so that overall odds of any risks fall with increasing $c$. For mathematical ease I&rsquo;m going to allow risks with $\ell &gt; 1$: these are all existential.</p>
+That is, the probability per unit time of a risk of size $\ell$  is proportional to $\ell^{-c}$. Here $k$  is a constant with units of ${\rm time}^{-1}$ and the factor of $2^{c}$ just normalizes the distribution so that overall odds of any risks fall with increasing $c$. For mathematical ease I&rsquo;m going to allow risks with $\ell > 1$: these are all existential.</p>
 <p>This captures the notion that risks are power-law distributed (i.e. a risk that is $N$ times worse is some power of $N$ times less likely). Many risks follow power-law distributions, including <a href="https://en.wikipedia.org/wiki/Gutenberg%E2%80%93Richter_law">earthquakes</a> and certain kinds of <a href="http://hornacek.coa.edu/dave/Junk/farmer2004u.pdf">financial risk</a>, and the broader class of fat-failed distribution is part of the premise behind <a href="https://en.wikipedia.org/wiki/Black_swan_theory">black swan theory</a> and Nassim Taleb&rsquo;s broader mantra that risks are dominated the <a href="https://www.fooledbyrandomness.com/FatTails.html">tails of the distribution</a>.</p>
 <p>Next, I&rsquo;m going to assume that on average capability $c$ increases exponentially with time, with an $e$-folding time $\tau$, but that when a risk is realized (i.e. the loss $\ell$ is incurred) it sets capability back by a fractional amount $\ell$. So typically
 $$
@@ -123,7 +111,7 @@ but occasionally
 $$
 c \rightarrow c(1-\ell)
 $$
-with the caveat that when $\ell &gt; 1$, $c \rightarrow 0$.</p>
+with the caveat that when $\ell > 1$, $c \rightarrow 0$.</p>
 <p>Before exploring the model in detail, I just want to recap the assumptions:</p>
 <ul>
 <li>Risks are power-law distributed in how much loss they cause.</li>
@@ -135,7 +123,7 @@ with the caveat that when $\ell &gt; 1$, $c \rightarrow 0$.</p>
 <p>Setting that aside, what does this model predict?</p>
 <p>Over time risks fall on average. The odds of an existential risk are proportional to
 $$
-\frac{dP(\ell &gt; 1)}{dt} = \int_{1}^{\infty} \frac{k}{2^c\ell^{c}} d\ell = \frac{k}{2^c(c-1)}
+\frac{dP(\ell > 1)}{dt} = \int_{1}^{\infty} \frac{k}{2^c\ell^{c}} d\ell = \frac{k}{2^c(c-1)}
 $$
 which decreases as civilizational capability $c$ increases. Because of this, almost all of the risk happens at early times. At late times $c$ is enormous and we&rsquo;re in the clear. In particular, if the starting capability $c_0$ is large and if we ignore all non-existential risks then the total odds of existential risk are
 $$
@@ -144,13 +132,13 @@ $$
 Here I&rsquo;ve very crudely approximated the integral by noting that the denominator becomes large on a timescale of $\tau$, so the integral is roughly the integrand at $t=0$ times $\tau$.</p>
 <p>At the same time, in this model near-existential risks look pretty bad. Again assuming $c_0 \gg 1$, the odds of existential risk per unit time are roughly $k/c_0$. If suddenly a risk of $\ell=0.9$ happens then the odds of existential risk rise from $k/c_0$ to $10k/c_0$, a ten-fold increase.</p>
 <p>More generally, how much larger is $P_{\rm ex}$ once we incorporate near-existential risks? This is like asking about the odds of the pathway of (near-existential risk $\rightarrow$ existential risk).</p>
-<p>For these purposes I&rsquo;ll call risks that have $\ell &gt; 1/2$ near-existential (imagine half of all cities disappearing overnight). The odds per unit time of an event with $1/2 &lt; \ell &lt; 1$ are
+<p>For these purposes I&rsquo;ll call risks that have $\ell > 1/2$ near-existential (imagine half of all cities disappearing overnight). The odds per unit time of an event with $1/2 < \ell < 1$ are
 $$
-\frac{dP(1/2 &lt; \ell &lt; 1)}{dt} = \int_{1/2}^{1} \frac{k}{\ell^{c}} d\ell = k\frac{2^{c-1}-1}{2^c (c-1)} \approx \frac{k}{2 c}
+\frac{dP(1/2 < \ell < 1)}{dt} = \int_{1/2}^{1} \frac{k}{\ell^{c}} d\ell = k\frac{2^{c-1}-1}{2^c (c-1)} \approx \frac{k}{2 c}
 $$
 which is a factor of $2^{c-1}$ times more likely than existential risks. If one of these risks happen though, the odds of an existential risk increase by a factor of roughly $1/(1-\ell)$, and remain elevated by that much for a time of order $\tau$ (the civilization rebuilding time). Even if all near-existential risks had $\ell=1/2$, that doubles the odds of existential risks for a time $\tau$ before they fall back down. Specifically, the change in $P_{\rm ex}$ is of order
 $$
-\Delta P_{\rm ex} \approx \int_0^{\infty} \frac{dP(1/2&lt;\ell&lt;1)}{dt'}\int_{t'}^{\infty} \frac{dP(\ell &gt; 1)}{dt} dt  dt' \approx \int_0^{\infty}\frac{k^2\tau}{2^{c_0 e^{t'/\tau}} c_0^2 e^{2 t'/\tau}} dt' \approx \frac{(k\tau)^2}{2^{c_0} c_0^2}
+\Delta P_{\rm ex} \approx \int_0^{\infty} \frac{dP(1/2<\ell<1)}{dt'}\int_{t'}^{\infty} \frac{dP(\ell > 1)}{dt} dt  dt' \approx \int_0^{\infty}\frac{k^2\tau}{2^{c_0 e^{t'/\tau}} c_0^2 e^{2 t'/\tau}} dt' \approx \frac{(k\tau)^2}{2^{c_0} c_0^2}
 $$
 where the double integral is summing over all possible paths of the form &ldquo;time $t'$ passes before the near-existential risk, then some amount of time later an existential risk happens&rdquo;. This isn&rsquo;t quite right because it ignores the odds of an existential risk happening first, or of multiple non-existential risks, but if all probabilities involved are small the error shouldn&rsquo;t be too large.</p>
 <p>The expression above is unwieldy, but can be written instead as

@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Language Models on Adam Jermyn</title>
-    <link>https://adamjermyn.com/tags/language-models/</link>
-    <description>Recent content in Language Models on Adam Jermyn</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Mon, 26 Sep 2022 08:21:00 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/tags/language-models/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Brief Notes on Transformers</title>
-      <link>https://adamjermyn.com/posts/transformer_notes/</link>
-      <pubDate>Mon, 26 Sep 2022 08:21:00 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/transformer_notes/</guid>
-      <description>(Cross-posted from the AI Alignment Forum)*
-*These are just some notes I wrote while reading about transformers, which I thought might be a useful reference to others. Corrections welcome.
-Overview of Transformers Many transformer models have the following architecture:
-Data flows as follows:
- We take tokens as inputs and pass them through an embedding layer. The embedding layer outputs its result into the residual stream (x0). This has dimension (C,E), where C is the number of tokens in the context window and E is the embedding dimension.</description>
-    </item>
-    
-  </channel>
+	<channel>
+		<title>Language Models on Adam Jermyn</title>
+		<link>https://adamjermyn.com/tags/language-models/</link>
+		<description>Recent content in Language Models on Adam Jermyn</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 26 Sep 2022 08:21:00 -0400</lastBuildDate>
+		
+			<atom:link href="https://adamjermyn.com/tags/language-models/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Brief Notes on Transformers</title>
+				<link>https://adamjermyn.com/posts/transformer_notes/</link>
+				<pubDate>Mon, 26 Sep 2022 08:21:00 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/transformer_notes/</guid>
+				<description>&lt;p&gt;&lt;em&gt;(Cross-posted from the &lt;a href=&#34;https://www.alignmentforum.org/posts/rEPnce975Fid9v5qv/brief-notes-on-transformers&#34;&gt;AI Alignment Forum&lt;/a&gt;)&lt;/em&gt;*&lt;/p&gt;&#xA;&lt;p&gt;*&lt;em&gt;These are just some notes I wrote while reading about transformers, which I thought might be a useful reference to others. Corrections welcome.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;overview-of-transformers&#34;&gt;Overview of Transformers&lt;/h1&gt;&#xA;&lt;p&gt;Many transformer models have &lt;a href=&#34;https://transformer-circuits.pub/2021/framework/index.html#architecture-attn-as-movement&#34;&gt;the following architecture&lt;/a&gt;:&lt;/p&gt;&#xA;&lt;img src=&#34;../../images/transformer_notes.assets/c7052b9cfde21fd125b70380c3289ddab77b50cde834556c.png&#34; alt=&#34;c7052b9cfde21fd125b70380c3289ddab77b50cde834556c&#34; style=&#34;max-width:100%;max-height:100%;display:block;margin-left:auto;margin-right:auto&#34;/&gt;&#xA;&lt;p&gt;Data flows as follows:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;We take tokens as inputs and pass them through an embedding layer. The embedding layer outputs its result into the residual stream (x0). This has dimension (C,E), where C is the number of tokens in the context window and E is the embedding dimension.&lt;/li&gt;&#xA;&lt;li&gt;The residual stream is processed by the attention mechanism (H) and the result is added back into the residual stream (i.e. x1 = H(x0) + x0).&lt;/li&gt;&#xA;&lt;li&gt;The residual stream is processed by an MLP layer (MLP) and the result is added back into the residual stream (i.e. x2 = MLP(x1) + x1).&lt;/li&gt;&#xA;&lt;li&gt;Steps (2) and (3) together define a “residual block”. The body of the transformer is formed of a stack of these blocks in series.&lt;/li&gt;&#xA;&lt;li&gt;After the final residual block, we apply an unembedding transformation to produce logits, which represent the relative probabilities of different output tokens.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h1 id=&#34;attention-mechanism&#34;&gt;Attention Mechanism&lt;/h1&gt;&#xA;&lt;p&gt;The attention mechanism (H) is divided into multiple attention heads $h_j$, which act in parallel. That is,&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

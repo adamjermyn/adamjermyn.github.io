@@ -1,926 +1,633 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Posts on Adam Jermyn</title>
-    <link>https://adamjermyn.com/posts/</link>
-    <description>Recent content in Posts on Adam Jermyn</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Sun, 04 Jan 2026 12:00:00 -0500</lastBuildDate><atom:link href="https://adamjermyn.com/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>The Tragedy of Almost: Arline Feynman and the Information Gap</title>
-      <link>https://adamjermyn.com/posts/arline_feynman/</link>
-      <pubDate>Sun, 04 Jan 2026 12:00:00 -0500</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/arline_feynman/</guid>
-      <description>How many people have died not because treatments didn&amp;rsquo;t exist, but because the information didn&amp;rsquo;t reach them in time? Every new cure has a window where it exists but isn&amp;rsquo;t widely known, isn&amp;rsquo;t easily accessible, requires connections or luck to obtain. Someone is always on the wrong side of that window.
-One of the cruelest examples: Arline Feynman, wife of physicist Richard Feynman, who died of tuberculosis in June 1945.</description>
-    </item>
-    
-    <item>
-      <title>Lectures on Fractures</title>
-      <link>https://adamjermyn.com/posts/lectures_on_fractures/</link>
-      <pubDate>Wed, 31 Dec 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/lectures_on_fractures/</guid>
-      <description>I recently collaborated with Claude Opus 4.5 to write a short set of lecture notes on fracture mechanics:
-Lectures on Fractures (PDF)
-How it worked I wanted something in Feynman&amp;rsquo;s style. Conversational, building intuition before formalism, full of physical insight. So I had Claude start by reading some of Feynman&amp;rsquo;s writing and assembling a style guide. That gave us a shared reference for tone.
-The technical focus was Griffith&amp;rsquo;s work on fractures.</description>
-    </item>
-    
-    <item>
-      <title>Date-Me Doc</title>
-      <link>https://adamjermyn.com/posts/date_me_doc/</link>
-      <pubDate>Sat, 15 Nov 2025 10:00:00 -0500</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/date_me_doc/</guid>
-      <description>This is a link to my date-me doc, which I published in November 2025. I&amp;rsquo;m no longer single but wanted to leave a pointer to it up because it was an important document for me both to write and in becoming not single.</description>
-    </item>
-    
-    <item>
-      <title>Querying ultra-long contexts with summary trees</title>
-      <link>https://adamjermyn.com/posts/claude_summary/</link>
-      <pubDate>Sun, 09 Jun 2024 18:24:21 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/claude_summary/</guid>
-      <description>Views my own. There might well be more clever ways to do all of this that I don&amp;rsquo;t know of.
-Suppose you have some long, ordered text data, like news stories going back a century or journal entries or server logs. You&amp;rsquo;d like to analyze them with a Large Language Model (LLM), but you can&amp;rsquo;t just concatenate them together (the context window isn&amp;rsquo;t that long!).
-A fun solution to this problem is a summary tree.</description>
-    </item>
-    
-    <item>
-      <title>Declaration of Independence Signatories</title>
-      <link>https://adamjermyn.com/posts/declaration/</link>
-      <pubDate>Thu, 07 Mar 2024 11:26:29 -0500</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/declaration/</guid>
-      <description>On a recent trip to DC I picked up a pocket copy of the Declaration of Independence from the Supreme Court. At the back, it has biographies of the signatories. What’s remarkable is just how much agency people took, how much they shifted their lives around, and how “rag tag” it was.
-At one point one of them was personally going out soliciting loans to fund the war effort. Another was a doctor, got infuriated at the way the British treated the colonies, and left medicine to be a politician.</description>
-    </item>
-    
-    <item>
-      <title>The Path of Law</title>
-      <link>https://adamjermyn.com/posts/pathoflaw/</link>
-      <pubDate>Sun, 11 Feb 2024 16:13:41 -0500</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/pathoflaw/</guid>
-      <description>I just skimmed through Oliver Wendell Holmes&amp;rsquo;s The Path of Law. A few things that stood out:
- He frames the law as a field of study with the aim of predicting the decisions of course. I think he’s trying to disentangle the law from a statement of morals. It’s not about what is right, it’s a practical question of what rules you will actually be held to account on and how that account will appear.</description>
-    </item>
-    
-    <item>
-      <title>When is the right time?</title>
-      <link>https://adamjermyn.com/posts/time1/</link>
-      <pubDate>Sat, 27 Jan 2024 16:49:34 -0500</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/time1/</guid>
-      <description>Ideas Looking back, it feels like there was often a &amp;lsquo;right time&amp;rsquo; for me to encounter particular ideas:
- I encountered a lot of ideas from religion very young (as many people do). I was also very interested in science, and so got hung up on factual disagreements rather than seeing e.g. the point of having a dedicated day of rest. I came across the Feynman Lectures in high school, when I knew just enough math that it was possible to work through them, but not enough math or physics that it felt like review.</description>
-    </item>
-    
-    <item>
-      <title>Things I Find Beautiful - I</title>
-      <link>https://adamjermyn.com/posts/beauty1/</link>
-      <pubDate>Sat, 27 Jan 2024 15:57:53 -0500</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/beauty1/</guid>
-      <description>This is a collection of some things I&amp;rsquo;ve found beautiful recently.
-Recursive Game of Life (see the run-through here). Each cell is being simulated by another instance of the Game of Life, and if you zoom out enough you see that the structures you started off looking at are also simulations of cells.
-Paintings by Owen Schuh. See especially the work page, and this tweet. There&amp;rsquo;s a quality to many of these that&amp;rsquo;s halfway between organic and designed that really draws me in.</description>
-    </item>
-    
-    <item>
-      <title>Contaminated TB Treatments</title>
-      <link>https://adamjermyn.com/posts/latent_tb/</link>
-      <pubDate>Sat, 25 Mar 2023 19:51:30 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/latent_tb/</guid>
-      <description>(None of this is medical advice.)
-In 2020 the FDA identified contamination in two drugs used to treat Tuberculosis, Rifampin and Rifapentine. The contaminants were 1-methyl-4-nitrosopiperazine (MNP) in rifampin or 1-cyclopentyl-4-nitrosopiperazine (CPNP) in rifapentine, and levels were ~10x the FDA&amp;rsquo;s acceptable threshold (1-4ppm for MNP, 8-14ppm for CPNP). At the same time, these are two of the standard treatments for Tuberculosis and the alternatives come with downsides of their own, so the FDA permitted these drugs to continue being prescribed and sold in the US.</description>
-    </item>
-    
-    <item>
-      <title>Multi-Component Learning and S-Curves</title>
-      <link>https://adamjermyn.com/posts/scurves/</link>
-      <pubDate>Tue, 29 Nov 2022 20:38:53 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/scurves/</guid>
-      <description>This post is available on the AI Alignment Forum.</description>
-    </item>
-    
-    <item>
-      <title>Engineering Monosemanticity in Toy Models</title>
-      <link>https://adamjermyn.com/posts/mono_1/</link>
-      <pubDate>Mon, 21 Nov 2022 14:53:00 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/mono_1/</guid>
-      <description>This post is available on the AI Alignment Forum.</description>
-    </item>
-    
-    <item>
-      <title>Toy Models and Tegum Products</title>
-      <link>https://adamjermyn.com/posts/tegum_products/</link>
-      <pubDate>Fri, 04 Nov 2022 14:53:00 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/tegum_products/</guid>
-      <description>This post is available on the AI Alignment Forum.</description>
-    </item>
-    
-    <item>
-      <title>Humans do acausal coordination all the time</title>
-      <link>https://adamjermyn.com/posts/acausal/</link>
-      <pubDate>Wed, 02 Nov 2022 10:44:53 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/acausal/</guid>
-      <description>(Cross-posted from the AI Alignment Forum)
-I used to think that acausal coordination was a weird thing that AI’s might do in the future, but that they certainly wouldn’t learn from looking at human behavior. I don’t believe that anymore, and think there are lots of examples of acausal coordination in everyday life.
-Examples people do Voting The political science argument against voting goes:
- The probability that my vote tilts the election is tiny, so the expected value to me is tiny, so it’s not worth my time to vote.</description>
-    </item>
-    
-    <item>
-      <title>Smoke without fire is scary</title>
-      <link>https://adamjermyn.com/posts/smoke_fire/</link>
-      <pubDate>Tue, 04 Oct 2022 14:27:25 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/smoke_fire/</guid>
-      <description>This post is available on the AI Alignment Forum.</description>
-    </item>
-    
-    <item>
-      <title>It matters when the first sharp left turn happens</title>
-      <link>https://adamjermyn.com/posts/left_turn/</link>
-      <pubDate>Thu, 29 Sep 2022 14:27:25 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/left_turn/</guid>
-      <description>Thanks to Evan Hubinger for comments on these ideas. Posted on the AI Alignment Forum.
-Introduction A “sharp left turn” is a point where capabilities generalize beyond alignment. In a sharp left turn, an AI becomes much more capable than aligned, and so starts to exploit flaws in its alignment.
-This can look like Goodharting, where strong optimization pressure causes outer alignment failure because the base goal isn’t identical to what we want.</description>
-    </item>
-    
-    <item>
-      <title>Brief Notes on Transformers</title>
-      <link>https://adamjermyn.com/posts/transformer_notes/</link>
-      <pubDate>Mon, 26 Sep 2022 08:21:00 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/transformer_notes/</guid>
-      <description>(Cross-posted from the AI Alignment Forum)*
-*These are just some notes I wrote while reading about transformers, which I thought might be a useful reference to others. Corrections welcome.
-Overview of Transformers Many transformer models have the following architecture:
-Data flows as follows:
- We take tokens as inputs and pass them through an embedding layer. The embedding layer outputs its result into the residual stream (x0). This has dimension (C,E), where C is the number of tokens in the context window and E is the embedding dimension.</description>
-    </item>
-    
-    <item>
-      <title>Why doesn&#39;t all the Uranium sink to the bottom of Earth?</title>
-      <link>https://adamjermyn.com/posts/ideas28/</link>
-      <pubDate>Fri, 19 Aug 2022 11:18:48 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/ideas28/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don’t make sense for me to pursue. I generally just make a note of them and move on. This is the 28th post in a series describing some of the ideas I’ve accumulated.
-Why doesn&amp;rsquo;t all the Uranium sink to the bottom of Earth? What&amp;rsquo;s the idea? Uranium is denser than iron. Why hasn&amp;rsquo;t it all fallen to the center of the Earth?</description>
-    </item>
-    
-    <item>
-      <title>Chemical Mixing on Tayler Columns</title>
-      <link>https://adamjermyn.com/posts/ideas27/</link>
-      <pubDate>Thu, 18 Aug 2022 13:40:28 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/ideas27/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don’t make sense for me to pursue. I generally just make a note of them and move on. This is the 27th post in a series describing some of the ideas I’ve accumulated.
-Chemical Mixing on Tayler Columns What&amp;rsquo;s the idea? In rapidly rotating stars and planets convection forms narrow columns. Mixing is rapid along the column but slow across columns.</description>
-    </item>
-    
-    <item>
-      <title>Conditioning, Prompts, and Fine-Tuning</title>
-      <link>https://adamjermyn.com/posts/conditioning_fine_tuning/</link>
-      <pubDate>Wed, 17 Aug 2022 16:55:03 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/conditioning_fine_tuning/</guid>
-      <description>Posted to the AI Alignment Forums.
-(Thanks to Evan Hubinger and Nicholas Schiefer for comments on these ideas.)
-These are some notes on the relation between conditioning language models, prompting, and fine-tuning. The key takeaways are:
- Prompting and fine-tuning can both be used to condition language models. Prompting is quite restricted in the kinds of conditionals it can achieve. Fine-tuning can implement arbitrary conditionals in principle, though not in practice.</description>
-    </item>
-    
-    <item>
-      <title>Helium Flash and Surface Effects</title>
-      <link>https://adamjermyn.com/posts/ideas26/</link>
-      <pubDate>Wed, 17 Aug 2022 11:42:48 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/ideas26/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don’t make sense for me to pursue. I generally just make a note of them and move on. This is the 26th post in a series describing some of the ideas I’ve accumulated. This idea is based on work I did with Jim Fuller.
-Helium Flash and Surface Effects What&amp;rsquo;s the idea? Stars below around $3 M_\odot$ exhibit a helium flash, in which degenerate helium in their cores ignites.</description>
-    </item>
-    
-    <item>
-      <title>Overshooting at low Péclet number</title>
-      <link>https://adamjermyn.com/posts/ideas25/</link>
-      <pubDate>Mon, 15 Aug 2022 09:53:44 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/ideas25/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don’t make sense for me to pursue. I generally just make a note of them and move on. This is the 25th post in a series describing some of the ideas I’ve accumulated. This idea is based on discussions and calculations with Matteo Cantiello, Daniel Lecoanet, Evan Anders, Eoin Farrell, Yan-Fei Jiang, Lars Bildsten, and Will Schultz.
-Overshooting at low Péclet number What&amp;rsquo;s the idea?</description>
-    </item>
-    
-    <item>
-      <title>Conditioning Generative Models with Restrictions</title>
-      <link>https://adamjermyn.com/posts/conditioninggenerativemodels2/</link>
-      <pubDate>Thu, 21 Jul 2022 16:34:05 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/conditioninggenerativemodels2/</guid>
-      <description>This is a followup to Conditioning Generative Models based on further discussions with Evan Hubinger, Nicholas Schiefer, Abram Demski, Curtis Huebner, Hoagy Cunningham, Derek Shiller, and James Lucassen, as well as broader conversations with many different people at the recent ARC/ELK retreat. For more background on this general direction see Johannes Treutlein’s “Training goals for large language models”.
-Background Previously, I wrote about ways we could use a generative language model to produce alignment research.</description>
-    </item>
-    
-    <item>
-      <title>Quantilizers and Generative Models</title>
-      <link>https://adamjermyn.com/posts/quantilizers/</link>
-      <pubDate>Mon, 18 Jul 2022 12:33:31 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/quantilizers/</guid>
-      <description>(Cross-posted from the AI Alignment Forum)
-Thanks to Evan Hubinger for discussions about quantilizers, and to James Lucassen for discussions about conditioned generative models. Many of these ideas are discussed in Quantilizers: A Safer Alternative to Maximizers for Limited Optimization: this post just expands on a particular thread of ideas in that paper. Throughout I’ll refer to sections of the paper. I have some remaining confusion about the “targeted impact” section, and would appreciate clarifications/corrections!</description>
-    </item>
-    
-    <item>
-      <title>What saturates the centrifugal instability?</title>
-      <link>https://adamjermyn.com/posts/ideas24/</link>
-      <pubDate>Mon, 18 Jul 2022 10:55:44 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/ideas24/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don’t make sense for me to pursue. I generally just make a note of them and move on. This is the 24th post in a series describing some of the ideas I’ve accumulated. This idea is based on a paper by Xihui Zhao and Jim Fuller.
-What saturates the centrifugal instability? What&amp;rsquo;s the idea? The centrifugal instability is a linear instability (section 4) caused by the centrifugal force.</description>
-    </item>
-    
-    <item>
-      <title>Grouped Loss may disfavor discontinuous capabilities</title>
-      <link>https://adamjermyn.com/posts/grouped_loss/</link>
-      <pubDate>Sat, 09 Jul 2022 08:21:00 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/grouped_loss/</guid>
-      <description>(Cross-posted from the AI Alignment Forum)
-Thanks to Evan Hubinger and Beth Barnes for comments on these ideas.
-Language models exhibit clear scaling laws, where the loss is a power-law in model size. This offers a lot of predictive power, and seems like a useful thing to know. By contrast, individual capabilities often exhibit sharp discontinuities in performance as a function of model size and training time.
-It would be great if individual capabilities just gradually improved like the broader loss.</description>
-    </item>
-    
-    <item>
-      <title>Can waves advect magnetic fields?</title>
-      <link>https://adamjermyn.com/posts/ideas23/</link>
-      <pubDate>Fri, 01 Jul 2022 11:52:18 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/ideas23/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don’t make sense for me to pursue. I generally just make a note of them and move on. This is the 23rd post in a series describing some of the ideas I’ve accumulated. This idea is closely related to conversations I once had with Dong Lai.
-Can waves advect magnetic fields? What&amp;rsquo;s the idea? The electrical conductivity in stars is enormous, so the magnetic diffusivity is small.</description>
-    </item>
-    
-    <item>
-      <title>Latent Adversarial Training</title>
-      <link>https://adamjermyn.com/posts/lat/</link>
-      <pubDate>Wed, 29 Jun 2022 16:05:25 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/lat/</guid>
-      <description>Posted to the AI Alignment Forum.
-The Problem We’d like to train models to be robustly safe, even in environments that may fall well outside of the training distribution. Unfortunately all we get to work with is the training distribution, which makes ensuring robust generalization difficult.
-Deception is an example of this concern. Models may be well-behaved in the training environment because they realize it is a training environment, but behave poorly in deployment because they notice the distributional shift.</description>
-    </item>
-    
-    <item>
-      <title>Waves in electron hydrodynamics</title>
-      <link>https://adamjermyn.com/posts/ideas22/</link>
-      <pubDate>Wed, 29 Jun 2022 12:21:53 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/ideas22/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don’t make sense for me to pursue. I generally just make a note of them and move on. This is the 22nd post in a series describing some of the ideas I’ve accumulated. This idea is closely related to conversations I&amp;rsquo;ve had over the years to with George Varnavides.
-Waves in electron hydrodynamics What&amp;rsquo;s the idea? In some materials, electron scattering is momentum-conserving (on some relevant length- and time-scale).</description>
-    </item>
-    
-    <item>
-      <title>Training Trace Priors and Speed Priors</title>
-      <link>https://adamjermyn.com/posts/tracespeed/</link>
-      <pubDate>Mon, 27 Jun 2022 10:15:31 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/tracespeed/</guid>
-      <description>Posted to the AI Alignment Forum here.
-Thanks to Evan Hubinger for suggesting this idea.
-Training Trace Priors are priors over boolean circuits which examine the outputs of gates on samples from the training distribution, typically for purposes of steering models away from having components that were never tested during training. The one I like to think about is the One-Gate Trace Prior (OGT Prior), which penalizes circuits if there are gates with constant outputs during training.</description>
-    </item>
-    
-    <item>
-      <title>Conditioning Generative Models</title>
-      <link>https://adamjermyn.com/posts/conditioninggenerativemodels/</link>
-      <pubDate>Mon, 27 Jun 2022 10:14:16 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/conditioninggenerativemodels/</guid>
-      <description>Posted to the AI Alignment Forum here.
-This post was written in response to Evan Hubinger’s shortform prompt below, and benefited from discussions with him.
- Suppose you had a language model that you knew was in fact a good generative model of the world and that this property continued to hold regardless of what you conditioned it on. Furthermore, suppose you had some prompt that described some agent for the language model to simulate (Alice) that in practice resulted in aligned-looking outputs.</description>
-    </item>
-    
-    <item>
-      <title>How do stars evolve in molecular clouds?</title>
-      <link>https://adamjermyn.com/posts/astroideas21/</link>
-      <pubDate>Mon, 27 Jun 2022 08:18:21 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/astroideas21/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don’t make sense for me to pursue. I generally just make a note of them and move on. This is the 21st post in a series describing some of the ideas I’ve accumulated.
-How do stars evolve in molecular clouds? What&amp;rsquo;s the idea? Some stars are in molecular clouds, and the clouds probably affect their evolution by blocking escaping light, exerting pressure on their surfaces, possibly accreting mass onto their surfaces, coupling to their rotation via magnetic fields, and more.</description>
-    </item>
-    
-    <item>
-      <title>#SAT with Tensor Networks</title>
-      <link>https://adamjermyn.com/posts/tn_bc/</link>
-      <pubDate>Fri, 17 Jun 2022 09:21:45 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/tn_bc/</guid>
-      <description>Cross-posted from LessWrong.
-(Thanks to Mark Xu for comments on these notes.)
-These are some notes on tensor networks, the mapping from boolean circuits to tensor networks, and how #SAT can be written as a tensor network contraction.
-Definitions and Notation What is a tensor? A rank-$d$ tensor is an array of numbers with $d$ integer indices, e.g. $T_{ijk}$ is a rank-3 tensor. The range of each index is called its bond dimension.</description>
-    </item>
-    
-    <item>
-      <title>Black holes in gas clouds</title>
-      <link>https://adamjermyn.com/posts/astroideas20/</link>
-      <pubDate>Fri, 17 Jun 2022 07:25:45 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/astroideas20/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don’t make sense for me to pursue. I generally just make a note of them and move on. This is the twentieth post in a series describing some of the ideas I’ve accumulated. This idea emerged from a conversation with Yuri Levin.
-Black holes in gas clouds What&amp;rsquo;s the idea? Asa black hole moves through a gas cloud it should drag on the gas, depositing kinetic energy.</description>
-    </item>
-    
-    <item>
-      <title>Do magnetic fields slow accretion onto AGN stars?</title>
-      <link>https://adamjermyn.com/posts/astroideas19/</link>
-      <pubDate>Thu, 16 Jun 2022 09:20:03 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/astroideas19/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don’t make sense for me to pursue. I generally just make a note of them and move on. This is the nineteenth post in a series describing some of the ideas I’ve accumulated. This idea was suggested to me by Yuri Levin and I&amp;rsquo;ve just fleshed it out a little below.
-Do magnetic fields slow accretion onto AGN stars?</description>
-    </item>
-    
-    <item>
-      <title>Multigate Priors</title>
-      <link>https://adamjermyn.com/posts/multigate_prior/</link>
-      <pubDate>Wed, 15 Jun 2022 15:33:51 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/multigate_prior/</guid>
-      <description>Posted to LessWrong here.
-(Thanks to Evan Hubinger and Nicholas Schiefer for suggestions and discussions around these ideas)
-Multi-Gate Traces We can improve on one-gate traces with multi-gate traces! Suppose we have $N$ training samples. Then we can reasonably estimate joint probability distributions over up to $k=\lfloor\log_2 N\rfloor$ gates, giving the prior:
-$$ p\propto \exp\left(-\sum_{i_1&amp;hellip;i_k}\sum_{j\in [0,1]^k}p_{i_1&amp;hellip;i_k}(j)^m\right) $$
-That is, we sum over all selections of $k$ gates and compute the entropy of their joint distribution over $2^k$ states.</description>
-    </item>
-    
-    <item>
-      <title>Wave Heating and F-type Stars</title>
-      <link>https://adamjermyn.com/posts/astroideas18/</link>
-      <pubDate>Wed, 15 Jun 2022 12:43:36 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/astroideas18/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the eighteenth post in a series describing some of the ideas I&amp;rsquo;ve accumulated.
-Wave Heating and F-type Stars What&amp;rsquo;s the idea? Convection zones emit internal gravity waves at their boundaries. There is some uncertainty as to exactly how much power escapes in these waves, but estimates are of order $L_{\rm conv}\mathcal{M}$, where $L_{\rm conv}$ is the heat carried by convection and $\mathcal{M}$ is the convective Mach number.</description>
-    </item>
-    
-    <item>
-      <title>Differential rotation in stars and planetary orbits</title>
-      <link>https://adamjermyn.com/posts/astroideas17/</link>
-      <pubDate>Tue, 14 Jun 2022 11:01:07 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/astroideas17/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the seventeenth post in a series describing some of the ideas I&amp;rsquo;ve accumulated.
-Differential rotation in stars and planetary orbits What&amp;rsquo;s the idea? Stars exhibit differential rotation. At the same time, tides tend to bring stellar rotation rates and planetary orbits closer together in period.</description>
-    </item>
-    
-    <item>
-      <title>Trace Training Priors</title>
-      <link>https://adamjermyn.com/posts/trace_training/</link>
-      <pubDate>Mon, 13 Jun 2022 13:14:01 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/trace_training/</guid>
-      <description>(Crossposted from the AI Alignment Forums)
-I’m worried about scenarios involving deceptive models. We’ve failed at inner alignment so the model has goals that are not aligned with ours. It can somehow detect when it’s in training, and during training it pretends to share our goals. During deployment, surprise! The model paperclips the universe.
-In this story deception is all about the model having hidden behaviors that never get triggered during training.</description>
-    </item>
-    
-    <item>
-      <title>Can LISA see stellar convection?</title>
-      <link>https://adamjermyn.com/posts/astroideas16/</link>
-      <pubDate>Mon, 13 Jun 2022 09:30:25 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/astroideas16/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the sixteenth post in a series describing some of the ideas I&amp;rsquo;ve accumulated.
-Can LISA see stellar convection? What&amp;rsquo;s the idea? Convection in stars produces density fluctuations, resulting in a change in the quadrupole moment. This effect should be of order the square of the convective Mach number (which controls density fluctuations).</description>
-    </item>
-    
-    <item>
-      <title>ELK Proposal - Make the Reporter care about the Predictor’s beliefs</title>
-      <link>https://adamjermyn.com/posts/elk1/</link>
-      <pubDate>Mon, 13 Jun 2022 09:27:54 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/elk1/</guid>
-      <description>Posted to the AI Alignment Forum here.
-(This proposal received an honorable mention in the ELK prize results, and we believe was classified among strategies which “reward reporters that are sensitive to what’s actually happening in the world”. We do not think that the counterexample to that class of strategies works against our proposal, though, and we have explained why in a note at the end. Feedback, disagreement, and new failure modes are very welcome!</description>
-    </item>
-    
-    <item>
-      <title>How much material do AGN stars re-accrete?</title>
-      <link>https://adamjermyn.com/posts/astroideas15/</link>
-      <pubDate>Thu, 09 Jun 2022 10:41:57 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/astroideas15/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the fifteenth post in a series describing some of the ideas I&amp;rsquo;ve accumulated.
-How much material do AGN stars re-accrete? What&amp;rsquo;s the idea? Stellar evolution in AGN disks is expected to produce massive stars that exist in a balance between wind mass loss and accretion.</description>
-    </item>
-    
-    <item>
-      <title>How are stars in the galactic center related to the prior AGN phase?</title>
-      <link>https://adamjermyn.com/posts/astroideas14/</link>
-      <pubDate>Wed, 08 Jun 2022 09:24:53 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/astroideas14/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the fourteenth post in a series describing some of the ideas I&amp;rsquo;ve accumulated.
-How are stars in the galactic center related to the prior AGN phase? What&amp;rsquo;s the idea? We think the Milky Way used to host an AGN disk.</description>
-    </item>
-    
-    <item>
-      <title>Can accretion push RGB stars onto the Main-Sequence?</title>
-      <link>https://adamjermyn.com/posts/astroideas13/</link>
-      <pubDate>Tue, 07 Jun 2022 09:17:06 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/astroideas13/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the thirteenth post in a series describing some of the ideas I&amp;rsquo;ve accumulated.
-Can accretion push RGB stars onto the Main-Sequence? What&amp;rsquo;s the idea? Stars enter the Red Giant Branch (RGB) when they exhaust hydrogen in their cores. Mixing hydrogen-rich material into their cores should reverse this transition, pushing them back onto the main-sequence.</description>
-    </item>
-    
-    <item>
-      <title>Give the model a model-builder</title>
-      <link>https://adamjermyn.com/posts/give_model_builder/</link>
-      <pubDate>Mon, 06 Jun 2022 16:54:20 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/give_model_builder/</guid>
-      <description>(Thanks to Evan Hubinger for suggesting this problem and for comments on these ideas. Feedback is very welcome. Cross-posted from LessWrong.)
-The Setup Suppose we have a prior $p_{\rm good}(\mathrm{model})$ that we think is non-deceptive, such that we can sample from this prior and get good models that are inner-aligned.
-These models may, for instrumental purposes, need to themselves produce models (via searches/optimization/meta-learning). For instance we might ask an outer model to play poker.</description>
-    </item>
-    
-    <item>
-      <title>What would happen if two AGN stars merged?</title>
-      <link>https://adamjermyn.com/posts/astroideas12/</link>
-      <pubDate>Mon, 06 Jun 2022 07:21:20 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/astroideas12/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the twelfth post in a series describing some of the ideas I&amp;rsquo;ve accumulated.
-What would happen if two AGN stars merged? What&amp;rsquo;s the idea? We think that stars in AGN disks live in a balance between accretion and radiation-driven mass-loss, and that this is a stable equilibrium.</description>
-    </item>
-    
-    <item>
-      <title>Does turbulence change nuclear burning in stars?</title>
-      <link>https://adamjermyn.com/posts/astroideas11/</link>
-      <pubDate>Sun, 05 Jun 2022 08:19:42 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/astroideas11/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the eleventh post in a series describing some of the ideas I&amp;rsquo;ve accumulated.
-Does turbulence change nuclear burning in stars? What&amp;rsquo;s the idea? Nuclear burning rates are exponentially sensitive to temperature. Stellar models calculate the mean temperature at each point in a star, but there can be fluctuations about this mean due to turbulent motions.</description>
-    </item>
-    
-    <item>
-      <title>Dynamical Time Warping for Isochrones</title>
-      <link>https://adamjermyn.com/posts/astroideas10/</link>
-      <pubDate>Sat, 04 Jun 2022 12:32:26 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/astroideas10/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the tenth post in a series describing some of the ideas I&amp;rsquo;ve accumulated.
-Dynamical Time Warping for Isochrones What&amp;rsquo;s the idea? Dynamical time warping (DTW) is a technique used to align audio files (or other temporal data). The idea is: given two time-sequences which are supposed to be similar, can we deform the flow of time in one to make it more-closely match the other?</description>
-    </item>
-    
-    <item>
-      <title>Give the AI safe tools</title>
-      <link>https://adamjermyn.com/posts/give_ai_tools/</link>
-      <pubDate>Sat, 04 Jun 2022 08:21:00 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/give_ai_tools/</guid>
-      <description>(Cross-posted from LessWrong)
-One kind of concern with AI is that:
- There are some tools that are instrumentally useful for an AI to have. Most/the most accessible versions of those tools are dangerous. The AI doesn’t care which versions are dangerous. Hence, the AI will probably develop dangerous tools for instrumental reasons.  You might call concerns like this Instrumental Danger Problems. This post aims to examine some existing approaches to Instrumental Danger Problems, and to introduce a new one, namely “Giving the AI safe tools”.</description>
-    </item>
-    
-    <item>
-      <title>Does the core convective dipole align with rotation?</title>
-      <link>https://adamjermyn.com/posts/astroideas9/</link>
-      <pubDate>Sat, 04 Jun 2022 08:11:07 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/astroideas9/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the ninth post in a series describing some of the ideas I&amp;rsquo;ve accumulated.
-Does the core convective dipole align with rotation? What&amp;rsquo;s the idea? I&amp;rsquo;m struggling to find a reference, but a recent result out of convection simulations in fully spherical domains is that the dominant flow pattern is a dipole (e.</description>
-    </item>
-    
-    <item>
-      <title>Do pulsating stars reveal inhibited convection?</title>
-      <link>https://adamjermyn.com/posts/astroideas8/</link>
-      <pubDate>Fri, 03 Jun 2022 09:34:52 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/astroideas8/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the eighth post in a series describing some of the ideas I&amp;rsquo;ve accumulated.
-Do pulsating stars reveal inhibited convection? What&amp;rsquo;s the idea? Many A/B stars have pulsations driven by the $\kappa$-mechanism. In these stars, the pulsation often interacts with near-surface convective layers, motivating tools like time-dependent convection theories.</description>
-    </item>
-    
-    <item>
-      <title>Lensing from compact remnants in the Galactic Center</title>
-      <link>https://adamjermyn.com/posts/astroideas7/</link>
-      <pubDate>Thu, 02 Jun 2022 08:54:24 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/astroideas7/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the seventh post in a series describing some of the ideas I&amp;rsquo;ve accumulated.
-Lensing from compact remnants in the Galactic Center What&amp;rsquo;s the idea? It&amp;rsquo;s thought that the Milky Way used to host an AGN disk. AGN disks likely contain many stars, and those stars very preferentially evolve into black holes.</description>
-    </item>
-    
-    <item>
-      <title>Theoretical limits on extreme baseline optical interferometry</title>
-      <link>https://adamjermyn.com/posts/astroideas6/</link>
-      <pubDate>Wed, 01 Jun 2022 07:25:16 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/astroideas6/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the sixth post in a series describing some of the ideas I&amp;rsquo;ve accumulated.
-Theoretical limits on extreme baseline optical interferometry What&amp;rsquo;s the idea? Interferometry let&amp;rsquo;s you build a giant &amp;lsquo;virtual telescope&amp;rsquo; out of lots of small telescopes. The effective baseline is the longest distance between telescopes, and the number of pixels of effective resolution is roughly the number of telescopes.</description>
-    </item>
-    
-    <item>
-      <title>Does the Parker mechanism spin down AGN stars?</title>
-      <link>https://adamjermyn.com/posts/astroideas5/</link>
-      <pubDate>Tue, 31 May 2022 07:15:04 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/astroideas5/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the fifth post in a series describing some of the ideas I&amp;rsquo;ve accumulated.
-Does the Parker mechanism spin down AGN stars? What&amp;rsquo;s the idea? Collaborators and I previously predicted that stars embedded in AGN disks should end up spinning really fast (near breakup).</description>
-    </item>
-    
-    <item>
-      <title>How correlated are the positions of stars?</title>
-      <link>https://adamjermyn.com/posts/astroideas4/</link>
-      <pubDate>Thu, 26 May 2022 16:58:15 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/astroideas4/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the fourth post in a series describing some of the ideas I&amp;rsquo;ve accumulated.
-How correlated are the positions of stars? What&amp;rsquo;s the idea? Thanks to the Gaia mission, we now have accurate 3D positions for a large number of stars in the galaxies.</description>
-    </item>
-    
-    <item>
-      <title>A tight-binding model for cold dense matter</title>
-      <link>https://adamjermyn.com/posts/astroideas3/</link>
-      <pubDate>Wed, 25 May 2022 16:33:00 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/astroideas3/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the third post in a series describing some of the ideas I&amp;rsquo;ve accumulated.
-Can an ad-hoc electron binding model fix the low-temperature low-density limit of the Skye EOS? What&amp;rsquo;s the idea? The reason that the Skye EOS doesn&amp;rsquo;t cover all temperatures and densities is that it assumes fully ionized matter, which breaks down at low temperatures.</description>
-    </item>
-    
-    <item>
-      <title>Does eating planets make stars magnetic?</title>
-      <link>https://adamjermyn.com/posts/astroideas2/</link>
-      <pubDate>Tue, 24 May 2022 12:56:55 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/astroideas2/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the second post in a series describing some of the ideas I&amp;rsquo;ve accumulated.
-Can planet injestion explain magnetic RGB stars? What&amp;rsquo;s the idea? There are some very magnetic Red Giant Branch (RGB) stars, with measured internal fields of order $10^{5-7}\mathrm{G}$.</description>
-    </item>
-    
-    <item>
-      <title>Neutron Stars in AGN Disks</title>
-      <link>https://adamjermyn.com/posts/astroideas1/</link>
-      <pubDate>Mon, 16 May 2022 07:38:03 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/astroideas1/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. Over the next few months I&amp;rsquo;ll be collecting those notes and posting those ideas here.
-The format I&amp;rsquo;ll try to follow is to explain:
- What the idea is. Why I think it&amp;rsquo;s an interesting idea. How I think someone interested in working on the idea could get started.</description>
-    </item>
-    
-    <item>
-      <title>Chaos in Stellar Evolution</title>
-      <link>https://adamjermyn.com/posts/chaos_stars/</link>
-      <pubDate>Mon, 16 May 2022 07:34:19 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/chaos_stars/</guid>
-      <description>Are stars predictable or chaotic?
-A system is chaotic if small perturbations grow exponentially with time. This makes chaotic systems unpredictable on long time-scales, because it becomes fine details in the starting conditions come to dominate at long times.
-So: are stars predictable or chaotic? As far as I know this is an open question.
-There is some sense in which most stars are predictable. They exist near thermal and hydrostatic equilibrium, and they tend to return to equilibrium when perturbed.</description>
-    </item>
-    
-    <item>
-      <title>Automatic Differentiation in MESA</title>
-      <link>https://adamjermyn.com/posts/auto_diff_mesa/</link>
-      <pubDate>Wed, 11 May 2022 15:28:14 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/auto_diff_mesa/</guid>
-      <description>Over the last two years I developed an automatic differentiation (auto_diff) module in Fortran to support development of the Modules for Experiments in Stellar Astrophysics (MESA) project. This post gives a brief rundown of how the auto_diff module works and how I built it.
-All of the code I mention below lives on GitHub.
-What is auto_diff? Forward-mode automatic differentiation via operator overloading:
- Forward-mode means we calculate the chain rule as we go.</description>
-    </item>
-    
-    <item>
-      <title>The Fourth Rest</title>
-      <link>https://adamjermyn.com/posts/rest_2/</link>
-      <pubDate>Tue, 12 Apr 2022 17:19:49 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/rest_2/</guid>
-      <description>There is a fourth kind of rest I didn&amp;rsquo;t mention: Inactivity. All the other kinds of rest, Distraction, Recreation, and Maintenance, are active. They involve doing something. That something might not be productive in any traditional sense, but it&amp;rsquo;s an active choice to do something rather than nothing.
-Inactivity is different. Inactivity is choosing to do nothing. It&amp;rsquo;s sitting on a couch being bored, letting thoughts come and go but not pursuing them.</description>
-    </item>
-    
-    <item>
-      <title>Working Notes - Learning PyTorch - Day 2</title>
-      <link>https://adamjermyn.com/posts/ml_2/</link>
-      <pubDate>Tue, 12 Apr 2022 17:17:54 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/ml_2/</guid>
-      <description>Summary  Adding convolutional layers is pretty straightforward, but there are some indexing subtleties to watch. Pooling layers can really improve performance. With two pooling layers, I found an example of a too-high learning rate making the model get stuck with poor performance. The more pooling layers I used the faster the model took a training step (because the dense linear layer was smaller). The more pooling layers I used, the more important the number of channels in the convolutional/pooling layers became.</description>
-    </item>
-    
-    <item>
-      <title>Working Notes - Learning PyTorch - Day 1</title>
-      <link>https://adamjermyn.com/posts/ml_1/</link>
-      <pubDate>Mon, 11 Apr 2022 17:06:39 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/ml_1/</guid>
-      <description>Summary  Covered boilerplate for getting started, tensors, gradients. Poked in some detail at how gradients work. Played with linear regression, nonlinear regression, both with gradient descent. Built an MNIST classifier following a PyTorch tutorial. Experimented with the shape and size of the NN. Got PyTorch running on a machine with a GPU.  Boilerplate Import:
-import torch Need to use a special float type for the elements of tensors, and need to know which device the compute graph will run on:</description>
-    </item>
-    
-    <item>
-      <title>Acting and Thinking</title>
-      <link>https://adamjermyn.com/posts/acting_thinking/</link>
-      <pubDate>Mon, 11 Apr 2022 14:33:01 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/acting_thinking/</guid>
-      <description>Do thoughts cause actions, or do actions cause thoughts? Or does causation flow back and forth, more like a tide than a one-way river?
-It&amp;rsquo;s easy to see how thoughts cause actions. You think about reading a book, so you go pick up a book and start reading. It&amp;rsquo;s so easy to see the causation flow this way that it feels like thoughts must precede actions. How can you act, if you haven&amp;rsquo;t decided what to do?</description>
-    </item>
-    
-    <item>
-      <title>Progressive Consumption Tax</title>
-      <link>https://adamjermyn.com/posts/progressive_tax/</link>
-      <pubDate>Sun, 27 Mar 2022 17:15:37 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/progressive_tax/</guid>
-      <description>Taxes create incentives. When the government tax an activity, society does less of it. Tax alcohol, people drink less. Tax smoking, people smoke less. Tax income, people work less. Tax investment, people invest less. I&amp;rsquo;m going to take this as given for now, even though there are many caveats on all of these statements.
-This suggests a simple principle for crafting a tax code: tax the things we want less of, and don&amp;rsquo;t tax the things we want more of.</description>
-    </item>
-    
-    <item>
-      <title>AI risk in a few words</title>
-      <link>https://adamjermyn.com/posts/ai_risk_few_words/</link>
-      <pubDate>Mon, 14 Mar 2022 14:27:25 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/ai_risk_few_words/</guid>
-      <description>AI safety is a weird area, and in trying to explain it to friends I realized that I don&amp;rsquo;t have a simple explanation of what the (existential) risks are and why I think they&amp;rsquo;re important.
-Word limits force simplicity, so here are some attempts to explain AI risk in different numbers of words.
-150 words  Do you value the same things as your great grandfather? What we value changes from generation to generation.</description>
-    </item>
-    
-    <item>
-      <title>Tools Against Procrastination</title>
-      <link>https://adamjermyn.com/posts/procrast/</link>
-      <pubDate>Tue, 01 Mar 2022 13:43:15 -0500</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/procrast/</guid>
-      <description>When I procrastinate on something, it&amp;rsquo;s usually because there&amp;rsquo;s something I find aversive about it. Lately I&amp;rsquo;ve been trying to find patterns in what these aversions are, and noticed a big one: I usually find the start of a big task much more aversive than any other part. For instance, I often find myself shrinking away from beginning to write papers, whereas everything is fine once I&amp;rsquo;ve gotten going.
-I&amp;rsquo;m not sure why the act of starting feels so scary, but I&amp;rsquo;ve found two ways to make it better.</description>
-    </item>
-    
-    <item>
-      <title>Rest</title>
-      <link>https://adamjermyn.com/posts/rest/</link>
-      <pubDate>Fri, 25 Feb 2022 16:40:08 -0500</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/rest/</guid>
-      <description>Rest is important, but what is it?
-I&amp;rsquo;ve noticed three kinds of activities people call rest:
- Maintenance Distraction Recreation  Many activities could fall into any of these categories, and the distinction I want to draw is all about the motivation.
-Maintenance is what you do to keep life going. Think of cooking, cleaning, sleep, hygiene, sorting through mail, etc. These activities are both necessary and often get pushed to the wayside during a busy work week, so they&amp;rsquo;re natural to reach for in down time.</description>
-    </item>
-    
-    <item>
-      <title>Success is Broader Than You Think</title>
-      <link>https://adamjermyn.com/posts/broad_success/</link>
-      <pubDate>Mon, 31 Jan 2022 11:55:52 -0500</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/broad_success/</guid>
-      <description>Projects begin with goals. At first these are implicit, but as a project takes shape it helps to state them explicitly. Stating goals serves two purposes: it defines success, and it prompts action.
-Because of this dual purpose, many goals miss the mark. On the one hand, is easy to come up with goals which define success but which are too vague to be actionable:
- &amp;ldquo;Change the world.&amp;rdquo;
-&amp;ldquo;Disrupt the industry.</description>
-    </item>
-    
-    <item>
-      <title>Self-Compassion and Growth</title>
-      <link>https://adamjermyn.com/posts/compassion/</link>
-      <pubDate>Mon, 10 Jan 2022 09:00:45 -0500</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/compassion/</guid>
-      <description>(Epistemic Status: This is an attempt to draw a distinction that feels important, but which I have little evidence for.)
-Recently I&amp;rsquo;ve been reading Self-Compassion by Kristin Neff. I haven&amp;rsquo;t checked any of the underlying evidence, so buyer beware, but the basic premise of the book is that there are large benefits to crafting an intentional attitude of compassion towards oneself.
-I don&amp;rsquo;t want to focus on the specifics of Neff&amp;rsquo;s book though.</description>
-    </item>
-    
-    <item>
-      <title>What can a rapid test tell you? Omicron Edition</title>
-      <link>https://adamjermyn.com/posts/testing_ii/</link>
-      <pubDate>Thu, 23 Dec 2021 16:09:40 -0500</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/testing_ii/</guid>
-      <description>(This is not medical advice. Co-written with Nicholas Schiefer. Thanks to Sylvia Hürlimann and Katherine McDaniel for helpful discussions and comments. Corrections welcome.)
-This holiday season is also Omicron season. The Omicron variant dramatically increases COVID risk for basically everyone, especially with case counts exploding and doubling every two days in most northern areas (New York, Boston, London). Although Omicron seems to be less severe than other variants for most people, it&amp;rsquo;s probably worth some effort to protect high-risk individuals, especially while case rates are so high.</description>
-    </item>
-    
-    <item>
-      <title>Classifying Scientific Compute Workflows</title>
-      <link>https://adamjermyn.com/posts/scientific_compute/</link>
-      <pubDate>Thu, 16 Dec 2021 16:30:25 -0800</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/scientific_compute/</guid>
-      <description>Scientists use computers, and not just for typesetting. Lots of experimentation and discovery is done with computers, from modeling climate to predicting material properties to discovering exoplanets. Because computation is applied to such a broad range of questions, the ways it gets used are many and varied. This diversity of application means that tools developed and lessons learned in one domain of scientific compute workflow often don&amp;rsquo;t generalize to very different domains.</description>
-    </item>
-    
-    <item>
-      <title>ClaimCoin</title>
-      <link>https://adamjermyn.com/posts/claim_coin/</link>
-      <pubDate>Mon, 13 Dec 2021 18:16:59 -0800</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/claim_coin/</guid>
-      <description>(This is not investment advice.)
-Stable coins are an important tool, allowing investors to trade ordinary (fiat) currencies on the blockchain, but they have a somewhat opaque risk structure. Usually either the coin tracks the desired currency or else the peg fails, in which case investors start withdrawing and the coin suddenly trades well below the peg.
-What if there was a coin with a more transparent risk structure? What would that make possible?</description>
-    </item>
-    
-    <item>
-      <title>Practicing Agency</title>
-      <link>https://adamjermyn.com/posts/agency_social/</link>
-      <pubDate>Sat, 04 Dec 2021 09:01:56 -0800</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/agency_social/</guid>
-      <description>Agency is where you act to achieve your goals. Unfortunately agency is hard and not the default state.
-Social nudging is a powerful way to combat this. Here are a few lightly-edited conversations that I&amp;rsquo;ve observed or participated in that pushed towards more agency:
-Fire  P1: There&amp;rsquo;s a fire ~20 miles away and it&amp;rsquo;s raining ash.
-P2: Do you have an air purifier?
-P1: &amp;hellip; no, I should get one.</description>
-    </item>
-    
-    <item>
-      <title>Does Riboflavin Prevent Migraines?</title>
-      <link>https://adamjermyn.com/posts/riboflavin/</link>
-      <pubDate>Thu, 02 Dec 2021 17:03:20 -0800</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/riboflavin/</guid>
-      <description>Abstract (This is not medical advice. I am not a medical professional. Thanks to Rose DiLoreto for the idea for this post.)
-Supplementing with Riboflavin (Vitamin B2) seems probably helpful for headaches and migraines, likely reducing their frequency by about 50% as well as reducing severity somewhat. This is backed by multiple randomized controlled trials, and I&amp;rsquo;ve tried to check for anything funny in those trials (small samples, weird controls, etc.</description>
-    </item>
-    
-    <item>
-      <title>High-Value Low-Probability Options Abound</title>
-      <link>https://adamjermyn.com/posts/mugged_by_probability/</link>
-      <pubDate>Mon, 25 Oct 2021 07:16:09 -0700</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/mugged_by_probability/</guid>
-      <description>(Numbers in this post are made up to illustrate a point. Likewise the plot device need not be cryptocurrencies, that&amp;rsquo;s just flavor text.)
-You&amp;rsquo;re walking on the street, minding your business. Suddenly, a stranger (S) comes up and starts talking to you:
- S: Have you heard? There&amp;rsquo;s a one-in-a-million chance you could save a billion lives! All you have to do is found a crypto currency, become extremely rich, and use that money to fight Malaria!</description>
-    </item>
-    
-    <item>
-      <title>COVID Testing - Sensitivity and Timelines</title>
-      <link>https://adamjermyn.com/posts/covid_testing_timing/</link>
-      <pubDate>Tue, 07 Sep 2021 10:17:00 -0500</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/covid_testing_timing/</guid>
-      <description>COVID Testing - Sensitivity and Timelines This past week a close contact had a potential COVID exposure, so I wanted to understand a few basic questions about COVID testing to help figure out what is safe and what isn&amp;rsquo;t. Three questions seem especially relevant:
- How sensitive are PCR and rapid antigen tests? If someone tests negative on a rapid antigen test but positive on PCR, should they worry about infecting other people?</description>
-    </item>
-    
-    <item>
-      <title>A School for Agency</title>
-      <link>https://adamjermyn.com/posts/agency_school/</link>
-      <pubDate>Sun, 01 Aug 2021 14:42:17 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/agency_school/</guid>
-      <description>A School for Agency Agency is where you act to achieve your goals. It&amp;rsquo;s where you look at problems and say &amp;ldquo;How could I solve them?&amp;rdquo; and really think about that and arrive at possible courses of action and then take those actions. Explicitly, agency is about executing three steps:
- Notice a problem/question. Brainstorm solutions. Try solutions until something works or the costs exceed the benefits.  An example I return to often in the summer is air conditioning.</description>
-    </item>
-    
-    <item>
-      <title>Automated Project Reviews</title>
-      <link>https://adamjermyn.com/posts/automated_reviews/</link>
-      <pubDate>Tue, 25 May 2021 15:04:36 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/automated_reviews/</guid>
-      <description>Automated Project Reviews Getting things right without feedback is really hard, but not all feedback comes from other people! One quick way to generate meaningful feedback is by looking back at past work.
-A challenge with looking back is doing it at the right time. For some kinds of feedback this is easy: schedule weekly/monthly/quarterly reviews, with prompts tuned to the relevant time-scale. But some areas of life don&amp;rsquo;t run on a regular schedule.</description>
-    </item>
-    
-    <item>
-      <title>Toy Model of Near-Existential Risk</title>
-      <link>https://adamjermyn.com/posts/near_existential_risk_pt2/</link>
-      <pubDate>Fri, 23 Apr 2021 16:05:02 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/near_existential_risk_pt2/</guid>
-      <description>I recently wrote about near-existential risk. These are risks which result in massive losses to society of people/technology/capability, but which themselves do not actually end or permanently curtail human existence. Here I want to build a toy model for thinking about these risks and how they relate to actual existential risks.
-A Toy Model For these purposes I&amp;rsquo;m going to reduce the many dimensions of loss to a single parameter $\ell$.</description>
-    </item>
-    
-    <item>
-      <title>Near-Existential Risk</title>
-      <link>https://adamjermyn.com/posts/near_existential_risk/</link>
-      <pubDate>Sun, 28 Mar 2021 16:17:44 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/near_existential_risk/</guid>
-      <description>Longtermism is a moral theory that says that most of the value we (humans) ought to care about lies in the future, and so we should look hard for opportunities to influence the future in positive ways. Longtermism arises as a natural consequence of three ideas:
- Utilitarianism: We should improve the lives/subjective wellbeing of as many people as much as possible, evaluated by summing improvements over lives. Future lives are just as valuable as present lives.</description>
-    </item>
-    
-    <item>
-      <title>Examples of Tools with Values</title>
-      <link>https://adamjermyn.com/posts/values_examples/</link>
-      <pubDate>Sat, 23 Jan 2021 17:51:55 -0500</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/values_examples/</guid>
-      <description>I previously argued that tools should express values. Here are some examples of tools I&amp;rsquo;ve made with an eye to values.
-A Brainstorming Environment I have a shell script that sets up a work environment for brainstorming. It does this by copying and opening a template text document that says the following:
-# Session: - Maintain an attitude of suspended judgement. - You&#39;re here to climb out of the basin. - Cmd+E Will bring up an (incomplete) list of possible approaches.</description>
-    </item>
-    
-    <item>
-      <title>Growing Food on Mars</title>
-      <link>https://adamjermyn.com/posts/mars_soil/</link>
-      <pubDate>Sun, 10 Jan 2021 10:24:23 -0500</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/mars_soil/</guid>
-      <description>Growing food on Mars is a critical component of making a self-sufficient city because shipping food is expensive.
-Unfortunately it seems that Martian regolith is too alkaline and is missing key nutrients needed to grow crops. The alkaline issue can be solved by adding acid, which is both low-weight and can be produced locally if need be. The nutrient issue can be addressed either by adding organic material or by artificial nutrient supplementation.</description>
-    </item>
-    
-    <item>
-      <title>Early Martian Software</title>
-      <link>https://adamjermyn.com/posts/mars_software/</link>
-      <pubDate>Fri, 01 Jan 2021 14:29:20 -0500</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/mars_software/</guid>
-      <description>Building a city on Mars will be very capital intensive because in the early stages it&amp;rsquo;s extremely expensive to sustain people on Mars. But capital is a vague term: what does this actually look like?
-The last few attempts at a human presence in space primarily used physical capital: heavy machinery, giant rockets and space stations and industrial equipment. Mars will need all of that too. But the last few times were in the 1960s-90s, when computers were slow and software much more limited and expensive than today.</description>
-    </item>
-    
-    <item>
-      <title>Robust Tools</title>
-      <link>https://adamjermyn.com/posts/robust_tools/</link>
-      <pubDate>Wed, 30 Dec 2020 10:37:04 -0500</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/robust_tools/</guid>
-      <description>Good tools are robust. This doesn&amp;rsquo;t just mean that they don&amp;rsquo;t fail, it means that in many instances they can&amp;rsquo;t fail. They take common failure modes off the table, freeing you to use them and focus on your goals.
-Impossible Failure Modes For a robust tool many failure modes are, by design, simply impossible, to the point where it&amp;rsquo;s hard to imagine what those failure modes are.
-Consider a solid metal hammer.</description>
-    </item>
-    
-    <item>
-      <title>Tools Should Express Values</title>
-      <link>https://adamjermyn.com/posts/tools_values/</link>
-      <pubDate>Fri, 11 Dec 2020 15:56:14 -0500</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/tools_values/</guid>
-      <description>I want my tools to express values. I want my text editor to tell me to write clearly. I want my scientific software to command me “Be true, be open, be humble, be curious.” I want tools to be less blank pages and more pleas for me to honor the values of the craft.
-Blank is not Neutral Many tools today are designed like blank pages. A writing app has a large blank space, with perhaps a few buttons for changing fonts and an indicator of how many words are on the page.</description>
-    </item>
-    
-    <item>
-      <title>Growth and Population on Mars</title>
-      <link>https://adamjermyn.com/posts/alpha_beta/</link>
-      <pubDate>Mon, 07 Dec 2020 11:33:05 -0500</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/alpha_beta/</guid>
-      <description>Economies of Scale I previously wrote about a simple model of an early Martain economy. A key input to that model is the way that human productivity scales with population and investment. I captured this with the simple scaling $$ p \propto I^\alpha n^\beta $$ for $\alpha,\beta &amp;gt; 0$. This relation says that the per-person productivity $p$ scales as some positive power $\alpha$ of the per-person investment $I$, which could reflect machinery or materials or personnel support from Earth, and as another positive power $\beta$ of the number of people $n$.</description>
-    </item>
-    
-    <item>
-      <title>An Economic Model of Martian Growth</title>
-      <link>https://adamjermyn.com/posts/mars_economy/</link>
-      <pubDate>Sun, 15 Nov 2020 16:33:47 -0500</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/mars_economy/</guid>
-      <description>An Economic Model of Martian Growth Mars is an expensive place to live, but it rapidly becomes cheaper the more infrastructure it has! Because of that the total cost of building a self-sufficient city on Mars depends on how quickly infrastructure can be built. This is the key question I want to understand: what is the best way to invest in Martian infrastructure that minimizes the total cost?
-A Simple Model To do this I&amp;rsquo;ll build a simple model of economic growth on Mars.</description>
-    </item>
-    
-    <item>
-      <title>Mass Scales for Living on Mars</title>
-      <link>https://adamjermyn.com/posts/mars_scales/</link>
-      <pubDate>Sat, 24 Oct 2020 15:52:11 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/mars_scales/</guid>
-      <description>Mass Scales for Living on Mars Big thanks to Casey Handmer for reading and commenting on an early draft of this.
-One of the most exciting things that may well happen this century is a sustained human presence on Mars. The main reason this is possible at all is that SpaceX has cut launch costs dramatically. Despite this progress, cargo sent from Earth and soft-landed on Mars is likely to be the primary resource constraint in the Martian economy for a very long time, so it is worth exploring the scale of cargo required to support a human presence, and what that translated into in dollars.</description>
-    </item>
-    
-  </channel>
+	<channel>
+		<title>Posts on Adam Jermyn</title>
+		<link>https://adamjermyn.com/posts/</link>
+		<description>Recent content in Posts on Adam Jermyn</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Sun, 04 Jan 2026 12:00:00 -0500</lastBuildDate>
+		
+			<atom:link href="https://adamjermyn.com/posts/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>The Tragedy of Almost: Arline Feynman and the Information Gap</title>
+				<link>https://adamjermyn.com/posts/arline_feynman/</link>
+				<pubDate>Sun, 04 Jan 2026 12:00:00 -0500</pubDate>
+				<guid>https://adamjermyn.com/posts/arline_feynman/</guid>
+				<description>&lt;p&gt;How many people have died not because treatments didn&amp;rsquo;t exist, but because the information didn&amp;rsquo;t reach them in time? Every new cure has a window where it exists but isn&amp;rsquo;t widely known, isn&amp;rsquo;t easily accessible, requires connections or luck to obtain. Someone is always on the wrong side of that window.&lt;/p&gt;&#xA;&lt;p&gt;One of the cruelest examples: Arline Feynman, wife of physicist Richard Feynman, who died of tuberculosis in June 1945.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Lectures on Fractures</title>
+				<link>https://adamjermyn.com/posts/lectures_on_fractures/</link>
+				<pubDate>Wed, 31 Dec 2025 00:00:00 +0000</pubDate>
+				<guid>https://adamjermyn.com/posts/lectures_on_fractures/</guid>
+				<description>&lt;p&gt;I recently collaborated with Claude Opus 4.5 to write a short set of lecture notes on fracture mechanics:&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;../pdf/lectures_on_fractures.pdf&#34;&gt;Lectures on Fractures (PDF)&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;how-it-worked&#34;&gt;How it worked&lt;/h2&gt;&#xA;&lt;p&gt;I wanted something in Feynman&amp;rsquo;s style. Conversational, building intuition before formalism, full of physical insight. So I had Claude start by reading some of Feynman&amp;rsquo;s writing and assembling a style guide. That gave us a shared reference for tone.&lt;/p&gt;&#xA;&lt;p&gt;The technical focus was Griffith&amp;rsquo;s work on fractures. That&amp;rsquo;s what I wanted to learn about, and centering on his energy-based approach gave the notes a natural structure.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Date-Me Doc</title>
+				<link>https://adamjermyn.com/posts/date_me_doc/</link>
+				<pubDate>Sat, 15 Nov 2025 10:00:00 -0500</pubDate>
+				<guid>https://adamjermyn.com/posts/date_me_doc/</guid>
+				<description>&lt;p&gt;This is a link to my &lt;a href=&#34;https://docs.google.com/document/d/1bdSLO2U3viUpwNWAsLnJkrkZJZ4QYBBVuo0QRdAvNZ8/edit?usp=sharing&#34;&gt;date-me doc&lt;/a&gt;, which I published in November 2025. I&amp;rsquo;m no longer single but wanted to leave a pointer to it up because it was an important document for me both to write and in becoming not single.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Querying ultra-long contexts with summary trees</title>
+				<link>https://adamjermyn.com/posts/claude_summary/</link>
+				<pubDate>Sun, 09 Jun 2024 18:24:21 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/claude_summary/</guid>
+				<description>&lt;p&gt;&lt;em&gt;Views my own. There might well be more clever ways to do all of this that I don&amp;rsquo;t know of.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;Suppose you have some long, ordered text data, like news stories going back a century or journal entries or server logs. You&amp;rsquo;d like to analyze them with a Large Language Model (LLM), but you can&amp;rsquo;t just concatenate them together (the context window isn&amp;rsquo;t that long!).&lt;/p&gt;&#xA;&lt;p&gt;A fun solution to this problem is a &lt;strong&gt;summary tree&lt;/strong&gt;. The idea is that we use the LLM to summarize pairs of consecutive documents, then summarize pairs of consecutive summaries, then summarize pairs of those, and so on, until there&amp;rsquo;s a tree where the root represents an overall summary of all of the documents and the leaves represent individual documents. Here&amp;rsquo;s an example of the kind of prompt we might use to produce such a tree:&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Declaration of Independence Signatories</title>
+				<link>https://adamjermyn.com/posts/declaration/</link>
+				<pubDate>Thu, 07 Mar 2024 11:26:29 -0500</pubDate>
+				<guid>https://adamjermyn.com/posts/declaration/</guid>
+				<description>&lt;p&gt;On a recent trip to DC I picked up a pocket copy of the Declaration of Independence from the Supreme Court. At the back, it has biographies of the signatories. What’s remarkable is just how much agency people took, how much they shifted their lives around, and how “rag tag” it was.&lt;/p&gt;&#xA;&lt;p&gt;At one point one of them was personally going out soliciting loans to fund the war effort. Another was a doctor, got infuriated at the way the British treated the colonies, and left medicine to be a politician. He went on to become the first governor of New Hampshire.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>The Path of Law</title>
+				<link>https://adamjermyn.com/posts/pathoflaw/</link>
+				<pubDate>Sun, 11 Feb 2024 16:13:41 -0500</pubDate>
+				<guid>https://adamjermyn.com/posts/pathoflaw/</guid>
+				<description>&lt;p&gt;I just skimmed through Oliver Wendell Holmes&amp;rsquo;s &lt;em&gt;The Path of Law&lt;/em&gt;. A few things that stood out:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;He frames the law as a field of study with the aim of predicting the decisions of course. I think he’s trying to disentangle the law from a statement of morals. It’s not about what is right, it’s a practical question of what rules you will actually be held to account on and how that account will appear.&lt;/li&gt;&#xA;&lt;li&gt;There’s also a lot in here about “social advantage” (which I recognize as a 1900s phrase for what we might now call &amp;ldquo;privilege&amp;rdquo;).&lt;/li&gt;&#xA;&lt;li&gt;He also tackles questions about how driven the law is by logic, versus by other factors. He seems to come down pretty solidly on the side of &amp;ldquo;logic is just a guide, not the sole input&amp;rdquo;.&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>When is the right time?</title>
+				<link>https://adamjermyn.com/posts/time1/</link>
+				<pubDate>Sat, 27 Jan 2024 16:49:34 -0500</pubDate>
+				<guid>https://adamjermyn.com/posts/time1/</guid>
+				<description>&lt;h2 id=&#34;ideas&#34;&gt;Ideas&lt;/h2&gt;&#xA;&lt;p&gt;Looking back, it feels like there was often a &amp;lsquo;right time&amp;rsquo; for me to encounter particular ideas:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;I encountered a lot of ideas from religion very young (as many people do). I was also very interested in science, and so got hung up on factual disagreements rather than seeing e.g. &lt;a href=&#34;https://thezvi.wordpress.com/2017/10/07/bring-back-the-sabbath/&#34;&gt;the point of having a dedicated day of rest&lt;/a&gt;.&lt;/li&gt;&#xA;&lt;li&gt;I came across the &lt;a href=&#34;https://www.feynmanlectures.caltech.edu&#34;&gt;Feynman Lectures&lt;/a&gt; in high school, when I knew just enough math that it was possible to work through them, but not enough math or physics that it felt like review. My first exposure to many concepts in physics was through Feynman, and that&amp;rsquo;s colored my approach ever since.&lt;/li&gt;&#xA;&lt;li&gt;I tried reading a Complex Analysis book in high school, and that was much too early. I could follow the mechanics of the proofs but the concepts really didn&amp;rsquo;t click until later when I had worked more with multivariable calculus.&lt;/li&gt;&#xA;&lt;li&gt;I realized that there were exciting things happening in aerospace too late, I think. When I was deciding what to study the field looked stagnant (ahem Space Shuttles?). I now find what SpaceX does really exciting, and I think I&amp;rsquo;d have been excited back in 2010 if I&amp;rsquo;d known more about the company.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Whether or not I found something at the right time played a big role in what I made of it:&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Things I Find Beautiful - I</title>
+				<link>https://adamjermyn.com/posts/beauty1/</link>
+				<pubDate>Sat, 27 Jan 2024 15:57:53 -0500</pubDate>
+				<guid>https://adamjermyn.com/posts/beauty1/</guid>
+				<description>&lt;p&gt;&lt;em&gt;This is a collection of some things I&amp;rsquo;ve found beautiful recently.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://oimo.io/works/life/&#34;&gt;Recursive Game of Life&lt;/a&gt; (see the run-through &lt;a href=&#34;https://twitter.com/Rainmaker1973/status/1749445224139506106?s=20&#34;&gt;here&lt;/a&gt;). Each cell is being simulated by another instance of the Game of Life, and if you zoom out enough you see that the structures you started off looking at are &lt;em&gt;also&lt;/em&gt; simulations of cells.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.owenschuh.com&#34;&gt;Paintings by Owen Schuh&lt;/a&gt;. See especially the &lt;a href=&#34;https://www.owenschuh.com/work/unfoldingcube&#34;&gt;work&lt;/a&gt; page, and this &lt;a href=&#34;https://x.com/relic_radiation/status/1748225930261393824?s=20&#34;&gt;tweet&lt;/a&gt;. There&amp;rsquo;s a quality to many of these that&amp;rsquo;s halfway between organic and designed that really draws me in.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Contaminated TB Treatments</title>
+				<link>https://adamjermyn.com/posts/latent_tb/</link>
+				<pubDate>Sat, 25 Mar 2023 19:51:30 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/latent_tb/</guid>
+				<description>&lt;p&gt;(&lt;em&gt;None of this is medical advice.&lt;/em&gt;)&lt;/p&gt;&#xA;&lt;p&gt;In 2020 the FDA identified contamination in &lt;a href=&#34;https://www.fda.gov/drugs/drug-safety-and-availability/fda-updates-and-press-announcements-nitrosamines-rifampin-and-rifapentine&#34;&gt;two drugs&lt;/a&gt; used to treat Tuberculosis, Rifampin and Rifapentine. The contaminants were 1-methyl-4-nitrosopiperazine (MNP) in rifampin or 1-cyclopentyl-4-nitrosopiperazine (CPNP) in rifapentine, and &lt;a href=&#34;https://www.fda.gov/drugs/drug-safety-and-availability/laboratory-analysis-rifampinrifapentine-products&#34;&gt;levels&lt;/a&gt; were ~10x the FDA&amp;rsquo;s acceptable threshold (1-4ppm for MNP, 8-14ppm for CPNP). At the same time, these are two of the standard treatments for Tuberculosis and the alternatives come with downsides of their own, so the FDA permitted these drugs to continue being prescribed and sold in the US.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Multi-Component Learning and S-Curves</title>
+				<link>https://adamjermyn.com/posts/scurves/</link>
+				<pubDate>Tue, 29 Nov 2022 20:38:53 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/scurves/</guid>
+				<description>&lt;p&gt;&lt;em&gt;This post is available on the&lt;/em&gt; &lt;a href=&#34;https://www.alignmentforum.org/posts/RKDQCB6smLWgs2Mhr/multi-component-learning-and-s-curves&#34;&gt;AI Alignment Forum&lt;/a&gt;.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Engineering Monosemanticity in Toy Models</title>
+				<link>https://adamjermyn.com/posts/mono_1/</link>
+				<pubDate>Mon, 21 Nov 2022 14:53:00 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/mono_1/</guid>
+				<description>&lt;p&gt;&lt;em&gt;This post is available on the &lt;a href=&#34;https://www.alignmentforum.org/posts/LvznjZuygoeoTpSE6/engineering-monosemanticity-in-toy-models&#34;&gt;AI Alignment Forum&lt;/a&gt;&lt;/em&gt;.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Toy Models and Tegum Products</title>
+				<link>https://adamjermyn.com/posts/tegum_products/</link>
+				<pubDate>Fri, 04 Nov 2022 14:53:00 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/tegum_products/</guid>
+				<description>&lt;p&gt;&lt;em&gt;This post is available on the &lt;a href=&#34;https://www.alignmentforum.org/posts/3cR2YH9dpr7SmKvCb/toy-models-and-tegum-products&#34;&gt;AI Alignment Forum&lt;/a&gt;&lt;/em&gt;.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Humans do acausal coordination all the time</title>
+				<link>https://adamjermyn.com/posts/acausal/</link>
+				<pubDate>Wed, 02 Nov 2022 10:44:53 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/acausal/</guid>
+				<description>&lt;p&gt;&lt;em&gt;(Cross-posted from the &lt;a href=&#34;https://www.alignmentforum.org/posts/FCffGHJnYfdE2DgRe/humans-do-acausal-coordination-all-the-time&#34;&gt;AI Alignment Forum&lt;/a&gt;)&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;I used to think that acausal coordination was a weird thing that AI’s might do in the future, but that they certainly wouldn’t learn from looking at human behavior. I don’t believe that anymore, and think there are lots of examples of acausal coordination in everyday life.&lt;/p&gt;&#xA;&lt;h1 id=&#34;examples-people-do&#34;&gt;Examples people do&lt;/h1&gt;&#xA;&lt;h3 id=&#34;voting&#34;&gt;Voting&lt;/h3&gt;&#xA;&lt;p&gt;The political science argument against voting goes:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;The probability that my vote tilts the election is tiny, so the expected value to me is tiny, so it’s not worth my time to vote.&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+			</item>
+			<item>
+				<title>Smoke without fire is scary</title>
+				<link>https://adamjermyn.com/posts/smoke_fire/</link>
+				<pubDate>Tue, 04 Oct 2022 14:27:25 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/smoke_fire/</guid>
+				<description>&lt;p&gt;&lt;em&gt;This post is available on the &lt;a href=&#34;https://www.alignmentforum.org/posts/PP2Lrpvhd3bBvR8Aj/smoke-without-fire-is-scary&#34;&gt;AI Alignment Forum&lt;/a&gt;&lt;/em&gt;.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>It matters when the first sharp left turn happens</title>
+				<link>https://adamjermyn.com/posts/left_turn/</link>
+				<pubDate>Thu, 29 Sep 2022 14:27:25 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/left_turn/</guid>
+				<description>&lt;p&gt;&lt;em&gt;Thanks to Evan Hubinger for comments on these ideas. Posted on the &lt;a href=&#34;https://www.alignmentforum.org/posts/BCyK2GQKiiuYdvkst/it-matters-when-the-first-sharp-left-turn-happens&#34;&gt;AI Alignment Forum&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;&#xA;&lt;p&gt;A “sharp left turn” is a point where &lt;a href=&#34;https://www.alignmentforum.org/posts/GNhMPAWcfBCASy8e6/a-central-ai-alignment-problem-capabilities-generalization&#34;&gt;capabilities generalize beyond alignment&lt;/a&gt;. In a sharp left turn, an AI becomes much more capable than aligned, and so starts to exploit flaws in its alignment.&lt;/p&gt;&#xA;&lt;p&gt;This can look like &lt;a href=&#34;https://www.alignmentforum.org/tag/goodhart-s-law&#34;&gt;Goodharting&lt;/a&gt;, where strong optimization pressure causes outer alignment failure because the base goal isn’t identical to what we want. Or it can look like &lt;a href=&#34;https://www.alignmentforum.org/posts/zthDPAjh9w6Ytbeks/deceptive-alignment&#34;&gt;deceptive alignment&lt;/a&gt;, where the model is aligned to proxy goals that aren’t identical to the base goal, but we don’t notice until the model is capable enough to make the proxies fail.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Brief Notes on Transformers</title>
+				<link>https://adamjermyn.com/posts/transformer_notes/</link>
+				<pubDate>Mon, 26 Sep 2022 08:21:00 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/transformer_notes/</guid>
+				<description>&lt;p&gt;&lt;em&gt;(Cross-posted from the &lt;a href=&#34;https://www.alignmentforum.org/posts/rEPnce975Fid9v5qv/brief-notes-on-transformers&#34;&gt;AI Alignment Forum&lt;/a&gt;)&lt;/em&gt;*&lt;/p&gt;&#xA;&lt;p&gt;*&lt;em&gt;These are just some notes I wrote while reading about transformers, which I thought might be a useful reference to others. Corrections welcome.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;overview-of-transformers&#34;&gt;Overview of Transformers&lt;/h1&gt;&#xA;&lt;p&gt;Many transformer models have &lt;a href=&#34;https://transformer-circuits.pub/2021/framework/index.html#architecture-attn-as-movement&#34;&gt;the following architecture&lt;/a&gt;:&lt;/p&gt;&#xA;&lt;img src=&#34;../images/transformer_notes.assets/c7052b9cfde21fd125b70380c3289ddab77b50cde834556c.png&#34; alt=&#34;c7052b9cfde21fd125b70380c3289ddab77b50cde834556c&#34; style=&#34;max-width:100%;max-height:100%;display:block;margin-left:auto;margin-right:auto&#34;/&gt;&#xA;&lt;p&gt;Data flows as follows:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;We take tokens as inputs and pass them through an embedding layer. The embedding layer outputs its result into the residual stream (x0). This has dimension (C,E), where C is the number of tokens in the context window and E is the embedding dimension.&lt;/li&gt;&#xA;&lt;li&gt;The residual stream is processed by the attention mechanism (H) and the result is added back into the residual stream (i.e. x1 = H(x0) + x0).&lt;/li&gt;&#xA;&lt;li&gt;The residual stream is processed by an MLP layer (MLP) and the result is added back into the residual stream (i.e. x2 = MLP(x1) + x1).&lt;/li&gt;&#xA;&lt;li&gt;Steps (2) and (3) together define a “residual block”. The body of the transformer is formed of a stack of these blocks in series.&lt;/li&gt;&#xA;&lt;li&gt;After the final residual block, we apply an unembedding transformation to produce logits, which represent the relative probabilities of different output tokens.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h1 id=&#34;attention-mechanism&#34;&gt;Attention Mechanism&lt;/h1&gt;&#xA;&lt;p&gt;The attention mechanism (H) is divided into multiple attention heads $h_j$, which act in parallel. That is,&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Why doesn&#39;t all the Uranium sink to the bottom of Earth?</title>
+				<link>https://adamjermyn.com/posts/ideas28/</link>
+				<pubDate>Fri, 19 Aug 2022 11:18:48 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/ideas28/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don’t make sense for me to pursue. I generally just make a note of them and move on. This is the 28th post in a series describing some of the ideas I’ve accumulated.&lt;/p&gt;&#xA;&lt;h2 id=&#34;why-doesnt-all-the-uranium-sink-to-the-bottom-of-earth&#34;&gt;Why doesn&amp;rsquo;t all the Uranium sink to the bottom of Earth?&lt;/h2&gt;&#xA;&lt;h3 id=&#34;whats-the-idea&#34;&gt;What&amp;rsquo;s the idea?&lt;/h3&gt;&#xA;&lt;p&gt;Uranium is denser than iron. Why hasn&amp;rsquo;t it all fallen to the center of the Earth? Does it preferentially alloy with lighter elements, or something else?&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Chemical Mixing on Tayler Columns</title>
+				<link>https://adamjermyn.com/posts/ideas27/</link>
+				<pubDate>Thu, 18 Aug 2022 13:40:28 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/ideas27/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don’t make sense for me to pursue. I generally just make a note of them and move on. This is the 27th post in a series describing some of the ideas I’ve accumulated.&lt;/p&gt;&#xA;&lt;h2 id=&#34;chemical-mixing-on-tayler-columns&#34;&gt;Chemical Mixing on Tayler Columns&lt;/h2&gt;&#xA;&lt;h3 id=&#34;whats-the-idea&#34;&gt;What&amp;rsquo;s the idea?&lt;/h3&gt;&#xA;&lt;p&gt;In rapidly rotating stars and planets convection forms narrow columns. Mixing is rapid along the column but slow across columns. It might be possible to see signs of this difference in mixing speed during events involving transient changes in chemistry.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Conditioning, Prompts, and Fine-Tuning</title>
+				<link>https://adamjermyn.com/posts/conditioning_fine_tuning/</link>
+				<pubDate>Wed, 17 Aug 2022 16:55:03 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/conditioning_fine_tuning/</guid>
+				<description>&lt;p&gt;&lt;em&gt;Posted to the&lt;/em&gt; &lt;a href=&#34;https://www.alignmentforum.org/posts/chevXfQmRYrTZnj8r/conditioning-prompts-and-fine-tuning&#34;&gt;AI Alignment Forums&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;(Thanks to Evan Hubinger and Nicholas Schiefer for comments on these ideas.)&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;These are some notes on the relation between conditioning language models, prompting, and fine-tuning. The key takeaways are:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Prompting and fine-tuning can both be used to condition language models.&lt;/li&gt;&#xA;&lt;li&gt;Prompting is quite restricted in the kinds of conditionals it can achieve.&lt;/li&gt;&#xA;&lt;li&gt;Fine-tuning can implement arbitrary conditionals in principle, though not in practice.&lt;/li&gt;&#xA;&lt;li&gt;In practice fine-tuning can still implement more kinds of conditionals than prompting.&lt;/li&gt;&#xA;&lt;li&gt;We don&amp;rsquo;t understand how fine-tuning conditionals generalize, which seems dangerous.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h1 id=&#34;conditioning&#34;&gt;Conditioning&lt;/h1&gt;&#xA;&lt;p&gt;We can think of a language model as specifying a probability distribution π(x), where x is a sequence of tokens of fixed length N (the length of the context window). We generate text by sampling sequences from π.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Helium Flash and Surface Effects</title>
+				<link>https://adamjermyn.com/posts/ideas26/</link>
+				<pubDate>Wed, 17 Aug 2022 11:42:48 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/ideas26/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don’t make sense for me to pursue. I generally just make a note of them and move on. This is the 26th post in a series describing some of the ideas I’ve accumulated. This idea is based on &lt;a href=&#34;https://arxiv.org/abs/2206.13479&#34;&gt;work I did&lt;/a&gt; with Jim Fuller.&lt;/p&gt;&#xA;&lt;h2 id=&#34;helium-flash-and-surface-effects&#34;&gt;Helium Flash and Surface Effects&lt;/h2&gt;&#xA;&lt;h3 id=&#34;whats-the-idea&#34;&gt;What&amp;rsquo;s the idea?&lt;/h3&gt;&#xA;&lt;p&gt;Stars below around $3 M_\odot$ exhibit a helium flash, in which degenerate helium in their cores ignites. This ignition runs away until degeneracy is lifted, producing enormous luminosities ($10^{9-10}L_\odot$). Despite the enormous energies involved, there are thought to be no immediate effects of the helium flash that can be observed at the surface, primarily because the thermal diffusion time from the core to the surface is very long compared with the flash itself.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Overshooting at low Péclet number</title>
+				<link>https://adamjermyn.com/posts/ideas25/</link>
+				<pubDate>Mon, 15 Aug 2022 09:53:44 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/ideas25/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don’t make sense for me to pursue. I generally just make a note of them and move on. This is the 25th post in a series describing some of the ideas I’ve accumulated. This idea is based on discussions and calculations with Matteo Cantiello, Daniel Lecoanet, Evan Anders, Eoin Farrell, Yan-Fei Jiang, Lars Bildsten, and Will Schultz.&lt;/p&gt;&#xA;&lt;h2 id=&#34;overshooting-at-low-péclet-number&#34;&gt;Overshooting at low Péclet number&lt;/h2&gt;&#xA;&lt;h3 id=&#34;whats-the-idea&#34;&gt;What&amp;rsquo;s the idea?&lt;/h3&gt;&#xA;&lt;p&gt;Convection zones are often bounded on one side or the other by a stably stratified layer. Usually this stable stratification prevent much mixing/turbulence from developing, so that the only signatures of the convection that propagate through the stable layer are waves.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Conditioning Generative Models with Restrictions</title>
+				<link>https://adamjermyn.com/posts/conditioninggenerativemodels2/</link>
+				<pubDate>Thu, 21 Jul 2022 16:34:05 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/conditioninggenerativemodels2/</guid>
+				<description>&lt;p&gt;&lt;em&gt;This is a followup to &lt;a href=&#34;https://www.alignmentforum.org/posts/nXeLPcT9uhfG3TMPS/conditioning-generative-models&#34;&gt;Conditioning Generative Models&lt;/a&gt; based on further discussions with Evan Hubinger, Nicholas Schiefer, Abram Demski, Curtis Huebner, Hoagy Cunningham, Derek Shiller, and James Lucassen, as well as broader conversations with many different people at the recent ARC/ELK retreat. For more background on this general direction see Johannes Treutlein’s “&lt;a href=&#34;https://www.alignmentforum.org/posts/dWJNFHnC4bkdbovug/training-goals-for-large-language-models&#34;&gt;Training goals for large language models&lt;/a&gt;”.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;background&#34;&gt;Background&lt;/h1&gt;&#xA;&lt;p&gt;Previously, I wrote about ways we could use a generative language model to produce alignment research. There I proposed two approaches:&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Quantilizers and Generative Models</title>
+				<link>https://adamjermyn.com/posts/quantilizers/</link>
+				<pubDate>Mon, 18 Jul 2022 12:33:31 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/quantilizers/</guid>
+				<description>&lt;p&gt;(&lt;em&gt;Cross-posted from the &lt;a href=&#34;https://www.alignmentforum.org/posts/tz3hoCs2efHjzNYm5/quantilizers-and-generative-models&#34;&gt;AI Alignment Forum&lt;/a&gt;&lt;/em&gt;)&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Thanks to Evan Hubinger for discussions about quantilizers, and to James Lucassen for discussions about conditioned generative models. Many of these ideas are discussed in&lt;/em&gt; &lt;a href=&#34;https://intelligence.org/files/QuantilizersSaferAlternative.pdf&#34;&gt;Quantilizers: A Safer Alternative to Maximizers for Limited Optimization&lt;/a&gt;&lt;em&gt;: this post just expands on a particular thread of ideas in that paper. Throughout I’ll refer to sections of the paper. I have some remaining confusion about the “targeted impact” section, and would appreciate clarifications/corrections!&lt;/em&gt;&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>What saturates the centrifugal instability?</title>
+				<link>https://adamjermyn.com/posts/ideas24/</link>
+				<pubDate>Mon, 18 Jul 2022 10:55:44 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/ideas24/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don’t make sense for me to pursue. I generally just make a note of them and move on. This is the 24th post in a series describing some of the ideas I’ve accumulated. This idea is based on a &lt;a href=&#34;https://arxiv.org/pdf/2004.07279.pdf&#34;&gt;paper&lt;/a&gt; by Xihui Zhao and Jim Fuller.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-saturates-the-centrifugal-instability&#34;&gt;What saturates the centrifugal instability?&lt;/h2&gt;&#xA;&lt;h3 id=&#34;whats-the-idea&#34;&gt;What&amp;rsquo;s the idea?&lt;/h3&gt;&#xA;&lt;p&gt;The &lt;a href=&#34;https://arxiv.org/pdf/2004.07279.pdf&#34;&gt;centrifugal instability&lt;/a&gt; is a linear instability (section 4) caused by the centrifugal force. If fluid elements conserve angular momentum the rotation provides a restoring force and there is no instability, but if angular momentum is transported quickly relative to the oscillation frequency then the elements may be displaced at constant angular velocity, resulting in unstable motion.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Grouped Loss may disfavor discontinuous capabilities</title>
+				<link>https://adamjermyn.com/posts/grouped_loss/</link>
+				<pubDate>Sat, 09 Jul 2022 08:21:00 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/grouped_loss/</guid>
+				<description>&lt;p&gt;&lt;em&gt;(Cross-posted from the &lt;a href=&#34;https://www.alignmentforum.org/posts/PmhTzHHFEem5hX79R/grouped-loss-may-disfavor-discontinuous-capabilities&#34;&gt;AI Alignment Forum&lt;/a&gt;)&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Thanks to Evan Hubinger and Beth Barnes for comments on these ideas.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;Language models exhibit clear &lt;a href=&#34;https://arxiv.org/abs/2001.08361&#34;&gt;scaling laws&lt;/a&gt;, where the loss is a power-law in model size. This offers a lot of predictive power, and seems like a useful thing to know. By contrast, individual capabilities often exhibit sharp discontinuities in performance as a function of &lt;a href=&#34;https://arxiv.org/abs/2206.04615&#34;&gt;model size&lt;/a&gt; and &lt;a href=&#34;https://arxiv.org/pdf/2201.02177.pdf&#34;&gt;training time&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;It would be great if individual capabilities just gradually improved like the broader loss. Then we wouldn’t have to worry quite so much about surprising new capabilities emerging suddenly during training.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Can waves advect magnetic fields?</title>
+				<link>https://adamjermyn.com/posts/ideas23/</link>
+				<pubDate>Fri, 01 Jul 2022 11:52:18 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/ideas23/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don’t make sense for me to pursue. I generally just make a note of them and move on. This is the 23rd post in a series describing some of the ideas I’ve accumulated. This idea is closely related to conversations I once had with Dong Lai.&lt;/p&gt;&#xA;&lt;h2 id=&#34;can-waves-advect-magnetic-fields&#34;&gt;Can waves advect magnetic fields?&lt;/h2&gt;&#xA;&lt;h3 id=&#34;whats-the-idea&#34;&gt;What&amp;rsquo;s the idea?&lt;/h3&gt;&#xA;&lt;p&gt;The electrical conductivity in stars is enormous, so the magnetic diffusivity is small. That means that magnetic field lines are effectively frozen in to the material they pass through, so they can only move if that material moves.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Latent Adversarial Training</title>
+				<link>https://adamjermyn.com/posts/lat/</link>
+				<pubDate>Wed, 29 Jun 2022 16:05:25 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/lat/</guid>
+				<description>&lt;p&gt;&lt;em&gt;Posted to the &lt;a href=&#34;https://www.alignmentforum.org/posts/atBQ3NHyqnBadrsGP/latent-adversarial-training&#34;&gt;AI Alignment Forum&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;the-problem&#34;&gt;The Problem&lt;/h1&gt;&#xA;&lt;p&gt;We’d like to train models to be robustly safe, even in environments that may fall well outside of the training distribution. Unfortunately all we get to work with is the training distribution, which makes ensuring robust generalization difficult.&lt;/p&gt;&#xA;&lt;p&gt;Deception is an example of this concern. Models may be well-behaved in the training environment because they realize it is a training environment, but behave poorly in deployment because they notice the distributional shift.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Waves in electron hydrodynamics</title>
+				<link>https://adamjermyn.com/posts/ideas22/</link>
+				<pubDate>Wed, 29 Jun 2022 12:21:53 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/ideas22/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don’t make sense for me to pursue. I generally just make a note of them and move on. This is the 22nd post in a series describing some of the ideas I’ve accumulated. This idea is closely related to conversations I&amp;rsquo;ve had over the years to with George Varnavides.&lt;/p&gt;&#xA;&lt;h2 id=&#34;waves-in-electron-hydrodynamics&#34;&gt;Waves in electron hydrodynamics&lt;/h2&gt;&#xA;&lt;h3 id=&#34;whats-the-idea&#34;&gt;What&amp;rsquo;s the idea?&lt;/h3&gt;&#xA;&lt;p&gt;In some materials, electron scattering is momentum-conserving (on some relevant length- and time-scale). These materials exhibit &lt;em&gt;electron hydrodynamics&lt;/em&gt;, where the &lt;a href=&#34;https://www.nature.com/articles/s41467-020-18553-y&#34;&gt;electrons flow&lt;/a&gt; following the Navier-Stokes equation. Presumably that also means they can exhibit &lt;em&gt;waves&lt;/em&gt;, and I think this could be an exciting phenomenon to understand.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Training Trace Priors and Speed Priors</title>
+				<link>https://adamjermyn.com/posts/tracespeed/</link>
+				<pubDate>Mon, 27 Jun 2022 10:15:31 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/tracespeed/</guid>
+				<description>&lt;p&gt;&lt;em&gt;Posted to the AI Alignment Forum &lt;a href=&#34;https://www.alignmentforum.org/posts/9o2mjdo7eb7677EJS/training-trace-priors-and-speed-priors&#34;&gt;here&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Thanks to Evan Hubinger for suggesting this idea.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.alignmentforum.org/posts/hjrqXjEpaw9ogScPh/training-trace-priors&#34;&gt;Training Trace Priors&lt;/a&gt; are priors over boolean circuits which examine the outputs of gates on samples from the training distribution, typically for purposes of steering models away from having components that were never tested during training. The one I like to think about is the One-Gate Trace Prior (OGT Prior), which penalizes circuits if there are gates with constant outputs during training.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Conditioning Generative Models</title>
+				<link>https://adamjermyn.com/posts/conditioninggenerativemodels/</link>
+				<pubDate>Mon, 27 Jun 2022 10:14:16 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/conditioninggenerativemodels/</guid>
+				<description>&lt;p&gt;&lt;em&gt;Posted to the AI Alignment Forum&lt;/em&gt; &lt;a href=&#34;https://www.alignmentforum.org/posts/nXeLPcT9uhfG3TMPS/conditioning-generative-models&#34;&gt;here&lt;/a&gt;&lt;em&gt;.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;This post was written in response to Evan Hubinger’s shortform prompt below, and benefited from discussions with him.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Suppose you had a language model that you knew was in fact a good generative model of the world and that this property continued to hold regardless of what you conditioned it on. Furthermore, suppose you had some prompt that described some agent for the language model to simulate (Alice) that in practice resulted in aligned-looking outputs. Is there a way we could use different conditionals to get at whether or not Alice was deceptive (e.g. prompt the model with “DeepMind develops perfect transparency tools and provides an opportunity for deceptive models to come clean and receive a prize before they’re discovered.”).&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+			</item>
+			<item>
+				<title>How do stars evolve in molecular clouds?</title>
+				<link>https://adamjermyn.com/posts/astroideas21/</link>
+				<pubDate>Mon, 27 Jun 2022 08:18:21 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/astroideas21/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don’t make sense for me to pursue. I generally just make a note of them and move on. This is the 21st post in a series describing some of the ideas I’ve accumulated.&lt;/p&gt;&#xA;&lt;h2 id=&#34;how-do-stars-evolve-in-molecular-clouds&#34;&gt;How do stars evolve in molecular clouds?&lt;/h2&gt;&#xA;&lt;h3 id=&#34;whats-the-idea&#34;&gt;What&amp;rsquo;s the idea?&lt;/h3&gt;&#xA;&lt;p&gt;Some stars are in molecular clouds, and the clouds probably affect their evolution by blocking escaping light, exerting pressure on their surfaces, possibly accreting mass onto their surfaces, coupling to their rotation via magnetic fields, and more. In many ways it&amp;rsquo;s a similar problem to stellar evolution in AGN disks.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>#SAT with Tensor Networks</title>
+				<link>https://adamjermyn.com/posts/tn_bc/</link>
+				<pubDate>Fri, 17 Jun 2022 09:21:45 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/tn_bc/</guid>
+				<description>&lt;p&gt;&lt;em&gt;Cross-posted from &lt;a href=&#34;https://www.lesswrong.com/posts/uPhvEBJHfBLbddyAA/sat-with-tensor-networks&#34;&gt;LessWrong&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;(Thanks to Mark Xu for comments on these notes.)&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;These are some notes on tensor networks, the mapping from boolean circuits to tensor networks, and how #SAT can be written as a tensor network contraction.&lt;/p&gt;&#xA;&lt;h2 id=&#34;definitions-and-notation&#34;&gt;Definitions and Notation&lt;/h2&gt;&#xA;&lt;h3 id=&#34;what-is-a-tensor&#34;&gt;What is a tensor?&lt;/h3&gt;&#xA;&lt;p&gt;A rank-$d$ tensor is an array of numbers with $d$ integer indices, e.g. $T_{ijk}$ is a rank-3 tensor. The range of each index is called its &lt;em&gt;bond dimension.&lt;/em&gt; So for instance the Kronecker delta tensor used in physics is given by&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Black holes in gas clouds</title>
+				<link>https://adamjermyn.com/posts/astroideas20/</link>
+				<pubDate>Fri, 17 Jun 2022 07:25:45 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/astroideas20/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don’t make sense for me to pursue. I generally just make a note of them and move on. This is the twentieth post in a series describing some of the ideas I’ve accumulated. This idea emerged from a conversation with Yuri Levin.&lt;/p&gt;&#xA;&lt;h2 id=&#34;black-holes-in-gas-clouds&#34;&gt;Black holes in gas clouds&lt;/h2&gt;&#xA;&lt;h3 id=&#34;whats-the-idea&#34;&gt;What&amp;rsquo;s the idea?&lt;/h3&gt;&#xA;&lt;p&gt;Asa  black hole moves through a gas cloud it should drag on the gas, depositing kinetic energy. The question is: how much kinetic energy gets deposited, and how fast?&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Do magnetic fields slow accretion onto AGN stars?</title>
+				<link>https://adamjermyn.com/posts/astroideas19/</link>
+				<pubDate>Thu, 16 Jun 2022 09:20:03 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/astroideas19/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don’t make sense for me to pursue. I generally just make a note of them and move on. This is the nineteenth post in a series describing some of the ideas I’ve accumulated. This idea was suggested to me by Yuri Levin and I&amp;rsquo;ve just fleshed it out a little below.&lt;/p&gt;&#xA;&lt;h2 id=&#34;do-magnetic-fields-slow-accretion-onto-agn-stars&#34;&gt;Do magnetic fields slow accretion onto AGN stars?&lt;/h2&gt;&#xA;&lt;h3 id=&#34;whats-the-idea&#34;&gt;What&amp;rsquo;s the idea?&lt;/h3&gt;&#xA;&lt;p&gt;Stellar evolution in AGN disks is expected to produce &lt;a href=&#34;https://arxiv.org/abs/2009.03936&#34;&gt;massive stars&lt;/a&gt; that exist in a balance between wind mass loss and accretion. Calculations of this balance so far neglect magnetic fields in determining the accretion rate. AGN disks almost certainly have significant magnetic fields, though, and these just get amplified in the accretion stream. The resulting magnetic pressure could well slow the stream and make AGN stars less massive.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Multigate Priors</title>
+				<link>https://adamjermyn.com/posts/multigate_prior/</link>
+				<pubDate>Wed, 15 Jun 2022 15:33:51 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/multigate_prior/</guid>
+				<description>&lt;p&gt;&lt;em&gt;Posted to LessWrong &lt;a href=&#34;https://www.lesswrong.com/posts/CKZkfAE8APAEYMqi6/multigate-priors&#34;&gt;here&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;(Thanks to Evan Hubinger and Nicholas Schiefer for suggestions and discussions around these ideas)&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;multi-gate-traces&#34;&gt;Multi-Gate Traces&lt;/h2&gt;&#xA;&lt;p&gt;We can improve on one-gate traces with multi-gate traces! Suppose we have $N$ training samples. Then we can reasonably estimate joint probability distributions over up to $k=\lfloor\log_2 N\rfloor$ gates, giving the prior:&lt;/p&gt;&#xA;&lt;p&gt;$$ p\propto \exp\left(-\sum_{i_1...i_k}\sum_{j\in [0,1]^k}p_{i_1...i_k}(j)^m\right) $$&lt;/p&gt;&#xA;&lt;p&gt;That is, we sum over all selections of $k$ gates and compute the entropy of their joint distribution over $2^k$ states. Once more we promote models with high entropy and punish those with low entropy, which favors models that explore as much of their state space as possible during training, and disfavors those which have hidden states never touched in training.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Wave Heating and F-type Stars</title>
+				<link>https://adamjermyn.com/posts/astroideas18/</link>
+				<pubDate>Wed, 15 Jun 2022 12:43:36 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/astroideas18/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the eighteenth post in a series describing some of the ideas I&amp;rsquo;ve accumulated.&lt;/p&gt;&#xA;&lt;h2 id=&#34;wave-heating-and-f-type-stars&#34;&gt;Wave Heating and F-type Stars&lt;/h2&gt;&#xA;&lt;h3 id=&#34;whats-the-idea&#34;&gt;What&amp;rsquo;s the idea?&lt;/h3&gt;&#xA;&lt;p&gt;Convection zones emit internal gravity waves at their boundaries. There is some uncertainty as to exactly how much power escapes in these waves, but &lt;a href=&#34;https://ui.adsabs.harvard.edu/abs/2013MNRAS.430.2363L/abstract&#34;&gt;estimates&lt;/a&gt; are of order $L_{\rm conv}\mathcal{M}$, where $L_{\rm conv}$ is the heat carried by convection and $\mathcal{M}$ is the convective Mach number.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Differential rotation in stars and planetary orbits</title>
+				<link>https://adamjermyn.com/posts/astroideas17/</link>
+				<pubDate>Tue, 14 Jun 2022 11:01:07 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/astroideas17/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the seventeenth post in a series describing some of the ideas I&amp;rsquo;ve accumulated.&lt;/p&gt;&#xA;&lt;h2 id=&#34;differential-rotation-in-stars-and-planetary-orbits&#34;&gt;Differential rotation in stars and planetary orbits&lt;/h2&gt;&#xA;&lt;h3 id=&#34;whats-the-idea&#34;&gt;What&amp;rsquo;s the idea?&lt;/h3&gt;&#xA;&lt;p&gt;Stars exhibit differential rotation. At the same time, tides tend to bring stellar rotation rates and planetary orbits closer together in period. So: does differential rotation in a host star change the orbital evolution of its planets?&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Trace Training Priors</title>
+				<link>https://adamjermyn.com/posts/trace_training/</link>
+				<pubDate>Mon, 13 Jun 2022 13:14:01 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/trace_training/</guid>
+				<description>&lt;p&gt;&lt;em&gt;(Crossposted from the AI Alignment Forums)&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;I’m worried about scenarios involving deceptive models. We’ve failed at inner alignment so the model has goals that are not aligned with ours. It can somehow detect when it’s in training, and during training it pretends to share our goals. During deployment, surprise! The model paperclips the universe.&lt;/p&gt;&#xA;&lt;p&gt;In this story deception is all about the model having hidden behaviors that never get triggered during training. There are many inputs where the model does what we want. These correspond to inputs where it ‘plays along’. Then on some rare input or an input outside of the training distribution it defects, triggering some catastrophic behavior that corresponds to maximizing an ulterior motive.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Can LISA see stellar convection?</title>
+				<link>https://adamjermyn.com/posts/astroideas16/</link>
+				<pubDate>Mon, 13 Jun 2022 09:30:25 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/astroideas16/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the sixteenth post in a series describing some of the ideas I&amp;rsquo;ve accumulated.&lt;/p&gt;&#xA;&lt;h2 id=&#34;can-lisa-see-stellar-convection&#34;&gt;Can LISA see stellar convection?&lt;/h2&gt;&#xA;&lt;h3 id=&#34;whats-the-idea&#34;&gt;What&amp;rsquo;s the idea?&lt;/h3&gt;&#xA;&lt;p&gt;Convection in stars produces density fluctuations, resulting in a change in the quadrupole moment. This effect should be of order the square of the convective Mach number (which controls density fluctuations). Any individual star will definitely not produce an observable effect, but I wonder if this could contribute to the LISA noise floor (or the noise floor of future missions) when added up across all of the stars in the galaxy.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>ELK Proposal - Make the Reporter care about the Predictor’s beliefs</title>
+				<link>https://adamjermyn.com/posts/elk1/</link>
+				<pubDate>Mon, 13 Jun 2022 09:27:54 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/elk1/</guid>
+				<description>&lt;p&gt;&lt;em&gt;Posted to the AI Alignment Forum&lt;/em&gt; &lt;a href=&#34;https://www.alignmentforum.org/posts/XGbWaA3gbDphajMHm/elk-proposal-make-the-reporter-care-about-the-predictor-s&#34;&gt;here&lt;/a&gt;&lt;em&gt;.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;(This proposal received an honorable mention in the &lt;a href=&#34;https://www.notion.so/ELK-Proposal-Make-the-Reporter-care-about-the-Predictor-s-beliefs-4cb30e79267e4d5591ee7161169170c2&#34;&gt;ELK prize results&lt;/a&gt;, and we believe was classified among strategies which “reward reporters that are sensitive to what’s actually happening in the world”. We do not think that the counterexample to that class of strategies works against our proposal, though, and we have explained why in a note at the end. Feedback, disagreement, and new failure modes are very welcome!)&lt;/em&gt;&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>How much material do AGN stars re-accrete?</title>
+				<link>https://adamjermyn.com/posts/astroideas15/</link>
+				<pubDate>Thu, 09 Jun 2022 10:41:57 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/astroideas15/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the fifteenth post in a series describing some of the ideas I&amp;rsquo;ve accumulated.&lt;/p&gt;&#xA;&lt;h2 id=&#34;how-much-material-do-agn-stars-re-accrete&#34;&gt;How much material do AGN stars re-accrete?&lt;/h2&gt;&#xA;&lt;h3 id=&#34;whats-the-idea&#34;&gt;What&amp;rsquo;s the idea?&lt;/h3&gt;&#xA;&lt;p&gt;Stellar evolution in AGN disks is expected to produce &lt;a href=&#34;https://arxiv.org/abs/2009.03936&#34;&gt;massive stars&lt;/a&gt; that exist in a balance between wind mass loss and accretion. This is an inherently 3D process, requiring the winds and infalling material to take different paths to/from the star. Eventually the material in the wind will run into material in the AGN disk, some of which feeds the accretion stream.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>How are stars in the galactic center related to the prior AGN phase?</title>
+				<link>https://adamjermyn.com/posts/astroideas14/</link>
+				<pubDate>Wed, 08 Jun 2022 09:24:53 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/astroideas14/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the fourteenth post in a series describing some of the ideas I&amp;rsquo;ve accumulated.&lt;/p&gt;&#xA;&lt;h2 id=&#34;how-are-stars-in-the-galactic-center-related-to-the-prior-agn-phase&#34;&gt;How are stars in the galactic center related to the prior AGN phase?&lt;/h2&gt;&#xA;&lt;h3 id=&#34;whats-the-idea&#34;&gt;What&amp;rsquo;s the idea?&lt;/h3&gt;&#xA;&lt;p&gt;We think the Milky Way used to host an AGN disk. Stellar evolution in AGN disks is expected to produce &lt;a href=&#34;https://arxiv.org/abs/2009.03936&#34;&gt;massive stars&lt;/a&gt;, and indeed the galactic center hosts a population of massive stars with &lt;a href=&#34;https://arxiv.org/abs/astro-ph/0303436&#34;&gt;coplanar orbits&lt;/a&gt;. These are clearly related to the disk in some fashion, and could either have been around coincident with the AGN disk or could have formed from the last remnants of the disk.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Can accretion push RGB stars onto the Main-Sequence?</title>
+				<link>https://adamjermyn.com/posts/astroideas13/</link>
+				<pubDate>Tue, 07 Jun 2022 09:17:06 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/astroideas13/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the thirteenth post in a series describing some of the ideas I&amp;rsquo;ve accumulated.&lt;/p&gt;&#xA;&lt;h2 id=&#34;can-accretion-push-rgb-stars-onto-the-main-sequence&#34;&gt;Can accretion push RGB stars onto the Main-Sequence?&lt;/h2&gt;&#xA;&lt;h3 id=&#34;whats-the-idea&#34;&gt;What&amp;rsquo;s the idea?&lt;/h3&gt;&#xA;&lt;p&gt;Stars enter the Red Giant Branch (RGB) when they exhaust hydrogen in their cores. Mixing hydrogen-rich material into their cores should reverse this transition, pushing them back onto the main-sequence.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Give the model a model-builder</title>
+				<link>https://adamjermyn.com/posts/give_model_builder/</link>
+				<pubDate>Mon, 06 Jun 2022 16:54:20 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/give_model_builder/</guid>
+				<description>&lt;p&gt;&lt;em&gt;(Thanks to Evan Hubinger for suggesting this problem and for comments on these ideas. Feedback is very welcome. Cross-posted from &lt;a href=&#34;https://www.lesswrong.com/posts/3ACsAThxzH4fEk5dA/give-the-model-a-model-builder&#34;&gt;LessWrong&lt;/a&gt;.)&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;the-setup&#34;&gt;The Setup&lt;/h1&gt;&#xA;&lt;p&gt;Suppose we have a prior $p_{\rm good}(\mathrm{model})$ that we think is non-deceptive, such that we can sample from this prior and get good models that are inner-aligned.&lt;/p&gt;&#xA;&lt;p&gt;These models may, for instrumental purposes, need to themselves produce models (via searches/optimization/meta-learning). For instance we might ask an outer model to play poker. Along the way the model may find it instrumentally useful to build an inner model of its opponent. We refer to these additional models as &lt;em&gt;inner models&lt;/em&gt;, and the ones that produced them we call &lt;em&gt;outer models&lt;/em&gt;.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>What would happen if two AGN stars merged?</title>
+				<link>https://adamjermyn.com/posts/astroideas12/</link>
+				<pubDate>Mon, 06 Jun 2022 07:21:20 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/astroideas12/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the twelfth post in a series describing some of the ideas I&amp;rsquo;ve accumulated.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-would-happen-if-two-agn-stars-merged&#34;&gt;What would happen if two AGN stars merged?&lt;/h2&gt;&#xA;&lt;h3 id=&#34;whats-the-idea&#34;&gt;What&amp;rsquo;s the idea?&lt;/h3&gt;&#xA;&lt;p&gt;We think that stars in AGN disks live in a &lt;a href=&#34;https://arxiv.org/abs/2009.03936&#34;&gt;balance&lt;/a&gt; between accretion and radiation-driven mass-loss, and that this is a stable equilibrium. If the star becomes more massive, its luminosity increases and drives a faster wind, and this is a stronger effect than the increase in its accretion rate caused by its greater mass.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Does turbulence change nuclear burning in stars?</title>
+				<link>https://adamjermyn.com/posts/astroideas11/</link>
+				<pubDate>Sun, 05 Jun 2022 08:19:42 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/astroideas11/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the eleventh post in a series describing some of the ideas I&amp;rsquo;ve accumulated.&lt;/p&gt;&#xA;&lt;h2 id=&#34;does-turbulence-change-nuclear-burning-in-stars&#34;&gt;Does turbulence change nuclear burning in stars?&lt;/h2&gt;&#xA;&lt;h3 id=&#34;whats-the-idea&#34;&gt;What&amp;rsquo;s the idea?&lt;/h3&gt;&#xA;&lt;p&gt;Nuclear burning rates are exponentially sensitive to temperature. Stellar models calculate the mean temperature at each point in a star, but there can be fluctuations about this mean due to turbulent motions. This effect has been studied &lt;a href=&#34;https://arxiv.org/pdf/2002.01937.pdf&#34;&gt;theoretically&lt;/a&gt;, but has never been applied to stellar evolution so far as I know.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Dynamical Time Warping for Isochrones</title>
+				<link>https://adamjermyn.com/posts/astroideas10/</link>
+				<pubDate>Sat, 04 Jun 2022 12:32:26 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/astroideas10/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the tenth post in a series describing some of the ideas I&amp;rsquo;ve accumulated.&lt;/p&gt;&#xA;&lt;h2 id=&#34;dynamical-time-warping-for-isochrones&#34;&gt;Dynamical Time Warping for Isochrones&lt;/h2&gt;&#xA;&lt;h3 id=&#34;whats-the-idea&#34;&gt;What&amp;rsquo;s the idea?&lt;/h3&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Dynamic_time_warping&#34;&gt;Dynamical time warping&lt;/a&gt; (DTW) is a technique used to align audio files (or other temporal data). The idea is: given two time-sequences which are supposed to be similar, can we deform the flow of time in one to make it more-closely match the other?&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Give the AI safe tools</title>
+				<link>https://adamjermyn.com/posts/give_ai_tools/</link>
+				<pubDate>Sat, 04 Jun 2022 08:21:00 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/give_ai_tools/</guid>
+				<description>&lt;p&gt;&lt;em&gt;(Cross-posted from &lt;a href=&#34;https://www.lesswrong.com/posts/mvTYAKS5qXKNnBT8x/give-the-ai-safe-tools&#34;&gt;LessWrong&lt;/a&gt;)&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;One kind of concern with AI is that:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;There are some tools that are instrumentally useful for an AI to have.&lt;/li&gt;&#xA;&lt;li&gt;Most/the most accessible versions of those tools are dangerous.&lt;/li&gt;&#xA;&lt;li&gt;The AI doesn’t care which versions are dangerous.&lt;/li&gt;&#xA;&lt;li&gt;Hence, the AI will probably develop dangerous tools for instrumental reasons.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;You might call concerns like this &lt;em&gt;Instrumental Danger Problems&lt;/em&gt;. This post aims to examine some existing approaches to Instrumental Danger Problems, and to introduce a new one, namely “Giving the AI safe tools”.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Does the core convective dipole align with rotation?</title>
+				<link>https://adamjermyn.com/posts/astroideas9/</link>
+				<pubDate>Sat, 04 Jun 2022 08:11:07 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/astroideas9/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the ninth post in a series describing some of the ideas I&amp;rsquo;ve accumulated.&lt;/p&gt;&#xA;&lt;h2 id=&#34;does-the-core-convective-dipole-align-with-rotation&#34;&gt;Does the core convective dipole align with rotation?&lt;/h2&gt;&#xA;&lt;h3 id=&#34;whats-the-idea&#34;&gt;What&amp;rsquo;s the idea?&lt;/h3&gt;&#xA;&lt;p&gt;I&amp;rsquo;m struggling to find a reference, but a recent result out of convection simulations in fully spherical domains is that the dominant flow pattern is a dipole (e.g. a flow that runs right through the center of the domain). This may have an answer already, but I&amp;rsquo;d like to know if that dipole aligns with the rotation axis, and/or how the dipole flow interacts with rotation as a function of rotation rate.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Do pulsating stars reveal inhibited convection?</title>
+				<link>https://adamjermyn.com/posts/astroideas8/</link>
+				<pubDate>Fri, 03 Jun 2022 09:34:52 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/astroideas8/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the eighth post in a series describing some of the ideas I&amp;rsquo;ve accumulated.&lt;/p&gt;&#xA;&lt;h2 id=&#34;do-pulsating-stars-reveal-inhibited-convection&#34;&gt;Do pulsating stars reveal inhibited convection?&lt;/h2&gt;&#xA;&lt;h3 id=&#34;whats-the-idea&#34;&gt;What&amp;rsquo;s the idea?&lt;/h3&gt;&#xA;&lt;p&gt;Many A/B stars have pulsations driven by the $\kappa$-mechanism. In these stars, the pulsation often interacts with near-surface convective layers, motivating tools like &lt;a href=&#34;https://users.camk.edu.pl/smolec/phd_smolec.pdf&#34;&gt;time-dependent convection theories&lt;/a&gt;.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Lensing from compact remnants in the Galactic Center</title>
+				<link>https://adamjermyn.com/posts/astroideas7/</link>
+				<pubDate>Thu, 02 Jun 2022 08:54:24 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/astroideas7/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the seventh post in a series describing some of the ideas I&amp;rsquo;ve accumulated.&lt;/p&gt;&#xA;&lt;h2 id=&#34;lensing-from-compact-remnants-in-the-galactic-center&#34;&gt;Lensing from compact remnants in the Galactic Center&lt;/h2&gt;&#xA;&lt;h3 id=&#34;whats-the-idea&#34;&gt;What&amp;rsquo;s the idea?&lt;/h3&gt;&#xA;&lt;p&gt;It&amp;rsquo;s thought that the Milky Way used to host an AGN disk. AGN disks likely contain &lt;a href=&#34;https://arxiv.org/abs/2203.06187&#34;&gt;many stars&lt;/a&gt;, and those stars very &lt;a href=&#34;https://arxiv.org/abs/2009.03936&#34;&gt;preferentially evolve into black holes&lt;/a&gt;. Many of those black holes should still be around after the disk dissipates, so there could be $\sim 10^4$ black holes in the inner parsec of our galaxy. As these pass in front of other objects they lens them, and that&amp;rsquo;s something large surveys might be able to observe.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Theoretical limits on extreme baseline optical interferometry</title>
+				<link>https://adamjermyn.com/posts/astroideas6/</link>
+				<pubDate>Wed, 01 Jun 2022 07:25:16 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/astroideas6/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the sixth post in a series describing some of the ideas I&amp;rsquo;ve accumulated.&lt;/p&gt;&#xA;&lt;h2 id=&#34;theoretical-limits-on-extreme-baseline-optical-interferometry&#34;&gt;Theoretical limits on extreme baseline optical interferometry&lt;/h2&gt;&#xA;&lt;h3 id=&#34;whats-the-idea&#34;&gt;What&amp;rsquo;s the idea?&lt;/h3&gt;&#xA;&lt;p&gt;Interferometry let&amp;rsquo;s you build a giant &amp;lsquo;virtual telescope&amp;rsquo; out of lots of small telescopes. The effective baseline is the longest distance between telescopes, and the number of pixels of effective resolution is roughly the number of telescopes.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Does the Parker mechanism spin down AGN stars?</title>
+				<link>https://adamjermyn.com/posts/astroideas5/</link>
+				<pubDate>Tue, 31 May 2022 07:15:04 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/astroideas5/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the fifth post in a series describing some of the ideas I&amp;rsquo;ve accumulated.&lt;/p&gt;&#xA;&lt;h2 id=&#34;does-the-parker-mechanism-spin-down-agn-stars&#34;&gt;Does the Parker mechanism spin down AGN stars?&lt;/h2&gt;&#xA;&lt;h3 id=&#34;whats-the-idea&#34;&gt;What&amp;rsquo;s the idea?&lt;/h3&gt;&#xA;&lt;p&gt;Collaborators and I previously predicted that stars embedded in AGN disks should end up &lt;a href=&#34;https://arxiv.org/abs/2102.13114&#34;&gt;spinning really fast&lt;/a&gt; (near breakup). One effect we explicitly neglected was magnetic spindown associated with mass loss (the Parker mechanism). Yuri Levin pointed out to me that magnetic spindown could be important, so it would be good to understand how big this effect is.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>How correlated are the positions of stars?</title>
+				<link>https://adamjermyn.com/posts/astroideas4/</link>
+				<pubDate>Thu, 26 May 2022 16:58:15 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/astroideas4/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the fourth post in a series describing some of the ideas I&amp;rsquo;ve accumulated.&lt;/p&gt;&#xA;&lt;h2 id=&#34;how-correlated-are-the-positions-of-stars&#34;&gt;How correlated are the positions of stars?&lt;/h2&gt;&#xA;&lt;h3 id=&#34;whats-the-idea&#34;&gt;What&amp;rsquo;s the idea?&lt;/h3&gt;&#xA;&lt;p&gt;Thanks to the Gaia mission, we now have accurate 3D positions for a large number of stars in the galaxies. Because gravity is a strongly-interacting theory with a $1/r$ potential, it can produce long-ranged correlations. The idea here is to  either (1) think about what those correlations might look like, then go looking for them or (2) look for correlations and see if anything looks weird, then think about what might cause that.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>A tight-binding model for cold dense matter</title>
+				<link>https://adamjermyn.com/posts/astroideas3/</link>
+				<pubDate>Wed, 25 May 2022 16:33:00 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/astroideas3/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the third post in a series describing some of the ideas I&amp;rsquo;ve accumulated.&lt;/p&gt;&#xA;&lt;h2 id=&#34;can-an-ad-hoc-electron-binding-model-fix-the-low-temperature-low-density-limit-of-the-skye-eos&#34;&gt;Can an ad-hoc electron binding model fix the low-temperature low-density limit of the Skye EOS?&lt;/h2&gt;&#xA;&lt;h3 id=&#34;whats-the-idea&#34;&gt;What&amp;rsquo;s the idea?&lt;/h3&gt;&#xA;&lt;p&gt;The reason that the &lt;a href=&#34;https://arxiv.org/abs/2104.00691&#34;&gt;Skye EOS&lt;/a&gt; doesn&amp;rsquo;t cover all temperatures and densities is that it assumes fully ionized matter, which breaks down  at low temperatures. It might be possible to patch this with an ad-hoc binding model.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Does eating planets make stars magnetic?</title>
+				<link>https://adamjermyn.com/posts/astroideas2/</link>
+				<pubDate>Tue, 24 May 2022 12:56:55 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/astroideas2/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the second post in a series describing some of the ideas I&amp;rsquo;ve accumulated.&lt;/p&gt;&#xA;&lt;h2 id=&#34;can-planet-injestion-explain-magnetic-rgb-stars&#34;&gt;Can planet injestion explain magnetic RGB stars?&lt;/h2&gt;&#xA;&lt;h3 id=&#34;whats-the-idea&#34;&gt;What&amp;rsquo;s the idea?&lt;/h3&gt;&#xA;&lt;p&gt;There are some very magnetic Red Giant Branch (RGB) stars, with &lt;a href=&#34;https://arxiv.org/pdf/1510.06960.pdf&#34;&gt;measured internal fields&lt;/a&gt; of order $10^{5-7}\mathrm{G}$. We don&amp;rsquo;t know how they get fields this strong. It&amp;rsquo;s possible they&amp;rsquo;re &lt;a href=&#34;https://arxiv.org/abs/2110.03695&#34;&gt;fossil fields&lt;/a&gt; from when the stars formed. It&amp;rsquo;s possible they were &lt;a href=&#34;https://arxiv.org/pdf/1510.06960.pdf&#34;&gt;generated later by  convective dynamos&lt;/a&gt;. Are there other possible origin stories for strong magnetic fields on the RGB?&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Neutron Stars in AGN Disks</title>
+				<link>https://adamjermyn.com/posts/astroideas1/</link>
+				<pubDate>Mon, 16 May 2022 07:38:03 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/astroideas1/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. Over the next few months I&amp;rsquo;ll be collecting those notes and posting those ideas here.&lt;/p&gt;&#xA;&lt;p&gt;The format I&amp;rsquo;ll try to follow is to explain:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;What the idea is.&lt;/li&gt;&#xA;&lt;li&gt;Why I think it&amp;rsquo;s an interesting idea.&lt;/li&gt;&#xA;&lt;li&gt;How I think someone interested in working on the idea could get started.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Here&amp;rsquo;s the first idea.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Chaos in Stellar Evolution</title>
+				<link>https://adamjermyn.com/posts/chaos_stars/</link>
+				<pubDate>Mon, 16 May 2022 07:34:19 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/chaos_stars/</guid>
+				<description>&lt;p&gt;Are stars predictable or chaotic?&lt;/p&gt;&#xA;&lt;p&gt;A system is chaotic if small perturbations grow exponentially with time. This makes chaotic systems unpredictable on long time-scales, because it becomes fine details in the starting conditions come to dominate at long times.&lt;/p&gt;&#xA;&lt;p&gt;So: are stars predictable or chaotic? As far as I know this is an open question.&lt;/p&gt;&#xA;&lt;p&gt;There is some sense in which most stars are predictable. They exist near thermal and hydrostatic equilibrium, and they tend to return to equilibrium when perturbed. This gives them remarkably predictable luminosities and sizes and temperatures.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Automatic Differentiation in MESA</title>
+				<link>https://adamjermyn.com/posts/auto_diff_mesa/</link>
+				<pubDate>Wed, 11 May 2022 15:28:14 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/auto_diff_mesa/</guid>
+				<description>&lt;p&gt;Over the last two years I developed an automatic differentiation (&lt;code&gt;auto_diff&lt;/code&gt;) module in Fortran to support development of the Modules for Experiments in Stellar Astrophysics (&lt;a href=&#34;https://docs.mesastar.org&#34;&gt;MESA&lt;/a&gt;) project. This post gives a brief rundown of how the &lt;code&gt;auto_diff&lt;/code&gt; module works and how I built it.&lt;/p&gt;&#xA;&lt;p&gt;All of the code I mention below lives on &lt;a href=&#34;https://github.com/MESAHub/mesa/tree/main/auto_diff&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-is-auto_diff&#34;&gt;What is auto_diff?&lt;/h2&gt;&#xA;&lt;p&gt;Forward-mode automatic differentiation via operator overloading:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Forward-mode means we calculate the chain rule as we go.&lt;/li&gt;&#xA;&lt;li&gt;Each variable in the calculation needs to be able to track derivative information.&lt;/li&gt;&#xA;&lt;li&gt;Variables need to know how the chain rule applies to each operation.&lt;/li&gt;&#xA;&lt;li&gt;Fortran source files are generated automatically by a python program.&#xA;&lt;ul&gt;&#xA;&lt;li&gt;This allows robust support for many different functions/operators/derivative configurations.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;what-does-it-look-like-in-fortran&#34;&gt;What does it look like in Fortran?&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-fortran&#34; data-lang=&#34;fortran&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#66d9ef&#34;&gt;type&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;::&lt;/span&gt; auto_diff_real_1var_order1&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#66d9ef&#34;&gt;real&lt;/span&gt;(dp) &lt;span style=&#34;color:#66d9ef&#34;&gt;::&lt;/span&gt; val&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#66d9ef&#34;&gt;real&lt;/span&gt;(dp) &lt;span style=&#34;color:#66d9ef&#34;&gt;::&lt;/span&gt; d1val1&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#66d9ef&#34;&gt;end&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;type&lt;/span&gt; auto_diff_real_1var_order1&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The types themselves are simple! Here&amp;rsquo;s the &lt;code&gt;1var_order1&lt;/code&gt; type, which supports 1 independent variable through 1 (first order) derivative. &lt;code&gt;val&lt;/code&gt; stores the value, &lt;code&gt;d1val1&lt;/code&gt; stores the derivative with respect to the independent variable.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>The Fourth Rest</title>
+				<link>https://adamjermyn.com/posts/rest_2/</link>
+				<pubDate>Tue, 12 Apr 2022 17:19:49 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/rest_2/</guid>
+				<description>&lt;p&gt;There is a fourth kind of rest I &lt;a href=&#34;https://adamjermyn.com/posts/rest/&#34;&gt;didn&amp;rsquo;t mention&lt;/a&gt;: Inactivity. All the other kinds of rest, Distraction, Recreation, and Maintenance, are active. They involve doing something. That something might not be productive in any traditional sense, but it&amp;rsquo;s an active choice to do something rather than nothing.&lt;/p&gt;&#xA;&lt;p&gt;Inactivity is different. Inactivity is choosing to do nothing. It&amp;rsquo;s sitting on a couch being bored, letting thoughts come and go but not pursuing them. It&amp;rsquo;s looking out the window, seeing the clouds and the leaves in the trees move with the wind. It&amp;rsquo;s sitting on the beach hearing the waves crash into the shore. It&amp;rsquo;s sleeping at any time, day or night.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Working Notes - Learning PyTorch - Day 2</title>
+				<link>https://adamjermyn.com/posts/ml_2/</link>
+				<pubDate>Tue, 12 Apr 2022 17:17:54 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/ml_2/</guid>
+				<description>&lt;h2&gt;&lt;/h2&gt;&#xA;&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Adding convolutional layers is pretty straightforward, but there are some indexing subtleties to watch.&lt;/li&gt;&#xA;&lt;li&gt;Pooling layers can really improve performance.&lt;/li&gt;&#xA;&lt;li&gt;With two pooling layers, I found an example of a too-high learning rate making the model get stuck with poor performance.&lt;/li&gt;&#xA;&lt;li&gt;The more pooling layers I used the faster the model took a training step (because the dense linear layer was smaller).&lt;/li&gt;&#xA;&lt;li&gt;The more pooling layers I used, the more important the number of channels in the convolutional/pooling layers became.&lt;/li&gt;&#xA;&lt;li&gt;Working with text requires a way to turn that text into vectors in a continuous space, and one-hot vectors are one solution to that problem.&lt;/li&gt;&#xA;&lt;li&gt;RNN&amp;rsquo;s let you study sequences, and accumulate information about the sequence as they &amp;lsquo;sweep&amp;rsquo; through it.&lt;/li&gt;&#xA;&lt;li&gt;Even though the processing to form the hidden state is linear, there&amp;rsquo;s a notion of causality in an RNN, because earlier entries get passed through the linear operator that forms the hidden state more times than late entries (and each letter only gets combined with the subsequent letters in determining its contribution to the hidden state).&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;convolutional-neural-networks&#34;&gt;Convolutional Neural Networks&lt;/h2&gt;&#xA;&lt;p&gt;I&amp;rsquo;d like to try MNIST with a CNN.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Working Notes - Learning PyTorch - Day 1</title>
+				<link>https://adamjermyn.com/posts/ml_1/</link>
+				<pubDate>Mon, 11 Apr 2022 17:06:39 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/ml_1/</guid>
+				<description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Covered boilerplate for getting started, tensors, gradients.&lt;/li&gt;&#xA;&lt;li&gt;Poked in some detail at how gradients work.&lt;/li&gt;&#xA;&lt;li&gt;Played with linear regression, nonlinear regression, both with gradient descent.&lt;/li&gt;&#xA;&lt;li&gt;Built an MNIST classifier following a PyTorch tutorial. Experimented with the shape and size of the NN.&lt;/li&gt;&#xA;&lt;li&gt;Got PyTorch running on a machine with a GPU.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;boilerplate&#34;&gt;Boilerplate&lt;/h2&gt;&#xA;&lt;p&gt;Import:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; torch&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Need to use a special float type for the elements of tensors, and need to know which device the compute graph will run on:&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Acting and Thinking</title>
+				<link>https://adamjermyn.com/posts/acting_thinking/</link>
+				<pubDate>Mon, 11 Apr 2022 14:33:01 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/acting_thinking/</guid>
+				<description>&lt;p&gt;Do thoughts cause actions, or do actions cause thoughts? Or does causation flow back and forth, more like a tide than a one-way river?&lt;/p&gt;&#xA;&lt;p&gt;It&amp;rsquo;s easy to see how thoughts cause actions. You think about reading a book, so you go pick up a book and start reading. It&amp;rsquo;s so easy to see the causation flow this way that it feels like thoughts &lt;em&gt;must&lt;/em&gt; precede actions. How can you act, if you haven&amp;rsquo;t decided what to do?&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Progressive Consumption Tax</title>
+				<link>https://adamjermyn.com/posts/progressive_tax/</link>
+				<pubDate>Sun, 27 Mar 2022 17:15:37 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/progressive_tax/</guid>
+				<description>&lt;p&gt;Taxes create incentives. When the government tax an activity, society does less of it. Tax alcohol, people &lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3735171/&#34;&gt;drink less&lt;/a&gt;. Tax smoking, people smoke less. Tax income, people &lt;a href=&#34;https://www.nber.org/digest/dec04/effects-taxes-labor-income&#34;&gt;work less&lt;/a&gt;. Tax investment, people invest less. I&amp;rsquo;m going to take this as given for now, even though there are &lt;a href=&#34;https://www.mercatus.org/publications/government-spending/taxing-sin&#34;&gt;many&lt;/a&gt; &lt;a href=&#34;https://www.stlouisfed.org/publications/regional-economist/july-1995/should-we-ax-the-capital-gains-tax&#34;&gt;caveats&lt;/a&gt; on all of these statements.&lt;/p&gt;&#xA;&lt;p&gt;This suggests a simple principle for crafting a tax code: tax the things we want less of, and don&amp;rsquo;t tax the things we want more of. There are two practical challenges to this approach:&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>AI risk in a few words</title>
+				<link>https://adamjermyn.com/posts/ai_risk_few_words/</link>
+				<pubDate>Mon, 14 Mar 2022 14:27:25 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/ai_risk_few_words/</guid>
+				<description>&lt;p&gt;AI safety is a weird area, and in trying to explain it to friends I realized that I don&amp;rsquo;t have a simple explanation of what the (existential) risks are and why I think they&amp;rsquo;re important.&lt;/p&gt;&#xA;&lt;p&gt;Word limits force simplicity, so here are some attempts to explain AI risk in different numbers of words.&lt;/p&gt;&#xA;&lt;h2 id=&#34;150-words&#34;&gt;150 words&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Do you value the same things as your great grandfather? What we value changes from generation to generation. We don&amp;rsquo;t really know how to impart our values on our children.&lt;/p&gt;&#xA;&lt;p&gt;Does America value the same things as its founders did? Do companies share their founders&amp;rsquo; visions? We don&amp;rsquo;t know how to build institutions that faithfully carry our values into the future.&lt;/p&gt;&#xA;&lt;p&gt;The same is true of AI. We don&amp;rsquo;t know how to make it share our values. None of this is intrinsic to AI; imparting values is just a hard problem. Values are hard to clearly explain, and our explanations rely heavily on context.&lt;/p&gt;&#xA;&lt;p&gt;We have to try though. AI&amp;rsquo;s will be extraordinarily powerful, and in a century our world will strongly reflect whatever AI&amp;rsquo;s ends up valuing, for better or worse. American values shaped the 20th century, and AI values will shape the 22nd.&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+			</item>
+			<item>
+				<title>Tools Against Procrastination</title>
+				<link>https://adamjermyn.com/posts/procrast/</link>
+				<pubDate>Tue, 01 Mar 2022 13:43:15 -0500</pubDate>
+				<guid>https://adamjermyn.com/posts/procrast/</guid>
+				<description>&lt;p&gt;When I procrastinate on something, it&amp;rsquo;s usually because there&amp;rsquo;s something I find aversive about it.  Lately I&amp;rsquo;ve been trying to find patterns in what these aversions are, and noticed a big one: I usually find the &lt;em&gt;start&lt;/em&gt; of a big task much more aversive than any other part. For instance, I often find myself shrinking away from beginning to write papers, whereas everything is fine once I&amp;rsquo;ve gotten going.&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;m not sure why the act of starting feels so scary, but I&amp;rsquo;ve found two ways to make it better.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Rest</title>
+				<link>https://adamjermyn.com/posts/rest/</link>
+				<pubDate>Fri, 25 Feb 2022 16:40:08 -0500</pubDate>
+				<guid>https://adamjermyn.com/posts/rest/</guid>
+				<description>&lt;p&gt;Rest is important, but what is it?&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;ve noticed three kinds of activities people call rest:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Maintenance&lt;/li&gt;&#xA;&lt;li&gt;Distraction&lt;/li&gt;&#xA;&lt;li&gt;Recreation&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Many activities &lt;em&gt;could&lt;/em&gt; fall into any of these categories, and the distinction I want to draw is all about the motivation.&lt;/p&gt;&#xA;&lt;p&gt;Maintenance is what you do to keep life going. Think of cooking, cleaning, sleep, hygiene, sorting through mail, etc. These activities are both necessary and often get pushed to the wayside during a busy work week, so they&amp;rsquo;re natural to reach for in down time. Note that it&amp;rsquo;s not maintenance if you&amp;rsquo;re doing it for fun. Cooking because you enjoy cooking is different from cooking because you need to eat.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Success is Broader Than You Think</title>
+				<link>https://adamjermyn.com/posts/broad_success/</link>
+				<pubDate>Mon, 31 Jan 2022 11:55:52 -0500</pubDate>
+				<guid>https://adamjermyn.com/posts/broad_success/</guid>
+				<description>&lt;p&gt;Projects begin with goals. At first these are implicit, but as a project takes shape it helps to state them explicitly. Stating goals serves two purposes: it defines success, and it prompts action.&lt;/p&gt;&#xA;&lt;p&gt;Because of this dual purpose, many goals miss the mark. On the one hand, is easy to come up with goals which define success but which are too vague to be actionable:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&amp;ldquo;Change the world.&amp;rdquo;&lt;/p&gt;&#xA;&lt;p&gt;&amp;ldquo;Disrupt the industry.&amp;rdquo;&lt;/p&gt;&#xA;&lt;p&gt;&amp;ldquo;Make new discoveries.&amp;rdquo;&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+			</item>
+			<item>
+				<title>Self-Compassion and Growth</title>
+				<link>https://adamjermyn.com/posts/compassion/</link>
+				<pubDate>Mon, 10 Jan 2022 09:00:45 -0500</pubDate>
+				<guid>https://adamjermyn.com/posts/compassion/</guid>
+				<description>&lt;p&gt;(&lt;em&gt;Epistemic Status: This is an attempt to draw a distinction that feels important, but which I have little evidence for.&lt;/em&gt;)&lt;/p&gt;&#xA;&lt;p&gt;Recently I&amp;rsquo;ve been reading &lt;a href=&#34;https://www.amazon.com/Self-Compassion-Proven-Power-Being-Yourself/dp/0061733520/ref=sr_1_1?crid=26IBMWNEO003M&amp;amp;keywords=self-compassion&amp;amp;qid=1641823299&amp;amp;sprefix=self-compassion%2Caps%2C129&amp;amp;sr=8-1&#34;&gt;Self-Compassion&lt;/a&gt; by Kristin Neff. I haven&amp;rsquo;t checked any of the underlying evidence, so buyer beware, but the basic premise of the book is that there are large benefits to crafting an intentional attitude of compassion towards oneself.&lt;/p&gt;&#xA;&lt;p&gt;I don&amp;rsquo;t want to focus on the specifics of Neff&amp;rsquo;s book though. Rather, I want to highlight that there are (at least) two different things that self-compassion could mean in practice, both of which appear in the book, and that this distinction is often not drawn clearly.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>What can a rapid test tell you? Omicron Edition</title>
+				<link>https://adamjermyn.com/posts/testing_ii/</link>
+				<pubDate>Thu, 23 Dec 2021 16:09:40 -0500</pubDate>
+				<guid>https://adamjermyn.com/posts/testing_ii/</guid>
+				<description>&lt;p&gt;(&lt;em&gt;This is not medical advice. Co-written with &lt;a href=&#34;https://twitter.com/nschiefer&#34;&gt;Nicholas Schiefer&lt;/a&gt;. Thanks to Sylvia Hürlimann and Katherine McDaniel for helpful discussions and comments. Corrections welcome.&lt;/em&gt;)&lt;/p&gt;&#xA;&lt;p&gt;This holiday season is also Omicron season. The Omicron variant dramatically increases COVID risk for basically everyone, especially with case counts exploding and doubling every two days in most northern areas (&lt;a href=&#34;https://www1.nyc.gov/site/doh/covid/covid-19-data.page&#34;&gt;New York&lt;/a&gt;, Boston, &lt;a href=&#34;https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1043680/technical-briefing-33.pdf&#34;&gt;London&lt;/a&gt;). Although Omicron seems to be less severe than other variants for most people, it&amp;rsquo;s probably worth some effort to protect high-risk individuals, especially while case rates are so high. On the other hand, we’re nearly two years into the pandemic and it feels unreasonable to cancel everything outright.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Classifying Scientific Compute Workflows</title>
+				<link>https://adamjermyn.com/posts/scientific_compute/</link>
+				<pubDate>Thu, 16 Dec 2021 16:30:25 -0800</pubDate>
+				<guid>https://adamjermyn.com/posts/scientific_compute/</guid>
+				<description>&lt;p&gt;Scientists use computers, and not just for typesetting. Lots of experimentation and discovery is done with computers, from &lt;a href=&#34;https://www.colorado.edu/silc/models&#34;&gt;modeling climate&lt;/a&gt; to &lt;a href=&#34;http://jdftx.org&#34;&gt;predicting material properties&lt;/a&gt; to &lt;a href=&#34;https://docs.exoplanet.codes/en/latest/&#34;&gt;discovering exoplanets&lt;/a&gt;. Because computation is applied to such a broad range of questions, the ways it gets used are many and varied. This diversity of application means that tools developed and lessons learned in one domain of scientific compute workflow often don&amp;rsquo;t generalize to very different domains. On the other hand, many lessons do generalize, but only within &lt;em&gt;classes&lt;/em&gt; of problems, and ignoring this means reinventing the wheel.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>ClaimCoin</title>
+				<link>https://adamjermyn.com/posts/claim_coin/</link>
+				<pubDate>Mon, 13 Dec 2021 18:16:59 -0800</pubDate>
+				<guid>https://adamjermyn.com/posts/claim_coin/</guid>
+				<description>&lt;p&gt;(&lt;em&gt;This is not investment advice.&lt;/em&gt;)&lt;/p&gt;&#xA;&lt;p&gt;Stable coins are an important tool, allowing investors to trade ordinary (fiat) currencies on the blockchain, but they have a somewhat opaque risk structure. Usually either the coin tracks the desired currency or else the peg fails, in which case investors start withdrawing and the coin suddenly trades well below the peg.&lt;/p&gt;&#xA;&lt;p&gt;What if there was a coin with a more transparent risk structure? What would that make possible? Here I&amp;rsquo;ll outline a proposal for a more transparent form of stable coin where the risk structure is immediately and constantly clear to all investors, and where deviations from the peg are gradual, rather than sudden.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Practicing Agency</title>
+				<link>https://adamjermyn.com/posts/agency_social/</link>
+				<pubDate>Sat, 04 Dec 2021 09:01:56 -0800</pubDate>
+				<guid>https://adamjermyn.com/posts/agency_social/</guid>
+				<description>&lt;p&gt;&lt;a href=&#34;https://www.lesswrong.com/tag/agency&#34;&gt;Agency&lt;/a&gt; is where you act to achieve your goals. Unfortunately agency is hard and &lt;a href=&#34;https://adamjermyn.com/posts/agency_school/&#34;&gt;not the default state&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Social nudging is a powerful way to combat this. Here are a few lightly-edited conversations that I&amp;rsquo;ve observed or participated in that pushed towards more agency:&lt;/p&gt;&#xA;&lt;h2 id=&#34;fire&#34;&gt;Fire&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;P1: There&amp;rsquo;s a fire ~20 miles away and it&amp;rsquo;s raining ash.&lt;/p&gt;&#xA;&lt;p&gt;P2: Do you have an air purifier?&lt;/p&gt;&#xA;&lt;p&gt;P1: &amp;hellip; no, I should get one. Amazon says it&amp;rsquo;ll arrive next week.&lt;/p&gt;&#xA;&lt;p&gt;P2: I bet Home Depot has one you could get &lt;em&gt;tonight&lt;/em&gt;.&lt;/p&gt;&#xA;&lt;p&gt;P1: On it.&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+			</item>
+			<item>
+				<title>Does Riboflavin Prevent Migraines?</title>
+				<link>https://adamjermyn.com/posts/riboflavin/</link>
+				<pubDate>Thu, 02 Dec 2021 17:03:20 -0800</pubDate>
+				<guid>https://adamjermyn.com/posts/riboflavin/</guid>
+				<description>&lt;h2 id=&#34;abstract&#34;&gt;Abstract&lt;/h2&gt;&#xA;&lt;p&gt;(&lt;em&gt;This is not medical advice. I am not a medical professional. Thanks to Rose DiLoreto for the idea for this post.&lt;/em&gt;)&lt;/p&gt;&#xA;&lt;p&gt;Supplementing with Riboflavin (Vitamin B2) seems probably helpful for headaches and migraines, likely reducing their frequency by about 50% as well as reducing severity somewhat. This is backed by multiple randomized controlled trials, and I&amp;rsquo;ve tried to check for anything funny in those trials (small samples, weird controls, etc.). The samples tend to be a little small, but not ridiculously so. Nothing else looked amiss to me, but it&amp;rsquo;s possible I&amp;rsquo;ve missed something.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>High-Value Low-Probability Options Abound</title>
+				<link>https://adamjermyn.com/posts/mugged_by_probability/</link>
+				<pubDate>Mon, 25 Oct 2021 07:16:09 -0700</pubDate>
+				<guid>https://adamjermyn.com/posts/mugged_by_probability/</guid>
+				<description>&lt;p&gt;(&lt;em&gt;Numbers in this post are made up to illustrate a point. Likewise the plot device need not be cryptocurrencies, that&amp;rsquo;s just flavor text.&lt;/em&gt;)&lt;/p&gt;&#xA;&lt;p&gt;You&amp;rsquo;re walking on the street, minding your business. Suddenly, a stranger (S) comes up and starts talking to you:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;S: Have you heard? There&amp;rsquo;s a one-in-a-million chance you could save a billion lives! All you have to do is found a crypto currency, become extremely rich, and use that money to fight Malaria!&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+			</item>
+			<item>
+				<title>COVID Testing - Sensitivity and Timelines</title>
+				<link>https://adamjermyn.com/posts/covid_testing_timing/</link>
+				<pubDate>Tue, 07 Sep 2021 10:17:00 -0500</pubDate>
+				<guid>https://adamjermyn.com/posts/covid_testing_timing/</guid>
+				<description>&lt;h1 id=&#34;covid-testing---sensitivity-and-timelines&#34;&gt;COVID Testing - Sensitivity and Timelines&lt;/h1&gt;&#xA;&lt;p&gt;This past week a close contact had a potential COVID exposure, so I wanted to understand a few basic questions about COVID testing to help figure out what is safe and what isn&amp;rsquo;t. Three questions seem especially relevant:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;How sensitive are PCR and rapid antigen tests?&lt;/li&gt;&#xA;&lt;li&gt;If someone tests negative on a rapid antigen test but positive on PCR, should they worry about infecting other people? Is there a &amp;lsquo;safe period&amp;rsquo; where they very likely won&amp;rsquo;t transmit?&lt;/li&gt;&#xA;&lt;li&gt;If someone tests negative on PCR (but had an exposure and was in fact infected) should they worry about infecting other people? Again is there a &amp;lsquo;safe period&amp;rsquo; where they very likely won&amp;rsquo;t transmit?&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Before diving in, a disclaimer: &lt;em&gt;This is not medical advice, just me trying to figure things out. I am not an epidemiologist, virologist, or medical professional, so take this with a grain of salt and check the references for yourself if uncertain. If you spot errors please let me know so I can correct them!&lt;/em&gt;&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>A School for Agency</title>
+				<link>https://adamjermyn.com/posts/agency_school/</link>
+				<pubDate>Sun, 01 Aug 2021 14:42:17 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/agency_school/</guid>
+				<description>&lt;h1 id=&#34;a-school-for-agency&#34;&gt;A School for Agency&lt;/h1&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.lesswrong.com/tag/agency&#34;&gt;Agency&lt;/a&gt; is where you act to achieve your goals. It&amp;rsquo;s where you look at problems and say &amp;ldquo;How could I solve them?&amp;rdquo; and really think about that and arrive at possible courses of action and then &lt;strong&gt;take those actions&lt;/strong&gt;. Explicitly, agency is about executing three steps:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Notice a problem/question.&lt;/li&gt;&#xA;&lt;li&gt;Brainstorm solutions.&lt;/li&gt;&#xA;&lt;li&gt;Try solutions until something works or the costs exceed the benefits.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;An example I return to often in the summer is air conditioning. Lots of people have trouble sleeping in the heat. If you have trouble sleeping because of the heat, and you can afford a window unit, and your building allows window units, a natural move would be to say &amp;ldquo;I have trouble sleeping because of the heat. I have the money to get a window unit, my building allows me to install a window unit, and I value good sleep, so I&amp;rsquo;ll go do it.&amp;rdquo;&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Automated Project Reviews</title>
+				<link>https://adamjermyn.com/posts/automated_reviews/</link>
+				<pubDate>Tue, 25 May 2021 15:04:36 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/automated_reviews/</guid>
+				<description>&lt;h1 id=&#34;automated-project-reviews&#34;&gt;Automated Project Reviews&lt;/h1&gt;&#xA;&lt;p&gt;Getting things right without feedback is &lt;strong&gt;really&lt;/strong&gt; hard, but not all feedback comes from other people! One quick way to generate meaningful feedback is by &lt;a href=&#34;https://adamjermyn.com/workflow/feedback/&#34;&gt;looking back at past work&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;A challenge with looking back is doing it at the right time. For some kinds of feedback this is easy: schedule weekly/monthly/quarterly reviews, with prompts tuned to the relevant time-scale. But some areas of life don&amp;rsquo;t run on a regular schedule. For instance, I&amp;rsquo;ve noticed lately that I can avoid many dead-ends and wrong-turns if I do a literature review early on in a new project. But how early on should this happen?&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Toy Model of Near-Existential Risk</title>
+				<link>https://adamjermyn.com/posts/near_existential_risk_pt2/</link>
+				<pubDate>Fri, 23 Apr 2021 16:05:02 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/near_existential_risk_pt2/</guid>
+				<description>&lt;p&gt;I recently wrote about &lt;a href=&#34;https://adamjermyn.com/posts/near_existential_risk/&#34;&gt;near-existential risk&lt;/a&gt;. These are risks which result in massive losses to society of people/technology/capability, but which themselves do not actually end or permanently curtail human existence. Here I want to build a toy model for thinking about these risks and how they relate to actual existential risks.&lt;/p&gt;&#xA;&lt;h2 id=&#34;a-toy-model&#34;&gt;A Toy Model&lt;/h2&gt;&#xA;&lt;p&gt;For these purposes I&amp;rsquo;m going to reduce the many dimensions of loss to a single parameter $\ell$. When $\ell = 0$ nothing is lost, when $\ell = 1$ all is lost. $\ell=1$ therefore denotes existential risks. Think of $\ell$ as a proxy for &amp;lsquo;what fraction of people/technology/capability/organization/etc. are lost?&amp;rsquo;&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Near-Existential Risk</title>
+				<link>https://adamjermyn.com/posts/near_existential_risk/</link>
+				<pubDate>Sun, 28 Mar 2021 16:17:44 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/near_existential_risk/</guid>
+				<description>&lt;p&gt;&lt;a href=&#34;https://www.lesswrong.com/tag/longtermism&#34;&gt;Longtermism&lt;/a&gt; is a moral theory that says that most of the value we (humans) ought to care about lies in the future, and so we should look hard for opportunities to influence the future in positive ways. Longtermism arises as a natural consequence of three ideas:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Utilitarianism: We should improve the lives/subjective wellbeing of as many people as much as possible, evaluated by summing improvements over lives.&lt;/li&gt;&#xA;&lt;li&gt;Future lives are just as valuable as present lives.&lt;/li&gt;&#xA;&lt;li&gt;The future is going to be &lt;em&gt;very&lt;/em&gt; long, and contain &lt;em&gt;many&lt;/em&gt; lives.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;I want to pause for a moment on the the third idea. How long is the future? Modern humans have been around for &lt;a href=&#34;https://en.wikipedia.org/wiki/Early_modern_human&#34;&gt;something like 500,000 years&lt;/a&gt;. The Earth will likely remain habitable for &lt;em&gt;billions&lt;/em&gt; of years, meaning that even without leaving Earth the future of humanity could plausibly last thousands of times longer than all of human history up to this point. Then add in that more people are alive today than at any point in history, and the overall number of humans seems likely to be in the billions for the foreseeable future, and you can see just how many person-lives it might contain.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Examples of Tools with Values</title>
+				<link>https://adamjermyn.com/posts/values_examples/</link>
+				<pubDate>Sat, 23 Jan 2021 17:51:55 -0500</pubDate>
+				<guid>https://adamjermyn.com/posts/values_examples/</guid>
+				<description>&lt;p&gt;I previously argued that &lt;a href=&#34;http://adamjermyn.com/posts/tools_values/&#34;&gt;tools should express values&lt;/a&gt;. Here are some examples of tools I&amp;rsquo;ve made with an eye to values.&lt;/p&gt;&#xA;&lt;h2 id=&#34;a-brainstorming-environment&#34;&gt;A Brainstorming Environment&lt;/h2&gt;&#xA;&lt;p&gt;I have a shell script that sets up a work environment for brainstorming. It does this by copying and opening a template text document that says the following:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# Session:&#xA;- Maintain an attitude of suspended judgement.&#xA;- You&amp;#39;re here to climb out of the basin.&#xA;- Cmd+E Will bring up an (incomplete) list of possible approaches.&#xA;- Have fun!&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;I&amp;rsquo;m still tweaking these values, but so far I&amp;rsquo;m fairly happy with them. They remind me that the whole reason I&amp;rsquo;m sitting down to brainstorm is to come up with new ideas further afield than I normally would. Only after I&amp;rsquo;m done generating ideas do I try to sift through and see which ones seem useful/promising.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Growing Food on Mars</title>
+				<link>https://adamjermyn.com/posts/mars_soil/</link>
+				<pubDate>Sun, 10 Jan 2021 10:24:23 -0500</pubDate>
+				<guid>https://adamjermyn.com/posts/mars_soil/</guid>
+				<description>&lt;p&gt;Growing food on Mars is a critical component of making a self-sufficient city because &lt;a href=&#34;http://adamjermyn.com/posts/mars_scales/&#34;&gt;shipping food is expensive&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Unfortunately it seems that Martian regolith is too alkaline and is missing key nutrients &lt;a href=&#34;https://www.sciencedirect.com/science/article/abs/pii/S0019103520303845&#34;&gt;needed to grow crops&lt;/a&gt;. The alkaline issue can be solved by adding acid, which is both low-weight and can be produced locally if need be. The nutrient issue can be addressed either by adding &lt;a href=&#34;https://www.degruyter.com/view/journals/opag/4/1/article-p509.xml?language=en&#34;&gt;organic material&lt;/a&gt; or by artificial &lt;a href=&#34;https://www.sciencedirect.com/science/article/abs/pii/S0019103520303845&#34;&gt;nutrient supplementation&lt;/a&gt;. Each of those come with their own costs, so I want to examine both and see which is cheaper.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Early Martian Software</title>
+				<link>https://adamjermyn.com/posts/mars_software/</link>
+				<pubDate>Fri, 01 Jan 2021 14:29:20 -0500</pubDate>
+				<guid>https://adamjermyn.com/posts/mars_software/</guid>
+				<description>&lt;p&gt;Building a city on Mars will be &lt;a href=&#34;http://adamjermyn.com/posts/alpha_beta/&#34;&gt;very capital intensive&lt;/a&gt; because in the early stages it&amp;rsquo;s extremely expensive to sustain people on Mars. But capital is a vague term: what does this actually look like?&lt;/p&gt;&#xA;&lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/f/f2/Mir_during_STS-74_%28cropped%29.jpg&#34; alt=&#34;The MIR space station&#34; style=&#34;zoom:200%;display:block;margin-left:auto;margin-right:auto&#34; /&gt;&#xA;&lt;p&gt;The last few attempts at a human presence in space primarily used &lt;em&gt;physical&lt;/em&gt; capital: heavy machinery, &lt;a href=&#34;https://en.wikipedia.org/wiki/Saturn_V&#34;&gt;giant rockets&lt;/a&gt; and space stations and industrial equipment. Mars will need all of that too. But the last few times were in the 1960s-90s, when computers were slow and software much more limited and expensive than today. Even in the early 90s there weren&amp;rsquo;t many opportunities to save human labor with software, outside of routine tasks (&amp;ldquo;regulate Oxygen levels in this range&amp;rdquo;).&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Robust Tools</title>
+				<link>https://adamjermyn.com/posts/robust_tools/</link>
+				<pubDate>Wed, 30 Dec 2020 10:37:04 -0500</pubDate>
+				<guid>https://adamjermyn.com/posts/robust_tools/</guid>
+				<description>&lt;p&gt;Good tools are robust. This doesn&amp;rsquo;t just mean that they don&amp;rsquo;t fail, it means that in many instances they &lt;em&gt;can&amp;rsquo;t&lt;/em&gt; fail. They take common failure modes off the table, freeing you to &lt;em&gt;use&lt;/em&gt; them and focus on your goals.&lt;/p&gt;&#xA;&lt;h2 id=&#34;impossible-failure-modes&#34;&gt;Impossible Failure Modes&lt;/h2&gt;&#xA;&lt;p&gt;For a robust tool many failure modes are, by design, simply impossible, to the point where it&amp;rsquo;s hard to imagine what those failure modes are.&lt;/p&gt;&#xA;&lt;p&gt;Consider a solid metal hammer. What are its possible failure modes? I could hit my hand by mistake. That&amp;rsquo;s pretty much it.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Tools Should Express Values</title>
+				<link>https://adamjermyn.com/posts/tools_values/</link>
+				<pubDate>Fri, 11 Dec 2020 15:56:14 -0500</pubDate>
+				<guid>https://adamjermyn.com/posts/tools_values/</guid>
+				<description>&lt;p&gt;I want my tools to express values. I want my text editor to tell me to write clearly. I want my scientific software to command me “Be true, be open, be humble, be curious.” I want tools to be less blank pages and more pleas for me to honor the values of the craft.&lt;/p&gt;&#xA;&lt;h1 id=&#34;blank-is-not-neutral&#34;&gt;Blank is not Neutral&lt;/h1&gt;&#xA;&lt;p&gt;Many tools today are designed like blank pages. A writing app has a large blank space, with perhaps a few buttons for changing fonts and an indicator of how many words are on the page. An IDE likewise begins blank, maybe with some templates for its programming language. The same is true of both physical and digital canvas. It’s even true of mechanical tools; a hammer doesn’t express any opinion about what I build with it, it just helps me build.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Growth and Population on Mars</title>
+				<link>https://adamjermyn.com/posts/alpha_beta/</link>
+				<pubDate>Mon, 07 Dec 2020 11:33:05 -0500</pubDate>
+				<guid>https://adamjermyn.com/posts/alpha_beta/</guid>
+				<description>&lt;h1 id=&#34;economies-of-scale&#34;&gt;Economies of Scale&lt;/h1&gt;&#xA;&lt;p&gt;I previously wrote about a &lt;a href=&#34;http://adamjermyn.com/posts/mars_economy/&#34;&gt;simple model&lt;/a&gt; of an early Martain economy. A key input to that model is the way that human productivity scales with population and investment. I captured this with the simple scaling&#xA;$$&#xA;p \propto I^\alpha n^\beta&#xA;$$&#xA;for $\alpha,\beta &gt; 0$. This relation says that the per-person productivity $p$ scales as some positive power $\alpha$ of the per-person investment $I$, which could reflect machinery or materials or personnel support from Earth, and as another positive power $\beta$ of the number of people $n$.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>An Economic Model of Martian Growth</title>
+				<link>https://adamjermyn.com/posts/mars_economy/</link>
+				<pubDate>Sun, 15 Nov 2020 16:33:47 -0500</pubDate>
+				<guid>https://adamjermyn.com/posts/mars_economy/</guid>
+				<description>&lt;h1 id=&#34;an-economic-model-of-martian-growth&#34;&gt;An Economic Model of Martian Growth&lt;/h1&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://adamjermyn.com/posts/mars_scales/&#34;&gt;Mars is an expensive place to live&lt;/a&gt;, but it rapidly becomes cheaper the &lt;a href=&#34;https://caseyhandmer.wordpress.com/2018/09/03/how-to-industrialize-mars/&#34;&gt;more infrastructure&lt;/a&gt; it has! Because of that the total cost of building a self-sufficient city on Mars depends on how quickly infrastructure can be built. This is the key question I want to understand: what is the best way to invest in Martian infrastructure that minimizes the total cost?&lt;/p&gt;&#xA;&lt;h2 id=&#34;a-simple-model&#34;&gt;A Simple Model&lt;/h2&gt;&#xA;&lt;p&gt;To do this I&amp;rsquo;ll build a simple model of economic growth on Mars. In this model, a group of backers on Earth pays for the Martian city until it reaches self-sufficiency. At any time $t$ there are $n(t)$ people on Mars. Each person costs $c_0$ to send to Mars in the first place. They also produce resources $p(t)$, consumes resources $c(t)$, and invest resources $i(t)$ per unit time in local infrastructure and industrial capacity. The resources produced are used to meet consumption and investment needs, not shipped back to Earth for a profit. A minimum condition for self-sufficiency is when production first exceeds consumption ($p(t) = c(t)$), which occurs at time $t_f$.  Assuming a zero discount rate, the total cost of the venture to backers on Earth is then  $T = n(t_f) c_0 + \int_0^{t_f} n(t)(c(t) - p(t)+i(t)) dt$.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Mass Scales for Living on Mars</title>
+				<link>https://adamjermyn.com/posts/mars_scales/</link>
+				<pubDate>Sat, 24 Oct 2020 15:52:11 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/mars_scales/</guid>
+				<description>&lt;h1 id=&#34;mass-scales-for-living-on-mars&#34;&gt;Mass Scales for Living on Mars&lt;/h1&gt;&#xA;&lt;p&gt;&lt;em&gt;Big thanks to Casey Handmer for reading and commenting on an early draft of this.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;One of the most exciting things that may well happen this century is a sustained human presence on Mars. The main reason this is possible at all is that SpaceX has cut launch costs dramatically. Despite this progress, cargo sent from Earth and soft-landed on Mars is likely to be the primary resource constraint in the Martian economy for a very long time, so it is worth exploring the scale of cargo required to support a human presence, and what that translated into in dollars.&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

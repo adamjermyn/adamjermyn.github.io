@@ -7,7 +7,7 @@
 		
 		<meta name="author" content="Adam Jermyn">
 		<meta name="description" content="Site Description">
-		<meta name="generator" content="Hugo 0.92.2" />
+		<meta name="generator" content="Hugo 0.168.0">
 		<title>How much material do AGN stars re-accrete? &middot; Adam Jermyn</title>
 		<link rel="shortcut icon" href="https://adamjermyn.com/images/favicon.ico">
 		<link rel="stylesheet" href="https://adamjermyn.com/css/style.css">
@@ -24,18 +24,6 @@
 		
 
                 
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-186473758-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
 		
                 <script>
   MathJax = {
@@ -121,28 +109,28 @@ if (!doNotTrack) {
 <p>Material is lost at roughly escape velocity $v_e \sim \sqrt{G m / r_\star}$. It gradually slows, and reaches the disk sound speed at $r \sim r_B$. Then turbulence mixes it and it can re-accrete.</p>
 <p>If the disk shear is small, this is a diffusion problem. The quasi-steady solution is
 $$
-r h \rho D \frac{dZ}{dr} = -(Z_{\rm loss} - Z_{\rm disk})\dot{M}<em>{\rm loss} = \dot{M}<em>Z
+r h \rho D \frac{dZ}{dr} = -(Z_{\rm loss} - Z_{\rm disk})\dot{M}_{\rm loss} = \dot{M}_Z
 $$
 Solving gives
 $$
-\frac{dZ}{d\ln r} = -\frac{\dot{M}</em>{Z}}{h \rho D}\
-Z = Z_B -\frac{\dot{M}</em>{Z}}{h \rho D} \ln \frac{r}{r_B}
+\frac{dZ}{d\ln r} = -\frac{\dot{M}_{Z}}{h \rho D}\\
+Z = Z_B -\frac{\dot{M}_{Z}}{h \rho D} \ln \frac{r}{r_B}
 $$
 This soilution is valid until $Z$ falls below $Z_{\rm disk}$, which happens when
 $$
-r = r_B \exp\left((Z_B-Z_{\rm disk})h\rho D/\dot{M}<em>Z\right)
+r = r_B \exp\left((Z_B-Z_{\rm disk})h\rho D/\dot{M}_Z\right)
 $$
 The total excess metals contained in this radius is
 $$
-\int_0^r 2\pi \rho h r (Z-Z</em>{\rm disk})dr = \int_0^r 2\pi h \rho r (Z_B - Z_{\rm disk} - \frac{\dot{M}<em>{Z}}{h \rho D} \ln \frac{r}{r_B})dr = \frac{\pi}{2} e^{2(Z_B-Z</em>{\rm disk} )h\rho D/\dot{M}_Z} \frac{r_B^2 \dot{M}_Z}{D}
+\int_0^r 2\pi \rho h r (Z-Z_{\rm disk})dr = \int_0^r 2\pi h \rho r (Z_B - Z_{\rm disk} - \frac{\dot{M}_{Z}}{h \rho D} \ln \frac{r}{r_B})dr = \frac{\pi}{2} e^{2(Z_B-Z_{\rm disk} )h\rho D/\dot{M}_Z} \frac{r_B^2 \dot{M}_Z}{D}
 $$
-This equals the total metals lost $= \dot{M}<em>z t$ so
+This equals the total metals lost $= \dot{M}_z t$ so
 $$
-Z_B-Z</em>{\rm disk} = \frac{\dot{M}_Z}{2 h \rho D}\ln  \frac{2 D t}{\pi r_B^2}
+Z_B-Z_{\rm disk} = \frac{\dot{M}_Z}{2 h \rho D}\ln  \frac{2 D t}{\pi r_B^2}
 $$
 What if there&rsquo;s shear in the disk? That removes (advectively) metals, so the balance is instead
 $$
-\dot{M}<em>Z \approx (Z_B - Z</em>{\rm disk}) \rho r_B^2 \Omega r_B
+\dot{M}_Z \approx (Z_B - Z_{\rm disk}) \rho r_B^2 \Omega r_B
 $$</p>
 
                 </section>

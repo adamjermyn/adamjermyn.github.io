@@ -1,38 +1,38 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Toy Models on Adam Jermyn</title>
-    <link>https://adamjermyn.com/tags/toy-models/</link>
-    <description>Recent content in Toy Models on Adam Jermyn</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Tue, 29 Nov 2022 20:38:53 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/tags/toy-models/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Multi-Component Learning and S-Curves</title>
-      <link>https://adamjermyn.com/posts/scurves/</link>
-      <pubDate>Tue, 29 Nov 2022 20:38:53 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/scurves/</guid>
-      <description>This post is available on the AI Alignment Forum.</description>
-    </item>
-    
-    <item>
-      <title>Engineering Monosemanticity in Toy Models</title>
-      <link>https://adamjermyn.com/posts/mono_1/</link>
-      <pubDate>Mon, 21 Nov 2022 14:53:00 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/mono_1/</guid>
-      <description>This post is available on the AI Alignment Forum.</description>
-    </item>
-    
-    <item>
-      <title>Toy Models and Tegum Products</title>
-      <link>https://adamjermyn.com/posts/tegum_products/</link>
-      <pubDate>Fri, 04 Nov 2022 14:53:00 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/tegum_products/</guid>
-      <description>This post is available on the AI Alignment Forum.</description>
-    </item>
-    
-  </channel>
+	<channel>
+		<title>Toy Models on Adam Jermyn</title>
+		<link>https://adamjermyn.com/tags/toy-models/</link>
+		<description>Recent content in Toy Models on Adam Jermyn</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Tue, 29 Nov 2022 20:38:53 -0400</lastBuildDate>
+		
+			<atom:link href="https://adamjermyn.com/tags/toy-models/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Multi-Component Learning and S-Curves</title>
+				<link>https://adamjermyn.com/posts/scurves/</link>
+				<pubDate>Tue, 29 Nov 2022 20:38:53 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/scurves/</guid>
+				<description>&lt;p&gt;&lt;em&gt;This post is available on the&lt;/em&gt; &lt;a href=&#34;https://www.alignmentforum.org/posts/RKDQCB6smLWgs2Mhr/multi-component-learning-and-s-curves&#34;&gt;AI Alignment Forum&lt;/a&gt;.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Engineering Monosemanticity in Toy Models</title>
+				<link>https://adamjermyn.com/posts/mono_1/</link>
+				<pubDate>Mon, 21 Nov 2022 14:53:00 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/mono_1/</guid>
+				<description>&lt;p&gt;&lt;em&gt;This post is available on the &lt;a href=&#34;https://www.alignmentforum.org/posts/LvznjZuygoeoTpSE6/engineering-monosemanticity-in-toy-models&#34;&gt;AI Alignment Forum&lt;/a&gt;&lt;/em&gt;.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Toy Models and Tegum Products</title>
+				<link>https://adamjermyn.com/posts/tegum_products/</link>
+				<pubDate>Fri, 04 Nov 2022 14:53:00 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/tegum_products/</guid>
+				<description>&lt;p&gt;&lt;em&gt;This post is available on the &lt;a href=&#34;https://www.alignmentforum.org/posts/3cR2YH9dpr7SmKvCb/toy-models-and-tegum-products&#34;&gt;AI Alignment Forum&lt;/a&gt;&lt;/em&gt;.&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

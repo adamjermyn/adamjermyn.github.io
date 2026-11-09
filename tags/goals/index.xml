@@ -1,33 +1,31 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Goals on Adam Jermyn</title>
-    <link>https://adamjermyn.com/tags/goals/</link>
-    <description>Recent content in Goals on Adam Jermyn</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Mon, 11 Apr 2022 14:33:01 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/tags/goals/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Acting and Thinking</title>
-      <link>https://adamjermyn.com/posts/acting_thinking/</link>
-      <pubDate>Mon, 11 Apr 2022 14:33:01 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/acting_thinking/</guid>
-      <description>Do thoughts cause actions, or do actions cause thoughts? Or does causation flow back and forth, more like a tide than a one-way river?
-It&amp;rsquo;s easy to see how thoughts cause actions. You think about reading a book, so you go pick up a book and start reading. It&amp;rsquo;s so easy to see the causation flow this way that it feels like thoughts must precede actions. How can you act, if you haven&amp;rsquo;t decided what to do?</description>
-    </item>
-    
-    <item>
-      <title>Success is Broader Than You Think</title>
-      <link>https://adamjermyn.com/posts/broad_success/</link>
-      <pubDate>Mon, 31 Jan 2022 11:55:52 -0500</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/broad_success/</guid>
-      <description>Projects begin with goals. At first these are implicit, but as a project takes shape it helps to state them explicitly. Stating goals serves two purposes: it defines success, and it prompts action.
-Because of this dual purpose, many goals miss the mark. On the one hand, is easy to come up with goals which define success but which are too vague to be actionable:
- &amp;ldquo;Change the world.&amp;rdquo;
-&amp;ldquo;Disrupt the industry.</description>
-    </item>
-    
-  </channel>
+	<channel>
+		<title>Goals on Adam Jermyn</title>
+		<link>https://adamjermyn.com/tags/goals/</link>
+		<description>Recent content in Goals on Adam Jermyn</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 11 Apr 2022 14:33:01 -0400</lastBuildDate>
+		
+			<atom:link href="https://adamjermyn.com/tags/goals/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Acting and Thinking</title>
+				<link>https://adamjermyn.com/posts/acting_thinking/</link>
+				<pubDate>Mon, 11 Apr 2022 14:33:01 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/acting_thinking/</guid>
+				<description>&lt;p&gt;Do thoughts cause actions, or do actions cause thoughts? Or does causation flow back and forth, more like a tide than a one-way river?&lt;/p&gt;&#xA;&lt;p&gt;It&amp;rsquo;s easy to see how thoughts cause actions. You think about reading a book, so you go pick up a book and start reading. It&amp;rsquo;s so easy to see the causation flow this way that it feels like thoughts &lt;em&gt;must&lt;/em&gt; precede actions. How can you act, if you haven&amp;rsquo;t decided what to do?&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Success is Broader Than You Think</title>
+				<link>https://adamjermyn.com/posts/broad_success/</link>
+				<pubDate>Mon, 31 Jan 2022 11:55:52 -0500</pubDate>
+				<guid>https://adamjermyn.com/posts/broad_success/</guid>
+				<description>&lt;p&gt;Projects begin with goals. At first these are implicit, but as a project takes shape it helps to state them explicitly. Stating goals serves two purposes: it defines success, and it prompts action.&lt;/p&gt;&#xA;&lt;p&gt;Because of this dual purpose, many goals miss the mark. On the one hand, is easy to come up with goals which define success but which are too vague to be actionable:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&amp;ldquo;Change the world.&amp;rdquo;&lt;/p&gt;&#xA;&lt;p&gt;&amp;ldquo;Disrupt the industry.&amp;rdquo;&lt;/p&gt;&#xA;&lt;p&gt;&amp;ldquo;Make new discoveries.&amp;rdquo;&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+			</item>
+	</channel>
 </rss>

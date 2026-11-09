@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Deceptive Alignment on Adam Jermyn</title>
-    <link>https://adamjermyn.com/tags/deceptive-alignment/</link>
-    <description>Recent content in Deceptive Alignment on Adam Jermyn</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Tue, 04 Oct 2022 14:27:25 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/tags/deceptive-alignment/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Smoke without fire is scary</title>
-      <link>https://adamjermyn.com/posts/smoke_fire/</link>
-      <pubDate>Tue, 04 Oct 2022 14:27:25 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/smoke_fire/</guid>
-      <description>This post is available on the AI Alignment Forum.</description>
-    </item>
-    
-    <item>
-      <title>It matters when the first sharp left turn happens</title>
-      <link>https://adamjermyn.com/posts/left_turn/</link>
-      <pubDate>Thu, 29 Sep 2022 14:27:25 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/left_turn/</guid>
-      <description>Thanks to Evan Hubinger for comments on these ideas. Posted on the AI Alignment Forum.
-Introduction A “sharp left turn” is a point where capabilities generalize beyond alignment. In a sharp left turn, an AI becomes much more capable than aligned, and so starts to exploit flaws in its alignment.
-This can look like Goodharting, where strong optimization pressure causes outer alignment failure because the base goal isn’t identical to what we want.</description>
-    </item>
-    
-  </channel>
+	<channel>
+		<title>Deceptive Alignment on Adam Jermyn</title>
+		<link>https://adamjermyn.com/tags/deceptive-alignment/</link>
+		<description>Recent content in Deceptive Alignment on Adam Jermyn</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Tue, 04 Oct 2022 14:27:25 -0400</lastBuildDate>
+		
+			<atom:link href="https://adamjermyn.com/tags/deceptive-alignment/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Smoke without fire is scary</title>
+				<link>https://adamjermyn.com/posts/smoke_fire/</link>
+				<pubDate>Tue, 04 Oct 2022 14:27:25 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/smoke_fire/</guid>
+				<description>&lt;p&gt;&lt;em&gt;This post is available on the &lt;a href=&#34;https://www.alignmentforum.org/posts/PP2Lrpvhd3bBvR8Aj/smoke-without-fire-is-scary&#34;&gt;AI Alignment Forum&lt;/a&gt;&lt;/em&gt;.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>It matters when the first sharp left turn happens</title>
+				<link>https://adamjermyn.com/posts/left_turn/</link>
+				<pubDate>Thu, 29 Sep 2022 14:27:25 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/left_turn/</guid>
+				<description>&lt;p&gt;&lt;em&gt;Thanks to Evan Hubinger for comments on these ideas. Posted on the &lt;a href=&#34;https://www.alignmentforum.org/posts/BCyK2GQKiiuYdvkst/it-matters-when-the-first-sharp-left-turn-happens&#34;&gt;AI Alignment Forum&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;&#xA;&lt;p&gt;A “sharp left turn” is a point where &lt;a href=&#34;https://www.alignmentforum.org/posts/GNhMPAWcfBCASy8e6/a-central-ai-alignment-problem-capabilities-generalization&#34;&gt;capabilities generalize beyond alignment&lt;/a&gt;. In a sharp left turn, an AI becomes much more capable than aligned, and so starts to exploit flaws in its alignment.&lt;/p&gt;&#xA;&lt;p&gt;This can look like &lt;a href=&#34;https://www.alignmentforum.org/tag/goodhart-s-law&#34;&gt;Goodharting&lt;/a&gt;, where strong optimization pressure causes outer alignment failure because the base goal isn’t identical to what we want. Or it can look like &lt;a href=&#34;https://www.alignmentforum.org/posts/zthDPAjh9w6Ytbeks/deceptive-alignment&#34;&gt;deceptive alignment&lt;/a&gt;, where the model is aligned to proxy goals that aren’t identical to the base goal, but we don’t notice until the model is capable enough to make the proxies fail.&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

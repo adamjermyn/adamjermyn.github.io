@@ -7,7 +7,7 @@
 		
 		<meta name="author" content="Adam Jermyn">
 		<meta name="description" content="Site Description">
-		<meta name="generator" content="Hugo 0.92.2" />
+		<meta name="generator" content="Hugo 0.168.0">
 		<title>ClaimCoin &middot; Adam Jermyn</title>
 		<link rel="shortcut icon" href="https://adamjermyn.com/images/favicon.ico">
 		<link rel="stylesheet" href="https://adamjermyn.com/css/style.css">
@@ -24,18 +24,6 @@
 		
 
                 
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-186473758-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
 		
                 <script>
   MathJax = {
@@ -132,7 +120,7 @@ if (!doNotTrack) {
 <p>Investors may trade ClaimCoins with different priorities, but they don&rsquo;t need to be valued equally! Claim 1 is less risky than claim 2 but is a claim for the same $1, so claim 1 is worth more. The same logic applies all the way to claim N, which is the least valuable. Thus we expect the market price of ClaimCoins to look something like:</p>
 <img src="../../images/price.001.png" alt="price" style="max-width:100%;max-height:100%;display:block;margin-left:auto;margin-right:auto" />
 <p>The claim price falls with falling priority, but slowly at first. After all, if the asset pool is valued at $1m the risk of the second claim is very similar to that of the first claim. At some priority we pass the &lsquo;current final claim&rsquo;, which is the last claim that could be paid out at the current value of the investment pool. Beyond this point the price of claims falls quickly, because those later claims only pay out if the underlying assets go up significantly.</p>
-<p>The advantage of this model is that there is no sudden cliff where the coin collapses. It&rsquo;s like a more gentle version of <a href="https://www.jstor.org/stable/1837095?seq=1#metadata_info_tab_contents">suspension of convertibility</a>. If the underlying assets fall in price some claims become worth less, but not all, and ClaimCoin can keep functioning just fine with those claims devalued. If the underlying assets later rise those claims can become &lsquo;in the money&rsquo; again, and they return to being valuable. Because investors' claims are all pre-ordered there is no incentive to withdraw money when the pool value fluctuates down, the bank run dynamic never arises.</p>
+<p>The advantage of this model is that there is no sudden cliff where the coin collapses. It&rsquo;s like a more gentle version of <a href="https://www.jstor.org/stable/1837095?seq=1#metadata_info_tab_contents">suspension of convertibility</a>. If the underlying assets fall in price some claims become worth less, but not all, and ClaimCoin can keep functioning just fine with those claims devalued. If the underlying assets later rise those claims can become &lsquo;in the money&rsquo; again, and they return to being valuable. Because investors&rsquo; claims are all pre-ordered there is no incentive to withdraw money when the pool value fluctuates down, the bank run dynamic never arises.</p>
 <p>The way the Minter gets paid isn&rsquo;t by taking the deposit interest, but by minting new coins. Specifically, suppose there are N coins outstanding, and the lowest-priority coin has priority N. The Minter can at zero cost produce a coin with priority N+1 and then sell this coin to the market. If the total value of the asset pool is less than $N$ USD  then the new coin is worth very little, but if the assets have grown to $N+5$ USD the Minter can produce five coins and expect to sell them for roughly $5. In practice they&rsquo;ll sell for a little less, because investors will demand a discount for the risk they incur by taking on the new lowest-priority claims. In this way the Minter and investors share the upside of growth in the underlying assets.</p>
 <p>A fun side benefit of ClaimCoin is that the price curve of claims provide information on the market expectations of upside and downside risk, similar to derivatives in regular financial markets.</p>
 <h1 id="takeaway">Takeaway</h1>

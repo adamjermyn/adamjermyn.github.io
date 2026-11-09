@@ -1,55 +1,45 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Machine-Learning on Adam Jermyn</title>
-    <link>https://adamjermyn.com/tags/machine-learning/</link>
-    <description>Recent content in Machine-Learning on Adam Jermyn</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Mon, 26 Sep 2022 08:21:00 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Brief Notes on Transformers</title>
-      <link>https://adamjermyn.com/posts/transformer_notes/</link>
-      <pubDate>Mon, 26 Sep 2022 08:21:00 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/transformer_notes/</guid>
-      <description>(Cross-posted from the AI Alignment Forum)*
-*These are just some notes I wrote while reading about transformers, which I thought might be a useful reference to others. Corrections welcome.
-Overview of Transformers Many transformer models have the following architecture:
-Data flows as follows:
- We take tokens as inputs and pass them through an embedding layer. The embedding layer outputs its result into the residual stream (x0). This has dimension (C,E), where C is the number of tokens in the context window and E is the embedding dimension.</description>
-    </item>
-    
-    <item>
-      <title>Automatic Differentiation in MESA</title>
-      <link>https://adamjermyn.com/posts/auto_diff_mesa/</link>
-      <pubDate>Wed, 11 May 2022 15:28:14 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/auto_diff_mesa/</guid>
-      <description>Over the last two years I developed an automatic differentiation (auto_diff) module in Fortran to support development of the Modules for Experiments in Stellar Astrophysics (MESA) project. This post gives a brief rundown of how the auto_diff module works and how I built it.
-All of the code I mention below lives on GitHub.
-What is auto_diff? Forward-mode automatic differentiation via operator overloading:
- Forward-mode means we calculate the chain rule as we go.</description>
-    </item>
-    
-    <item>
-      <title>Working Notes - Learning PyTorch - Day 2</title>
-      <link>https://adamjermyn.com/posts/ml_2/</link>
-      <pubDate>Tue, 12 Apr 2022 17:17:54 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/ml_2/</guid>
-      <description>Summary  Adding convolutional layers is pretty straightforward, but there are some indexing subtleties to watch. Pooling layers can really improve performance. With two pooling layers, I found an example of a too-high learning rate making the model get stuck with poor performance. The more pooling layers I used the faster the model took a training step (because the dense linear layer was smaller). The more pooling layers I used, the more important the number of channels in the convolutional/pooling layers became.</description>
-    </item>
-    
-    <item>
-      <title>Working Notes - Learning PyTorch - Day 1</title>
-      <link>https://adamjermyn.com/posts/ml_1/</link>
-      <pubDate>Mon, 11 Apr 2022 17:06:39 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/ml_1/</guid>
-      <description>Summary  Covered boilerplate for getting started, tensors, gradients. Poked in some detail at how gradients work. Played with linear regression, nonlinear regression, both with gradient descent. Built an MNIST classifier following a PyTorch tutorial. Experimented with the shape and size of the NN. Got PyTorch running on a machine with a GPU.  Boilerplate Import:
-import torch Need to use a special float type for the elements of tensors, and need to know which device the compute graph will run on:</description>
-    </item>
-    
-  </channel>
+	<channel>
+		<title>Machine Learning on Adam Jermyn</title>
+		<link>https://adamjermyn.com/tags/machine-learning/</link>
+		<description>Recent content in Machine Learning on Adam Jermyn</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 26 Sep 2022 08:21:00 -0400</lastBuildDate>
+		
+			<atom:link href="https://adamjermyn.com/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Brief Notes on Transformers</title>
+				<link>https://adamjermyn.com/posts/transformer_notes/</link>
+				<pubDate>Mon, 26 Sep 2022 08:21:00 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/transformer_notes/</guid>
+				<description>&lt;p&gt;&lt;em&gt;(Cross-posted from the &lt;a href=&#34;https://www.alignmentforum.org/posts/rEPnce975Fid9v5qv/brief-notes-on-transformers&#34;&gt;AI Alignment Forum&lt;/a&gt;)&lt;/em&gt;*&lt;/p&gt;&#xA;&lt;p&gt;*&lt;em&gt;These are just some notes I wrote while reading about transformers, which I thought might be a useful reference to others. Corrections welcome.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;overview-of-transformers&#34;&gt;Overview of Transformers&lt;/h1&gt;&#xA;&lt;p&gt;Many transformer models have &lt;a href=&#34;https://transformer-circuits.pub/2021/framework/index.html#architecture-attn-as-movement&#34;&gt;the following architecture&lt;/a&gt;:&lt;/p&gt;&#xA;&lt;img src=&#34;../../images/transformer_notes.assets/c7052b9cfde21fd125b70380c3289ddab77b50cde834556c.png&#34; alt=&#34;c7052b9cfde21fd125b70380c3289ddab77b50cde834556c&#34; style=&#34;max-width:100%;max-height:100%;display:block;margin-left:auto;margin-right:auto&#34;/&gt;&#xA;&lt;p&gt;Data flows as follows:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;We take tokens as inputs and pass them through an embedding layer. The embedding layer outputs its result into the residual stream (x0). This has dimension (C,E), where C is the number of tokens in the context window and E is the embedding dimension.&lt;/li&gt;&#xA;&lt;li&gt;The residual stream is processed by the attention mechanism (H) and the result is added back into the residual stream (i.e. x1 = H(x0) + x0).&lt;/li&gt;&#xA;&lt;li&gt;The residual stream is processed by an MLP layer (MLP) and the result is added back into the residual stream (i.e. x2 = MLP(x1) + x1).&lt;/li&gt;&#xA;&lt;li&gt;Steps (2) and (3) together define a “residual block”. The body of the transformer is formed of a stack of these blocks in series.&lt;/li&gt;&#xA;&lt;li&gt;After the final residual block, we apply an unembedding transformation to produce logits, which represent the relative probabilities of different output tokens.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h1 id=&#34;attention-mechanism&#34;&gt;Attention Mechanism&lt;/h1&gt;&#xA;&lt;p&gt;The attention mechanism (H) is divided into multiple attention heads $h_j$, which act in parallel. That is,&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Automatic Differentiation in MESA</title>
+				<link>https://adamjermyn.com/posts/auto_diff_mesa/</link>
+				<pubDate>Wed, 11 May 2022 15:28:14 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/auto_diff_mesa/</guid>
+				<description>&lt;p&gt;Over the last two years I developed an automatic differentiation (&lt;code&gt;auto_diff&lt;/code&gt;) module in Fortran to support development of the Modules for Experiments in Stellar Astrophysics (&lt;a href=&#34;https://docs.mesastar.org&#34;&gt;MESA&lt;/a&gt;) project. This post gives a brief rundown of how the &lt;code&gt;auto_diff&lt;/code&gt; module works and how I built it.&lt;/p&gt;&#xA;&lt;p&gt;All of the code I mention below lives on &lt;a href=&#34;https://github.com/MESAHub/mesa/tree/main/auto_diff&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-is-auto_diff&#34;&gt;What is auto_diff?&lt;/h2&gt;&#xA;&lt;p&gt;Forward-mode automatic differentiation via operator overloading:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Forward-mode means we calculate the chain rule as we go.&lt;/li&gt;&#xA;&lt;li&gt;Each variable in the calculation needs to be able to track derivative information.&lt;/li&gt;&#xA;&lt;li&gt;Variables need to know how the chain rule applies to each operation.&lt;/li&gt;&#xA;&lt;li&gt;Fortran source files are generated automatically by a python program.&#xA;&lt;ul&gt;&#xA;&lt;li&gt;This allows robust support for many different functions/operators/derivative configurations.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;what-does-it-look-like-in-fortran&#34;&gt;What does it look like in Fortran?&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-fortran&#34; data-lang=&#34;fortran&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#66d9ef&#34;&gt;type&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;::&lt;/span&gt; auto_diff_real_1var_order1&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#66d9ef&#34;&gt;real&lt;/span&gt;(dp) &lt;span style=&#34;color:#66d9ef&#34;&gt;::&lt;/span&gt; val&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#66d9ef&#34;&gt;real&lt;/span&gt;(dp) &lt;span style=&#34;color:#66d9ef&#34;&gt;::&lt;/span&gt; d1val1&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#66d9ef&#34;&gt;end&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;type&lt;/span&gt; auto_diff_real_1var_order1&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The types themselves are simple! Here&amp;rsquo;s the &lt;code&gt;1var_order1&lt;/code&gt; type, which supports 1 independent variable through 1 (first order) derivative. &lt;code&gt;val&lt;/code&gt; stores the value, &lt;code&gt;d1val1&lt;/code&gt; stores the derivative with respect to the independent variable.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Working Notes - Learning PyTorch - Day 2</title>
+				<link>https://adamjermyn.com/posts/ml_2/</link>
+				<pubDate>Tue, 12 Apr 2022 17:17:54 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/ml_2/</guid>
+				<description>&lt;h2&gt;&lt;/h2&gt;&#xA;&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Adding convolutional layers is pretty straightforward, but there are some indexing subtleties to watch.&lt;/li&gt;&#xA;&lt;li&gt;Pooling layers can really improve performance.&lt;/li&gt;&#xA;&lt;li&gt;With two pooling layers, I found an example of a too-high learning rate making the model get stuck with poor performance.&lt;/li&gt;&#xA;&lt;li&gt;The more pooling layers I used the faster the model took a training step (because the dense linear layer was smaller).&lt;/li&gt;&#xA;&lt;li&gt;The more pooling layers I used, the more important the number of channels in the convolutional/pooling layers became.&lt;/li&gt;&#xA;&lt;li&gt;Working with text requires a way to turn that text into vectors in a continuous space, and one-hot vectors are one solution to that problem.&lt;/li&gt;&#xA;&lt;li&gt;RNN&amp;rsquo;s let you study sequences, and accumulate information about the sequence as they &amp;lsquo;sweep&amp;rsquo; through it.&lt;/li&gt;&#xA;&lt;li&gt;Even though the processing to form the hidden state is linear, there&amp;rsquo;s a notion of causality in an RNN, because earlier entries get passed through the linear operator that forms the hidden state more times than late entries (and each letter only gets combined with the subsequent letters in determining its contribution to the hidden state).&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;convolutional-neural-networks&#34;&gt;Convolutional Neural Networks&lt;/h2&gt;&#xA;&lt;p&gt;I&amp;rsquo;d like to try MNIST with a CNN.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Working Notes - Learning PyTorch - Day 1</title>
+				<link>https://adamjermyn.com/posts/ml_1/</link>
+				<pubDate>Mon, 11 Apr 2022 17:06:39 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/ml_1/</guid>
+				<description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Covered boilerplate for getting started, tensors, gradients.&lt;/li&gt;&#xA;&lt;li&gt;Poked in some detail at how gradients work.&lt;/li&gt;&#xA;&lt;li&gt;Played with linear regression, nonlinear regression, both with gradient descent.&lt;/li&gt;&#xA;&lt;li&gt;Built an MNIST classifier following a PyTorch tutorial. Experimented with the shape and size of the NN.&lt;/li&gt;&#xA;&lt;li&gt;Got PyTorch running on a machine with a GPU.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;boilerplate&#34;&gt;Boilerplate&lt;/h2&gt;&#xA;&lt;p&gt;Import:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; torch&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Need to use a special float type for the elements of tensors, and need to know which device the compute graph will run on:&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

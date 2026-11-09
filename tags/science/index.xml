@@ -1,304 +1,220 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>science on Adam Jermyn</title>
-    <link>https://adamjermyn.com/tags/science/</link>
-    <description>Recent content in science on Adam Jermyn</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Sat, 25 Mar 2023 19:51:30 -0400</lastBuildDate><atom:link href="https://adamjermyn.com/tags/science/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Contaminated TB Treatments</title>
-      <link>https://adamjermyn.com/posts/latent_tb/</link>
-      <pubDate>Sat, 25 Mar 2023 19:51:30 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/latent_tb/</guid>
-      <description>(None of this is medical advice.)
-In 2020 the FDA identified contamination in two drugs used to treat Tuberculosis, Rifampin and Rifapentine. The contaminants were 1-methyl-4-nitrosopiperazine (MNP) in rifampin or 1-cyclopentyl-4-nitrosopiperazine (CPNP) in rifapentine, and levels were ~10x the FDA&amp;rsquo;s acceptable threshold (1-4ppm for MNP, 8-14ppm for CPNP). At the same time, these are two of the standard treatments for Tuberculosis and the alternatives come with downsides of their own, so the FDA permitted these drugs to continue being prescribed and sold in the US.</description>
-    </item>
-    
-    <item>
-      <title>Why doesn&#39;t all the Uranium sink to the bottom of Earth?</title>
-      <link>https://adamjermyn.com/posts/ideas28/</link>
-      <pubDate>Fri, 19 Aug 2022 11:18:48 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/ideas28/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don’t make sense for me to pursue. I generally just make a note of them and move on. This is the 28th post in a series describing some of the ideas I’ve accumulated.
-Why doesn&amp;rsquo;t all the Uranium sink to the bottom of Earth? What&amp;rsquo;s the idea? Uranium is denser than iron. Why hasn&amp;rsquo;t it all fallen to the center of the Earth?</description>
-    </item>
-    
-    <item>
-      <title>Chemical Mixing on Tayler Columns</title>
-      <link>https://adamjermyn.com/posts/ideas27/</link>
-      <pubDate>Thu, 18 Aug 2022 13:40:28 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/ideas27/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don’t make sense for me to pursue. I generally just make a note of them and move on. This is the 27th post in a series describing some of the ideas I’ve accumulated.
-Chemical Mixing on Tayler Columns What&amp;rsquo;s the idea? In rapidly rotating stars and planets convection forms narrow columns. Mixing is rapid along the column but slow across columns.</description>
-    </item>
-    
-    <item>
-      <title>Helium Flash and Surface Effects</title>
-      <link>https://adamjermyn.com/posts/ideas26/</link>
-      <pubDate>Wed, 17 Aug 2022 11:42:48 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/ideas26/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don’t make sense for me to pursue. I generally just make a note of them and move on. This is the 26th post in a series describing some of the ideas I’ve accumulated. This idea is based on work I did with Jim Fuller.
-Helium Flash and Surface Effects What&amp;rsquo;s the idea? Stars below around $3 M_\odot$ exhibit a helium flash, in which degenerate helium in their cores ignites.</description>
-    </item>
-    
-    <item>
-      <title>Overshooting at low Péclet number</title>
-      <link>https://adamjermyn.com/posts/ideas25/</link>
-      <pubDate>Mon, 15 Aug 2022 09:53:44 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/ideas25/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don’t make sense for me to pursue. I generally just make a note of them and move on. This is the 25th post in a series describing some of the ideas I’ve accumulated. This idea is based on discussions and calculations with Matteo Cantiello, Daniel Lecoanet, Evan Anders, Eoin Farrell, Yan-Fei Jiang, Lars Bildsten, and Will Schultz.
-Overshooting at low Péclet number What&amp;rsquo;s the idea?</description>
-    </item>
-    
-    <item>
-      <title>What saturates the centrifugal instability?</title>
-      <link>https://adamjermyn.com/posts/ideas24/</link>
-      <pubDate>Mon, 18 Jul 2022 10:55:44 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/ideas24/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don’t make sense for me to pursue. I generally just make a note of them and move on. This is the 24th post in a series describing some of the ideas I’ve accumulated. This idea is based on a paper by Xihui Zhao and Jim Fuller.
-What saturates the centrifugal instability? What&amp;rsquo;s the idea? The centrifugal instability is a linear instability (section 4) caused by the centrifugal force.</description>
-    </item>
-    
-    <item>
-      <title>Can waves advect magnetic fields?</title>
-      <link>https://adamjermyn.com/posts/ideas23/</link>
-      <pubDate>Fri, 01 Jul 2022 11:52:18 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/ideas23/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don’t make sense for me to pursue. I generally just make a note of them and move on. This is the 23rd post in a series describing some of the ideas I’ve accumulated. This idea is closely related to conversations I once had with Dong Lai.
-Can waves advect magnetic fields? What&amp;rsquo;s the idea? The electrical conductivity in stars is enormous, so the magnetic diffusivity is small.</description>
-    </item>
-    
-    <item>
-      <title>Waves in electron hydrodynamics</title>
-      <link>https://adamjermyn.com/posts/ideas22/</link>
-      <pubDate>Wed, 29 Jun 2022 12:21:53 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/ideas22/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don’t make sense for me to pursue. I generally just make a note of them and move on. This is the 22nd post in a series describing some of the ideas I’ve accumulated. This idea is closely related to conversations I&amp;rsquo;ve had over the years to with George Varnavides.
-Waves in electron hydrodynamics What&amp;rsquo;s the idea? In some materials, electron scattering is momentum-conserving (on some relevant length- and time-scale).</description>
-    </item>
-    
-    <item>
-      <title>How do stars evolve in molecular clouds?</title>
-      <link>https://adamjermyn.com/posts/astroideas21/</link>
-      <pubDate>Mon, 27 Jun 2022 08:18:21 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/astroideas21/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don’t make sense for me to pursue. I generally just make a note of them and move on. This is the 21st post in a series describing some of the ideas I’ve accumulated.
-How do stars evolve in molecular clouds? What&amp;rsquo;s the idea? Some stars are in molecular clouds, and the clouds probably affect their evolution by blocking escaping light, exerting pressure on their surfaces, possibly accreting mass onto their surfaces, coupling to their rotation via magnetic fields, and more.</description>
-    </item>
-    
-    <item>
-      <title>Black holes in gas clouds</title>
-      <link>https://adamjermyn.com/posts/astroideas20/</link>
-      <pubDate>Fri, 17 Jun 2022 07:25:45 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/astroideas20/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don’t make sense for me to pursue. I generally just make a note of them and move on. This is the twentieth post in a series describing some of the ideas I’ve accumulated. This idea emerged from a conversation with Yuri Levin.
-Black holes in gas clouds What&amp;rsquo;s the idea? Asa black hole moves through a gas cloud it should drag on the gas, depositing kinetic energy.</description>
-    </item>
-    
-    <item>
-      <title>Do magnetic fields slow accretion onto AGN stars?</title>
-      <link>https://adamjermyn.com/posts/astroideas19/</link>
-      <pubDate>Thu, 16 Jun 2022 09:20:03 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/astroideas19/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don’t make sense for me to pursue. I generally just make a note of them and move on. This is the nineteenth post in a series describing some of the ideas I’ve accumulated. This idea was suggested to me by Yuri Levin and I&amp;rsquo;ve just fleshed it out a little below.
-Do magnetic fields slow accretion onto AGN stars?</description>
-    </item>
-    
-    <item>
-      <title>Wave Heating and F-type Stars</title>
-      <link>https://adamjermyn.com/posts/astroideas18/</link>
-      <pubDate>Wed, 15 Jun 2022 12:43:36 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/astroideas18/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the eighteenth post in a series describing some of the ideas I&amp;rsquo;ve accumulated.
-Wave Heating and F-type Stars What&amp;rsquo;s the idea? Convection zones emit internal gravity waves at their boundaries. There is some uncertainty as to exactly how much power escapes in these waves, but estimates are of order $L_{\rm conv}\mathcal{M}$, where $L_{\rm conv}$ is the heat carried by convection and $\mathcal{M}$ is the convective Mach number.</description>
-    </item>
-    
-    <item>
-      <title>Differential rotation in stars and planetary orbits</title>
-      <link>https://adamjermyn.com/posts/astroideas17/</link>
-      <pubDate>Tue, 14 Jun 2022 11:01:07 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/astroideas17/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the seventeenth post in a series describing some of the ideas I&amp;rsquo;ve accumulated.
-Differential rotation in stars and planetary orbits What&amp;rsquo;s the idea? Stars exhibit differential rotation. At the same time, tides tend to bring stellar rotation rates and planetary orbits closer together in period.</description>
-    </item>
-    
-    <item>
-      <title>Can LISA see stellar convection?</title>
-      <link>https://adamjermyn.com/posts/astroideas16/</link>
-      <pubDate>Mon, 13 Jun 2022 09:30:25 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/astroideas16/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the sixteenth post in a series describing some of the ideas I&amp;rsquo;ve accumulated.
-Can LISA see stellar convection? What&amp;rsquo;s the idea? Convection in stars produces density fluctuations, resulting in a change in the quadrupole moment. This effect should be of order the square of the convective Mach number (which controls density fluctuations).</description>
-    </item>
-    
-    <item>
-      <title>How much material do AGN stars re-accrete?</title>
-      <link>https://adamjermyn.com/posts/astroideas15/</link>
-      <pubDate>Thu, 09 Jun 2022 10:41:57 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/astroideas15/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the fifteenth post in a series describing some of the ideas I&amp;rsquo;ve accumulated.
-How much material do AGN stars re-accrete? What&amp;rsquo;s the idea? Stellar evolution in AGN disks is expected to produce massive stars that exist in a balance between wind mass loss and accretion.</description>
-    </item>
-    
-    <item>
-      <title>How are stars in the galactic center related to the prior AGN phase?</title>
-      <link>https://adamjermyn.com/posts/astroideas14/</link>
-      <pubDate>Wed, 08 Jun 2022 09:24:53 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/astroideas14/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the fourteenth post in a series describing some of the ideas I&amp;rsquo;ve accumulated.
-How are stars in the galactic center related to the prior AGN phase? What&amp;rsquo;s the idea? We think the Milky Way used to host an AGN disk.</description>
-    </item>
-    
-    <item>
-      <title>Can accretion push RGB stars onto the Main-Sequence?</title>
-      <link>https://adamjermyn.com/posts/astroideas13/</link>
-      <pubDate>Tue, 07 Jun 2022 09:17:06 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/astroideas13/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the thirteenth post in a series describing some of the ideas I&amp;rsquo;ve accumulated.
-Can accretion push RGB stars onto the Main-Sequence? What&amp;rsquo;s the idea? Stars enter the Red Giant Branch (RGB) when they exhaust hydrogen in their cores. Mixing hydrogen-rich material into their cores should reverse this transition, pushing them back onto the main-sequence.</description>
-    </item>
-    
-    <item>
-      <title>What would happen if two AGN stars merged?</title>
-      <link>https://adamjermyn.com/posts/astroideas12/</link>
-      <pubDate>Mon, 06 Jun 2022 07:21:20 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/astroideas12/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the twelfth post in a series describing some of the ideas I&amp;rsquo;ve accumulated.
-What would happen if two AGN stars merged? What&amp;rsquo;s the idea? We think that stars in AGN disks live in a balance between accretion and radiation-driven mass-loss, and that this is a stable equilibrium.</description>
-    </item>
-    
-    <item>
-      <title>Does turbulence change nuclear burning in stars?</title>
-      <link>https://adamjermyn.com/posts/astroideas11/</link>
-      <pubDate>Sun, 05 Jun 2022 08:19:42 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/astroideas11/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the eleventh post in a series describing some of the ideas I&amp;rsquo;ve accumulated.
-Does turbulence change nuclear burning in stars? What&amp;rsquo;s the idea? Nuclear burning rates are exponentially sensitive to temperature. Stellar models calculate the mean temperature at each point in a star, but there can be fluctuations about this mean due to turbulent motions.</description>
-    </item>
-    
-    <item>
-      <title>Does the core convective dipole align with rotation?</title>
-      <link>https://adamjermyn.com/posts/astroideas9/</link>
-      <pubDate>Sat, 04 Jun 2022 08:11:07 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/astroideas9/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the ninth post in a series describing some of the ideas I&amp;rsquo;ve accumulated.
-Does the core convective dipole align with rotation? What&amp;rsquo;s the idea? I&amp;rsquo;m struggling to find a reference, but a recent result out of convection simulations in fully spherical domains is that the dominant flow pattern is a dipole (e.</description>
-    </item>
-    
-    <item>
-      <title>Do pulsating stars reveal inhibited convection?</title>
-      <link>https://adamjermyn.com/posts/astroideas8/</link>
-      <pubDate>Fri, 03 Jun 2022 09:34:52 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/astroideas8/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the eighth post in a series describing some of the ideas I&amp;rsquo;ve accumulated.
-Do pulsating stars reveal inhibited convection? What&amp;rsquo;s the idea? Many A/B stars have pulsations driven by the $\kappa$-mechanism. In these stars, the pulsation often interacts with near-surface convective layers, motivating tools like time-dependent convection theories.</description>
-    </item>
-    
-    <item>
-      <title>Lensing from compact remnants in the Galactic Center</title>
-      <link>https://adamjermyn.com/posts/astroideas7/</link>
-      <pubDate>Thu, 02 Jun 2022 08:54:24 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/astroideas7/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the seventh post in a series describing some of the ideas I&amp;rsquo;ve accumulated.
-Lensing from compact remnants in the Galactic Center What&amp;rsquo;s the idea? It&amp;rsquo;s thought that the Milky Way used to host an AGN disk. AGN disks likely contain many stars, and those stars very preferentially evolve into black holes.</description>
-    </item>
-    
-    <item>
-      <title>Theoretical limits on extreme baseline optical interferometry</title>
-      <link>https://adamjermyn.com/posts/astroideas6/</link>
-      <pubDate>Wed, 01 Jun 2022 07:25:16 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/astroideas6/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the sixth post in a series describing some of the ideas I&amp;rsquo;ve accumulated.
-Theoretical limits on extreme baseline optical interferometry What&amp;rsquo;s the idea? Interferometry let&amp;rsquo;s you build a giant &amp;lsquo;virtual telescope&amp;rsquo; out of lots of small telescopes. The effective baseline is the longest distance between telescopes, and the number of pixels of effective resolution is roughly the number of telescopes.</description>
-    </item>
-    
-    <item>
-      <title>Does the Parker mechanism spin down AGN stars?</title>
-      <link>https://adamjermyn.com/posts/astroideas5/</link>
-      <pubDate>Tue, 31 May 2022 07:15:04 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/astroideas5/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the fifth post in a series describing some of the ideas I&amp;rsquo;ve accumulated.
-Does the Parker mechanism spin down AGN stars? What&amp;rsquo;s the idea? Collaborators and I previously predicted that stars embedded in AGN disks should end up spinning really fast (near breakup).</description>
-    </item>
-    
-    <item>
-      <title>How correlated are the positions of stars?</title>
-      <link>https://adamjermyn.com/posts/astroideas4/</link>
-      <pubDate>Thu, 26 May 2022 16:58:15 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/astroideas4/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the fourth post in a series describing some of the ideas I&amp;rsquo;ve accumulated.
-How correlated are the positions of stars? What&amp;rsquo;s the idea? Thanks to the Gaia mission, we now have accurate 3D positions for a large number of stars in the galaxies.</description>
-    </item>
-    
-    <item>
-      <title>A tight-binding model for cold dense matter</title>
-      <link>https://adamjermyn.com/posts/astroideas3/</link>
-      <pubDate>Wed, 25 May 2022 16:33:00 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/astroideas3/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the third post in a series describing some of the ideas I&amp;rsquo;ve accumulated.
-Can an ad-hoc electron binding model fix the low-temperature low-density limit of the Skye EOS? What&amp;rsquo;s the idea? The reason that the Skye EOS doesn&amp;rsquo;t cover all temperatures and densities is that it assumes fully ionized matter, which breaks down at low temperatures.</description>
-    </item>
-    
-    <item>
-      <title>Does eating planets make stars magnetic?</title>
-      <link>https://adamjermyn.com/posts/astroideas2/</link>
-      <pubDate>Tue, 24 May 2022 12:56:55 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/astroideas2/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the second post in a series describing some of the ideas I&amp;rsquo;ve accumulated.
-Can planet injestion explain magnetic RGB stars? What&amp;rsquo;s the idea? There are some very magnetic Red Giant Branch (RGB) stars, with measured internal fields of order $10^{5-7}\mathrm{G}$.</description>
-    </item>
-    
-    <item>
-      <title>Neutron Stars in AGN Disks</title>
-      <link>https://adamjermyn.com/posts/astroideas1/</link>
-      <pubDate>Mon, 16 May 2022 07:38:03 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/astroideas1/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. Over the next few months I&amp;rsquo;ll be collecting those notes and posting those ideas here.
-The format I&amp;rsquo;ll try to follow is to explain:
- What the idea is. Why I think it&amp;rsquo;s an interesting idea. How I think someone interested in working on the idea could get started.</description>
-    </item>
-    
-    <item>
-      <title>Chaos in Stellar Evolution</title>
-      <link>https://adamjermyn.com/posts/chaos_stars/</link>
-      <pubDate>Mon, 16 May 2022 07:34:19 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/chaos_stars/</guid>
-      <description>Are stars predictable or chaotic?
-A system is chaotic if small perturbations grow exponentially with time. This makes chaotic systems unpredictable on long time-scales, because it becomes fine details in the starting conditions come to dominate at long times.
-So: are stars predictable or chaotic? As far as I know this is an open question.
-There is some sense in which most stars are predictable. They exist near thermal and hydrostatic equilibrium, and they tend to return to equilibrium when perturbed.</description>
-    </item>
-    
-  </channel>
+	<channel>
+		<title>Science on Adam Jermyn</title>
+		<link>https://adamjermyn.com/tags/science/</link>
+		<description>Recent content in Science on Adam Jermyn</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Sat, 25 Mar 2023 19:51:30 -0400</lastBuildDate>
+		
+			<atom:link href="https://adamjermyn.com/tags/science/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Contaminated TB Treatments</title>
+				<link>https://adamjermyn.com/posts/latent_tb/</link>
+				<pubDate>Sat, 25 Mar 2023 19:51:30 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/latent_tb/</guid>
+				<description>&lt;p&gt;(&lt;em&gt;None of this is medical advice.&lt;/em&gt;)&lt;/p&gt;&#xA;&lt;p&gt;In 2020 the FDA identified contamination in &lt;a href=&#34;https://www.fda.gov/drugs/drug-safety-and-availability/fda-updates-and-press-announcements-nitrosamines-rifampin-and-rifapentine&#34;&gt;two drugs&lt;/a&gt; used to treat Tuberculosis, Rifampin and Rifapentine. The contaminants were 1-methyl-4-nitrosopiperazine (MNP) in rifampin or 1-cyclopentyl-4-nitrosopiperazine (CPNP) in rifapentine, and &lt;a href=&#34;https://www.fda.gov/drugs/drug-safety-and-availability/laboratory-analysis-rifampinrifapentine-products&#34;&gt;levels&lt;/a&gt; were ~10x the FDA&amp;rsquo;s acceptable threshold (1-4ppm for MNP, 8-14ppm for CPNP). At the same time, these are two of the standard treatments for Tuberculosis and the alternatives come with downsides of their own, so the FDA permitted these drugs to continue being prescribed and sold in the US.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Why doesn&#39;t all the Uranium sink to the bottom of Earth?</title>
+				<link>https://adamjermyn.com/posts/ideas28/</link>
+				<pubDate>Fri, 19 Aug 2022 11:18:48 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/ideas28/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don’t make sense for me to pursue. I generally just make a note of them and move on. This is the 28th post in a series describing some of the ideas I’ve accumulated.&lt;/p&gt;&#xA;&lt;h2 id=&#34;why-doesnt-all-the-uranium-sink-to-the-bottom-of-earth&#34;&gt;Why doesn&amp;rsquo;t all the Uranium sink to the bottom of Earth?&lt;/h2&gt;&#xA;&lt;h3 id=&#34;whats-the-idea&#34;&gt;What&amp;rsquo;s the idea?&lt;/h3&gt;&#xA;&lt;p&gt;Uranium is denser than iron. Why hasn&amp;rsquo;t it all fallen to the center of the Earth? Does it preferentially alloy with lighter elements, or something else?&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Chemical Mixing on Tayler Columns</title>
+				<link>https://adamjermyn.com/posts/ideas27/</link>
+				<pubDate>Thu, 18 Aug 2022 13:40:28 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/ideas27/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don’t make sense for me to pursue. I generally just make a note of them and move on. This is the 27th post in a series describing some of the ideas I’ve accumulated.&lt;/p&gt;&#xA;&lt;h2 id=&#34;chemical-mixing-on-tayler-columns&#34;&gt;Chemical Mixing on Tayler Columns&lt;/h2&gt;&#xA;&lt;h3 id=&#34;whats-the-idea&#34;&gt;What&amp;rsquo;s the idea?&lt;/h3&gt;&#xA;&lt;p&gt;In rapidly rotating stars and planets convection forms narrow columns. Mixing is rapid along the column but slow across columns. It might be possible to see signs of this difference in mixing speed during events involving transient changes in chemistry.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Helium Flash and Surface Effects</title>
+				<link>https://adamjermyn.com/posts/ideas26/</link>
+				<pubDate>Wed, 17 Aug 2022 11:42:48 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/ideas26/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don’t make sense for me to pursue. I generally just make a note of them and move on. This is the 26th post in a series describing some of the ideas I’ve accumulated. This idea is based on &lt;a href=&#34;https://arxiv.org/abs/2206.13479&#34;&gt;work I did&lt;/a&gt; with Jim Fuller.&lt;/p&gt;&#xA;&lt;h2 id=&#34;helium-flash-and-surface-effects&#34;&gt;Helium Flash and Surface Effects&lt;/h2&gt;&#xA;&lt;h3 id=&#34;whats-the-idea&#34;&gt;What&amp;rsquo;s the idea?&lt;/h3&gt;&#xA;&lt;p&gt;Stars below around $3 M_\odot$ exhibit a helium flash, in which degenerate helium in their cores ignites. This ignition runs away until degeneracy is lifted, producing enormous luminosities ($10^{9-10}L_\odot$). Despite the enormous energies involved, there are thought to be no immediate effects of the helium flash that can be observed at the surface, primarily because the thermal diffusion time from the core to the surface is very long compared with the flash itself.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Overshooting at low Péclet number</title>
+				<link>https://adamjermyn.com/posts/ideas25/</link>
+				<pubDate>Mon, 15 Aug 2022 09:53:44 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/ideas25/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don’t make sense for me to pursue. I generally just make a note of them and move on. This is the 25th post in a series describing some of the ideas I’ve accumulated. This idea is based on discussions and calculations with Matteo Cantiello, Daniel Lecoanet, Evan Anders, Eoin Farrell, Yan-Fei Jiang, Lars Bildsten, and Will Schultz.&lt;/p&gt;&#xA;&lt;h2 id=&#34;overshooting-at-low-péclet-number&#34;&gt;Overshooting at low Péclet number&lt;/h2&gt;&#xA;&lt;h3 id=&#34;whats-the-idea&#34;&gt;What&amp;rsquo;s the idea?&lt;/h3&gt;&#xA;&lt;p&gt;Convection zones are often bounded on one side or the other by a stably stratified layer. Usually this stable stratification prevent much mixing/turbulence from developing, so that the only signatures of the convection that propagate through the stable layer are waves.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>What saturates the centrifugal instability?</title>
+				<link>https://adamjermyn.com/posts/ideas24/</link>
+				<pubDate>Mon, 18 Jul 2022 10:55:44 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/ideas24/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don’t make sense for me to pursue. I generally just make a note of them and move on. This is the 24th post in a series describing some of the ideas I’ve accumulated. This idea is based on a &lt;a href=&#34;https://arxiv.org/pdf/2004.07279.pdf&#34;&gt;paper&lt;/a&gt; by Xihui Zhao and Jim Fuller.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-saturates-the-centrifugal-instability&#34;&gt;What saturates the centrifugal instability?&lt;/h2&gt;&#xA;&lt;h3 id=&#34;whats-the-idea&#34;&gt;What&amp;rsquo;s the idea?&lt;/h3&gt;&#xA;&lt;p&gt;The &lt;a href=&#34;https://arxiv.org/pdf/2004.07279.pdf&#34;&gt;centrifugal instability&lt;/a&gt; is a linear instability (section 4) caused by the centrifugal force. If fluid elements conserve angular momentum the rotation provides a restoring force and there is no instability, but if angular momentum is transported quickly relative to the oscillation frequency then the elements may be displaced at constant angular velocity, resulting in unstable motion.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Can waves advect magnetic fields?</title>
+				<link>https://adamjermyn.com/posts/ideas23/</link>
+				<pubDate>Fri, 01 Jul 2022 11:52:18 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/ideas23/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don’t make sense for me to pursue. I generally just make a note of them and move on. This is the 23rd post in a series describing some of the ideas I’ve accumulated. This idea is closely related to conversations I once had with Dong Lai.&lt;/p&gt;&#xA;&lt;h2 id=&#34;can-waves-advect-magnetic-fields&#34;&gt;Can waves advect magnetic fields?&lt;/h2&gt;&#xA;&lt;h3 id=&#34;whats-the-idea&#34;&gt;What&amp;rsquo;s the idea?&lt;/h3&gt;&#xA;&lt;p&gt;The electrical conductivity in stars is enormous, so the magnetic diffusivity is small. That means that magnetic field lines are effectively frozen in to the material they pass through, so they can only move if that material moves.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Waves in electron hydrodynamics</title>
+				<link>https://adamjermyn.com/posts/ideas22/</link>
+				<pubDate>Wed, 29 Jun 2022 12:21:53 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/ideas22/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don’t make sense for me to pursue. I generally just make a note of them and move on. This is the 22nd post in a series describing some of the ideas I’ve accumulated. This idea is closely related to conversations I&amp;rsquo;ve had over the years to with George Varnavides.&lt;/p&gt;&#xA;&lt;h2 id=&#34;waves-in-electron-hydrodynamics&#34;&gt;Waves in electron hydrodynamics&lt;/h2&gt;&#xA;&lt;h3 id=&#34;whats-the-idea&#34;&gt;What&amp;rsquo;s the idea?&lt;/h3&gt;&#xA;&lt;p&gt;In some materials, electron scattering is momentum-conserving (on some relevant length- and time-scale). These materials exhibit &lt;em&gt;electron hydrodynamics&lt;/em&gt;, where the &lt;a href=&#34;https://www.nature.com/articles/s41467-020-18553-y&#34;&gt;electrons flow&lt;/a&gt; following the Navier-Stokes equation. Presumably that also means they can exhibit &lt;em&gt;waves&lt;/em&gt;, and I think this could be an exciting phenomenon to understand.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>How do stars evolve in molecular clouds?</title>
+				<link>https://adamjermyn.com/posts/astroideas21/</link>
+				<pubDate>Mon, 27 Jun 2022 08:18:21 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/astroideas21/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don’t make sense for me to pursue. I generally just make a note of them and move on. This is the 21st post in a series describing some of the ideas I’ve accumulated.&lt;/p&gt;&#xA;&lt;h2 id=&#34;how-do-stars-evolve-in-molecular-clouds&#34;&gt;How do stars evolve in molecular clouds?&lt;/h2&gt;&#xA;&lt;h3 id=&#34;whats-the-idea&#34;&gt;What&amp;rsquo;s the idea?&lt;/h3&gt;&#xA;&lt;p&gt;Some stars are in molecular clouds, and the clouds probably affect their evolution by blocking escaping light, exerting pressure on their surfaces, possibly accreting mass onto their surfaces, coupling to their rotation via magnetic fields, and more. In many ways it&amp;rsquo;s a similar problem to stellar evolution in AGN disks.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Black holes in gas clouds</title>
+				<link>https://adamjermyn.com/posts/astroideas20/</link>
+				<pubDate>Fri, 17 Jun 2022 07:25:45 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/astroideas20/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don’t make sense for me to pursue. I generally just make a note of them and move on. This is the twentieth post in a series describing some of the ideas I’ve accumulated. This idea emerged from a conversation with Yuri Levin.&lt;/p&gt;&#xA;&lt;h2 id=&#34;black-holes-in-gas-clouds&#34;&gt;Black holes in gas clouds&lt;/h2&gt;&#xA;&lt;h3 id=&#34;whats-the-idea&#34;&gt;What&amp;rsquo;s the idea?&lt;/h3&gt;&#xA;&lt;p&gt;Asa  black hole moves through a gas cloud it should drag on the gas, depositing kinetic energy. The question is: how much kinetic energy gets deposited, and how fast?&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Do magnetic fields slow accretion onto AGN stars?</title>
+				<link>https://adamjermyn.com/posts/astroideas19/</link>
+				<pubDate>Thu, 16 Jun 2022 09:20:03 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/astroideas19/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don’t make sense for me to pursue. I generally just make a note of them and move on. This is the nineteenth post in a series describing some of the ideas I’ve accumulated. This idea was suggested to me by Yuri Levin and I&amp;rsquo;ve just fleshed it out a little below.&lt;/p&gt;&#xA;&lt;h2 id=&#34;do-magnetic-fields-slow-accretion-onto-agn-stars&#34;&gt;Do magnetic fields slow accretion onto AGN stars?&lt;/h2&gt;&#xA;&lt;h3 id=&#34;whats-the-idea&#34;&gt;What&amp;rsquo;s the idea?&lt;/h3&gt;&#xA;&lt;p&gt;Stellar evolution in AGN disks is expected to produce &lt;a href=&#34;https://arxiv.org/abs/2009.03936&#34;&gt;massive stars&lt;/a&gt; that exist in a balance between wind mass loss and accretion. Calculations of this balance so far neglect magnetic fields in determining the accretion rate. AGN disks almost certainly have significant magnetic fields, though, and these just get amplified in the accretion stream. The resulting magnetic pressure could well slow the stream and make AGN stars less massive.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Wave Heating and F-type Stars</title>
+				<link>https://adamjermyn.com/posts/astroideas18/</link>
+				<pubDate>Wed, 15 Jun 2022 12:43:36 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/astroideas18/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the eighteenth post in a series describing some of the ideas I&amp;rsquo;ve accumulated.&lt;/p&gt;&#xA;&lt;h2 id=&#34;wave-heating-and-f-type-stars&#34;&gt;Wave Heating and F-type Stars&lt;/h2&gt;&#xA;&lt;h3 id=&#34;whats-the-idea&#34;&gt;What&amp;rsquo;s the idea?&lt;/h3&gt;&#xA;&lt;p&gt;Convection zones emit internal gravity waves at their boundaries. There is some uncertainty as to exactly how much power escapes in these waves, but &lt;a href=&#34;https://ui.adsabs.harvard.edu/abs/2013MNRAS.430.2363L/abstract&#34;&gt;estimates&lt;/a&gt; are of order $L_{\rm conv}\mathcal{M}$, where $L_{\rm conv}$ is the heat carried by convection and $\mathcal{M}$ is the convective Mach number.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Differential rotation in stars and planetary orbits</title>
+				<link>https://adamjermyn.com/posts/astroideas17/</link>
+				<pubDate>Tue, 14 Jun 2022 11:01:07 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/astroideas17/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the seventeenth post in a series describing some of the ideas I&amp;rsquo;ve accumulated.&lt;/p&gt;&#xA;&lt;h2 id=&#34;differential-rotation-in-stars-and-planetary-orbits&#34;&gt;Differential rotation in stars and planetary orbits&lt;/h2&gt;&#xA;&lt;h3 id=&#34;whats-the-idea&#34;&gt;What&amp;rsquo;s the idea?&lt;/h3&gt;&#xA;&lt;p&gt;Stars exhibit differential rotation. At the same time, tides tend to bring stellar rotation rates and planetary orbits closer together in period. So: does differential rotation in a host star change the orbital evolution of its planets?&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Can LISA see stellar convection?</title>
+				<link>https://adamjermyn.com/posts/astroideas16/</link>
+				<pubDate>Mon, 13 Jun 2022 09:30:25 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/astroideas16/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the sixteenth post in a series describing some of the ideas I&amp;rsquo;ve accumulated.&lt;/p&gt;&#xA;&lt;h2 id=&#34;can-lisa-see-stellar-convection&#34;&gt;Can LISA see stellar convection?&lt;/h2&gt;&#xA;&lt;h3 id=&#34;whats-the-idea&#34;&gt;What&amp;rsquo;s the idea?&lt;/h3&gt;&#xA;&lt;p&gt;Convection in stars produces density fluctuations, resulting in a change in the quadrupole moment. This effect should be of order the square of the convective Mach number (which controls density fluctuations). Any individual star will definitely not produce an observable effect, but I wonder if this could contribute to the LISA noise floor (or the noise floor of future missions) when added up across all of the stars in the galaxy.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>How much material do AGN stars re-accrete?</title>
+				<link>https://adamjermyn.com/posts/astroideas15/</link>
+				<pubDate>Thu, 09 Jun 2022 10:41:57 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/astroideas15/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the fifteenth post in a series describing some of the ideas I&amp;rsquo;ve accumulated.&lt;/p&gt;&#xA;&lt;h2 id=&#34;how-much-material-do-agn-stars-re-accrete&#34;&gt;How much material do AGN stars re-accrete?&lt;/h2&gt;&#xA;&lt;h3 id=&#34;whats-the-idea&#34;&gt;What&amp;rsquo;s the idea?&lt;/h3&gt;&#xA;&lt;p&gt;Stellar evolution in AGN disks is expected to produce &lt;a href=&#34;https://arxiv.org/abs/2009.03936&#34;&gt;massive stars&lt;/a&gt; that exist in a balance between wind mass loss and accretion. This is an inherently 3D process, requiring the winds and infalling material to take different paths to/from the star. Eventually the material in the wind will run into material in the AGN disk, some of which feeds the accretion stream.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>How are stars in the galactic center related to the prior AGN phase?</title>
+				<link>https://adamjermyn.com/posts/astroideas14/</link>
+				<pubDate>Wed, 08 Jun 2022 09:24:53 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/astroideas14/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the fourteenth post in a series describing some of the ideas I&amp;rsquo;ve accumulated.&lt;/p&gt;&#xA;&lt;h2 id=&#34;how-are-stars-in-the-galactic-center-related-to-the-prior-agn-phase&#34;&gt;How are stars in the galactic center related to the prior AGN phase?&lt;/h2&gt;&#xA;&lt;h3 id=&#34;whats-the-idea&#34;&gt;What&amp;rsquo;s the idea?&lt;/h3&gt;&#xA;&lt;p&gt;We think the Milky Way used to host an AGN disk. Stellar evolution in AGN disks is expected to produce &lt;a href=&#34;https://arxiv.org/abs/2009.03936&#34;&gt;massive stars&lt;/a&gt;, and indeed the galactic center hosts a population of massive stars with &lt;a href=&#34;https://arxiv.org/abs/astro-ph/0303436&#34;&gt;coplanar orbits&lt;/a&gt;. These are clearly related to the disk in some fashion, and could either have been around coincident with the AGN disk or could have formed from the last remnants of the disk.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Can accretion push RGB stars onto the Main-Sequence?</title>
+				<link>https://adamjermyn.com/posts/astroideas13/</link>
+				<pubDate>Tue, 07 Jun 2022 09:17:06 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/astroideas13/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the thirteenth post in a series describing some of the ideas I&amp;rsquo;ve accumulated.&lt;/p&gt;&#xA;&lt;h2 id=&#34;can-accretion-push-rgb-stars-onto-the-main-sequence&#34;&gt;Can accretion push RGB stars onto the Main-Sequence?&lt;/h2&gt;&#xA;&lt;h3 id=&#34;whats-the-idea&#34;&gt;What&amp;rsquo;s the idea?&lt;/h3&gt;&#xA;&lt;p&gt;Stars enter the Red Giant Branch (RGB) when they exhaust hydrogen in their cores. Mixing hydrogen-rich material into their cores should reverse this transition, pushing them back onto the main-sequence.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>What would happen if two AGN stars merged?</title>
+				<link>https://adamjermyn.com/posts/astroideas12/</link>
+				<pubDate>Mon, 06 Jun 2022 07:21:20 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/astroideas12/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the twelfth post in a series describing some of the ideas I&amp;rsquo;ve accumulated.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-would-happen-if-two-agn-stars-merged&#34;&gt;What would happen if two AGN stars merged?&lt;/h2&gt;&#xA;&lt;h3 id=&#34;whats-the-idea&#34;&gt;What&amp;rsquo;s the idea?&lt;/h3&gt;&#xA;&lt;p&gt;We think that stars in AGN disks live in a &lt;a href=&#34;https://arxiv.org/abs/2009.03936&#34;&gt;balance&lt;/a&gt; between accretion and radiation-driven mass-loss, and that this is a stable equilibrium. If the star becomes more massive, its luminosity increases and drives a faster wind, and this is a stronger effect than the increase in its accretion rate caused by its greater mass.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Does turbulence change nuclear burning in stars?</title>
+				<link>https://adamjermyn.com/posts/astroideas11/</link>
+				<pubDate>Sun, 05 Jun 2022 08:19:42 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/astroideas11/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the eleventh post in a series describing some of the ideas I&amp;rsquo;ve accumulated.&lt;/p&gt;&#xA;&lt;h2 id=&#34;does-turbulence-change-nuclear-burning-in-stars&#34;&gt;Does turbulence change nuclear burning in stars?&lt;/h2&gt;&#xA;&lt;h3 id=&#34;whats-the-idea&#34;&gt;What&amp;rsquo;s the idea?&lt;/h3&gt;&#xA;&lt;p&gt;Nuclear burning rates are exponentially sensitive to temperature. Stellar models calculate the mean temperature at each point in a star, but there can be fluctuations about this mean due to turbulent motions. This effect has been studied &lt;a href=&#34;https://arxiv.org/pdf/2002.01937.pdf&#34;&gt;theoretically&lt;/a&gt;, but has never been applied to stellar evolution so far as I know.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Does the core convective dipole align with rotation?</title>
+				<link>https://adamjermyn.com/posts/astroideas9/</link>
+				<pubDate>Sat, 04 Jun 2022 08:11:07 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/astroideas9/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the ninth post in a series describing some of the ideas I&amp;rsquo;ve accumulated.&lt;/p&gt;&#xA;&lt;h2 id=&#34;does-the-core-convective-dipole-align-with-rotation&#34;&gt;Does the core convective dipole align with rotation?&lt;/h2&gt;&#xA;&lt;h3 id=&#34;whats-the-idea&#34;&gt;What&amp;rsquo;s the idea?&lt;/h3&gt;&#xA;&lt;p&gt;I&amp;rsquo;m struggling to find a reference, but a recent result out of convection simulations in fully spherical domains is that the dominant flow pattern is a dipole (e.g. a flow that runs right through the center of the domain). This may have an answer already, but I&amp;rsquo;d like to know if that dipole aligns with the rotation axis, and/or how the dipole flow interacts with rotation as a function of rotation rate.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Do pulsating stars reveal inhibited convection?</title>
+				<link>https://adamjermyn.com/posts/astroideas8/</link>
+				<pubDate>Fri, 03 Jun 2022 09:34:52 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/astroideas8/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the eighth post in a series describing some of the ideas I&amp;rsquo;ve accumulated.&lt;/p&gt;&#xA;&lt;h2 id=&#34;do-pulsating-stars-reveal-inhibited-convection&#34;&gt;Do pulsating stars reveal inhibited convection?&lt;/h2&gt;&#xA;&lt;h3 id=&#34;whats-the-idea&#34;&gt;What&amp;rsquo;s the idea?&lt;/h3&gt;&#xA;&lt;p&gt;Many A/B stars have pulsations driven by the $\kappa$-mechanism. In these stars, the pulsation often interacts with near-surface convective layers, motivating tools like &lt;a href=&#34;https://users.camk.edu.pl/smolec/phd_smolec.pdf&#34;&gt;time-dependent convection theories&lt;/a&gt;.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Lensing from compact remnants in the Galactic Center</title>
+				<link>https://adamjermyn.com/posts/astroideas7/</link>
+				<pubDate>Thu, 02 Jun 2022 08:54:24 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/astroideas7/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the seventh post in a series describing some of the ideas I&amp;rsquo;ve accumulated.&lt;/p&gt;&#xA;&lt;h2 id=&#34;lensing-from-compact-remnants-in-the-galactic-center&#34;&gt;Lensing from compact remnants in the Galactic Center&lt;/h2&gt;&#xA;&lt;h3 id=&#34;whats-the-idea&#34;&gt;What&amp;rsquo;s the idea?&lt;/h3&gt;&#xA;&lt;p&gt;It&amp;rsquo;s thought that the Milky Way used to host an AGN disk. AGN disks likely contain &lt;a href=&#34;https://arxiv.org/abs/2203.06187&#34;&gt;many stars&lt;/a&gt;, and those stars very &lt;a href=&#34;https://arxiv.org/abs/2009.03936&#34;&gt;preferentially evolve into black holes&lt;/a&gt;. Many of those black holes should still be around after the disk dissipates, so there could be $\sim 10^4$ black holes in the inner parsec of our galaxy. As these pass in front of other objects they lens them, and that&amp;rsquo;s something large surveys might be able to observe.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Theoretical limits on extreme baseline optical interferometry</title>
+				<link>https://adamjermyn.com/posts/astroideas6/</link>
+				<pubDate>Wed, 01 Jun 2022 07:25:16 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/astroideas6/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the sixth post in a series describing some of the ideas I&amp;rsquo;ve accumulated.&lt;/p&gt;&#xA;&lt;h2 id=&#34;theoretical-limits-on-extreme-baseline-optical-interferometry&#34;&gt;Theoretical limits on extreme baseline optical interferometry&lt;/h2&gt;&#xA;&lt;h3 id=&#34;whats-the-idea&#34;&gt;What&amp;rsquo;s the idea?&lt;/h3&gt;&#xA;&lt;p&gt;Interferometry let&amp;rsquo;s you build a giant &amp;lsquo;virtual telescope&amp;rsquo; out of lots of small telescopes. The effective baseline is the longest distance between telescopes, and the number of pixels of effective resolution is roughly the number of telescopes.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Does the Parker mechanism spin down AGN stars?</title>
+				<link>https://adamjermyn.com/posts/astroideas5/</link>
+				<pubDate>Tue, 31 May 2022 07:15:04 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/astroideas5/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the fifth post in a series describing some of the ideas I&amp;rsquo;ve accumulated.&lt;/p&gt;&#xA;&lt;h2 id=&#34;does-the-parker-mechanism-spin-down-agn-stars&#34;&gt;Does the Parker mechanism spin down AGN stars?&lt;/h2&gt;&#xA;&lt;h3 id=&#34;whats-the-idea&#34;&gt;What&amp;rsquo;s the idea?&lt;/h3&gt;&#xA;&lt;p&gt;Collaborators and I previously predicted that stars embedded in AGN disks should end up &lt;a href=&#34;https://arxiv.org/abs/2102.13114&#34;&gt;spinning really fast&lt;/a&gt; (near breakup). One effect we explicitly neglected was magnetic spindown associated with mass loss (the Parker mechanism). Yuri Levin pointed out to me that magnetic spindown could be important, so it would be good to understand how big this effect is.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>How correlated are the positions of stars?</title>
+				<link>https://adamjermyn.com/posts/astroideas4/</link>
+				<pubDate>Thu, 26 May 2022 16:58:15 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/astroideas4/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the fourth post in a series describing some of the ideas I&amp;rsquo;ve accumulated.&lt;/p&gt;&#xA;&lt;h2 id=&#34;how-correlated-are-the-positions-of-stars&#34;&gt;How correlated are the positions of stars?&lt;/h2&gt;&#xA;&lt;h3 id=&#34;whats-the-idea&#34;&gt;What&amp;rsquo;s the idea?&lt;/h3&gt;&#xA;&lt;p&gt;Thanks to the Gaia mission, we now have accurate 3D positions for a large number of stars in the galaxies. Because gravity is a strongly-interacting theory with a $1/r$ potential, it can produce long-ranged correlations. The idea here is to  either (1) think about what those correlations might look like, then go looking for them or (2) look for correlations and see if anything looks weird, then think about what might cause that.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>A tight-binding model for cold dense matter</title>
+				<link>https://adamjermyn.com/posts/astroideas3/</link>
+				<pubDate>Wed, 25 May 2022 16:33:00 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/astroideas3/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the third post in a series describing some of the ideas I&amp;rsquo;ve accumulated.&lt;/p&gt;&#xA;&lt;h2 id=&#34;can-an-ad-hoc-electron-binding-model-fix-the-low-temperature-low-density-limit-of-the-skye-eos&#34;&gt;Can an ad-hoc electron binding model fix the low-temperature low-density limit of the Skye EOS?&lt;/h2&gt;&#xA;&lt;h3 id=&#34;whats-the-idea&#34;&gt;What&amp;rsquo;s the idea?&lt;/h3&gt;&#xA;&lt;p&gt;The reason that the &lt;a href=&#34;https://arxiv.org/abs/2104.00691&#34;&gt;Skye EOS&lt;/a&gt; doesn&amp;rsquo;t cover all temperatures and densities is that it assumes fully ionized matter, which breaks down  at low temperatures. It might be possible to patch this with an ad-hoc binding model.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Does eating planets make stars magnetic?</title>
+				<link>https://adamjermyn.com/posts/astroideas2/</link>
+				<pubDate>Tue, 24 May 2022 12:56:55 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/astroideas2/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. This is the second post in a series describing some of the ideas I&amp;rsquo;ve accumulated.&lt;/p&gt;&#xA;&lt;h2 id=&#34;can-planet-injestion-explain-magnetic-rgb-stars&#34;&gt;Can planet injestion explain magnetic RGB stars?&lt;/h2&gt;&#xA;&lt;h3 id=&#34;whats-the-idea&#34;&gt;What&amp;rsquo;s the idea?&lt;/h3&gt;&#xA;&lt;p&gt;There are some very magnetic Red Giant Branch (RGB) stars, with &lt;a href=&#34;https://arxiv.org/pdf/1510.06960.pdf&#34;&gt;measured internal fields&lt;/a&gt; of order $10^{5-7}\mathrm{G}$. We don&amp;rsquo;t know how they get fields this strong. It&amp;rsquo;s possible they&amp;rsquo;re &lt;a href=&#34;https://arxiv.org/abs/2110.03695&#34;&gt;fossil fields&lt;/a&gt; from when the stars formed. It&amp;rsquo;s possible they were &lt;a href=&#34;https://arxiv.org/pdf/1510.06960.pdf&#34;&gt;generated later by  convective dynamos&lt;/a&gt;. Are there other possible origin stories for strong magnetic fields on the RGB?&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Neutron Stars in AGN Disks</title>
+				<link>https://adamjermyn.com/posts/astroideas1/</link>
+				<pubDate>Mon, 16 May 2022 07:38:03 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/astroideas1/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don&amp;rsquo;t make sense for me to pursue. I generally just make a note of them and move on. Over the next few months I&amp;rsquo;ll be collecting those notes and posting those ideas here.&lt;/p&gt;&#xA;&lt;p&gt;The format I&amp;rsquo;ll try to follow is to explain:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;What the idea is.&lt;/li&gt;&#xA;&lt;li&gt;Why I think it&amp;rsquo;s an interesting idea.&lt;/li&gt;&#xA;&lt;li&gt;How I think someone interested in working on the idea could get started.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Here&amp;rsquo;s the first idea.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Chaos in Stellar Evolution</title>
+				<link>https://adamjermyn.com/posts/chaos_stars/</link>
+				<pubDate>Mon, 16 May 2022 07:34:19 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/chaos_stars/</guid>
+				<description>&lt;p&gt;Are stars predictable or chaotic?&lt;/p&gt;&#xA;&lt;p&gt;A system is chaotic if small perturbations grow exponentially with time. This makes chaotic systems unpredictable on long time-scales, because it becomes fine details in the starting conditions come to dominate at long times.&lt;/p&gt;&#xA;&lt;p&gt;So: are stars predictable or chaotic? As far as I know this is an open question.&lt;/p&gt;&#xA;&lt;p&gt;There is some sense in which most stars are predictable. They exist near thermal and hydrostatic equilibrium, and they tend to return to equilibrium when perturbed. This gives them remarkably predictable luminosities and sizes and temperatures.&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

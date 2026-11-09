@@ -7,7 +7,7 @@
 		
 		<meta name="author" content="Adam Jermyn">
 		<meta name="description" content="Site Description">
-		<meta name="generator" content="Hugo 0.92.2" />
+		<meta name="generator" content="Hugo 0.168.0">
 		<title>A tight-binding model for cold dense matter &middot; Adam Jermyn</title>
 		<link rel="shortcut icon" href="https://adamjermyn.com/images/favicon.ico">
 		<link rel="stylesheet" href="https://adamjermyn.com/css/style.css">
@@ -24,18 +24,6 @@
 		
 
                 
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-186473758-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
 		
                 <script>
   MathJax = {
@@ -116,7 +104,7 @@ if (!doNotTrack) {
 <h3 id="why-is-this-interesting">Why is this interesting?</h3>
 <p>Modeling stars requires modeling the matter they&rsquo;re made of using an equation of state. Currently, ionization is either handled in pre-tabulated EOS&rsquo;s, which is fast but creates errors when the composition of the star doesn&rsquo;t match that assumed in the tables, or is handled on the fly with exact ionization calculations (e.g. <a href="http://freeeos.sourceforge.net">FreeEOS</a>), which is accurate but requires vastly more runtime than all of the other pieces of a stellar evolution calculation.</p>
 <p>Having a middleground, something approximate (but good enough) and fast would open up new options. For one, we normally have to blend between between different EOS&rsquo;s to cover the conditions across an entire star. This blending is tricky and often causes problems like thermodynamic inconsistency. If the Skye EOS could be extended to the low-temperature low-density regime many stars could be run on Skye alone.</p>
-<p>Likewise, it is useful to have a &lsquo;backstop&rsquo; EOS that produces valid (even if inaccurate) thermodynamics across the entire temperature-density plane. By valid here I mean &lsquo;thermodynamically consistent, positive sound speed, etc.&rsquo;. Skye is close to being able to do this, and just needs some way to handle partial ionization.</p>
+<p>Likewise, it is useful to have a &lsquo;backstop&rsquo; EOS that produces valid (even if inaccurate) thermodynamics across the entire temperature-density plane. By valid here I mean ‘thermodynamically consistent, positive sound speed, etc.&rsquo;. Skye is close to being able to do this, and just needs some way to handle partial ionization.</p>
 <h3 id="how-can-i-get-started">How can I get started?</h3>
 <p>The binding model needs to gradually turn ions into neutral atoms and lower the electron density as the temperature falls. It would need to account for the ionization potentials of different species and the entropy of ionization to get the temperature and density dependence right.</p>
 <p>I&rsquo;d start by getting familiar with the internals of <a href="https://github.com/adamjermyn/Skye">Skye</a>. I&rsquo;d probably start by making the species charges variables so they can be smoothly turned down, and would define a function that takes revised charges and determines the electron density.</p>

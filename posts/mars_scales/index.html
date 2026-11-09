@@ -7,7 +7,7 @@
 		
 		<meta name="author" content="Adam Jermyn">
 		<meta name="description" content="Site Description">
-		<meta name="generator" content="Hugo 0.92.2" />
+		<meta name="generator" content="Hugo 0.168.0">
 		<title>Mass Scales for Living on Mars &middot; Adam Jermyn</title>
 		<link rel="shortcut icon" href="https://adamjermyn.com/images/favicon.ico">
 		<link rel="stylesheet" href="https://adamjermyn.com/css/style.css">
@@ -24,18 +24,6 @@
 		
 
                 
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-186473758-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
 		
                 <script>
   MathJax = {
@@ -115,20 +103,20 @@ In addition to setting an upper bound, this scenario demonstrates how the mass b
 <p>Need is a strong word. For this exercise I&rsquo;ll assume a typical American material quality-of-life, to the extent that this is possible on Mars. The goal is to see what the mass cost is to support someone without making any lifestyle compromises. Those can come later if necessary once we know an upper bound on the mass cost.
 Humans need air, water, food, energy, shelter, and &ldquo;other&rdquo;. Here &ldquo;other&rdquo; refers to miscellaneous goods including consumables (medicine, toiletries, etc.) as well as appliances, electronics, bedding, and so on.</p>
 <h3 id="water">Water</h3>
-<p>Of these categories, water is by far the most massive. A typical US household uses 300 gallons of water per day at home (<a href="https://www.epa.gov/watersense/how-we-use-water)">https://www.epa.gov/watersense/how-we-use-water)</a>. Assuming four people to a household gives 75 gallons per person per day. If we have to ship all of that water to Mars, that works out to 100 Cargo-tons per person per year.</p>
+<p>Of these categories, water is by far the most massive. A typical US household uses 300 gallons of water per day at home (<a href="https://www.epa.gov/watersense/how-we-use-water">https://www.epa.gov/watersense/how-we-use-water</a>). Assuming four people to a household gives 75 gallons per person per day. If we have to ship all of that water to Mars, that works out to 100 Cargo-tons per person per year.</p>
 <h3 id="shelter">Shelter</h3>
 <p>Shelter is a tough one to estimate for two reasons.</p>
 <p>First, homes tend to be durable, so all the cost of shelter is upfront. To convert this into a per-year cost we have to amortize it over the number of years the shelter will be in use, and the answer we get will vary with the time-scale we assume.
 Secondly, shelter on Mars isn&rsquo;t much like shelter on Earth. Probably the biggest difference is that shelter on Mars needs to be airtight, and to be able to hold that air in despite the inside air pressure being Earth sea level and the outside pressure being close to zero.</p>
-<p>It turns out that making an airtight space that can hold in an atmosphere of pressure isn&rsquo;t that mass intensive, and one comes for free with every cargo shipment. Each SpaceX starship full of cargo <a href="https://web.archive.org/web/20180808022709/http://www.spacex.com/sites/spacex/files/making_life_multiplanetary_transcript_2017.pdf">comes with</a> $1000\mathrm{m}^3$ of pressurized volume. A typical home in the US has 150 square meters of living area (<a href="https://www.bobvila.com/slideshow/this-is-the-average-home-size-in-every-state-53461)">https://www.bobvila.com/slideshow/this-is-the-average-home-size-in-every-state-53461)</a>, and ceilings 2-3 meters high, so each Starship provides housing for two people if it can be converted once on the ground.</p>
-<p>What about living area outside the home? On Earth I can walk outside and enjoy acre-sized public spaces that aren’t my home. I’d like to be able to do the same on Mars. For much larger areas we could use multiple empty Starships, or send domes, or more likely send parts for <a href="https://caseyhandmer.wordpress.com/2019/11/28/domes-are-very-over-rated/">giant tented areas</a>. Using Casey Handmer’s estimates for tented areas, a 10m high tent needs 15kg of cable per square meter of floor area. The tent membrane strength is <a href="https://en.wikipedia.org/wiki/ETFE">42MPa</a>, a hemispheresphere 10m in radius needs ~2cm of membrane to hold in one atmosphere of pressure. With a <a href="http://sterlingplasticsinc.com/materials/tefzel-etfe-ethylene-tetrafluoroethylene/">density</a> of $1.7\mathrm{g,cm^{-3}}$, that means the cube needs ~20 tons of membrane and ~5 tons of cable, providing an extra $2000\mathrm{m}^3$ of living volume. The mass requirements scale linearly with volume, so covering an acre up to 5m costs ~250 tons.</p>
+<p>It turns out that making an airtight space that can hold in an atmosphere of pressure isn&rsquo;t that mass intensive, and one comes for free with every cargo shipment. Each SpaceX starship full of cargo <a href="https://web.archive.org/web/20180808022709/http://www.spacex.com/sites/spacex/files/making_life_multiplanetary_transcript_2017.pdf">comes with</a> $1000\mathrm{m}^3$ of pressurized volume. A typical home in the US has 150 square meters of living area (<a href="https://www.bobvila.com/slideshow/this-is-the-average-home-size-in-every-state-53461">https://www.bobvila.com/slideshow/this-is-the-average-home-size-in-every-state-53461</a>), and ceilings 2-3 meters high, so each Starship provides housing for two people if it can be converted once on the ground.</p>
+<p>What about living area outside the home? On Earth I can walk outside and enjoy acre-sized public spaces that aren’t my home. I’d like to be able to do the same on Mars. For much larger areas we could use multiple empty Starships, or send domes, or more likely send parts for <a href="https://caseyhandmer.wordpress.com/2019/11/28/domes-are-very-over-rated/">giant tented areas</a>. Using Casey Handmer’s estimates for tented areas, a 10m high tent needs 15kg of cable per square meter of floor area. The tent membrane strength is <a href="https://en.wikipedia.org/wiki/ETFE">42MPa</a>, a hemispheresphere 10m in radius needs ~2cm of membrane to hold in one atmosphere of pressure. With a <a href="http://sterlingplasticsinc.com/materials/tefzel-etfe-ethylene-tetrafluoroethylene/">density</a> of $1.7\mathrm{g\,cm^{-3}}$, that means the cube needs ~20 tons of membrane and ~5 tons of cable, providing an extra $2000\mathrm{m}^3$ of living volume. The mass requirements scale linearly with volume, so covering an acre up to 5m costs ~250 tons.</p>
 <p>This is a one-off cost, but we want to be able to think of this as a cost per year that the person is on Mars. Assuming someone goes to Mars for the rest of their natural life, it&rsquo;s not unreasonable to assume that they&rsquo;ll use this shelter for 40 years, giving a cost of ~6 Cargo-tons per person per year.</p>
 <h3 id="energy">Energy</h3>
-<p>The next biggest category is energy. A typical US household uses 11,000 kWh of electricity per year (<a href="https://www.eia.gov/energyexplained/use-of-energy/electricity-use-in-homes.php)">https://www.eia.gov/energyexplained/use-of-energy/electricity-use-in-homes.php)</a>. A similar amount of energy is used in various forms to heat homes, so let&rsquo;s call the total 22,000kWh/year. Again assuming four people to a household, we find 5500kWh/year/person.
+<p>The next biggest category is energy. A typical US household uses 11,000 kWh of electricity per year (<a href="https://www.eia.gov/energyexplained/use-of-energy/electricity-use-in-homes.php">https://www.eia.gov/energyexplained/use-of-energy/electricity-use-in-homes.php</a>). A similar amount of energy is used in various forms to heat homes, so let&rsquo;s call the total 22,000kWh/year. Again assuming four people to a household, we find 5500kWh/year/person.
 Of course Mars is cold, so we&rsquo;ll need to heat more. Presumably we&rsquo;ll also use much better insulation. I don&rsquo;t want to dive too deeply into the details yet, but to within a factor of a few this estimate of energy use seems fine.
 Now how do we send 5500kWh/year to Mars? Solar panels are probably the best way, but let’s try do it entirely with consumables. Suppose we send methane plus enough oxygen to burn it to produce energy. And let&rsquo;s be conservative and say that we can capture that energy for useful work and useful heat at 30% efficiency. methane has a specific energy density of 56MJ/kg. We need 3g of oxygen to burn 1g of methane, so the energy density of the (methane, oxygen) bundle is 14MJ/kg, or 4kWh/kg. So we&rsquo;ll need to send 5500/4 ~ 1400kg of fuel to Mars, or 1.4 Cargo-tons per person per year.</p>
 <h3 id="food">Food</h3>
-<p>The average American eats something like 2.5kg/day of food (<a href="https://en.wikipedia.org/wiki/Western_pattern_diet#/media/File:US_Food_Consumption_Over_Time.svg)">https://en.wikipedia.org/wiki/Western_pattern_diet#/media/File:US_Food_Consumption_Over_Time.svg)</a>. That&rsquo;s 0.9 Cargo-tons per year</p>
+<p>The average American eats something like 2.5kg/day of food (<a href="https://en.wikipedia.org/wiki/Western_pattern_diet#/media/File:US_Food_Consumption_Over_Time.svg">https://en.wikipedia.org/wiki/Western_pattern_diet#/media/File:US_Food_Consumption_Over_Time.svg</a>). That&rsquo;s 0.9 Cargo-tons per year</p>
 <h3 id="other">Other</h3>
 <p>This is another tricky one. By definition this category contains an enormous diversity of goods. We can get a handle on it by noting that all of the goods in this category eventually get thrown out, at least on Earth. So in steady state the rate at which people need new &ldquo;other&rdquo; goods is comparable to the rate at which they produce non-food garbage.
 In the US garbage production is ~<a href="https://www.epa.gov/facts-and-figures-about-materials-waste-and-recycling/national-overview-facts-and-figures-materials">270 million tons per year</a>. The US population is ~330 million, so that&rsquo;s ~0.8 tons/person/year. Some of this is food waste though. The US produces 133 billion pounds of food waste per year, or ~0.2 tons per year per person. So this &ldquo;other&rdquo; category comprises something like 0.8 - 0.2 = 0.6 Cargo-tons per person per year.

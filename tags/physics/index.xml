@@ -1,45 +1,38 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>physics on Adam Jermyn</title>
-    <link>https://adamjermyn.com/tags/physics/</link>
-    <description>Recent content in physics on Adam Jermyn</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Wed, 31 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://adamjermyn.com/tags/physics/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Lectures on Fractures</title>
-      <link>https://adamjermyn.com/posts/lectures_on_fractures/</link>
-      <pubDate>Wed, 31 Dec 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/lectures_on_fractures/</guid>
-      <description>I recently collaborated with Claude Opus 4.5 to write a short set of lecture notes on fracture mechanics:
-Lectures on Fractures (PDF)
-How it worked I wanted something in Feynman&amp;rsquo;s style. Conversational, building intuition before formalism, full of physical insight. So I had Claude start by reading some of Feynman&amp;rsquo;s writing and assembling a style guide. That gave us a shared reference for tone.
-The technical focus was Griffith&amp;rsquo;s work on fractures.</description>
-    </item>
-    
-    <item>
-      <title>Waves in electron hydrodynamics</title>
-      <link>https://adamjermyn.com/posts/ideas22/</link>
-      <pubDate>Wed, 29 Jun 2022 12:21:53 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/ideas22/</guid>
-      <description>I sometimes have research ideas that I think are cool, but that don’t make sense for me to pursue. I generally just make a note of them and move on. This is the 22nd post in a series describing some of the ideas I’ve accumulated. This idea is closely related to conversations I&amp;rsquo;ve had over the years to with George Varnavides.
-Waves in electron hydrodynamics What&amp;rsquo;s the idea? In some materials, electron scattering is momentum-conserving (on some relevant length- and time-scale).</description>
-    </item>
-    
-    <item>
-      <title>#SAT with Tensor Networks</title>
-      <link>https://adamjermyn.com/posts/tn_bc/</link>
-      <pubDate>Fri, 17 Jun 2022 09:21:45 -0400</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/tn_bc/</guid>
-      <description>Cross-posted from LessWrong.
-(Thanks to Mark Xu for comments on these notes.)
-These are some notes on tensor networks, the mapping from boolean circuits to tensor networks, and how #SAT can be written as a tensor network contraction.
-Definitions and Notation What is a tensor? A rank-$d$ tensor is an array of numbers with $d$ integer indices, e.g. $T_{ijk}$ is a rank-3 tensor. The range of each index is called its bond dimension.</description>
-    </item>
-    
-  </channel>
+	<channel>
+		<title>Physics on Adam Jermyn</title>
+		<link>https://adamjermyn.com/tags/physics/</link>
+		<description>Recent content in Physics on Adam Jermyn</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Wed, 31 Dec 2025 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://adamjermyn.com/tags/physics/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Lectures on Fractures</title>
+				<link>https://adamjermyn.com/posts/lectures_on_fractures/</link>
+				<pubDate>Wed, 31 Dec 2025 00:00:00 +0000</pubDate>
+				<guid>https://adamjermyn.com/posts/lectures_on_fractures/</guid>
+				<description>&lt;p&gt;I recently collaborated with Claude Opus 4.5 to write a short set of lecture notes on fracture mechanics:&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;../../pdf/lectures_on_fractures.pdf&#34;&gt;Lectures on Fractures (PDF)&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;how-it-worked&#34;&gt;How it worked&lt;/h2&gt;&#xA;&lt;p&gt;I wanted something in Feynman&amp;rsquo;s style. Conversational, building intuition before formalism, full of physical insight. So I had Claude start by reading some of Feynman&amp;rsquo;s writing and assembling a style guide. That gave us a shared reference for tone.&lt;/p&gt;&#xA;&lt;p&gt;The technical focus was Griffith&amp;rsquo;s work on fractures. That&amp;rsquo;s what I wanted to learn about, and centering on his energy-based approach gave the notes a natural structure.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Waves in electron hydrodynamics</title>
+				<link>https://adamjermyn.com/posts/ideas22/</link>
+				<pubDate>Wed, 29 Jun 2022 12:21:53 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/ideas22/</guid>
+				<description>&lt;p&gt;I sometimes have research ideas that I think are cool, but that don’t make sense for me to pursue. I generally just make a note of them and move on. This is the 22nd post in a series describing some of the ideas I’ve accumulated. This idea is closely related to conversations I&amp;rsquo;ve had over the years to with George Varnavides.&lt;/p&gt;&#xA;&lt;h2 id=&#34;waves-in-electron-hydrodynamics&#34;&gt;Waves in electron hydrodynamics&lt;/h2&gt;&#xA;&lt;h3 id=&#34;whats-the-idea&#34;&gt;What&amp;rsquo;s the idea?&lt;/h3&gt;&#xA;&lt;p&gt;In some materials, electron scattering is momentum-conserving (on some relevant length- and time-scale). These materials exhibit &lt;em&gt;electron hydrodynamics&lt;/em&gt;, where the &lt;a href=&#34;https://www.nature.com/articles/s41467-020-18553-y&#34;&gt;electrons flow&lt;/a&gt; following the Navier-Stokes equation. Presumably that also means they can exhibit &lt;em&gt;waves&lt;/em&gt;, and I think this could be an exciting phenomenon to understand.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>#SAT with Tensor Networks</title>
+				<link>https://adamjermyn.com/posts/tn_bc/</link>
+				<pubDate>Fri, 17 Jun 2022 09:21:45 -0400</pubDate>
+				<guid>https://adamjermyn.com/posts/tn_bc/</guid>
+				<description>&lt;p&gt;&lt;em&gt;Cross-posted from &lt;a href=&#34;https://www.lesswrong.com/posts/uPhvEBJHfBLbddyAA/sat-with-tensor-networks&#34;&gt;LessWrong&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;(Thanks to Mark Xu for comments on these notes.)&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;These are some notes on tensor networks, the mapping from boolean circuits to tensor networks, and how #SAT can be written as a tensor network contraction.&lt;/p&gt;&#xA;&lt;h2 id=&#34;definitions-and-notation&#34;&gt;Definitions and Notation&lt;/h2&gt;&#xA;&lt;h3 id=&#34;what-is-a-tensor&#34;&gt;What is a tensor?&lt;/h3&gt;&#xA;&lt;p&gt;A rank-$d$ tensor is an array of numbers with $d$ integer indices, e.g. $T_{ijk}$ is a rank-3 tensor. The range of each index is called its &lt;em&gt;bond dimension.&lt;/em&gt; So for instance the Kronecker delta tensor used in physics is given by&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

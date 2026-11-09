@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>cryptocurrency on Adam Jermyn</title>
-    <link>https://adamjermyn.com/tags/cryptocurrency/</link>
-    <description>Recent content in cryptocurrency on Adam Jermyn</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Mon, 13 Dec 2021 18:16:59 -0800</lastBuildDate><atom:link href="https://adamjermyn.com/tags/cryptocurrency/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>ClaimCoin</title>
-      <link>https://adamjermyn.com/posts/claim_coin/</link>
-      <pubDate>Mon, 13 Dec 2021 18:16:59 -0800</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/claim_coin/</guid>
-      <description>(This is not investment advice.)
-Stable coins are an important tool, allowing investors to trade ordinary (fiat) currencies on the blockchain, but they have a somewhat opaque risk structure. Usually either the coin tracks the desired currency or else the peg fails, in which case investors start withdrawing and the coin suddenly trades well below the peg.
-What if there was a coin with a more transparent risk structure? What would that make possible?</description>
-    </item>
-    
-  </channel>
+	<channel>
+		<title>Cryptocurrency on Adam Jermyn</title>
+		<link>https://adamjermyn.com/tags/cryptocurrency/</link>
+		<description>Recent content in Cryptocurrency on Adam Jermyn</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 13 Dec 2021 18:16:59 -0800</lastBuildDate>
+		
+			<atom:link href="https://adamjermyn.com/tags/cryptocurrency/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>ClaimCoin</title>
+				<link>https://adamjermyn.com/posts/claim_coin/</link>
+				<pubDate>Mon, 13 Dec 2021 18:16:59 -0800</pubDate>
+				<guid>https://adamjermyn.com/posts/claim_coin/</guid>
+				<description>&lt;p&gt;(&lt;em&gt;This is not investment advice.&lt;/em&gt;)&lt;/p&gt;&#xA;&lt;p&gt;Stable coins are an important tool, allowing investors to trade ordinary (fiat) currencies on the blockchain, but they have a somewhat opaque risk structure. Usually either the coin tracks the desired currency or else the peg fails, in which case investors start withdrawing and the coin suddenly trades well below the peg.&lt;/p&gt;&#xA;&lt;p&gt;What if there was a coin with a more transparent risk structure? What would that make possible? Here I&amp;rsquo;ll outline a proposal for a more transparent form of stable coin where the risk structure is immediately and constantly clear to all investors, and where deviations from the peg are gradual, rather than sudden.&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

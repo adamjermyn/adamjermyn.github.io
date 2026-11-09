@@ -7,7 +7,7 @@
 		
 		<meta name="author" content="Adam Jermyn">
 		<meta name="description" content="Site Description">
-		<meta name="generator" content="Hugo 0.92.2" />
+		<meta name="generator" content="Hugo 0.168.0">
 		<title>Classifying Scientific Compute Workflows &middot; Adam Jermyn</title>
 		<link rel="shortcut icon" href="https://adamjermyn.com/images/favicon.ico">
 		<link rel="stylesheet" href="https://adamjermyn.com/css/style.css">
@@ -24,18 +24,6 @@
 		
 
                 
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-186473758-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
 		
                 <script>
   MathJax = {
@@ -106,12 +94,12 @@ if (!doNotTrack) {
                 
                 <section id="post-body">
                     <p>Scientists use computers, and not just for typesetting. Lots of experimentation and discovery is done with computers, from <a href="https://www.colorado.edu/silc/models">modeling climate</a> to <a href="http://jdftx.org">predicting material properties</a> to <a href="https://docs.exoplanet.codes/en/latest/">discovering exoplanets</a>. Because computation is applied to such a broad range of questions, the ways it gets used are many and varied. This diversity of application means that tools developed and lessons learned in one domain of scientific compute workflow often don&rsquo;t generalize to very different domains. On the other hand, many lessons do generalize, but only within <em>classes</em> of problems, and ignoring this means reinventing the wheel.</p>
-<p>I think this means we need a language for talking about the different classes of scientific compute. This language would make it clear which lessons can be imported into any given domain, and from where. It would also provide a more nuanced way of talking about the kinds of resources scientific computing needs, rather than the coarse distinction between &lsquo;high-performance compute (HPC)&rsquo; and &lsquo;laptop&rsquo;.</p>
+<p>I think this means we need a language for talking about the different classes of scientific compute. This language would make it clear which lessons can be imported into any given domain, and from where. It would also provide a more nuanced way of talking about the kinds of resources scientific computing needs, rather than the coarse distinction between &lsquo;high-performance compute (HPC)&rsquo; and ‘laptop&rsquo;.</p>
 <h1 id="scientific-method">Scientific Method</h1>
 <p>At a high level, the scientific method looks something like this:</p>
 <img src="../../images/scientific_compute.assets/science0.svg" alt="science" style="max-width:100%;max-height:100%;display:block;margin-left:auto;margin-right:auto" />
 <p>You start with some idea or question. You craft an experiment to test it. You then perform that experiment , get some results, and analyze them. At this stage either you&rsquo;ve learned all you needed to learn and can produce an output artifact (publication, blog post, etc.) or you&rsquo;ve learned that your initial idea wasn&rsquo;t quite right, or your experiment didn&rsquo;t really answer your question, so you refine my idea and craft a new experiment, looping until you&rsquo;ve learned something meaningful and useful.</p>
-<p><strong>Note that I&rsquo;m using the word &lsquo;experiment&rsquo; very broadly</strong>: an experiment here could be a physical experiment in the real world or a numerical simulation based on well-understood physical laws or could even be a particular attempt at modeling already-procured real-world data. The key idea unifying these rather disparate methods is that they provide feedback on the original idea which can be used to either evaluate or refine that idea.</p>
+<p><strong>Note that I&rsquo;m using the word ‘experiment&rsquo; very broadly</strong>: an experiment here could be a physical experiment in the real world or a numerical simulation based on well-understood physical laws or could even be a particular attempt at modeling already-procured real-world data. The key idea unifying these rather disparate methods is that they provide feedback on the original idea which can be used to either evaluate or refine that idea.</p>
 <p>This is not the only way to do science. Science can involve lengthy periods of refining the initial idea without any feedback from experiment or simulation (e.g. in theoretical physics). Sometimes the resulting artifact is just the refined idea, in which case the job of testing the idea with external feedback falls on other scientists.</p>
 <p>This is the first classification I want to highlight: on the path from initial idea to output artifact does your science involve feedback from simulations/experiments/models, or does the whole path lie in the minds of you and your collaborators?</p>
 <img src="../../images/scientific_compute.assets/science1.svg" alt="science1" style="max-width:100%;max-height:100%;display:block;margin-left:auto;margin-right:auto" />

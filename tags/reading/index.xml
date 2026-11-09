@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>reading on Adam Jermyn</title>
-    <link>https://adamjermyn.com/tags/reading/</link>
-    <description>Recent content in reading on Adam Jermyn</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Thu, 07 Mar 2024 11:26:29 -0500</lastBuildDate><atom:link href="https://adamjermyn.com/tags/reading/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Declaration of Independence Signatories</title>
-      <link>https://adamjermyn.com/posts/declaration/</link>
-      <pubDate>Thu, 07 Mar 2024 11:26:29 -0500</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/declaration/</guid>
-      <description>On a recent trip to DC I picked up a pocket copy of the Declaration of Independence from the Supreme Court. At the back, it has biographies of the signatories. What’s remarkable is just how much agency people took, how much they shifted their lives around, and how “rag tag” it was.
-At one point one of them was personally going out soliciting loans to fund the war effort. Another was a doctor, got infuriated at the way the British treated the colonies, and left medicine to be a politician.</description>
-    </item>
-    
-    <item>
-      <title>The Path of Law</title>
-      <link>https://adamjermyn.com/posts/pathoflaw/</link>
-      <pubDate>Sun, 11 Feb 2024 16:13:41 -0500</pubDate>
-      
-      <guid>https://adamjermyn.com/posts/pathoflaw/</guid>
-      <description>I just skimmed through Oliver Wendell Holmes&amp;rsquo;s The Path of Law. A few things that stood out:
- He frames the law as a field of study with the aim of predicting the decisions of course. I think he’s trying to disentangle the law from a statement of morals. It’s not about what is right, it’s a practical question of what rules you will actually be held to account on and how that account will appear.</description>
-    </item>
-    
-  </channel>
+	<channel>
+		<title>Reading on Adam Jermyn</title>
+		<link>https://adamjermyn.com/tags/reading/</link>
+		<description>Recent content in Reading on Adam Jermyn</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Thu, 07 Mar 2024 11:26:29 -0500</lastBuildDate>
+		
+			<atom:link href="https://adamjermyn.com/tags/reading/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Declaration of Independence Signatories</title>
+				<link>https://adamjermyn.com/posts/declaration/</link>
+				<pubDate>Thu, 07 Mar 2024 11:26:29 -0500</pubDate>
+				<guid>https://adamjermyn.com/posts/declaration/</guid>
+				<description>&lt;p&gt;On a recent trip to DC I picked up a pocket copy of the Declaration of Independence from the Supreme Court. At the back, it has biographies of the signatories. What’s remarkable is just how much agency people took, how much they shifted their lives around, and how “rag tag” it was.&lt;/p&gt;&#xA;&lt;p&gt;At one point one of them was personally going out soliciting loans to fund the war effort. Another was a doctor, got infuriated at the way the British treated the colonies, and left medicine to be a politician. He went on to become the first governor of New Hampshire.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>The Path of Law</title>
+				<link>https://adamjermyn.com/posts/pathoflaw/</link>
+				<pubDate>Sun, 11 Feb 2024 16:13:41 -0500</pubDate>
+				<guid>https://adamjermyn.com/posts/pathoflaw/</guid>
+				<description>&lt;p&gt;I just skimmed through Oliver Wendell Holmes&amp;rsquo;s &lt;em&gt;The Path of Law&lt;/em&gt;. A few things that stood out:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;He frames the law as a field of study with the aim of predicting the decisions of course. I think he’s trying to disentangle the law from a statement of morals. It’s not about what is right, it’s a practical question of what rules you will actually be held to account on and how that account will appear.&lt;/li&gt;&#xA;&lt;li&gt;There’s also a lot in here about “social advantage” (which I recognize as a 1900s phrase for what we might now call &amp;ldquo;privilege&amp;rdquo;).&lt;/li&gt;&#xA;&lt;li&gt;He also tackles questions about how driven the law is by logic, versus by other factors. He seems to come down pretty solidly on the side of &amp;ldquo;logic is just a guide, not the sole input&amp;rdquo;.&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+	</channel>
 </rss>

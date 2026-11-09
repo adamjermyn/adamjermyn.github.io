@@ -10,7 +10,7 @@
 		
 		
 		
-			<lastBuildDate>Sun, 04 Jan 2026 12:00:00 -0500</lastBuildDate>
+			<lastBuildDate>Mon, 09 Nov 2026 00:00:00 +0000</lastBuildDate>
 		
 			<atom:link href="https://adamjermyn.com/index.xml" rel="self" type="application/rss+xml" />
 			<item>
@@ -33,6 +33,13 @@
 				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
 				<guid>https://adamjermyn.com/workflow/spacedrepetition/</guid>
 				<description>&lt;h2 id=&#34;spaced-repetition&#34;&gt;Spaced Repetition&lt;/h2&gt;&#xA;&lt;p&gt;Spaced repetition is a technique for remembering information over long time periods. It takes advantage of the &lt;a href=&#34;https://en.wikipedia.org/wiki/Forgetting_curve&#34;&gt;empirical observation&lt;/a&gt; that the time it takes to forget a fact is proportional to the time that fact is known. This suggests that the best strategy to remember something indefinitely is to review facts with ever-larger (geometrically increasing) gaps between reviews.  Following that strategy, a finite number of reviews is needed to remember something for the rest of your life, and that number is small enough that the study time needed to remember a fact indefinitely is about &lt;a href=&#34;http://augmentingcognition.com/ltm.html&#34;&gt;5 minutes&lt;/a&gt;, so long as the studying happens in this spaced-out way.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Privacy</title>
+				<link>https://adamjermyn.com/privacy/</link>
+				<pubDate>Mon, 09 Nov 2026 00:00:00 +0000</pubDate>
+				<guid>https://adamjermyn.com/privacy/</guid>
+				<description>&lt;h2 id=&#34;privacy-policy-for-my-apps&#34;&gt;Privacy policy for my apps&lt;/h2&gt;&#xA;&lt;p&gt;This covers the personal iOS and macOS apps I build for my own use, including Ledger (bundle ID &lt;code&gt;com.adamjermyn.Ledger&lt;/code&gt;). These apps are not offered to the public; the only user is me.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;What data the apps use.&lt;/strong&gt; Ledger reads my own financial data: account balances and transactions, including Apple Card data read on-device through Apple&amp;rsquo;s FinanceKit. It uses this only to show me my spending, categories and cash-flow plans.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>The Tragedy of Almost: Arline Feynman and the Information Gap</title>
